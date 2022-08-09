@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     44035,       1283]
-NotebookOptionsPosition[     36871,       1154]
-NotebookOutlinePosition[     37350,       1172]
-CellTagsIndexPosition[     37307,       1169]
+NotebookDataLength[    189966,       4022]
+NotebookOptionsPosition[    184423,       3922]
+NotebookOutlinePosition[    184902,       3940]
+CellTagsIndexPosition[    184859,       3937]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -168,6 +168,2919 @@ Cell["Prime Factorization", "Section",
  CellChangeTimes->{{3.8690772941928997`*^9, 
   3.8690773064332056`*^9}},ExpressionUUID->"c0bc5aa9-ddc3-4b90-bb40-\
 73387366ab2a"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ResourceSearch", "[", "\"\<Prime\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.869077883066927*^9, 3.8690778872699423`*^9}},
+ CellLabel->"In[19]:=",ExpressionUUID->"c189d867-8143-4a69-873f-d15d96dbdf30"],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[
+   DynamicModuleBox[{TypeSystem`NestedGrid`PackagePrivate`$state$$ = <|
+    "InitialData" -> {<|
+       "Name" -> "CousinPrimes", "ResourceType" -> "Function", 
+        "ResourceObject" -> 
+        ResourceObject[<|
+          "Name" -> "CousinPrimes", "ShortName" -> "CousinPrimes", "UUID" -> 
+           "6e14670c-07d1-48a3-82a1-57f4c5279adb", "ResourceType" -> 
+           "Function", "Version" -> "2.0.0", "Description" -> 
+           "Get the pairs of primes that differ by 4", "RepositoryLocation" -> 
+           URL["https://www.wolframcloud.com/obj/resourcesystem/api/1.0"], 
+           "SymbolName" -> 
+           "FunctionRepository`$061df1e1c3404d9285aa8230bfb78c27`\
+CousinPrimes"|>], "Description" -> "Get the pairs of primes that differ by 4",
+         "Location" -> URL["https://resources.wolframcloud.com"], 
+        "DocumentationLink" -> 
+        URL["https://resources.wolframcloud.com/FunctionRepository/resources/\
+CousinPrimes"]|>, <|
+       "Name" -> "TwinPrimes", "ResourceType" -> "Function", "ResourceObject" -> 
+        ResourceObject[<|
+          "Name" -> "TwinPrimes", "ShortName" -> "TwinPrimes", "UUID" -> 
+           "083ec539-84a5-4293-8d0b-ecc738012770", "ResourceType" -> 
+           "Function", "Version" -> "2.0.0", "Description" -> 
+           "Get the pairs of primes that differ by 2", "RepositoryLocation" -> 
+           URL["https://www.wolframcloud.com/obj/resourcesystem/api/1.0"], 
+           "SymbolName" -> 
+           "FunctionRepository`$df87cdb01f2b4930adc396421df01a35`TwinPrimes"|>\
+], "Description" -> "Get the pairs of primes that differ by 2", "Location" -> 
+        URL["https://resources.wolframcloud.com"], "DocumentationLink" -> 
+        URL["https://resources.wolframcloud.com/FunctionRepository/resources/\
+TwinPrimes"]|>, <|
+       "Name" -> "SexyPrimes", "ResourceType" -> "Function", "ResourceObject" -> 
+        ResourceObject[<|
+          "Name" -> "SexyPrimes", "ShortName" -> "SexyPrimes", "UUID" -> 
+           "104d52e2-1128-44b1-a0f3-00a1002feafc", "ResourceType" -> 
+           "Function", "Version" -> "2.0.0", "Description" -> 
+           "Get the pairs of primes that differ by 6", "RepositoryLocation" -> 
+           URL["https://www.wolframcloud.com/obj/resourcesystem/api/1.0"], 
+           "SymbolName" -> 
+           "FunctionRepository`$480a90d861b94b448bee5e7ee8317cf0`SexyPrimes"|>\
+], "Description" -> "Get the pairs of primes that differ by 6", "Location" -> 
+        URL["https://resources.wolframcloud.com"], "DocumentationLink" -> 
+        URL["https://resources.wolframcloud.com/FunctionRepository/resources/\
+SexyPrimes"]|>, <|
+       "Name" -> "TwinPrime", "ResourceType" -> "Function", "ResourceObject" -> 
+        ResourceObject[<|
+          "Name" -> "TwinPrime", "ShortName" -> "TwinPrime", "UUID" -> 
+           "e62312fc-6ab9-45dc-ad82-68bee7eb5225", "ResourceType" -> 
+           "Function", "Version" -> "1.0.0", "Description" -> 
+           "Find the nth twin prime", "RepositoryLocation" -> 
+           URL["https://www.wolframcloud.com/obj/resourcesystem/api/1.0"], 
+           "SymbolName" -> 
+           "FunctionRepository`$ec8aec0a8c214df985fabd8994f68702`TwinPrime"|>]\
+, "Description" -> "Find the nth twin prime", "Location" -> 
+        URL["https://resources.wolframcloud.com"], "DocumentationLink" -> 
+        URL["https://resources.wolframcloud.com/FunctionRepository/resources/\
+TwinPrime"]|>, <|
+       "Name" -> "MersennePrime", "ResourceType" -> "Function", 
+        "ResourceObject" -> 
+        ResourceObject[<|
+          "Name" -> "MersennePrime", "ShortName" -> "MersennePrime", "UUID" -> 
+           "0fc8b2da-a494-45f6-8a7d-eb90cfa6f991", "ResourceType" -> 
+           "Function", "Version" -> "1.0.0", "Description" -> 
+           "Find the nth Mersenne prime", "RepositoryLocation" -> 
+           URL["https://www.wolframcloud.com/obj/resourcesystem/api/1.0"], 
+           "SymbolName" -> 
+           "FunctionRepository`$c6e85d5d966c4898a54631ee93a8fa92`\
+MersennePrime"|>], "Description" -> "Find the nth Mersenne prime", "Location" -> 
+        URL["https://resources.wolframcloud.com"], "DocumentationLink" -> 
+        URL["https://resources.wolframcloud.com/FunctionRepository/resources/\
+MersennePrime"]|>, <|
+       "Name" -> "ClosestPrime", "ResourceType" -> "Function", 
+        "ResourceObject" -> 
+        ResourceObject[<|
+          "Name" -> "ClosestPrime", "ShortName" -> "ClosestPrime", "UUID" -> 
+           "4a8d4d8a-bec0-417c-b53e-1fd062e6db1a", "ResourceType" -> 
+           "Function", "Version" -> "1.1.0", "Description" -> 
+           "Find the prime integer closest to a number", "RepositoryLocation" -> 
+           URL["https://www.wolframcloud.com/obj/resourcesystem/api/1.0"], 
+           "SymbolName" -> 
+           "FunctionRepository`$4f467c96009749388939e6e0d5ad5439`\
+ClosestPrime"|>], "Description" -> 
+        "Find the prime integer closest to a number", "Location" -> 
+        URL["https://resources.wolframcloud.com"], "DocumentationLink" -> 
+        URL["https://resources.wolframcloud.com/FunctionRepository/resources/\
+ClosestPrime"]|>, <|
+       "Name" -> "HeegnerPrime", "ResourceType" -> "Function", 
+        "ResourceObject" -> 
+        ResourceObject[<|
+          "Name" -> "HeegnerPrime", "ShortName" -> "HeegnerPrime", "UUID" -> 
+           "55b237ac-fb25-4fe6-a1fe-29950a2bcf6d", "ResourceType" -> 
+           "Function", "Version" -> "1.0.0", "Description" -> 
+           "Convert integer tuples into Heegner field primes when applicable",
+            "RepositoryLocation" -> 
+           URL["https://www.wolframcloud.com/obj/resourcesystem/api/1.0"], 
+           "SymbolName" -> 
+           "FunctionRepository`$25eff4657a024bc492a1f73dbe048b1c`\
+HeegnerPrime"|>], "Description" -> 
+        "Convert integer tuples into Heegner field primes when applicable", 
+        "Location" -> URL["https://resources.wolframcloud.com"], 
+        "DocumentationLink" -> 
+        URL["https://resources.wolframcloud.com/FunctionRepository/resources/\
+HeegnerPrime"]|>, <|
+       "Name" -> "FermatPrime", "ResourceType" -> "Function", 
+        "ResourceObject" -> 
+        ResourceObject[<|
+          "Name" -> "FermatPrime", "ShortName" -> "FermatPrime", "UUID" -> 
+           "02909d82-8bfb-48b5-8b2d-de091a0a1bf6", "ResourceType" -> 
+           "Function", "Version" -> "1.0.0", "Description" -> 
+           "Find the nth Fermat number that is also a prime number", 
+           "RepositoryLocation" -> 
+           URL["https://www.wolframcloud.com/obj/resourcesystem/api/1.0"], 
+           "SymbolName" -> 
+           "FunctionRepository`$daf2a8ee4b61493887efd65b58222491`FermatPrime"|>\
+], "Description" -> "Find the nth Fermat number that is also a prime number", 
+        "Location" -> URL["https://resources.wolframcloud.com"], 
+        "DocumentationLink" -> 
+        URL["https://resources.wolframcloud.com/FunctionRepository/resources/\
+FermatPrime"]|>, <|
+       "Name" -> "LargestPrimeFactor", "ResourceType" -> "Function", 
+        "ResourceObject" -> 
+        ResourceObject[<|
+          "Name" -> "LargestPrimeFactor", "ShortName" -> "LargestPrimeFactor",
+            "UUID" -> "c992154b-beea-4904-b9e1-1a0437411bc4", "ResourceType" -> 
+           "Function", "Version" -> "2.0.0", "Description" -> 
+           "Find the largest prime factor of a given integer", 
+           "RepositoryLocation" -> 
+           URL["https://www.wolframcloud.com/obj/resourcesystem/api/1.0"], 
+           "SymbolName" -> 
+           "FunctionRepository`$a5ebcc4ae8734fafa41c777f08581184`\
+LargestPrimeFactor"|>], "Description" -> 
+        "Find the largest prime factor of a given integer", "Location" -> 
+        URL["https://resources.wolframcloud.com"], "DocumentationLink" -> 
+        URL["https://resources.wolframcloud.com/FunctionRepository/resources/\
+LargestPrimeFactor"]|>, <|
+       "Name" -> "LargestPrimeGap", "ResourceType" -> "Function", 
+        "ResourceObject" -> 
+        ResourceObject[<|
+          "Name" -> "LargestPrimeGap", "ShortName" -> "LargestPrimeGap", 
+           "UUID" -> "affac3f3-c929-41d5-be74-e6943f9525ec", "ResourceType" -> 
+           "Function", "Version" -> "1.0.0", "Description" -> 
+           "Give the greatest gap between the primes up to the argument", 
+           "RepositoryLocation" -> 
+           URL["https://www.wolframcloud.com/obj/resourcesystem/api/1.0"], 
+           "SymbolName" -> 
+           "FunctionRepository`$98f68794057f4720b39b0721496771a1`\
+LargestPrimeGap"|>], "Description" -> 
+        "Give the greatest gap between the primes up to the argument", 
+        "Location" -> URL["https://resources.wolframcloud.com"], 
+        "DocumentationLink" -> 
+        URL["https://resources.wolframcloud.com/FunctionRepository/resources/\
+LargestPrimeGap"]|>, <|
+       "Name" -> "RandomSafePrime", "ResourceType" -> "Function", 
+        "ResourceObject" -> 
+        ResourceObject[<|
+          "Name" -> "RandomSafePrime", "ShortName" -> "RandomSafePrime", 
+           "UUID" -> "f1f917ff-4919-4aad-ae7a-76828517dfd7", "ResourceType" -> 
+           "Function", "Version" -> "1.0.0", "Description" -> 
+           "Compute one or more safe primes in a requested range", 
+           "RepositoryLocation" -> 
+           URL["https://www.wolframcloud.com/obj/resourcesystem/api/1.0"], 
+           "SymbolName" -> 
+           "FunctionRepository`$bf849e6aa3de4ea8b706e067a3766728`\
+RandomSafePrime"|>], "Description" -> 
+        "Compute one or more safe primes in a requested range", "Location" -> 
+        URL["https://resources.wolframcloud.com"], "DocumentationLink" -> 
+        URL["https://resources.wolframcloud.com/FunctionRepository/resources/\
+RandomSafePrime"]|>, <|
+       "Name" -> "SafePrimeQ", "ResourceType" -> "Function", "ResourceObject" -> 
+        ResourceObject[<|
+          "Name" -> "SafePrimeQ", "ShortName" -> "SafePrimeQ", "UUID" -> 
+           "771122ee-cbcc-4893-a2f9-dc488d210486", "ResourceType" -> 
+           "Function", "Version" -> "1.0.0", "Description" -> 
+           "Determine whether a number is a safe prime", "RepositoryLocation" -> 
+           URL["https://www.wolframcloud.com/obj/resourcesystem/api/1.0"], 
+           "SymbolName" -> 
+           "FunctionRepository`$9e23b991252c4411863be568f6325ac8`SafePrimeQ"|>\
+], "Description" -> "Determine whether a number is a safe prime", "Location" -> 
+        URL["https://resources.wolframcloud.com"], "DocumentationLink" -> 
+        URL["https://resources.wolframcloud.com/FunctionRepository/resources/\
+SafePrimeQ"]|>, <|
+       "Name" -> "StrongPrimeQ", "ResourceType" -> "Function", 
+        "ResourceObject" -> 
+        ResourceObject[<|
+          "Name" -> "StrongPrimeQ", "ShortName" -> "StrongPrimeQ", "UUID" -> 
+           "ae36ce83-6665-497d-8045-a9ac37abf6d8", "ResourceType" -> 
+           "Function", "Version" -> "1.0.0", "Description" -> 
+           "Determine whether a number is a strong prime", 
+           "RepositoryLocation" -> 
+           URL["https://www.wolframcloud.com/obj/resourcesystem/api/1.0"], 
+           "SymbolName" -> 
+           "FunctionRepository`$206461292d27413d98f800098d4ca7ef`\
+StrongPrimeQ"|>], "Description" -> 
+        "Determine whether a number is a strong prime", "Location" -> 
+        URL["https://resources.wolframcloud.com"], "DocumentationLink" -> 
+        URL["https://resources.wolframcloud.com/FunctionRepository/resources/\
+StrongPrimeQ"]|>, <|
+       "Name" -> "ProvablePrimeQ", "ResourceType" -> "Function", 
+        "ResourceObject" -> 
+        ResourceObject[<|
+          "Name" -> "ProvablePrimeQ", "ShortName" -> "ProvablePrimeQ", "UUID" -> 
+           "0bb2003b-b175-4fbf-9099-46179f905e65", "ResourceType" -> 
+           "Function", "Version" -> "1.0.0", "Description" -> 
+           "Certify a number as provably prime", "RepositoryLocation" -> 
+           URL["https://www.wolframcloud.com/obj/resourcesystem/api/1.0"], 
+           "SymbolName" -> 
+           "FunctionRepository`$2453de60c4144247a754283ee0dcddc2`\
+ProvablePrimeQ"|>], "Description" -> "Certify a number as provably prime", 
+        "Location" -> URL["https://resources.wolframcloud.com"], 
+        "DocumentationLink" -> 
+        URL["https://resources.wolframcloud.com/FunctionRepository/resources/\
+ProvablePrimeQ"]|>, <|
+       "Name" -> "SophieGermainPrimeQ", "ResourceType" -> "Function", 
+        "ResourceObject" -> 
+        ResourceObject[<|
+          "Name" -> "SophieGermainPrimeQ", "ShortName" -> 
+           "SophieGermainPrimeQ", "UUID" -> 
+           "e436c762-350d-4ae5-89de-ddb2b04621f4", "ResourceType" -> 
+           "Function", "Version" -> "1.0.0", "Description" -> 
+           "Determine whether a number is a Sophie Germain prime", 
+           "RepositoryLocation" -> 
+           URL["https://www.wolframcloud.com/obj/resourcesystem/api/1.0"], 
+           "SymbolName" -> 
+           "FunctionRepository`$fd2b4e57f7f5419fb7f01346ef00a866`\
+SophieGermainPrimeQ"|>], "Description" -> 
+        "Determine whether a number is a Sophie Germain prime", "Location" -> 
+        URL["https://resources.wolframcloud.com"], "DocumentationLink" -> 
+        URL["https://resources.wolframcloud.com/FunctionRepository/resources/\
+SophieGermainPrimeQ"]|>, <|
+       "Name" -> "PrimeQCertificateCheck", "ResourceType" -> "Function", 
+        "ResourceObject" -> 
+        ResourceObject[<|
+          "Name" -> "PrimeQCertificateCheck", "ShortName" -> 
+           "PrimeQCertificateCheck", "UUID" -> 
+           "4d8b3c0d-630c-4600-8f60-3ce4269ad3a8", "ResourceType" -> 
+           "Function", "Version" -> "1.0.0", "Description" -> 
+           "Test if a certificate can be used for ascertaining the primality \
+or compositeness of a number", "RepositoryLocation" -> 
+           URL["https://www.wolframcloud.com/obj/resourcesystem/api/1.0"], 
+           "SymbolName" -> 
+           "FunctionRepository`$b625ae7c27854dcd963e7f32343f2ecc`\
+PrimeQCertificateCheck"|>], "Description" -> 
+        "Test if a certificate can be used for ascertaining the primality or \
+compositeness of a number", "Location" -> 
+        URL["https://resources.wolframcloud.com"], "DocumentationLink" -> 
+        URL["https://resources.wolframcloud.com/FunctionRepository/resources/\
+PrimeQCertificateCheck"]|>, <|
+       "Name" -> "Cos2PiOverFermatPrime", "ResourceType" -> "Function", 
+        "ResourceObject" -> 
+        ResourceObject[<|
+          "Name" -> "Cos2PiOverFermatPrime", "ShortName" -> 
+           "Cos2PiOverFermatPrime", "UUID" -> 
+           "0aeaffc6-353f-492b-ae11-8603827eec75", "ResourceType" -> 
+           "Function", "Version" -> "1.0.0", "Description" -> 
+           "Closed form of cos(2\[Pi]/p) where p is a Fermat prime (3, 5, 17, \
+257, 65537) a la Gauss", "RepositoryLocation" -> 
+           URL["https://www.wolframcloud.com/obj/resourcesystem/api/1.0"], 
+           "SymbolName" -> 
+           "FunctionRepository`$a8c9b5a625fd452aaf65e40ca92528c9`\
+Cos2PiOverFermatPrime"|>], "Description" -> 
+        "Closed form of cos(2\[Pi]/p) where p is a Fermat prime (3, 5, 17, \
+257, 65537) a la Gauss", "Location" -> 
+        URL["https://resources.wolframcloud.com"], "DocumentationLink" -> 
+        URL["https://resources.wolframcloud.com/FunctionRepository/resources/\
+Cos2PiOverFermatPrime"]|>, <|
+       "Name" -> "ChebyshevTheta", "ResourceType" -> "Function", 
+        "ResourceObject" -> 
+        ResourceObject[<|
+          "Name" -> "ChebyshevTheta", "ShortName" -> "ChebyshevTheta", "UUID" -> 
+           "ee5f5472-308d-448f-98ab-b059536c5c3d", "ResourceType" -> 
+           "Function", "Version" -> "1.0.0", "Description" -> 
+           "Calculate the value of the first Chebyshev function \[Theta](x)", 
+           "RepositoryLocation" -> 
+           URL["https://www.wolframcloud.com/obj/resourcesystem/api/1.0"], 
+           "SymbolName" -> 
+           "FunctionRepository`$a2c76f2dd10a4b23a8a9975363424202`\
+ChebyshevTheta"|>], "Description" -> 
+        "Calculate the value of the first Chebyshev function \[Theta](x)", 
+        "Location" -> URL["https://resources.wolframcloud.com"], 
+        "DocumentationLink" -> 
+        URL["https://resources.wolframcloud.com/FunctionRepository/resources/\
+ChebyshevTheta"]|>, <|
+       "Name" -> "ChebyshevPsi", "ResourceType" -> "Function", 
+        "ResourceObject" -> 
+        ResourceObject[<|
+          "Name" -> "ChebyshevPsi", "ShortName" -> "ChebyshevPsi", "UUID" -> 
+           "25394942-1485-4e5a-bc41-917a0ec50ee5", "ResourceType" -> 
+           "Function", "Version" -> "1.0.0", "Description" -> 
+           "Calculate the value of the second Chebyshev function \[Psi](x)", 
+           "RepositoryLocation" -> 
+           URL["https://www.wolframcloud.com/obj/resourcesystem/api/1.0"], 
+           "SymbolName" -> 
+           "FunctionRepository`$d97b7567f6eb4e7c9cf40189213cdac7`\
+ChebyshevPsi"|>], "Description" -> 
+        "Calculate the value of the second Chebyshev function \[Psi](x)", 
+        "Location" -> URL["https://resources.wolframcloud.com"], 
+        "DocumentationLink" -> 
+        URL["https://resources.wolframcloud.com/FunctionRepository/resources/\
+ChebyshevPsi"]|>, <|
+       "Name" -> "ArithmeticD", "ResourceType" -> "Function", 
+        "ResourceObject" -> 
+        ResourceObject[<|
+          "Name" -> "ArithmeticD", "ShortName" -> "ArithmeticD", "UUID" -> 
+           "06d3a6ea-9a8b-476e-8e1e-704abdf3db54", "ResourceType" -> 
+           "Function", "Version" -> "1.0.1", "Description" -> 
+           "Compute the arithmetic derivative of a rational number", 
+           "RepositoryLocation" -> 
+           URL["https://www.wolframcloud.com/obj/resourcesystem/api/1.0"], 
+           "SymbolName" -> 
+           "FunctionRepository`$e7da2dc01bca470a8be17ad38eddde93`ArithmeticD"|>\
+], "Description" -> "Compute the arithmetic derivative of a rational number", 
+        "Location" -> URL["https://resources.wolframcloud.com"], 
+        "DocumentationLink" -> 
+        URL["https://resources.wolframcloud.com/FunctionRepository/resources/\
+ArithmeticD"]|>, <|
+       "Name" -> "Composite", "ResourceType" -> "Function", "ResourceObject" -> 
+        ResourceObject[<|
+          "Name" -> "Composite", "ShortName" -> "Composite", "UUID" -> 
+           "034e103f-ee69-4696-b4ce-49de501b6a1f", "ResourceType" -> 
+           "Function", "Version" -> "1.0.0", "Description" -> 
+           "Get the nth composite number", "RepositoryLocation" -> 
+           URL["https://www.wolframcloud.com/obj/resourcesystem/api/1.0"], 
+           "SymbolName" -> 
+           "FunctionRepository`$bc4421792fba4b78ade75cb5827a112f`Composite"|>]\
+, "Description" -> "Get the nth composite number", "Location" -> 
+        URL["https://resources.wolframcloud.com"], "DocumentationLink" -> 
+        URL["https://resources.wolframcloud.com/FunctionRepository/resources/\
+Composite"]|>, <|
+       "Name" -> "InactiveFactorInteger", "ResourceType" -> "Function", 
+        "ResourceObject" -> 
+        ResourceObject[<|
+          "Name" -> "InactiveFactorInteger", "ShortName" -> 
+           "InactiveFactorInteger", "UUID" -> 
+           "0218ec37-8144-4c06-bf64-7b141d786deb", "ResourceType" -> 
+           "Function", "Version" -> "4.1.0", "Description" -> 
+           "Compute the prime factorization of an integer and return it in an \
+inactivated form", "RepositoryLocation" -> 
+           URL["https://www.wolframcloud.com/obj/resourcesystem/api/1.0"], 
+           "SymbolName" -> 
+           "FunctionRepository`$b016b5ea35d7487f91b24a987ea6ca80`\
+InactiveFactorInteger"|>], "Description" -> 
+        "Compute the prime factorization of an integer and return it in an \
+inactivated form", "Location" -> URL["https://resources.wolframcloud.com"], 
+        "DocumentationLink" -> 
+        URL["https://resources.wolframcloud.com/FunctionRepository/resources/\
+InactiveFactorInteger"]|>, <|
+       "Name" -> "FactorGraph", "ResourceType" -> "Function", 
+        "ResourceObject" -> 
+        ResourceObject[<|
+          "Name" -> "FactorGraph", "ShortName" -> "FactorGraph", "UUID" -> 
+           "12e4c889-fb40-41de-8aff-82c0250bc0b9", "ResourceType" -> 
+           "Function", "Version" -> "1.0.0", "Description" -> 
+           "Get a graph representation for the factorization of an integer", 
+           "RepositoryLocation" -> 
+           URL["https://www.wolframcloud.com/obj/resourcesystem/api/1.0"], 
+           "SymbolName" -> 
+           "FunctionRepository`$5acf59c84c49494893228aec1affb35b`FactorGraph"|>\
+], "Description" -> 
+        "Get a graph representation for the factorization of an integer", 
+        "Location" -> URL["https://resources.wolframcloud.com"], 
+        "DocumentationLink" -> 
+        URL["https://resources.wolframcloud.com/FunctionRepository/resources/\
+FactorGraph"]|>, <|
+       "Name" -> "EisensteinFactorInteger", "ResourceType" -> "Function", 
+        "ResourceObject" -> 
+        ResourceObject[<|
+          "Name" -> "EisensteinFactorInteger", "ShortName" -> 
+           "EisensteinFactorInteger", "UUID" -> 
+           "1a0dd485-8197-46df-bb1b-14a5e67e2482", "ResourceType" -> 
+           "Function", "Version" -> "1.0.0", "Description" -> 
+           "Factor an integer into powers of Eisenstein primes", 
+           "RepositoryLocation" -> 
+           URL["https://www.wolframcloud.com/obj/resourcesystem/api/1.0"], 
+           "SymbolName" -> 
+           "FunctionRepository`$467dadeb0cea43e0a324e1e66353b7cd`\
+EisensteinFactorInteger"|>], "Description" -> 
+        "Factor an integer into powers of Eisenstein primes", "Location" -> 
+        URL["https://resources.wolframcloud.com"], "DocumentationLink" -> 
+        URL["https://resources.wolframcloud.com/FunctionRepository/resources/\
+EisensteinFactorInteger"]|>, <|
+       "Name" -> "Primorial", "ResourceType" -> "Function", "ResourceObject" -> 
+        ResourceObject[<|
+          "Name" -> "Primorial", "ShortName" -> "Primorial", "UUID" -> 
+           "1ba58f96-8745-419b-bb21-04c24efbf6e2", "ResourceType" -> 
+           "Function", "Version" -> "1.0.0", "Description" -> 
+           "Evaluate the primorial", "RepositoryLocation" -> 
+           URL["https://www.wolframcloud.com/obj/resourcesystem/api/1.0"], 
+           "SymbolName" -> 
+           "FunctionRepository`$c0d9a6d236414e4c9aa9a71b2e4e5e69`Primorial"|>]\
+, "Description" -> "Evaluate the primorial", "Location" -> 
+        URL["https://resources.wolframcloud.com"], "DocumentationLink" -> 
+        URL["https://resources.wolframcloud.com/FunctionRepository/resources/\
+Primorial"]|>, <|
+       "Name" -> "CoprimeIntegerList", "ResourceType" -> "Function", 
+        "ResourceObject" -> 
+        ResourceObject[<|
+          "Name" -> "CoprimeIntegerList", "ShortName" -> "CoprimeIntegerList",
+            "UUID" -> "36e3e7ed-d391-4c10-aa3d-02fbb20ae420", "ResourceType" -> 
+           "Function", "Version" -> "2.1.0", "Description" -> 
+           "Return a list of positive integers coprime to a given integer", 
+           "RepositoryLocation" -> 
+           URL["https://www.wolframcloud.com/obj/resourcesystem/api/1.0"], 
+           "SymbolName" -> 
+           "FunctionRepository`$9046dcb4085e4e9daaf8d2cc805b9444`\
+CoprimeIntegerList"|>], "Description" -> 
+        "Return a list of positive integers coprime to a given integer", 
+        "Location" -> URL["https://resources.wolframcloud.com"], 
+        "DocumentationLink" -> 
+        URL["https://resources.wolframcloud.com/FunctionRepository/resources/\
+CoprimeIntegerList"]|>, <|
+       "Name" -> "TriangularSpiralPoints", "ResourceType" -> "Function", 
+        "ResourceObject" -> 
+        ResourceObject[<|
+          "Name" -> "TriangularSpiralPoints", "ShortName" -> 
+           "TriangularSpiralPoints", "UUID" -> 
+           "8ce8ab74-fe3c-41a6-b5e2-0a595a9af87d", "ResourceType" -> 
+           "Function", "Version" -> "1.0.0", "Description" -> 
+           "Get the coordinates of the points on a triangular spiral", 
+           "RepositoryLocation" -> 
+           URL["https://www.wolframcloud.com/obj/resourcesystem/api/1.0"], 
+           "SymbolName" -> 
+           "FunctionRepository`$ca1fcc3b0a8e4b6baaf00f99d8a7f10b`\
+TriangularSpiralPoints"|>], "Description" -> 
+        "Get the coordinates of the points on a triangular spiral", 
+        "Location" -> URL["https://resources.wolframcloud.com"], 
+        "DocumentationLink" -> 
+        URL["https://resources.wolframcloud.com/FunctionRepository/resources/\
+TriangularSpiralPoints"]|>, <|
+       "Name" -> "IntegerRadical", "ResourceType" -> "Function", 
+        "ResourceObject" -> 
+        ResourceObject[<|
+          "Name" -> "IntegerRadical", "ShortName" -> "IntegerRadical", "UUID" -> 
+           "411de840-2a54-4ff8-8c23-3778e2ba89e0", "ResourceType" -> 
+           "Function", "Version" -> "1.0.0", "Description" -> 
+           "Return the radical of an integer, the product of its distinct \
+prime factors", "RepositoryLocation" -> 
+           URL["https://www.wolframcloud.com/obj/resourcesystem/api/1.0"], 
+           "SymbolName" -> 
+           "FunctionRepository`$074a3dc8750c4787bd54bec9672b2a89`\
+IntegerRadical"|>], "Description" -> 
+        "Return the radical of an integer, the product of its distinct prime \
+factors", "Location" -> URL["https://resources.wolframcloud.com"], 
+        "DocumentationLink" -> 
+        URL["https://resources.wolframcloud.com/FunctionRepository/resources/\
+IntegerRadical"]|>, <|
+       "Name" -> "SmoothIntegerQ", "ResourceType" -> "Function", 
+        "ResourceObject" -> 
+        ResourceObject[<|
+          "Name" -> "SmoothIntegerQ", "ShortName" -> "SmoothIntegerQ", "UUID" -> 
+           "14e11308-823f-4dae-a4ce-9072a205c09e", "ResourceType" -> 
+           "Function", "Version" -> "1.0.0", "Description" -> 
+           "Test whether the prime factors of an integer are less than a \
+given threshold", "RepositoryLocation" -> 
+           URL["https://www.wolframcloud.com/obj/resourcesystem/api/1.0"], 
+           "SymbolName" -> 
+           "FunctionRepository`$80d17153f1d647ce8fdaa454133637b8`\
+SmoothIntegerQ"|>], "Description" -> 
+        "Test whether the prime factors of an integer are less than a given \
+threshold", "Location" -> URL["https://resources.wolframcloud.com"], 
+        "DocumentationLink" -> 
+        URL["https://resources.wolframcloud.com/FunctionRepository/resources/\
+SmoothIntegerQ"]|>, <|
+       "Name" -> "HexagonalSpiralPoints", "ResourceType" -> "Function", 
+        "ResourceObject" -> 
+        ResourceObject[<|
+          "Name" -> "HexagonalSpiralPoints", "ShortName" -> 
+           "HexagonalSpiralPoints", "UUID" -> 
+           "fd7578f4-f1e2-4726-88a8-f5d904af77ce", "ResourceType" -> 
+           "Function", "Version" -> "1.0.0", "Description" -> 
+           "Get the coordinates of the points on a hexagonal spiral", 
+           "RepositoryLocation" -> 
+           URL["https://www.wolframcloud.com/obj/resourcesystem/api/1.0"], 
+           "SymbolName" -> 
+           "FunctionRepository`$be862663549345ab88077c9327d5cda3`\
+HexagonalSpiralPoints"|>], "Description" -> 
+        "Get the coordinates of the points on a hexagonal spiral", "Location" -> 
+        URL["https://resources.wolframcloud.com"], "DocumentationLink" -> 
+        URL["https://resources.wolframcloud.com/FunctionRepository/resources/\
+HexagonalSpiralPoints"]|>, <|
+       "Name" -> "SquareSpiralPoints", "ResourceType" -> "Function", 
+        "ResourceObject" -> 
+        ResourceObject[<|
+          "Name" -> "SquareSpiralPoints", "ShortName" -> "SquareSpiralPoints",
+            "UUID" -> "1e1f4028-3b61-4921-b8cf-bb494b8ee7db", "ResourceType" -> 
+           "Function", "Version" -> "1.0.0", "Description" -> 
+           
+           "Get the coordinates of the points on a square spiral with sides \
+parallel to the axes", "RepositoryLocation" -> 
+           URL["https://www.wolframcloud.com/obj/resourcesystem/api/1.0"], 
+           "SymbolName" -> 
+           "FunctionRepository`$9c8da171903047c9af9c6f59c409650c`\
+SquareSpiralPoints"|>], "Description" -> 
+        "Get the coordinates of the points on a square spiral with sides \
+parallel to the axes", "Location" -> 
+        URL["https://resources.wolframcloud.com"], "DocumentationLink" -> 
+        URL["https://resources.wolframcloud.com/FunctionRepository/resources/\
+SquareSpiralPoints"]|>, <|
+       "Name" -> "GenerateSmoothNumbers", "ResourceType" -> "Function", 
+        "ResourceObject" -> 
+        ResourceObject[<|
+          "Name" -> "GenerateSmoothNumbers", "ShortName" -> 
+           "GenerateSmoothNumbers", "UUID" -> 
+           "e580e62b-f571-48c4-9d1e-ed417c4a9344", "ResourceType" -> 
+           "Function", "Version" -> "1.0.0", "Description" -> 
+           "Generate smooth numbers up to some maximum", "RepositoryLocation" -> 
+           URL["https://www.wolframcloud.com/obj/resourcesystem/api/1.0"], 
+           "SymbolName" -> 
+           "FunctionRepository`$16e3d36a90fa4679aaa8df35d66f93d4`\
+GenerateSmoothNumbers"|>], "Description" -> 
+        "Generate smooth numbers up to some maximum", "Location" -> 
+        URL["https://resources.wolframcloud.com"], "DocumentationLink" -> 
+        URL["https://resources.wolframcloud.com/FunctionRepository/resources/\
+GenerateSmoothNumbers"]|>, <|
+       "Name" -> "Cunningham Number Factorizations", "ResourceType" -> 
+        "DataResource", "ResourceObject" -> 
+        ResourceObject[<|
+          "Name" -> "Cunningham Number Factorizations", "UUID" -> 
+           "f7587f62-f0ea-41be-9983-78070b19a075", "ResourceType" -> 
+           "DataResource", "Version" -> "1.0.1", "Description" -> 
+           "Numbers of the form b^n-1 and b^n+1 are factored for small prime \
+bases b={2,3,5,7}", "RepositoryLocation" -> 
+           URL["https://www.wolframcloud.com/obj/resourcesystem/api/1.0"], 
+           "WolframLanguageVersionRequired" -> "10.0", "ContentSize" -> 
+           Quantity[13.071752, "Megabytes"], 
+           "ContentElements" -> {"CunninghamFactorizations"}|>], 
+        "Description" -> 
+        "Numbers of the form b^n-1 and b^n+1 are factored for small prime \
+bases b={2,3,5,7}", "Location" -> URL["https://resources.wolframcloud.com"], 
+        "DocumentationLink" -> 
+        URL["https://www.wolframcloud.com/obj/resourcesystem/published/\
+DataRepository/resources/f7587f62-f0ea-41be-9983-78070b19a075"]|>, <|
+       "Name" -> "LuckyNumbers", "ResourceType" -> "Function", 
+        "ResourceObject" -> 
+        ResourceObject[<|
+          "Name" -> "LuckyNumbers", "ShortName" -> "LuckyNumbers", "UUID" -> 
+           "6a341579-a22d-4fd5-b5f2-eb63a2bf55e2", "ResourceType" -> 
+           "Function", "Version" -> "1.1.0", "Description" -> 
+           "Get a list of lucky numbers", "RepositoryLocation" -> 
+           URL["https://www.wolframcloud.com/obj/resourcesystem/api/1.0"], 
+           "SymbolName" -> 
+           "FunctionRepository`$ac49ad6d942b4694b32f4e3cf9b38b2c`\
+LuckyNumbers"|>], "Description" -> "Get a list of lucky numbers", "Location" -> 
+        URL["https://resources.wolframcloud.com"], "DocumentationLink" -> 
+        URL["https://resources.wolframcloud.com/FunctionRepository/resources/\
+LuckyNumbers"]|>, <|
+       "Name" -> "Fractran", "ResourceType" -> "Function", "ResourceObject" -> 
+        ResourceObject[<|
+          "Name" -> "Fractran", "ShortName" -> "Fractran", "UUID" -> 
+           "22aad600-17f0-4c4c-bc55-907d5e4b70ed", "ResourceType" -> 
+           "Function", "Version" -> "1.0.0", "Description" -> 
+           "Interpret the FRACTRAN esoteric programming language", 
+           "RepositoryLocation" -> 
+           URL["https://www.wolframcloud.com/obj/resourcesystem/api/1.0"], 
+           "SymbolName" -> 
+           "FunctionRepository`$21e5f9a8e34e41a4aa58cb6a5ab0a588`Fractran"|>],
+         "Description" -> 
+        "Interpret the FRACTRAN esoteric programming language", "Location" -> 
+        URL["https://resources.wolframcloud.com"], "DocumentationLink" -> 
+        URL["https://resources.wolframcloud.com/FunctionRepository/resources/\
+Fractran"]|>, <|
+       "Name" -> "InactiveSumOfPowers", "ResourceType" -> "Function", 
+        "ResourceObject" -> 
+        ResourceObject[<|
+          "Name" -> "InactiveSumOfPowers", "ShortName" -> 
+           "InactiveSumOfPowers", "UUID" -> 
+           "bc07831b-983a-41e6-8e1d-8f34abef9ff0", "ResourceType" -> 
+           "Function", "Version" -> "1.0.0", "Description" -> 
+           "Express an integer as a sum of one or more integer powers", 
+           "RepositoryLocation" -> 
+           URL["https://www.wolframcloud.com/obj/resourcesystem/api/1.0"], 
+           "SymbolName" -> 
+           "FunctionRepository`$c3588b1c20d0466d919f53df8bed4957`\
+InactiveSumOfPowers"|>], "Description" -> 
+        "Express an integer as a sum of one or more integer powers", 
+        "Location" -> URL["https://resources.wolframcloud.com"], 
+        "DocumentationLink" -> 
+        URL["https://resources.wolframcloud.com/FunctionRepository/resources/\
+InactiveSumOfPowers"]|>, <|
+       "Name" -> "ABC Conjecture", "ResourceType" -> "DataResource", 
+        "ResourceObject" -> 
+        ResourceObject[<|
+          "Name" -> "ABC Conjecture", "UUID" -> 
+           "b1297ebb-8232-4da9-a963-517fd3adc4ee", "ResourceType" -> 
+           "DataResource", "Version" -> "1.0.0", "Description" -> 
+           "ABC triples by quality", "RepositoryLocation" -> 
+           URL["https://www.wolframcloud.com/obj/resourcesystem/api/1.0"], 
+           "ContentElements" -> {"ABC triples"}|>], "Description" -> 
+        "ABC triples by quality", "Location" -> 
+        URL["https://resources.wolframcloud.com"], "DocumentationLink" -> 
+        URL["https://www.wolframcloud.com/obj/resourcesystem/published/\
+DataRepository/resources/b1297ebb-8232-4da9-a963-517fd3adc4ee"]|>}, 
+     "AllowEmbedding" -> True, "InitialShape" -> 
+     TypeSystem`PackageScope`HeaderShape[<|{All, "Name"} -> 
+        1, {All, "ResourceType"} -> 1, {All, "ResourceObject"} -> 
+        1, {All, "Description"} -> 1, {All, "Location"} -> 
+        1, {All, "DocumentationLink"} -> 1|>, 
+       TypeSystem`PackageScope`Limited[
+        TypeSystem`PackageScope`ColumnShape[
+         TypeSystem`PackageScope`Limited[
+          
+          TypeSystem`PackageScope`RowShape[<|
+           "Name" -> TypeSystem`PackageScope`AtomShape[235.20000000000002`], 
+            "ResourceType" -> TypeSystem`PackageScope`AtomShape[126.], 
+            "ResourceObject" -> TypeSystem`PackageScope`AtomShape[60], 
+            "Description" -> TypeSystem`PackageScope`AtomShape[560.], 
+            "Location" -> TypeSystem`PackageScope`AtomShape[60], 
+            "DocumentationLink" -> TypeSystem`PackageScope`AtomShape[60]|>], 
+          DirectedInfinity[1], 6, {All}]], 20, 
+        DirectedInfinity[1], {}]], "InitialType" -> TypeSystem`Vector[
+       TypeSystem`Struct[{
+        "Name", "ResourceType", "ResourceObject", "Description", "Location", 
+         "DocumentationLink"}, {
+         TypeSystem`Atom[String], 
+         TypeSystem`Atom[
+          TypeSystem`Enumeration["DataResource", "Function"]], 
+         TypeSystem`Atom[ResourceObject], 
+         TypeSystem`Atom[String], 
+         TypeSystem`Atom[URL], 
+         TypeSystem`Atom[URL]}], 37], "Meta" -> <||>, "RowTarget" -> 20, 
+     "ColumnTarget" -> 10, "Shape" -> 
+     TypeSystem`PackageScope`HeaderShape[<|{All, "Name"} -> 
+        1, {All, "ResourceType"} -> 1, {All, "ResourceObject"} -> 
+        1, {All, "Description"} -> 1, {All, "Location"} -> 
+        1, {All, "DocumentationLink"} -> 1|>, 
+       TypeSystem`PackageScope`Limited[
+        TypeSystem`PackageScope`ColumnShape[
+         TypeSystem`PackageScope`Limited[
+          
+          TypeSystem`PackageScope`RowShape[<|
+           "Name" -> TypeSystem`PackageScope`AtomShape[235.20000000000002`], 
+            "ResourceType" -> TypeSystem`PackageScope`AtomShape[126.], 
+            "ResourceObject" -> TypeSystem`PackageScope`AtomShape[60], 
+            "Description" -> TypeSystem`PackageScope`AtomShape[560.], 
+            "Location" -> TypeSystem`PackageScope`AtomShape[60], 
+            "DocumentationLink" -> TypeSystem`PackageScope`AtomShape[60]|>], 
+          DirectedInfinity[1], 6, {All}]], 20, 
+        DirectedInfinity[1], {}]], "Type" -> TypeSystem`Vector[
+       TypeSystem`Struct[{
+        "Name", "ResourceType", "ResourceObject", "Description", "Location", 
+         "DocumentationLink"}, {
+         TypeSystem`Atom[String], 
+         TypeSystem`Atom[
+          TypeSystem`Enumeration["DataResource", "Function"]], 
+         TypeSystem`Atom[ResourceObject], 
+         TypeSystem`Atom[String], 
+         TypeSystem`Atom[URL], 
+         TypeSystem`Atom[URL]}], 37], "Path" -> {}, "DisplayedRowCount" -> 20,
+      "DisplayedColumnCount" -> 6, "DataRowCount" -> 37, "DataColumnCount" -> 
+     6, "SortPaths" -> {}, "SortDirections" -> {}, "HiddenItemsMap" -> Null, 
+     "UpdateType" -> 1|>, TypeSystem`NestedGrid`PackagePrivate`$outputID$$, 
+    TypeSystem`NestedGrid`PackagePrivate`$path$$ = {}, 
+    TypeSystem`NestedGrid`PackagePrivate`$vPos$$ = 1, 
+    TypeSystem`NestedGrid`PackagePrivate`$hPos$$ = 1, 
+    TypeSystem`NestedGrid`PackagePrivate`$grid$$ = 
+    DynamicModule[{TypeSystem`NestedGrid`PackagePrivate`renderedGrid = Deploy[
+        Style[
+         Grid[{{
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover["Name", 
+                  Style[
+                  "Name", FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{
+                   All, "Name"}, 1]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                All, "Name"}, "ColumnHeader", True], "Mouse"], 
+              ImageSize -> {{1, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover["ResourceType", 
+                  Style[
+                  "ResourceType", FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{
+                   All, "ResourceType"}, 1]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                All, "ResourceType"}, "ColumnHeader", True], "Mouse"], 
+              ImageSize -> {{1, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover["ResourceObject", 
+                  Style[
+                  "ResourceObject", FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{
+                   All, "ResourceObject"}, 1]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                All, "ResourceObject"}, "ColumnHeader", True], "Mouse"], 
+              ImageSize -> {{1, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover["Description", 
+                  Style[
+                  "Description", FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{
+                   All, "Description"}, 1]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                All, "Description"}, "ColumnHeader", True], "Mouse"], 
+              ImageSize -> {{1, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover["Location", 
+                  Style[
+                  "Location", FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{
+                   All, "Location"}, 1]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                All, "Location"}, "ColumnHeader", True], "Mouse"], 
+              ImageSize -> {{1, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover["DocumentationLink", 
+                  Style[
+                  "DocumentationLink", FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{
+                   All, "DocumentationLink"}, 1]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                All, "DocumentationLink"}, "ColumnHeader", True], "Mouse"], 
+              ImageSize -> {{1, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}]}, {
+            Item[
+             Pane[
+              Annotation["CousinPrimes", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{1, 
+                 Key["Name"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{235.20000000000002`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["Function", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{1, 
+                 Key["ResourceType"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{126., Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                
+                TemplateBox[{
+                 "\"ResourceObject\"", "\"[\"", "\"\\\"\"", 
+                  "\"CousinPrimes\"", "\"\\\"\"", "\"]\""}, "RowDefault"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{1, 
+                 Key["ResourceObject"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["Get the pairs of primes that differ by 4", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{1, 
+                 Key["Description"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{560., Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               Hyperlink["https://resources.wolframcloud.com", 
+                URL["https://resources.wolframcloud.com"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{1, 
+                 Key["Location"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               Hyperlink[
+               "https://resources.wolframcloud.com/FunctionReposit...", 
+                URL[
+                "https://resources.wolframcloud.com/FunctionRepository/\
+resources/CousinPrimes"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{1, 
+                 Key["DocumentationLink"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation["TwinPrimes", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{2, 
+                 Key["Name"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{235.20000000000002`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["Function", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{2, 
+                 Key["ResourceType"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{126., Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                
+                TemplateBox[{
+                 "\"ResourceObject\"", "\"[\"", "\"\\\"\"", "\"TwinPrimes\"", 
+                  "\"\\\"\"", "\"]\""}, "RowDefault"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{2, 
+                 Key["ResourceObject"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["Get the pairs of primes that differ by 2", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{2, 
+                 Key["Description"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{560., Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               Hyperlink["https://resources.wolframcloud.com", 
+                URL["https://resources.wolframcloud.com"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{2, 
+                 Key["Location"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               Hyperlink[
+               "https://resources.wolframcloud.com/FunctionReposit...", 
+                URL[
+                "https://resources.wolframcloud.com/FunctionRepository/\
+resources/TwinPrimes"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{2, 
+                 Key["DocumentationLink"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation["SexyPrimes", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{3, 
+                 Key["Name"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{235.20000000000002`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["Function", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{3, 
+                 Key["ResourceType"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{126., Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                
+                TemplateBox[{
+                 "\"ResourceObject\"", "\"[\"", "\"\\\"\"", "\"SexyPrimes\"", 
+                  "\"\\\"\"", "\"]\""}, "RowDefault"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{3, 
+                 Key["ResourceObject"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["Get the pairs of primes that differ by 6", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{3, 
+                 Key["Description"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{560., Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               Hyperlink["https://resources.wolframcloud.com", 
+                URL["https://resources.wolframcloud.com"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{3, 
+                 Key["Location"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               Hyperlink[
+               "https://resources.wolframcloud.com/FunctionReposit...", 
+                URL[
+                "https://resources.wolframcloud.com/FunctionRepository/\
+resources/SexyPrimes"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{3, 
+                 Key["DocumentationLink"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation["TwinPrime", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{4, 
+                 Key["Name"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{235.20000000000002`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["Function", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{4, 
+                 Key["ResourceType"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{126., Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                
+                TemplateBox[{
+                 "\"ResourceObject\"", "\"[\"", "\"\\\"\"", "\"TwinPrime\"", 
+                  "\"\\\"\"", "\"]\""}, "RowDefault"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{4, 
+                 Key["ResourceObject"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["Find the nth twin prime", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{4, 
+                 Key["Description"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{560., Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               Hyperlink["https://resources.wolframcloud.com", 
+                URL["https://resources.wolframcloud.com"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{4, 
+                 Key["Location"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               Hyperlink[
+               "https://resources.wolframcloud.com/FunctionReposit...", 
+                URL[
+                "https://resources.wolframcloud.com/FunctionRepository/\
+resources/TwinPrime"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{4, 
+                 Key["DocumentationLink"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation["MersennePrime", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{5, 
+                 Key["Name"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{235.20000000000002`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["Function", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{5, 
+                 Key["ResourceType"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{126., Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                
+                TemplateBox[{
+                 "\"ResourceObject\"", "\"[\"", "\"\\\"\"", 
+                  "\"MersennePrime\"", "\"\\\"\"", "\"]\""}, "RowDefault"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{5, 
+                 Key["ResourceObject"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["Find the nth Mersenne prime", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{5, 
+                 Key["Description"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{560., Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               Hyperlink["https://resources.wolframcloud.com", 
+                URL["https://resources.wolframcloud.com"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{5, 
+                 Key["Location"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               Hyperlink[
+               "https://resources.wolframcloud.com/FunctionReposit...", 
+                URL[
+                "https://resources.wolframcloud.com/FunctionRepository/\
+resources/MersennePrime"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{5, 
+                 Key["DocumentationLink"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation["ClosestPrime", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{6, 
+                 Key["Name"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{235.20000000000002`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["Function", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{6, 
+                 Key["ResourceType"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{126., Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                
+                TemplateBox[{
+                 "\"ResourceObject\"", "\"[\"", "\"\\\"\"", 
+                  "\"ClosestPrime\"", "\"\\\"\"", "\"]\""}, "RowDefault"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{6, 
+                 Key["ResourceObject"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["Find the prime integer closest to a number", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{6, 
+                 Key["Description"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{560., Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               Hyperlink["https://resources.wolframcloud.com", 
+                URL["https://resources.wolframcloud.com"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{6, 
+                 Key["Location"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               Hyperlink[
+               "https://resources.wolframcloud.com/FunctionReposit...", 
+                URL[
+                "https://resources.wolframcloud.com/FunctionRepository/\
+resources/ClosestPrime"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{6, 
+                 Key["DocumentationLink"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation["HeegnerPrime", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{7, 
+                 Key["Name"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{235.20000000000002`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["Function", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{7, 
+                 Key["ResourceType"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{126., Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                
+                TemplateBox[{
+                 "\"ResourceObject\"", "\"[\"", "\"\\\"\"", 
+                  "\"HeegnerPrime\"", "\"\\\"\"", "\"]\""}, "RowDefault"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{7, 
+                 Key["ResourceObject"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+              "Convert integer tuples into Heegner field primes when \
+applicable", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{7, 
+                 Key["Description"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{560., Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               Hyperlink["https://resources.wolframcloud.com", 
+                URL["https://resources.wolframcloud.com"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{7, 
+                 Key["Location"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               Hyperlink[
+               "https://resources.wolframcloud.com/FunctionReposit...", 
+                URL[
+                "https://resources.wolframcloud.com/FunctionRepository/\
+resources/HeegnerPrime"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{7, 
+                 Key["DocumentationLink"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation["FermatPrime", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{8, 
+                 Key["Name"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{235.20000000000002`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["Function", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{8, 
+                 Key["ResourceType"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{126., Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                
+                TemplateBox[{
+                 "\"ResourceObject\"", "\"[\"", "\"\\\"\"", "\"FermatPrime\"",
+                   "\"\\\"\"", "\"]\""}, "RowDefault"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{8, 
+                 Key["ResourceObject"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+              "Find the nth Fermat number that is also a prime number", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{8, 
+                 Key["Description"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{560., Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               Hyperlink["https://resources.wolframcloud.com", 
+                URL["https://resources.wolframcloud.com"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{8, 
+                 Key["Location"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               Hyperlink[
+               "https://resources.wolframcloud.com/FunctionReposit...", 
+                URL[
+                "https://resources.wolframcloud.com/FunctionRepository/\
+resources/FermatPrime"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{8, 
+                 Key["DocumentationLink"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation["LargestPrimeFactor", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{9, 
+                 Key["Name"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{235.20000000000002`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["Function", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{9, 
+                 Key["ResourceType"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{126., Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                
+                TemplateBox[{
+                 "\"ResourceObject\"", "\"[\"", "\"\\\"\"", 
+                  "\"LargestPrimeFactor\"", "\"\\\"\"", "\"]\""}, 
+                 "RowDefault"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{9, 
+                 Key["ResourceObject"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["Find the largest prime factor of a given integer", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{9, 
+                 Key["Description"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{560., Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               Hyperlink["https://resources.wolframcloud.com", 
+                URL["https://resources.wolframcloud.com"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{9, 
+                 Key["Location"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               Hyperlink[
+               "https://resources.wolframcloud.com/FunctionReposit...", 
+                URL[
+                "https://resources.wolframcloud.com/FunctionRepository/\
+resources/LargestPrimeFactor"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{9, 
+                 Key["DocumentationLink"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation["LargestPrimeGap", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{10, 
+                 Key["Name"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{235.20000000000002`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["Function", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{10, 
+                 Key["ResourceType"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{126., Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                
+                TemplateBox[{
+                 "\"ResourceObject\"", "\"[\"", "\"\\\"\"", 
+                  "\"LargestPrimeGap\"", "\"\\\"\"", "\"]\""}, "RowDefault"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{10, 
+                 Key["ResourceObject"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+              "Give the greatest gap between the primes up to the argument", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{10, 
+                 Key["Description"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{560., Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               Hyperlink["https://resources.wolframcloud.com", 
+                URL["https://resources.wolframcloud.com"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{10, 
+                 Key["Location"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               Hyperlink[
+               "https://resources.wolframcloud.com/FunctionReposit...", 
+                URL[
+                "https://resources.wolframcloud.com/FunctionRepository/\
+resources/LargestPrimeGap"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{10, 
+                 Key["DocumentationLink"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation["RandomSafePrime", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{11, 
+                 Key["Name"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{235.20000000000002`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["Function", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{11, 
+                 Key["ResourceType"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{126., Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                
+                TemplateBox[{
+                 "\"ResourceObject\"", "\"[\"", "\"\\\"\"", 
+                  "\"RandomSafePrime\"", "\"\\\"\"", "\"]\""}, "RowDefault"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{11, 
+                 Key["ResourceObject"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+              "Compute one or more safe primes in a requested range", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{11, 
+                 Key["Description"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{560., Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               Hyperlink["https://resources.wolframcloud.com", 
+                URL["https://resources.wolframcloud.com"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{11, 
+                 Key["Location"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               Hyperlink[
+               "https://resources.wolframcloud.com/FunctionReposit...", 
+                URL[
+                "https://resources.wolframcloud.com/FunctionRepository/\
+resources/RandomSafePrime"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{11, 
+                 Key["DocumentationLink"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation["SafePrimeQ", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{12, 
+                 Key["Name"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{235.20000000000002`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["Function", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{12, 
+                 Key["ResourceType"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{126., Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                
+                TemplateBox[{
+                 "\"ResourceObject\"", "\"[\"", "\"\\\"\"", "\"SafePrimeQ\"", 
+                  "\"\\\"\"", "\"]\""}, "RowDefault"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{12, 
+                 Key["ResourceObject"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["Determine whether a number is a safe prime", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{12, 
+                 Key["Description"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{560., Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               Hyperlink["https://resources.wolframcloud.com", 
+                URL["https://resources.wolframcloud.com"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{12, 
+                 Key["Location"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               Hyperlink[
+               "https://resources.wolframcloud.com/FunctionReposit...", 
+                URL[
+                "https://resources.wolframcloud.com/FunctionRepository/\
+resources/SafePrimeQ"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{12, 
+                 Key["DocumentationLink"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation["StrongPrimeQ", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{13, 
+                 Key["Name"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{235.20000000000002`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["Function", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{13, 
+                 Key["ResourceType"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{126., Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                
+                TemplateBox[{
+                 "\"ResourceObject\"", "\"[\"", "\"\\\"\"", 
+                  "\"StrongPrimeQ\"", "\"\\\"\"", "\"]\""}, "RowDefault"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{13, 
+                 Key["ResourceObject"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["Determine whether a number is a strong prime", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{13, 
+                 Key["Description"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{560., Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               Hyperlink["https://resources.wolframcloud.com", 
+                URL["https://resources.wolframcloud.com"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{13, 
+                 Key["Location"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               Hyperlink[
+               "https://resources.wolframcloud.com/FunctionReposit...", 
+                URL[
+                "https://resources.wolframcloud.com/FunctionRepository/\
+resources/StrongPrimeQ"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{13, 
+                 Key["DocumentationLink"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation["ProvablePrimeQ", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{14, 
+                 Key["Name"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{235.20000000000002`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["Function", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{14, 
+                 Key["ResourceType"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{126., Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                
+                TemplateBox[{
+                 "\"ResourceObject\"", "\"[\"", "\"\\\"\"", 
+                  "\"ProvablePrimeQ\"", "\"\\\"\"", "\"]\""}, "RowDefault"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{14, 
+                 Key["ResourceObject"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["Certify a number as provably prime", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{14, 
+                 Key["Description"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{560., Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               Hyperlink["https://resources.wolframcloud.com", 
+                URL["https://resources.wolframcloud.com"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{14, 
+                 Key["Location"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               Hyperlink[
+               "https://resources.wolframcloud.com/FunctionReposit...", 
+                URL[
+                "https://resources.wolframcloud.com/FunctionRepository/\
+resources/ProvablePrimeQ"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{14, 
+                 Key["DocumentationLink"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation["SophieGermainPrimeQ", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{15, 
+                 Key["Name"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{235.20000000000002`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["Function", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{15, 
+                 Key["ResourceType"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{126., Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                
+                TemplateBox[{
+                 "\"ResourceObject\"", "\"[\"", "\"\\\"\"", 
+                  "\"SophieGermainPrimeQ\"", "\"\\\"\"", "\"]\""}, 
+                 "RowDefault"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{15, 
+                 Key["ResourceObject"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+              "Determine whether a number is a Sophie Germain prime", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{15, 
+                 Key["Description"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{560., Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               Hyperlink["https://resources.wolframcloud.com", 
+                URL["https://resources.wolframcloud.com"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{15, 
+                 Key["Location"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               Hyperlink[
+               "https://resources.wolframcloud.com/FunctionReposit...", 
+                URL[
+                "https://resources.wolframcloud.com/FunctionRepository/\
+resources/SophieGermainPrimeQ"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{15, 
+                 Key["DocumentationLink"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation["PrimeQCertificateCheck", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{16, 
+                 Key["Name"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{235.20000000000002`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["Function", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{16, 
+                 Key["ResourceType"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{126., Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                
+                TemplateBox[{
+                 "\"ResourceObject\"", "\"[\"", "\"\\\"\"", 
+                  "\"PrimeQCertificateCheck\"", "\"\\\"\"", "\"]\""}, 
+                 "RowDefault"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{16, 
+                 Key["ResourceObject"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+              "Test if a certificate can be used for ascertaining the \
+primality or compositeness of a number", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{16, 
+                 Key["Description"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{560., Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               Hyperlink["https://resources.wolframcloud.com", 
+                URL["https://resources.wolframcloud.com"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{16, 
+                 Key["Location"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               Hyperlink[
+               "https://resources.wolframcloud.com/FunctionReposit...", 
+                URL[
+                "https://resources.wolframcloud.com/FunctionRepository/\
+resources/PrimeQCertificateCheck"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{16, 
+                 Key["DocumentationLink"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation["Cos2PiOverFermatPrime", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{17, 
+                 Key["Name"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{235.20000000000002`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["Function", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{17, 
+                 Key["ResourceType"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{126., Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                
+                TemplateBox[{
+                 "\"ResourceObject\"", "\"[\"", "\"\\\"\"", 
+                  "\"Cos2PiOverFermatPrime\"", "\"\\\"\"", "\"]\""}, 
+                 "RowDefault"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{17, 
+                 Key["ResourceObject"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+              "Closed form of cos(2\[Pi]/p) where p is a Fermat prime (3, 5, \
+17, 257, 65537) a la Gauss", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{17, 
+                 Key["Description"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{560., Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               Hyperlink["https://resources.wolframcloud.com", 
+                URL["https://resources.wolframcloud.com"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{17, 
+                 Key["Location"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               Hyperlink[
+               "https://resources.wolframcloud.com/FunctionReposit...", 
+                URL[
+                "https://resources.wolframcloud.com/FunctionRepository/\
+resources/Cos2PiOverFermatPrime"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{17, 
+                 Key["DocumentationLink"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation["ChebyshevTheta", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{18, 
+                 Key["Name"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{235.20000000000002`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["Function", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{18, 
+                 Key["ResourceType"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{126., Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                
+                TemplateBox[{
+                 "\"ResourceObject\"", "\"[\"", "\"\\\"\"", 
+                  "\"ChebyshevTheta\"", "\"\\\"\"", "\"]\""}, "RowDefault"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{18, 
+                 Key["ResourceObject"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+              "Calculate the value of the first Chebyshev function \
+\[Theta](x)", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{18, 
+                 Key["Description"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{560., Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               Hyperlink["https://resources.wolframcloud.com", 
+                URL["https://resources.wolframcloud.com"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{18, 
+                 Key["Location"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               Hyperlink[
+               "https://resources.wolframcloud.com/FunctionReposit...", 
+                URL[
+                "https://resources.wolframcloud.com/FunctionRepository/\
+resources/ChebyshevTheta"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{18, 
+                 Key["DocumentationLink"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation["ChebyshevPsi", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{19, 
+                 Key["Name"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{235.20000000000002`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["Function", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{19, 
+                 Key["ResourceType"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{126., Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                
+                TemplateBox[{
+                 "\"ResourceObject\"", "\"[\"", "\"\\\"\"", 
+                  "\"ChebyshevPsi\"", "\"\\\"\"", "\"]\""}, "RowDefault"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{19, 
+                 Key["ResourceObject"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+              "Calculate the value of the second Chebyshev function \
+\[Psi](x)", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{19, 
+                 Key["Description"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{560., Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               Hyperlink["https://resources.wolframcloud.com", 
+                URL["https://resources.wolframcloud.com"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{19, 
+                 Key["Location"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               Hyperlink[
+               "https://resources.wolframcloud.com/FunctionReposit...", 
+                URL[
+                "https://resources.wolframcloud.com/FunctionRepository/\
+resources/ChebyshevPsi"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{19, 
+                 Key["DocumentationLink"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation["ArithmeticD", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{20, 
+                 Key["Name"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{235.20000000000002`, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation["Function", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{20, 
+                 Key["ResourceType"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{126., Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                
+                TemplateBox[{
+                 "\"ResourceObject\"", "\"[\"", "\"\\\"\"", "\"ArithmeticD\"",
+                   "\"\\\"\"", "\"]\""}, "RowDefault"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{20, 
+                 Key["ResourceObject"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+              "Compute the arithmetic derivative of a rational number", 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{20, 
+                 Key["Description"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{560., Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               Hyperlink["https://resources.wolframcloud.com", 
+                URL["https://resources.wolframcloud.com"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{20, 
+                 Key["Location"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}], 
+            Item[
+             Pane[
+              Annotation[
+               Hyperlink[
+               "https://resources.wolframcloud.com/FunctionReposit...", 
+                URL[
+                "https://resources.wolframcloud.com/FunctionRepository/\
+resources/ArithmeticD"]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{20, 
+                 Key["DocumentationLink"]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Deploy[
+              Pane[
+               Row[{
+                 Spacer[2], 
+                 Style[
+                  Row[{
+                    Button[
+                    MouseAppearance[
+                    Mouseover[
+                    Graphics[{{
+                    EdgeForm[None], 
+                    FaceForm[None], 
+                    Rectangle[{0, 0}, {18, 18}, RoundingRadius -> 2]}, 
+                    Rotate[
+                    Translate[{
+                    CapForm[Round], 
+                    Line[{{0, 0}, {4, 5}, {8, 0}}], 
+                    Line[{{0, 5}, {8, 5}}]}, {5, 6.5}], 0, {9, 9}]}, 
+                    ImageSize -> (1 -> 1), ImagePadding -> {{0, 1}, {1, 0}}, 
+                    BaselinePosition -> Scaled[0.35], BaseStyle -> 
+                    RGBColor[
+                    0.5372549019607843, 0.5372549019607843, 
+                    0.5372549019607843]], 
+                    Graphics[{{
+                    EdgeForm[
+                    RGBColor[
+                    0.27450980392156865`, 0.5411764705882353, 
+                    0.796078431372549]], 
+                    FaceForm[None], 
+                    Rectangle[{0, 0}, {18, 18}, RoundingRadius -> 2]}, 
+                    Rotate[
+                    Translate[{
+                    CapForm[Round], 
+                    RGBColor[
+                    0.27450980392156865`, 0.5411764705882353, 
+                    0.796078431372549], 
+                    Line[{{0, 0}, {4, 5}, {8, 0}}], 
+                    Line[{{0, 5}, {8, 5}}]}, {5, 6.5}], 0, {9, 9}]}, 
+                    ImageSize -> (1 -> 1), ImagePadding -> {{0, 1}, {1, 0}}, 
+                    BaselinePosition -> Scaled[0.35]]], "LinkHand"], 
+                    If[
+                    TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$ = 
+                    Clip[TypeSystem`NestedGrid`PackagePrivate`$vPos$$ + (-20) 
+                    If[True, 37, 1], {1, 37 - -20 + 1}]; 
+                    TypeSystem`NestedGrid`PackagePrivate`updateState[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]], True][
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$]], 
+                    Appearance -> None], 
+                    Button[
+                    MouseAppearance[
+                    Mouseover[
+                    Graphics[{{
+                    EdgeForm[None], 
+                    FaceForm[None], 
+                    Rectangle[{0, 0}, {18, 18}, RoundingRadius -> 2]}, 
+                    Rotate[
+                    Translate[{
+                    CapForm[Round], 
+                    Line[{{0, 0}, {4, 5}, {8, 0}}]}, {5, 6.5}], 0, {9, 9}]}, 
+                    ImageSize -> (1 -> 1), ImagePadding -> {{0, 1}, {1, 0}}, 
+                    BaselinePosition -> Scaled[0.35], BaseStyle -> 
+                    RGBColor[
+                    0.5372549019607843, 0.5372549019607843, 
+                    0.5372549019607843]], 
+                    Graphics[{{
+                    EdgeForm[
+                    RGBColor[
+                    0.27450980392156865`, 0.5411764705882353, 
+                    0.796078431372549]], 
+                    FaceForm[None], 
+                    Rectangle[{0, 0}, {18, 18}, RoundingRadius -> 2]}, 
+                    Rotate[
+                    Translate[{
+                    CapForm[Round], 
+                    RGBColor[
+                    0.27450980392156865`, 0.5411764705882353, 
+                    0.796078431372549], 
+                    Line[{{0, 0}, {4, 5}, {8, 0}}]}, {5, 6.5}], 0, {9, 9}]}, 
+                    ImageSize -> (1 -> 1), ImagePadding -> {{0, 1}, {1, 0}}, 
+                    BaselinePosition -> Scaled[0.35]]], "LinkHand"], 
+                    If[
+                    TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$ = 
+                    Clip[TypeSystem`NestedGrid`PackagePrivate`$vPos$$ + (-20) 
+                    If[False, 37, 1], {1, 37 - -20 + 1}]; 
+                    TypeSystem`NestedGrid`PackagePrivate`updateState[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]], True][
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$]], 
+                    Appearance -> None], " ", 
+                    Style[
+                    Mouseover[
+                    Style[
+                    Row[{"rows ", 1, "\[Dash]", 20, " of ", 
+                    Style[37, FontWeight -> Bold]}], FontSize -> 
+                    9.333333333333332, FontColor -> 
+                    RGBColor[
+                    0.5098039215686274, 0.5098039215686274, 
+                    0.5098039215686274]], 
+                    Style[
+                    Row[{"rows ", 1, "\[Dash]", 20, " of ", 
+                    Style[37, FontWeight -> Bold]}], FontSize -> 
+                    9.333333333333332, FontColor -> 
+                    RGBColor[
+                    0.5098039215686274, 0.5098039215686274, 
+                    0.5098039215686274]]], ContextMenu -> {
+                    MenuItem["Hide", 
+                    KernelExecute[
+                    
+                    TypeSystem`NestedGrid`PackagePrivate`adjustLimits[{
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]}, 
+                    "Rows", 1, {}]], MenuEvaluator -> Automatic], 
+                    MenuItem["Show up to 10 Rows", 
+                    KernelExecute[
+                    
+                    TypeSystem`NestedGrid`PackagePrivate`adjustLimits[{
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]}, 
+                    "Rows", 10, {}]], MenuEvaluator -> Automatic], 
+                    MenuItem["Show up to 30 Rows", 
+                    KernelExecute[
+                    
+                    TypeSystem`NestedGrid`PackagePrivate`adjustLimits[{
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]}, 
+                    "Rows", 30, {}]], MenuEvaluator -> Automatic], 
+                    MenuItem["Show up to 100 Rows", 
+                    KernelExecute[
+                    
+                    TypeSystem`NestedGrid`PackagePrivate`adjustLimits[{
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]}, 
+                    "Rows", 100, {}]], MenuEvaluator -> Automatic], 
+                    MenuItem["Show All", 
+                    KernelExecute[
+                    
+                    TypeSystem`NestedGrid`PackagePrivate`adjustLimits[{
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]}, 
+                    "Rows", 100000000, {}]], MenuEvaluator -> Automatic]}], 
+                    " ", 
+                    Button[
+                    MouseAppearance[
+                    Mouseover[
+                    Graphics[{{
+                    EdgeForm[None], 
+                    FaceForm[None], 
+                    Rectangle[{0, 0}, {18, 18}, RoundingRadius -> 2]}, 
+                    Rotate[
+                    Translate[{
+                    CapForm[Round], 
+                    Line[{{0, 0}, {4, 5}, {8, 0}}]}, {5, 6.5}], 180 Degree, {
+                    9, 9}]}, ImageSize -> (1 -> 1), 
+                    ImagePadding -> {{0, 1}, {1, 0}}, BaselinePosition -> 
+                    Scaled[0.35], BaseStyle -> 
+                    RGBColor[
+                    0.5372549019607843, 0.5372549019607843, 
+                    0.5372549019607843]], 
+                    Graphics[{{
+                    EdgeForm[
+                    RGBColor[
+                    0.27450980392156865`, 0.5411764705882353, 
+                    0.796078431372549]], 
+                    FaceForm[None], 
+                    Rectangle[{0, 0}, {18, 18}, RoundingRadius -> 2]}, 
+                    Rotate[
+                    Translate[{
+                    CapForm[Round], 
+                    RGBColor[
+                    0.27450980392156865`, 0.5411764705882353, 
+                    0.796078431372549], 
+                    Line[{{0, 0}, {4, 5}, {8, 0}}]}, {5, 6.5}], 180 Degree, {
+                    9, 9}]}, ImageSize -> (1 -> 1), 
+                    ImagePadding -> {{0, 1}, {1, 0}}, BaselinePosition -> 
+                    Scaled[0.35]]], "LinkHand"], 
+                    If[
+                    TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$ = 
+                    Clip[TypeSystem`NestedGrid`PackagePrivate`$vPos$$ + 
+                    20 If[False, 37, 1], {1, 37 - 20 + 1}]; 
+                    TypeSystem`NestedGrid`PackagePrivate`updateState[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]], True][
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$]], 
+                    Appearance -> None], 
+                    Button[
+                    MouseAppearance[
+                    Mouseover[
+                    Graphics[{{
+                    EdgeForm[None], 
+                    FaceForm[None], 
+                    Rectangle[{0, 0}, {18, 18}, RoundingRadius -> 2]}, 
+                    Rotate[
+                    Translate[{
+                    CapForm[Round], 
+                    Line[{{0, 0}, {4, 5}, {8, 0}}], 
+                    Line[{{0, 5}, {8, 5}}]}, {5, 6.5}], 180 Degree, {9, 9}]}, 
+                    ImageSize -> (1 -> 1), ImagePadding -> {{0, 1}, {1, 0}}, 
+                    BaselinePosition -> Scaled[0.35], BaseStyle -> 
+                    RGBColor[
+                    0.5372549019607843, 0.5372549019607843, 
+                    0.5372549019607843]], 
+                    Graphics[{{
+                    EdgeForm[
+                    RGBColor[
+                    0.27450980392156865`, 0.5411764705882353, 
+                    0.796078431372549]], 
+                    FaceForm[None], 
+                    Rectangle[{0, 0}, {18, 18}, RoundingRadius -> 2]}, 
+                    Rotate[
+                    Translate[{
+                    CapForm[Round], 
+                    RGBColor[
+                    0.27450980392156865`, 0.5411764705882353, 
+                    0.796078431372549], 
+                    Line[{{0, 0}, {4, 5}, {8, 0}}], 
+                    Line[{{0, 5}, {8, 5}}]}, {5, 6.5}], 180 Degree, {9, 9}]}, 
+                    ImageSize -> (1 -> 1), ImagePadding -> {{0, 1}, {1, 0}}, 
+                    BaselinePosition -> Scaled[0.35]]], "LinkHand"], 
+                    If[
+                    TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$ = 
+                    Clip[TypeSystem`NestedGrid`PackagePrivate`$vPos$$ + 
+                    20 If[True, 37, 1], {1, 37 - 20 + 1}]; 
+                    TypeSystem`NestedGrid`PackagePrivate`updateState[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]], True][
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$]], 
+                    Appearance -> None]}], ContextMenu -> {}]}], 
+               ImageMargins -> {{0, -1}, {-1, 1}}]], Background -> 
+             RGBColor[
+              0.9764705882352941, 0.9764705882352941, 0.9764705882352941], 
+             Alignment -> {Left, Top}], SpanFromLeft, SpanFromLeft, 
+            SpanFromLeft, SpanFromLeft, SpanFromLeft}}, 
+          BaseStyle -> {
+           ContextMenu -> 
+            Dynamic[TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger; 
+              Which[TypeSystem`NestedGrid`PackagePrivate`$lastOutputID =!= 
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                 TypeSystem`NestedGrid`PackagePrivate`$outputID$$], {}, 
+                TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger === 
+                TypeSystem`NestedGrid`PackagePrivate`$lastContextMenuTrigger, 
+                TypeSystem`NestedGrid`PackagePrivate`$lastContextMenu, True, 
+                TypeSystem`NestedGrid`PackagePrivate`$lastContextMenuTrigger = 
+                 TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger; 
+                TypeSystem`NestedGrid`PackagePrivate`$lastContextMenu = 
+                 Block[{TypeSystem`NestedGrid`PackagePrivate`$globalScrollPos = \
+{TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$}}, 
+                   
+                   With[{TypeSystem`NestedGrid`PackagePrivate`lastPath$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPathType, 
+                    TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`$\
+lastPathIsLeafHeader, TypeSystem`NestedGrid`PackagePrivate`headerHidden$ = And[
+                    MatchQ[TypeSystem`NestedGrid`PackagePrivate`$lastPathType, 
+                    Alternatives["RowHeader", "ColumnHeader"]], 
+                    TypeSystem`NestedGrid`PackagePrivate`headerHiddenQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$]], 
+                    TypeSystem`NestedGrid`PackagePrivate`allHidden$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`allHiddenQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`anyHidden$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`anyHiddenQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`sortDirection$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`columnSortDirection[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$[
+                    "SortPaths"], 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$[
+                    "SortDirections"]], 
+                    TypeSystem`NestedGrid`PackagePrivate`haveData$ = Not[
+                    FailureQ[
+                    TypeSystem`NestedGrid`PackagePrivate`datasetInitialData[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$]]], 
+                    TypeSystem`NestedGrid`PackagePrivate`isKeyDummy$ = Not[
+                    FreeQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, Keys]]}, 
+                    Join[{
+                    If[
+                    Or[
+                    Not[TypeSystem`NestedGrid`PackagePrivate`haveData$], 
+                    Not[TypeSystem`NestedGrid`PackagePrivate`anyHidden$], 
+                    TypeSystem`NestedGrid`PackagePrivate`isKeyDummy$], 
+                    Nothing, 
+                    MenuItem[
+                    "Show " <> 
+                    Which[TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "Item", "", 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "RowHeader", "Row", 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "ColumnHeader", "Column", True, ""], 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateHiddenItems[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, 
+                    "remove"]], MenuEvaluator -> Automatic]], 
+                    If[
+                    Or[
+                    Not[TypeSystem`NestedGrid`PackagePrivate`haveData$], 
+                    TypeSystem`NestedGrid`PackagePrivate`pathEmptyQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`isKeyDummy$, 
+                    And[
+                    TypeSystem`NestedGrid`PackagePrivate`allHidden$, 
+                    TypeSystem`NestedGrid`PackagePrivate`headerHidden$]], 
+                    Nothing, 
+                    MenuItem[
+                    "Hide " <> 
+                    Which[TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "Item", "", 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "RowHeader", "Row", 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "ColumnHeader", "Column", True, ""], 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateHiddenItems[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, "add"]], 
+                    MenuEvaluator -> Automatic]], Delimiter}, 
+                    If[
+                    And[TypeSystem`NestedGrid`PackagePrivate`haveData$, 
+                    MatchQ[TypeSystem`NestedGrid`PackagePrivate`lastPathType$, 
+                    Alternatives["ColumnHeader", "KeyDummy"]], 
+                    TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$, 
+                    Not[TypeSystem`NestedGrid`PackagePrivate`allHidden$]], {
+                    If[
+                    TypeSystem`NestedGrid`PackagePrivate`sortDirection$ =!= 
+                    "Ascending", 
+                    MenuItem["Sort", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateSort[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, 
+                    "Ascending"]], MenuEvaluator -> Automatic], Nothing], 
+                    If[
+                    TypeSystem`NestedGrid`PackagePrivate`sortDirection$ =!= 
+                    "Descending", 
+                    MenuItem["Reverse Sort", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateSort[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, 
+                    "Descending"]], MenuEvaluator -> Automatic], Nothing], 
+                    If[
+                    TypeSystem`NestedGrid`PackagePrivate`sortDirection$ =!= 
+                    None, 
+                    MenuItem["Unsort", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateSort[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, None]], 
+                    MenuEvaluator -> Automatic], Nothing], Delimiter}, {}], {
+                    MenuItem["Copy Position to Clipboard", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`toCurrentPosition[
+                    TypeSystem`NestedGrid`PackagePrivate`copyClip]], 
+                    MenuEvaluator -> Automatic], 
+                    If[TypeSystem`NestedGrid`PackagePrivate`haveData$, 
+                    MenuItem["Copy Data to Clipboard", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`toCurrentData[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`copyClip]], 
+                    MenuEvaluator -> Automatic], Nothing], Delimiter, 
+                    MenuItem["Paste Position in New Cell", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`toCurrentPosition[
+                    TypeSystem`NestedGrid`PackagePrivate`cellPaste]], 
+                    MenuEvaluator -> Automatic], 
+                    If[TypeSystem`NestedGrid`PackagePrivate`haveData$, 
+                    MenuItem["Paste Data in New Cell", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`toCurrentData[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`cellPaste]], 
+                    MenuEvaluator -> Automatic], Nothing]}]]]]], FontFamily -> 
+            "Source Sans Pro", FontSize -> 14, FontWeight -> Plain}, Dividers -> 
+          All, FrameStyle -> GrayLevel[0.7490196078431373], 
+          Spacings -> {0, 0}, Alignment -> Left, 
+          BaseStyle -> {
+           FontFamily -> "Source Sans Pro", FontSize -> 14, FontWeight -> 
+            Plain}], LineBreakWithin -> False, ContextMenu -> {}, NumberMarks -> 
+         False, ShowAutoStyles -> False]], 
+      TypeSystem`NestedGrid`PackagePrivate`initialQ = True}, 
+     Dynamic[
+      TypeSystem`NestedGrid`PackagePrivate`setupViewPath[
+      TypeSystem`NestedGrid`PackagePrivate`$path$$, If[
+         Not[TypeSystem`NestedGrid`PackagePrivate`initialQ], 
+         Module[{
+          TypeSystem`NestedGrid`PackagePrivate`tmpGrid$ = $Failed, 
+           TypeSystem`NestedGrid`PackagePrivate`tmpData$ = 
+           TypeSystem`NestedGrid`PackagePrivate`datasetData[
+            TypeSystem`NestedGrid`PackagePrivate`$state$$]}, 
+          TypeSystem`NestedGrid`PackagePrivate`tmpGrid$ = If[
+             FailureQ[TypeSystem`NestedGrid`PackagePrivate`tmpData$], 
+             TypeSystem`NestedGrid`PackagePrivate`renderedGrid, 
+             TypeSystem`NestedGrid`PackagePrivate`renderGrid[
+             TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+              TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+              TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+              TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+              TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+              TypeSystem`NestedGrid`PackagePrivate`localHold[
+              TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+             TypeSystem`NestedGrid`PackagePrivate`tmpData$]]; If[
+            Not[
+             FailureQ[TypeSystem`NestedGrid`PackagePrivate`tmpGrid$]], 
+            TypeSystem`NestedGrid`PackagePrivate`renderedGrid = 
+            TypeSystem`NestedGrid`PackagePrivate`tmpGrid$]; Null]]; 
+       TypeSystem`NestedGrid`PackagePrivate`initialQ = False; 
+       TypeSystem`NestedGrid`PackagePrivate`$vPos$$; 
+       TypeSystem`NestedGrid`PackagePrivate`$hPos$$; If[
+         FailureQ[TypeSystem`NestedGrid`PackagePrivate`renderedGrid], 
+         TypeSystem`SparseGrid[
+          TypeSystem`H["(data no longer present)"]], 
+         TypeSystem`NestedGrid`PackagePrivate`renderedGrid]], 
+      TrackedSymbols :> {
+       TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$hPos$$}], 
+     DynamicModuleValues :> {}], 
+    TypeSystem`NestedGrid`PackagePrivate`$topBar$$ = Dynamic[
+     TypeSystem`NestedGrid`PackagePrivate`makeFramedBar[
+      TypeSystem`PackageScope`SubViewPathbar[
+      TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+       TypeSystem`NestedGrid`PackagePrivate`updateState[
+       TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+        TypeSystem`NestedGrid`PackagePrivate`localHold[
+        TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]]], 
+     TrackedSymbols :> {TypeSystem`NestedGrid`PackagePrivate`$path$$}], 
+    TypeSystem`NestedGrid`PackagePrivate`$bottomBar$$ = Style[
+     Framed[
+      Dynamic[
+       Replace[
+       TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$, {
+        TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+           TypeSystem`NestedGrid`PackagePrivate`localHold[
+           TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][Null, 
+           Blank[]] -> "", TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+           TypeSystem`NestedGrid`PackagePrivate`localHold[
+           TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+           Pattern[TypeSystem`NestedGrid`PackagePrivate`path$, 
+            Blank[]], 
+           Pattern[TypeSystem`NestedGrid`PackagePrivate`pathType$, 
+            Blank[]], 
+           Pattern[TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$, 
+            Blank[]]] :> (
+          Increment[TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger]; 
+          TypeSystem`NestedGrid`PackagePrivate`$lastPath = 
+           TypeSystem`NestedGrid`PackagePrivate`path$; 
+          TypeSystem`NestedGrid`PackagePrivate`$lastPathType = 
+           TypeSystem`NestedGrid`PackagePrivate`pathType$; 
+          TypeSystem`NestedGrid`PackagePrivate`$lastPathIsLeafHeader = 
+           TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$; 
+          TypeSystem`NestedGrid`PackagePrivate`$lastOutputID = 
+           TypeSystem`NestedGrid`PackagePrivate`localHold[
+            TypeSystem`NestedGrid`PackagePrivate`$outputID$$]; 
+          TypeSystem`NestedGrid`PackagePrivate`makePathTrail[
+           TypeSystem`NestedGrid`PackagePrivate`path$, 
+            TypeSystem`NestedGrid`PackagePrivate`makePathElements]), Null :> 
+         Spacer[10], Blank[] :> Spacer[10]}], 
+       TrackedSymbols :> {
+        TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$}], FrameStyle -> 
+      None, ImageMargins -> 0, FrameMargins -> 0, Alignment -> Top, 
+      ImageSize -> {Automatic, 15}], FontSize -> 1], 
+    TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$ = Null}, 
+    DynamicWrapperBox[
+     DynamicBox[ToBoxes[
+       Dataset`DatasetContent[
+       2, "Path" -> Hold[TypeSystem`NestedGrid`PackagePrivate`$path$$], 
+        "Grid" -> Hold[TypeSystem`NestedGrid`PackagePrivate`$grid$$], "State" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$state$$], "VPos" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$vPos$$], "HPos" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$hPos$$], "TopBar" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$topBar$$], "BottomBar" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$bottomBar$$], "OutputID" -> 
+        Hold[
+          TypeSystem`NestedGrid`PackagePrivate`localHold[
+          TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]], StandardForm],
+      ImageSizeCache->{1186., {388.41754141980783`, 395.58245858019217`}},
+      TrackedSymbols:>{
+       TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$grid$$}], 
+     TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$ = 
+     MouseAnnotation[],
+     ImageSizeCache->{1186., {388.41754141980783`, 395.58245858019217`}}],
+    BaseStyle->{LineBreakWithin -> False},
+    DynamicModuleValues:>{},
+    Initialization:>(TypeSystem`NestedGrid`PackagePrivate`$outputID$$ = 
+     CreateUUID[]),
+    UnsavedVariables:>{TypeSystem`NestedGrid`PackagePrivate`$outputID$$}],
+   Deploy,
+   DefaultBaseStyle->"Deploy"],
+  Dataset`InterpretDataset[1],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ CellChangeTimes->{3.8690779597644863`*^9},
+ CellLabel->"Out[19]=",ExpressionUUID->"27a795b1-5b24-4b9c-abb0-4339eb2c9155"]
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -988,151 +3901,6 @@ Cell[BoxData[
 }, Open  ]],
 
 Cell["\<\
-Find the prime factorization of a random number up to a mole:\
-\>", "Text",
- CellChangeTimes->{{3.8690774405333767`*^9, 
-  3.869077456277524*^9}},ExpressionUUID->"7a9c6335-a3d7-4a8f-bcba-\
-a2124cca3ed0"],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"PrimeFactorization", "[", 
-  RowBox[{
-   RowBox[{"Evaluate", "@", "6.02214076"}], " ", 
-   SuperscriptBox["10", "23"]}], "]"}]], "Input",
- CellChangeTimes->{{3.869077458210516*^9, 3.8690774674148593`*^9}, {
-  3.869077504539005*^9, 3.869077529591256*^9}},
- CellLabel->"In[14]:=",ExpressionUUID->"2c3b0d99-fc98-4f9d-a4c9-2a527489ffd4"],
-
-Cell[BoxData[
- RowBox[{"PrimeFactorization", "[", "6.02214076`*^23", "]"}]], "Output",
- CellChangeTimes->{3.869077529839259*^9},
- CellLabel->"Out[14]=",ExpressionUUID->"1b5de343-3c33-48c5-b82c-2fea3a150fbb"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"IntegerQ", "[", 
-  RowBox[{"6.02214076", " ", 
-   SuperscriptBox["10", "23"]}], "]"}]], "Input",
- CellChangeTimes->{{3.8690775373872604`*^9, 3.869077539333274*^9}},
- CellLabel->"In[15]:=",ExpressionUUID->"ed251ea9-528a-4608-afba-55fbb95c7ff9"],
-
-Cell[BoxData["False"], "Output",
- CellChangeTimes->{3.8690775398452606`*^9},
- CellLabel->"Out[15]=",ExpressionUUID->"cfe3cc3f-71c9-48c6-a3d8-6e55342e5edf"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"Simplify", "[", 
-  RowBox[{
-   RowBox[{"6.02214076", " ", 
-    SuperscriptBox["10", "23"]}], "\[Element]", "Integers"}], "]"}]], "Input",
- CellChangeTimes->{{3.8690775654423814`*^9, 3.8690775718779144`*^9}},
- CellLabel->"In[16]:=",ExpressionUUID->"ec9ca0c1-bf90-4d35-afb8-b7ecf0f10add"],
-
-Cell[BoxData[
- RowBox[{"6.02214076`*^23", "\[Element]", 
-  TemplateBox[{},
-   "Integers"]}]], "Output",
- CellChangeTimes->{3.869077572392906*^9},
- CellLabel->"Out[16]=",ExpressionUUID->"88fdeb67-208c-4c18-b2d9-0228dd0d07f2"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"FullForm", "[", 
-  RowBox[{
-   RowBox[{"6.02214076", " ", 
-    SuperscriptBox["10", "23"]}], "\[Element]", "Integers"}], "]"}]], "Input",
- CellChangeTimes->{{3.8690777071172276`*^9, 3.869077714413757*^9}},
- CellLabel->"In[18]:=",ExpressionUUID->"7c8efe24-2f49-427b-b758-54c21b109953"],
-
-Cell[BoxData[
- TagBox[
-  StyleBox[
-   RowBox[{"Element", "[", 
-    RowBox[{"6.02214076`*^23", ",", "Integers"}], "]"}],
-   ShowSpecialCharacters->False,
-   ShowStringCharacters->True,
-   NumberMarks->True],
-  FullForm]], "Output",
- CellChangeTimes->{3.8690777154187593`*^9},
- CellLabel->
-  "Out[18]//FullForm=",ExpressionUUID->"d389449a-b3f0-4a06-9d59-a4236e30a6c1"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"FullSimplify", "[", 
-  RowBox[{"6.02214076", " ", 
-   SuperscriptBox["10", "23"]}], "]"}]], "Input",
- CellChangeTimes->{{3.869077593288003*^9, 3.8690775953749933`*^9}},
- CellLabel->"In[17]:=",ExpressionUUID->"d47e074a-7c92-40e4-a70a-c99c63eba6a4"],
-
-Cell[BoxData["6.02214076`*^23"], "Output",
- CellChangeTimes->{3.869077595687006*^9},
- CellLabel->"Out[17]=",ExpressionUUID->"da9f35a6-6946-4765-b7f7-26c81d6f2838"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"6.02214076", " ", 
-  SuperscriptBox["10", "23"]}]], "Input",
- CellLabel->"In[13]:=",ExpressionUUID->"be16379c-e70c-4b32-b001-deb4ac8143fc"],
-
-Cell[BoxData["6.02214076`*^23"], "Output",
- CellChangeTimes->{{3.869077509779804*^9, 3.869077520373382*^9}},
- CellLabel->"Out[13]=",ExpressionUUID->"001bcf26-66ce-44c4-b046-aca389c38a86"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"Quantity", "[", "\"\<AvogadroConstant\>\"", "]"}]], "Input",
- CellChangeTimes->{{3.8690774699396524`*^9, 3.869077491970832*^9}},
- CellLabel->"In[10]:=",ExpressionUUID->"818f1541-f80b-4409-af19-cececb49e411"],
-
-Cell[BoxData[
- TemplateBox[{
-   InterpretationBox["\[InvisibleSpace]", 1], 
-   SubscriptBox[
-    StyleBox["\"N\"", Italic, StripOnInput -> False], 
-    StyleBox["\"A\"", Italic, StripOnInput -> False]], "Avogadro constant", 
-   "\"AvogadroConstant\""},
-  "Quantity"]], "Output",
- CellChangeTimes->{{3.86907747916209*^9, 3.8690774929798355`*^9}},
- CellLabel->"Out[10]=",ExpressionUUID->"9497c88b-1390-4abe-8f37-d349c23c45f1"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"UnitConvert", "[", 
-  RowBox[{
-   RowBox[{"Quantity", "[", 
-    RowBox[{"1", ",", "\"\<AvogadroConstant\>\""}], "]"}], ",", 
-   "\"\<SI\>\""}], "]"}]], "Input",
- NumberMarks->False,
- CellLabel->"In[11]:=",ExpressionUUID->"75ad7a08-e322-4162-9cd3-d445f143d120"],
-
-Cell[BoxData[
- TemplateBox[{"602214076000000000000000", 
-   RowBox[{"\"/\"", "\[InvisibleSpace]", "\"mol\""}], "reciprocal moles", 
-   FractionBox["1", "\"Moles\""]},
-  "Quantity"]], "Output",
- CellChangeTimes->{3.8690774969509687`*^9},
- CellLabel->"Out[11]=",ExpressionUUID->"e0011c3f-cdd8-4fde-b4a1-81c6b4ae327b"]
-}, Open  ]],
-
-Cell["\<\
 Enter text here. Enter non-Wolfram Language program code below.\
 \>", "Text",ExpressionUUID->"8ce7adea-5558-480e-8402-2b1bd99979a2"],
 
@@ -1223,65 +3991,36 @@ Cell[4950, 156, 137, 3, 63, "Code",ExpressionUUID->"aa4b6007-5da4-49a6-98b2-5380
 Cell[CellGroupData[{
 Cell[5148, 166, 168, 3, 83, "Section",ExpressionUUID->"c0bc5aa9-ddc3-4b90-bb40-73387366ab2a"],
 Cell[CellGroupData[{
-Cell[5341, 173, 338, 7, 35, "Input",ExpressionUUID->"0dfdf25b-55a1-496c-89fc-868b0d02f9bb"],
-Cell[5682, 182, 3065, 95, 90, "Output",ExpressionUUID->"e0daae1a-c5e8-4733-bb90-d51be2f81047"]
+Cell[5341, 173, 226, 3, 35, "Input",ExpressionUUID->"c189d867-8143-4a69-873f-d15d96dbdf30"],
+Cell[5570, 178, 152054, 2903, 807, "Output",ExpressionUUID->"27a795b1-5b24-4b9c-abb0-4339eb2c9155"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[8784, 282, 160, 3, 67, "Subsection",ExpressionUUID->"e2fcf238-a542-4715-a328-8fd8fd0726bc"],
-Cell[8947, 287, 428, 9, 35, "Input",ExpressionUUID->"74f8e1f8-8516-415f-9a62-d0b9109868f5"]
+Cell[157661, 3086, 338, 7, 35, "Input",ExpressionUUID->"0dfdf25b-55a1-496c-89fc-868b0d02f9bb"],
+Cell[158002, 3095, 3065, 95, 90, "Output",ExpressionUUID->"e0daae1a-c5e8-4733-bb90-d51be2f81047"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[9412, 301, 163, 3, 67, "Subsection",ExpressionUUID->"6d97a6e6-6479-44ef-9fc9-b42ba438d31d"],
-Cell[9578, 306, 183, 3, 43, "Text",ExpressionUUID->"596f4cb3-bc05-489c-b3b2-ba59c8e2a571"],
-Cell[CellGroupData[{
-Cell[9786, 313, 220, 3, 35, "Input",ExpressionUUID->"092ef73c-c507-43f9-8219-136e7db9bfed"],
-Cell[10009, 318, 329, 9, 41, "Output",ExpressionUUID->"3c2be387-fdfe-49cb-bcb8-adafff29055c"]
-}, Open  ]],
-Cell[10353, 330, 200, 3, 43, "Text",ExpressionUUID->"621fdf25-a842-4124-b74e-e3935dd54a9c"],
-Cell[CellGroupData[{
-Cell[10578, 337, 282, 5, 40, "Input",ExpressionUUID->"72553a4a-b90a-481e-8298-27a1075fe91a"],
-Cell[10863, 344, 335, 9, 41, "Output",ExpressionUUID->"025e843f-8ef8-4662-a175-f2516e92264e"]
-}, Open  ]],
-Cell[11213, 356, 215, 5, 43, "Text",ExpressionUUID->"e265e2a7-5f36-4c50-985a-bfb3bf43239c"],
-Cell[CellGroupData[{
-Cell[11453, 365, 238, 4, 35, "Input",ExpressionUUID->"eccd8031-6287-4cf7-a75c-9ae5b6dfd7e1"],
-Cell[11694, 371, 19913, 615, 475, "Output",ExpressionUUID->"0a3d9e68-b95f-461f-b0ce-c1bf3e6ef91e"]
-}, Open  ]],
-Cell[31622, 989, 213, 5, 43, "Text",ExpressionUUID->"7a9c6335-a3d7-4a8f-bcba-a2124cca3ed0"],
-Cell[CellGroupData[{
-Cell[31860, 998, 357, 7, 40, "Input",ExpressionUUID->"2c3b0d99-fc98-4f9d-a4c9-2a527489ffd4"],
-Cell[32220, 1007, 207, 3, 44, "Output",ExpressionUUID->"1b5de343-3c33-48c5-b82c-2fea3a150fbb"]
+Cell[161104, 3195, 160, 3, 67, "Subsection",ExpressionUUID->"e2fcf238-a542-4715-a328-8fd8fd0726bc"],
+Cell[161267, 3200, 428, 9, 35, "Input",ExpressionUUID->"74f8e1f8-8516-415f-9a62-d0b9109868f5"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[32464, 1015, 267, 5, 40, "Input",ExpressionUUID->"ed251ea9-528a-4608-afba-55fbb95c7ff9"],
-Cell[32734, 1022, 155, 2, 40, "Output",ExpressionUUID->"cfe3cc3f-71c9-48c6-a3d8-6e55342e5edf"]
-}, Open  ]],
+Cell[161732, 3214, 163, 3, 67, "Subsection",ExpressionUUID->"6d97a6e6-6479-44ef-9fc9-b42ba438d31d"],
+Cell[161898, 3219, 183, 3, 43, "Text",ExpressionUUID->"596f4cb3-bc05-489c-b3b2-ba59c8e2a571"],
 Cell[CellGroupData[{
-Cell[32926, 1029, 310, 6, 40, "Input",ExpressionUUID->"ec9ca0c1-bf90-4d35-afb8-b7ecf0f10add"],
-Cell[33239, 1037, 224, 5, 41, "Output",ExpressionUUID->"88fdeb67-208c-4c18-b2d9-0228dd0d07f2"]
+Cell[162106, 3226, 220, 3, 35, "Input",ExpressionUUID->"092ef73c-c507-43f9-8219-136e7db9bfed"],
+Cell[162329, 3231, 329, 9, 41, "Output",ExpressionUUID->"3c2be387-fdfe-49cb-bcb8-adafff29055c"]
 }, Open  ]],
+Cell[162673, 3243, 200, 3, 43, "Text",ExpressionUUID->"621fdf25-a842-4124-b74e-e3935dd54a9c"],
 Cell[CellGroupData[{
-Cell[33500, 1047, 308, 6, 40, "Input",ExpressionUUID->"7c8efe24-2f49-427b-b758-54c21b109953"],
-Cell[33811, 1055, 366, 11, 57, "Output",ExpressionUUID->"d389449a-b3f0-4a06-9d59-a4236e30a6c1"]
+Cell[162898, 3250, 282, 5, 40, "Input",ExpressionUUID->"72553a4a-b90a-481e-8298-27a1075fe91a"],
+Cell[163183, 3257, 335, 9, 41, "Output",ExpressionUUID->"025e843f-8ef8-4662-a175-f2516e92264e"]
 }, Open  ]],
+Cell[163533, 3269, 215, 5, 43, "Text",ExpressionUUID->"e265e2a7-5f36-4c50-985a-bfb3bf43239c"],
 Cell[CellGroupData[{
-Cell[34214, 1071, 271, 5, 40, "Input",ExpressionUUID->"d47e074a-7c92-40e4-a70a-c99c63eba6a4"],
-Cell[34488, 1078, 163, 2, 41, "Output",ExpressionUUID->"da9f35a6-6946-4765-b7f7-26c81d6f2838"]
+Cell[163773, 3278, 238, 4, 35, "Input",ExpressionUUID->"eccd8031-6287-4cf7-a75c-9ae5b6dfd7e1"],
+Cell[164014, 3284, 19913, 615, 475, "Output",ExpressionUUID->"0a3d9e68-b95f-461f-b0ce-c1bf3e6ef91e"]
 }, Open  ]],
-Cell[CellGroupData[{
-Cell[34688, 1085, 163, 3, 36, "Input",ExpressionUUID->"be16379c-e70c-4b32-b001-deb4ac8143fc"],
-Cell[34854, 1090, 187, 2, 41, "Output",ExpressionUUID->"001bcf26-66ce-44c4-b046-aca389c38a86"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[35078, 1097, 231, 3, 35, "Input",ExpressionUUID->"818f1541-f80b-4409-af19-cececb49e411"],
-Cell[35312, 1102, 424, 9, 48, "Output",ExpressionUUID->"9497c88b-1390-4abe-8f37-d349c23c45f1"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[35773, 1116, 284, 7, 35, "Input",ExpressionUUID->"75ad7a08-e322-4162-9cd3-d445f143d120"],
-Cell[36060, 1125, 315, 6, 48, "Output",ExpressionUUID->"e0011c3f-cdd8-4fde-b4a1-81c6b4ae327b"]
-}, Open  ]],
-Cell[36390, 1134, 142, 2, 43, "Text",ExpressionUUID->"8ce7adea-5558-480e-8402-2b1bd99979a2"],
-Cell[36535, 1138, 296, 11, 232, "Program",ExpressionUUID->"f0621bd1-6a6b-4ff7-82cb-075595f47254"]
+Cell[183942, 3902, 142, 2, 43, "Text",ExpressionUUID->"8ce7adea-5558-480e-8402-2b1bd99979a2"],
+Cell[184087, 3906, 296, 11, 232, "Program",ExpressionUUID->"f0621bd1-6a6b-4ff7-82cb-075595f47254"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
