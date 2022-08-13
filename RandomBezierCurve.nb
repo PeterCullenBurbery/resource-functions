@@ -59,11 +59,1730 @@ evaluated before creating the Examples section below.", "MoreInfoText"],
  CellTags->{"Definition", "Function", "TemplateCellGroup"},
  CellID->292731158,ExpressionUUID->"43e717d1-dc38-4e05-aee1-d82417419114"],
 
-Cell[BoxData[
+Cell[BoxData[{
  RowBox[{
-  RowBox[{"MyFunction", "[", "]"}], ":=", "xxxx"}]], "Input",
- CellTags->"DefaultContent",
- CellID->876320555,ExpressionUUID->"4c6d7e47-a950-4b46-990e-1d4197c51849"]
+  RowBox[{"ClearAll", "[", "RandomBezierCurve", "]"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"lower_", ",", "upper_"}], "}"}], ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics", "[", 
+     RowBox[{
+      RowBox[{"BezierCurve", "[", 
+       RowBox[{"RandomReal", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"lower", ",", "upper"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"count", ",", "2"}], "}"}]}], "]"}], "]"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"count", ">", "0"}]}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"lower_", ",", "upper_"}], "}"}], ",", "2", ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics", "[", 
+     RowBox[{
+      RowBox[{"BezierCurve", "[", 
+       RowBox[{"RandomReal", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"lower", ",", "upper"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"count", ",", "2"}], "}"}]}], "]"}], "]"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"count", ">", "0"}]}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"lower_", ",", "upper_"}], "}"}], ",", "3", ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics3D", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics3D", "[", 
+     RowBox[{
+      RowBox[{"BezierCurve", "[", 
+       RowBox[{"RandomReal", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"lower", ",", "upper"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"count", ",", "3"}], "}"}]}], "]"}], "]"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"count", ">", "0"}]}]}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"lower_", ",", "upper_"}], "}"}], ",", "\"\<Real\>\"", ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics", "[", 
+     RowBox[{
+      RowBox[{"BezierCurve", "[", 
+       RowBox[{"RandomReal", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"lower", ",", "upper"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"count", ",", "2"}], "}"}]}], "]"}], "]"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"count", ">", "0"}]}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"lower_", ",", "upper_"}], "}"}], ",", "2", ",", "\"\<Real\>\"",
+      ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics", "[", 
+     RowBox[{
+      RowBox[{"BezierCurve", "[", 
+       RowBox[{"RandomReal", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"lower", ",", "upper"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"count", ",", "2"}], "}"}]}], "]"}], "]"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"count", ">", "0"}]}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"lower_", ",", "upper_"}], "}"}], ",", "3", ",", "\"\<Real\>\"",
+      ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics3D", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics3D", "[", 
+     RowBox[{
+      RowBox[{"BezierCurve", "[", 
+       RowBox[{"RandomReal", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"lower", ",", "upper"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"count", ",", "3"}], "}"}]}], "]"}], "]"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"count", ">", "0"}]}]}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"lower_", ",", "upper_"}], "}"}], ",", "\"\<Integer\>\"", ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics", "[", 
+     RowBox[{
+      RowBox[{"BezierCurve", "[", 
+       RowBox[{"RandomInteger", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"lower", ",", "upper"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"count", ",", "2"}], "}"}]}], "]"}], "]"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"count", ">", "0"}]}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"lower_", ",", "upper_"}], "}"}], ",", "2", ",", 
+     "\"\<Integer\>\"", ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics", "[", 
+     RowBox[{
+      RowBox[{"BezierCurve", "[", 
+       RowBox[{"RandomInteger", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"lower", ",", "upper"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"count", ",", "2"}], "}"}]}], "]"}], "]"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"count", ">", "0"}]}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"lower_", ",", "upper_"}], "}"}], ",", "3", ",", 
+     "\"\<Integer\>\"", ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics3D", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics3D", "[", 
+     RowBox[{
+      RowBox[{"BezierCurve", "[", 
+       RowBox[{"RandomInteger", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"lower", ",", "upper"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"count", ",", "3"}], "}"}]}], "]"}], "]"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"count", ">", "0"}]}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", "max_", ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics", "[", 
+     RowBox[{
+      RowBox[{"BezierCurve", "[", 
+       RowBox[{"RandomReal", "[", 
+        RowBox[{"max", ",", 
+         RowBox[{"{", 
+          RowBox[{"count", ",", "2"}], "}"}]}], "]"}], "]"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"count", ">", "0"}]}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", "max_", ",", "2", ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics", "[", 
+     RowBox[{
+      RowBox[{"BezierCurve", "[", 
+       RowBox[{"RandomReal", "[", 
+        RowBox[{"max", ",", 
+         RowBox[{"{", 
+          RowBox[{"count", ",", "2"}], "}"}]}], "]"}], "]"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"count", ">", "0"}]}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", "max_", ",", "3", ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics3D", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics3D", "[", 
+     RowBox[{
+      RowBox[{"BezierCurve", "[", 
+       RowBox[{"RandomReal", "[", 
+        RowBox[{"max", ",", 
+         RowBox[{"{", 
+          RowBox[{"count", ",", "3"}], "}"}]}], "]"}], "]"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"count", ">", "0"}]}]}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", "max_", ",", "\"\<Real\>\"", 
+     ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics", "[", 
+     RowBox[{
+      RowBox[{"BezierCurve", "[", 
+       RowBox[{"RandomReal", "[", 
+        RowBox[{"max", ",", 
+         RowBox[{"{", 
+          RowBox[{"count", ",", "2"}], "}"}]}], "]"}], "]"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"count", ">", "0"}]}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", "max_", ",", "2", ",", 
+     "\"\<Real\>\"", ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics", "[", 
+     RowBox[{
+      RowBox[{"BezierCurve", "[", 
+       RowBox[{"RandomReal", "[", 
+        RowBox[{"max", ",", 
+         RowBox[{"{", 
+          RowBox[{"count", ",", "2"}], "}"}]}], "]"}], "]"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"count", ">", "0"}]}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", "max_", ",", "3", ",", 
+     "\"\<Real\>\"", ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics3D", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics3D", "[", 
+     RowBox[{
+      RowBox[{"BezierCurve", "[", 
+       RowBox[{"RandomReal", "[", 
+        RowBox[{"max", ",", 
+         RowBox[{"{", 
+          RowBox[{"count", ",", "3"}], "}"}]}], "]"}], "]"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"count", ">", "0"}]}]}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", "max_", ",", "\"\<Integer\>\"",
+      ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics", "[", 
+     RowBox[{
+      RowBox[{"BezierCurve", "[", 
+       RowBox[{"RandomInteger", "[", 
+        RowBox[{"max", ",", 
+         RowBox[{"{", 
+          RowBox[{"count", ",", "2"}], "}"}]}], "]"}], "]"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"count", ">", "0"}]}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", "max_", ",", "2", ",", 
+     "\"\<Integer\>\"", ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics", "[", 
+     RowBox[{
+      RowBox[{"BezierCurve", "[", 
+       RowBox[{"RandomInteger", "[", 
+        RowBox[{"max", ",", 
+         RowBox[{"{", 
+          RowBox[{"count", ",", "2"}], "}"}]}], "]"}], "]"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"count", ">", "0"}]}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", "max_", ",", "3", ",", 
+     "\"\<Integer\>\"", ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics3D", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics3D", "[", 
+     RowBox[{
+      RowBox[{"BezierCurve", "[", 
+       RowBox[{"RandomInteger", "[", 
+        RowBox[{"max", ",", 
+         RowBox[{"{", 
+          RowBox[{"count", ",", "3"}], "}"}]}], "]"}], "]"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"count", ">", "0"}]}]}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{"Style", " ", "specifications"}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"lower_", ",", "upper_"}], "}"}], ",", "style_", ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"style", ",", 
+        RowBox[{"BezierCurve", "[", 
+         RowBox[{"RandomReal", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"lower", ",", "upper"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"count", ",", "2"}], "}"}]}], "]"}], "]"}]}], "}"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"count", ">", "0"}]}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"lower_", ",", "upper_"}], "}"}], ",", "2", ",", "style_", ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"style", ",", 
+        RowBox[{"BezierCurve", "[", 
+         RowBox[{"RandomReal", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"lower", ",", "upper"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"count", ",", "2"}], "}"}]}], "]"}], "]"}]}], "}"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"count", ">", "0"}]}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"lower_", ",", "upper_"}], "}"}], ",", "3", ",", "style_", ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics3D", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics3D", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"style", ",", 
+        RowBox[{"BezierCurve", "[", 
+         RowBox[{"RandomReal", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"lower", ",", "upper"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"count", ",", "3"}], "}"}]}], "]"}], "]"}]}], "}"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"count", ">", "0"}]}]}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"lower_", ",", "upper_"}], "}"}], ",", "\"\<Real\>\"", ",", 
+     "style_", ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"style", ",", 
+        RowBox[{"BezierCurve", "[", 
+         RowBox[{"RandomReal", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"lower", ",", "upper"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"count", ",", "2"}], "}"}]}], "]"}], "]"}]}], "}"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"count", ">", "0"}]}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"lower_", ",", "upper_"}], "}"}], ",", "2", ",", "\"\<Real\>\"",
+      ",", "style_", ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"style", ",", 
+        RowBox[{"BezierCurve", "[", 
+         RowBox[{"RandomReal", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"lower", ",", "upper"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"count", ",", "2"}], "}"}]}], "]"}], "]"}]}], "}"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"count", ">", "0"}]}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"lower_", ",", "upper_"}], "}"}], ",", "3", ",", "\"\<Real\>\"",
+      ",", "style_", ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics3D", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics3D", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"style", ",", 
+        RowBox[{"BezierCurve", "[", 
+         RowBox[{"RandomReal", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"lower", ",", "upper"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"count", ",", "3"}], "}"}]}], "]"}], "]"}]}], "}"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"count", ">", "0"}]}]}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"lower_", ",", "upper_"}], "}"}], ",", "\"\<Integer\>\"", ",", 
+     "style_", ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"style", ",", 
+        RowBox[{"BezierCurve", "[", 
+         RowBox[{"RandomInteger", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"lower", ",", "upper"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"count", ",", "2"}], "}"}]}], "]"}], "]"}]}], "}"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"count", ">", "0"}]}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"lower_", ",", "upper_"}], "}"}], ",", "2", ",", 
+     "\"\<Integer\>\"", ",", "style_", ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"style", ",", 
+        RowBox[{"BezierCurve", "[", 
+         RowBox[{"RandomInteger", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"lower", ",", "upper"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"count", ",", "2"}], "}"}]}], "]"}], "]"}]}], "}"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"count", ">", "0"}]}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"lower_", ",", "upper_"}], "}"}], ",", "3", ",", 
+     "\"\<Integer\>\"", ",", "style_", ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics3D", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics3D", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"style", ",", 
+        RowBox[{"BezierCurve", "[", 
+         RowBox[{"RandomInteger", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"lower", ",", "upper"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"count", ",", "3"}], "}"}]}], "]"}], "]"}]}], "}"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"count", ">", "0"}]}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", "max_", ",", "style_", ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"style", ",", 
+        RowBox[{"BezierCurve", "[", 
+         RowBox[{"RandomReal", "[", 
+          RowBox[{"max", ",", 
+           RowBox[{"{", 
+            RowBox[{"count", ",", "2"}], "}"}]}], "]"}], "]"}]}], "}"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"count", ">", "0"}]}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", "max_", ",", "2", ",", 
+     "style_", ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"style", ",", 
+        RowBox[{"BezierCurve", "[", 
+         RowBox[{"RandomReal", "[", 
+          RowBox[{"max", ",", 
+           RowBox[{"{", 
+            RowBox[{"count", ",", "2"}], "}"}]}], "]"}], "]"}]}], "}"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"count", ">", "0"}]}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", "max_", ",", "3", ",", 
+     "style_", ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics3D", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics3D", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"style", ",", 
+        RowBox[{"BezierCurve", "[", 
+         RowBox[{"RandomReal", "[", 
+          RowBox[{"max", ",", 
+           RowBox[{"{", 
+            RowBox[{"count", ",", "3"}], "}"}]}], "]"}], "]"}]}], "}"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"count", ">", "0"}]}]}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", "max_", ",", "\"\<Real\>\"", 
+     ",", "style_", ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"style", ",", 
+        RowBox[{"BezierCurve", "[", 
+         RowBox[{"RandomReal", "[", 
+          RowBox[{"max", ",", 
+           RowBox[{"{", 
+            RowBox[{"count", ",", "2"}], "}"}]}], "]"}], "]"}]}], "}"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"count", ">", "0"}]}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", "max_", ",", "2", ",", 
+     "\"\<Real\>\"", ",", "style_", ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"style", ",", 
+        RowBox[{"BezierCurve", "[", 
+         RowBox[{"RandomReal", "[", 
+          RowBox[{"max", ",", 
+           RowBox[{"{", 
+            RowBox[{"count", ",", "2"}], "}"}]}], "]"}], "]"}]}], "}"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"count", ">", "0"}]}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", "max_", ",", "3", ",", 
+     "\"\<Real\>\"", ",", "style_", ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics3D", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics3D", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"style", ",", 
+        RowBox[{"BezierCurve", "[", 
+         RowBox[{"RandomReal", "[", 
+          RowBox[{"max", ",", 
+           RowBox[{"{", 
+            RowBox[{"count", ",", "3"}], "}"}]}], "]"}], "]"}]}], "}"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"count", ">", "0"}]}]}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", "max_", ",", "\"\<Integer\>\"",
+      ",", "style_", ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"style", ",", 
+        RowBox[{"BezierCurve", "[", 
+         RowBox[{"RandomInteger", "[", 
+          RowBox[{"max", ",", 
+           RowBox[{"{", 
+            RowBox[{"count", ",", "2"}], "}"}]}], "]"}], "]"}]}], "}"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"count", ">", "0"}]}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", "max_", ",", "2", ",", 
+     "\"\<Integer\>\"", ",", "style_", ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"style", ",", 
+        RowBox[{"BezierCurve", "[", 
+         RowBox[{"RandomInteger", "[", 
+          RowBox[{"max", ",", 
+           RowBox[{"{", 
+            RowBox[{"count", ",", "2"}], "}"}]}], "]"}], "]"}]}], "}"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"count", ">", "0"}]}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", "max_", ",", "3", ",", 
+     "\"\<Integer\>\"", ",", "style_", ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics3D", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics3D", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"style", ",", 
+        RowBox[{"BezierCurve", "[", 
+         RowBox[{"RandomInteger", "[", 
+          RowBox[{"max", ",", 
+           RowBox[{"{", 
+            RowBox[{"count", ",", "3"}], "}"}]}], "]"}], "]"}]}], "}"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"count", ">", "0"}]}]}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{"Multiple", " ", "bezier", " ", "curves"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"lower_", ",", "upper_"}], "}"}], ",", 
+     RowBox[{"n_", "?", "IntegerQ"}], ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics", "[", 
+     RowBox[{
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{"BezierCurve", "[", 
+         RowBox[{"RandomReal", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"lower", ",", "upper"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"count", ",", "2"}], "}"}]}], "]"}], "]"}], ",", 
+        RowBox[{"{", "n", "}"}]}], "]"}], ",", "options"}], "]"}], "/;", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"count", ">", "0"}], "\[And]", 
+      RowBox[{"n", ">", "0"}]}], ")"}]}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"lower_", ",", "upper_"}], "}"}], ",", "2", ",", 
+     RowBox[{"n_", "?", "IntegerQ"}], ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics", "[", 
+     RowBox[{
+      RowBox[{"BezierCurve", "[", 
+       RowBox[{"RandomReal", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"lower", ",", "upper"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"count", ",", "2"}], "}"}]}], "]"}], "]"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"count", ">", "0"}], "\[And]", 
+      RowBox[{"n", ">", "0"}]}], ")"}]}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"lower_", ",", "upper_"}], "}"}], ",", "3", ",", 
+     RowBox[{"n_", "?", "IntegerQ"}], ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics3D", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics3D", "[", 
+     RowBox[{
+      RowBox[{"BezierCurve", "[", 
+       RowBox[{"RandomReal", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"lower", ",", "upper"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"count", ",", "3"}], "}"}]}], "]"}], "]"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"count", ">", "0"}], "\[And]", 
+      RowBox[{"n", ">", "0"}]}], ")"}]}]}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"lower_", ",", "upper_"}], "}"}], ",", "\"\<Real\>\"", ",", 
+     RowBox[{"n_", "?", "IntegerQ"}], ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics", "[", 
+     RowBox[{
+      RowBox[{"BezierCurve", "[", 
+       RowBox[{"RandomReal", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"lower", ",", "upper"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"count", ",", "2"}], "}"}]}], "]"}], "]"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"count", ">", "0"}], "\[And]", 
+      RowBox[{"n", ">", "0"}]}], ")"}]}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"lower_", ",", "upper_"}], "}"}], ",", "2", ",", "\"\<Real\>\"",
+      ",", 
+     RowBox[{"n_", "?", "IntegerQ"}], ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics", "[", 
+     RowBox[{
+      RowBox[{"BezierCurve", "[", 
+       RowBox[{"RandomReal", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"lower", ",", "upper"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"count", ",", "2"}], "}"}]}], "]"}], "]"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"count", ">", "0"}], "\[And]", 
+      RowBox[{"n", ">", "0"}]}], ")"}]}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"lower_", ",", "upper_"}], "}"}], ",", "3", ",", "\"\<Real\>\"",
+      ",", 
+     RowBox[{"n_", "?", "IntegerQ"}], ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics3D", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics3D", "[", 
+     RowBox[{
+      RowBox[{"BezierCurve", "[", 
+       RowBox[{"RandomReal", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"lower", ",", "upper"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"count", ",", "3"}], "}"}]}], "]"}], "]"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"count", ">", "0"}], "\[And]", 
+      RowBox[{"n", ">", "0"}]}], ")"}]}]}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"lower_", ",", "upper_"}], "}"}], ",", "\"\<Integer\>\"", ",", 
+     RowBox[{"n_", "?", "IntegerQ"}], ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics", "[", 
+     RowBox[{
+      RowBox[{"BezierCurve", "[", 
+       RowBox[{"RandomInteger", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"lower", ",", "upper"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"count", ",", "2"}], "}"}]}], "]"}], "]"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"count", ">", "0"}], "\[And]", 
+      RowBox[{"n", ">", "0"}]}], ")"}]}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"lower_", ",", "upper_"}], "}"}], ",", "2", ",", 
+     "\"\<Integer\>\"", ",", 
+     RowBox[{"n_", "?", "IntegerQ"}], ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics", "[", 
+     RowBox[{
+      RowBox[{"BezierCurve", "[", 
+       RowBox[{"RandomInteger", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"lower", ",", "upper"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"count", ",", "2"}], "}"}]}], "]"}], "]"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"count", ">", "0"}], "\[And]", 
+      RowBox[{"n", ">", "0"}]}], ")"}]}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"lower_", ",", "upper_"}], "}"}], ",", "3", ",", 
+     "\"\<Integer\>\"", ",", 
+     RowBox[{"n_", "?", "IntegerQ"}], ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics3D", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics3D", "[", 
+     RowBox[{
+      RowBox[{"BezierCurve", "[", 
+       RowBox[{"RandomInteger", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"lower", ",", "upper"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"count", ",", "3"}], "}"}]}], "]"}], "]"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"count", ">", "0"}], "\[And]", 
+      RowBox[{"n", ">", "0"}]}], ")"}]}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", "max_", ",", 
+     RowBox[{"n_", "?", "IntegerQ"}], ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics", "[", 
+     RowBox[{
+      RowBox[{"BezierCurve", "[", 
+       RowBox[{"RandomReal", "[", 
+        RowBox[{"max", ",", 
+         RowBox[{"{", 
+          RowBox[{"count", ",", "2"}], "}"}]}], "]"}], "]"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"count", ">", "0"}], "\[And]", 
+      RowBox[{"n", ">", "0"}]}], ")"}]}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", "max_", ",", "2", ",", 
+     RowBox[{"n_", "?", "IntegerQ"}], ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics", "[", 
+     RowBox[{
+      RowBox[{"BezierCurve", "[", 
+       RowBox[{"RandomReal", "[", 
+        RowBox[{"max", ",", 
+         RowBox[{"{", 
+          RowBox[{"count", ",", "2"}], "}"}]}], "]"}], "]"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"count", ">", "0"}], "\[And]", 
+      RowBox[{"n", ">", "0"}]}], ")"}]}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", "max_", ",", "3", ",", 
+     RowBox[{"n_", "?", "IntegerQ"}], ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics3D", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics3D", "[", 
+     RowBox[{
+      RowBox[{"BezierCurve", "[", 
+       RowBox[{"RandomReal", "[", 
+        RowBox[{"max", ",", 
+         RowBox[{"{", 
+          RowBox[{"count", ",", "3"}], "}"}]}], "]"}], "]"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"count", ">", "0"}], "\[And]", 
+      RowBox[{"n", ">", "0"}]}], ")"}]}]}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", "max_", ",", "\"\<Real\>\"", 
+     ",", 
+     RowBox[{"n_", "?", "IntegerQ"}], ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics", "[", 
+     RowBox[{
+      RowBox[{"BezierCurve", "[", 
+       RowBox[{"RandomReal", "[", 
+        RowBox[{"max", ",", 
+         RowBox[{"{", 
+          RowBox[{"count", ",", "2"}], "}"}]}], "]"}], "]"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"count", ">", "0"}], "\[And]", 
+      RowBox[{"n", ">", "0"}]}], ")"}]}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", "max_", ",", "2", ",", 
+     "\"\<Real\>\"", ",", 
+     RowBox[{"n_", "?", "IntegerQ"}], ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics", "[", 
+     RowBox[{
+      RowBox[{"BezierCurve", "[", 
+       RowBox[{"RandomReal", "[", 
+        RowBox[{"max", ",", 
+         RowBox[{"{", 
+          RowBox[{"count", ",", "2"}], "}"}]}], "]"}], "]"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"count", ">", "0"}], "\[And]", 
+      RowBox[{"n", ">", "0"}]}], ")"}]}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", "max_", ",", "3", ",", 
+     "\"\<Real\>\"", ",", 
+     RowBox[{"n_", "?", "IntegerQ"}], ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics3D", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics3D", "[", 
+     RowBox[{
+      RowBox[{"BezierCurve", "[", 
+       RowBox[{"RandomReal", "[", 
+        RowBox[{"max", ",", 
+         RowBox[{"{", 
+          RowBox[{"count", ",", "3"}], "}"}]}], "]"}], "]"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"count", ">", "0"}], "\[And]", 
+      RowBox[{"n", ">", "0"}]}], ")"}]}]}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", "max_", ",", "\"\<Integer\>\"",
+      ",", 
+     RowBox[{"n_", "?", "IntegerQ"}], ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics", "[", 
+     RowBox[{
+      RowBox[{"BezierCurve", "[", 
+       RowBox[{"RandomInteger", "[", 
+        RowBox[{"max", ",", 
+         RowBox[{"{", 
+          RowBox[{"count", ",", "2"}], "}"}]}], "]"}], "]"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"count", ">", "0"}], "\[And]", 
+      RowBox[{"n", ">", "0"}]}], ")"}]}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", "max_", ",", "2", ",", 
+     "\"\<Integer\>\"", ",", 
+     RowBox[{"n_", "?", "IntegerQ"}], ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics", "[", 
+     RowBox[{
+      RowBox[{"BezierCurve", "[", 
+       RowBox[{"RandomInteger", "[", 
+        RowBox[{"max", ",", 
+         RowBox[{"{", 
+          RowBox[{"count", ",", "2"}], "}"}]}], "]"}], "]"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"count", ">", "0"}], "\[And]", 
+      RowBox[{"n", ">", "0"}]}], ")"}]}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", "max_", ",", "3", ",", 
+     "\"\<Integer\>\"", ",", 
+     RowBox[{"n_", "?", "IntegerQ"}], ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics3D", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics3D", "[", 
+     RowBox[{
+      RowBox[{"BezierCurve", "[", 
+       RowBox[{"RandomInteger", "[", 
+        RowBox[{"max", ",", 
+         RowBox[{"{", 
+          RowBox[{"count", ",", "3"}], "}"}]}], "]"}], "]"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"count", ">", "0"}], "\[And]", 
+      RowBox[{"n", ">", "0"}]}], ")"}]}]}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{"Style", " ", "specifications"}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"lower_", ",", "upper_"}], "}"}], ",", "style_", ",", 
+     RowBox[{"n_", "?", "IntegerQ"}], ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"style", ",", 
+        RowBox[{"BezierCurve", "[", 
+         RowBox[{"RandomReal", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"lower", ",", "upper"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"count", ",", "2"}], "}"}]}], "]"}], "]"}]}], "}"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"count", ">", "0"}], "\[And]", 
+      RowBox[{"n", ">", "0"}]}], ")"}]}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"lower_", ",", "upper_"}], "}"}], ",", "2", ",", "style_", ",", 
+     RowBox[{"n_", "?", "IntegerQ"}], ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"style", ",", 
+        RowBox[{"BezierCurve", "[", 
+         RowBox[{"RandomReal", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"lower", ",", "upper"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"count", ",", "2"}], "}"}]}], "]"}], "]"}]}], "}"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"count", ">", "0"}], "\[And]", 
+      RowBox[{"n", ">", "0"}]}], ")"}]}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"lower_", ",", "upper_"}], "}"}], ",", "3", ",", "style_", ",", 
+     RowBox[{"n_", "?", "IntegerQ"}], ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics3D", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics3D", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"style", ",", 
+        RowBox[{"BezierCurve", "[", 
+         RowBox[{"RandomReal", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"lower", ",", "upper"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"count", ",", "3"}], "}"}]}], "]"}], "]"}]}], "}"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"count", ">", "0"}], "\[And]", 
+      RowBox[{"n", ">", "0"}]}], ")"}]}]}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"lower_", ",", "upper_"}], "}"}], ",", "\"\<Real\>\"", ",", 
+     "style_", ",", 
+     RowBox[{"n_", "?", "IntegerQ"}], ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"style", ",", 
+        RowBox[{"BezierCurve", "[", 
+         RowBox[{"RandomReal", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"lower", ",", "upper"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"count", ",", "2"}], "}"}]}], "]"}], "]"}]}], "}"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"count", ">", "0"}], "\[And]", 
+      RowBox[{"n", ">", "0"}]}], ")"}]}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"lower_", ",", "upper_"}], "}"}], ",", "2", ",", "\"\<Real\>\"",
+      ",", "style_", ",", 
+     RowBox[{"n_", "?", "IntegerQ"}], ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"style", ",", 
+        RowBox[{"BezierCurve", "[", 
+         RowBox[{"RandomReal", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"lower", ",", "upper"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"count", ",", "2"}], "}"}]}], "]"}], "]"}]}], "}"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"count", ">", "0"}], "\[And]", 
+      RowBox[{"n", ">", "0"}]}], ")"}]}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"lower_", ",", "upper_"}], "}"}], ",", "3", ",", "\"\<Real\>\"",
+      ",", "style_", ",", 
+     RowBox[{"n_", "?", "IntegerQ"}], ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics3D", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics3D", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"style", ",", 
+        RowBox[{"BezierCurve", "[", 
+         RowBox[{"RandomReal", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"lower", ",", "upper"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"count", ",", "3"}], "}"}]}], "]"}], "]"}]}], "}"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"count", ">", "0"}], "\[And]", 
+      RowBox[{"n", ">", "0"}]}], ")"}]}]}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"lower_", ",", "upper_"}], "}"}], ",", "\"\<Integer\>\"", ",", 
+     "style_", ",", 
+     RowBox[{"n_", "?", "IntegerQ"}], ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"style", ",", 
+        RowBox[{"BezierCurve", "[", 
+         RowBox[{"RandomInteger", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"lower", ",", "upper"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"count", ",", "2"}], "}"}]}], "]"}], "]"}]}], "}"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"count", ">", "0"}], "\[And]", 
+      RowBox[{"n", ">", "0"}]}], ")"}]}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"lower_", ",", "upper_"}], "}"}], ",", "2", ",", 
+     "\"\<Integer\>\"", ",", "style_", ",", 
+     RowBox[{"n_", "?", "IntegerQ"}], ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"style", ",", 
+        RowBox[{"BezierCurve", "[", 
+         RowBox[{"RandomInteger", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"lower", ",", "upper"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"count", ",", "2"}], "}"}]}], "]"}], "]"}]}], "}"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"count", ">", "0"}], "\[And]", 
+      RowBox[{"n", ">", "0"}]}], ")"}]}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"lower_", ",", "upper_"}], "}"}], ",", "3", ",", 
+     "\"\<Integer\>\"", ",", "style_", ",", 
+     RowBox[{"n_", "?", "IntegerQ"}], ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics3D", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics3D", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"style", ",", 
+        RowBox[{"BezierCurve", "[", 
+         RowBox[{"RandomInteger", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"lower", ",", "upper"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"count", ",", "3"}], "}"}]}], "]"}], "]"}]}], "}"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"count", ">", "0"}], "\[And]", 
+      RowBox[{"n", ">", "0"}]}], ")"}]}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", "max_", ",", "style_", ",", 
+     RowBox[{"n_", "?", "IntegerQ"}], ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"style", ",", 
+        RowBox[{"BezierCurve", "[", 
+         RowBox[{"RandomReal", "[", 
+          RowBox[{"max", ",", 
+           RowBox[{"{", 
+            RowBox[{"count", ",", "2"}], "}"}]}], "]"}], "]"}]}], "}"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"count", ">", "0"}], "\[And]", 
+      RowBox[{"n", ">", "0"}]}], ")"}]}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", "max_", ",", "2", ",", 
+     "style_", ",", 
+     RowBox[{"n_", "?", "IntegerQ"}], ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"style", ",", 
+        RowBox[{"BezierCurve", "[", 
+         RowBox[{"RandomReal", "[", 
+          RowBox[{"max", ",", 
+           RowBox[{"{", 
+            RowBox[{"count", ",", "2"}], "}"}]}], "]"}], "]"}]}], "}"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"count", ">", "0"}], "\[And]", 
+      RowBox[{"n", ">", "0"}]}], ")"}]}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", "max_", ",", "3", ",", 
+     "style_", ",", 
+     RowBox[{"n_", "?", "IntegerQ"}], ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics3D", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics3D", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"style", ",", 
+        RowBox[{"BezierCurve", "[", 
+         RowBox[{"RandomReal", "[", 
+          RowBox[{"max", ",", 
+           RowBox[{"{", 
+            RowBox[{"count", ",", "3"}], "}"}]}], "]"}], "]"}]}], "}"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"count", ">", "0"}], "\[And]", 
+      RowBox[{"n", ">", "0"}]}], ")"}]}]}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", "max_", ",", "\"\<Real\>\"", 
+     ",", "style_", ",", 
+     RowBox[{"n_", "?", "IntegerQ"}], ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"style", ",", 
+        RowBox[{"BezierCurve", "[", 
+         RowBox[{"RandomReal", "[", 
+          RowBox[{"max", ",", 
+           RowBox[{"{", 
+            RowBox[{"count", ",", "2"}], "}"}]}], "]"}], "]"}]}], "}"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"count", ">", "0"}], "\[And]", 
+      RowBox[{"n", ">", "0"}]}], ")"}]}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", "max_", ",", "2", ",", 
+     "\"\<Real\>\"", ",", "style_", ",", 
+     RowBox[{"n_", "?", "IntegerQ"}], ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"style", ",", 
+        RowBox[{"BezierCurve", "[", 
+         RowBox[{"RandomReal", "[", 
+          RowBox[{"max", ",", 
+           RowBox[{"{", 
+            RowBox[{"count", ",", "2"}], "}"}]}], "]"}], "]"}]}], "}"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"count", ">", "0"}], "\[And]", 
+      RowBox[{"n", ">", "0"}]}], ")"}]}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", "max_", ",", "3", ",", 
+     "\"\<Real\>\"", ",", "style_", ",", 
+     RowBox[{"n_", "?", "IntegerQ"}], ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics3D", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics3D", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"style", ",", 
+        RowBox[{"BezierCurve", "[", 
+         RowBox[{"RandomReal", "[", 
+          RowBox[{"max", ",", 
+           RowBox[{"{", 
+            RowBox[{"count", ",", "3"}], "}"}]}], "]"}], "]"}]}], "}"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"count", ">", "0"}], "\[And]", 
+      RowBox[{"n", ">", "0"}]}], ")"}]}]}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", "max_", ",", "\"\<Integer\>\"",
+      ",", "style_", ",", 
+     RowBox[{"n_", "?", "IntegerQ"}], ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"style", ",", 
+        RowBox[{"BezierCurve", "[", 
+         RowBox[{"RandomInteger", "[", 
+          RowBox[{"max", ",", 
+           RowBox[{"{", 
+            RowBox[{"count", ",", "2"}], "}"}]}], "]"}], "]"}]}], "}"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"count", ">", "0"}], "\[And]", 
+      RowBox[{"n", ">", "0"}]}], ")"}]}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"RandomBezierCurve", "[", 
+    RowBox[{
+     RowBox[{"count_", "?", "IntegerQ"}], ",", "max_", ",", "2", ",", 
+     "\"\<Integer\>\"", ",", "style_", ",", 
+     RowBox[{"n_", "?", "IntegerQ"}], ",", 
+     RowBox[{"options", ":", 
+      RowBox[{"OptionsPattern", "[", "Graphics", "]"}]}]}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Graphics", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"style", ",", 
+        RowBox[{"BezierCurve", "[", 
+         RowBox[{"RandomInteger", "[", 
+          RowBox[{"max", ",", 
+           RowBox[{"{", 
+            RowBox[{"count", ",", "2"}], "}"}]}], "]"}], "]"}]}], "}"}], ",", 
+      "options"}], "]"}], "/;", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"count", ">", "0"}], "\[And]", 
+      RowBox[{"n", ">", "0"}]}], ")"}]}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"RandomBezierCurve", "[", 
+   RowBox[{
+    RowBox[{"count_", "?", "IntegerQ"}], ",", "max_", ",", "3", ",", 
+    "\"\<Integer\>\"", ",", "style_", ",", 
+    RowBox[{"n_", "?", "IntegerQ"}], ",", 
+    RowBox[{"options", ":", 
+     RowBox[{"OptionsPattern", "[", "Graphics3D", "]"}]}]}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"Graphics3D", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"style", ",", 
+       RowBox[{"BezierCurve", "[", 
+        RowBox[{"RandomInteger", "[", 
+         RowBox[{"max", ",", 
+          RowBox[{"{", 
+           RowBox[{"count", ",", "3"}], "}"}]}], "]"}], "]"}]}], "}"}], ",", 
+     "options"}], "]"}], "/;", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"count", ">", "0"}], "\[And]", 
+     RowBox[{"n", ">", "0"}]}], ")"}]}]}]}], "Input",
+ CellChangeTimes->{{3.8693409261335173`*^9, 3.8693409734600163`*^9}, {
+  3.8693410658124247`*^9, 3.8693411465577383`*^9}, {3.869341190245885*^9, 
+  3.8693412750097795`*^9}, {3.8693413301913137`*^9, 3.8693414751388783`*^9}, {
+  3.8693417365590353`*^9, 3.8693419694257336`*^9}, {3.8693423439101954`*^9, 
+  3.869342370575856*^9}, {3.8693424252210145`*^9, 3.869342686943328*^9}, {
+  3.8693427275049953`*^9, 3.869343045923644*^9}, {3.8693431926280766`*^9, 
+  3.869343193059063*^9}},
+ CellLabel->"In[1068]:=",
+ CellID->64883751,ExpressionUUID->"5bcac68e-76ab-4f83-b771-332d94d4f632"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -133,18 +1852,145 @@ documentation pages for examples."}], "MoreInfoText"], Background ->
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"MyFunction", "[", "arg", "]"}]], "UsageInputs",
+ RowBox[{"RandomBezierCurve", "[", 
+  RowBox[{
+   StyleBox["count", "TI"], ",", 
+   StyleBox["max", "TI"]}], "]"}]], "UsageInputs",
+ CellChangeTimes->{{3.869341478738846*^9, 3.869341529306464*^9}},
  FontFamily->"Source Sans Pro",
  CellTags->{"DefaultContent", "TabNext"},
  CellID->67839508,ExpressionUUID->"1654fb63-625c-46f0-a1c2-3f09694d9820"],
 
 Cell[TextData[{
- "explanation of what use of the argument ",
- StyleBox["arg", "TI"],
- " does."
+ "create a random Bezier curve through ",
+ Cell[BoxData[
+  StyleBox["count", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "38bcf003-1c75-4b97-a115-1970dad05165"],
+ " points with random real coordinates up to ",
+ Cell[BoxData[
+  StyleBox["max", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "a856248f-ca69-4e4a-80fb-e661cf6c7bca"]
 }], "UsageDescription",
+ CellChangeTimes->{{3.8693414980931177`*^9, 3.869341537919114*^9}},
  CellTags->{"DefaultContent", "TabNext"},
  CellID->746063541,ExpressionUUID->"35e94edd-e8d5-43b5-a65e-fbff1edc3544"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RandomBezierCurve", "[", 
+  RowBox[{
+   StyleBox["count", "TI"], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     StyleBox["lower", "TI"], ",", 
+     StyleBox["upper", "TI"]}], "}"}]}], "]"}]], "UsageInputs",
+ CellChangeTimes->{{3.869341478738846*^9, 3.869341569521798*^9}},
+ FontFamily->"Source Sans Pro",
+ CellTags->{"DefaultContent", "TabNext"},
+ CellID->148193887,ExpressionUUID->"2910e1ce-2d96-41e0-b2f2-6300518da6f1"],
+
+Cell[TextData[{
+ "create a random Bezier curve through ",
+ Cell[BoxData[
+  StyleBox["count", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "6a736255-0a96-45ab-a82a-cd67aa8158d6"],
+ " points with random real coordinates bounded by ",
+ Cell[BoxData[
+  StyleBox["lower", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "c3530118-b121-4969-b5df-fb5035483d5d"],
+ " and ",
+ Cell[BoxData[
+  StyleBox["upper", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "86bd26f8-717d-4149-852b-3d6cc737a3c8"]
+}], "UsageDescription",
+ CellChangeTimes->{{3.8693414980931177`*^9, 3.8693415775214715`*^9}},
+ CellTags->{"DefaultContent", "TabNext"},
+ CellID->69822902,ExpressionUUID->"c016cbbe-80be-437f-bf62-cda15466639a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RandomBezierCurve", "[", 
+  RowBox[{
+   StyleBox["count", "TI"], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     StyleBox["lower", "TI"], ",", 
+     StyleBox["upper", "TI"]}], "}"}], ",", 
+   StyleBox["dimension", "TI"]}], "]"}]], "UsageInputs",
+ CellChangeTimes->{{3.869341478738846*^9, 3.869341569521798*^9}, {
+  3.86934160312315*^9, 3.869341610276337*^9}},
+ FontFamily->"Source Sans Pro",
+ CellTags->{"DefaultContent", "TabNext"},
+ CellID->41839532,ExpressionUUID->"b5c9092b-9463-43ff-9daa-9f0497513ca8"],
+
+Cell[TextData[{
+ "create a random Bezier curve in ",
+ Cell[BoxData[
+  StyleBox["dimension", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "ba265852-b7e5-4d96-aabb-bd8ebf45eec6"],
+ " space through ",
+ Cell[BoxData[
+  StyleBox["count", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "971be2d9-980a-4357-80dc-5c1120d31768"],
+ " points with random real coordinates bounded by ",
+ Cell[BoxData[
+  StyleBox["lower", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "cb83b151-047e-46df-aa13-27d96df3cc72"],
+ " and ",
+ Cell[BoxData[
+  StyleBox["upper", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "1ed36b1c-eafc-467a-952c-a38c3ff75b52"]
+}], "UsageDescription",
+ CellChangeTimes->{{3.8693414980931177`*^9, 3.8693415775214715`*^9}, {
+  3.8693416180198607`*^9, 3.86934163542793*^9}},
+ CellTags->{"DefaultContent", "TabNext"},
+ CellID->643701351,ExpressionUUID->"f0414f57-04cb-4740-9f1a-fe541765b73c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RandomBezierCurve", "[", 
+  RowBox[{
+   StyleBox["curvespec", "TI"], ",", " ", 
+   StyleBox["randomspec", "TI"]}], "]"}]], "UsageInputs",
+ CellChangeTimes->{{3.869341478738846*^9, 3.869341569521798*^9}, {
+  3.86934160312315*^9, 3.869341610276337*^9}, {3.8693416529030657`*^9, 
+  3.8693417190152245`*^9}},
+ FontFamily->"Source Sans Pro",
+ CellTags->{"DefaultContent", "TabNext"},
+ CellID->19131793,ExpressionUUID->"dd8f3b23-0a4c-4ddf-8b12-82b6b35af392"],
+
+Cell[TextData[{
+ "create a random Bezier curve from ",
+ Cell[BoxData[
+  StyleBox["curvespec", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "a7d1d97f-e6c1-4c0c-921a-3e649f4f2250"],
+ " using a random function specified by ",
+ Cell[BoxData[
+  StyleBox["randomspec", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "41b3a4ac-2aaa-43ce-b52e-f3056c278691"]
+}], "UsageDescription",
+ CellChangeTimes->{{3.8693414980931177`*^9, 3.8693415775214715`*^9}, {
+  3.8693416180198607`*^9, 3.86934163542793*^9}, {3.8693416680869226`*^9, 
+  3.869341727451474*^9}},
+ CellTags->{"DefaultContent", "TabNext"},
+ CellID->179969291,ExpressionUUID->"92fdae8e-20bb-4843-9126-5f7f928ec358"]
 }, Open  ]]
 }, Open  ]],
 
@@ -185,13 +2031,16 @@ function, its development, and its usage.", "MoreInfoText"], Background ->
  CellTags->{"Details & Options", "Notes", "TemplateCellGroup"},
  CellID->447261062,ExpressionUUID->"4ca92215-bc0e-4277-959a-917ffd9c0d6e"],
 
-Cell["Additional information about usage and options.", "Notes",
+Cell["\<\
+RandomBezierCurve accepts the same options as Graphics and Graphics3D.\
+\>", "Notes",
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
        WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.8693419740122833`*^9, 3.8693419870644617`*^9}},
  CellTags->{"DefaultContent", "TabNext"},
  CellID->422531486,ExpressionUUID->"0dc0797b-ab31-4a0c-ba0c-8054fabb0df5"]
 }, Open  ]]
@@ -360,24 +2209,470 @@ Cell["Basic Examples", "Subsection",
  CellTags->"DefaultContent",
  CellID->619504543,ExpressionUUID->"7cc98ba5-59d3-4f76-b88c-4cc93a613af0"],
 
-Cell["Text about the example:", "Text",
+Cell["Make a random Bezier curve with ten random points:", "Text",
+ CellChangeTimes->{{3.8693419897300754`*^9, 3.8693420223404236`*^9}},
  CellTags->"DefaultContent",
  CellID->586099280,ExpressionUUID->"beab6695-ef63-46c2-bd44-8641e0e903a5"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"MyFunction", "[", 
-  RowBox[{"x", ",", "y"}], "]"}]], "Input",
- CellTags->"DefaultContent",
- CellLabel->"In[1]:= ",
- CellID->298664010,ExpressionUUID->"fe4c1f68-2de2-4177-8b6d-245920eb43b2"],
+ RowBox[{"RandomBezierCurve", "[", 
+  RowBox[{"10", ",", "10"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8693419957523937`*^9, 3.8693420131862993`*^9}},
+ CellLabel->"In[540]:=",
+ CellID->578728821,ExpressionUUID->"ccf7af71-034b-434f-b9fd-1380c4a0e4c6"],
 
 Cell[BoxData[
- RowBox[{"x", " ", "y"}]], "Output",
- CellTags->"DefaultContent",
- CellLabel->"Out[1]= ",
- CellID->832981051,ExpressionUUID->"19fc090f-548f-4f91-a19c-8ac031ae2982"]
+ GraphicsBox[
+  BezierCurveBox[{{6.271778217634392, 7.53086621543202}, {3.051132252261697, 
+   7.011984488818783}, {6.017700150596696, 7.7047871078891035`}, {
+   9.68751451441555, 1.851307599913273}, {7.8172213199127505`, 
+   2.7345946205599088`}, {7.680775928427643, 1.4973226085834153`}, {
+   3.1999042195341705`, 0.5068201604432883}, {7.5923525598398385`, 
+   1.1783272461817234`}, {5.123353905350221, 9.575654896673854}, {
+   5.983715816888985, 4.022968398210802}}]]], "Output",
+ CellChangeTimes->{{3.869342006862215*^9, 3.8693420134852924`*^9}},
+ CellLabel->"Out[540]=",
+ CellID->67583460,ExpressionUUID->"b3454df2-cad1-49cd-88be-8bea9df4e78a"]
+}, Open  ]],
+
+Cell["Generate a random 3D Bezier curve with 24 points:", "Text",
+ CellChangeTimes->{{3.869342036880375*^9, 3.869342043287523*^9}},
+ CellID->893268309,ExpressionUUID->"092f6212-66a6-43da-b405-f81ee103994e"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RandomBezierCurve", "[", 
+  RowBox[{"10", ",", "24", ",", "3"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8693419957523937`*^9, 3.8693420131862993`*^9}, {
+  3.8693420440275173`*^9, 3.869342053589686*^9}},
+ CellLabel->"In[541]:=",
+ CellID->219007868,ExpressionUUID->"6d41d6a1-fa79-4681-8b72-0df5c092fe70"],
+
+Cell[BoxData[
+ Graphics3DBox[
+  BezierCurve3DBox[{{6.603190282147981, 2.0623656946845443`, 
+   22.360528112877688`}, {23.131770054885138`, 9.241495539158855, 
+   15.315365304502613`}, {15.41881570413868, 7.262487466077715, 
+   9.825934424222972}, {0.12537770994466868`, 14.110504117892447`, 
+   13.783831902907622`}, {23.18071834375047, 1.5201554069161318`, 
+   21.3949151500739}, {2.478258211213749, 5.07961867454927, 
+   20.525867436936146`}, {23.185088115069362`, 5.255011703286364, 
+   5.717571927130173}, {15.832383659257111`, 20.421006607020054`, 
+   19.83434267794773}, {5.071061887189309, 3.357612802932504, 
+   5.021851977424397}, {9.807155638632388, 23.80883749289498, 
+   15.893571933531796`}}],
+  ImageSize->{377.3684575571961, 356.0796293842442},
+  ImageSizeRaw->Automatic,
+  ViewPoint->{3.0538822974882383`, -1.4419592945024837`, 0.21108364713037797`},
+  ViewVertical->{0.23685243707957837`, -0.5990999950829662, 
+   0.7648399302736845}]], "Output",
+ CellChangeTimes->{3.8693420539876814`*^9},
+ CellLabel->"Out[541]=",
+ CellID->611094086,ImageCache->GraphicsData["CompressedBitmap", "\<\
+eJydfQu830Vx75KcR8IjCc+QGJID4RF5BhXMDQhHoYAPromCYq31jyhCLRJe
+glLwgI8KggFUkJcBRPFRTX1VEDCoYEWqobbX2ofNbW1vr+3H4u3b2+vNZXe+
+Mzvf3fkd/Nz/5xM453d+/9nZ+c7OzM7O7p565sXnvOm8My8+96wzp06+8MwN
+55x71kVTJ51/4dOP5u6Q0pxHn/53x1Qae/rn7Sl1//nz/J80d3Tffff99Nxz
+z91+9tlnp78rz+Tvf1p+nMx/33beeeflv+d/D1522WX596m99tor/a17/4fl
+x3mbL7/88vzeU6C54bbbblv01re+desFF1yw6aqrrvJf+UH5cWLjNddck1/N
+r6y7//7788/52RzhcPqJJ57I1DIn6W/c1/9YOMwtKHf56/lhfn/L2972tjQm
+NDK5/Gz1T37yk/RjR+P75cexTFs5nrnxxhvRtD6Sl+S/uTOZdOY2C+GvHbUn
+y4/juZX8Sv5q7nP+SgLJ/LX8vDybkGeZTJZpbjl5elulyUwjfyfLNr87V76W
+X8+PCxTzKpyZ6yKIv3Kkviuk9DsqLMhHZZj/n3aUZ7k1Q/q/O1JP9DLL3xuX
+r+XOK4JpJ3nmFYBIPS6k8ndUyfL3Jqv4C4r5s3OgDdscqW8LKdU/lbsjZUgu
+CJTiLx2pbwkpr5e52XkBggtjpfiRo/aovJJFpFxk5ucHIO4a6IMn9Y1e8pnJ
+HQMQdw/04S8cqUfKj+O5qU5VdwyQ3DNQij939Lb0Msvv7BwguWegFJ7Uw1Vg
+XlV3CZBcHCjFnzlSD/YCy2QXBEguCZTiTx2pB0RgXlVNYAsCLJfGmvFDR/J+
+eaVV2YUBnMsCzfCkfk9ItcN7UYDk8kAz/sSR+lIss90CJFcESvEDR+oLQio3
+4Yf37gGSU4FSeFKfj2W1e4DkfoFS/DdHarOQalV1jwDE/QOl+GNH6rNCqlXV
+PQMED4j14Y8ctc/0ks/c7BWAeFCgD57Up8qPsSdaHCC5KlCK7zt6nxTW1BPl
+7+W29w6QPDhQij90pD4hpFpVXRIgeUigFJ7Uvb3AsqyXBkgeFijFk47UPVVg
+XlULG0sDOI8INGOro3e3sNbq67MCLFfHmvE9R22TvKIqmznMPdknQPJI1ozC
+rCd1p5Bq3dHyAMnnBkrxXUfq9l78mcMVAZJHBUrxB47UrSL+0B2tCOA8mntZ
+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
+n7lgeYf/B2fAH+4=\
+\>", "ImageResolution" -> \
+120.],ExpressionUUID->"63ec17ff-7b8c-4bcb-83ff-d5b21e5d04cf"]
 }, Open  ]]
 }, Open  ]],
 
@@ -427,9 +2722,2135 @@ Cell["Possible Issues", "Subsection",
  CellTags->"DefaultContent",
  CellID->471245215,ExpressionUUID->"a5855edb-c309-49d9-b288-f065f6268bb4"],
 
+Cell[CellGroupData[{
+
 Cell["Neat Examples", "Subsection",
  CellTags->"DefaultContent",
- CellID->303071976,ExpressionUUID->"8f78ce15-1120-4c32-9f26-e5e22874a71d"]
+ CellID->303071976,ExpressionUUID->"8f78ce15-1120-4c32-9f26-e5e22874a71d"],
+
+Cell[BoxData[
+ RowBox[{"Graphics", "[", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Hue", "[", 
+       RowBox[{"RandomReal", "[", "]"}], "]"}], ",", 
+      RowBox[{"BezierCurve", "[", 
+       RowBox[{"RandomReal", "[", 
+        RowBox[{"1", ",", 
+         RowBox[{"{", 
+          RowBox[{"4", ",", "2"}], "}"}]}], "]"}], "]"}]}], "}"}], ",", 
+    RowBox[{"{", "30", "}"}]}], "]"}], "]"}]], "Input",
+ CellID->292187582,ExpressionUUID->"d01d6705-4699-443c-97ff-314501aed776"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RandomBezierCurve", "[", 
+  RowBox[{"5", ",", "5"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8693422061886673`*^9, 3.8693422140482025`*^9}},
+ CellLabel->"In[542]:=",
+ CellID->396449003,ExpressionUUID->"361b8c45-0491-4d09-a038-b578110dc34f"],
+
+Cell[BoxData[
+ GraphicsBox[
+  BezierCurveBox[{{4.94884214845025, 3.6978650747612622`}, {3.250388362346138,
+    0.7927463679878644}, {4.628612638827859, 3.115965574013691}, {
+   2.1078514949323077`, 4.604332746483287}, {2.9497585360686207`, 
+   1.839491985095596}}]]], "Output",
+ CellChangeTimes->{3.869342214660205*^9},
+ CellLabel->"Out[542]=",
+ CellID->264565943,ExpressionUUID->"fb2a969f-1919-482e-9cd0-5d1a22999608"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"AbsoluteOptions", "[", 
+  RowBox[{"RandomBezierCurve", "[", 
+   RowBox[{"5", ",", "5"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8693422799751205`*^9, 3.869342282499542*^9}},
+ CellLabel->"In[543]:=",
+ CellID->103509283,ExpressionUUID->"cb19b2bb-29e6-4d80-9280-0ce657166319"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"AlignmentPoint", "\[Rule]", "Center"}], ",", 
+   RowBox[{"AspectRatio", "\[Rule]", "1.634850104731492`"}], ",", 
+   RowBox[{"Axes", "\[Rule]", "False"}], ",", 
+   RowBox[{"AxesLabel", "\[Rule]", "None"}], ",", 
+   RowBox[{"AxesOrigin", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"2.5`", ",", "1.`"}], "}"}]}], ",", 
+   RowBox[{"AxesStyle", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", "}"}], ",", 
+      RowBox[{"{", "}"}]}], "}"}]}], ",", 
+   RowBox[{"Background", "\[Rule]", "None"}], ",", 
+   RowBox[{"BaselinePosition", "\[Rule]", "Automatic"}], ",", 
+   RowBox[{"BaseStyle", "\[Rule]", 
+    RowBox[{"{", "}"}]}], ",", 
+   RowBox[{"ColorOutput", "\[Rule]", "Automatic"}], ",", 
+   RowBox[{"ContentSelectable", "\[Rule]", "Automatic"}], ",", 
+   RowBox[{"CoordinatesToolOptions", "\[Rule]", "Automatic"}], ",", 
+   RowBox[{"DisplayFunction", "\[Rule]", "Identity"}], ",", 
+   RowBox[{"Epilog", "\[Rule]", 
+    RowBox[{"{", "}"}]}], ",", 
+   RowBox[{"FormatType", "\[Rule]", "TraditionalForm"}], ",", 
+   RowBox[{"Frame", "\[Rule]", "False"}], ",", 
+   RowBox[{"FrameLabel", "\[Rule]", "None"}], ",", 
+   RowBox[{"FrameStyle", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", "}"}], ",", 
+        RowBox[{"{", "}"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", "}"}], ",", 
+        RowBox[{"{", "}"}]}], "}"}]}], "}"}]}], ",", 
+   RowBox[{"FrameTicks", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"0.6000000000000001`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473299`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"0.8`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473299`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"1.`", ",", "\<\"1\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.012110000775788832`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"1.2000000000000002`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473299`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"1.4000000000000001`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473299`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"1.6`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473299`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"1.8`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473299`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"2.`", ",", "\<\"2\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.012110000775788832`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"2.2`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473299`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"2.4000000000000004`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473299`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"2.6`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473299`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"2.8000000000000003`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473299`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"3.`", ",", "\<\"3\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.012110000775788832`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"3.2`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473299`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"3.4000000000000004`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473299`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"3.6`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473299`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"3.8000000000000003`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473299`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"4.`", ",", "\<\"4\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.012110000775788832`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"4.2`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473299`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"4.4`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473299`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"4.6000000000000005`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473299`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"4.800000000000001`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473299`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"5.`", ",", "\<\"5\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.012110000775788832`", ",", "0.`"}], "}"}]}], "}"}]}], 
+         "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"0.6000000000000001`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473299`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"0.8`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473299`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"1.`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.012110000775788832`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"1.2000000000000002`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473299`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"1.4000000000000001`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473299`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"1.6`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473299`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"1.8`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473299`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"2.`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.012110000775788832`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"2.2`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473299`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"2.4000000000000004`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473299`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"2.6`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473299`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"2.8000000000000003`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473299`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"3.`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.012110000775788832`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"3.2`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473299`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"3.4000000000000004`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473299`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"3.6`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473299`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"3.8000000000000003`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473299`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"4.`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.012110000775788832`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"4.2`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473299`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"4.4`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473299`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"4.6000000000000005`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473299`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"4.800000000000001`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473299`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"5.`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.012110000775788832`", ",", "0.`"}], "}"}]}], "}"}]}], 
+         "}"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"2.1`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473298`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"2.2`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473298`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"2.3000000000000003`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473298`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"2.4000000000000004`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473298`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"2.5`", ",", "\<\"2.5\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.01211000077578883`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"2.6`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473298`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"2.7`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473298`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"2.8000000000000003`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473298`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"2.9000000000000004`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473298`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"3.`", ",", "\<\"3.0\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.01211000077578883`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"3.1`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473298`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"3.2`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473298`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"3.3000000000000003`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473298`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"3.4000000000000004`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473298`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"3.5`", ",", "\<\"3.5\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.01211000077578883`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"3.6`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473298`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"3.7`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473298`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"3.8000000000000003`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473298`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"3.9000000000000004`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473298`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"4.`", ",", "\<\"4.0\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.01211000077578883`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"4.1000000000000005`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473298`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"4.2`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473298`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"4.3`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473298`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"4.4`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473298`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"4.5`", ",", "\<\"4.5\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.01211000077578883`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"4.6000000000000005`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473298`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"4.7`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473298`", ",", "0.`"}], "}"}]}], "}"}]}], 
+         "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"2.1`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473298`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"2.2`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473298`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"2.3000000000000003`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473298`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"2.4000000000000004`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473298`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"2.5`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.01211000077578883`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"2.6`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473298`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"2.7`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473298`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"2.8000000000000003`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473298`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"2.9000000000000004`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473298`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"3.`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.01211000077578883`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"3.1`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473298`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"3.2`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473298`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"3.3000000000000003`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473298`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"3.4000000000000004`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473298`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"3.5`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.01211000077578883`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"3.6`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473298`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"3.7`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473298`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"3.8000000000000003`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473298`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"3.9000000000000004`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473298`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"4.`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.01211000077578883`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"4.1000000000000005`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473298`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"4.2`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473298`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"4.3`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473298`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"4.4`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473298`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"4.5`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.01211000077578883`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"4.6000000000000005`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473298`", ",", "0.`"}], "}"}]}], "}"}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"4.7`", ",", "\<\"\"\>", ",", 
+            RowBox[{"{", 
+             RowBox[{"0.007266000465473298`", ",", "0.`"}], "}"}]}], "}"}]}], 
+         "}"}]}], "}"}]}], "}"}]}], ",", 
+   RowBox[{"FrameTicksStyle", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", "}"}], ",", 
+        RowBox[{"{", "}"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", "}"}], ",", 
+        RowBox[{"{", "}"}]}], "}"}]}], "}"}]}], ",", 
+   RowBox[{"GridLines", "\[Rule]", "None"}], ",", 
+   RowBox[{"GridLinesStyle", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", "}"}], ",", 
+      RowBox[{"{", "}"}]}], "}"}]}], ",", 
+   RowBox[{"ImageMargins", "\[Rule]", "0.`"}], ",", 
+   RowBox[{"ImagePadding", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"0.`", ",", "0.`"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0.`", ",", "0.`"}], "}"}]}], "}"}]}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"264.24440916615515`", ",", "432.`"}], "}"}]}], ",", 
+   RowBox[{"ImageSizeRaw", "\[Rule]", "Automatic"}], ",", 
+   RowBox[{"LabelStyle", "\[Rule]", 
+    RowBox[{"{", "}"}]}], ",", 
+   RowBox[{"Method", "\[Rule]", 
+    RowBox[{"{", "}"}]}], ",", 
+   RowBox[{"PlotLabel", "\[Rule]", "None"}], ",", 
+   RowBox[{"PlotRange", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"2.065894004512052`", ",", "4.713975066038088`"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0.5752836699061872`", ",", "4.978960011584022`"}], "}"}]}], 
+     "}"}]}], ",", 
+   RowBox[{"PlotRangeClipping", "\[Rule]", "False"}], ",", 
+   RowBox[{"PlotRangePadding", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"0.055168355448459216`", ",", "0.055168355448459216`"}], "}"}],
+       ",", 
+      RowBox[{"{", 
+       RowBox[{"0.05296162123052073`", ",", "0.05296162123052106`"}], "}"}]}],
+      "}"}]}], ",", 
+   RowBox[{"PlotRegion", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"0.`", ",", "1.`"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0.`", ",", "1.`"}], "}"}]}], "}"}]}], ",", 
+   RowBox[{"PreserveImageOptions", "\[Rule]", "Automatic"}], ",", 
+   RowBox[{"Prolog", "\[Rule]", 
+    RowBox[{"{", "}"}]}], ",", 
+   RowBox[{"RotateLabel", "\[Rule]", "True"}], ",", 
+   RowBox[{"Ticks", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"None", ",", "None"}], "}"}]}], ",", 
+   RowBox[{"TicksStyle", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", "}"}], ",", 
+      RowBox[{"{", "}"}]}], "}"}]}]}], "}"}]], "Output",
+ CellChangeTimes->{3.8693422831441097`*^9},
+ CellLabel->"Out[543]=",
+ CellID->611112940,ExpressionUUID->"171d555d-d0ba-4d3f-9d7e-55658d7fc5b3"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RandomBezierCurve", "[", 
+  RowBox[{"10", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "6"}], ",", "6"}], "}"}], ",", 
+   RowBox[{"Hue", "[", 
+    RowBox[{"RandomReal", "[", "]"}], "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8693423789447036`*^9, 3.8693423940842547`*^9}},
+ CellLabel->"In[583]:=",
+ CellID->150373074,ExpressionUUID->"4f4a7dc1-197e-4c54-99b1-5751f2a23ea7"],
+
+Cell[BoxData[
+ GraphicsBox[
+  {Hue[0.3855938761245936], 
+   BezierCurveBox[{{-1.8879541439064091`, 4.4965891906178435`}, {
+    0.26967717923486845`, -4.772797423428374}, {1.8167955843170915`, 
+    3.6310401545560183`}, {-0.35559182793597444`, -0.1774912984611703}, \
+{-1.9991018642868248`, -5.940788547517403}, {
+    5.978580117365119, -0.8797976993945937}, {
+    2.0061447781067194`, -3.191450066419268}, {-4.44799413988709, \
+-3.664749728888303}, {4.015659993321485, -0.4554807277464903}, {
+    3.378247869052892, 5.581230361864648}}]}]], "Output",
+ CellChangeTimes->{{3.869342394752245*^9, 3.869342407358631*^9}},
+ CellLabel->"Out[583]=",
+ CellID->6131841,ExpressionUUID->"a75d1f0d-5676-485f-b52b-82fb07e904f5"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RandomBezierCurve", "[", 
+  RowBox[{"10", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "6"}], ",", "6"}], "}"}], ",", 
+   RowBox[{"Hue", "[", 
+    RowBox[{"RandomReal", "[", "]"}], "]"}], ",", "5"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8693423789447036`*^9, 3.8693423940842547`*^9}, {
+  3.869343055039654*^9, 3.869343058711665*^9}},
+ CellLabel->"In[1064]:=",
+ CellID->726764542,ExpressionUUID->"8a672e66-7b64-4a30-8944-b3b8294cedb6"],
+
+Cell[BoxData[
+ GraphicsBox[
+  {Hue[0.8102125450942577], 
+   BezierCurveBox[{{-0.9989139644963672, -4.4203446419028545`}, {
+    2.317083826710128, -4.105603935326208}, {
+    3.8908817566909626`, -0.5328083122086795}, {
+    3.9602376116563995`, -5.763754425703077}, {-4.946523578671854, \
+-4.234482323631337}, {-1.9176859298912987`, -2.1291339687647266`}, \
+{-4.001591418957506, 5.10593236569899}, {0.9041760687632205, 
+    0.10228861042402926`}, {4.22901268730994, 
+    3.3183015087340486`}, {-5.7237865875445415`, 
+    1.7863713722383459`}}]}]], "Output",
+ CellChangeTimes->{3.869343059095647*^9},
+ CellLabel->"Out[1064]=",
+ CellID->363549197,ExpressionUUID->"19fb22a9-9869-4959-8f89-0f034653cb64"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RandomBezierCurve", "[", 
+  RowBox[{"9", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "6"}], ",", "6"}], "}"}], ",", "5"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8693423789447036`*^9, 3.8693423940842547`*^9}, {
+  3.869343055039654*^9, 3.869343058711665*^9}, {3.869343096953387*^9, 
+  3.8693431003923035`*^9}, {3.8693432897972174`*^9, 3.86934330835699*^9}},
+ CellLabel->"In[1145]:=",
+ CellID->528932821,ExpressionUUID->"06cc61ab-fb98-41e6-a5cd-b430bfe8c8c8"],
+
+Cell[BoxData[
+ GraphicsBox[{5, 
+   BezierCurveBox[{{4.645699578241633, -5.1298379501257685`}, {
+    1.2581792152788012`, 
+    1.2623919995341844`}, {-3.7632690100781474`, -5.169681411625358}, {
+    0.5199416606828713, 3.5216720681895737`}, {-2.49840906774015, 
+    0.9578131481548766}, {
+    3.629190004240453, -4.84018281076542}, {-2.716505121642818, \
+-5.272326521943608}, {3.417886077124251, 1.9582235227143627`}, {
+    2.6547881348546056`, -3.751795481449008}}]}]], "Output",
+ CellChangeTimes->{
+  3.8693431009913034`*^9, 3.869343200296647*^9, {3.8693432920762043`*^9, 
+   3.8693433096949797`*^9}},
+ CellLabel->"Out[1145]=",
+ CellID->1048655436,ExpressionUUID->"76c85d48-3216-4c2e-a22f-cd4386424f50"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Hold", "[", 
+  RowBox[{"RandomBezierCurve", "[", 
+   RowBox[{"10", ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "6"}], ",", "6"}], "}"}], ",", "5"}], "]"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.8693432094997454`*^9, 3.869343210562743*^9}},
+ CellLabel->"In[1142]:=",
+ CellID->49963156,ExpressionUUID->"93abe16c-d707-4116-bdce-7557b48c8cbb"],
+
+Cell[BoxData[
+ RowBox[{"Hold", "[", 
+  RowBox[{"RandomBezierCurve", "[", 
+   RowBox[{"10", ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "6"}], ",", "6"}], "}"}], ",", "5"}], "]"}], 
+  "]"}]], "Output",
+ CellChangeTimes->{3.869343211698738*^9},
+ CellLabel->"Out[1142]=",
+ CellID->631854675,ExpressionUUID->"1bda6063-39b2-47bc-a34c-72b8394e9b3d"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"MapAt", "[", 
+  RowBox[{"Evaluate", ",", 
+   RowBox[{"Hold", "[", 
+    RowBox[{"RandomBezierCurve", "[", 
+     RowBox[{"10", ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "6"}], ",", "6"}], "}"}], ",", "5"}], "]"}], "]"}], ",", 
+   "1"}], "]"}]], "Input",
+ NumberMarks->False,
+ CellLabel->"In[1143]:=",
+ CellID->608466657,ExpressionUUID->"819de80e-9d7f-400b-96b5-1362dcce22b5"],
+
+Cell[BoxData[
+ RowBox[{"Hold", "[", 
+  GraphicsBox[{5, 
+    BezierCurveBox[{{2.322926465876378, 
+     3.6515808684913758`}, {-0.9663602217088432, 3.866155046771027}, {
+     5.853445447639217, -0.5322611621323539}, {2.045773800624044, 
+     1.4653309774903533`}, {-3.577376689292885, 4.89117584660762}, {
+     0.26264393133772757`, 0.9953663145166267}, {-2.145577017039468, 
+     3.979608434603417}, {1.8558777809611904`, 
+     4.0482974693615645`}, {-5.6608932832601475`, 3.3367102614671253`}, {
+     4.181353490377923, -2.179906493822916}}]}], "]"}]], "Output",
+ CellChangeTimes->{3.869343224844325*^9},
+ CellLabel->"Out[1143]=",
+ CellID->53530842,ExpressionUUID->"27e12c1b-47b2-4d02-bf39-9a6ecd1a26d8"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Table", "[", 
+  RowBox[{"BezierCurve", "[", 
+   RowBox[{"RandomReal", "[", 
+    RowBox[{"5", ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "5"}], "}"}]}], "]"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.869343114163924*^9, 3.8693431309518976`*^9}},
+ CellLabel->"In[1066]:=",
+ CellID->77598777,ExpressionUUID->"c1328a30-ee01-43c9-a6db-2f24961a6940"],
+
+Cell[BoxData[
+ RowBox[{"BezierCurve", "[", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+     "0.03499165900648471`", ",", "1.8800281847653544`", ",", 
+      "3.087185338027993`", ",", "0.9526623758408057`", ",", 
+      "4.388049643289998`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+     "0.7419251637871715`", ",", "2.443549542615929`", ",", 
+      "0.521018186772249`", ",", "3.6317005591204214`", ",", 
+      "2.602518475303124`"}], "}"}]}], "}"}], "]"}]], "Output",
+ CellChangeTimes->{3.8693431324988937`*^9},
+ CellLabel->"Out[1066]=",
+ CellID->52733308,ExpressionUUID->"04930043-3e31-4651-9ba2-e86dcccf56fd"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Table", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Hue", "[", 
+      RowBox[{"RandomReal", "[", "]"}], "]"}], ",", 
+     RowBox[{"BezierCurve", "[", 
+      RowBox[{"RandomReal", "[", 
+       RowBox[{"1", ",", 
+        RowBox[{"{", 
+         RowBox[{"4", ",", "2"}], "}"}]}], "]"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", "30", "}"}]}], "]"}]], "Input",
+ CellLabel->"In[1067]:=",
+ CellID->424432614,ExpressionUUID->"34eb097e-d265-4648-b9fd-739b0fcd2021"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[<|"color" -> Hue[0.37110026968229426`]|>,
+      "HueColorSwatchTemplate"], ",", 
+     RowBox[{"BezierCurve", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0.7754254670525955`", ",", "0.396308598968925`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.7240458591256074`", ",", "0.1850550733306764`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.8514152307861895`", ",", "0.5235232932840121`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.38715664198800637`", ",", "0.757323771434125`"}], "}"}]}],
+        "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[<|"color" -> Hue[0.6606895655523486]|>,
+      "HueColorSwatchTemplate"], ",", 
+     RowBox[{"BezierCurve", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0.7048038105094356`", ",", "0.9302458094139359`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.36728269955529513`", ",", "0.6770113449573532`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.9295544640493991`", ",", "0.04306021502569979`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.7173300268518288`", ",", "0.7808703295654205`"}], "}"}]}],
+        "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[<|"color" -> Hue[0.7880074892239337]|>,
+      "HueColorSwatchTemplate"], ",", 
+     RowBox[{"BezierCurve", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0.23304747074848575`", ",", "0.4716154414979674`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.05089575030539306`", ",", "0.3088890430634834`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.912614063137327`", ",", "0.4596292666880051`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.4803302070850768`", ",", "0.8070803895068721`"}], "}"}]}],
+        "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[<|"color" -> Hue[0.42310998535425215`]|>,
+      "HueColorSwatchTemplate"], ",", 
+     RowBox[{"BezierCurve", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0.6369020826385947`", ",", "0.6657098780630137`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.42675757450132856`", ",", "0.9639866454980626`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.750347101743513`", ",", "0.3155126493348148`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.14404126535675377`", ",", "0.5508048521126909`"}], 
+         "}"}]}], "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[<|"color" -> Hue[0.12451489601898835`]|>,
+      "HueColorSwatchTemplate"], ",", 
+     RowBox[{"BezierCurve", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0.031119361697664383`", ",", "0.7735762013749465`"}], "}"}],
+         ",", 
+        RowBox[{"{", 
+         RowBox[{"0.4842337290199237`", ",", "0.640205255040194`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.1752045418280579`", ",", "0.7727165485911336`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.692029165200857`", ",", "0.03261592287089199`"}], "}"}]}],
+        "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[<|"color" -> Hue[0.6763324681758953]|>,
+      "HueColorSwatchTemplate"], ",", 
+     RowBox[{"BezierCurve", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0.5311523036171897`", ",", "0.5426896266999293`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.778847935318256`", ",", "0.9378574426617183`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.4420148282973728`", ",", "0.34049549603053353`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.8724370310478808`", ",", "0.9039550641264187`"}], "}"}]}],
+        "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[<|"color" -> Hue[0.6456925419514286]|>,
+      "HueColorSwatchTemplate"], ",", 
+     RowBox[{"BezierCurve", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0.10427972807265751`", ",", "0.8293399993796133`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.10321360964080672`", ",", "0.2916973264106195`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.6375999231390688`", ",", "0.8498364399000828`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.8034351284598196`", ",", "0.09010171422512281`"}], 
+         "}"}]}], "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[<|"color" -> Hue[0.8164633444278198]|>,
+      "HueColorSwatchTemplate"], ",", 
+     RowBox[{"BezierCurve", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0.796681346767482`", ",", "0.49142503945983274`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.07712480307060332`", ",", "0.49048871214790024`"}], "}"}],
+         ",", 
+        RowBox[{"{", 
+         RowBox[{"0.7239084577164465`", ",", "0.462782732703783`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.7192899354419384`", ",", "0.9783803808597742`"}], "}"}]}],
+        "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[<|"color" -> Hue[0.7399805545363667]|>,
+      "HueColorSwatchTemplate"], ",", 
+     RowBox[{"BezierCurve", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0.0959247337057112`", ",", "0.1455083909689372`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.6111013846159155`", ",", "0.35935435704798624`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.9942845828268552`", ",", "0.21477669089376294`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.06413355532375098`", ",", "0.329496290200197`"}], "}"}]}],
+        "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[<|"color" -> Hue[0.8132037311005893]|>,
+      "HueColorSwatchTemplate"], ",", 
+     RowBox[{"BezierCurve", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0.9958409501776966`", ",", "0.05095438196655855`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.47481825994220395`", ",", "0.1319208373882168`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.1328168839247872`", ",", "0.9705643857452979`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.771240287697361`", ",", "0.45407109550234326`"}], "}"}]}],
+        "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[<|"color" -> Hue[0.6220305733210607]|>,
+      "HueColorSwatchTemplate"], ",", 
+     RowBox[{"BezierCurve", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0.8292683996012331`", ",", "0.0749060693585577`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.5802247291387519`", ",", "0.020034738182700185`"}], "}"}],
+         ",", 
+        RowBox[{"{", 
+         RowBox[{"0.2307487113140363`", ",", "0.42218266628468726`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.6043828805115148`", ",", "0.0788976680434359`"}], "}"}]}],
+        "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[<|"color" -> Hue[0.9094492522153617]|>,
+      "HueColorSwatchTemplate"], ",", 
+     RowBox[{"BezierCurve", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0.06178647542991356`", ",", "0.5655105753666256`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.46469406118385415`", ",", "0.36096413263246063`"}], "}"}],
+         ",", 
+        RowBox[{"{", 
+         RowBox[{"0.1400875839903346`", ",", "0.7026930957348347`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.8532534548669353`", ",", "0.7087016803359734`"}], "}"}]}],
+        "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[<|"color" -> Hue[0.18697613066902785`]|>,
+      "HueColorSwatchTemplate"], ",", 
+     RowBox[{"BezierCurve", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0.36382894236410435`", ",", "0.3910080931851352`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.3634982599604828`", ",", "0.01278932510369235`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.5694410698984238`", ",", "0.3348011008824441`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.6526029399261863`", ",", "0.7372402650593897`"}], "}"}]}],
+        "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[<|"color" -> Hue[0.9112915270028923]|>,
+      "HueColorSwatchTemplate"], ",", 
+     RowBox[{"BezierCurve", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0.49732707509636476`", ",", "0.6878116767174509`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.6003827230952692`", ",", "0.496568547983095`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.015907714726301814`", ",", "0.7964050303028605`"}], "}"}],
+         ",", 
+        RowBox[{"{", 
+         RowBox[{"0.3624419347004275`", ",", "0.3714612766239438`"}], "}"}]}],
+        "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[<|"color" -> Hue[0.4258512096218199]|>,
+      "HueColorSwatchTemplate"], ",", 
+     RowBox[{"BezierCurve", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0.3481472367684211`", ",", "0.1650465270115744`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.7493136262343172`", ",", "0.24523986666672504`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.27556710254450123`", ",", "0.9788010683799311`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.572640451208358`", ",", "0.5306382310201125`"}], "}"}]}], 
+       "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[<|"color" -> Hue[0.4802111565727214]|>,
+      "HueColorSwatchTemplate"], ",", 
+     RowBox[{"BezierCurve", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0.24203300254627869`", ",", "0.4176708840052896`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.8819277764385371`", ",", "0.5046508205439599`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.37157047715039626`", ",", "0.14182486980264852`"}], "}"}],
+         ",", 
+        RowBox[{"{", 
+         RowBox[{"0.17369510979168434`", ",", "0.27348613418795686`"}], 
+         "}"}]}], "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[<|"color" -> Hue[0.9523454967564593]|>,
+      "HueColorSwatchTemplate"], ",", 
+     RowBox[{"BezierCurve", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0.8206654579020494`", ",", "0.3738851583683589`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.338680878827591`", ",", "0.16366487752873615`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.21295723092304542`", ",", "0.6804172210434123`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.45288259254064656`", ",", "0.17741840307227053`"}], 
+         "}"}]}], "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[<|"color" -> Hue[0.3212790106004637]|>,
+      "HueColorSwatchTemplate"], ",", 
+     RowBox[{"BezierCurve", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0.9442004945779183`", ",", "0.3751019002790348`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.1372477541646353`", ",", "0.9751482984782553`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.8685333343085408`", ",", "0.5982964963506499`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.5361751764560183`", ",", "0.6815275198745567`"}], "}"}]}],
+        "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[<|"color" -> Hue[0.36344902344684127`]|>,
+      "HueColorSwatchTemplate"], ",", 
+     RowBox[{"BezierCurve", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0.5743086984256902`", ",", "0.13233431916717864`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.5675720217390856`", ",", "0.036368711461946646`"}], "}"}],
+         ",", 
+        RowBox[{"{", 
+         RowBox[{"0.9922011199981051`", ",", "0.30797447227566654`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.9998542809629605`", ",", "0.07057217932216098`"}], 
+         "}"}]}], "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[<|"color" -> Hue[0.3944378949580549]|>,
+      "HueColorSwatchTemplate"], ",", 
+     RowBox[{"BezierCurve", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0.7134360658196843`", ",", "0.6157924343649348`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.4214213286287325`", ",", "0.8965284336416972`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.5810877698989065`", ",", "0.21745372819324338`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.32595897502271964`", ",", "0.9880373822027375`"}], 
+         "}"}]}], "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[<|"color" -> Hue[0.5173061469128561]|>,
+      "HueColorSwatchTemplate"], ",", 
+     RowBox[{"BezierCurve", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0.5274243105128227`", ",", "0.00933475273260509`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.5570261168267776`", ",", "0.04448968671241382`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.9944713621629702`", ",", "0.6723239790203184`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.7495402829003914`", ",", "0.7070582406377621`"}], "}"}]}],
+        "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[<|"color" -> Hue[0.266541700357408]|>,
+      "HueColorSwatchTemplate"], ",", 
+     RowBox[{"BezierCurve", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0.40237856125958515`", ",", "0.504939120900628`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.5748541102605333`", ",", "0.04082861504571311`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.3772275005837935`", ",", "0.2822909529070954`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.4400849280850534`", ",", "0.4020131908428999`"}], "}"}]}],
+        "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[<|"color" -> Hue[0.9511109098926922]|>,
+      "HueColorSwatchTemplate"], ",", 
+     RowBox[{"BezierCurve", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0.4922085986782827`", ",", "0.4668147263503104`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.12726606025196174`", ",", "0.3844314335729677`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.9065768153194951`", ",", "0.30255632608644945`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.08320666873813809`", ",", "0.6056666500358019`"}], 
+         "}"}]}], "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[<|"color" -> Hue[0.11735460951263654`]|>,
+      "HueColorSwatchTemplate"], ",", 
+     RowBox[{"BezierCurve", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0.5554142102272042`", ",", "0.0682908628681389`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.07160622479316237`", ",", "0.9848595297276899`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.7492662907226963`", ",", "0.2403450534990883`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.7355835318385`", ",", "0.39009969626755137`"}], "}"}]}], 
+       "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[<|"color" -> Hue[0.43789135160361914`]|>,
+      "HueColorSwatchTemplate"], ",", 
+     RowBox[{"BezierCurve", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0.34330925462757556`", ",", "0.8462546712148227`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.7815254448628497`", ",", "0.9186912257283348`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.24036875407797864`", ",", "0.04505494027715451`"}], "}"}],
+         ",", 
+        RowBox[{"{", 
+         RowBox[{"0.5915391717130918`", ",", "0.18744482812568442`"}], 
+         "}"}]}], "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[<|"color" -> Hue[0.7759730871886219]|>,
+      "HueColorSwatchTemplate"], ",", 
+     RowBox[{"BezierCurve", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0.08919132813996389`", ",", "0.6281367533023448`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.2465247877876915`", ",", "0.18265208959291845`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.4334411057852585`", ",", "0.6543194843821216`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.8075984006485595`", ",", "0.3024407929094082`"}], "}"}]}],
+        "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[<|"color" -> Hue[0.8708502394893511]|>,
+      "HueColorSwatchTemplate"], ",", 
+     RowBox[{"BezierCurve", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0.5300364007655702`", ",", "0.2886175463489604`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.6669197414111445`", ",", "0.13899913727428026`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.20057687841686245`", ",", "0.0910802951974532`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.43711004005670784`", ",", "0.2681135812530082`"}], 
+         "}"}]}], "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[<|"color" -> Hue[0.13402689635729748`]|>,
+      "HueColorSwatchTemplate"], ",", 
+     RowBox[{"BezierCurve", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0.9721006265692234`", ",", "0.17274278087857153`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.21289372010552587`", ",", "0.5935355746627193`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.4473316903209512`", ",", "0.9171374594751043`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.18524773036882602`", ",", "0.7261739227973381`"}], 
+         "}"}]}], "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[<|"color" -> Hue[0.6559421811787187]|>,
+      "HueColorSwatchTemplate"], ",", 
+     RowBox[{"BezierCurve", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0.6108513640772035`", ",", "0.9123133647724386`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.9211138187759669`", ",", "0.49035460167471`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.4959697196459476`", ",", "0.06321500350137588`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.16235768697584896`", ",", "0.1453368580793981`"}], 
+         "}"}]}], "}"}], "]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[<|"color" -> Hue[0.6367249371083801]|>,
+      "HueColorSwatchTemplate"], ",", 
+     RowBox[{"BezierCurve", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0.201243142109224`", ",", "0.11878581910843522`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.4827106213912695`", ",", "0.4320553439421224`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.588862916081748`", ",", "0.550218542035479`"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"0.8413374186873941`", ",", "0.03527087183076061`"}], 
+         "}"}]}], "}"}], "]"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.8693431644920616`*^9},
+ CellLabel->"Out[1067]=",
+ CellID->180088083,ExpressionUUID->"2f4db8e3-12ff-4492-8eb2-4208a9254958"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"RandomBezierCurve", "[", 
+   RowBox[{
+    RowBox[{"count_", "?", "IntegerQ"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"lower_", ",", "upper_"}], "}"}], ",", 
+    RowBox[{"n_", "?", "IntegerQ"}], ",", 
+    RowBox[{"options", ":", 
+     RowBox[{"OptionsPattern", "[", "Graphics", "]"}]}]}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"Graphics", "[", 
+    RowBox[{
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"BezierCurve", "[", 
+        RowBox[{"RandomReal", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"lower", ",", "upper"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"count", ",", "2"}], "}"}]}], "]"}], "]"}], ",", 
+       RowBox[{"{", "n", "}"}]}], "]"}], ",", "options"}], "]"}], "/;", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"count", ">", "0"}], "\[And]", 
+     RowBox[{"n", ">", "0"}]}], ")"}]}]}]], "Input",
+ CellChangeTimes->{3.8693432747535577`*^9},
+ CellID->15922543,ExpressionUUID->"0c6e4123-e0c2-4fef-ba4f-5967e47508bc"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Table", "[", 
+  RowBox[{
+   RowBox[{"BezierCurve", "[", 
+    RowBox[{"RandomReal", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"5", ",", "2"}], "}"}]}], "]"}], "]"}], ",", 
+   RowBox[{"{", "11", "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8693433213655224`*^9, 3.869343335110532*^9}, {
+  3.8693435681213956`*^9, 3.869343569688404*^9}},
+ CellLabel->"In[1147]:=",
+ CellID->144182807,ExpressionUUID->"1abba1f5-325a-4b75-b3a1-232d02ad20f6"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"BezierCurve", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "5.171121426025628`"}], ",", 
+        RowBox[{"-", "5.956468728962115`"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "3.1146304934822737`"}], ",", "7.074878366653749`"}], 
+       "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "6.417133378139219`"}], ",", "6.534727753692344`"}], 
+       "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0.2550425256374744`", ",", "3.944875804829799`"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "9.451168391687027`"}], ",", 
+        RowBox[{"-", "8.314000071025337`"}]}], "}"}]}], "}"}], "]"}], ",", 
+   RowBox[{"BezierCurve", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "7.189680709531757`"}], ",", 
+        RowBox[{"-", "8.76330882510635`"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "3.5770046123695174`"}], ",", "1.5862637129890516`"}], 
+       "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "4.498548896848217`"}], ",", "9.810112294924885`"}], 
+       "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"6.940827958396341`", ",", "2.2366751837057706`"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"6.113116176901492`", ",", "1.3924003054858645`"}], "}"}]}], 
+     "}"}], "]"}], ",", 
+   RowBox[{"BezierCurve", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "6.357720046616706`"}], ",", "0.18177563696436394`"}], 
+       "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "0.33652916928210885`"}], ",", 
+        RowBox[{"-", "7.92312611314367`"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "8.616689103320429`"}], ",", "9.966317512976076`"}], 
+       "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "7.367567291069207`"}], ",", "3.426711090105343`"}], 
+       "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "5.349701448167096`"}], ",", 
+        RowBox[{"-", "9.158598019407638`"}]}], "}"}]}], "}"}], "]"}], ",", 
+   RowBox[{"BezierCurve", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "1.5547015178733439`"}], ",", 
+        RowBox[{"-", "3.7792880467426784`"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"7.997901044865266`", ",", "1.6528781521574842`"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "3.160504219032134`"}], ",", "3.992009620320097`"}], 
+       "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "1.8520619848704634`"}], ",", 
+        RowBox[{"-", "8.753598381736104`"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "4.549402102220675`"}], ",", "8.511781234375817`"}], 
+       "}"}]}], "}"}], "]"}], ",", 
+   RowBox[{"BezierCurve", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"3.946891628035509`", ",", 
+        RowBox[{"-", "4.5748939943220215`"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"5.384093080353054`", ",", "9.410962609195671`"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0.37829123741481396`", ",", 
+        RowBox[{"-", "0.2677029497560248`"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"5.571036145514519`", ",", "9.056625227728318`"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "1.4227453000446246`"}], ",", 
+        RowBox[{"-", "7.032060971049727`"}]}], "}"}]}], "}"}], "]"}], ",", 
+   RowBox[{"BezierCurve", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"3.813492008022756`", ",", 
+        RowBox[{"-", "4.453997037886342`"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "5.51698652996205`"}], ",", 
+        RowBox[{"-", "2.450601152907449`"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"2.598489912551287`", ",", "8.838204012306534`"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "8.333009278188264`"}], ",", "9.514043794833292`"}], 
+       "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "0.8389220943352917`"}], ",", 
+        RowBox[{"-", "1.7314537014967577`"}]}], "}"}]}], "}"}], "]"}], ",", 
+   RowBox[{"BezierCurve", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "2.791124394568797`"}], ",", "2.2286298633989787`"}], 
+       "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"6.1204559410645345`", ",", "5.0596813886220815`"}], "}"}], 
+      ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "7.901769827473963`"}], ",", "3.583632166643504`"}], 
+       "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "0.38102787512914205`"}], ",", "0.44766754678710186`"}], 
+       "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "2.4554176839080135`"}], ",", "7.644152655227174`"}], 
+       "}"}]}], "}"}], "]"}], ",", 
+   RowBox[{"BezierCurve", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"4.853068279496313`", ",", 
+        RowBox[{"-", "1.6515422603948764`"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "4.926365552182638`"}], ",", 
+        RowBox[{"-", "4.764731511351336`"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"8.25850209128619`", ",", 
+        RowBox[{"-", "4.485975853755114`"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"8.201038717212178`", ",", "2.270204663673205`"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"7.168369380603906`", ",", "1.5943384049671607`"}], "}"}]}], 
+     "}"}], "]"}], ",", 
+   RowBox[{"BezierCurve", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "5.3302695355556935`"}], ",", "9.227378727472669`"}], 
+       "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"2.201436806661931`", ",", 
+        RowBox[{"-", "6.9046680991330724`"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "2.3890471572460505`"}], ",", "6.805664340952589`"}], 
+       "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "1.0761364424564306`"}], ",", "6.526018087273059`"}], 
+       "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"5.8281250330955885`", ",", 
+        RowBox[{"-", "7.925590113672428`"}]}], "}"}]}], "}"}], "]"}], ",", 
+   RowBox[{"BezierCurve", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "6.767980173988697`"}], ",", 
+        RowBox[{"-", "6.5413779184604905`"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "6.71728620665683`"}], ",", 
+        RowBox[{"-", "2.746305168735045`"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "6.475802886400402`"}], ",", 
+        RowBox[{"-", "4.002132352454424`"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"8.62307101724521`", ",", "8.970800144703574`"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"5.786133400016581`", ",", 
+        RowBox[{"-", "8.469531628907681`"}]}], "}"}]}], "}"}], "]"}], ",", 
+   RowBox[{"BezierCurve", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"5.555271350019389`", ",", 
+        RowBox[{"-", "8.295396374333322`"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"6.740736960311693`", ",", "9.930233874690998`"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "0.3888014142808984`"}], ",", 
+        RowBox[{"-", "5.094919985136002`"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"5.324223159312631`", ",", 
+        RowBox[{"-", "7.790371481115681`"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"4.491228865624798`", ",", "8.552741758187999`"}], "}"}]}], 
+     "}"}], "]"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.869343335564549*^9, 3.8693435706143937`*^9},
+ CellLabel->"Out[1147]=",
+ CellID->61383842,ExpressionUUID->"1a34ff62-89aa-4f99-b2e4-c14f302a85cc"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Graphics", "[", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"BezierCurve", "[", 
+     RowBox[{"RandomReal", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"5", ",", "2"}], "}"}]}], "]"}], "]"}], ",", 
+    RowBox[{"{", "11", "}"}]}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8693435752437086`*^9, 3.869343576640714*^9}},
+ CellLabel->"In[1148]:=",
+ CellID->50810761,ExpressionUUID->"20259ee0-894a-4abe-8a0c-49c62dd75707"],
+
+Cell[BoxData[
+ GraphicsBox[{
+   BezierCurveBox[{{-2.0941511675246183`, 
+    2.90246654935185}, {-1.6723200593953749`, 
+    3.2042700486201596`}, {-9.383109342798363, -1.2991396851999752`}, {
+    4.9887481450438855`, -9.97347018569588}, {-9.954302386659478, \
+-4.85621890216337}}], 
+   BezierCurveBox[{{2.0466242852204743`, 
+    8.718333349574252}, {-4.706670242492205, -1.7177669103629398`}, {
+    1.844504527379577, 
+    4.644690167141668}, {-2.419555902925037, -3.2453102942044367`}, {
+    5.773647644767536, 1.0844915617292692`}}], 
+   BezierCurveBox[{{4.96090349863988, -9.012366205047723}, {
+    5.327713708852222, -3.77961884663112}, {-6.486508505703661, \
+-9.938980632799748}, {6.137609403935855, 8.033254553851464}, {
+    0.8611972281129496, 0.924200983500949}}], 
+   BezierCurveBox[{{
+    3.2593306263264807`, -6.371879249909451}, {-4.139466521555416, 
+    4.492355216339959}, {
+    8.694530604441965, -1.9641266411981562`}, {-2.8333651397365536`, \
+-0.9245174361387924}, {-2.1833206670535397`, 0.05833995954807136}}], 
+   BezierCurveBox[{{
+    5.84472985051373, -2.0546879929404547`}, {-8.67424572550426, \
+-3.5291789128283746`}, {-8.401915887646364, 
+    5.734777205781128}, {-2.1079187713591025`, -2.468432550299241}, \
+{-6.321377521701564, -5.823109820684458}}], 
+   BezierCurveBox[{{9.621706063420497, -5.876376215660038}, {
+    4.948063055584669, -6.823076149114236}, {
+    2.2030728756874964`, -8.382422292311581}, {-4.291791674582683, \
+-4.684596555689353}, {7.5568321647366545`, 2.1367590347089447`}}], 
+   BezierCurveBox[{{-9.999903356126481, -8.96456820357158}, \
+{-2.2105355981498285`, 0.14817277019554354`}, {
+    8.067638790607312, -0.27998785607977084`}, {-2.423382156311561, 
+    9.634791882382359}, {-3.608323990309472, 6.13200584004656}}], 
+   BezierCurveBox[{{-2.241407172281672, -8.810113280604149}, {
+    7.107549348388886, 5.923987466232731}, {-3.072210878059053, 
+    4.127152766078524}, {-4.354550070830989, 0.49015017831889907`}, {
+    9.078649121812198, -6.759999139158182}}], 
+   BezierCurveBox[{{1.6556969642594908`, 6.807926205645451}, {
+    3.2379704378127485`, 5.308023195374602}, {-0.5914393706547294, 
+    1.943203186148864}, {-8.17862278962928, 4.119484739930748}, {
+    9.783106396828941, 6.723359410452964}}], 
+   BezierCurveBox[{{-4.541357703392762, -4.433528924786888}, \
+{-5.162750719171285, -2.915659336318601}, {6.411010551316451, 
+    4.602101476971534}, {
+    1.7392422999041912`, -4.695485592456691}, {-7.888322077541051, 
+    9.046094372521466}}], 
+   BezierCurveBox[{{-4.286931018007344, -6.555402292611603}, \
+{-3.3593378021804696`, 0.13858489713578592`}, {6.678008739599235, 
+    2.0885666602597084`}, {
+    7.6390669608791555`, -0.7442017454210372}, {-7.176974771590771, \
+-5.789378330384942}}]}]], "Output",
+ CellChangeTimes->{3.869343577011693*^9},
+ CellLabel->"Out[1148]=",
+ CellID->757149272,ExpressionUUID->"adfb3a22-9789-4b67-90f9-a6c4205ffe48"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"RandomBezierCurve", "[", 
+   RowBox[{
+    RowBox[{"count_", "?", "IntegerQ"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"lower_", ",", "upper_"}], "}"}], ",", 
+    RowBox[{"n_", "?", "IntegerQ"}], ",", 
+    RowBox[{"options", ":", 
+     RowBox[{"OptionsPattern", "[", "Graphics", "]"}]}]}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"Graphics", "[", 
+    RowBox[{
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"BezierCurve", "[", 
+        RowBox[{"RandomReal", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{"lower", ",", "upper"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"count", ",", "2"}], "}"}]}], "]"}], "]"}], ",", 
+       RowBox[{"{", "n", "}"}]}], "]"}], ",", "options"}], "]"}], "/;", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"count", ">", "0"}], "\[And]", 
+     RowBox[{"n", ">", "0"}]}], ")"}]}]}]], "Input",
+ CellID->503958569,ExpressionUUID->"e9c1d228-1f9c-4516-b7ef-68034be06e9a"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"RandomBezierCurve", "[", 
+   RowBox[{
+    RowBox[{"count_", "?", "IntegerQ"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"lower_", ",", "upper_"}], "}"}], ",", "2", ",", 
+    RowBox[{"n_", "?", "IntegerQ"}], ",", 
+    RowBox[{"options", ":", 
+     RowBox[{"OptionsPattern", "[", "Graphics", "]"}]}]}], "]"}], ":=", 
+  RowBox[{"Graphics", "[", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"BezierCurve", "[", 
+      RowBox[{"RandomReal", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"5", ",", "2"}], "}"}]}], "]"}], "]"}], ",", 
+     RowBox[{"{", "11", "}"}]}], "]"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.8693436095934343`*^9, 3.8693436282706633`*^9}, 
+   3.869343681070397*^9, {3.8693437464695716`*^9, 3.8693437516526747`*^9}},
+ CellLabel->"In[1155]:=",
+ CellID->64462312,ExpressionUUID->"e1b39510-115a-4970-ab92-938818e9284b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RandomBezierCurve", "[", 
+  RowBox[{"3", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", "2", ",", "7"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.869343629581673*^9, 3.869343643133078*^9}, {
+  3.8693437566309595`*^9, 3.8693437568159714`*^9}},
+ CellLabel->"In[1156]:=",
+ CellID->457596724,ExpressionUUID->"ab9b573e-c64c-4018-8b91-fbc451faf29b"],
+
+Cell[BoxData[
+ GraphicsBox[{7, 
+   BezierCurveBox[{{6.194704226940054, 1.8347524486467321`}, {
+    1.6859684194299192`, 
+    7.034682112917572}, {-4.556456043687, -9.986088130342349}}]}]], "Output",
+ CellChangeTimes->{{3.8693436432796173`*^9, 3.869343684021493*^9}, 
+   3.86934375725697*^9},
+ CellLabel->"Out[1156]=",
+ CellID->271491678,ExpressionUUID->"d1177b90-8041-4d8b-aed2-a35872c3245d"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Example Program", "Subsection",
+ CellChangeTimes->{{3.869343959631912*^9, 3.869343966170347*^9}},
+ CellID->317048687,ExpressionUUID->"8e4a3969-bf4f-4f54-942c-5bc26f0c6db3"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Graphics", "[", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Hue", "[", 
+       RowBox[{"RandomReal", "[", "]"}], "]"}], ",", 
+      RowBox[{"BezierCurve", "[", 
+       RowBox[{"RandomReal", "[", 
+        RowBox[{"1", ",", 
+         RowBox[{"{", 
+          RowBox[{"4", ",", "2"}], "}"}]}], "]"}], "]"}]}], "}"}], ",", 
+    RowBox[{"{", "30", "}"}]}], "]"}], "]"}]], "Input",
+ CellLabel->"In[1157]:=",
+ CellID->788792273,ExpressionUUID->"4590f21c-e650-4819-98f3-da4e3314af83"],
+
+Cell[BoxData[
+ GraphicsBox[{
+   {Hue[0.9225332159415454], 
+    BezierCurveBox[{{0.20976412901914765`, 0.12336169745691472`}, {
+     0.40085920008595277`, 0.5080650952957957}, {0.1538909504814312, 
+     0.7147032312852635}, {0.8947817903157598, 0.053146039648469534`}}]}, 
+   {Hue[0.6105790484404305], 
+    BezierCurveBox[{{0.4068738515020718, 0.5810873385280748}, {
+     0.8011787489084043, 0.5544109408876003}, {0.8783225600900466, 
+     0.8076193482922176}, {0.8654855685501988, 0.3543430080374781}}]}, 
+   {Hue[0.6991118617001297], 
+    BezierCurveBox[{{0.5285537803079134, 0.3769095139426024}, {
+     0.03009200701596826, 0.181059515067715}, {0.5317401488314013, 
+     0.6956968888448198}, {0.11138085569682588`, 0.6846253896766303}}]}, 
+   {Hue[0.6056412010652754], 
+    BezierCurveBox[{{0.8157590418320424, 0.6888862518118595}, {
+     0.49330683065474323`, 0.17352322514034468`}, {0.5955621463740493, 
+     0.5742954290737436}, {0.6613674802041831, 0.5038148503989968}}]}, 
+   {Hue[0.9077194915511262], 
+    BezierCurveBox[{{0.032450471868553876`, 0.7445036616114598}, {
+     0.8958023811257925, 0.8488873974968572}, {0.48867059994034756`, 
+     0.6635642588084498}, {0.37966238121103046`, 0.015074558544988736`}}]}, 
+   {Hue[0.23378474100963165`], 
+    BezierCurveBox[{{0.8568947767531285, 0.7019395858308952}, {
+     0.017807250407566144`, 0.32814087678568593`}, {0.25619586812328055`, 
+     0.7885294357867658}, {0.6606438053049835, 0.20048895576049408`}}]}, 
+   {Hue[0.16361549526381491`], 
+    BezierCurveBox[{{0.8276088407804132, 0.9640819043070099}, {
+     0.3860978259766039, 0.9530450092987679}, {0.04714670526907172, 
+     0.48340256542636384`}, {0.5944447706011458, 0.951310592600829}}]}, 
+   {Hue[0.004295449789904371], 
+    BezierCurveBox[{{0.05282676313466461, 0.5409599159786893}, {
+     0.8560323838422599, 0.17409763605496686`}, {0.10480516986509203`, 
+     0.1648463152208588}, {0.14666294843758587`, 0.9709050995247595}}]}, 
+   {Hue[0.2545977597060982], 
+    BezierCurveBox[{{0.9493001236296348, 0.5420378615640069}, {
+     0.7218690591739536, 0.06391590133490421}, {0.11024399652385863`, 
+     0.23426206981381514`}, {0.24906650551928622`, 0.9550711605274957}}]}, 
+   {Hue[0.928619867744398], 
+    BezierCurveBox[{{0.846168226576159, 0.9485330849765234}, {
+     0.3663395549325179, 0.09723558536147836}, {0.026157943226994718`, 
+     0.10460303839760732`}, {0.34039898853118733`, 0.992262655526402}}]}, 
+   {Hue[0.25916754666094244`], 
+    BezierCurveBox[{{0.7768014088694413, 0.7688402824394656}, {
+     0.153531600363203, 0.4964629959992508}, {0.5091421521091497, 
+     0.48845339546932176`}, {0.19967132678551924`, 0.43527230743765677`}}]}, 
+   {Hue[0.6769984364274695], 
+    BezierCurveBox[{{0.3839883251859382, 0.5997335919312312}, {
+     0.20878815208005652`, 0.9401423774493294}, {0.8868097866998756, 
+     0.0663168082122152}, {0.42459888833416803`, 0.3117009865162059}}]}, 
+   {Hue[0.9071716922134474], 
+    BezierCurveBox[{{0.31121965174257427`, 0.08800937313549406}, {
+     0.5931654557312227, 0.8756433497782528}, {0.8458128594097876, 
+     0.3614178038807807}, {0.8217163173766246, 0.009461030608762355}}]}, 
+   {Hue[0.7903860042914757], 
+    BezierCurveBox[{{0.961893009843175, 0.31479763440288355`}, {
+     0.7726347111884504, 0.6669810720145712}, {0.8543096962240888, 
+     0.6315807611834718}, {0.5203221337803294, 0.8514405894147219}}]}, 
+   {Hue[0.6640310298035947], 
+    BezierCurveBox[{{0.9604683145040704, 0.3625494316891966}, {
+     0.5719174243580925, 0.6357458121921371}, {0.0021233137049099238`, 
+     0.4055830151401336}, {0.880210008574656, 0.4532244143607589}}]}, 
+   {Hue[0.914797462488818], 
+    BezierCurveBox[{{0.6837373099287516, 0.28849791974825045`}, {
+     0.2829742971570801, 0.833921930605042}, {0.43559894894683926`, 
+     0.032927314413188746`}, {0.16677750224035326`, 0.3121480932518772}}]}, 
+   {Hue[0.5774801755993457], 
+    BezierCurveBox[{{0.3106351003680303, 0.6817396927356172}, {
+     0.4894302799243777, 0.95847663178584}, {0.9732480707797673, 
+     0.07249046765104716}, {0.36582659738775125`, 0.521408148801938}}]}, 
+   {Hue[0.9163523930033406], 
+    BezierCurveBox[{{0.6453563261006443, 0.1515244579013062}, {
+     0.31607826302828723`, 0.099187015624707}, {0.4059351079523261, 
+     0.6776181154546641}, {0.639470141716191, 0.24977517059032706`}}]}, 
+   {Hue[0.6144124687667876], 
+    BezierCurveBox[{{0.9327659695081927, 0.871975658696744}, {
+     0.12802374871212363`, 0.939946889813758}, {0.622187356798027, 
+     0.3975325476121203}, {0.7161225245579135, 0.43147733896852936`}}]}, 
+   {Hue[0.9466446896381935], 
+    BezierCurveBox[{{0.0021912154008651985`, 0.7969555301923146}, {
+     0.6087232530399802, 0.16017658628081421`}, {0.9306993962213437, 
+     0.32704093394961564`}, {0.3576923031567687, 0.5609231331054816}}]}, 
+   {Hue[0.16818581755142037`], 
+    BezierCurveBox[{{0.016479953194623365`, 0.2844014390137113}, {
+     0.9865257802411924, 0.9325957971866707}, {0.05959362210947061, 
+     0.3882981517866759}, {0.37102553971221774`, 0.36744253430699914`}}]}, 
+   {Hue[0.5908520556686776], 
+    BezierCurveBox[{{0.18530952832304193`, 0.09983763257796352}, {
+     0.23918653838746584`, 0.1741492816452006}, {0.43730352228185243`, 
+     0.7202823819217623}, {0.009783502219985474, 0.5690066629540582}}]}, 
+   {Hue[0.7279721206122316], 
+    BezierCurveBox[{{0.41253431109000815`, 0.8093034125028982}, {
+     0.0424919587359458, 0.4360569608259697}, {0.9523060331481195, 
+     0.6326361130492131}, {0.28847176654999096`, 0.6751841035622967}}]}, 
+   {Hue[0.10138616002256984`], 
+    BezierCurveBox[{{0.3153865423250344, 0.03916747524122188}, {
+     0.7893974146342071, 0.11326518625035775`}, {0.06967708604631717, 
+     0.5492160546868496}, {0.8724681082538717, 0.6993656576601157}}]}, 
+   {Hue[0.03110757924036789], 
+    BezierCurveBox[{{0.4781315151062482, 0.48824061839186816`}, {
+     0.061021974899834186`, 0.6227633281409692}, {0.9977084365653848, 
+     0.5841759834300935}, {0.1237969698686665, 0.8584213352540639}}]}, 
+   {Hue[0.6890940785652662], 
+    BezierCurveBox[{{0.6067070554972416, 0.4303289656950249}, {
+     0.3126325215688479, 0.14173950243489486`}, {0.798031538506029, 
+     0.7931314635112736}, {0.6800540766456367, 0.018582669371206118`}}]}, 
+   {Hue[0.27019592620460076`], 
+    BezierCurveBox[{{0.6780083729735458, 0.45802851300743486`}, {
+     0.7639404501128264, 0.8742558497606907}, {0.6729040487474474, 
+     0.1897122223226182}, {0.6718026809691009, 0.6602535015924442}}]}, 
+   {Hue[0.037651959555295544`], 
+    BezierCurveBox[{{0.8277341145038326, 0.9239429545105016}, {
+     0.5956746847127887, 0.06952017903686247}, {0.5822355298622162, 
+     0.8257866521556136}, {0.8710184661799394, 0.8343043274302779}}]}, 
+   {Hue[0.9185933581483785], 
+    BezierCurveBox[{{0.32100826398179594`, 0.7146200831640541}, {
+     0.004490701347475756, 0.6859396153995636}, {0.27256526177186813`, 
+     0.4676326930204975}, {0.6597535141422479, 0.6901481254207433}}]}, 
+   {Hue[0.06554067027460797], 
+    BezierCurveBox[{{0.11671696527391284`, 0.30511417203783675`}, {
+     0.8286647927527393, 0.618940851246849}, {0.32832730497357643`, 
+     0.6371491022716154}, {0.896224216832703, 
+     0.39528046459207977`}}]}}]], "Output",
+ CellChangeTimes->{3.8693439811158266`*^9},
+ CellLabel->"Out[1157]=",
+ CellID->902910147,ExpressionUUID->"9216d54f-6586-4d18-bd68-55217d92eb4e"]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{"ClearAll", "[", "RandomBezierCurve", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"RandomBezierCurve", "[", "pointcount_", "]"}], ":=", 
+  RowBox[{"Graphics", "[", 
+   RowBox[{"{", 
+    RowBox[{"BezierCurve", "[", 
+     RowBox[{"RandomReal", "[", 
+      RowBox[{"1", ",", 
+       RowBox[{"{", 
+        RowBox[{"pointcount", ",", "2"}], "}"}]}], "]"}], "]"}], "}"}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"RandomBezierCurve", "[", 
+   RowBox[{"pointcount_", ",", "n_"}], "]"}], ":=", 
+  RowBox[{"Graphics", "[", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"BezierCurve", "[", 
+       RowBox[{"RandomReal", "[", 
+        RowBox[{"1", ",", 
+         RowBox[{"{", 
+          RowBox[{"pointcount", ",", "2"}], "}"}]}], "]"}], "]"}], "}"}], ",", 
+     RowBox[{"{", "n", "}"}]}], "]"}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.869343995690283*^9, 3.8693441661237087`*^9}, {
+  3.8693442023681545`*^9, 3.8693442588561273`*^9}, {3.8693442928855567`*^9, 
+  3.8693443939089417`*^9}, {3.8693444557228518`*^9, 3.8693445147841597`*^9}, {
+  3.869344596637288*^9, 3.869344597269301*^9}},
+ CellLabel->"In[1203]:=",
+ CellID->5488593,ExpressionUUID->"4fc3861b-8442-4918-b39e-794de0225724"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RandomBezierCurve", "[", "3", "]"}]], "Input",
+ CellChangeTimes->{{3.869344169013278*^9, 3.869344184960136*^9}, {
+  3.8693442465779853`*^9, 3.869344247948987*^9}, {3.869344325447647*^9, 
+  3.8693443586431465`*^9}},
+ CellLabel->"In[1196]:=",
+ CellID->557862795,ExpressionUUID->"38f2830c-5ba5-4508-9fac-8852dd6c1094"],
+
+Cell[BoxData[
+ GraphicsBox[
+  BezierCurveBox[{{0.7140138318038172, 0.4601728412529711}, {
+   0.5607734374013005, 0.5368281128664298}, {0.25764941854336465`, 
+   0.1065028461931361}}]]], "Output",
+ CellChangeTimes->{3.8693444064717803`*^9, 3.8693444791965775`*^9},
+ CellLabel->"Out[1196]=",
+ CellID->69350867,ExpressionUUID->"820cd0ec-4dd5-43aa-b9de-bdce16686376"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RandomBezierCurve", "[", 
+  RowBox[{"5", ",", "2"}], "]"}]], "Input",
+ CellChangeTimes->{{3.869344169013278*^9, 3.869344184960136*^9}, {
+  3.8693442465779853`*^9, 3.869344247948987*^9}, {3.869344325447647*^9, 
+  3.8693443586431465`*^9}, {3.8693444850040874`*^9, 3.8693444875941143`*^9}},
+ CellLabel->"In[1197]:=",
+ CellID->241898387,ExpressionUUID->"4b05aaeb-ee39-40f6-8d75-8f284138cba5"],
+
+Cell[BoxData[
+ GraphicsBox[{
+   BezierCurveBox[{{0.6021093824069172, 0.32896639600079913`}, {
+    0.29647900944179795`, 0.6459217250406033}, {0.4252916210130626, 
+    0.8536699640764287}, {0.9405191237099373, 0.21726845102633408`}, {
+    0.03153240627101028, 0.9576139096730849}}], 
+   BezierCurveBox[{{0.33961887014680237`, 0.0518684052017413}, {
+    0.585395168783873, 0.6421756962605112}, {0.8694442356225267, 
+    0.657817174646349}, {0.43938394336122566`, 0.400624599435782}, {
+    0.8552542474723721, 0.49258304016170906`}}]}]], "Output",
+ CellChangeTimes->{3.869344488634101*^9},
+ CellLabel->"Out[1197]=",
+ CellID->368701986,ExpressionUUID->"5eb5a4de-0cbf-4ed9-a9aa-78069dba2d2b"]
+}, Open  ]]
+}, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1676,8 +6097,9 @@ WyabbVsUI30dbWyR5mC4Y6npzAQV7A7CHW8e0ORJGTUV01ufdzMGR2GbTwVmCj3d8A9cd0NNHoiRcl\
     "Contexts" -> {
      "FunctionResource`", "FunctionResource`DefinitionNotebook`"}, 
     "DefaultContentMethod" -> "Legacy"}, "ToolsOpen" -> True, "StatusMessage" -> 
-  "", "SubmissionReviewData" -> {"Review" -> False}},
+  "", "SubmissionReviewData" -> {"Review" -> False}, "AutoUpdate" -> True},
 CreateCellID->True,
+Magnification:>0.9 Inherited,
 FrontEndVersion->"13.1 for Microsoft Windows (64-bit) (June 16, 2022)",
 StyleDefinitions->Notebook[{
    Cell[
