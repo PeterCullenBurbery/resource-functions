@@ -1,35 +1,29 @@
 Notebook[{
 
 Cell[CellGroupData[{
-Cell["MixedEulerianGraphQ", "Title",
+Cell["SymbolicArray", "Title",
  Deletable->False,
- TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
        WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
- CellChangeTimes->{{3.8700221690549517`*^9, 3.870022174824606*^9}, {
-  3.87002330084009*^9, 3.8700233015157547`*^9}},
+ CellChangeTimes->{{3.870123361031012*^9, 3.8701233635007925`*^9}},
  CellTags->{"Name", "TemplateCell", "Title", "TabNext"},
- CellID->863144461,ExpressionUUID->"2947a6db-bc53-4dc1-be7e-6d84e3c85a33"],
+ CellID->863144461,ExpressionUUID->"d0f8f49f-19fd-40da-9b49-e26a6330d734"],
 
-Cell["\<\
-Yields True if the strongly connected mixed graph g is Eulerian or unicursal, \
-and False otherwise\
-\>", "Text",
+Cell["Create an array of symbols", "Text",
  Deletable->False,
- TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
        WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
- CellChangeTimes->{{3.8700233845139713`*^9, 3.870023401310348*^9}},
+ CellChangeTimes->{{3.87012336686469*^9, 3.8701233710832777`*^9}},
  CellTags->{"DefaultContent", "Description", "TabNext", "TemplateCell"},
- CellID->262986995,ExpressionUUID->"4eab8717-5f76-4792-acf2-92acd397a7d8"],
+ CellID->660820806,ExpressionUUID->"623c09fa-ac5e-4b0d-9489-5abe51c98ffb"],
 
 Cell[CellGroupData[{
 
@@ -56,59 +50,27 @@ evaluated before creating the Examples section below.", "MoreInfoText"],
     CurrentValue[
      EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
    ImageSize->Automatic]],ExpressionUUID->
-  "3ecf09f1-0c9d-4be4-a4e1-4c457ebdd7f6"]
+  "7f3cdeec-118c-4992-ac28-37691f0c0c13"]
 }], "Section",
  Editable->False,
  Deletable->False,
  TaggingRules->{"TemplateGroupName" -> "Function"},
  DefaultNewCellStyle->"Input",
  CellTags->{"Definition", "Function", "TemplateCellGroup"},
- CellID->292731158,ExpressionUUID->"0c381ae8-bb4f-451c-8299-53fb0ccb19ff"],
+ CellID->292731158,ExpressionUUID->"e1cd16ed-fdc0-457d-b0b3-048daccfdf32"],
 
 Cell[BoxData[{
- RowBox[{"ClearAll", "[", "MixedEulerianGraphQ", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ClearAll", "[", "SymbolicArray", "]"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"MixedEulerianGraphQ", "[", 
-   RowBox[{"graph_", "?", 
-    RowBox[{"(", 
-     RowBox[{
-      RowBox[{
-       RowBox[{"ConnectedGraphQ", "[", "#", "]"}], "\[And]", 
-       RowBox[{"MixedGraphQ", "[", "#", "]"}]}], "&"}], ")"}]}], "]"}], ":=", 
-  RowBox[{
-   RowBox[{"AllTrue", "[", 
+  RowBox[{"SymbolicArray", "[", "n_", "]"}], ":=", 
+  RowBox[{"ToExpression", "/@", 
+   RowBox[{"Take", "[", 
     RowBox[{
-     RowBox[{"Subsets", "[", 
-      RowBox[{"VertexList", "[", "graph", "]"}], "]"}], ",", 
-     RowBox[{
-      RowBox[{
-       RowBox[{
-        RowBox[{"EdgeCount", "[", 
-         RowBox[{"graph", ",", 
-          RowBox[{
-           RowBox[{"Alternatives", "@@", "#"}], "\[DirectedEdge]", "_"}]}], 
-         "]"}], "-", 
-        RowBox[{"EdgeCount", "[", 
-         RowBox[{"graph", ",", 
-          RowBox[{"_", "\[DirectedEdge]", 
-           RowBox[{"Alternatives", "@@", "#"}]}]}], "]"}]}], "<=", 
-       RowBox[{"EdgeCount", "[", 
-        RowBox[{"graph", ",", 
-         RowBox[{"_", "\[UndirectedEdge]", 
-          RowBox[{"Alternatives", "@@", "#"}]}]}], "]"}]}], "&"}]}], "]"}], 
-   RowBox[{"(*", 
-    RowBox[{"balanced", " ", "set", " ", "condition"}], "*)"}], "\[And]", 
-   RowBox[{"AllTrue", "[", 
-    RowBox[{
-     RowBox[{"VertexDegree", "[", "graph", "]"}], ",", "EvenQ"}], "]"}], 
-   RowBox[{"(*", 
-    RowBox[{"even", " ", "condition"}], "*)"}]}]}]}], "Input",
- TaggingRules->{},
- CellChangeTimes->{{3.870022210118546*^9, 3.8700222603163385`*^9}, {
-  3.8700233092012615`*^9, 3.870023327991543*^9}},
+     RowBox[{"Alphabet", "[", "]"}], ",", "n"}], "]"}]}]}]}], "Input",
+ CellChangeTimes->{{3.870123373392831*^9, 3.8701234185622797`*^9}},
  CellTags->"DefaultContent",
- CellLabel->"In[1]:=",
- CellID->876320555,ExpressionUUID->"d320bc89-73f2-4e53-bdb8-619282c24144"]
+ CellLabel->"In[312]:=",
+ CellID->876320555,ExpressionUUID->"6495a5fe-f9f7-4898-98b1-00f8acfc7c04"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -118,7 +80,7 @@ Cell["Documentation", "Section",
  Deletable->False,
  TaggingRules->{"TemplateGroupName" -> "Documentation"},
  CellTags->{"Documentation", "TemplateSection"},
- CellID->337507785,ExpressionUUID->"a1977082-ea2f-4974-8feb-720ce95bd2ca"],
+ CellID->337507785,ExpressionUUID->"bc1568ee-6a9d-4932-9c00-d71c32d4f7ef"],
 
 Cell[CellGroupData[{
 
@@ -166,58 +128,30 @@ documentation pages for examples."}], "MoreInfoText"], Background ->
     CurrentValue[
      EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
    ImageSize->Automatic]],ExpressionUUID->
-  "cb8bf82d-7420-4739-97bb-9a46412a0691"]
+  "b05ae74e-1020-4acb-8949-2d4e7bc4f8c3"]
 }], "Subsection",
  Editable->False,
  Deletable->False,
  TaggingRules->{"TemplateGroupName" -> "Usage"},
  DefaultNewCellStyle->{"UsageInputs", FontFamily -> "Source Sans Pro"},
  CellTags->{"TemplateCellGroup", "Usage"},
- CellID->38054786,ExpressionUUID->"5c10a938-163f-4fe5-93a3-220ec8782d00"],
+ CellID->38054786,ExpressionUUID->"e268a7c1-068a-445e-8ef8-20f897a2db92"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"MixedEulerianGraphQ", "[", 
-  StyleBox["g", "TI"], "]"}]], "UsageInputs",
- TaggingRules->{},
- CellChangeTimes->{{3.8700222642461205`*^9, 3.8700222672788224`*^9}, {
-   3.8700232506250877`*^9, 3.8700232707506633`*^9}, 3.8700234735235815`*^9, 
-   3.8700941487793636`*^9},
+ RowBox[{"MyFunction", "[", "arg", "]"}]], "UsageInputs",
  FontFamily->"Source Sans Pro",
  CellTags->{"DefaultContent", "TabNext"},
- CellID->67839508,ExpressionUUID->"7c80d2ae-4f90-4dff-b49d-b6e2d1e61997"],
+ CellID->67839508,ExpressionUUID->"d9daca24-d6a4-4a25-869c-2599ecaba3b1"],
 
 Cell[TextData[{
- "Yields ",
- Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["True"]], "paclet:ref/True"},
-   "RefLink",
-   BaseStyle->{"InlineFormula"}]], "InlineFormula",
-  FontFamily->"Source Sans Pro",ExpressionUUID->
-  "9eb18df2-dee1-437a-86a0-241a8d448036"],
- " if the strongly connected mixed graph ",
- Cell[BoxData[
-  StyleBox["g", "TI"]], "InlineFormula",
-  FontFamily->"Source Sans Pro",ExpressionUUID->
-  "a55563c4-85af-48a5-80f6-96cb4e745c85"],
- " is Eulerian or unicursal, and ",
- Cell[BoxData[
-  TemplateBox[{
-    Cell[
-     TextData["False"]], "paclet:ref/False"},
-   "RefLink",
-   BaseStyle->{"InlineFormula"}]], "InlineFormula",
-  FontFamily->"Source Sans Pro",ExpressionUUID->
-  "e073111e-72d5-4e98-89e0-cf0812a057e5"],
- " otherwise."
+ "explanation of what use of the argument ",
+ StyleBox["arg", "TI"],
+ " does."
 }], "UsageDescription",
- TaggingRules->{},
- CellChangeTimes->{3.870023266026628*^9},
  CellTags->{"DefaultContent", "TabNext"},
- CellID->746063541,ExpressionUUID->"1c5becd8-45c8-4b33-9c18-17a323b8b2da"]
+ CellID->746063541,ExpressionUUID->"b325b02f-45b0-43e7-ad3f-f2ac130836f6"]
 }, Open  ]]
 }, Open  ]],
 
@@ -249,35 +183,24 @@ function, its development, and its usage.", "MoreInfoText"], Background ->
     CurrentValue[
      EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
    ImageSize->Automatic]],ExpressionUUID->
-  "3bf03dd9-c7cd-4799-857d-42f825a04bed"]
+  "b5b64961-fc11-4597-acec-6ff5fc4fc761"]
 }], "Subsection",
  Editable->False,
  Deletable->False,
  TaggingRules->{"TemplateGroupName" -> "Notes"},
  DefaultNewCellStyle->"Notes",
  CellTags->{"Details & Options", "Notes", "TemplateCellGroup"},
- CellID->447261062,ExpressionUUID->"3293430d-abbe-4a69-92ae-e0fcb50eabbb"],
+ CellID->447261062,ExpressionUUID->"9312dc6a-c22c-4b9c-9088-17963189d31e"],
 
-Cell["\<\
-Eulerian graphs have applications in arc routing and operations research.\
-\>", "Notes",
- TaggingRules->{},
+Cell["Additional information about usage and options.", "Notes",
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
        WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
- CellChangeTimes->{{3.8700223367391596`*^9, 3.8700223592518373`*^9}},
  CellTags->{"DefaultContent", "TabNext"},
- CellID->422531486,ExpressionUUID->"9150e92a-c1bc-44fe-b57b-69f48c77b2dc"],
-
-Cell["\<\
-EulerianGraphQ works for undirected graphs, directed graphs, and multigraphs \
-but not mixed graphs. This function meets that need.\
-\>", "Notes",
- CellChangeTimes->{{3.8700942955720997`*^9, 3.8700943249667797`*^9}},
- CellID->239848740,ExpressionUUID->"bfa45a14-b743-45f8-a2a2-cf412474dc34"]
+ CellID->422531486,ExpressionUUID->"6ec88883-5e75-4709-ba89-b00e52f81b0f"]
 }, Open  ]]
 }, Open  ]],
 
@@ -430,1062 +353,211 @@ usage"}], "MoreInfoText"], Background -> GrayLevel[0.95], FrameMargins -> 20,
     CurrentValue[
      EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
    ImageSize->Automatic]],ExpressionUUID->
-  "1f09919b-afce-4caf-b1de-85850981862f"]
+  "c3924374-8469-46b3-9042-549f389a529b"]
 }], "Section",
  Editable->False,
  Deletable->False,
  TaggingRules->{"TemplateGroupName" -> "Examples"},
  CellTags->{"Examples", "TemplateCellGroup"},
- CellID->671320372,ExpressionUUID->"d102f17b-1da8-45db-be45-68547b16e0b2"],
+ CellID->671320372,ExpressionUUID->"5b2c4e78-3efe-45ca-9e4d-75f2df6dfade"],
 
 Cell[CellGroupData[{
 
 Cell["Basic Examples", "Subsection",
- TaggingRules->{},
  CellTags->"DefaultContent",
- CellID->619504543,ExpressionUUID->"d812e5bf-9e0a-42a1-a6d7-fecd2f0df96b"],
+ CellID->619504543,ExpressionUUID->"5533c271-0f00-4dda-ac5e-c4906ed9729b"],
 
-Cell["Test if a mixed graph is Eulerian:", "Text",
- TaggingRules->{},
- CellChangeTimes->{{3.87002236485987*^9, 3.8700223660014067`*^9}, {
-  3.8700941587577815`*^9, 3.8700941653212676`*^9}},
+Cell["Text about the example:", "Text",
  CellTags->"DefaultContent",
- CellID->586099280,ExpressionUUID->"726b3c7c-9d9f-4c91-8fc4-53d844f084be"],
+ CellID->586099280,ExpressionUUID->"f35a864c-b598-4a6e-807b-89cd1163cdd2"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"Graph", "[", 
+ RowBox[{"SymbolicArray", "[", "2", "]"}]], "Input",
+ CellChangeTimes->{{3.8701234220690317`*^9, 3.8701234256157913`*^9}},
+ CellTags->"DefaultContent",
+ CellLabel->"In[314]:=",
+ CellID->298664010,ExpressionUUID->"ffcf2445-3c3f-4f1c-961c-0c4f3bfa3037"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"a", ",", "b"}], "}"}]], "Output",
+ CellChangeTimes->{3.8701234260302677`*^9},
+ CellTags->"DefaultContent",
+ CellLabel->"Out[314]=",
+ CellID->465443758,ExpressionUUID->"ced21546-a3a3-4c9e-a9f6-642408d19d0f"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SymbolicArray", "[", "24", "]"}]], "Input",
+ CellChangeTimes->{{3.8701234220690317`*^9, 3.870123428713563*^9}},
+ CellTags->"DefaultContent",
+ CellLabel->"In[315]:=",
+ CellID->94179174,ExpressionUUID->"462df03a-5616-45c4-bb64-d06404ae0210"],
+
+Cell[BoxData[
+ RowBox[{"{", 
   RowBox[{
-   RowBox[{"{", 
-    RowBox[{"a", ",", "b", ",", "c", ",", "d", ",", "e", ",", "f"}], "}"}], 
-   ",", 
+  "a", ",", "b", ",", "c", ",", "d", ",", "e", ",", "f", ",", "g", ",", "h", 
+   ",", "i", ",", "j", ",", "k", ",", "l", ",", "m", ",", "n", ",", "o", ",", 
+   "p", ",", "q", ",", "r", ",", "s", ",", "t", ",", "u", ",", "v", ",", "w", 
+   ",", "x"}], "}"}]], "Output",
+ CellChangeTimes->{3.870123429072383*^9},
+ CellTags->"DefaultContent",
+ CellLabel->"Out[315]=",
+ CellID->375527472,ExpressionUUID->"09943844-0910-4540-88f8-048f54624cdb"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ SuperscriptBox[
+  RowBox[{"SymbolicArray", "[", "24", "]"}], "2"]], "Input",
+ CellChangeTimes->{{3.870123437876775*^9, 3.870123441202224*^9}},
+ CellLabel->"In[317]:=",
+ CellID->197596906,ExpressionUUID->"ebb4ff41-bfe1-4133-b27b-bde159f87cad"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   SuperscriptBox["a", "2"], ",", 
+   SuperscriptBox["b", "2"], ",", 
+   SuperscriptBox["c", "2"], ",", 
+   SuperscriptBox["d", "2"], ",", 
+   SuperscriptBox["e", "2"], ",", 
+   SuperscriptBox["f", "2"], ",", 
+   SuperscriptBox["g", "2"], ",", 
+   SuperscriptBox["h", "2"], ",", 
+   SuperscriptBox["i", "2"], ",", 
+   SuperscriptBox["j", "2"], ",", 
+   SuperscriptBox["k", "2"], ",", 
+   SuperscriptBox["l", "2"], ",", 
+   SuperscriptBox["m", "2"], ",", 
+   SuperscriptBox["n", "2"], ",", 
+   SuperscriptBox["o", "2"], ",", 
+   SuperscriptBox["p", "2"], ",", 
+   SuperscriptBox["q", "2"], ",", 
+   SuperscriptBox["r", "2"], ",", 
+   SuperscriptBox["s", "2"], ",", 
+   SuperscriptBox["t", "2"], ",", 
+   SuperscriptBox["u", "2"], ",", 
+   SuperscriptBox["v", "2"], ",", 
+   SuperscriptBox["w", "2"], ",", 
+   SuperscriptBox["x", "2"]}], "}"}]], "Output",
+ CellChangeTimes->{3.870123441507809*^9},
+ CellLabel->"Out[317]=",
+ CellID->762568269,ExpressionUUID->"7ab8663c-fc2f-4736-876c-84b12aba6cac"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PolynomialReduce", "[", 
+  RowBox[{
+   SuperscriptBox["a", "2"], ",", 
    RowBox[{"{", 
     RowBox[{
-     RowBox[{"a", "->", "b"}], ",", 
-     RowBox[{"b", "\[UndirectedEdge]", "c"}], ",", 
-     RowBox[{"c", "\[UndirectedEdge]", "d"}], ",", 
-     RowBox[{"d", "->", "e"}], ",", 
-     RowBox[{"e", "\[UndirectedEdge]", "f"}], ",", 
-     RowBox[{"a", "\[UndirectedEdge]", "f"}]}], "}"}], ",", 
-   RowBox[{"VertexLabels", "->", "Automatic"}], ",", 
-   RowBox[{"ImageSize", "->", "Automatic"}]}], "]"}]], "Input",
- CellChangeTimes->{{3.8700942126916237`*^9, 3.8700942217748723`*^9}},
- CellLabel->"In[43]:=",
- CellID->471137932,ExpressionUUID->"7ab22d21-a622-4f68-be50-0432d4a0242a"],
-
-Cell[BoxData[
- GraphicsBox[
-  NamespaceBox["NetworkGraphics",
-   DynamicModuleBox[{Typeset`graph = HoldComplete[
-     Graph[{$CellContext`a, $CellContext`b, $CellContext`c, $CellContext`d, \
-$CellContext`e, $CellContext`f}, {{{1, 2}, {4, 5}}, {{2, 3}, {3, 4}, {5, 6}, {
-       1, 6}}}, {ImageSize -> Automatic, VertexLabels -> {Automatic}}]]}, 
-    TagBox[GraphicsGroupBox[{
-       {Hue[0.6, 0.7, 0.5], Opacity[0.7], Arrowheads[Medium], 
-        {Arrowheads[0.], 
-         ArrowBox[{{1.4912694367624908`, 1.742714507353599}, {
-          0.4902731311139421, 1.7310116649185252`}}, 0.02261782466291873]}, 
-        ArrowBox[{{1.4912694367624908`, 1.742714507353599}, {
-         2.000783839713522, 0.8828679155736145}}, 0.02261782466291873], 
-        {Arrowheads[0.], 
-         ArrowBox[{{2.000783839713522, 0.8828679155736145}, {
-          1.5101005382159565`, 0.011615053838323175`}}, 0.02261782466291873]}, 
-        {Arrowheads[0.], 
-         ArrowBox[{{1.5101005382159565`, 0.011615053838323175`}, {
-          0.5099998752410617, 0.}}, 0.02261782466291873]}, 
-        ArrowBox[{{0.5099998752410617, 0.}, {0., 0.8594997331614967}}, 
-         0.02261782466291873], 
-        {Arrowheads[0.], 
-         ArrowBox[{{0., 0.8594997331614967}, {0.4902731311139421, 
-          1.7310116649185252`}}, 0.02261782466291873]}}, 
-       {Hue[0.6, 0.2, 0.8], EdgeForm[{GrayLevel[0], Opacity[
-        0.7]}], {
-         DiskBox[{1.4912694367624908, 1.742714507353599}, 
-          0.02261782466291873], 
-         InsetBox["a", 
-          Offset[{2, 2}, {1.5138872614254095, 1.7653323320165177}], 
-          ImageScaled[{0, 0}],
-          BaseStyle->"Graphics"]}, {
-         DiskBox[{2.000783839713522, 0.8828679155736145}, 
-          0.02261782466291873], 
-         InsetBox["b", 
-          Offset[{2, 2}, {2.0234016643764408, 0.9054857402365333}], 
-          ImageScaled[{0, 0}],
-          BaseStyle->"Graphics"]}, {
-         DiskBox[{1.5101005382159565, 0.011615053838323175}, 
-          0.02261782466291873], 
-         InsetBox["c", 
-          Offset[{2, 2}, {1.5327183628788752, 0.0342328785012419}], 
-          ImageScaled[{0, 0}],
-          BaseStyle->"Graphics"]}, {
-         DiskBox[{0.5099998752410617, 0.}, 0.02261782466291873], 
-         InsetBox["d", 
-          Offset[{2, 2}, {0.5326176999039804, 0.02261782466291873}], 
-          ImageScaled[{0, 0}],
-          BaseStyle->"Graphics"]}, {
-         DiskBox[{0., 0.8594997331614967}, 0.02261782466291873], 
-         InsetBox["e", 
-          Offset[{2, 2}, {0.02261782466291873, 0.8821175578244155}], 
-          ImageScaled[{0, 0}],
-          BaseStyle->"Graphics"]}, {
-         DiskBox[{0.4902731311139421, 1.7310116649185252}, 
-          0.02261782466291873], 
-         InsetBox["f", 
-          Offset[{2, 2}, {0.5128909557768608, 1.753629489581444}], 
-          ImageScaled[{0, 0}],
-          BaseStyle->"Graphics"]}}}],
-     MouseAppearanceTag["NetworkGraphics"]],
-    AllowKernelInitialization->False]],
-  DefaultBaseStyle->{
-   "NetworkGraphics", FrontEnd`GraphicsHighlightColor -> Hue[0.8, 1., 0.6]},
-  FormatType->TraditionalForm,
-  FrameTicks->None,
-  ImageSize->Automatic]], "Output",
- CellChangeTimes->{{3.870094210210025*^9, 3.8700942221500645`*^9}},
- CellLabel->"Out[43]=",
- CellID->36348762,ExpressionUUID->"b5665b11-488b-4eda-b803-199847d4e36c"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"MixedEulerianGraphQ", "[", 
-  RowBox[{"Graph", "[", 
-   RowBox[{
-    RowBox[{"{", 
-     RowBox[{"a", ",", "b", ",", "c", ",", "d", ",", "e", ",", "f"}], "}"}], 
-    ",", 
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"a", "->", "b"}], ",", 
-      RowBox[{"b", "\[UndirectedEdge]", "c"}], ",", 
-      RowBox[{"c", "\[UndirectedEdge]", "d"}], ",", 
-      RowBox[{"d", "->", "e"}], ",", 
-      RowBox[{"e", "\[UndirectedEdge]", "f"}], ",", 
-      RowBox[{"a", "\[UndirectedEdge]", "f"}]}], "}"}], ",", 
-    RowBox[{"VertexLabels", "->", "Automatic"}], ",", 
-    RowBox[{"ImageSize", "->", "Automatic"}]}], "]"}], "]"}]], "Input",
- CellChangeTimes->{{3.87009422882349*^9, 3.87009423401917*^9}},
- CellLabel->"In[44]:=",
- CellID->82185012,ExpressionUUID->"e7e3c15c-e2ad-4625-ab41-0ad6a68dad9d"],
-
-Cell[BoxData["True"], "Output",
- CellChangeTimes->{3.870094234292386*^9},
- CellLabel->"Out[44]=",
- CellID->275588161,ExpressionUUID->"ebacb627-6f1f-432b-9dc5-0a17289da4ea"]
-}, Open  ]],
-
-Cell["Test an even graph that violates the balanced set condition:", "Text",
- CellChangeTimes->{{3.870094266831492*^9, 3.8700942758203526`*^9}},
- CellID->3771630,ExpressionUUID->"64664918-c5ae-4a0c-8ffd-a6695bbbb53d"],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"Graph", "[", 
-  RowBox[{
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{"a", "->", "b"}], ",", 
-     RowBox[{"b", "\[UndirectedEdge]", "c"}], ",", 
-     RowBox[{"c", "\[UndirectedEdge]", "d"}], ",", 
-     RowBox[{"d", "->", "b"}], ",", 
-     RowBox[{"d", "\[UndirectedEdge]", "e"}], ",", 
-     RowBox[{"d", "->", "f"}], ",", 
-     RowBox[{"f", "\[UndirectedEdge]", "a"}], ",", 
-     RowBox[{"e", "->", "b"}]}], "}"}], ",", 
-   RowBox[{"VertexLabels", "->", "Automatic"}], ",", 
-   RowBox[{"GraphLayout", "->", "\"\<PlanarEmbedding\>\""}]}], "]"}]], "Input",
- CellChangeTimes->{{3.870094261995841*^9, 3.8700942621554375`*^9}},
- CellLabel->"In[45]:=",
- CellID->17620813,ExpressionUUID->"eb7d3aec-fb32-4fb7-a9dc-da8e11451c68"],
-
-Cell[BoxData[
- GraphicsBox[
-  NamespaceBox["NetworkGraphics",
-   DynamicModuleBox[{Typeset`graph = HoldComplete[
-     Graph[{$CellContext`a, $CellContext`b, $CellContext`c, $CellContext`d, \
-$CellContext`e, $CellContext`f}, {{{1, 2}, {4, 2}, {4, 6}, {5, 2}}, {{2, 3}, {
-      3, 4}, {4, 5}, {6, 1}}}, {
-      GraphLayout -> "PlanarEmbedding", VertexLabels -> {Automatic}}]]}, 
-    TagBox[GraphicsGroupBox[{
-       {Hue[0.6, 0.7, 0.5], Opacity[0.7], Arrowheads[Medium], 
-        {Arrowheads[0.], 
-         ArrowBox[{{0., 0.}, {1., 1.}}, 0.043048128342245986`]}, 
-        ArrowBox[{{0., 0.}, {5., 0.}}, 0.043048128342245986`], 
-        {Arrowheads[0.], 
-         ArrowBox[{{5., 0.}, {2., 2.}}, 0.043048128342245986`]}, 
-        {Arrowheads[0.], 
-         ArrowBox[{{2., 2.}, {1., 2.}}, 0.043048128342245986`]}, 
-        {Arrowheads[0.], 
-         ArrowBox[{{1., 2.}, {1., 4.}}, 0.043048128342245986`]}, 
-        ArrowBox[{{1., 2.}, {5., 0.}}, 0.043048128342245986`], 
-        ArrowBox[{{1., 2.}, {1., 1.}}, 0.043048128342245986`], 
-        ArrowBox[{{1., 4.}, {5., 0.}}, 0.043048128342245986`]}, 
-       {Hue[0.6, 0.2, 0.8], EdgeForm[{GrayLevel[0], Opacity[
-        0.7]}], {DiskBox[{0., 0.}, 0.043048128342245986], 
-         InsetBox["a", {-0.05567979856364814, -0.023063327715265026}, 
-          ImageScaled[{1.192909649383465, 0.7870125742738174}],
-          BaseStyle->"Graphics"]}, {DiskBox[{5., 0.}, 0.043048128342245986], 
-         InsetBox["b", {5.055679798563648, -0.023063327715265067}, 
-          ImageScaled[{-0.19290964938346478, 0.7870125742738179}],
-          BaseStyle->"Graphics"]}, {DiskBox[{2., 2.}, 0.043048128342245986], 
-         InsetBox["c", {2.0174645313140034, 2.0576814285482974}, ImageScaled[{0.2826618884836767, -0.21781901986678942}],
-          BaseStyle->"Graphics"]}, {DiskBox[{1., 2.}, 0.043048128342245986], 
-         InsetBox["d", {0.9397326203208556, 2.}, ImageScaled[{1.25, 0.49999999999999983}],
-          BaseStyle->"Graphics"]}, {DiskBox[{1., 4.}, 0.043048128342245986], 
-         InsetBox["e", {0.9769366722847349, 4.055679798563648}, ImageScaled[{0.7870125742738173, -0.192909649383465}],
-          BaseStyle->"Graphics"]}, {DiskBox[{1., 1.}, 0.043048128342245986], 
-         InsetBox["f", {1.0556797985636481, 0.9769366722847349}, ImageScaled[{-0.19290964938346478, 0.7870125742738179}],
-          BaseStyle->"Graphics"]}}}],
-     MouseAppearanceTag["NetworkGraphics"]],
-    AllowKernelInitialization->False]],
-  DefaultBaseStyle->{
-   "NetworkGraphics", FrontEnd`GraphicsHighlightColor -> Hue[0.8, 1., 0.6]},
-  FormatType->TraditionalForm,
-  FrameTicks->None]], "Output",
- CellChangeTimes->{3.8700942629389706`*^9},
- CellLabel->"Out[45]=",
- CellID->199264157,ExpressionUUID->"e4d388f5-e4a8-4b59-86f4-7b4cca630afa"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"MixedEulerianGraphQ", "[", 
-  RowBox[{"Graph", "[", 
-   RowBox[{
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"a", "->", "b"}], ",", 
-      RowBox[{"b", "\[UndirectedEdge]", "c"}], ",", 
-      RowBox[{"c", "\[UndirectedEdge]", "d"}], ",", 
-      RowBox[{"d", "->", "b"}], ",", 
-      RowBox[{"d", "\[UndirectedEdge]", "e"}], ",", 
-      RowBox[{"d", "->", "f"}], ",", 
-      RowBox[{"f", "\[UndirectedEdge]", "a"}], ",", 
-      RowBox[{"e", "->", "b"}]}], "}"}], ",", 
-    RowBox[{"VertexLabels", "->", "Automatic"}], ",", 
-    RowBox[{"GraphLayout", "->", "\"\<PlanarEmbedding\>\""}]}], "]"}], 
-  "]"}]], "Input",
- CellChangeTimes->{{3.870094281208014*^9, 3.870094282504136*^9}},
- CellLabel->"In[46]:=",
- CellID->571062624,ExpressionUUID->"318d5314-d158-4bfc-bc7d-8bf9c5a33fed"],
-
-Cell[BoxData["False"], "Output",
- CellChangeTimes->{3.8700942827485647`*^9},
- CellLabel->"Out[46]=",
- CellID->192891204,ExpressionUUID->"a8f30c2f-310c-4923-92f5-96d4f27d06f8"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"Graph", "[", 
-  RowBox[{
+     SuperscriptBox["b", "2"], ",", 
+     SuperscriptBox["c", "2"], ",", 
+     SuperscriptBox["d", "2"], ",", 
+     SuperscriptBox["e", "2"], ",", 
+     SuperscriptBox["f", "2"], ",", 
+     SuperscriptBox["g", "2"], ",", 
+     SuperscriptBox["h", "2"], ",", 
+     SuperscriptBox["i", "2"], ",", 
+     SuperscriptBox["j", "2"], ",", 
+     SuperscriptBox["k", "2"], ",", 
+     SuperscriptBox["l", "2"], ",", 
+     SuperscriptBox["m", "2"], ",", 
+     SuperscriptBox["n", "2"], ",", 
+     SuperscriptBox["o", "2"], ",", 
+     SuperscriptBox["p", "2"], ",", 
+     SuperscriptBox["q", "2"], ",", 
+     SuperscriptBox["r", "2"], ",", 
+     SuperscriptBox["s", "2"], ",", 
+     SuperscriptBox["t", "2"], ",", 
+     SuperscriptBox["u", "2"], ",", 
+     SuperscriptBox["v", "2"], ",", 
+     SuperscriptBox["w", "2"], ",", 
+     SuperscriptBox["x", "2"]}], "}"}], ",", 
    RowBox[{"{", 
     RowBox[{
     "a", ",", "b", ",", "c", ",", "d", ",", "e", ",", "f", ",", "g", ",", "h",
-      ",", "i", ",", "j"}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{"a", "->", "b"}], ",", 
-     RowBox[{"b", "\[UndirectedEdge]", "c"}], ",", 
-     RowBox[{"c", "\[UndirectedEdge]", "d"}], ",", 
-     RowBox[{"d", "->", "b"}], ",", 
-     RowBox[{"d", "\[UndirectedEdge]", "e"}], ",", 
-     RowBox[{"d", "->", "f"}], ",", 
-     RowBox[{"f", "\[UndirectedEdge]", "a"}], ",", 
-     RowBox[{"e", "->", "b"}], ",", 
-     RowBox[{"g", "\[UndirectedEdge]", "e"}], ",", 
-     RowBox[{"h", "\[UndirectedEdge]", "g"}], ",", 
-     RowBox[{"i", "\[UndirectedEdge]", "g"}], ",", 
-     RowBox[{"j", "\[UndirectedEdge]", "e"}]}], "}"}], ",", 
-   RowBox[{"VertexLabels", "->", "Automatic"}]}], "]"}]], "Input",
- CellChangeTimes->{{3.870094281208014*^9, 3.870094282504136*^9}, {
-  3.870094336715069*^9, 3.870094429727025*^9}},
- CellLabel->"In[54]:=",
- CellID->648976617,ExpressionUUID->"234515f3-2fe4-4bf5-8f9c-ab5e526ab5d3"],
-
-Cell[BoxData[
- GraphicsBox[
-  NamespaceBox["NetworkGraphics",
-   DynamicModuleBox[{Typeset`graph = HoldComplete[
-     Graph[{$CellContext`a, $CellContext`b, $CellContext`c, $CellContext`d, \
-$CellContext`e, $CellContext`f, $CellContext`g, $CellContext`h, \
-$CellContext`i, $CellContext`j}, {{{1, 2}, {4, 2}, {4, 6}, {5, 2}}, {{2, 3}, {
-       3, 4}, {4, 5}, {6, 1}, {7, 5}, {8, 7}, {9, 7}, {10, 5}}}, {
-      VertexLabels -> {Automatic}}]]}, 
-    TagBox[GraphicsGroupBox[{
-       {Hue[0.6, 0.7, 0.5], Opacity[0.7], Arrowheads[Medium], 
-        {Arrowheads[0.], 
-         ArrowBox[{{0., 1.2861155482020528`}, {0.2570882457070274, 
-          1.9323598659584555`}}, 0.03999494626620986]}, 
-        ArrowBox[{{0., 1.2861155482020528`}, {0.9858852810995695, 
-         0.8165706852163928}}, 0.03999494626620986], 
-        {Arrowheads[0.], 
-         ArrowBox[{{0.9858852810995695, 0.8165706852163928}, {
-          0.46681814673133104`, 0.4792783931843354}}, 0.03999494626620986]}, 
-        {Arrowheads[0.], 
-         ArrowBox[{{0.46681814673133104`, 0.4792783931843354}, {
-          1.0465520168033406`, 1.2886639161095157`}}, 0.03999494626620986]}, 
-        {Arrowheads[0.], 
-         ArrowBox[{{1.0465520168033406`, 1.2886639161095157`}, {
-          2.152193744308745, 0.8978075728076489}}, 0.03999494626620986]}, 
-        ArrowBox[{{1.0465520168033406`, 1.2886639161095157`}, {
-         0.9858852810995695, 0.8165706852163928}}, 0.03999494626620986], 
-        ArrowBox[{{1.0465520168033406`, 1.2886639161095157`}, {
-         0.2570882457070274, 1.9323598659584555`}}, 0.03999494626620986], 
-        {Arrowheads[0.], 
-         ArrowBox[{{2.152193744308745, 0.8978075728076489}, {
-          3.5390342113936066`, 1.2052029837686276`}}, 0.03999494626620986]}, 
-        {Arrowheads[0.], 
-         ArrowBox[{{2.152193744308745, 0.8978075728076489}, {
-          2.5145442923003274`, 0.}}, 0.03999494626620986]}, 
-        ArrowBox[{{2.152193744308745, 0.8978075728076489}, {
-         0.9858852810995695, 0.8165706852163928}}, 0.03999494626620986], 
-        {Arrowheads[0.], 
-         ArrowBox[{{3.5390342113936066`, 1.2052029837686276`}, {
-          4.2565572709201565`, 1.8918603688724203`}}, 0.03999494626620986]}, 
-        {Arrowheads[0.], 
-         ArrowBox[{{3.5390342113936066`, 1.2052029837686276`}, {
-          4.480982892294721, 0.8669401903076048}}, 0.03999494626620986]}}, 
-       {Hue[0.6, 0.2, 0.8], EdgeForm[{GrayLevel[0], Opacity[
-        0.7]}], {DiskBox[{0., 1.2861155482020528}, 0.03999494626620986], 
-         InsetBox["a", 
-          Offset[{2, 2}, {0.03999494626620986, 1.3261104944682627}], 
-          ImageScaled[{0, 0}],
-          BaseStyle->"Graphics"]}, {
-         DiskBox[{0.9858852810995695, 0.8165706852163928}, 
-          0.03999494626620986], 
-         InsetBox["b", 
-          Offset[{2, 2}, {1.0258802273657794, 0.8565656314826027}], 
-          ImageScaled[{0, 0}],
-          BaseStyle->"Graphics"]}, {
-         DiskBox[{0.46681814673133104, 0.4792783931843354}, 
-          0.03999494626620986], 
-         InsetBox["c", 
-          Offset[{2, 2}, {0.506813092997541, 0.5192733394505453}], 
-          ImageScaled[{0, 0}],
-          BaseStyle->"Graphics"]}, {
-         DiskBox[{1.0465520168033406, 1.2886639161095157}, 
-          0.03999494626620986], 
-         InsetBox["d", 
-          Offset[{2, 2}, {1.0865469630695506, 1.3286588623757256}], 
-          ImageScaled[{0, 0}],
-          BaseStyle->"Graphics"]}, {
-         DiskBox[{2.152193744308745, 0.8978075728076489}, 
-          0.03999494626620986], 
-         InsetBox["e", 
-          Offset[{2, 2}, {2.192188690574955, 0.9378025190738588}], 
-          ImageScaled[{0, 0}],
-          BaseStyle->"Graphics"]}, {
-         DiskBox[{0.2570882457070274, 1.9323598659584555}, 
-          0.03999494626620986], 
-         InsetBox["f", 
-          Offset[{2, 2}, {0.29708319197323724, 1.9723548122246655}], 
-          ImageScaled[{0, 0}],
-          BaseStyle->"Graphics"]}, {
-         DiskBox[{3.5390342113936066, 1.2052029837686276}, 
-          0.03999494626620986], 
-         InsetBox["g", 
-          Offset[{2, 2}, {3.5790291576598166, 1.2451979300348375}], 
-          ImageScaled[{0, 0}],
-          BaseStyle->"Graphics"]}, {
-         DiskBox[{4.2565572709201565, 1.8918603688724203}, 
-          0.03999494626620986], 
-         InsetBox["h", 
-          Offset[{2, 2}, {4.296552217186366, 1.9318553151386302}], 
-          ImageScaled[{0, 0}],
-          BaseStyle->"Graphics"]}, {
-         DiskBox[{4.480982892294721, 0.8669401903076048}, 
-          0.03999494626620986], 
-         InsetBox["i", Offset[{2, 2}, {4.52097783856093, 0.9069351365738147}],
-           ImageScaled[{0, 0}],
-          BaseStyle->"Graphics"]}, {
-         DiskBox[{2.5145442923003274, 0.}, 0.03999494626620986], 
-         InsetBox["j", 
-          Offset[{2, 2}, {2.5545392385665373, 0.03999494626620986}], 
-          ImageScaled[{0, 0}],
-          BaseStyle->"Graphics"]}}}],
-     MouseAppearanceTag["NetworkGraphics"]],
-    AllowKernelInitialization->False]],
-  DefaultBaseStyle->{
-   "NetworkGraphics", FrontEnd`GraphicsHighlightColor -> Hue[0.8, 1., 0.6]},
-  FormatType->TraditionalForm,
-  FrameTicks->None]], "Output",
- CellChangeTimes->{{3.8700943483940163`*^9, 3.870094399078663*^9}, 
-   3.870094430811262*^9},
- CellLabel->"Out[54]=",
- CellID->23988872,ExpressionUUID->"44bf1b02-afc4-4cc5-957c-b7eac4247630"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"ConnectedGraphQ", "[", 
-  RowBox[{"Graph", "[", 
-   RowBox[{
-    RowBox[{"{", 
-     RowBox[{
-     "a", ",", "b", ",", "c", ",", "d", ",", "e", ",", "f", ",", "g", ",", 
-      "h", ",", "i", ",", "j"}], "}"}], ",", 
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"a", "->", "b"}], ",", 
-      RowBox[{"b", "\[UndirectedEdge]", "c"}], ",", 
-      RowBox[{"c", "\[UndirectedEdge]", "d"}], ",", 
-      RowBox[{"d", "->", "b"}], ",", 
-      RowBox[{"d", "\[UndirectedEdge]", "e"}], ",", 
-      RowBox[{"d", "->", "f"}], ",", 
-      RowBox[{"f", "\[UndirectedEdge]", "a"}], ",", 
-      RowBox[{"e", "->", "b"}], ",", 
-      RowBox[{"g", "\[UndirectedEdge]", "e"}], ",", 
-      RowBox[{"h", "\[UndirectedEdge]", "g"}], ",", 
-      RowBox[{"i", "\[UndirectedEdge]", "g"}], ",", 
-      RowBox[{"j", "\[UndirectedEdge]", "e"}]}], "}"}], ",", 
-    RowBox[{"VertexLabels", "->", "Automatic"}]}], "]"}], "]"}]], "Input",
- CellChangeTimes->{{3.8700944201843033`*^9, 3.870094434186578*^9}},
- CellLabel->"In[55]:=",
- CellID->498601766,ExpressionUUID->"ef98e61b-5d42-4575-ad60-aaee43dbae21"],
-
-Cell[BoxData["True"], "Output",
- CellChangeTimes->{{3.8700944230488925`*^9, 3.870094434478773*^9}},
- CellLabel->"Out[55]=",
- CellID->76923686,ExpressionUUID->"35d3f1ae-3f6b-45f3-8507-fe9c2a4bb954"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"MixedEulerianGraphQ", "[", 
-  RowBox[{"Graph", "[", 
-   RowBox[{
-    RowBox[{"{", 
-     RowBox[{
-     "a", ",", "b", ",", "c", ",", "d", ",", "e", ",", "f", ",", "g", ",", 
-      "h", ",", "i", ",", "j"}], "}"}], ",", 
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"a", "->", "b"}], ",", 
-      RowBox[{"b", "\[UndirectedEdge]", "c"}], ",", 
-      RowBox[{"c", "\[UndirectedEdge]", "d"}], ",", 
-      RowBox[{"d", "->", "b"}], ",", 
-      RowBox[{"d", "\[UndirectedEdge]", "e"}], ",", 
-      RowBox[{"d", "->", "f"}], ",", 
-      RowBox[{"f", "\[UndirectedEdge]", "a"}], ",", 
-      RowBox[{"e", "->", "b"}], ",", 
-      RowBox[{"g", "\[UndirectedEdge]", "e"}], ",", 
-      RowBox[{"h", "\[UndirectedEdge]", "g"}], ",", 
-      RowBox[{"i", "\[UndirectedEdge]", "g"}], ",", 
-      RowBox[{"j", "\[UndirectedEdge]", "e"}]}], "}"}], ",", 
-    RowBox[{"VertexLabels", "->", "Automatic"}]}], "]"}], "]"}]], "Input",
- CellLabel->"In[58]:=",
- CellID->172507463,ExpressionUUID->"7cb78ab6-2778-45bb-84f8-4c9f45b07569"],
-
-Cell[BoxData["False"], "Output",
- CellChangeTimes->{3.870094467650523*^9},
- CellLabel->"Out[58]=",
- CellID->120755601,ExpressionUUID->"4175c1ca-edac-41ef-8b97-4f2dcae5927d"]
-}, Open  ]]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell["Timing", "Subsection",
- CellChangeTimes->{{3.870094470325929*^9, 3.870094471043996*^9}},
- CellID->900772631,ExpressionUUID->"b9be2596-16ec-481b-8e73-1f4f9faac539"],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"MixedEulerianGraphQ", "[", 
-   RowBox[{"Graph", "[", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{
-       RowBox[{"a", "->", "b"}], ",", 
-       RowBox[{"b", "\[UndirectedEdge]", "c"}], ",", 
-       RowBox[{"c", "\[UndirectedEdge]", "d"}], ",", 
-       RowBox[{"d", "->", "b"}], ",", 
-       RowBox[{"d", "\[UndirectedEdge]", "e"}], ",", 
-       RowBox[{"d", "->", "f"}], ",", 
-       RowBox[{"f", "\[UndirectedEdge]", "a"}], ",", 
-       RowBox[{"e", "->", "b"}]}], "}"}], ",", 
-     RowBox[{"VertexLabels", "->", "Automatic"}], ",", 
-     RowBox[{"GraphLayout", "->", "\"\<PlanarEmbedding\>\""}]}], "]"}], "]"}],
-   "//", "RepeatedTiming"}]], "Input",
- CellChangeTimes->{{3.8700944361584845`*^9, 3.8700944510035477`*^9}, {
-  3.870094500362543*^9, 3.870094512300209*^9}},
- CellLabel->"In[59]:=",
- CellID->160372799,ExpressionUUID->"78f02c07-f23f-402a-97e6-b16e9543bdce"],
+      ",", "o", ",", "p", ",", "q", ",", "r", ",", "s", ",", "t", ",", "u", 
+     ",", "v", ",", "w", ",", "x"}], "}"}]}], "]"}]], "Input",
+ NumberMarks->False,
+ CellLabel->"In[318]:=",
+ CellID->249184195,ExpressionUUID->"cd8b60e6-d66f-4291-9888-38d6fe7b0e6f"],
 
 Cell[BoxData[
  RowBox[{"{", 
-  RowBox[{"0.00064100927734375`", ",", "False"}], "}"}]], "Output",
- CellChangeTimes->{3.8700945145873613`*^9},
- CellLabel->"Out[59]=",
- CellID->65040255,ExpressionUUID->"bdd2036a-e3dd-4c0d-8914-371f79c25bf5"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"MixedEulerianGraphQ", "[", 
-   RowBox[{"Graph", "[", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{
-      "a", ",", "b", ",", "c", ",", "d", ",", "e", ",", "f", ",", "g", ",", 
-       "h", ",", "i", ",", "j"}], "}"}], ",", 
-     RowBox[{"{", 
-      RowBox[{
-       RowBox[{"a", "->", "b"}], ",", 
-       RowBox[{"b", "\[UndirectedEdge]", "c"}], ",", 
-       RowBox[{"c", "\[UndirectedEdge]", "d"}], ",", 
-       RowBox[{"d", "->", "b"}], ",", 
-       RowBox[{"d", "\[UndirectedEdge]", "e"}], ",", 
-       RowBox[{"d", "->", "f"}], ",", 
-       RowBox[{"f", "\[UndirectedEdge]", "a"}], ",", 
-       RowBox[{"e", "->", "b"}], ",", 
-       RowBox[{"g", "\[UndirectedEdge]", "e"}], ",", 
-       RowBox[{"h", "\[UndirectedEdge]", "g"}], ",", 
-       RowBox[{"i", "\[UndirectedEdge]", "g"}], ",", 
-       RowBox[{"j", "\[UndirectedEdge]", "e"}]}], "}"}], ",", 
-     RowBox[{"VertexLabels", "->", "Automatic"}]}], "]"}], "]"}], "//", 
-  "RepeatedTiming"}]], "Input",
- CellChangeTimes->{{3.8700944361584845`*^9, 3.8700944510035477`*^9}},
- CellLabel->"In[57]:=",
- CellID->427594042,ExpressionUUID->"890df4bd-8ceb-4197-8fcc-84fbc5cd0aec"],
-
-Cell[BoxData[
- RowBox[{"{", 
-  RowBox[{"0.03369413125`", ",", "False"}], "}"}]], "Output",
- CellChangeTimes->{{3.870094445247879*^9, 3.870094452409449*^9}},
- CellLabel->"Out[57]=",
- CellID->16527230,ExpressionUUID->"cf75c92f-e4b3-416a-8fd5-03803f6d7943"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"MixedEulerianGraphQ", "[", 
-   RowBox[{"Graph", "[", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{
-      "a", ",", "b", ",", "c", ",", "d", ",", "e", ",", "f", ",", "g", ",", 
-       "h", ",", "i", ",", "j", ",", "k", ",", "l", ",", "m", ",", "n"}], 
-      "}"}], ",", 
-     RowBox[{"{", 
-      RowBox[{
-       RowBox[{"a", "->", "b"}], ",", 
-       RowBox[{"b", "\[UndirectedEdge]", "c"}], ",", 
-       RowBox[{"c", "\[UndirectedEdge]", "d"}], ",", 
-       RowBox[{"d", "->", "b"}], ",", 
-       RowBox[{"d", "\[UndirectedEdge]", "e"}], ",", 
-       RowBox[{"d", "->", "f"}], ",", 
-       RowBox[{"f", "\[UndirectedEdge]", "a"}], ",", 
-       RowBox[{"e", "->", "b"}], ",", 
-       RowBox[{"g", "\[UndirectedEdge]", "e"}], ",", 
-       RowBox[{"h", "\[UndirectedEdge]", "g"}], ",", 
-       RowBox[{"i", "\[UndirectedEdge]", "g"}], ",", 
-       RowBox[{"j", "\[UndirectedEdge]", "e"}], ",", 
-       RowBox[{"k", "\[UndirectedEdge]", "j"}], ",", 
-       RowBox[{"l", "\[UndirectedEdge]", "k"}], ",", 
-       RowBox[{"m", "\[UndirectedEdge]", "l"}], ",", 
-       RowBox[{"n", "\[UndirectedEdge]", "m"}]}], "}"}], ",", 
-     RowBox[{"VertexLabels", "->", "Automatic"}]}], "]"}], "]"}], "//", 
-  "RepeatedTiming"}]], "Input",
- CellChangeTimes->{{3.8700944361584845`*^9, 3.8700944510035477`*^9}, {
-  3.8700945216779895`*^9, 3.87009454861734*^9}},
- CellLabel->"In[60]:=",
- CellID->8080561,ExpressionUUID->"de03bf76-413e-4d45-91d6-e2939b46cd40"],
-
-Cell[BoxData[
- RowBox[{"{", 
-  RowBox[{"0.57872385`", ",", "False"}], "}"}]], "Output",
- CellChangeTimes->{3.8700945522644386`*^9},
- CellLabel->"Out[60]=",
- CellID->412594639,ExpressionUUID->"0c0f9130-f98c-48ee-98d8-10454cfb3f90"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"VertexCount", "[", 
-  RowBox[{"Graph", "[", 
-   RowBox[{
-    RowBox[{"{", 
-     RowBox[{
-     "a", ",", "b", ",", "c", ",", "d", ",", "e", ",", "f", ",", "g", ",", 
-      "h", ",", "i", ",", "j", ",", "k", ",", "l", ",", "m", ",", "n"}], 
-     "}"}], ",", 
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"a", "->", "b"}], ",", 
-      RowBox[{"b", "\[UndirectedEdge]", "c"}], ",", 
-      RowBox[{"c", "\[UndirectedEdge]", "d"}], ",", 
-      RowBox[{"d", "->", "b"}], ",", 
-      RowBox[{"d", "\[UndirectedEdge]", "e"}], ",", 
-      RowBox[{"d", "->", "f"}], ",", 
-      RowBox[{"f", "\[UndirectedEdge]", "a"}], ",", 
-      RowBox[{"e", "->", "b"}], ",", 
-      RowBox[{"g", "\[UndirectedEdge]", "e"}], ",", 
-      RowBox[{"h", "\[UndirectedEdge]", "g"}], ",", 
-      RowBox[{"i", "\[UndirectedEdge]", "g"}], ",", 
-      RowBox[{"j", "\[UndirectedEdge]", "e"}], ",", 
-      RowBox[{"k", "\[UndirectedEdge]", "j"}], ",", 
-      RowBox[{"l", "\[UndirectedEdge]", "k"}], ",", 
-      RowBox[{"m", "\[UndirectedEdge]", "l"}], ",", 
-      RowBox[{"n", "\[UndirectedEdge]", "m"}]}], "}"}], ",", 
-    RowBox[{"VertexLabels", "->", "Automatic"}]}], "]"}], "]"}]], "Input",
- CellChangeTimes->{{3.8700945657529793`*^9, 3.870094568039405*^9}},
- CellLabel->"In[61]:=",
- CellID->458557020,ExpressionUUID->"2e8935ad-3a09-4ba1-8ae7-c28844e24a5a"],
-
-Cell[BoxData["14"], "Output",
- CellChangeTimes->{3.870094568357456*^9},
- CellLabel->"Out[61]=",
- CellID->347026190,ExpressionUUID->"7c0a5642-611b-404b-b15f-550d25c2ef9f"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"Graph", "[", 
   RowBox[{
    RowBox[{"{", 
     RowBox[{
-    "a", ",", "b", ",", "c", ",", "d", ",", "e", ",", "f", ",", "g", ",", "h",
-      ",", "i", ",", "j", ",", "k", ",", "l", ",", "m", ",", "n", ",", "o", 
-     ",", "p", ",", "q", ",", "r", ",", "s", ",", "t", ",", "u", ",", "v"}], 
-    "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{"a", "->", "b"}], ",", 
-     RowBox[{"b", "\[UndirectedEdge]", "c"}], ",", 
-     RowBox[{"c", "\[UndirectedEdge]", "d"}], ",", 
-     RowBox[{"d", "->", "b"}], ",", 
-     RowBox[{"d", "\[UndirectedEdge]", "e"}], ",", 
-     RowBox[{"d", "->", "f"}], ",", 
-     RowBox[{"f", "\[UndirectedEdge]", "a"}], ",", 
-     RowBox[{"e", "->", "b"}], ",", 
-     RowBox[{"g", "\[UndirectedEdge]", "e"}], ",", 
-     RowBox[{"h", "\[UndirectedEdge]", "g"}], ",", 
-     RowBox[{"i", "\[UndirectedEdge]", "g"}], ",", 
-     RowBox[{"j", "\[UndirectedEdge]", "e"}], ",", 
-     RowBox[{"k", "\[UndirectedEdge]", "j"}], ",", 
-     RowBox[{"l", "\[UndirectedEdge]", "k"}], ",", 
-     RowBox[{"m", "\[UndirectedEdge]", "l"}], ",", 
-     RowBox[{"n", "\[UndirectedEdge]", "m"}], ",", 
-     RowBox[{"m", "\[UndirectedEdge]", "o"}], ",", 
-     RowBox[{"o", "\[UndirectedEdge]", "p"}], ",", 
-     RowBox[{"p", "\[UndirectedEdge]", "q"}], ",", 
-     RowBox[{"q", "\[UndirectedEdge]", "r"}], ",", 
-     RowBox[{"r", "\[UndirectedEdge]", "s"}], ",", 
-     RowBox[{"s", "\[UndirectedEdge]", "t"}], ",", 
-     RowBox[{"t", "\[UndirectedEdge]", "u"}], ",", 
-     RowBox[{"u", "\[UndirectedEdge]", "v"}]}], "}"}], ",", 
-   RowBox[{"VertexLabels", "->", "Automatic"}]}], "]"}]], "Input",
- CellChangeTimes->{{3.870094577084386*^9, 3.870094610922418*^9}},
- CellLabel->"In[62]:=",
- CellID->265884092,ExpressionUUID->"d42fe54c-811b-435c-b573-05c47d9608bc"],
-
-Cell[BoxData[
- GraphicsBox[
-  NamespaceBox["NetworkGraphics",
-   DynamicModuleBox[{Typeset`graph = HoldComplete[
-     Graph[{$CellContext`a, $CellContext`b, $CellContext`c, $CellContext`d, \
-$CellContext`e, $CellContext`f, $CellContext`g, $CellContext`h, \
-$CellContext`i, $CellContext`j, $CellContext`k, $CellContext`l, \
-$CellContext`m, $CellContext`n, $CellContext`o, $CellContext`p, \
-$CellContext`q, $CellContext`r, $CellContext`s, $CellContext`t, \
-$CellContext`u, $CellContext`v}, {{{1, 2}, {4, 2}, {4, 6}, {5, 2}}, {{2, 3}, {
-       3, 4}, {4, 5}, {6, 1}, {7, 5}, {8, 7}, {9, 7}, {10, 5}, {11, 10}, {12, 
-       11}, {13, 12}, {14, 13}, {13, 15}, {15, 16}, {16, 17}, {17, 18}, {18, 
-       19}, {19, 20}, {20, 21}, {21, 22}}}, {VertexLabels -> {Automatic}}]]}, 
-    TagBox[GraphicsGroupBox[{
-       {Hue[0.6, 0.7, 0.5], Opacity[0.7], Arrowheads[0.013235830685113031`], 
-        {Arrowheads[0.], 
-         ArrowBox[{{14.914602977173805`, 3.2186654002202717`}, {
-          15.31069524426754, 2.899501080411226}}, 0.08105990796979619]}, 
-        ArrowBox[{{14.914602977173805`, 3.2186654002202717`}, {
-         14.53806460343566, 2.5012812315311406`}}, 0.08105990796979619], 
-        {Arrowheads[0.], 
-         ArrowBox[{{14.53806460343566, 2.5012812315311406`}, {
-          15.23761478358394, 2.295633316501983}}, 0.08105990796979619]}, 
-        {Arrowheads[0.], 
-         ArrowBox[{{15.23761478358394, 2.295633316501983}, {
-          14.754867256482678`, 2.2270172787886042`}}, 0.08105990796979619]}, 
-        {Arrowheads[0.], 
-         ArrowBox[{{14.754867256482678`, 2.2270172787886042`}, {
-          13.901500259777862`, 1.742876817915993}}, 0.08105990796979619]}, 
-        ArrowBox[{{14.754867256482678`, 2.2270172787886042`}, {
-         14.53806460343566, 2.5012812315311406`}}, 0.08105990796979619], 
-        ArrowBox[{{14.754867256482678`, 2.2270172787886042`}, {
-         15.31069524426754, 2.899501080411226}}, 0.08105990796979619], 
-        {Arrowheads[0.], 
-         ArrowBox[{{13.901500259777862`, 1.742876817915993}, {
-          14.479564639647126`, 0.7608382355609099}}, 0.08105990796979619]}, 
-        {Arrowheads[0.], 
-         ArrowBox[{{13.901500259777862`, 1.742876817915993}, {
-          12.500115852842022`, 1.7154449092211352`}}, 0.08105990796979619]}, 
-        ArrowBox[{{13.901500259777862`, 1.742876817915993}, {
-         14.53806460343566, 2.5012812315311406`}}, 0.08105990796979619], 
-        {Arrowheads[0.], 
-         ArrowBox[{{14.479564639647126`, 0.7608382355609099}, {
-          15.155154738936623`, 0.34172259247828585`}}, 0.08105990796979619]}, 
-        {Arrowheads[0.], 
-         ArrowBox[{{14.479564639647126`, 0.7608382355609099}, {
-          14.561360514224953`, 0.}}, 0.08105990796979619]}, 
-        {Arrowheads[0.], 
-         ArrowBox[{{12.500115852842022`, 1.7154449092211352`}, {
-          11.136489375780135`, 1.688762037627186}}, 0.08105990796979619]}, 
-        {Arrowheads[0.], 
-         ArrowBox[{{11.136489375780135`, 1.688762037627186}, {
-          9.794424665504414, 1.6583803419962682`}}, 0.08105990796979619]}, 
-        {Arrowheads[0.], 
-         ArrowBox[{{9.794424665504414, 1.6583803419962682`}, {
-          8.454248184523593, 1.614931378591072}}, 0.08105990796979619]}, 
-        {Arrowheads[0.], 
-         ArrowBox[{{8.454248184523593, 1.614931378591072}, {8.262898459962452,
-           1.0670577937441723`}}, 0.08105990796979619]}, 
-        {Arrowheads[0.], 
-         ArrowBox[{{8.454248184523593, 1.614931378591072}, {7.158784414019179,
-           1.6830495271378019`}}, 0.08105990796979619]}, 
-        {Arrowheads[0.], 
-         ArrowBox[{{7.158784414019179, 1.6830495271378019`}, {
-          5.927619645807022, 1.720737822602345}}, 0.08105990796979619]}, 
-        {Arrowheads[0.], 
-         ArrowBox[{{5.927619645807022, 1.720737822602345}, {4.750863760573442,
-           1.7517956305473792`}}, 0.08105990796979619]}, 
-        {Arrowheads[0.], 
-         ArrowBox[{{4.750863760573442, 1.7517956305473792`}, {
-          3.628508512987941, 1.779367204097083}}, 0.08105990796979619]}, 
-        {Arrowheads[0.], 
-         ArrowBox[{{3.628508512987941, 1.779367204097083}, {
-          2.5696701260317427`, 1.806609548539507}}, 0.08105990796979619]}, 
-        {Arrowheads[0.], 
-         ArrowBox[{{2.5696701260317427`, 1.806609548539507}, {
-          1.580392172788522, 1.8322509622740468`}}, 0.08105990796979619]}, 
-        {Arrowheads[0.], 
-         ArrowBox[{{1.580392172788522, 1.8322509622740468`}, {
-          0.7061489678018837, 1.8543625323509318`}}, 0.08105990796979619]}, 
-        {Arrowheads[0.], 
-         ArrowBox[{{0.7061489678018837, 1.8543625323509318`}, {0., 
-          1.8717455752399677`}}, 0.08105990796979619]}}, 
-       {Hue[0.6, 0.2, 0.8], EdgeForm[{GrayLevel[0], Opacity[
-        0.7]}], {
-         DiskBox[{14.914602977173805, 3.2186654002202717}, 
-          0.08105990796979619], 
-         InsetBox["a", 
-          Offset[{2, 2}, {14.995662885143602, 3.2997253081900677}], 
-          ImageScaled[{0, 0}],
-          BaseStyle->"Graphics"]}, {
-         DiskBox[{14.53806460343566, 2.5012812315311406}, 
-          0.08105990796979619], 
-         InsetBox["b", 
-          Offset[{2, 2}, {14.619124511405458, 2.5823411395009366}], 
-          ImageScaled[{0, 0}],
-          BaseStyle->"Graphics"]}, {
-         DiskBox[{15.23761478358394, 2.295633316501983}, 0.08105990796979619],
-          InsetBox["c", 
-          Offset[{2, 2}, {15.318674691553737, 2.376693224471779}], 
-          ImageScaled[{0, 0}],
-          BaseStyle->"Graphics"]}, {
-         DiskBox[{14.754867256482678, 2.2270172787886042}, 
-          0.08105990796979619], 
-         InsetBox["d", 
-          Offset[{2, 2}, {14.835927164452475, 2.3080771867584002}], 
-          ImageScaled[{0, 0}],
-          BaseStyle->"Graphics"]}, {
-         DiskBox[{13.901500259777862, 1.742876817915993}, 
-          0.08105990796979619], 
-         InsetBox["e", 
-          Offset[{2, 2}, {13.982560167747659, 1.8239367258857893}], 
-          ImageScaled[{0, 0}],
-          BaseStyle->"Graphics"]}, {
-         DiskBox[{15.31069524426754, 2.899501080411226}, 0.08105990796979619],
-          InsetBox["f", 
-          Offset[{2, 2}, {15.391755152237337, 2.980560988381022}], 
-          ImageScaled[{0, 0}],
-          BaseStyle->"Graphics"]}, {
-         DiskBox[{14.479564639647126, 0.7608382355609099}, 
-          0.08105990796979619], 
-         InsetBox["g", 
-          Offset[{2, 2}, {14.560624547616923, 0.8418981435307061}], 
-          ImageScaled[{0, 0}],
-          BaseStyle->"Graphics"]}, {
-         DiskBox[{15.155154738936623, 0.34172259247828585}, 
-          0.08105990796979619], 
-         InsetBox["h", Offset[{2, 2}, {15.23621464690642, 0.422782500448082}],
-           ImageScaled[{0, 0}],
-          BaseStyle->"Graphics"]}, {
-         DiskBox[{14.561360514224953, 0.}, 0.08105990796979619], 
-         InsetBox["i", 
-          Offset[{2, 2}, {14.64242042219475, 0.08105990796979619}], 
-          ImageScaled[{0, 0}],
-          BaseStyle->"Graphics"]}, {
-         DiskBox[{12.500115852842022, 1.7154449092211352}, 
-          0.08105990796979619], 
-         InsetBox["j", 
-          Offset[{2, 2}, {12.581175760811819, 1.7965048171909315}], 
-          ImageScaled[{0, 0}],
-          BaseStyle->"Graphics"]}, {
-         DiskBox[{11.136489375780135, 1.688762037627186}, 
-          0.08105990796979619], 
-         InsetBox["k", 
-          Offset[{2, 2}, {11.217549283749932, 1.7698219455969821}], 
-          ImageScaled[{0, 0}],
-          BaseStyle->"Graphics"]}, {
-         DiskBox[{9.794424665504414, 1.6583803419962682}, 
-          0.08105990796979619], 
-         InsetBox["l", Offset[{2, 2}, {9.87548457347421, 1.7394402499660644}],
-           ImageScaled[{0, 0}],
-          BaseStyle->"Graphics"]}, {
-         DiskBox[{8.454248184523593, 1.614931378591072}, 0.08105990796979619],
-          InsetBox["m", 
-          Offset[{2, 2}, {8.53530809249339, 1.6959912865608682}], 
-          ImageScaled[{0, 0}],
-          BaseStyle->"Graphics"]}, {
-         DiskBox[{8.262898459962452, 1.0670577937441723}, 
-          0.08105990796979619], 
-         InsetBox["n", 
-          Offset[{2, 2}, {8.343958367932249, 1.1481177017139685}], 
-          ImageScaled[{0, 0}],
-          BaseStyle->"Graphics"]}, {
-         DiskBox[{7.158784414019179, 1.6830495271378019}, 
-          0.08105990796979619], 
-         InsetBox["o", Offset[{2, 2}, {7.239844321988975, 1.764109435107598}],
-           ImageScaled[{0, 0}],
-          BaseStyle->"Graphics"]}, {
-         DiskBox[{5.927619645807022, 1.720737822602345}, 0.08105990796979619],
-          InsetBox["p", 
-          Offset[{2, 2}, {6.008679553776818, 1.8017977305721413}], 
-          ImageScaled[{0, 0}],
-          BaseStyle->"Graphics"]}, {
-         DiskBox[{4.750863760573442, 1.7517956305473792}, 
-          0.08105990796979619], 
-         InsetBox["q", 
-          Offset[{2, 2}, {4.831923668543238, 1.8328555385171754}], 
-          ImageScaled[{0, 0}],
-          BaseStyle->"Graphics"]}, {
-         DiskBox[{3.628508512987941, 1.779367204097083}, 0.08105990796979619],
-          InsetBox["r", 
-          Offset[{2, 2}, {3.709568420957737, 1.8604271120668792}], 
-          ImageScaled[{0, 0}],
-          BaseStyle->"Graphics"]}, {
-         DiskBox[{2.5696701260317427, 1.806609548539507}, 
-          0.08105990796979619], 
-         InsetBox["s", 
-          Offset[{2, 2}, {2.6507300340015387, 1.8876694565093033}], 
-          ImageScaled[{0, 0}],
-          BaseStyle->"Graphics"]}, {
-         DiskBox[{1.580392172788522, 1.8322509622740468}, 
-          0.08105990796979619], 
-         InsetBox["t", 
-          Offset[{2, 2}, {1.6614520807583182, 1.913310870243843}], 
-          ImageScaled[{0, 0}],
-          BaseStyle->"Graphics"]}, {
-         DiskBox[{0.7061489678018837, 1.8543625323509318}, 
-          0.08105990796979619], 
-         InsetBox["u", Offset[{2, 2}, {0.78720887577168, 1.935422440320728}], 
-          ImageScaled[{0, 0}],
-          BaseStyle->"Graphics"]}, {
-         DiskBox[{0., 1.8717455752399677}, 0.08105990796979619], 
-         InsetBox["v", 
-          Offset[{2, 2}, {0.08105990796979619, 1.9528054832097639}], 
-          ImageScaled[{0, 0}],
-          BaseStyle->"Graphics"]}}}],
-     MouseAppearanceTag["NetworkGraphics"]],
-    AllowKernelInitialization->False]],
-  DefaultBaseStyle->{
-   "NetworkGraphics", FrontEnd`GraphicsHighlightColor -> Hue[0.8, 1., 0.6]},
-  FormatType->TraditionalForm,
-  FrameTicks->None]], "Output",
- CellChangeTimes->{3.8700946114044724`*^9},
- CellLabel->"Out[62]=",
- CellID->1817347,ExpressionUUID->"53152f0d-5e4d-4736-ad1c-64e3f239b0e9"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"MixedEulerianGraphQ", "[", 
-   RowBox[{"Graph", "[", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{
-      "a", ",", "b", ",", "c", ",", "d", ",", "e", ",", "f", ",", "g", ",", 
-       "h", ",", "i", ",", "j", ",", "k", ",", "l", ",", "m", ",", "n", ",", 
-       "o", ",", "p", ",", "q", ",", "r", ",", "s", ",", "t", ",", "u", ",", 
-       "v"}], "}"}], ",", 
-     RowBox[{"{", 
-      RowBox[{
-       RowBox[{"a", "->", "b"}], ",", 
-       RowBox[{"b", "\[UndirectedEdge]", "c"}], ",", 
-       RowBox[{"c", "\[UndirectedEdge]", "d"}], ",", 
-       RowBox[{"d", "->", "b"}], ",", 
-       RowBox[{"d", "\[UndirectedEdge]", "e"}], ",", 
-       RowBox[{"d", "->", "f"}], ",", 
-       RowBox[{"f", "\[UndirectedEdge]", "a"}], ",", 
-       RowBox[{"e", "->", "b"}], ",", 
-       RowBox[{"g", "\[UndirectedEdge]", "e"}], ",", 
-       RowBox[{"h", "\[UndirectedEdge]", "g"}], ",", 
-       RowBox[{"i", "\[UndirectedEdge]", "g"}], ",", 
-       RowBox[{"j", "\[UndirectedEdge]", "e"}], ",", 
-       RowBox[{"k", "\[UndirectedEdge]", "j"}], ",", 
-       RowBox[{"l", "\[UndirectedEdge]", "k"}], ",", 
-       RowBox[{"m", "\[UndirectedEdge]", "l"}], ",", 
-       RowBox[{"n", "\[UndirectedEdge]", "m"}], ",", 
-       RowBox[{"m", "\[UndirectedEdge]", "o"}], ",", 
-       RowBox[{"o", "\[UndirectedEdge]", "p"}], ",", 
-       RowBox[{"p", "\[UndirectedEdge]", "q"}], ",", 
-       RowBox[{"q", "\[UndirectedEdge]", "r"}], ",", 
-       RowBox[{"r", "\[UndirectedEdge]", "s"}], ",", 
-       RowBox[{"s", "\[UndirectedEdge]", "t"}], ",", 
-       RowBox[{"t", "\[UndirectedEdge]", "u"}], ",", 
-       RowBox[{"u", "\[UndirectedEdge]", "v"}]}], "}"}], ",", 
-     RowBox[{"VertexLabels", "->", "Automatic"}]}], "]"}], "]"}], "//", 
-  "AbsoluteTiming"}]], "Input",
- CellChangeTimes->{{3.870094613934546*^9, 3.870094637475015*^9}, 
-   3.870102118126992*^9},
- CellLabel->"In[64]:=",
- CellID->190482533,ExpressionUUID->"dba8d26f-9f6a-449a-911a-f66d27e62c7c"],
-
-Cell[BoxData[
- RowBox[{"{", 
-  RowBox[{"218.9658268`", ",", "False"}], "}"}]], "Output",
- CellChangeTimes->{3.870094632418041*^9, 3.8700948568402224`*^9},
- CellLabel->"Out[64]=",
- CellID->42759604,ExpressionUUID->"47bc575f-bdaa-4802-ad35-24fb37044256"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"VertexCount", "[", 
-  RowBox[{"Graph", "[", 
-   RowBox[{
-    RowBox[{"{", 
-     RowBox[{
-     "a", ",", "b", ",", "c", ",", "d", ",", "e", ",", "f", ",", "g", ",", 
-      "h", ",", "i", ",", "j", ",", "k", ",", "l", ",", "m", ",", "n", ",", 
-      "o", ",", "p", ",", "q", ",", "r", ",", "s", ",", "t", ",", "u", ",", 
-      "v"}], "}"}], ",", 
-    RowBox[{"{", 
-     RowBox[{
-      RowBox[{"a", "->", "b"}], ",", 
-      RowBox[{"b", "\[UndirectedEdge]", "c"}], ",", 
-      RowBox[{"c", "\[UndirectedEdge]", "d"}], ",", 
-      RowBox[{"d", "->", "b"}], ",", 
-      RowBox[{"d", "\[UndirectedEdge]", "e"}], ",", 
-      RowBox[{"d", "->", "f"}], ",", 
-      RowBox[{"f", "\[UndirectedEdge]", "a"}], ",", 
-      RowBox[{"e", "->", "b"}], ",", 
-      RowBox[{"g", "\[UndirectedEdge]", "e"}], ",", 
-      RowBox[{"h", "\[UndirectedEdge]", "g"}], ",", 
-      RowBox[{"i", "\[UndirectedEdge]", "g"}], ",", 
-      RowBox[{"j", "\[UndirectedEdge]", "e"}], ",", 
-      RowBox[{"k", "\[UndirectedEdge]", "j"}], ",", 
-      RowBox[{"l", "\[UndirectedEdge]", "k"}], ",", 
-      RowBox[{"m", "\[UndirectedEdge]", "l"}], ",", 
-      RowBox[{"n", "\[UndirectedEdge]", "m"}], ",", 
-      RowBox[{"m", "\[UndirectedEdge]", "o"}], ",", 
-      RowBox[{"o", "\[UndirectedEdge]", "p"}], ",", 
-      RowBox[{"p", "\[UndirectedEdge]", "q"}], ",", 
-      RowBox[{"q", "\[UndirectedEdge]", "r"}], ",", 
-      RowBox[{"r", "\[UndirectedEdge]", "s"}], ",", 
-      RowBox[{"s", "\[UndirectedEdge]", "t"}], ",", 
-      RowBox[{"t", "\[UndirectedEdge]", "u"}], ",", 
-      RowBox[{"u", "\[UndirectedEdge]", "v"}]}], "}"}], ",", 
-    RowBox[{"VertexLabels", "->", "Automatic"}]}], "]"}], "]"}]], "Input",
- CellChangeTimes->{{3.870102112219032*^9, 3.8701021205492125`*^9}},
- CellLabel->"In[65]:=",
- CellID->93003317,ExpressionUUID->"3fb53fa8-6c53-4f9b-b303-c93bff88d396"],
-
-Cell[BoxData["22"], "Output",
- CellChangeTimes->{3.870102121075162*^9},
- CellLabel->"Out[65]=",
- CellID->52685251,ExpressionUUID->"950961da-d93c-4c10-a8fa-2c67ed68d4bb"]
+    "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", 
+     FractionBox[
+      SuperscriptBox["a", "2"], 
+      SuperscriptBox["i", "2"]], ",", "0", ",", "0", ",", "0", ",", "0", ",", 
+     "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", 
+     "0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", "0"}], "}"}]], "Output",
+ CellChangeTimes->{3.870123455171934*^9},
+ CellLabel->"Out[318]=",
+ CellID->17080863,ExpressionUUID->"7a6ff4b2-86ed-4d53-93ad-dd1f83cc2f1e"]
 }, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell["Scope", "Subsection",
- TaggingRules->{},
  CellTags->"DefaultContent",
- CellID->313242344,ExpressionUUID->"7a1bd29a-a263-4e11-b18a-a016e90f82b8"],
+ CellID->313242344,ExpressionUUID->"7ae2f96c-4644-49e4-8efa-32c95ffe0e9c"],
 
 Cell["\<\
 Text about additional examples expanding scope (and see other sections for \
 options, applications, etc):\
 \>", "Text",
- TaggingRules->{},
  CellTags->"DefaultContent",
- CellID->291939446,ExpressionUUID->"056e9f4b-7342-40ba-9d05-b97b24d0c42a"],
+ CellID->291939446,ExpressionUUID->"5464e125-8e23-470e-9399-451a12dbc65c"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"MyFunction", "[", 
   RowBox[{"x", ",", "y", ",", "z"}], "]"}]], "Input",
- TaggingRules->{},
  CellTags->"DefaultContent",
  CellLabel->"In[2]:= ",
- CellID->448965068,ExpressionUUID->"0b6b45a4-0c78-4c56-a289-cfca524babf8"],
+ CellID->448965068,ExpressionUUID->"86b07c24-39be-4ed7-9b4d-e6eacf521b47"],
 
 Cell[BoxData[
  RowBox[{"x", " ", "y", " ", "z"}]], "Output",
- TaggingRules->{},
  CellTags->"DefaultContent",
  CellLabel->"Out[2]= ",
- CellID->494498970,ExpressionUUID->"52b33671-fd5c-471b-890a-f59f16456d6c"]
+ CellID->494498970,ExpressionUUID->"6d374abc-3ab5-4ff3-831c-7ff5e276b819"]
 }, Open  ]]
 }, Open  ]],
 
 Cell["Options", "Subsection",
- TaggingRules->{},
  CellTags->"DefaultContent",
- CellID->879773335,ExpressionUUID->"301780eb-8c96-4943-b1ce-61444e202137"],
+ CellID->879773335,ExpressionUUID->"bf47ac4b-c8b3-4ca5-9b12-c3a1e99f3784"],
 
 Cell["Applications", "Subsection",
- TaggingRules->{},
  CellTags->"DefaultContent",
- CellID->542143288,ExpressionUUID->"e33975bb-83e2-43b5-898c-13ba169f8627"],
+ CellID->542143288,ExpressionUUID->"10df84e7-8817-4614-a64b-9deb0108718d"],
 
 Cell["Properties and Relations", "Subsection",
- TaggingRules->{},
  CellTags->"DefaultContent",
- CellID->727494039,ExpressionUUID->"725ab297-0924-4be1-892f-962c3fda5e11"],
-
-Cell[CellGroupData[{
+ CellID->727494039,ExpressionUUID->"5402f614-bb66-409c-95ac-810ebaadbcc9"],
 
 Cell["Possible Issues", "Subsection",
- TaggingRules->{},
  CellTags->"DefaultContent",
- CellID->471245215,ExpressionUUID->"f280761f-0190-43ea-aab7-1f61843d3eef"],
-
-Cell["\<\
-The function only works for graphs with a few number of vertexes/nodes. \
-\>", "Text",
- CellChangeTimes->{{3.87010215303767*^9, 3.870102168655464*^9}, {
-   3.870102238056982*^9, 3.8701023103945093`*^9}, 3.8701052569627485`*^9, 
-   3.8701053466015296`*^9},
- CellID->304567415,ExpressionUUID->"f875b0c7-2257-413e-bdd5-1ee477e3c39b"]
-}, Open  ]],
+ CellID->471245215,ExpressionUUID->"b1ae8080-642d-4a7d-b3fe-46a9edf34049"],
 
 Cell["Neat Examples", "Subsection",
- TaggingRules->{},
  CellTags->"DefaultContent",
- CellID->303071976,ExpressionUUID->"79801fd7-f40e-4e59-b5e1-07310fb40ea1"]
+ CellID->303071976,ExpressionUUID->"26557ecf-9d8b-424b-b033-1e724f7fbcba"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1495,7 +567,7 @@ Cell["Source & Additional Information", "Section",
  Deletable->False,
  TaggingRules->{"TemplateGroupName" -> "Source & Additional Information"},
  CellTags->{"Source & Additional Information", "TemplateSection"},
- CellID->871630328,ExpressionUUID->"db2b2004-bfad-4c36-aca0-1c6df15b5f85"],
+ CellID->871630328,ExpressionUUID->"f6f91668-45ef-4f1d-83b3-4fa08a199015"],
 
 Cell[CellGroupData[{
 
@@ -1519,26 +591,24 @@ publicly credited with contributing this function.", "MoreInfoText"],
     CurrentValue[
      EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
    ImageSize->Automatic]],ExpressionUUID->
-  "6212ac8c-915d-4775-9b56-f27ed910907f"]
+  "81555021-9ef0-4e51-aad6-6c8dd8013ff6"]
 }], "Subsection",
  Editable->False,
  Deletable->False,
  TaggingRules->{"TemplateGroupName" -> "Contributed By"},
  DefaultNewCellStyle->"Text",
  CellTags->{"Contributed By", "ContributorInformation", "TemplateCellGroup"},
- CellID->771147648,ExpressionUUID->"cf557985-84d5-42bc-b6a4-ea9e853628e4"],
+ CellID->771147648,ExpressionUUID->"63cd2d7a-713d-4493-b1f4-873414016bbd"],
 
-Cell["Peter Cullen Burbery", "Text",
- TaggingRules->{},
+Cell["Author Name", "Text",
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
        WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
- CellChangeTimes->{{3.870094174543521*^9, 3.870094179607034*^9}},
  CellTags->{"DefaultContent", "TabNext"},
- CellID->855757352,ExpressionUUID->"1946fa6d-588a-4c34-8beb-561172b2564b"]
+ CellID->855757352,ExpressionUUID->"6d86f63d-d0b6-4d5c-9e17-0395fbfbb86a"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1563,17 +633,16 @@ concepts) that should be used to include the function in search results.",
     CurrentValue[
      EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
    ImageSize->Automatic]],ExpressionUUID->
-  "6aabb33a-f1ce-49df-a134-fa4d142bc176"]
+  "6b1853b1-4995-424a-84ca-9c1d4d6b9bad"]
 }], "Subsection",
  Editable->False,
  Deletable->False,
  TaggingRules->{"TemplateGroupName" -> "Keywords"},
  DefaultNewCellStyle->"Item",
  CellTags->{"Keywords", "TemplateCellGroup"},
- CellID->854882061,ExpressionUUID->"61e650f3-8d19-496f-b004-bb12db6e2877"],
+ CellID->854882061,ExpressionUUID->"cbaadf8e-2fc2-44a7-bbde-09a4035a31d8"],
 
 Cell["keyword 1", "Item",
- TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -1581,7 +650,7 @@ Cell["keyword 1", "Item",
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
  CellTags->{"DefaultContent", "TabNext"},
- CellID->560424104,ExpressionUUID->"f626d667-8842-474e-86fb-037b72186339"]
+ CellID->560424104,ExpressionUUID->"f55714b5-ce87-49d2-9260-5879bfa1057a"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1592,7 +661,7 @@ Cell["Categories", "Subsection",
  TaggingRules->{"TemplateGroupName" -> "Categories"},
  DefaultNewCellStyle->"Item",
  CellTags->{"Categories", "TemplateCellGroup"},
- CellID->193940140,ExpressionUUID->"fe02a378-5946-468c-9b2e-70e9671d8528"],
+ CellID->193940140,ExpressionUUID->"e7ee6232-47e7-4be8-9d54-1fff4d86622c"],
 
 Cell[BoxData[
  TagBox[GridBox[{
@@ -1842,7 +911,7 @@ WuYdc+Ub5wvq9oc1GUlKJnXIiqJrBdBCtZQ3n11qHnCPtWMD6sV0ipOzhW1tB9/elmHINGKs+\
 zYjElVnRCE36N6oQaf518wOqwmP/BY28YvfMpmxegakyEMBGmf4cRyQYv8RYdQtkFI3PmDU1ZTKI=\
 "},
  CellTags->{"Categories", "Categories-Checkboxes", "CheckboxCell"},
- CellID->106874216,ExpressionUUID->"1cdb5210-1c9e-4267-9ab1-19f285353ec7"]
+ CellID->106874216,ExpressionUUID->"2952ecb2-f83d-42b6-ae23-39eb1b2e989b"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1867,17 +936,16 @@ related to the function.", "MoreInfoText"], Background -> GrayLevel[0.95],
     CurrentValue[
      EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
    ImageSize->Automatic]],ExpressionUUID->
-  "9becb4cf-47d9-4e5a-9bb4-89f1cc376cca"]
+  "8a1a0cfd-0d6c-4a84-a9db-1f54f87a4479"]
 }], "Subsection",
  Editable->False,
  Deletable->False,
  TaggingRules->{"TemplateGroupName" -> "Related Symbols"},
  DefaultNewCellStyle->"Item",
  CellTags->{"Related Symbols", "TemplateCellGroup"},
- CellID->525877127,ExpressionUUID->"ec7e906b-36dd-48e0-85d0-d75d2fbfc84c"],
+ CellID->525877127,ExpressionUUID->"860d225c-c670-413f-a031-815c3984f8aa"],
 
 Cell["SymbolName (documented Wolfram Language symbol)", "Item",
- TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -1885,7 +953,7 @@ Cell["SymbolName (documented Wolfram Language symbol)", "Item",
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
  CellTags->{"DefaultContent", "TabNext"},
- CellID->195255409,ExpressionUUID->"b01ddcaa-9129-4c8f-b69b-418e888e5912"]
+ CellID->195255409,ExpressionUUID->"c8faa09a-6fbb-439d-9686-0004f9306338"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1910,17 +978,16 @@ repository that are related to this function.", "MoreInfoText"], Background ->
     CurrentValue[
      EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
    ImageSize->Automatic]],ExpressionUUID->
-  "355ff542-e058-49c2-8ccc-ca30c9e61c40"]
+  "ea890a71-24fa-4688-8126-0127388e2ce6"]
 }], "Subsection",
  Editable->False,
  Deletable->False,
  TaggingRules->{"TemplateGroupName" -> "Related Resource Objects"},
  DefaultNewCellStyle->"Item",
  CellTags->{"Related Resource Objects", "TemplateCellGroup"},
- CellID->869341850,ExpressionUUID->"f0125b72-cbc1-4a08-8e65-53860fdb42f4"],
+ CellID->869341850,ExpressionUUID->"c17c67da-f4ed-4298-a1ba-09735059c023"],
 
 Cell["Resource Name (resources from any Wolfram repository)", "Item",
- TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -1928,7 +995,7 @@ Cell["Resource Name (resources from any Wolfram repository)", "Item",
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
  CellTags->{"DefaultContent", "TabNext"},
- CellID->694609509,ExpressionUUID->"06caa43f-3d35-4a12-9bcb-25fe12cfe8fa"]
+ CellID->694609509,ExpressionUUID->"f595bbbb-0e05-413c-a2c3-e114ec9ba979"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1953,17 +1020,16 @@ repository).", "MoreInfoText"], Background -> GrayLevel[0.95], FrameMargins ->
     CurrentValue[
      EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
    ImageSize->Automatic]],ExpressionUUID->
-  "46abf7a3-7b58-44fa-8424-d098392e545e"]
+  "8104e6fd-a8b8-462f-8089-caef86939e3e"]
 }], "Subsection",
  Editable->False,
  Deletable->False,
  TaggingRules->{"TemplateGroupName" -> "Source/Reference Citation"},
  DefaultNewCellStyle->"Text",
  CellTags->{"Source/Reference Citation", "TemplateCellGroup"},
- CellID->788767010,ExpressionUUID->"07384bd7-0c0f-4514-a471-d80d496ee833"],
+ CellID->788767010,ExpressionUUID->"28f3e329-54b8-43a5-8d1d-7a3b69c65fa4"],
 
 Cell["Source, reference or citation information", "Text",
- TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -1971,7 +1037,7 @@ Cell["Source, reference or citation information", "Text",
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
  CellTags->{"DefaultContent", "TabNext"},
- CellID->512303561,ExpressionUUID->"9aa110a3-62a6-4037-99c4-3694715eb1d2"]
+ CellID->512303561,ExpressionUUID->"d62647a9-e27a-429b-b701-9d622a75ba1a"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1996,17 +1062,16 @@ to the function.", "MoreInfoText"], Background -> GrayLevel[0.95],
     CurrentValue[
      EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
    ImageSize->Automatic]],ExpressionUUID->
-  "318d3e47-4e39-4346-a63e-8e29eb9c2994"]
+  "e70a15d0-b7a0-46b2-9067-5f7582344487"]
 }], "Subsection",
  Editable->False,
  Deletable->False,
  TaggingRules->{"TemplateGroupName" -> "Links"},
  DefaultNewCellStyle->"Item",
  CellTags->{"Links", "TemplateCellGroup"},
- CellID->341958311,ExpressionUUID->"b69fc284-2b0f-402f-816d-23e646957d08"],
+ CellID->341958311,ExpressionUUID->"aa549591-ad34-4370-b8d9-d38d7b8b1704"],
 
 Cell["Link to other related material", "Item",
- TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -2014,7 +1079,7 @@ Cell["Link to other related material", "Item",
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
  CellTags->{"DefaultContent", "TabNext"},
- CellID->938599834,ExpressionUUID->"af5727b5-9483-433a-9770-45565ec6b112"]
+ CellID->938599834,ExpressionUUID->"c7aa46f4-b805-4395-aac7-fd2af11b9aa2"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -2057,31 +1122,29 @@ Input/Output cell pairs or as symbolic ",
     CurrentValue[
      EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
    ImageSize->Automatic]],ExpressionUUID->
-  "e8ff453b-ce4a-469b-89f8-dd4c51f14bff"]
+  "8319336d-2e98-4d4f-b0f2-5cc6561a905d"]
 }], "Subsection",
  Editable->False,
  Deletable->False,
  TaggingRules->{"TemplateGroupName" -> "VerificationTests"},
  DefaultNewCellStyle->"Input",
  CellTags->{"TemplateCellGroup", "Tests", "VerificationTests"},
- CellID->187055128,ExpressionUUID->"17f178d7-46a6-46cf-9d80-ec1104c621bd"],
+ CellID->187055128,ExpressionUUID->"be8768fd-14bf-4905-a995-4c3a99575cf6"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"MyFunction", "[", 
   RowBox[{"x", ",", "y"}], "]"}]], "Input",
- TaggingRules->{},
  CellTags->"DefaultContent",
  CellLabel->"In[3]:=",
- CellID->770806,ExpressionUUID->"f972215e-b5f0-42d4-9cd5-8cce6e3dd63a"],
+ CellID->770806,ExpressionUUID->"fdaf9ecb-3fcd-4848-886c-20d6b1e1fdc1"],
 
 Cell[BoxData[
  RowBox[{"x", " ", "y"}]], "Output",
- TaggingRules->{},
  CellTags->"DefaultContent",
  CellLabel->"Out[3]=",
- CellID->759771806,ExpressionUUID->"0c837c4e-d015-4a06-a407-b1e41d97b481"]
+ CellID->759771806,ExpressionUUID->"c831f043-2b0a-4e9e-9160-756746de20ff"]
 }, Open  ]]
 }, Open  ]],
 
@@ -2107,13 +1170,13 @@ discoverable on the correct platforms.", "MoreInfoText"], Background ->
     CurrentValue[
      EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
    ImageSize->Automatic]],ExpressionUUID->
-  "bf9cea8c-3f8d-46d0-93f7-1ea9cbbf4310"]
+  "70ac0db1-a7c3-445c-9c99-050b4c644ecb"]
 }], "Subsection",
  Editable->False,
  Deletable->False,
  TaggingRules->{"TemplateGroupName" -> "Compatibility"},
  CellTags->{"Compatibility", "TemplateCellGroup"},
- CellID->465977791,ExpressionUUID->"7e35b2ca-7119-4f46-b663-77491b2c78b7"],
+ CellID->465977791,ExpressionUUID->"2fb4f5ea-28e6-4d30-a5cf-d83156839e17"],
 
 Cell[CellGroupData[{
 
@@ -2137,7 +1200,7 @@ Cell[TextData[{
     CurrentValue[
      EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
    ImageSize->Automatic]],ExpressionUUID->
-  "a69e1c48-07ff-4e3b-ac90-ebb0c18396da"]
+  "bb6f9cb0-f58e-4fe6-bb95-14a576d6f328"]
 }], "Subsubsection",
  Editable->False,
  Deletable->False,
@@ -2149,12 +1212,11 @@ Cell[TextData[{
  CellTags->{
   "CompatibilityWolframLanguageVersionRequired", "TemplateCellGroup", 
    "Wolfram Language Version"},
- CellID->267876551,ExpressionUUID->"b8b15926-60d5-4a87-b736-89245b67ab34"],
+ CellID->267876551,ExpressionUUID->"130a0793-6b32-4805-9dee-bdb6ccee25ee"],
 
 Cell["13.0+", "Text",
- TaggingRules->{},
  CellTags->{"DefaultContent", "ScrapeDefault"},
- CellID->788185540,ExpressionUUID->"ec7658ef-8fbb-4668-99ab-fa38b1a56368"]
+ CellID->788185540,ExpressionUUID->"6daa0254-1f5b-437f-ad0b-d6ec1ab4ba68"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -2179,7 +1241,7 @@ function properly.", "MoreInfoText"], Background -> GrayLevel[0.95],
     CurrentValue[
      EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
    ImageSize->Automatic]],ExpressionUUID->
-  "ae9ab692-e754-4b82-a370-42ebd9689147"]
+  "2937e23c-0e9e-4a49-b274-83366ee992b3"]
 }], "Subsubsection",
  Editable->False,
  Deletable->False,
@@ -2189,7 +1251,7 @@ function properly.", "MoreInfoText"], Background -> GrayLevel[0.95],
  FontSize->16,
  CellTags->{
   "CompatibilityOperatingSystem", "Operating System", "TemplateCellGroup"},
- CellID->752514832,ExpressionUUID->"5b10aeba-6853-4373-9b4d-0479737e52b3"],
+ CellID->752514832,ExpressionUUID->"c691c948-658d-4024-a799-ab8c65ebd6ac"],
 
 Cell[BoxData[
  TagBox[GridBox[{
@@ -2253,7 +1315,7 @@ V8VKrw2CoSkr4PBhG77xYRjCsNiZCaAnlIx8nJBt8hz/RIRT7YLrR8wRtF2wJ"},
  CellTags->{
   "CheckboxCell", "CompatibilityOperatingSystem", 
    "CompatibilityOperatingSystem-Checkboxes"},
- CellID->470277234,ExpressionUUID->"6d18a5be-482f-4da2-ac43-c08604e718b8"]
+ CellID->470277234,ExpressionUUID->"aacea199-54b5-4792-b41e-f06902db793f"]
 }, Closed]],
 
 Cell[CellGroupData[{
@@ -2283,7 +1345,7 @@ Cell[TextData[{
     CurrentValue[
      EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
    ImageSize->Automatic]],ExpressionUUID->
-  "f4a94c1c-3aef-4f74-944d-8088cd91603a"]
+  "228a38a8-6914-49c4-9df3-b987a81aaa33"]
 }], "Subsubsection",
  Editable->False,
  Deletable->False,
@@ -2292,7 +1354,7 @@ Cell[TextData[{
  DefaultNewCellStyle->"Item",
  FontSize->16,
  CellTags->{"CompatibilityFeatures", "Required Features", "TemplateCellGroup"},
- CellID->789112653,ExpressionUUID->"3364d045-f057-4971-addb-f4580fff3a2c"],
+ CellID->789112653,ExpressionUUID->"64423673-5543-42c0-8049-978cb835777f"],
 
 Cell[BoxData[
  TagBox[GridBox[{
@@ -2357,7 +1419,7 @@ xP33pDLt8GI6rPqOgUMS5G9YqEa2c+21GcLLebGg4nKxh8yJG5GKrGJog9Y37G/\
 obsYtD4mTxC2UWr58w3NfBx2Q=="},
  CellTags->{
   "CheckboxCell", "CompatibilityFeatures", "CompatibilityFeatures-Checkboxes"},
- CellID->32088781,ExpressionUUID->"92bb4549-f96c-43f7-a9b4-81b047871e2f"]
+ CellID->32088781,ExpressionUUID->"b85003fb-0209-4b81-9316-3c0fbc6f88fc"]
 }, Closed]],
 
 Cell[CellGroupData[{
@@ -2399,7 +1461,7 @@ to be compatible. See ",
     CurrentValue[
      EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
    ImageSize->Automatic]],ExpressionUUID->
-  "047738a5-26d7-4497-be3f-aaae7ceb7036"]
+  "d00e1a2f-6238-4c14-b36e-390c19bbc2be"]
 }], "Subsubsection",
  Editable->False,
  Deletable->False,
@@ -2409,7 +1471,7 @@ to be compatible. See ",
  FontSize->16,
  CellTags->{
   "CompatibilityEvaluationEnvironment", "Environments", "TemplateCellGroup"},
- CellID->939592672,ExpressionUUID->"0ba01ca7-a804-42fa-8292-c9f66ecdb951"],
+ CellID->939592672,ExpressionUUID->"426a508a-3d57-4252-9f93-260acfd615d7"],
 
 Cell[BoxData[
  TagBox[GridBox[{
@@ -2528,7 +1590,7 @@ CtT3WijAC2QEVrpHxl4zyvabiOYe3SjM66wLlsXG210M4C2Ewe7kgGe8Efg82xD96LUbOL+VQrkA=\
  CellTags->{
   "CheckboxCell", "CompatibilityEvaluationEnvironment", 
    "CompatibilityEvaluationEnvironment-Checkboxes"},
- CellID->360666327,ExpressionUUID->"ae2d8379-217a-45f6-baae-8e89dd1d4eb5"]
+ CellID->360666327,ExpressionUUID->"dd049fac-2ec4-49bc-810c-dec576956c14"]
 }, Closed]],
 
 Cell[CellGroupData[{
@@ -2552,7 +1614,7 @@ cloud.", "MoreInfoText"], Background -> GrayLevel[0.95], FrameMargins -> 20,
     CurrentValue[
      EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
    ImageSize->Automatic]],ExpressionUUID->
-  "ff57db19-13cf-4776-a79d-5d689f8b8526"]
+  "15d39eac-c9fc-4e38-9303-f61a46f8f80e"]
 }], "Subsubsection",
  Editable->False,
  Deletable->False,
@@ -2561,7 +1623,7 @@ cloud.", "MoreInfoText"], Background -> GrayLevel[0.95], FrameMargins -> 20,
  DefaultNewCellStyle->"Text",
  FontSize->16,
  CellTags->{"Cloud Support", "CompatibilityCloudSupport", "TemplateCellGroup"},
- CellID->624931977,ExpressionUUID->"7c0708d3-ced2-4406-886f-a3401d6a9ecf"],
+ CellID->624931977,ExpressionUUID->"6c50726d-5f4a-453f-9f62-87e376c9d92d"],
 
 Cell[BoxData[
  TagBox[GridBox[{
@@ -2599,10 +1661,10 @@ JAZLFxBaxuyKShxfvoEfKzujYRb6FXWpA="},
  CellTags->{
   "CheckboxCell", "CompatibilityCloudSupport", 
    "CompatibilityCloudSupport-Checkboxes"},
- CellID->818043737,ExpressionUUID->"49b63b01-39c1-4c09-9b60-9356f190a3d9"]
+ CellID->818043737,ExpressionUUID->"d31f8127-b477-4f60-8bda-dc1df158ce61"]
 }, Closed]]
 }, Open  ]]
-}, Open  ]],
+}, Closed]],
 
 Cell[CellGroupData[{
 
@@ -2628,17 +1690,16 @@ that are otherwise beyond the scope of the function documentation.",
     CurrentValue[
      EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
    ImageSize->Automatic]],ExpressionUUID->
-  "5f7ad817-c4d5-4b2d-990f-5e2dc5b034ae"]
+  "294929cc-af95-4ba8-9cb0-c6503fad370d"]
 }], "Section",
  Editable->False,
  Deletable->False,
  TaggingRules->{"TemplateGroupName" -> "Author Notes"},
  DefaultNewCellStyle->"Text",
  CellTags->{"Author Notes", "TemplateCellGroup"},
- CellID->897529167,ExpressionUUID->"f031c643-7952-405c-a2fb-83ad344087a9"],
+ CellID->897529167,ExpressionUUID->"6571b8ec-470a-4192-8825-bc1862313fd1"],
 
 Cell["Additional information about limitations, issues, etc.", "Text",
- TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -2646,7 +1707,7 @@ Cell["Additional information about limitations, issues, etc.", "Text",
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
  CellTags->{"DefaultContent", "TabNext"},
- CellID->908162033,ExpressionUUID->"fa96eb0c-1bf6-47ad-a6c7-e3e9a0731e71"]
+ CellID->908162033,ExpressionUUID->"ac98fbc3-2178-43ed-8421-65a7eee35172"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -2671,17 +1732,16 @@ resource.", "MoreInfoText"], Background -> GrayLevel[0.95], FrameMargins ->
     CurrentValue[
      EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
    ImageSize->Automatic]],ExpressionUUID->
-  "1e921521-0d6b-4ee0-bbbe-1bea001130d0"]
+  "f6dfbace-8921-474a-96e4-4b4dc3a16b3d"]
 }], "Section",
  Editable->False,
  Deletable->False,
  TaggingRules->{"TemplateGroupName" -> "Submission Notes"},
  DefaultNewCellStyle->"Text",
  CellTags->{"Submission Notes", "TemplateCellGroup"},
- CellID->321610809,ExpressionUUID->"f52d0941-2d23-4650-bcb0-2edb490d0bb6"],
+ CellID->321610809,ExpressionUUID->"4e8026c9-6641-4cd6-8f5a-172ae93bf497"],
 
 Cell["Additional information for the reviewer.", "Text",
- TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -2689,7 +1749,7 @@ Cell["Additional information for the reviewer.", "Text",
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
  CellTags->{"DefaultContent", "TabNext"},
- CellID->711457694,ExpressionUUID->"8d8f3905-5a79-4b94-8d13-a69e5a1aa0b1"]
+ CellID->711457694,ExpressionUUID->"8c45045a-e16b-4d98-8b85-efabf81e4825"]
 }, Open  ]]
 }, Open  ]]
 },
@@ -2697,321 +1757,12 @@ WindowSize->{1152, Automatic},
 WindowMargins->{{
   Automatic, -5.399999999999864}, {-5.399999999999977, Automatic}},
 Visible->True,
-DockedCells->{
-  Cell[
-   BoxData[
-    TemplateBox[{}, "MainGridTemplate"]], "DockedCell", 
-   CellMargins -> {{-10, -10}, {-8, -8}}, CellFrame -> 0, Background -> 
-   RGBColor[0.92157, 0.34118, 0.10588], CellTags -> {"MainDockedCell"}, 
-   CacheGraphics -> False], 
-  Cell[
-   BoxData[
-    TemplateBox[{}, "ToolsGridTemplate"]], "DockedCell", 
-   TaggingRules -> {"Tools" -> True}, CellTags -> {"ToolbarDockedCell"}, 
-   CellFrameMargins -> {{0, 0}, {2, 2}}, CellFrame -> {{0, 0}, {1, 0}}, 
-   CacheGraphics -> False, CellOpen -> Dynamic[
-     CurrentValue[
-      EvaluationNotebook[], {TaggingRules, "ToolsOpen"}, True]]], 
-  Cell[
-   BoxData[
-    StyleBox[
-     TagBox[
-      GridBox[{{
-         ItemBox[
-          TagBox[
-           GridBox[{{
-              OverlayBox[{
-                StyleBox[
-                 TagBox[
-                  DynamicModuleBox[{Typeset`var$$ = False}, 
-                   InterpretationBox[
-                    StyleBox[
-                    PaneSelectorBox[{False -> GridBox[{{
-                    OpenerBox[
-                    Dynamic[Typeset`var$$], Appearance -> Automatic, Enabled -> 
-                    Automatic, AutoAction -> False, ContinuousAction -> 
-                    False], 
-                    StyleBox[
-                    DynamicBox[
-                    ToBoxes[
-                    DateString[
-                    TimeZoneConvert[
-                    DateObject[
-                    3.8700941435257113`17.340296518911792*^9, TimeZone -> 
-                    0]], {"MonthName", " ", "DayShort", ", ", "Year", " ", 
-                    "Hour12Short", ":", "Minute", " ", "AMPMLowerCase"}], 
-                    StandardForm], SingleEvaluation -> True, Evaluator -> 
-                    "System"], FontSlant -> Italic, FontColor -> 
-                    GrayLevel[0.5], FontSize -> 0.9 Inherited, StripOnInput -> 
-                    False]}}, GridBoxAlignment -> {"Columns" -> {{Left}}}, 
-                    AutoDelete -> False, 
-                    GridBoxBackground -> {"Columns" -> {{Automatic}}}, 
-                    GridBoxItemSize -> {
-                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
-                    GridBoxSpacings -> {
-                    "Columns" -> {{0.2}}, "Rows" -> {{0.5}}}, 
-                    BaselinePosition -> {1, 1}], True -> GridBox[{{
-                    OpenerBox[
-                    Dynamic[Typeset`var$$], Appearance -> Automatic, Enabled -> 
-                    Automatic, AutoAction -> False, ContinuousAction -> 
-                    False], 
-                    StyleBox[
-                    DynamicBox[
-                    ToBoxes[
-                    DateString[
-                    TimeZoneConvert[
-                    DateObject[
-                    3.8700941435257113`17.340296518911792*^9, TimeZone -> 
-                    0]], {"MonthName", " ", "DayShort", ", ", "Year", " ", 
-                    "Hour12Short", ":", "Minute", " ", "AMPMLowerCase"}], 
-                    StandardForm], SingleEvaluation -> True, Evaluator -> 
-                    "System"], FontSlant -> Italic, FontColor -> 
-                    GrayLevel[0.5], FontSize -> 0.9 Inherited, StripOnInput -> 
-                    False]}, {"", 
-                    PaneBox["\"\"", ImageMargins -> 0]}}, 
-                    GridBoxAlignment -> {"Columns" -> {{Left}}}, AutoDelete -> 
-                    False, GridBoxBackground -> {"Columns" -> {{Automatic}}}, 
-                    GridBoxItemSize -> {
-                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
-                    GridBoxSpacings -> {
-                    "Columns" -> {{0.2}}, "Rows" -> {{0.5}}}, 
-                    BaselinePosition -> {1, 1}]}, 
-                    Dynamic[Typeset`var$$], Alignment -> Automatic, ImageSize -> 
-                    Automatic, ImageMargins -> 0, BaseStyle -> {}, 
-                    DefaultBaseStyle -> "OpenerView", BaselinePosition -> 
-                    Baseline], Deployed -> False, StripOnInput -> False], 
-                    OpenerView[{
-                    Style[
-                    Dynamic[
-                    DateString[
-                    TimeZoneConvert[
-                    DateObject[
-                    3.8700941435257113`17.340296518911792*^9, TimeZone -> 
-                    0]], {"MonthName", " ", "DayShort", ", ", "Year", " ", 
-                    "Hour12Short", ":", "Minute", " ", "AMPMLowerCase"}], 
-                    SingleEvaluation -> True, Evaluator -> "System"], 
-                    FontSlant -> Italic, FontColor -> GrayLevel[0.5], 
-                    FontSize -> 0.9 Inherited], ""}, False]], 
-                   DynamicModuleValues -> Automatic], Setting[#, {0}]& ], 
-                 ShowContents -> False, StripOnInput -> False], 
-                StyleBox[
-                 DynamicBox[
-                  ToBoxes[
-                   DateString[
-                    TimeZoneConvert[
-                    DateObject[
-                    3.8700941435257113`17.340296518911792*^9, TimeZone -> 
-                    0]], {"MonthName", " ", "DayShort", ", ", "Year", " ", 
-                    "Hour12Short", ":", "Minute", " ", "AMPMLowerCase"}], 
-                   StandardForm], SingleEvaluation -> True, Evaluator -> 
-                  "System"], FontSlant -> Italic, FontColor -> GrayLevel[0.5],
-                  FontSize -> 0.9 Inherited, StripOnInput -> False]}, 
-               Alignment -> {Right, Baseline}], "\"   \"", 
-              ItemBox[
-              "\"Found 1 potential issue and 2 suggestions\"", ItemSize -> 
-               Scaled[0.75], StripOnInput -> False]}}, 
-            GridBoxAlignment -> {
-             "Columns" -> {{Left}}, "Rows" -> {{Baseline}}}, AutoDelete -> 
-            False, GridBoxItemSize -> {
-             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], "Grid"], 
-          ItemSize -> Fit, StripOnInput -> False], 
-         ItemBox[
-          StyleBox[
-           ActionMenuBox[
-            TagBox[
-             TagBox[
-              GridBox[{{
-                 TemplateBox[{
-                   TagBox[
-                    GridBox[{{
-                    TemplateBox[{
-                    RGBColor[1., 0.4627450980392157, 0.], 
-                    RGBColor[1., 1., 1.], 10, {{0, 18}, {-2, 17}}}, 
-                    "SuggestionIconTemplate"], 
-                    StyleBox[
-                    "1", FontColor -> GrayLevel[0.5], FontSize -> 9, 
-                    StripOnInput -> False]}}, 
-                    GridBoxAlignment -> {
-                    "Columns" -> {{Left}}, "Rows" -> {{Center}}}, AutoDelete -> 
-                    False, GridBoxItemSize -> {
-                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
-                    GridBoxSpacings -> {"Columns" -> {{0.25}}}], "Grid"], 
-                   "\"Potential issues found\""}, "PrettyTooltipTemplate"], 
-                 TemplateBox[{
-                   TagBox[
-                    GridBox[{{
-                    TemplateBox[{
-                    RGBColor[
-                    0.49019607843137253`, 0.49019607843137253`, 
-                    0.49019607843137253`], 
-                    RGBColor[1., 1., 1.], 10, {{0, 18}, {-2, 17}}}, 
-                    "SuggestionIconTemplate"], 
-                    StyleBox[
-                    "2", FontColor -> GrayLevel[0.5], FontSize -> 9, 
-                    StripOnInput -> False]}}, 
-                    GridBoxAlignment -> {
-                    "Columns" -> {{Left}}, "Rows" -> {{Center}}}, AutoDelete -> 
-                    False, GridBoxItemSize -> {
-                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
-                    GridBoxSpacings -> {"Columns" -> {{0.25}}}], "Grid"], 
-                   "\"Suggestions found\""}, "PrettyTooltipTemplate"], 
-                 "\"   \""}}, AutoDelete -> False, 
-               GridBoxItemSize -> {
-                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
-              "Grid"], 
-             MouseAppearanceTag["LinkHand"]], {TemplateBox[{
-                TemplateBox[{
-                  RGBColor[
-                  0.49019607843137253`, 0.49019607843137253`, 
-                   0.49019607843137253`], 
-                  RGBColor[1., 1., 1.], 10, {{0, 18}, {-2, 17}}}, 
-                 "SuggestionIconTemplate"], "\" \"", 
-                "\"Argument names are not formatted as template input\""}, 
-               "RowDefault"] :> (
-              DefinitionNotebookClient`LoadDefinitionNotebook["Function", 
-                NotebookObject[
-                "f42ee707-6080-44cf-bc9f-1309282d46d7", 
-                 "b41529ab-f3f2-43ee-a4dd-035730c3be0e"]]; 
-              DefinitionNotebookClient`PackageScope`setHint[
-               "Suggestion", "Function", 
-                ParentNotebook[
-                 CellObject[
-                 "7c80d2ae-4f90-4dff-b49d-b6e2d1e61997", 
-                  "670b0e1b-0d8e-44d8-94fe-60d30b6dc065"]], 67839508, 
-                "UsageMissingFormatting", {}]; 
-              DefinitionNotebookClient`PackageScope`seek[
-                CellObject[
-                "7c80d2ae-4f90-4dff-b49d-b6e2d1e61997", 
-                 "670b0e1b-0d8e-44d8-94fe-60d30b6dc065"]]; Null), TemplateBox[{
-                TemplateBox[{
-                  RGBColor[
-                  0.49019607843137253`, 0.49019607843137253`, 
-                   0.49019607843137253`], 
-                  RGBColor[1., 1., 1.], 10, {{0, 18}, {-2, 17}}}, 
-                 "SuggestionIconTemplate"], "\" \"", 
-                "\"Extra whitespace should be removed\""}, "RowDefault"] :> (
-              DefinitionNotebookClient`LoadDefinitionNotebook["Function", 
-                NotebookObject[
-                "f42ee707-6080-44cf-bc9f-1309282d46d7", 
-                 "b41529ab-f3f2-43ee-a4dd-035730c3be0e"]]; 
-              DefinitionNotebookClient`PackageScope`setHint[
-               "Suggestion", "Function", 
-                ParentNotebook[
-                 CellObject[
-                 "f2f2084b-8216-4c1f-9ee7-8b4885a43960", 
-                  "057a63a5-0831-43ec-bcff-c64ee3aec8f2"]], 586099280, 
-                "ExtraWhitespace", {
-                 Cell[
-                 "Test if ", "Text", CellTags -> "DefaultContent", CellID -> 
-                  586099280]}]; DefinitionNotebookClient`PackageScope`seek[
-                CellObject[
-                "f2f2084b-8216-4c1f-9ee7-8b4885a43960", 
-                 "057a63a5-0831-43ec-bcff-c64ee3aec8f2"]]; Null), TemplateBox[{
-                TemplateBox[{
-                  RGBColor[1., 0.4627450980392157, 0.], 
-                  RGBColor[1., 1., 1.], 10, {{0, 18}, {-2, 17}}}, 
-                 "SuggestionIconTemplate"], "\" \"", 
-                "\"No author information given\""}, "RowDefault"] :> (
-              DefinitionNotebookClient`LoadDefinitionNotebook["Function", 
-                NotebookObject[
-                "f42ee707-6080-44cf-bc9f-1309282d46d7", 
-                 "b41529ab-f3f2-43ee-a4dd-035730c3be0e"]]; 
-              DefinitionNotebookClient`PackageScope`setHint[
-               "Warning", "Function", 
-                ParentNotebook[
-                 CellObject[
-                 "cf557985-84d5-42bc-b6a4-ea9e853628e4", 
-                  "856e02d5-9d96-439c-9c08-35e3f65cf46c"]], 771147648, 
-                "AuthorNotSet", {}]; 
-              DefinitionNotebookClient`PackageScope`seek[
-                CellObject[
-                "cf557985-84d5-42bc-b6a4-ea9e853628e4", 
-                 "856e02d5-9d96-439c-9c08-35e3f65cf46c"]]; Null)}, Appearance -> 
-            None, Method -> "Queued"], "BoxID" -> "WarningCountButton", 
-           StripOnInput -> False], ItemSize -> All, StripOnInput -> False], 
-         ItemBox[
-          TagBox[
-           ButtonBox[
-            TagBox[
-             PaneSelectorBox[{False -> GraphicsBox[{
-                  GrayLevel[
-                   NCache[
-                    Rational[64, 85], 0.7529411764705882]], 
-                  
-                  PolygonBox[{{-0.282842712474619, -0.42426406871192845`}, \
-{-0.42426406871192845`, -0.282842712474619}, {0.282842712474619, 
-                   0.42426406871192845`}, {0.42426406871192845`, 
-                   0.282842712474619}}], 
-                  
-                  PolygonBox[{{0.42426406871192845`, -0.282842712474619}, {
-                   0.282842712474619, -0.42426406871192845`}, \
-{-0.42426406871192845`, 0.282842712474619}, {-0.282842712474619, 
-                   0.42426406871192845`}}]}, ImageSize -> 18, 
-                 PlotRangePadding -> 0, PlotRange -> 0.7, Background -> None],
-                True -> GraphicsBox[{
-                  GrayLevel[
-                   NCache[
-                    Rational[128, 255], 0.5019607843137255]], 
-                  
-                  PolygonBox[{{-0.282842712474619, -0.42426406871192845`}, \
-{-0.42426406871192845`, -0.282842712474619}, {0.282842712474619, 
-                   0.42426406871192845`}, {0.42426406871192845`, 
-                   0.282842712474619}}], 
-                  
-                  PolygonBox[{{0.42426406871192845`, -0.282842712474619}, {
-                   0.282842712474619, -0.42426406871192845`}, \
-{-0.42426406871192845`, 0.282842712474619}, {-0.282842712474619, 
-                   0.42426406871192845`}}]}, ImageSize -> 18, 
-                 PlotRangePadding -> 0, PlotRange -> 0.7, Background -> 
-                 None]}, 
-              Dynamic[
-               CurrentValue["MouseOver"]], ImageSize -> Automatic, 
-              FrameMargins -> 0], 
-             MouseAppearanceTag["LinkHand"]], ButtonFunction :> 
-            With[{DefinitionNotebookClient`Stripes`PackagePrivate`nbo$ = 
-               EvaluationNotebook[]}, 
-              CurrentValue[
-               DefinitionNotebookClient`Stripes`PackagePrivate`nbo$, 
-                DockedCells] = If[
-                TrueQ[
-                 MemberQ[
-                  CurrentValue["ModifierKeys"], "Control"]], 
-                DeleteCases[
-                 Flatten[{
-                   CurrentValue[
-                   DefinitionNotebookClient`Stripes`PackagePrivate`nbo$, 
-                    DockedCells]}], 
-                 Cell[
-                  Blank[], "StripeCell", 
-                  BlankNullSequence[]]], 
-                DeleteCases[
-                 Flatten[{
-                   CurrentValue[
-                   DefinitionNotebookClient`Stripes`PackagePrivate`nbo$, 
-                    DockedCells]}], 
-                 Condition[
-                  Pattern[DefinitionNotebookClient`Stripes`PackagePrivate`c$, 
-                   Blank[Cell]], 
-                  Not[
-                   FreeQ[
-                   DefinitionNotebookClient`Stripes`PackagePrivate`c$, 
-                    "1cf4ea00-29cc-46ea-813c-e29b4180b390"]]]]]], Appearance -> 
-            None, BoxID -> "1cf4ea00-29cc-46ea-813c-e29b4180b390", Evaluator -> 
-            Automatic, Method -> "Preemptive"], 
-           MouseAppearanceTag["LinkHand"]], ItemSize -> All, StripOnInput -> 
-          False]}}, 
-       GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Baseline}}}, 
-       AutoDelete -> False, 
-       GridBoxItemSize -> {
-        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], "Grid"], 
-     "Text", FontSize -> 12, FontColor -> GrayLevel[0.25], StripOnInput -> 
-     False]], "StripeCell", CellFrameMargins -> {{20, 5}, {2, 2}}, 
-   CellFrame -> {{0, 0}, {1, 0}}, CellFrameColor -> GrayLevel[0.75]]},
 TaggingRules->{
  "ResourceType" -> "Function", "ResourceCreateNotebook" -> True, 
   "TemplateVersion" -> "1.6.4", "CreationTimestamp" -> 
-  3.8700221595446519`17.34028844093349*^9, "UpdatedTimestamp" -> 
-  3.8700221595446519`17.34028844093349*^9, "CompatibilityTest" -> HoldComplete[
+  3.8701233563787618`17.340299797109303*^9, "UpdatedTimestamp" -> 
+  3.8701233563787618`17.340299797109303*^9, "CompatibilityTest" -> 
+  HoldComplete[
     BinaryDeserialize[
      BaseDecode[
      "OEM6eJzVWVtT20YUrjEQBhxaMulMkyc98EAyadJpO9NL2iauDcQdIMCa9JW1dGQ0rHeV3RWg\
@@ -3053,7 +1804,7 @@ WyabbVsUI30dbWyR5mC4Y6npzAQV7A7CHW8e0ORJGTUV01ufdzMGR2GbTwVmCj3d8A9cd0NNHoiRcl\
     "Contexts" -> {
      "FunctionResource`", "FunctionResource`DefinitionNotebook`"}, 
     "DefaultContentMethod" -> "Legacy"}, "ToolsOpen" -> True, "StatusMessage" -> 
-  "", "SubmissionReviewData" -> {"Review" -> False}, "AutoUpdate" -> True},
+  "", "SubmissionReviewData" -> {"Review" -> False}},
 CreateCellID->True,
 FrontEndVersion->"13.1 for Microsoft Windows (64-bit) (June 16, 2022)",
 StyleDefinitions->Notebook[{
@@ -3496,6 +2247,7 @@ VX/aMEEQzrerjFhhelYAzofFB3r8AgApYdcE
                 StyleBox[
                 "\"Template Input\"", "Text", FontFamily -> "Source Sans Pro",
                   FontSize -> 11, StripOnInput -> False], 
+                
                 "\"Format selection automatically using appropriate \
 documentation styles\""}, "PrettyTooltipTemplate"], ButtonFunction :> 
               With[{RSNB`nb$ = ButtonNotebook[], RSNB`$cp$ = $ContextPath}, 
@@ -5339,6 +4091,6 @@ later."]]]]],
     GrayLevel[0.9]]}, Visible -> False, FrontEndVersion -> 
   "13.1 for Microsoft Windows (64-bit) (June 16, 2022)", StyleDefinitions -> 
   "PrivateStylesheetFormatting.nb"],
-ExpressionUUID->"f42ee707-6080-44cf-bc9f-1309282d46d7"
+ExpressionUUID->"5902ff43-4290-4dad-b65c-bbebfea664f5"
 ]
 
