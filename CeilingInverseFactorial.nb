@@ -14,7 +14,7 @@ Cell["CeilingInverseFactorial", "Title",
  CellTags->{"Name", "TemplateCell", "Title", "TabNext"},
  CellID->863144461,ExpressionUUID->"aff5bf07-211e-41e0-b15e-b5b666ec45ee"],
 
-Cell["Find the integer n where n! is at least a certain number", "Text",
+Cell["Find the integer k where k! is at least a certain number", "Text",
  Deletable->False,
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
@@ -23,7 +23,8 @@ Cell["Find the integer n where n! is at least a certain number", "Text",
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
  CellChangeTimes->{{3.87051277054753*^9, 3.87051277498291*^9}, {
-  3.8705128139321566`*^9, 3.8705128357987614`*^9}},
+  3.8705128139321566`*^9, 3.8705128357987614`*^9}, {3.8705131230560055`*^9, 
+  3.8705131255446453`*^9}},
  CellTags->{"DefaultContent", "Description", "TabNext", "TemplateCell"},
  CellID->660820806,ExpressionUUID->"f7a4fdbc-2d4f-4754-95b0-d4bf93cfb643"],
 
@@ -64,10 +65,19 @@ evaluated before creating the Examples section below.", "MoreInfoText"],
 Cell[BoxData[{
  RowBox[{"ClearAll", "[", "CeilingInverseFactorial", 
   "]"}], "\[IndentingNewLine]", 
- RowBox[{"CeilingInverseFactorial", "[", "]"}]}], "Input",
- CellChangeTimes->{{3.870512837792698*^9, 3.870512849808522*^9}},
- CellTags->"DefaultContent",
- CellID->876320555,ExpressionUUID->"d9585a15-27ae-4e87-bffb-fc2857500c74"]
+ RowBox[{
+  RowBox[{"CeilingInverseFactorial", "[", "n_", "]"}], ":=", 
+  RowBox[{"Ceiling", "[", 
+   RowBox[{
+    RowBox[{"Last", "[", 
+     RowBox[{"Reduce", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Gamma", "[", "x", "]"}], "==", "n"}], "\[And]", 
+       RowBox[{"x", ">", "1"}]}], "]"}], "]"}], "-", "1"}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.8705129462648416`*^9, 3.8705129885553617`*^9}},
+ CellLabel->"In[157]:=",
+ CellID->587961887,ExpressionUUID->"d8a15559-5119-4cf4-be1a-dec7eecf073f"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -98,6 +108,7 @@ then pressing ",
              StyleBox[
               DynamicBox[
                ToBoxes[
+                
                 If[$OperatingSystem === "MacOSX", "\[ReturnKey]", 
                  "\[EnterKey]"], StandardForm], SingleEvaluation -> True, 
                Evaluator -> "System"], ShowStringCharacters -> False]]], 
@@ -136,16 +147,21 @@ documentation pages for examples."}], "MoreInfoText"], Background ->
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"MyFunction", "[", "arg", "]"}]], "UsageInputs",
+ RowBox[{"CeilingInverseFactorial", "[", 
+  StyleBox["n", "TI"], "]"}]], "UsageInputs",
+ CellChangeTimes->{{3.870513078533392*^9, 3.870513084944804*^9}},
  FontFamily->"Source Sans Pro",
  CellTags->{"DefaultContent", "TabNext"},
  CellID->67839508,ExpressionUUID->"21500780-0548-4f82-95d8-825225b3fc86"],
 
 Cell[TextData[{
- "explanation of what use of the argument ",
- StyleBox["arg", "TI"],
- " does."
+ "Find an integer k where k! is at least ",
+ Cell[BoxData[
+  StyleBox["n", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "fefb762a-4ddd-400b-b5ce-5ffd31cd99e4"]
 }], "UsageDescription",
+ CellChangeTimes->{{3.8705130974658537`*^9, 3.870513116767022*^9}},
  CellTags->{"DefaultContent", "TabNext"},
  CellID->746063541,ExpressionUUID->"a1e1d6a8-550e-4d5c-b69f-0936f6f56509"]
 }, Open  ]]
@@ -278,6 +294,7 @@ typical Subsection names and the types of examples they normally contain:\n  \
                 "\"Scope: \"", FontFamily -> "Source Sans Pro", FontWeight -> 
                  "SemiBold", FontSize -> 14, StripOnInput -> False]}, 
                "RowDefault"], ShowStringCharacters -> False]]], 
+           
            "input and display conventions, standard computational attributes \
 (e.g. threading over lists)\n  ", 
            Cell[
@@ -363,24 +380,110 @@ Cell["Basic Examples", "Subsection",
  CellTags->"DefaultContent",
  CellID->619504543,ExpressionUUID->"73a34a67-1ba6-4e30-9a2f-321a4330ee9a"],
 
-Cell["Text about the example:", "Text",
+Cell["Find the integer k whose factorial k! is at least 100:", "Text",
+ CellChangeTimes->{{3.8705130302276855`*^9, 3.870513048589289*^9}, {
+  3.8705131315273457`*^9, 3.870513132668803*^9}},
  CellTags->"DefaultContent",
  CellID->586099280,ExpressionUUID->"58f5a5dd-918d-4436-a57c-ad5f801b1881"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"MyFunction", "[", 
-  RowBox[{"x", ",", "y"}], "]"}]], "Input",
- CellTags->"DefaultContent",
- CellLabel->"In[1]:= ",
- CellID->298664010,ExpressionUUID->"9014346b-7e95-4a3a-affd-4617e8d6085d"],
+ RowBox[{"CeilingInverseFactorial", "[", "100", "]"}]], "Input",
+ CellChangeTimes->{{3.8705129145394754`*^9, 3.870512918686488*^9}, {
+  3.8705129952370443`*^9, 3.870513017779419*^9}},
+ CellLabel->"In[162]:=",
+ CellID->653503531,ExpressionUUID->"db9950ac-76f5-4c73-8447-e14c16449892"],
+
+Cell[BoxData["5"], "Output",
+ CellChangeTimes->{{3.870512995984515*^9, 3.8705130184005337`*^9}, 
+   3.8705130529790506`*^9},
+ CellLabel->"Out[162]=",
+ CellID->153946330,ExpressionUUID->"4c6e229a-aa23-48d0-9669-bdd7e0a42fbe"]
+}, Open  ]],
+
+Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"x", " ", "y"}]], "Output",
- CellTags->"DefaultContent",
- CellLabel->"Out[1]= ",
- CellID->832981051,ExpressionUUID->"528fbf0e-b05d-4d44-afa2-727cb2fdbac3"]
+ RowBox[{"CeilingInverseFactorial", "[", "5", "]"}]], "Input",
+ CellChangeTimes->{{3.8705129145394754`*^9, 3.870512918686488*^9}, {
+  3.8705129952370443`*^9, 3.870513017779419*^9}, {3.870513418338114*^9, 
+  3.870513420753991*^9}},
+ CellLabel->"In[176]:=",
+ CellID->263467388,ExpressionUUID->"c2152ed9-2cca-4653-b426-1c3f13a402c4"],
+
+Cell[BoxData["3"], "Output",
+ CellChangeTimes->{3.8705134215600743`*^9},
+ CellLabel->"Out[176]=",
+ CellID->84020881,ExpressionUUID->"86aef357-e6c9-487b-a3ed-80755860bea2"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"3", "!"}]], "Input",
+ CellChangeTimes->{{3.87051342471*^9, 3.870513425185276*^9}},
+ CellLabel->"In[177]:=",
+ CellID->377083223,ExpressionUUID->"2cc9564c-8c09-44a8-9fb0-11f0e00cc598"],
+
+Cell[BoxData["6"], "Output",
+ CellChangeTimes->{3.870513425466021*^9},
+ CellLabel->"Out[177]=",
+ CellID->129455878,ExpressionUUID->"41c80170-4d81-4bea-9257-e5f9b73be401"]
+}, Open  ]],
+
+Cell["Test the result:", "Text",
+ CellChangeTimes->{{3.870513056683669*^9, 3.8705130589542074`*^9}},
+ CellID->492276227,ExpressionUUID->"4897bc05-9a25-49d8-929f-8e42b2200fde"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Factorial", "[", "5", "]"}]], "Input",
+ CellChangeTimes->{{3.870513061143086*^9, 3.870513067131172*^9}},
+ CellLabel->"In[163]:=",
+ CellID->347831381,ExpressionUUID->"49ac5562-a980-4e7b-841a-89f1b4462cb0"],
+
+Cell[BoxData["120"], "Output",
+ CellChangeTimes->{3.870513067478961*^9},
+ CellLabel->"Out[163]=",
+ CellID->134259297,ExpressionUUID->"737f5a8d-8912-4ab9-97da-04a4651dc799"]
+}, Open  ]],
+
+Cell["Find the integer whose factorial is at least 10000:", "Text",
+ CellChangeTimes->{{3.8705131354853945`*^9, 3.8705131442982745`*^9}},
+ CellID->52884993,ExpressionUUID->"be3fad80-a3e3-4420-92a6-09a9ec54a225"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CeilingInverseFactorial", "[", "10000", "]"}]], "Input",
+ CellChangeTimes->{{3.8705131462256365`*^9, 3.8705131569666147`*^9}},
+ CellLabel->"In[164]:=",
+ CellID->308806849,ExpressionUUID->"bd800f93-832a-4228-9b0f-33c3428a6cd8"],
+
+Cell[BoxData["8"], "Output",
+ CellChangeTimes->{3.8705131578527756`*^9},
+ CellLabel->"Out[164]=",
+ CellID->166975813,ExpressionUUID->"8008dd6b-1c1c-4fae-a9db-4fb32b44f663"]
+}, Open  ]],
+
+Cell["Test the result:", "Text",
+ CellChangeTimes->{{3.8705131622230186`*^9, 3.870513164901343*^9}},
+ CellID->955098800,ExpressionUUID->"a56506d0-730a-4819-afa6-edd1957f1e74"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"8", "!"}]], "Input",
+ CellChangeTimes->{{3.8705131672832522`*^9, 3.870513167543046*^9}},
+ CellLabel->"In[165]:=",
+ CellID->51331503,ExpressionUUID->"d2e1e713-6eb8-4da6-9e69-39da0db6c60f"],
+
+Cell[BoxData["40320"], "Output",
+ CellChangeTimes->{3.8705131677908688`*^9},
+ CellLabel->"Out[165]=",
+ CellID->522052064,ExpressionUUID->"b1e1287e-a00f-405c-ac46-4dc665210e8f"]
 }, Open  ]]
 }, Open  ]],
 
@@ -475,13 +578,14 @@ publicly credited with contributing this function.", "MoreInfoText"],
  CellTags->{"Contributed By", "ContributorInformation", "TemplateCellGroup"},
  CellID->771147648,ExpressionUUID->"9eacd343-1a34-4c3b-8e5f-ba61fc1c9a5f"],
 
-Cell["Author Name", "Text",
+Cell["Peter Cullen Burbery", "Text",
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
        WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.8705131775699673`*^9, 3.8705131809540844`*^9}},
  CellTags->{"DefaultContent", "TabNext"},
  CellID->855757352,ExpressionUUID->"c96a6775-0a63-4f58-b9ab-590302a459b9"]
 }, Open  ]],
@@ -517,15 +621,36 @@ concepts) that should be used to include the function in search results.",
  CellTags->{"Keywords", "TemplateCellGroup"},
  CellID->854882061,ExpressionUUID->"3fc262a3-b326-4cad-8ee0-8a67c05c0b71"],
 
-Cell["keyword 1", "Item",
+Cell["factorial", "Item",
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
        WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.8705131825713663`*^9, 3.8705131839559727`*^9}},
  CellTags->{"DefaultContent", "TabNext"},
- CellID->560424104,ExpressionUUID->"2d683f1d-9271-45e8-b010-64c5d8ffe169"]
+ CellID->560424104,ExpressionUUID->"2d683f1d-9271-45e8-b010-64c5d8ffe169"],
+
+Cell["gamma function", "Item",
+ CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
+       SelectedNotebook[], After, Cell]; NotebookFind[
+       SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
+       WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
+       SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
+   PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.8705131825713663`*^9, 3.8705131887994084`*^9}},
+ CellID->425945900,ExpressionUUID->"5ef6c4e6-85e0-4b4a-9201-f6eef14bc5bb"],
+
+Cell["ceiling function", "Item",
+ CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
+       SelectedNotebook[], After, Cell]; NotebookFind[
+       SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
+       WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
+       SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
+   PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.8705131825713663`*^9, 3.870513191428788*^9}},
+ CellID->195708188,ExpressionUUID->"32e84641-be29-453f-9b94-d49f109e33e8"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -694,8 +819,10 @@ Cell[BoxData[
         {
          StyleBox[
           TemplateBox[{
-            CheckboxBox[False, {False, "Higher Mathematical Computation"}], 
-            "\" \"", "\"Higher Mathematical Computation\""},
+            CheckboxBox[
+            "Higher Mathematical Computation", {
+             False, "Higher Mathematical Computation"}], "\" \"", 
+            "\"Higher Mathematical Computation\""},
            "RowDefault"],
           StripOnInput->False,
           FontSize->12]},
@@ -743,8 +870,10 @@ Cell[BoxData[
         {
          StyleBox[
           TemplateBox[{
-            CheckboxBox[False, {False, "Symbolic & Numeric Computation"}], 
-            "\" \"", "\"Symbolic & Numeric Computation\""},
+            CheckboxBox[
+            "Symbolic & Numeric Computation", {
+             False, "Symbolic & Numeric Computation"}], "\" \"", 
+            "\"Symbolic & Numeric Computation\""},
            "RowDefault"],
           StripOnInput->False,
           FontSize->12]},
@@ -785,6 +914,7 @@ Cell[BoxData[
 WuYdc+Ub5wvq9oc1GUlKJnXIiqJrBdBCtZQ3n11qHnCPtWMD6sV0ipOzhW1tB9/elmHINGKs+\
 zYjElVnRCE36N6oQaf518wOqwmP/BY28YvfMpmxegakyEMBGmf4cRyQYv8RYdQtkFI3PmDU1ZTKI=\
 "},
+ CellChangeTimes->{{3.8705131973582954`*^9, 3.8705131984403586`*^9}},
  CellTags->{"Categories", "Categories-Checkboxes", "CheckboxCell"},
  CellID->106874216,ExpressionUUID->"53c614c0-234d-43bc-9808-16b461689682"]
 }, Open  ]],
@@ -820,15 +950,56 @@ related to the function.", "MoreInfoText"], Background -> GrayLevel[0.95],
  CellTags->{"Related Symbols", "TemplateCellGroup"},
  CellID->525877127,ExpressionUUID->"1b5d3c9e-0847-4252-a566-7607a4905f11"],
 
-Cell["SymbolName (documented Wolfram Language symbol)", "Item",
+Cell["Factorial", "Item",
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
        WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.870513203149559*^9, 3.870513204667681*^9}},
  CellTags->{"DefaultContent", "TabNext"},
- CellID->195255409,ExpressionUUID->"79334245-9b5b-47cc-8ad1-1352458f837c"]
+ CellID->195255409,ExpressionUUID->"79334245-9b5b-47cc-8ad1-1352458f837c"],
+
+Cell["Gamma", "Item",
+ CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
+       SelectedNotebook[], After, Cell]; NotebookFind[
+       SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
+       WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
+       SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
+   PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.870513203149559*^9, 3.8705132056785736`*^9}},
+ CellID->41238457,ExpressionUUID->"79848622-5993-4c5e-a4bb-b35d5c0c15d8"],
+
+Cell["Root", "Item",
+ CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
+       SelectedNotebook[], After, Cell]; NotebookFind[
+       SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
+       WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
+       SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
+   PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.870513203149559*^9, 3.8705132067617316`*^9}},
+ CellID->405942705,ExpressionUUID->"31b7093d-7c4b-4912-b35c-ad9f2af7f9f3"],
+
+Cell["Reduce", "Item",
+ CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
+       SelectedNotebook[], After, Cell]; NotebookFind[
+       SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
+       WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
+       SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
+   PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.870513203149559*^9, 3.870513208067067*^9}},
+ CellID->344200682,ExpressionUUID->"b079af52-502f-4f60-aefd-7bd8a8ad2d0a"],
+
+Cell["N", "Item",
+ CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
+       SelectedNotebook[], After, Cell]; NotebookFind[
+       SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
+       WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
+       SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
+   PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.870513203149559*^9, 3.870513208398923*^9}},
+ CellID->613316742,ExpressionUUID->"f84703b9-d549-4ee1-8d2e-1159c274f4c4"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1379,6 +1550,7 @@ Cell[BoxData[
          StyleBox[
           TemplateBox[{
             CheckboxBox["BatchJob", {False, "BatchJob"}], "\" \"", 
+            
             TemplateBox[{"\"BatchJob\"", "\"Remote batch job\""}, 
              "PrettyTooltipTemplate"]},
            "RowDefault"],
@@ -1538,7 +1710,7 @@ JAZLFxBaxuyKShxfvoEfKzujYRb6FXWpA="},
  CellID->818043737,ExpressionUUID->"72ca3635-a454-4390-bd6e-ac5d4e416b1a"]
 }, Closed]]
 }, Open  ]]
-}, Closed]],
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -1677,7 +1849,7 @@ WyabbVsUI30dbWyR5mC4Y6npzAQV7A7CHW8e0ORJGTUV01ufdzMGR2GbTwVmCj3d8A9cd0NNHoiRcl\
     "Contexts" -> {
      "FunctionResource`", "FunctionResource`DefinitionNotebook`"}, 
     "DefaultContentMethod" -> "Legacy"}, "ToolsOpen" -> True, "StatusMessage" -> 
-  "", "SubmissionReviewData" -> {"Review" -> False}},
+  "", "SubmissionReviewData" -> {"Review" -> False}, "AutoUpdate" -> True},
 CreateCellID->True,
 FrontEndVersion->"13.1 for Microsoft Windows (64-bit) (June 16, 2022)",
 StyleDefinitions->Notebook[{
