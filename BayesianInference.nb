@@ -3,6 +3,7 @@ Notebook[{
 Cell[CellGroupData[{
 Cell["BayesianInference", "Title",
  Deletable->False,
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -15,6 +16,7 @@ Cell["BayesianInference", "Title",
 
 Cell["Compute the posterior probability using Bayes theorem", "Text",
  Deletable->False,
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -78,6 +80,7 @@ Cell[BoxData[{
     RowBox[{"Simplify", "[", 
      RowBox[{
       RowBox[{"h1", "+", "h2"}], "==", "1"}], "]"}], "]"}]}]}]}], "Input",
+ TaggingRules->{},
  CellChangeTimes->{{3.8708569121996307`*^9, 3.8708569185358505`*^9}, {
   3.870860505769475*^9, 3.8708605250960193`*^9}},
  CellLabel->"In[75]:=",
@@ -171,6 +174,7 @@ Cell[BoxData[
       RowBox[{"(", 
        RowBox[{"E", "\[Conditioned]", 
         SubscriptBox["H", "2"]}], ")"}]}]}], "}"}]}], "]"}]], "UsageInputs",
+ TaggingRules->{},
  CellChangeTimes->{{3.870860263935192*^9, 3.870860383733955*^9}, {
   3.8708610379720736`*^9, 3.870861088662704*^9}},
  FontFamily->"Source Sans Pro",
@@ -183,23 +187,20 @@ Cell[TextData[{
   FormBox[
    RowBox[{"P", "(", 
     RowBox[{
-     SubscriptBox["H", "1"], "\[Conditioned]", "E"}], ")"}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
-  "5243d65e-ecae-42b7-9360-d1b0e04085f4"],
- "  from the prior probabilities ",
+     SubscriptBox["H", "1"], "\[Conditioned]", "E"}], ")"}], 
+   TraditionalForm]],ExpressionUUID->"df5c132a-fada-4caf-9071-c0b3bbade6e6"],
+ " from the prior probabilities ",
  Cell[BoxData[
   FormBox[
    RowBox[{"P", "(", 
-    SubscriptBox["H", "1"], ")"}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
-  "2493178b-9765-471d-aa03-d773b9f26d2f"],
+    SubscriptBox["H", "1"], ")"}], TraditionalForm]],ExpressionUUID->
+  "b462bb79-8837-40db-b745-6cd52fc01d1a"],
  " and ",
  Cell[BoxData[
   FormBox[
    RowBox[{"P", "(", 
-    SubscriptBox["H", "2"]}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
-  "9473976b-6a95-47b5-9389-24f4193195dd"],
+    SubscriptBox["H", "2"]}], TraditionalForm]],ExpressionUUID->
+  "e9cfcce8-c3c3-45b9-a2cf-98448c6d8f0b"],
  ") and the likelihoods ",
  Cell[BoxData[
   RowBox[{"P", 
@@ -212,14 +213,15 @@ Cell[TextData[{
   CellChangeTimes->{{3.870860263935192*^9, 3.870860383733955*^9}, {
    3.8708610379720736`*^9, 3.870861088662704*^9}},
   FontFamily->"Source Sans Pro",ExpressionUUID->
-  "f2c1f8a7-0562-44e1-baeb-651bc95b3b1c"]
+  "01b76340-4044-48be-8f3b-2355e756e878"]
 }], "UsageDescription",
+ TaggingRules->{},
  CellChangeTimes->{{3.870860884697506*^9, 3.8708608949896665`*^9}, {
   3.8708609581938334`*^9, 3.870860959457008*^9}, {3.870861001436144*^9, 
   3.870861012951389*^9}, {3.8708611380175476`*^9, 3.870861184996703*^9}, {
   3.870861215356939*^9, 3.8708612172392893`*^9}},
  CellTags->{"DefaultContent", "TabNext"},
- CellID->746063541,ExpressionUUID->"b12dd7e5-0aba-42fd-9729-c68e4861fac5"]
+ CellID->746063541,ExpressionUUID->"0ad12ed7-84f2-435a-ab58-eda4b5cbd62b"]
 }, Open  ]]
 }, Open  ]],
 
@@ -273,6 +275,7 @@ Cell[TextData[{
   "a96ea1c4-7fe4-461e-bb3a-026ba0eda78d"],
  " must be one."
 }], "Notes",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -304,6 +307,7 @@ Cell[TextData[{
   "ce5e05ec-4bf9-4518-8cae-f662c0d8794a"],
  "."
 }], "Notes",
+ TaggingRules->{},
  CellChangeTimes->{{3.87086124668852*^9, 3.870861318362644*^9}},
  CellID->44150949,ExpressionUUID->"2b9a0837-8000-4f34-89db-e64ae908e3b4"]
 }, Open  ]]
@@ -469,6 +473,7 @@ usage"}], "MoreInfoText"], Background -> GrayLevel[0.95], FrameMargins -> 20,
 Cell[CellGroupData[{
 
 Cell["Basic Examples", "Subsection",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellID->619504543,ExpressionUUID->"2c11922c-3189-4a3a-8b73-26208fa66bac"],
 
@@ -477,18 +482,20 @@ Suppose there are two bowls of cookies. The first bowl A has 10 chocolate \
 chip cookies and 30 plain cookies. The second bowl, bowl B, has 20 chocolate \
 chip cookies and 20 plain cookies. I pick a cookie from a bowl randomly and \
 observe the cookie is plain. What is the probability I picked bowl A? We can \
-assume that the sum of the  prabability of picking bowl A and the probability \
+assume that the sum of the probability of picking bowl A and the probability \
 of picking bowl B is 1. We can also assume that the probability of bowl A is \
 the same as the probability of bowl B.\
 \>", "Text",
+ TaggingRules->{},
  CellChangeTimes->{{3.870861377914425*^9, 3.8708614972555647`*^9}, {
-  3.870861571718419*^9, 3.870861621391013*^9}},
+   3.870861571718419*^9, 3.870861621391013*^9}, 3.870861877849558*^9},
  CellTags->"DefaultContent",
- CellID->586099280,ExpressionUUID->"e673ea28-cf9f-4c8f-9ede-a312639f6152"],
+ CellID->586099280,ExpressionUUID->"b9536491-e3dd-4921-8949-6b6c5499e172"],
 
-Cell["Solve for the probability P(A) and P(B)", "CodeText",
+Cell["Solve for the probability P(A) and P(B):", "CodeText",
+ TaggingRules->{},
  CellChangeTimes->{{3.870861623489544*^9, 3.870861637419242*^9}},
- CellID->790665325,ExpressionUUID->"1edb0ed4-f6d1-481f-b83d-d3eb943c17e2"],
+ CellID->790665325,ExpressionUUID->"8e9a0e90-5387-4127-a3e5-d82413f86a35"],
 
 Cell[CellGroupData[{
 
@@ -501,6 +508,7 @@ Cell[BoxData[
     RowBox[{"PROBABILITYA", "==", "PROBABILITYB"}]}], ",", 
    RowBox[{"{", 
     RowBox[{"PROBABILITYA", ",", "PROBABILITYB"}], "}"}]}], "]"}]], "Input",
+ TaggingRules->{},
  CellChangeTimes->{{3.8708614983691444`*^9, 3.8708615566211915`*^9}},
  CellLabel->"In[84]:=",
  CellID->14234967,ExpressionUUID->"173e0620-ecd0-472b-b89a-72192a99f023"],
@@ -511,6 +519,7 @@ Cell[BoxData[
    RowBox[{
     FractionBox["1", "2"], ",", 
     FractionBox["1", "2"]}], "}"}], "}"}]], "Output",
+ TaggingRules->{},
  CellChangeTimes->{{3.8708615486813374`*^9, 3.8708615583281183`*^9}, 
    3.870861705339036*^9},
  CellLabel->"Out[84]=",
@@ -518,6 +527,7 @@ Cell[BoxData[
 }, Open  ]],
 
 Cell["Store the probability:", "CodeText",
+ TaggingRules->{},
  CellChangeTimes->{{3.870861655556096*^9, 3.8708616597260075`*^9}},
  CellID->5985505,ExpressionUUID->"36874cff-1fce-4058-8387-afb93a882333"],
 
@@ -536,6 +546,7 @@ Cell[BoxData[
       RowBox[{"{", 
        RowBox[{"PROBABILITYA", ",", "PROBABILITYB"}], "}"}]}], "]"}], "]"}]}],
    ";"}]], "Input",
+ TaggingRules->{},
  CellChangeTimes->{{3.870861666977531*^9, 3.870861683476948*^9}},
  CellLabel->"In[85]:=",
  CellID->859007764,ExpressionUUID->"ae27a71b-6161-4d4a-8546-6eba6b5c6f8a"],
@@ -543,6 +554,7 @@ Cell[BoxData[
 Cell["\<\
 Compute the probability of picking a plain cookie given bowl A:\
 \>", "CodeText",
+ TaggingRules->{},
  CellChangeTimes->{{3.8708617123641977`*^9, 3.870861723910509*^9}},
  CellID->97136563,ExpressionUUID->"fd8df898-92e3-411f-99e1-79eddd0d0bcd"],
 
@@ -550,6 +562,7 @@ Cell[BoxData[
  RowBox[{
   RowBox[{"PROBABILITYPLAINGIVENBOWLA", "=", 
    RowBox[{"30", "/", "40"}]}], ";"}]], "Input",
+ TaggingRules->{},
  CellChangeTimes->{{3.8708617283707113`*^9, 3.870861763853063*^9}},
  CellLabel->"In[86]:=",
  CellID->73035722,ExpressionUUID->"28c6d115-505e-4274-846a-f481263896a4"],
@@ -557,6 +570,7 @@ Cell[BoxData[
 Cell["\<\
 Compute the probability of picking a plain cookie given bowl B:\
 \>", "CodeText",
+ TaggingRules->{},
  CellChangeTimes->{{3.8708617733506994`*^9, 3.8708617754408827`*^9}},
  CellID->694018045,ExpressionUUID->"51ad0f00-6128-4dd7-a928-d3c44c17502b"],
 
@@ -564,11 +578,13 @@ Cell[BoxData[
  RowBox[{
   RowBox[{"PROBABILITYPLAINGIVENBOWLB", "=", 
    RowBox[{"20", "/", "40"}]}], ";"}]], "Input",
+ TaggingRules->{},
  CellChangeTimes->{{3.8708617798318973`*^9, 3.870861784100786*^9}},
  CellLabel->"In[87]:=",
  CellID->235199541,ExpressionUUID->"7d11209e-3d53-467c-9830-00ecf0a7ff0b"],
 
 Cell["Compute the probability of picking bowl A:", "CodeText",
+ TaggingRules->{},
  CellChangeTimes->{{3.870861786231379*^9, 3.870861797108203*^9}},
  CellID->127171358,ExpressionUUID->"7d7b9fdd-04b6-45b7-9143-8eeb691b00da"],
 
@@ -582,18 +598,21 @@ Cell[BoxData[
    RowBox[{"{", 
     RowBox[{"PROBABILITYPLAINGIVENBOWLA", ",", "PROBABILITYPLAINGIVENBOWLB"}],
      "}"}]}], "]"}]], "Input",
+ TaggingRules->{},
  CellChangeTimes->{{3.8708617980886087`*^9, 3.870861817316136*^9}},
  CellLabel->"In[88]:=",
  CellID->957505875,ExpressionUUID->"f5214553-4ecb-4a85-9deb-7b06d1871fd5"],
 
 Cell[BoxData[
  FractionBox["3", "5"]], "Output",
+ TaggingRules->{},
  CellChangeTimes->{3.8708618177640667`*^9},
  CellLabel->"Out[88]=",
  CellID->43261459,ExpressionUUID->"c093a02b-5ffb-4e65-af96-ee4858b285ff"]
 }, Open  ]],
 
 Cell["Compute the numerical probability:", "CodeText",
+ TaggingRules->{},
  CellChangeTimes->{{3.8708618216249614`*^9, 3.870861827217249*^9}},
  CellID->210050803,ExpressionUUID->"170325fc-49f9-41c9-84dc-c5e23c6189e4"],
 
@@ -609,347 +628,23 @@ Cell[BoxData[
      RowBox[{
      "PROBABILITYPLAINGIVENBOWLA", ",", "PROBABILITYPLAINGIVENBOWLB"}], 
      "}"}]}], "]"}], "]"}]], "Input",
+ TaggingRules->{},
  CellChangeTimes->{{3.870861828513533*^9, 3.8708618289886365`*^9}},
  CellLabel->"In[89]:=",
  CellID->260841834,ExpressionUUID->"8a948a64-efec-453e-a074-88245ad5f508"],
 
 Cell[BoxData["0.6`"], "Output",
+ TaggingRules->{},
  CellChangeTimes->{3.8708618293669825`*^9},
  CellLabel->"Out[89]=",
  CellID->587546299,ExpressionUUID->"52b9fa51-48c8-48bd-b2b4-c67db6fcd123"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"MyFunction", "[", 
-  RowBox[{"x", ",", "y"}], "]"}]], "Input",
- CellTags->"DefaultContent",
- CellLabel->"In[1]:= ",
- CellID->298664010,ExpressionUUID->"3e228ada-9d9c-46ad-aace-38d5c0f87bdb"],
-
-Cell[BoxData[
- RowBox[{"x", " ", "y"}]], "Output",
- CellTags->"DefaultContent",
- CellLabel->"Out[1]= ",
- CellID->832981051,ExpressionUUID->"b696a08b-134a-4c04-8170-12ce313937a8"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"BayesianInference", "[", 
-  RowBox[{"0.75", ",", "0.5", ",", "0.5", ",", "0.5"}], "]"}]], "Input",
- CellChangeTimes->{{3.8708567522492476`*^9, 3.8708567814063416`*^9}},
- CellLabel->"In[9]:=",
- CellID->176310897,ExpressionUUID->"41e1c521-b82d-4d6d-b551-37600187e58b"],
-
-Cell[BoxData["0.6000000000000001`"], "Output",
- CellChangeTimes->{3.870856781755413*^9},
- CellLabel->"Out[9]=",
- CellID->629166086,ExpressionUUID->"95f5128b-94a8-4c7d-bb0a-04dc486c6167"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"?", "BayesianInference"}]], "Input",
- CellChangeTimes->{{3.870856928416236*^9, 3.87085693003819*^9}},
- CellLabel->"In[14]:=",
- CellID->156199233,ExpressionUUID->"51891462-3383-45d5-b298-7e11dbc05a2a"],
-
-Cell[BoxData[
- InterpretationBox[
-  StyleBox[
-   FrameBox[
-    DynamicModuleBox[{System`InformationDump`open$$ = True, 
-     System`InformationDump`mouseOver$$ = False}, 
-     PaneSelectorBox[{True->
-      TagBox[GridBox[{
-         {
-          ItemBox[
-           PaneBox[
-            StyleBox["\<\" Symbol\"\>", "InformationTitleText",
-             StripOnInput->False,
-             BaseStyle -> None],
-            FrameMargins->{{4, 0}, {-1, 1}}],
-           BaseStyle->"InformationTitleBackground",
-           StripOnInput->False], 
-          ItemBox["\<\"\"\>",
-           BaseStyle->"InformationTitleBackground",
-           StripOnInput->False]},
-         {
-          ItemBox[
-           PaneBox[
-            
-            StyleBox["\<\"Global`BayesianInference\"\>", 
-             "InformationUsageText",
-             StripOnInput->False,
-             LineSpacing->{1.5, 1.5, 3.}],
-            FrameMargins->{{10, 10}, {8, 10}}],
-           BaseStyle->"InformationUsageSubtitleBackground",
-           StripOnInput->False], 
-          ItemBox["\<\"\"\>",
-           BaseStyle->"InformationUsageSubtitleBackground",
-           StripOnInput->False]},
-         {
-          PaneBox[
-           TagBox[GridBox[{
-              {
-               StyleBox[
-                TagBox[
-                 TooltipBox[
-                  StyleBox["\<\" Definitions\"\>", "InformationRowLabel",
-                   StripOnInput->False],
-                  "\"Definitions\"",
-                  TooltipStyle->"TextStyling"],
-                 Annotation[#, "Definitions", "Tooltip"]& ], "DialogStyle",
-                StripOnInput->False]},
-              {
-               TemplateBox[{"\"\[ThinSpace]\"", 
-                 GridBox[{{
-                    RowBox[{
-                    RowBox[{"BayesianInference", "[", 
-                    RowBox[{
-                    RowBox[{"{", 
-                    RowBox[{"h1_", ",", "h2_"}], "}"}], ",", 
-                    RowBox[{"{", 
-                    RowBox[{"egivenh1_", ",", "egivenh2_"}], "}"}]}], "]"}], 
-                    ":=", 
-                    FractionBox[
-                    RowBox[{"egivenh1", " ", "h1"}], 
-                    RowBox[{
-                    RowBox[{"egivenh1", " ", "h1"}], "+", 
-                    RowBox[{"egivenh2", " ", "h2"}]}]]}]}, {" "}}, 
-                  GridBoxAlignment -> {"Columns" -> {{Left}}}, 
-                  DefaultBaseStyle -> "Column", 
-                  GridBoxItemSize -> {
-                   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]},
-                "RowDefault"]}
-             },
-             DefaultBaseStyle->"Column",
-             GridBoxAlignment->{"Columns" -> {{Left}}},
-             
-             GridBoxItemSize->{
-              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
-            "Column"],
-           FrameMargins->{{6, 0}, {3, 6}}], "\<\"\"\>"},
-         {
-          PaneBox[GridBox[{
-             {
-              
-              DynamicModuleBox[{System`InformationDump`open$$ = {
-               False, False, False, False, False, False}}, 
-               StyleBox[GridBox[{
-                  {
-                   TagBox[
-                    TooltipBox[
-                    StyleBox["\<\" Full Name\"\>", "InformationRowLabel",
-                    StripOnInput->False],
-                    "\"FullName\"",
-                    TooltipStyle->"TextStyling"],
-                    
-                    Annotation[#, "FullName", 
-                    "Tooltip"]& ], "\<\"Global`BayesianInference\"\>"}
-                 },
-                 AutoDelete->False,
-                 GridBoxAlignment->{"Columns" -> {Right, Left}},
-                 GridBoxDividers->None,
-                 GridBoxItemSize->{"Columns" -> {Automatic, Automatic}},
-                 GridBoxSpacings->{"Columns" -> {
-                    Offset[0.27999999999999997`], {
-                    Offset[0.5599999999999999]}, 
-                    Offset[0.27999999999999997`]}, "Rows" -> {
-                    Offset[0.2], {
-                    Offset[0.8]}, 
-                    Offset[0.2]}}], "DialogStyle",
-                StripOnInput->False],
-               DynamicModuleValues:>{}]}
-            },
-            DefaultBaseStyle->"Column",
-            GridBoxAlignment->{"Columns" -> {{Left}}},
-            GridBoxDividers->{"Columns" -> {{False}}, "Rows" -> {{False}}},
-            
-            GridBoxItemSize->{
-             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
-            GridBoxSpacings->{"Columns" -> {
-                Offset[0.27999999999999997`], {
-                 Offset[0.5599999999999999]}, 
-                Offset[0.27999999999999997`]}, "Rows" -> {
-                Offset[0.2], {
-                 Offset[3.6]}, 
-                Offset[0.2]}}],
-           FrameMargins->{{6, 6}, {6, 3}}], ""},
-         {
-          ItemBox[
-           TagBox[
-            ButtonBox[
-             PaneSelectorBox[{False->
-              
-              DynamicBox[FEPrivate`FrontEndResource[
-               "FEBitmaps", "UpPointerOpener"],
-               ImageSizeCache->{10., {3., 7.}}], True->
-              
-              DynamicBox[FEPrivate`FrontEndResource[
-               "FEBitmaps", "UpPointerOpenerHot"],
-               ImageSizeCache->{10., {3., 7.}}]}, Dynamic[
-              System`InformationDump`mouseOver$$]],
-             Alignment->Left,
-             Appearance->{"Default" -> None},
-             
-             ButtonFunction:>FEPrivate`Set[
-              System`InformationDump`open$$, False],
-             Evaluator->Automatic,
-             FrameMargins->{{9, 0}, {0, 0}},
-             ImageMargins->0,
-             ImageSize->Full,
-             Method->"Preemptive"],
-            
-            EventHandlerTag[{
-             "MouseEntered" :> 
-              FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
-              "MouseExited" :> 
-              FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
-              Method -> "Preemptive", PassEventsDown -> Automatic, 
-              PassEventsUp -> True}]],
-           BaseStyle->"InformationTitleBackground",
-           StripOnInput->False], "\[SpanFromLeft]"}
-        },
-        AutoDelete->False,
-        FrameStyle->Directive[
-          GrayLevel[0.8], 
-          Thickness[Tiny]],
-        GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
-        GridBoxDividers->{
-         "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
-        GridBoxItemSize->{
-         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
-       "Grid"], False->
-      TagBox[GridBox[{
-         {
-          ItemBox[
-           PaneBox[
-            StyleBox["\<\" Symbol\"\>", "InformationTitleText",
-             StripOnInput->False],
-            FrameMargins->{{4, 0}, {-1, 1}}],
-           BaseStyle->"InformationTitleBackground",
-           StripOnInput->False], 
-          ItemBox["\<\"\"\>",
-           BaseStyle->"InformationTitleBackground",
-           StripOnInput->False]},
-         {
-          ItemBox[
-           PaneBox[
-            
-            StyleBox["\<\"Global`BayesianInference\"\>", 
-             "InformationUsageText",
-             StripOnInput->False,
-             LineSpacing->{1.5, 1.5, 3.}],
-            FrameMargins->{{10, 10}, {8, 10}}],
-           BaseStyle->"InformationUsageSubtitleBackground",
-           StripOnInput->False], 
-          ItemBox["\<\"\"\>",
-           BaseStyle->"InformationUsageSubtitleBackground",
-           StripOnInput->False]},
-         {
-          ItemBox[
-           TagBox[
-            ButtonBox[
-             PaneSelectorBox[{False->
-              
-              DynamicBox[FEPrivate`FrontEndResource[
-               "FEBitmaps", "DownPointerOpener"]], True->
-              
-              DynamicBox[FEPrivate`FrontEndResource[
-               "FEBitmaps", "DownPointerOpenerHot"]]}, Dynamic[
-              System`InformationDump`mouseOver$$]],
-             Alignment->Left,
-             Appearance->{"Default" -> None},
-             
-             ButtonFunction:>FEPrivate`Set[
-              System`InformationDump`open$$, True],
-             Evaluator->Automatic,
-             FrameMargins->{{9, 0}, {0, 0}},
-             ImageMargins->0,
-             ImageSize->Full,
-             Method->"Preemptive"],
-            
-            EventHandlerTag[{
-             "MouseEntered" :> 
-              FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
-              "MouseExited" :> 
-              FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
-              Method -> "Preemptive", PassEventsDown -> Automatic, 
-              PassEventsUp -> True}]],
-           BaseStyle->"InformationTitleBackground",
-           StripOnInput->False], "\[SpanFromLeft]"}
-        },
-        AutoDelete->False,
-        FrameStyle->Directive[
-          GrayLevel[0.8], 
-          Thickness[Tiny]],
-        GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
-        GridBoxDividers->{
-         "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
-        GridBoxItemSize->{
-         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
-       "Grid"]}, Dynamic[System`InformationDump`open$$],
-      BaselinePosition->Baseline,
-      FrameMargins->0,
-      ImageSize->Automatic],
-     DynamicModuleValues:>{}],
-    BaseStyle->"InformationGridFrame",
-    StripOnInput->False], "InformationGridPlain",
-   StripOnInput->False],
-  InformationData[<|
-   "ObjectType" -> "Symbol", "Usage" -> "Global`BayesianInference", 
-    "Documentation" -> None, "OwnValues" -> None, "UpValues" -> None, 
-    "DownValues" -> 
-    Information`InformationValueForm[
-     DownValues, $CellContext`BayesianInference, \
-{$CellContext`BayesianInference[{
-          Pattern[$CellContext`h1, 
-           Blank[]], 
-          Pattern[$CellContext`h2, 
-           Blank[]]}, {
-          Pattern[$CellContext`egivenh1, 
-           Blank[]], 
-          Pattern[$CellContext`egivenh2, 
-           
-           Blank[]]}] :> $CellContext`egivenh1 \
-$CellContext`h1/($CellContext`egivenh1 $CellContext`h1 + \
-$CellContext`egivenh2 $CellContext`h2)}], "SubValues" -> None, 
-    "DefaultValues" -> None, "NValues" -> None, "FormatValues" -> None, 
-    "Options" -> None, "Attributes" -> {}, "FullName" -> 
-    "Global`BayesianInference"|>, False]]], "Output",
- CellChangeTimes->{3.8708569303847303`*^9},
- CellLabel->"Out[14]=",
- CellID->501712436,ExpressionUUID->"8f9d7c64-263e-4945-94fe-3482622356fb"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"BayesianInference", "[", 
-  RowBox[{
-   RowBox[{"{", 
-    RowBox[{"0.5", ",", "0.5"}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"0.75", ",", "0.5"}], "}"}]}], "]"}]], "Input",
- CellChangeTimes->{{3.870856939658104*^9, 3.8708569495554485`*^9}},
- CellLabel->"In[15]:=",
- CellID->627102669,ExpressionUUID->"6cdddabd-2aa6-4e12-aadf-bad8161be367"],
-
-Cell[BoxData["0.6000000000000001`"], "Output",
- CellChangeTimes->{3.87085694992581*^9},
- CellLabel->"Out[15]=",
- CellID->10282833,ExpressionUUID->"dec6f96e-fb5c-4349-969c-98877ab0c077"]
 }, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell["Scope", "Subsection",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellID->313242344,ExpressionUUID->"8da153b6-1854-4651-8191-6c5c21e937b7"],
 
@@ -957,6 +652,7 @@ Cell["\<\
 Text about additional examples expanding scope (and see other sections for \
 options, applications, etc):\
 \>", "Text",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellID->291939446,ExpressionUUID->"2b7f2736-3bc4-4337-a7d8-ee72e89a815d"],
 
@@ -965,12 +661,14 @@ Cell[CellGroupData[{
 Cell[BoxData[
  RowBox[{"MyFunction", "[", 
   RowBox[{"x", ",", "y", ",", "z"}], "]"}]], "Input",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellLabel->"In[2]:= ",
  CellID->448965068,ExpressionUUID->"f6156352-b805-48e4-96e9-92b6359f2e8d"],
 
 Cell[BoxData[
  RowBox[{"x", " ", "y", " ", "z"}]], "Output",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellLabel->"Out[2]= ",
  CellID->494498970,ExpressionUUID->"d6cd0b63-fc6e-4b4e-a9a0-a9bb1b69aa4e"]
@@ -978,22 +676,27 @@ Cell[BoxData[
 }, Open  ]],
 
 Cell["Options", "Subsection",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellID->879773335,ExpressionUUID->"11f582d1-148d-4220-b2e7-963492236e9d"],
 
 Cell["Applications", "Subsection",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellID->542143288,ExpressionUUID->"a3d3c180-6f9a-4923-a92d-d7e692d27717"],
 
 Cell["Properties and Relations", "Subsection",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellID->727494039,ExpressionUUID->"e4b43826-8a9c-4198-8837-ecb17ef3e10e"],
 
 Cell["Possible Issues", "Subsection",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellID->471245215,ExpressionUUID->"3a09cbbc-0ec4-445f-95f4-cafd1cee7b58"],
 
 Cell["Neat Examples", "Subsection",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellID->303071976,ExpressionUUID->"4cd6dc1c-a222-4996-9e5f-556da80dc2fc"]
 }, Open  ]],
@@ -1038,13 +741,15 @@ publicly credited with contributing this function.", "MoreInfoText"],
  CellTags->{"Contributed By", "ContributorInformation", "TemplateCellGroup"},
  CellID->771147648,ExpressionUUID->"91757477-a8fe-415a-b32b-68153eb8f284"],
 
-Cell["Author Name", "Text",
+Cell["Peter Cullen Burbery", "Text",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
        WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.870861884461306*^9, 3.8708618874626007`*^9}},
  CellTags->{"DefaultContent", "TabNext"},
  CellID->855757352,ExpressionUUID->"dcff8616-6833-4dab-bc7b-6b87917712e1"]
 }, Open  ]],
@@ -1080,15 +785,105 @@ concepts) that should be used to include the function in search results.",
  CellTags->{"Keywords", "TemplateCellGroup"},
  CellID->854882061,ExpressionUUID->"81f7077d-7857-47a3-9888-051661c8744f"],
 
-Cell["keyword 1", "Item",
+Cell["Probability", "Item",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
        WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.8708618902697277`*^9, 3.870861891963585*^9}},
  CellTags->{"DefaultContent", "TabNext"},
- CellID->560424104,ExpressionUUID->"5c5a6f5d-0af9-4871-865a-1de35c3f900f"]
+ CellID->560424104,ExpressionUUID->"5c5a6f5d-0af9-4871-865a-1de35c3f900f"],
+
+Cell["Bayesian Inference", "Item",
+ TaggingRules->{},
+ CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
+       SelectedNotebook[], After, Cell]; NotebookFind[
+       SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
+       WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
+       SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
+   PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.8708618902697277`*^9, 3.8708618947749834`*^9}},
+ CellID->184823174,ExpressionUUID->"06f40a86-2b23-402b-9893-757ee8eed2ee"],
+
+Cell["Bayes Theorem", "Item",
+ TaggingRules->{},
+ CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
+       SelectedNotebook[], After, Cell]; NotebookFind[
+       SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
+       WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
+       SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
+   PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.8708618902697277`*^9, 3.8708619062222195`*^9}},
+ CellID->40292080,ExpressionUUID->"bbb19f51-0183-400d-b48c-6fb9b6c76c4a"],
+
+Cell["Bayesian statistics", "Item",
+ TaggingRules->{},
+ CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
+       SelectedNotebook[], After, Cell]; NotebookFind[
+       SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
+       WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
+       SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
+   PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.8708618902697277`*^9, 3.870861914851359*^9}},
+ CellID->62121414,ExpressionUUID->"9e9028f4-e0c0-447d-afea-acc508717864"],
+
+Cell["Bayesian probability", "Item",
+ TaggingRules->{},
+ CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
+       SelectedNotebook[], After, Cell]; NotebookFind[
+       SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
+       WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
+       SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
+   PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.8708618902697277`*^9, 3.8708619208569098`*^9}},
+ CellID->24455634,ExpressionUUID->"176ef9fd-a0be-4e3d-9227-0435b2993905"],
+
+Cell["Posterior Probability", "Item",
+ TaggingRules->{},
+ CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
+       SelectedNotebook[], After, Cell]; NotebookFind[
+       SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
+       WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
+       SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
+   PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.8708618902697277`*^9, 3.870861936071395*^9}},
+ CellID->295502656,ExpressionUUID->"32d2c1d7-fa27-4fa2-acd8-dc3fd1f92ff8"],
+
+Cell["Likelihood", "Item",
+ TaggingRules->{},
+ CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
+       SelectedNotebook[], After, Cell]; NotebookFind[
+       SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
+       WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
+       SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
+   PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.8708618902697277`*^9, 3.870861940530191*^9}},
+ CellID->38033580,ExpressionUUID->"5c1a871a-3c52-4c6b-9858-6a3035a6e60f"],
+
+Cell["Prior Probability", "Item",
+ TaggingRules->{},
+ CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
+       SelectedNotebook[], After, Cell]; NotebookFind[
+       SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
+       WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
+       SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
+   PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.8708618902697277`*^9, 3.8708619442827835`*^9}},
+ CellID->6064933,ExpressionUUID->"454f19ab-6ebb-4c38-a95a-edbb041d2a23"],
+
+Cell["Evidence", "Item",
+ TaggingRules->{},
+ CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
+       SelectedNotebook[], After, Cell]; NotebookFind[
+       SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
+       WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
+       SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
+   PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.8708618902697277`*^9, 3.8708619458571277`*^9}},
+ CellID->28608267,ExpressionUUID->"ba3d08fd-c225-4037-a807-edd05bd480be"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1257,8 +1052,10 @@ Cell[BoxData[
         {
          StyleBox[
           TemplateBox[{
-            CheckboxBox[False, {False, "Higher Mathematical Computation"}], 
-            "\" \"", "\"Higher Mathematical Computation\""},
+            CheckboxBox[
+            "Higher Mathematical Computation", {
+             False, "Higher Mathematical Computation"}], "\" \"", 
+            "\"Higher Mathematical Computation\""},
            "RowDefault"],
           StripOnInput->False,
           FontSize->12]},
@@ -1306,8 +1103,10 @@ Cell[BoxData[
         {
          StyleBox[
           TemplateBox[{
-            CheckboxBox[False, {False, "Symbolic & Numeric Computation"}], 
-            "\" \"", "\"Symbolic & Numeric Computation\""},
+            CheckboxBox[
+            "Symbolic & Numeric Computation", {
+             False, "Symbolic & Numeric Computation"}], "\" \"", 
+            "\"Symbolic & Numeric Computation\""},
            "RowDefault"],
           StripOnInput->False,
           FontSize->12]},
@@ -1348,6 +1147,7 @@ Cell[BoxData[
 WuYdc+Ub5wvq9oc1GUlKJnXIiqJrBdBCtZQ3n11qHnCPtWMD6sV0ipOzhW1tB9/elmHINGKs+\
 zYjElVnRCE36N6oQaf518wOqwmP/BY28YvfMpmxegakyEMBGmf4cRyQYv8RYdQtkFI3PmDU1ZTKI=\
 "},
+ CellChangeTimes->{{3.8708619542917337`*^9, 3.870861955954363*^9}},
  CellTags->{"Categories", "Categories-Checkboxes", "CheckboxCell"},
  CellID->106874216,ExpressionUUID->"32548265-1745-4195-bec5-970f44d250c9"]
 }, Open  ]],
@@ -1383,15 +1183,39 @@ related to the function.", "MoreInfoText"], Background -> GrayLevel[0.95],
  CellTags->{"Related Symbols", "TemplateCellGroup"},
  CellID->525877127,ExpressionUUID->"5ee98211-3cf6-46c3-aaa5-2291829f21b5"],
 
-Cell["SymbolName (documented Wolfram Language symbol)", "Item",
+Cell["Probability", "Item",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
        WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.870861958581352*^9, 3.870861960374672*^9}},
  CellTags->{"DefaultContent", "TabNext"},
- CellID->195255409,ExpressionUUID->"513ef463-dfd9-43d1-a27a-4e8df66d6bb3"]
+ CellID->195255409,ExpressionUUID->"513ef463-dfd9-43d1-a27a-4e8df66d6bb3"],
+
+Cell["NProbability", "Item",
+ TaggingRules->{},
+ CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
+       SelectedNotebook[], After, Cell]; NotebookFind[
+       SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
+       WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
+       SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
+   PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.870861958581352*^9, 3.8708619628976626`*^9}},
+ CellID->287433947,ExpressionUUID->"b0616713-a662-4b7c-86ac-41507e2598c5"],
+
+Cell["Conditioned", "Item",
+ TaggingRules->{},
+ CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
+       SelectedNotebook[], After, Cell]; NotebookFind[
+       SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
+       WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
+       SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
+   PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.870861958581352*^9, 3.8708619645664835`*^9}},
+ CellID->193819057,ExpressionUUID->"09ac49dd-e5f4-4b70-95a6-53f2e27ab37e"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1425,15 +1249,61 @@ repository that are related to this function.", "MoreInfoText"], Background ->
  CellTags->{"Related Resource Objects", "TemplateCellGroup"},
  CellID->869341850,ExpressionUUID->"214fbdb6-e792-486b-99cf-0962e86f07dc"],
 
-Cell["Resource Name (resources from any Wolfram repository)", "Item",
+Cell["ArcsineLawRandomnessTest", "Item",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
        WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.8708620491382494`*^9, 3.870862056150604*^9}},
  CellTags->{"DefaultContent", "TabNext"},
- CellID->694609509,ExpressionUUID->"8b844c4e-62b3-4d50-83dc-3f50290b0988"]
+ CellID->694609509,ExpressionUUID->"8b844c4e-62b3-4d50-83dc-3f50290b0988"],
+
+Cell["ChiSquareRandomnessTest", "Item",
+ TaggingRules->{},
+ CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
+       SelectedNotebook[], After, Cell]; NotebookFind[
+       SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
+       WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
+       SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
+   PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.8708620491382494`*^9, 3.87086206282699*^9}},
+ CellID->139971638,ExpressionUUID->"f80d6b64-49bd-4ff8-b693-93720599540f"],
+
+Cell["RunCountRandomnessTest", "Item",
+ TaggingRules->{},
+ CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
+       SelectedNotebook[], After, Cell]; NotebookFind[
+       SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
+       WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
+       SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
+   PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.8708620491382494`*^9, 3.8708620672023306`*^9}},
+ CellID->584444154,ExpressionUUID->"a02d41b7-a8b9-4fc8-a443-60cef991f282"],
+
+Cell["RunLengthRandomnessTest", "Item",
+ TaggingRules->{},
+ CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
+       SelectedNotebook[], After, Cell]; NotebookFind[
+       SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
+       WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
+       SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
+   PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.8708620491382494`*^9, 3.87086207226894*^9}},
+ CellID->843866127,ExpressionUUID->"d617299a-4372-456f-ba6d-7d447bacef8d"],
+
+Cell["CUSUMMaxRandomnessTest", "Item",
+ TaggingRules->{},
+ CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
+       SelectedNotebook[], After, Cell]; NotebookFind[
+       SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
+       WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
+       SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
+   PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.8708620491382494`*^9, 3.870862079179982*^9}},
+ CellID->802232834,ExpressionUUID->"ac00af17-3d97-4ece-a1d6-3b781fffee4a"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1467,13 +1337,19 @@ repository).", "MoreInfoText"], Background -> GrayLevel[0.95], FrameMargins ->
  CellTags->{"Source/Reference Citation", "TemplateCellGroup"},
  CellID->788767010,ExpressionUUID->"cdba5e84-8b92-436c-aab3-e760fe7d2770"],
 
-Cell["Source, reference or citation information", "Text",
+Cell[TextData[ButtonBox["",
+ BaseStyle->"Hyperlink",
+ ButtonData->{
+   URL["https://en.wikipedia.org/wiki/Bayes%27_theorem"], None},
+ ButtonNote->"https://en.wikipedia.org/wiki/Bayes%27_theorem"]], "Text",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
        WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.8708621150815516`*^9, 3.870862135924183*^9}},
  CellTags->{"DefaultContent", "TabNext"},
  CellID->512303561,ExpressionUUID->"e6c99d18-b583-4415-9d17-4297a6e173d7"]
 }, Open  ]],
@@ -1509,15 +1385,30 @@ to the function.", "MoreInfoText"], Background -> GrayLevel[0.95],
  CellTags->{"Links", "TemplateCellGroup"},
  CellID->341958311,ExpressionUUID->"cb0247e7-a68a-40a3-8fc4-d1d82ddbfb38"],
 
-Cell["Link to other related material", "Item",
+Cell[TextData[ButtonBox["Bayes\[CloseCurlyQuote] Theorem\[LongDash]Wikipedia",
+ BaseStyle->"Hyperlink",
+ ButtonData->{
+   URL["https://en.wikipedia.org/wiki/Bayes%27_theorem"], None},
+ ButtonNote->"https://en.wikipedia.org/wiki/Bayes%27_theorem"]], "Item",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
        WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{3.870862137021656*^9},
  CellTags->{"DefaultContent", "TabNext"},
- CellID->938599834,ExpressionUUID->"f734d4d1-877f-4344-a369-6d12a9ce0523"]
+ CellID->938599834,ExpressionUUID->"f734d4d1-877f-4344-a369-6d12a9ce0523"],
+
+Cell[TextData[ButtonBox["Bayesian Inference\[LongDash]Wikipedia",
+ BaseStyle->"Hyperlink",
+ ButtonData->{
+   URL["https://en.wikipedia.org/wiki/Bayesian_inference"], None},
+ ButtonNote->"https://en.wikipedia.org/wiki/Bayesian_inference"]], "Item",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8708621528736057`*^9, 3.8708621639618387`*^9}},
+ CellID->62208843,ExpressionUUID->"0c09caf5-d33b-4834-a915-e03ad3bad8d1"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1574,12 +1465,14 @@ Cell[CellGroupData[{
 Cell[BoxData[
  RowBox[{"MyFunction", "[", 
   RowBox[{"x", ",", "y"}], "]"}]], "Input",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellLabel->"In[3]:=",
  CellID->770806,ExpressionUUID->"d089b5cf-db6f-4b0b-b027-0e5e50e8212d"],
 
 Cell[BoxData[
  RowBox[{"x", " ", "y"}]], "Output",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellLabel->"Out[3]=",
  CellID->759771806,ExpressionUUID->"3f9b13f2-852f-4269-82fa-4a4ea028c74c"]
@@ -1652,7 +1545,9 @@ Cell[TextData[{
    "Wolfram Language Version"},
  CellID->267876551,ExpressionUUID->"1c0d66db-ffba-41b3-9721-8832dccb0390"],
 
-Cell["13.0+", "Text",
+Cell["13.1+", "Text",
+ TaggingRules->{},
+ CellChangeTimes->{3.870862167748287*^9},
  CellTags->{"DefaultContent", "ScrapeDefault"},
  CellID->788185540,ExpressionUUID->"8822228f-fed2-4d44-99d7-3322d655d6c8"]
 }, Open  ]],
@@ -2102,7 +1997,7 @@ JAZLFxBaxuyKShxfvoEfKzujYRb6FXWpA="},
  CellID->818043737,ExpressionUUID->"87159ca9-e440-445a-a555-d5a0c6e8d8c9"]
 }, Closed]]
 }, Open  ]]
-}, Closed]],
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -2138,6 +2033,7 @@ that are otherwise beyond the scope of the function documentation.",
  CellID->897529167,ExpressionUUID->"a2a5ce39-d2c9-429b-bbae-0b9701492c81"],
 
 Cell["Additional information about limitations, issues, etc.", "Text",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -2190,6 +2086,7 @@ Cell[TextData[{
   "dee99af1-2844-4fe2-b573-898df5d3b994"],
  " to \[ExponentialE]'s form E."
 }], "Text",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -2202,9 +2099,369 @@ Cell[TextData[{
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{511.79999999999995`, 494.4},
-WindowMargins->{{-1.2, Automatic}, {Automatic, 36}},
+WindowSize->{1152., 585.6},
+WindowMargins->{{
+  Automatic, -5.399999999999864}, {-5.399999999999977, Automatic}},
 Visible->True,
+DockedCells->{
+  Cell[
+   BoxData[
+    TemplateBox[{}, "MainGridTemplate"]], "DockedCell", 
+   CellMargins -> {{-10, -10}, {-8, -8}}, CellFrame -> 0, Background -> 
+   RGBColor[0.92157, 0.34118, 0.10588], CellTags -> {"MainDockedCell"}, 
+   CacheGraphics -> False], 
+  Cell[
+   BoxData[
+    TemplateBox[{}, "ToolsGridTemplate"]], "DockedCell", 
+   TaggingRules -> {"Tools" -> True}, CellTags -> {"ToolbarDockedCell"}, 
+   CellFrameMargins -> {{0, 0}, {2, 2}}, CellFrame -> {{0, 0}, {1, 0}}, 
+   CacheGraphics -> False, CellOpen -> Dynamic[
+     CurrentValue[
+      EvaluationNotebook[], {TaggingRules, "ToolsOpen"}, True]]], 
+  Cell[
+   BoxData[
+    StyleBox[
+     TagBox[
+      GridBox[{{
+         ItemBox[
+          TagBox[
+           GridBox[{{
+              OverlayBox[{
+                StyleBox[
+                 TagBox[
+                  DynamicModuleBox[{Typeset`var$$ = False}, 
+                   InterpretationBox[
+                    StyleBox[
+                    PaneSelectorBox[{False -> GridBox[{{
+                    OpenerBox[
+                    Dynamic[Typeset`var$$], Appearance -> Automatic, Enabled -> 
+                    Automatic, AutoAction -> False, ContinuousAction -> 
+                    False], 
+                    StyleBox[
+                    DynamicBox[
+                    ToBoxes[
+                    DateString[
+                    TimeZoneConvert[
+                    DateObject[
+                    3.8708621947301534`17.340382699581575*^9, TimeZone -> 
+                    0]], {"MonthName", " ", "DayShort", ", ", "Year", " ", 
+                    "Hour12Short", ":", "Minute", " ", "AMPMLowerCase"}], 
+                    StandardForm], SingleEvaluation -> True, Evaluator -> 
+                    "System"], FontSlant -> Italic, FontColor -> 
+                    GrayLevel[0.5], FontSize -> 0.9 Inherited, StripOnInput -> 
+                    False]}}, GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                    AutoDelete -> False, 
+                    GridBoxBackground -> {"Columns" -> {{Automatic}}}, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{0.2}}, "Rows" -> {{0.5}}}, 
+                    BaselinePosition -> {1, 1}], True -> GridBox[{{
+                    OpenerBox[
+                    Dynamic[Typeset`var$$], Appearance -> Automatic, Enabled -> 
+                    Automatic, AutoAction -> False, ContinuousAction -> 
+                    False], 
+                    StyleBox[
+                    DynamicBox[
+                    ToBoxes[
+                    DateString[
+                    TimeZoneConvert[
+                    DateObject[
+                    3.8708621947301534`17.340382699581575*^9, TimeZone -> 
+                    0]], {"MonthName", " ", "DayShort", ", ", "Year", " ", 
+                    "Hour12Short", ":", "Minute", " ", "AMPMLowerCase"}], 
+                    StandardForm], SingleEvaluation -> True, Evaluator -> 
+                    "System"], FontSlant -> Italic, FontColor -> 
+                    GrayLevel[0.5], FontSize -> 0.9 Inherited, StripOnInput -> 
+                    False]}, {"", 
+                    PaneBox["\"\"", ImageMargins -> 0]}}, 
+                    GridBoxAlignment -> {"Columns" -> {{Left}}}, AutoDelete -> 
+                    False, GridBoxBackground -> {"Columns" -> {{Automatic}}}, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{0.2}}, "Rows" -> {{0.5}}}, 
+                    BaselinePosition -> {1, 1}]}, 
+                    Dynamic[Typeset`var$$], Alignment -> Automatic, ImageSize -> 
+                    Automatic, ImageMargins -> 0, BaseStyle -> {}, 
+                    DefaultBaseStyle -> "OpenerView", BaselinePosition -> 
+                    Baseline], Deployed -> False, StripOnInput -> False], 
+                    OpenerView[{
+                    Style[
+                    Dynamic[
+                    DateString[
+                    TimeZoneConvert[
+                    DateObject[
+                    3.8708621947301534`17.340382699581575*^9, TimeZone -> 
+                    0]], {"MonthName", " ", "DayShort", ", ", "Year", " ", 
+                    "Hour12Short", ":", "Minute", " ", "AMPMLowerCase"}], 
+                    SingleEvaluation -> True, Evaluator -> "System"], 
+                    FontSlant -> Italic, FontColor -> GrayLevel[0.5], 
+                    FontSize -> 0.9 Inherited], ""}, False]], 
+                   DynamicModuleValues -> Automatic], Setting[#, {0}]& ], 
+                 ShowContents -> False, StripOnInput -> False], 
+                StyleBox[
+                 DynamicBox[
+                  ToBoxes[
+                   DateString[
+                    TimeZoneConvert[
+                    DateObject[
+                    3.8708621947301534`17.340382699581575*^9, TimeZone -> 
+                    0]], {"MonthName", " ", "DayShort", ", ", "Year", " ", 
+                    "Hour12Short", ":", "Minute", " ", "AMPMLowerCase"}], 
+                   StandardForm], SingleEvaluation -> True, Evaluator -> 
+                  "System"], FontSlant -> Italic, FontColor -> GrayLevel[0.5],
+                  FontSize -> 0.9 Inherited, StripOnInput -> False]}, 
+               Alignment -> {Right, Baseline}], "\"   \"", 
+              ItemBox[
+              "\"Found 4 suggestions\"", ItemSize -> Scaled[0.75], 
+               StripOnInput -> False]}}, 
+            GridBoxAlignment -> {
+             "Columns" -> {{Left}}, "Rows" -> {{Baseline}}}, AutoDelete -> 
+            False, GridBoxItemSize -> {
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], "Grid"], 
+          ItemSize -> Fit, StripOnInput -> False], 
+         ItemBox[
+          StyleBox[
+           ActionMenuBox[
+            TagBox[
+             TagBox[
+              GridBox[{{
+                 TemplateBox[{
+                   TagBox[
+                    GridBox[{{
+                    TemplateBox[{
+                    RGBColor[
+                    0.49019607843137253`, 0.49019607843137253`, 
+                    0.49019607843137253`], 
+                    RGBColor[1., 1., 1.], 10, {{0, 18}, {-2, 17}}}, 
+                    "SuggestionIconTemplate"], 
+                    StyleBox[
+                    "4", FontColor -> GrayLevel[0.5], FontSize -> 9, 
+                    StripOnInput -> False]}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Center}}}, AutoDelete -> 
+                    False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {"Columns" -> {{0.25}}}], "Grid"], 
+                   "\"Suggestions found\""}, "PrettyTooltipTemplate"], 
+                 "\"   \""}}, AutoDelete -> False, 
+               GridBoxItemSize -> {
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+              "Grid"], 
+             MouseAppearanceTag["LinkHand"]], {TemplateBox[{
+                TemplateBox[{
+                  RGBColor[
+                  0.49019607843137253`, 0.49019607843137253`, 
+                   0.49019607843137253`], 
+                  RGBColor[1., 1., 1.], 10, {{0, 18}, {-2, 17}}}, 
+                 "SuggestionIconTemplate"], "\" \"", 
+                "\"Extra whitespace should be removed\""}, "RowDefault"] :> (
+              DefinitionNotebookClient`LoadDefinitionNotebook["Function", 
+                NotebookObject[
+                "5375dff0-70ca-43f1-a5f8-6045c7438bba", 
+                 "bda44f2f-ca33-4d89-9ec5-f0e839fb45bd"]]; 
+              DefinitionNotebookClient`PackageScope`setHint[
+               "Suggestion", "Function", 
+                ParentNotebook[
+                 CellObject[
+                 "b12dd7e5-0aba-42fd-9729-c68e4861fac5", 
+                  "84ce9754-dc48-408a-9a35-696e2dd5382f"]], 746063541, 
+                "ExtraWhitespace", {
+                 Cell[
+                  TextData[{"derives the posterior probability ", 
+                    Cell[
+                    BoxData[
+                    FormBox[
+                    RowBox[{"P", "(", 
+                    RowBox[{
+                    SubscriptBox["H", "1"], "\[Conditioned]", "E"}], ")"}], 
+                    TraditionalForm]], FormatType -> TraditionalForm], 
+                    "  from the prior probabilities ", 
+                    Cell[
+                    BoxData[
+                    FormBox[
+                    RowBox[{"P", "(", 
+                    SubscriptBox["H", "1"], ")"}], TraditionalForm]], 
+                    FormatType -> TraditionalForm], " and ", 
+                    Cell[
+                    BoxData[
+                    FormBox[
+                    RowBox[{"P", "(", 
+                    SubscriptBox["H", "2"]}], TraditionalForm]], FormatType -> 
+                    TraditionalForm], ") and the likelihoods ", 
+                    Cell[
+                    BoxData[
+                    RowBox[{"P", 
+                    RowBox[{"(", 
+                    RowBox[{"E", "\[Conditioned]", 
+                    SubscriptBox["H", "1"]}], ")"}], " ", "and", " ", "P", 
+                    RowBox[{"(", 
+                    RowBox[{"E", "\[Conditioned]", 
+                    SubscriptBox["H", "2"]}], ")"}]}]], "UsageInputs", 
+                    FontFamily -> "Source Sans Pro"]}], "UsageDescription", 
+                  CellTags -> {"DefaultContent", "TabNext"}, CellID -> 
+                  746063541]}]; DefinitionNotebookClient`PackageScope`seek[
+                CellObject[
+                "b12dd7e5-0aba-42fd-9729-c68e4861fac5", 
+                 "84ce9754-dc48-408a-9a35-696e2dd5382f"]]; Null), TemplateBox[{
+                TemplateBox[{
+                  RGBColor[
+                  0.49019607843137253`, 0.49019607843137253`, 
+                   0.49019607843137253`], 
+                  RGBColor[1., 1., 1.], 10, {{0, 18}, {-2, 17}}}, 
+                 "SuggestionIconTemplate"], "\" \"", 
+                "\"Usage descriptions should end in a period (.)\""}, 
+               "RowDefault"] :> (
+              DefinitionNotebookClient`LoadDefinitionNotebook["Function", 
+                NotebookObject[
+                "5375dff0-70ca-43f1-a5f8-6045c7438bba", 
+                 "bda44f2f-ca33-4d89-9ec5-f0e839fb45bd"]]; 
+              DefinitionNotebookClient`PackageScope`setHint[
+               "Suggestion", "Function", 
+                ParentNotebook[
+                 CellObject[
+                 "b12dd7e5-0aba-42fd-9729-c68e4861fac5", 
+                  "84ce9754-dc48-408a-9a35-696e2dd5382f"]], 746063541, 
+                "UsageDescriptionNeedsPeriod", {}]; 
+              DefinitionNotebookClient`PackageScope`seek[
+                CellObject[
+                "b12dd7e5-0aba-42fd-9729-c68e4861fac5", 
+                 "84ce9754-dc48-408a-9a35-696e2dd5382f"]]; Null), TemplateBox[{
+                TemplateBox[{
+                  RGBColor[
+                  0.49019607843137253`, 0.49019607843137253`, 
+                   0.49019607843137253`], 
+                  RGBColor[1., 1., 1.], 10, {{0, 18}, {-2, 17}}}, 
+                 "SuggestionIconTemplate"], "\" \"", 
+                "\"Extra whitespace should be removed\""}, "RowDefault"] :> (
+              DefinitionNotebookClient`LoadDefinitionNotebook["Function", 
+                NotebookObject[
+                "5375dff0-70ca-43f1-a5f8-6045c7438bba", 
+                 "bda44f2f-ca33-4d89-9ec5-f0e839fb45bd"]]; 
+              DefinitionNotebookClient`PackageScope`setHint[
+               "Suggestion", "Function", 
+                ParentNotebook[
+                 CellObject[
+                 "e673ea28-cf9f-4c8f-9ede-a312639f6152", 
+                  "79a679ec-2ca9-492e-bf7d-2f03d4aeb4a9"]], 586099280, 
+                "ExtraWhitespace", {
+                 Cell[
+                 "Suppose there are two bowls of cookies. The first bowl A \
+has 10 chocolate chip cookies and 30 plain cookies. The second bowl, bowl B, \
+has 20 chocolate chip cookies and 20 plain cookies. I pick a cookie from a \
+bowl randomly and observe the cookie is plain. What is the probability I \
+picked bowl A? We can assume that the sum of the  probability of picking bowl \
+A and the probability of picking bowl B is 1. We can also assume that the \
+probability of bowl A is the same as the probability of bowl B.", "Text", 
+                  CellTags -> "DefaultContent", CellID -> 586099280]}]; 
+              DefinitionNotebookClient`PackageScope`seek[
+                CellObject[
+                "e673ea28-cf9f-4c8f-9ede-a312639f6152", 
+                 "79a679ec-2ca9-492e-bf7d-2f03d4aeb4a9"]]; Null), TemplateBox[{
+                TemplateBox[{
+                  RGBColor[
+                  0.49019607843137253`, 0.49019607843137253`, 
+                   0.49019607843137253`], 
+                  RGBColor[1., 1., 1.], 10, {{0, 18}, {-2, 17}}}, 
+                 "SuggestionIconTemplate"], "\" \"", 
+                "\"Example captions should usually end in a colon when \
+appearing before input\""}, "RowDefault"] :> (
+              DefinitionNotebookClient`LoadDefinitionNotebook["Function", 
+                NotebookObject[
+                "5375dff0-70ca-43f1-a5f8-6045c7438bba", 
+                 "bda44f2f-ca33-4d89-9ec5-f0e839fb45bd"]]; 
+              DefinitionNotebookClient`PackageScope`setHint[
+               "Suggestion", "Function", 
+                ParentNotebook[
+                 CellObject[
+                 "1edb0ed4-f6d1-481f-b83d-d3eb943c17e2", 
+                  "41a7712e-9989-4c53-a32f-5055d9f7e9d8"]], 790665325, 
+                "ExampleTextLastCharacter", {}]; 
+              DefinitionNotebookClient`PackageScope`seek[
+                CellObject[
+                "1edb0ed4-f6d1-481f-b83d-d3eb943c17e2", 
+                 "41a7712e-9989-4c53-a32f-5055d9f7e9d8"]]; Null)}, Appearance -> 
+            None, Method -> "Queued"], "BoxID" -> "WarningCountButton", 
+           StripOnInput -> False], ItemSize -> All, StripOnInput -> False], 
+         ItemBox[
+          TagBox[
+           ButtonBox[
+            TagBox[
+             PaneSelectorBox[{False -> GraphicsBox[{
+                  GrayLevel[
+                   NCache[
+                    Rational[64, 85], 0.7529411764705882]], 
+                  
+                  PolygonBox[{{-0.282842712474619, -0.42426406871192845`}, \
+{-0.42426406871192845`, -0.282842712474619}, {0.282842712474619, 
+                   0.42426406871192845`}, {0.42426406871192845`, 
+                   0.282842712474619}}], 
+                  
+                  PolygonBox[{{0.42426406871192845`, -0.282842712474619}, {
+                   0.282842712474619, -0.42426406871192845`}, \
+{-0.42426406871192845`, 0.282842712474619}, {-0.282842712474619, 
+                   0.42426406871192845`}}]}, ImageSize -> 18, 
+                 PlotRangePadding -> 0, PlotRange -> 0.7, Background -> None],
+                True -> GraphicsBox[{
+                  GrayLevel[
+                   NCache[
+                    Rational[128, 255], 0.5019607843137255]], 
+                  
+                  PolygonBox[{{-0.282842712474619, -0.42426406871192845`}, \
+{-0.42426406871192845`, -0.282842712474619}, {0.282842712474619, 
+                   0.42426406871192845`}, {0.42426406871192845`, 
+                   0.282842712474619}}], 
+                  
+                  PolygonBox[{{0.42426406871192845`, -0.282842712474619}, {
+                   0.282842712474619, -0.42426406871192845`}, \
+{-0.42426406871192845`, 0.282842712474619}, {-0.282842712474619, 
+                   0.42426406871192845`}}]}, ImageSize -> 18, 
+                 PlotRangePadding -> 0, PlotRange -> 0.7, Background -> 
+                 None]}, 
+              Dynamic[
+               CurrentValue["MouseOver"]], ImageSize -> Automatic, 
+              FrameMargins -> 0], 
+             MouseAppearanceTag["LinkHand"]], ButtonFunction :> 
+            With[{DefinitionNotebookClient`Stripes`PackagePrivate`nbo$ = 
+               EvaluationNotebook[]}, 
+              CurrentValue[
+               DefinitionNotebookClient`Stripes`PackagePrivate`nbo$, 
+                DockedCells] = If[
+                TrueQ[
+                 MemberQ[
+                  CurrentValue["ModifierKeys"], "Control"]], 
+                DeleteCases[
+                 Flatten[{
+                   CurrentValue[
+                   DefinitionNotebookClient`Stripes`PackagePrivate`nbo$, 
+                    DockedCells]}], 
+                 Cell[
+                  Blank[], "StripeCell", 
+                  BlankNullSequence[]]], 
+                DeleteCases[
+                 Flatten[{
+                   CurrentValue[
+                   DefinitionNotebookClient`Stripes`PackagePrivate`nbo$, 
+                    DockedCells]}], 
+                 Condition[
+                  Pattern[DefinitionNotebookClient`Stripes`PackagePrivate`c$, 
+                   Blank[Cell]], 
+                  Not[
+                   FreeQ[
+                   DefinitionNotebookClient`Stripes`PackagePrivate`c$, 
+                    "e994f527-7d10-4abe-a6cb-86925bc390fb"]]]]]], Appearance -> 
+            None, BoxID -> "e994f527-7d10-4abe-a6cb-86925bc390fb", Evaluator -> 
+            Automatic, Method -> "Preemptive"], 
+           MouseAppearanceTag["LinkHand"]], ItemSize -> All, StripOnInput -> 
+          False]}}, 
+       GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Baseline}}}, 
+       AutoDelete -> False, 
+       GridBoxItemSize -> {
+        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], "Grid"], 
+     "Text", FontSize -> 12, FontColor -> GrayLevel[0.25], StripOnInput -> 
+     False]], "StripeCell", CellFrameMargins -> {{20, 5}, {2, 2}}, 
+   CellFrame -> {{0, 0}, {1, 0}}, CellFrameColor -> GrayLevel[0.75]]},
 TaggingRules->{
  "ResourceType" -> "Function", "ResourceCreateNotebook" -> True, 
   "TemplateVersion" -> "1.6.4", "CreationTimestamp" -> 
@@ -2694,7 +2951,6 @@ VX/aMEEQzrerjFhhelYAzofFB3r8AgApYdcE
                 StyleBox[
                 "\"Template Input\"", "Text", FontFamily -> "Source Sans Pro",
                   FontSize -> 11, StripOnInput -> False], 
-                
                 "\"Format selection automatically using appropriate \
 documentation styles\""}, "PrettyTooltipTemplate"], ButtonFunction :> 
               With[{RSNB`nb$ = ButtonNotebook[], RSNB`$cp$ = $ContextPath}, 
@@ -4513,8 +4769,8 @@ later."]]]]],
                 DefinitionNotebookClient`$ButtonsDisabled = False; Null]; 
               Null]]], Appearance :> 
           FEPrivate`FrontEndResource[
-           "FEExpressions", "GrayButtonNinePatchAppearance"]]]]}, {
-      None, None}}], 
+           "FEExpressions", "GrayButtonNinePatchAppearance"]]]]}, {None, None}
+      }], 
    Cell["Misc", "Section"], 
    Cell[
     StyleData["Item"], DefaultNewCellStyle -> "Item"], 
