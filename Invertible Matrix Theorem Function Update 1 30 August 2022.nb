@@ -173,8 +173,8 @@ Cell[BoxData[{
        RowBox[{"Det", "[", "mat", "]"}]}], ",", 
       RowBox[{"n", "=", 
        RowBox[{"Length", "[", "mat", "]"}]}], ",", "not", ",", "rows", ",", 
-      "columns", ",", "have", ",", "variables", ",", "ZERO", ","}], "}"}], 
-    ",", 
+      "columns", ",", "have", ",", "variables", ",", "ZERO", ",", "notnegate",
+       ",", "notequal"}], "}"}], ",", 
     RowBox[{
      RowBox[{"not", "=", 
       RowBox[{"If", "[", 
@@ -198,7 +198,11 @@ Cell[BoxData[{
             RowBox[{"x", ",", "k"}], "]"}], ",", 
            RowBox[{"{", 
             RowBox[{"k", ",", "n"}], "}"}]}], "]"}]}]}]}]}], ";", 
-     "\[IndentingNewLine]", 
+     RowBox[{"notnegate", "=", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"det", "==", "0"}], ",", "\"\<\>\"", ",", "\"\<not\>\""}], 
+       "]"}]}], ";", "\[IndentingNewLine]", 
      RowBox[{"ZERO", "=", 
       RowBox[{"ToString", "@", 
        RowBox[{"TraditionalForm", "@", 
@@ -209,6 +213,11 @@ Cell[BoxData[{
            RowBox[{"Union", "[", 
             RowBox[{"Dimensions", "[", "mat", "]"}], "]"}], "]"}]}], 
          "]"}]}]}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"notequal", "=", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"det", "!=", "0"}], ",", "\"\<\[NotEqual]\>\"", ",", 
+        "\"\<=\>\""}], "]"}]}], ";", "\[IndentingNewLine]", 
      RowBox[{"StringReplace", "[", 
       RowBox[{
        RowBox[{
@@ -224,9 +233,16 @@ columns of `A` do `not` form a basis for \!\(\*SuperscriptBox[\(\
 \[DoubleStruckCapitalR]\), \(`rows`\)]\).\\nThe column space of `A` is `not` \
 \!\(\*SuperscriptBox[\(\[DoubleStruckCapitalR]\), \(`columns`\)]\).\\nThe \
 dimension of the column space of `A` is `not` `rows`.\\nThe rank of `A` is \
-`not` `rows`.\\nThe null space of `A` is `not` {}.\\nThe dimension of the the \
-null space of `A` is `not` 0.\\nThe nullity is `not` 0.\\n0 is `not` an \
-eigenvalue of `A`.\>\"", "]"}], "[", 
+`not` `rows`.\\nThe null space of `A` is `not` `ZERO`.\\nThe dimension of the \
+the null space of `A` is `not` 0.\\nThe nullity is `not` 0.\\n0 is \
+`notnegate` an eigenvalue of `A`.\\nThe determinant of `A` is `notnegate` \
+zero.\\n (Col `A`\!\(\*SuperscriptBox[\()\), \
+\(\[Perpendicular]\)]\)`notequal``ZERO`.\\n(Nul \
+`A`\!\(\*SuperscriptBox[\()\), \
+\(\[Perpendicular]\)]\)\!\(\*SuperscriptBox[\(`notequal`\
+\[DoubleStruckCapitalR]\), \(`rows`\)]\).\\nThe row space of `A` is `not` \
+\!\(\*SuperscriptBox[\(\[DoubleStruckCapitalR]\), \(`rows`\)]\).\\n`A` `have` \
+`rows` singular values.\>\"", "]"}], "[", 
         RowBox[{"<|", 
          RowBox[{
           RowBox[{"\"\<A\>\"", "->", 
@@ -237,7 +253,10 @@ eigenvalue of `A`.\>\"", "]"}], "[",
           RowBox[{"\"\<columns\>\"", "->", "columns"}], ",", 
           RowBox[{"\"\<have\>\"", "->", "have"}], ",", 
           RowBox[{"\"\<X\>\"", "->", "variables"}], ",", 
-          RowBox[{"\"\<ZERO\>\"", "->", "ZERO"}]}], "|>"}], "]"}], ",", 
+          RowBox[{"\"\<ZERO\>\"", "->", "ZERO"}], ",", 
+          RowBox[{"\"\<notnegate\>\"", "->", "notnegate"}], ",", 
+          RowBox[{"\"\<notequal\>\"", "->", "notequal"}]}], "|>"}], "]"}], 
+       ",", 
        RowBox[{"\"\<  \>\"", ":>", "\"\< \>\""}]}], "]"}]}]}], 
    "]"}]}]}], "Input",
  CellChangeTimes->{{3.8708628799442215`*^9, 3.8708629224962473`*^9}, {
@@ -250,8 +269,12 @@ eigenvalue of `A`.\>\"", "]"}], "[",
    3.870867343735179*^9}, 3.870867384146041*^9, {3.8708674360909824`*^9, 
    3.8708676281447706`*^9}, {3.8708677515991883`*^9, 
    3.8708677665728455`*^9}, {3.870867806839921*^9, 3.870867832357687*^9}, {
-   3.870867867165166*^9, 3.8708678856992006`*^9}, 3.8708679170233507`*^9},
- CellLabel->"In[208]:=",
+   3.870867867165166*^9, 3.8708678856992006`*^9}, 3.8708679170233507`*^9, {
+   3.8713952691768737`*^9, 3.8713954589175467`*^9}, {3.87139551271719*^9, 
+   3.8713955921891804`*^9}, {3.871395709612928*^9, 3.871395835263316*^9}, {
+   3.87139588147381*^9, 3.87139588539353*^9}, {3.8713959525189333`*^9, 
+   3.8713959539124193`*^9}, 3.8713960153553457`*^9},
+ CellLabel->"In[282]:=",
  CellID->93523051,ExpressionUUID->"755dd718-c8fe-43f6-aadf-097d03204e43"],
 
 Cell[BoxData[{
@@ -416,7 +439,8 @@ dimension of the null space of `a` or the nullity`isIsNot`0. The number \
    3.864902868323124*^9}, {3.864903068697936*^9, 3.8649030737459297`*^9}, {
    3.8649773430650063`*^9, 3.864977409825597*^9}, {3.870862659414914*^9, 
    3.870862705115509*^9}, {3.8708628237161713`*^9, 3.870862852829855*^9}, {
-   3.870867231666856*^9, 3.870867273405698*^9}},
+   3.870867231666856*^9, 3.870867273405698*^9}, {3.8713957632187333`*^9, 
+   3.8713957635545673`*^9}},
  CellTags->"DefaultContent",
  CellLabel->"In[183]:=",
  CellID->876320555,ExpressionUUID->"4af1cecd-1ee5-4fb3-8225-dfee41209f12"]
@@ -748,175 +772,13 @@ Cell[CellGroupData[{
 Cell[BoxData[
  RowBox[{"InvertibleMatrixTheorem", "[", 
   RowBox[{"(", GridBox[{
-     {"0", "0"},
-     {"1", "0"}
-    }], ")"}], "]"}]], "Input",
- CellChangeTimes->{{3.8708632237133627`*^9, 3.8708632254882956`*^9}, {
-  3.8708632717699385`*^9, 3.8708632773105707`*^9}},
- CellLabel->"In[210]:=",
- CellID->32974011,ExpressionUUID->"5fdbec91-4848-44b6-9917-1114b0fbeac7"],
-
-Cell[BoxData["\<\"\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
-GridBox[{{\\\"0\\\", \\\"0\\\"}, {\\\"1\\\", \\\"0\\\"}}, Rule[RowSpacings, \
-1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
-Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
-TraditionalForm]\\) is not invertible.\\n\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \
-\\\"\[NoBreak]\\\", GridBox[{{\\\"0\\\", \\\"0\\\"}, {\\\"1\\\", \\\"0\\\"}}, \
-Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
-Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
-TraditionalForm]\\) is not row equivalent to the 2 \[Times] 2 identity \
-matrix.\\n\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
-GridBox[{{\\\"0\\\", \\\"0\\\"}, {\\\"1\\\", \\\"0\\\"}}, Rule[RowSpacings, \
-1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
-Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
-TraditionalForm]\\) does not have 2 pivot positions.\\nThe statement \
-\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\\\"0\\\", \
-\\\"0\\\"}, {\\\"1\\\", \\\"0\\\"}}, Rule[RowSpacings, 1], \
-Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
-Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
-TraditionalForm]\\)\\!\\(\\*TagBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
-TagBox[GridBox[{{SubscriptBox[\\\"x\\\", \\\"1\\\"]}, \
-{SubscriptBox[\\\"x\\\", \\\"2\\\"]}}, Rule[RowSpacings, 1], \
-Rule[ColumnAlignments, Center], Rule[ColumnAlignments, Left]], Column], \\\"\
-\[NoBreak]\\\", \\\")\\\"}], Function[BoxForm`e$, \
-MatrixForm[BoxForm`e$]]]\\)=\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \
-\\\"\[NoBreak]\\\", GridBox[{{\\\"0\\\"}, {\\\"0\\\"}}, Rule[RowSpacings, 1], \
-Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
-Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
-TraditionalForm]\\) has only the trivial solution.\\n\\nThe linear mapping \
-\\!\\(\\*TagBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
-TagBox[GridBox[{{SubscriptBox[\\\"x\\\", \\\"1\\\"]}, \
-{SubscriptBox[\\\"x\\\", \\\"2\\\"]}}, Rule[RowSpacings, 1], \
-Rule[ColumnAlignments, Center], Rule[ColumnAlignments, Left]], Column], \\\"\
-\[NoBreak]\\\", \\\")\\\"}], Function[BoxForm`e$, MatrixForm[BoxForm`e$]]]\\)\
-\[Function]\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\
-\\\"0\\\", \\\"0\\\"}, {\\\"1\\\", \\\"0\\\"}}, Rule[RowSpacings, 1], \
-Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
-Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
-TraditionalForm]\\)\\!\\(\\*TagBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
-TagBox[GridBox[{{SubscriptBox[\\\"x\\\", \\\"1\\\"]}, \
-{SubscriptBox[\\\"x\\\", \\\"2\\\"]}}, Rule[RowSpacings, 1], \
-Rule[ColumnAlignments, Center], Rule[ColumnAlignments, Left]], Column], \\\"\
-\[NoBreak]\\\", \\\")\\\"}], Function[BoxForm`e$, MatrixForm[BoxForm`e$]]]\\) \
-is not one-to-one and not injective.\\nThe statement \
-\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\\\"0\\\", \
-\\\"0\\\"}, {\\\"1\\\", \\\"0\\\"}}, Rule[RowSpacings, 1], \
-Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
-Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
-TraditionalForm]\\)\\!\\(\\*TagBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
-TagBox[GridBox[{{SubscriptBox[\\\"x\\\", \\\"1\\\"]}, \
-{SubscriptBox[\\\"x\\\", \\\"2\\\"]}}, Rule[RowSpacings, 1], \
-Rule[ColumnAlignments, Center], Rule[ColumnAlignments, Left]], Column], \\\"\
-\[NoBreak]\\\", \\\")\\\"}], Function[BoxForm`e$, \
-MatrixForm[BoxForm`e$]]]\\)=b does not have at least one solution for all b \
-in \\!\\(\\*SuperscriptBox[\\(\[DoubleStruckCapitalR]\\), \\(2\\)]\\).\\nThe \
-columns of \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\
-\\\"0\\\", \\\"0\\\"}, {\\\"1\\\", \\\"0\\\"}}, Rule[RowSpacings, 1], \
-Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
-Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
-TraditionalForm]\\) do not form a basis for \\!\\(\\*SuperscriptBox[\\(\
-\[DoubleStruckCapitalR]\\), \\(2\\)]\\).\\nThe column space of \
-\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\\\"0\\\", \
-\\\"0\\\"}, {\\\"1\\\", \\\"0\\\"}}, Rule[RowSpacings, 1], \
-Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
-Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
-TraditionalForm]\\) is not \\!\\(\\*SuperscriptBox[\\(\[DoubleStruckCapitalR]\
-\\), \\(2\\)]\\).\\nThe dimension of the column space of \
-\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\\\"0\\\", \
-\\\"0\\\"}, {\\\"1\\\", \\\"0\\\"}}, Rule[RowSpacings, 1], \
-Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
-Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
-TraditionalForm]\\) is not 2.\\nThe rank of \
-\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\\\"0\\\", \
-\\\"0\\\"}, {\\\"1\\\", \\\"0\\\"}}, Rule[RowSpacings, 1], \
-Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
-Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
-TraditionalForm]\\) is not 2.\\nThe null space of \\!\\(\\*FormBox[RowBox[{\\\
-\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\\\"0\\\", \\\"0\\\"}, {\\\"1\\\", \
-\\\"0\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
-Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \
-\\\"\[NoBreak]\\\", \\\")\\\"}], TraditionalForm]\\) is not {}.\\nThe \
-dimension of the the null space of \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\
-\[NoBreak]\\\", GridBox[{{\\\"0\\\", \\\"0\\\"}, {\\\"1\\\", \\\"0\\\"}}, \
-Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
-Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
-TraditionalForm]\\) is not 0.\\nThe nullity is not 0.\\n0 is not an \
-eigenvalue of \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
-GridBox[{{\\\"0\\\", \\\"0\\\"}, {\\\"1\\\", \\\"0\\\"}}, Rule[RowSpacings, \
-1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
-Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
-TraditionalForm]\\).\"\>"], "Output",
- CellChangeTimes->{
-  3.870863226256773*^9, 3.8708632900660777`*^9, 3.870863599663395*^9, 
-   3.8708637107974343`*^9, 3.8708638670509424`*^9, {3.8708638985544*^9, 
-   3.870863925446168*^9}, {3.8708640356487455`*^9, 3.8708640655969696`*^9}, 
-   3.870866916089435*^9, 3.870867012281204*^9, 3.8708671186771984`*^9, {
-   3.870867254564578*^9, 3.8708673112962723`*^9}, {3.8708674605480566`*^9, 
-   3.870867475263528*^9}, 3.8708675470542464`*^9, 3.8708676323004465`*^9, 
-   3.870867889553524*^9},
- CellLabel->"Out[210]=",
- CellID->210476061,ExpressionUUID->"b59b2298-1a9a-48e6-acc8-a07e0b5f3f34"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"StringReplace", "[", 
-  RowBox[{
-   RowBox[{"InvertibleMatrixTheorem", "[", 
-    RowBox[{"(", GridBox[{
-       {"0", "0"},
-       {"1", "0"}
-      }], ")"}], "]"}], ",", 
-   RowBox[{"Whitespace", "\[Rule]", "\"\< \>\""}]}], "]"}]], "Input",
- CellChangeTimes->{3.8708634132235885`*^9},
- NumberMarks->False,
- CellLabel->"In[137]:=",
- CellID->5863473,ExpressionUUID->"1264d055-dc70-47e3-8c83-edda809fcbc6"],
-
-Cell[BoxData["\<\"\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\" \\\", GridBox[{{\\\
-\"0\\\", \\\"0\\\"}, {\\\"1\\\", \\\"0\\\"}}, Rule[RowSpacings, 1], \
-Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
-Rule[ColumnAlignments, Center]], \\\" \\\", \\\")\\\"}], TraditionalForm]\\) \
-is not invertible.\"\>"], "Output",
- CellChangeTimes->{3.870863236845486*^9, 3.8708634138325005`*^9},
- CellLabel->"Out[137]=",
- CellID->32129684,ExpressionUUID->"9b548a82-372b-47ca-9363-21155773735c"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"InvertibleMatrixTheorem", "[", 
-  RowBox[{"(", GridBox[{
-     {"0", "0"},
-     {"1", "0"}
-    }], ")"}], "]"}]], "Input",
- CellLabel->"In[138]:=",
- CellID->226312080,ExpressionUUID->"031a281d-88f8-4c08-97cf-9e5d08826f4f"],
-
-Cell[BoxData["\<\"\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
-GridBox[{{\\\"0\\\", \\\"0\\\"}, {\\\"1\\\", \\\"0\\\"}}, Rule[RowSpacings, \
-1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
-Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
-TraditionalForm]\\) is not invertible.\"\>"], "Output",
- CellChangeTimes->{3.870863418830167*^9},
- CellLabel->"Out[138]=",
- CellID->29280288,ExpressionUUID->"bccf7f48-a87d-4e09-abd4-8e7286f0af70"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"InvertibleMatrixTheorem", "[", 
-  RowBox[{"(", GridBox[{
      {"2", "7"},
      {"1", "8"}
     }], ")"}], "]"}]], "Input",
  TaggingRules->{},
  CellChangeTimes->{{3.864901814358056*^9, 3.864901821776037*^9}},
  CellTags->"DefaultContent",
- CellLabel->"In[207]:=",
+ CellLabel->"In[279]:=",
  CellID->298664010,ExpressionUUID->"21b6a74a-ab04-4b82-8a13-7c168128d832"],
 
 Cell[BoxData["\<\"\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
@@ -998,7 +860,50 @@ TraditionalForm]\\) is 2.\\nThe null space of \
 \\\"7\\\"}, {\\\"1\\\", \\\"8\\\"}}, Rule[RowSpacings, 1], \
 Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
 Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
-TraditionalForm]\\) is {}.\"\>"], "Output",
+TraditionalForm]\\) is \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \
+\\\"\[NoBreak]\\\", GridBox[{{\\\"0\\\"}, {\\\"0\\\"}}, Rule[RowSpacings, 1], \
+Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\).\\nThe dimension of the the null space of \
+\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\\\"2\\\", \
+\\\"7\\\"}, {\\\"1\\\", \\\"8\\\"}}, Rule[RowSpacings, 1], \
+Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\) is 0.\\nThe nullity is 0.\\n0 is not an eigenvalue of \\!\
+\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\\\"2\\\", \
+\\\"7\\\"}, {\\\"1\\\", \\\"8\\\"}}, Rule[RowSpacings, 1], \
+Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\).\\nThe determinant of \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \
+\\\"\[NoBreak]\\\", GridBox[{{\\\"2\\\", \\\"7\\\"}, {\\\"1\\\", \\\"8\\\"}}, \
+Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\) is not zero.\\n (Col \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \
+\\\"\[NoBreak]\\\", GridBox[{{\\\"2\\\", \\\"7\\\"}, {\\\"1\\\", \\\"8\\\"}}, \
+Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\)\\!\\(\\*SuperscriptBox[\\()\\), \
+\\(\[Perpendicular]\\)]\\)\[NotEqual]\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\
+\[NoBreak]\\\", GridBox[{{\\\"0\\\"}, {\\\"0\\\"}}, Rule[RowSpacings, 1], \
+Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\).\\n(Nul \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \
+\\\"\[NoBreak]\\\", GridBox[{{\\\"2\\\", \\\"7\\\"}, {\\\"1\\\", \\\"8\\\"}}, \
+Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\)\\!\\(\\*SuperscriptBox[\\()\\), \
+\\(\[Perpendicular]\\)]\\)\\!\\(\\*SuperscriptBox[\\(\[NotEqual]\
+\[DoubleStruckCapitalR]\\), \\(2\\)]\\).\\nThe row space of \
+\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\\\"2\\\", \
+\\\"7\\\"}, {\\\"1\\\", \\\"8\\\"}}, Rule[RowSpacings, 1], \
+Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\) is \\!\\(\\*SuperscriptBox[\\(\[DoubleStruckCapitalR]\\), \
+\\(2\\)]\\).\\n\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
+GridBox[{{\\\"2\\\", \\\"7\\\"}, {\\\"1\\\", \\\"8\\\"}}, Rule[RowSpacings, \
+1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\)has 2 singular values.\"\>"], "Output",
  TaggingRules->{},
  CellChangeTimes->{
   3.8649018224540443`*^9, 3.8649021197230396`*^9, {3.864902374510578*^9, 
@@ -1006,10 +911,160 @@ TraditionalForm]\\) is {}.\"\>"], "Output",
    3.8649025264621296`*^9}, 3.8708627108703847`*^9, {3.870862926018542*^9, 
    3.87086296988342*^9}, 3.870863171284591*^9, 3.8708671948998227`*^9, 
    3.8708673155661144`*^9, 3.8708674805756984`*^9, 3.8708675520074725`*^9, 
-   3.870867635974583*^9},
+   3.870867635974583*^9, 3.8713953565833273`*^9, 3.8713958522701054`*^9, 
+   3.871395891068759*^9, 3.8713959574723544`*^9},
  CellTags->"DefaultContent",
- CellLabel->"Out[207]=",
- CellID->101146778,ExpressionUUID->"bdabd46d-b446-4248-b8fe-360c6936af30"]
+ CellLabel->"Out[279]=",
+ CellID->305649089,ExpressionUUID->"e9136cb3-d721-44a2-bc17-170acdee7ad0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"InvertibleMatrixTheorem", "[", 
+  RowBox[{"(", GridBox[{
+     {"0", "0"},
+     {"1", "0"}
+    }], ")"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8708632237133627`*^9, 3.8708632254882956`*^9}, {
+  3.8708632717699385`*^9, 3.8708632773105707`*^9}},
+ CellLabel->"In[280]:=",
+ CellID->32974011,ExpressionUUID->"5fdbec91-4848-44b6-9917-1114b0fbeac7"],
+
+Cell[BoxData["\<\"\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
+GridBox[{{\\\"0\\\", \\\"0\\\"}, {\\\"1\\\", \\\"0\\\"}}, Rule[RowSpacings, \
+1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\) is not invertible.\\n\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \
+\\\"\[NoBreak]\\\", GridBox[{{\\\"0\\\", \\\"0\\\"}, {\\\"1\\\", \\\"0\\\"}}, \
+Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\) is not row equivalent to the 2 \[Times] 2 identity \
+matrix.\\n\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
+GridBox[{{\\\"0\\\", \\\"0\\\"}, {\\\"1\\\", \\\"0\\\"}}, Rule[RowSpacings, \
+1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\) does not have 2 pivot positions.\\nThe statement \
+\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\\\"0\\\", \
+\\\"0\\\"}, {\\\"1\\\", \\\"0\\\"}}, Rule[RowSpacings, 1], \
+Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\)\\!\\(\\*TagBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
+TagBox[GridBox[{{SubscriptBox[\\\"x\\\", \\\"1\\\"]}, \
+{SubscriptBox[\\\"x\\\", \\\"2\\\"]}}, Rule[RowSpacings, 1], \
+Rule[ColumnAlignments, Center], Rule[ColumnAlignments, Left]], Column], \\\"\
+\[NoBreak]\\\", \\\")\\\"}], Function[BoxForm`e$, \
+MatrixForm[BoxForm`e$]]]\\)=\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \
+\\\"\[NoBreak]\\\", GridBox[{{\\\"0\\\"}, {\\\"0\\\"}}, Rule[RowSpacings, 1], \
+Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\) has only the trivial solution.\\n\\nThe linear mapping \
+\\!\\(\\*TagBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
+TagBox[GridBox[{{SubscriptBox[\\\"x\\\", \\\"1\\\"]}, \
+{SubscriptBox[\\\"x\\\", \\\"2\\\"]}}, Rule[RowSpacings, 1], \
+Rule[ColumnAlignments, Center], Rule[ColumnAlignments, Left]], Column], \\\"\
+\[NoBreak]\\\", \\\")\\\"}], Function[BoxForm`e$, MatrixForm[BoxForm`e$]]]\\)\
+\[Function]\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\
+\\\"0\\\", \\\"0\\\"}, {\\\"1\\\", \\\"0\\\"}}, Rule[RowSpacings, 1], \
+Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\)\\!\\(\\*TagBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
+TagBox[GridBox[{{SubscriptBox[\\\"x\\\", \\\"1\\\"]}, \
+{SubscriptBox[\\\"x\\\", \\\"2\\\"]}}, Rule[RowSpacings, 1], \
+Rule[ColumnAlignments, Center], Rule[ColumnAlignments, Left]], Column], \\\"\
+\[NoBreak]\\\", \\\")\\\"}], Function[BoxForm`e$, MatrixForm[BoxForm`e$]]]\\) \
+is not one-to-one and not injective.\\nThe statement \
+\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\\\"0\\\", \
+\\\"0\\\"}, {\\\"1\\\", \\\"0\\\"}}, Rule[RowSpacings, 1], \
+Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\)\\!\\(\\*TagBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
+TagBox[GridBox[{{SubscriptBox[\\\"x\\\", \\\"1\\\"]}, \
+{SubscriptBox[\\\"x\\\", \\\"2\\\"]}}, Rule[RowSpacings, 1], \
+Rule[ColumnAlignments, Center], Rule[ColumnAlignments, Left]], Column], \\\"\
+\[NoBreak]\\\", \\\")\\\"}], Function[BoxForm`e$, \
+MatrixForm[BoxForm`e$]]]\\)=b does not have at least one solution for all b \
+in \\!\\(\\*SuperscriptBox[\\(\[DoubleStruckCapitalR]\\), \\(2\\)]\\).\\nThe \
+columns of \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\
+\\\"0\\\", \\\"0\\\"}, {\\\"1\\\", \\\"0\\\"}}, Rule[RowSpacings, 1], \
+Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\) do not form a basis for \\!\\(\\*SuperscriptBox[\\(\
+\[DoubleStruckCapitalR]\\), \\(2\\)]\\).\\nThe column space of \
+\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\\\"0\\\", \
+\\\"0\\\"}, {\\\"1\\\", \\\"0\\\"}}, Rule[RowSpacings, 1], \
+Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\) is not \\!\\(\\*SuperscriptBox[\\(\[DoubleStruckCapitalR]\
+\\), \\(2\\)]\\).\\nThe dimension of the column space of \
+\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\\\"0\\\", \
+\\\"0\\\"}, {\\\"1\\\", \\\"0\\\"}}, Rule[RowSpacings, 1], \
+Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\) is not 2.\\nThe rank of \
+\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\\\"0\\\", \
+\\\"0\\\"}, {\\\"1\\\", \\\"0\\\"}}, Rule[RowSpacings, 1], \
+Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\) is not 2.\\nThe null space of \\!\\(\\*FormBox[RowBox[{\\\
+\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\\\"0\\\", \\\"0\\\"}, {\\\"1\\\", \
+\\\"0\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
+Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \
+\\\"\[NoBreak]\\\", \\\")\\\"}], TraditionalForm]\\) is not \
+\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\\\"0\\\"}, \
+{\\\"0\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
+Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \
+\\\"\[NoBreak]\\\", \\\")\\\"}], TraditionalForm]\\).\\nThe dimension of the \
+the null space of \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
+GridBox[{{\\\"0\\\", \\\"0\\\"}, {\\\"1\\\", \\\"0\\\"}}, Rule[RowSpacings, \
+1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\) is not 0.\\nThe nullity is not 0.\\n0 is an eigenvalue of \
+\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\\\"0\\\", \
+\\\"0\\\"}, {\\\"1\\\", \\\"0\\\"}}, Rule[RowSpacings, 1], \
+Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\).\\nThe determinant of \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \
+\\\"\[NoBreak]\\\", GridBox[{{\\\"0\\\", \\\"0\\\"}, {\\\"1\\\", \\\"0\\\"}}, \
+Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\) is zero.\\n (Col \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\
+\[NoBreak]\\\", GridBox[{{\\\"0\\\", \\\"0\\\"}, {\\\"1\\\", \\\"0\\\"}}, \
+Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\)\\!\\(\\*SuperscriptBox[\\()\\), \
+\\(\[Perpendicular]\\)]\\)=\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\
+\\\", GridBox[{{\\\"0\\\"}, {\\\"0\\\"}}, Rule[RowSpacings, 1], \
+Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\).\\n(Nul \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \
+\\\"\[NoBreak]\\\", GridBox[{{\\\"0\\\", \\\"0\\\"}, {\\\"1\\\", \\\"0\\\"}}, \
+Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\)\\!\\(\\*SuperscriptBox[\\()\\), \
+\\(\[Perpendicular]\\)]\\)\\!\\(\\*SuperscriptBox[\\(=\[DoubleStruckCapitalR]\
+\\), \\(2\\)]\\).\\nThe row space of \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\
+\[NoBreak]\\\", GridBox[{{\\\"0\\\", \\\"0\\\"}, {\\\"1\\\", \\\"0\\\"}}, \
+Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\) is not \\!\\(\\*SuperscriptBox[\\(\[DoubleStruckCapitalR]\
+\\), \\(2\\)]\\).\\n\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
+GridBox[{{\\\"0\\\", \\\"0\\\"}, {\\\"1\\\", \\\"0\\\"}}, Rule[RowSpacings, \
+1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\)does not have 2 singular values.\"\>"], "Output",
+ CellChangeTimes->{
+  3.870863226256773*^9, 3.8708632900660777`*^9, 3.870863599663395*^9, 
+   3.8708637107974343`*^9, 3.8708638670509424`*^9, {3.8708638985544*^9, 
+   3.870863925446168*^9}, {3.8708640356487455`*^9, 3.8708640655969696`*^9}, 
+   3.870866916089435*^9, 3.870867012281204*^9, 3.8708671186771984`*^9, {
+   3.870867254564578*^9, 3.8708673112962723`*^9}, {3.8708674605480566`*^9, 
+   3.870867475263528*^9}, 3.8708675470542464`*^9, 3.8708676323004465`*^9, 
+   3.870867889553524*^9, 3.8713952881139765`*^9, 3.8713953495356283`*^9, 
+   3.871395462544036*^9, 3.871395530412409*^9, 3.8713957410814004`*^9, 
+   3.8713958401007957`*^9, 3.871395966841879*^9},
+ CellLabel->"Out[280]=",
+ CellID->137906959,ExpressionUUID->"e776a7fe-6451-4646-81ee-9a7c3ef98582"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1041,7 +1096,7 @@ Cell[BoxData[
     }], ")"}], "]"}]], "Input",
  TaggingRules->{},
  CellChangeTimes->{{3.8649018893420424`*^9, 3.864901901167057*^9}},
- CellLabel->"In[146]:=",
+ CellLabel->"In[284]:=",
  CellID->351598913,ExpressionUUID->"2d56cc1f-0cd0-4f88-a75e-134c6a293867"],
 
 Cell[BoxData["\<\"\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
@@ -1049,23 +1104,144 @@ GridBox[{{\\\"2\\\", \\\"7\\\", \\\"1\\\"}, {\\\"8\\\", \\\"1\\\", \
 \\\"8\\\"}, {\\\"2\\\", \\\"8\\\", \\\"4\\\"}}, Rule[RowSpacings, 1], \
 Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
 Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
-TraditionalForm]\\) is  invertible.\\n\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \
+TraditionalForm]\\) is invertible.\\n\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\
+\[NoBreak]\\\", GridBox[{{\\\"2\\\", \\\"7\\\", \\\"1\\\"}, {\\\"8\\\", \\\"1\
+\\\", \\\"8\\\"}, {\\\"2\\\", \\\"8\\\", \\\"4\\\"}}, Rule[RowSpacings, 1], \
+Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\) is row equivalent to the 3 \[Times] 3 identity matrix.\\n\
+\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\\\"2\\\", \
+\\\"7\\\", \\\"1\\\"}, {\\\"8\\\", \\\"1\\\", \\\"8\\\"}, {\\\"2\\\", \\\"8\\\
+\", \\\"4\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
+Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \
+\\\"\[NoBreak]\\\", \\\")\\\"}], TraditionalForm]\\) has 3 pivot \
+positions.\\nThe statement \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\
+\\\", GridBox[{{\\\"2\\\", \\\"7\\\", \\\"1\\\"}, {\\\"8\\\", \\\"1\\\", \
+\\\"8\\\"}, {\\\"2\\\", \\\"8\\\", \\\"4\\\"}}, Rule[RowSpacings, 1], \
+Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\)\\!\\(\\*TagBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
+TagBox[GridBox[{{SubscriptBox[\\\"x\\\", \\\"1\\\"]}, \
+{SubscriptBox[\\\"x\\\", \\\"2\\\"]}, {SubscriptBox[\\\"x\\\", \\\"3\\\"]}}, \
+Rule[RowSpacings, 1], Rule[ColumnAlignments, Center], Rule[ColumnAlignments, \
+Left]], Column], \\\"\[NoBreak]\\\", \\\")\\\"}], Function[BoxForm`e$, \
+MatrixForm[BoxForm`e$]]]\\)=\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \
+\\\"\[NoBreak]\\\", GridBox[{{\\\"0\\\"}, {\\\"0\\\"}, {\\\"0\\\"}}, \
+Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\) has only the trivial solution.\\n\\nThe linear mapping \
+\\!\\(\\*TagBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
+TagBox[GridBox[{{SubscriptBox[\\\"x\\\", \\\"1\\\"]}, \
+{SubscriptBox[\\\"x\\\", \\\"2\\\"]}, {SubscriptBox[\\\"x\\\", \\\"3\\\"]}}, \
+Rule[RowSpacings, 1], Rule[ColumnAlignments, Center], Rule[ColumnAlignments, \
+Left]], Column], \\\"\[NoBreak]\\\", \\\")\\\"}], Function[BoxForm`e$, \
+MatrixForm[BoxForm`e$]]]\\)\[Function]\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \
 \\\"\[NoBreak]\\\", GridBox[{{\\\"2\\\", \\\"7\\\", \\\"1\\\"}, {\\\"8\\\", \
 \\\"1\\\", \\\"8\\\"}, {\\\"2\\\", \\\"8\\\", \\\"4\\\"}}, Rule[RowSpacings, \
 1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
 Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
-TraditionalForm]\\) is  row equivalent to the 3 \[Times] 3  identity \
-matrix.\\n\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
+TraditionalForm]\\)\\!\\(\\*TagBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
+TagBox[GridBox[{{SubscriptBox[\\\"x\\\", \\\"1\\\"]}, \
+{SubscriptBox[\\\"x\\\", \\\"2\\\"]}, {SubscriptBox[\\\"x\\\", \\\"3\\\"]}}, \
+Rule[RowSpacings, 1], Rule[ColumnAlignments, Center], Rule[ColumnAlignments, \
+Left]], Column], \\\"\[NoBreak]\\\", \\\")\\\"}], Function[BoxForm`e$, \
+MatrixForm[BoxForm`e$]]]\\) is one-to-one and injective.\\nThe statement \
+\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\\\"2\\\", \
+\\\"7\\\", \\\"1\\\"}, {\\\"8\\\", \\\"1\\\", \\\"8\\\"}, {\\\"2\\\", \\\"8\\\
+\", \\\"4\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
+Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \
+\\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\)\\!\\(\\*TagBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
+TagBox[GridBox[{{SubscriptBox[\\\"x\\\", \\\"1\\\"]}, \
+{SubscriptBox[\\\"x\\\", \\\"2\\\"]}, {SubscriptBox[\\\"x\\\", \\\"3\\\"]}}, \
+Rule[RowSpacings, 1], Rule[ColumnAlignments, Center], Rule[ColumnAlignments, \
+Left]], Column], \\\"\[NoBreak]\\\", \\\")\\\"}], Function[BoxForm`e$, \
+MatrixForm[BoxForm`e$]]]\\)=b has at least one solution for all b in \
+\\!\\(\\*SuperscriptBox[\\(\[DoubleStruckCapitalR]\\), \\(3\\)]\\).\\nThe \
+columns of \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\
+\\\"2\\\", \\\"7\\\", \\\"1\\\"}, {\\\"8\\\", \\\"1\\\", \\\"8\\\"}, {\\\"2\\\
+\", \\\"8\\\", \\\"4\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
+Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \
+\\\"\[NoBreak]\\\", \\\")\\\"}], TraditionalForm]\\) do form a basis for \
+\\!\\(\\*SuperscriptBox[\\(\[DoubleStruckCapitalR]\\), \\(3\\)]\\).\\nThe \
+column space of \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
 GridBox[{{\\\"2\\\", \\\"7\\\", \\\"1\\\"}, {\\\"8\\\", \\\"1\\\", \
 \\\"8\\\"}, {\\\"2\\\", \\\"8\\\", \\\"4\\\"}}, Rule[RowSpacings, 1], \
 Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
 Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
-TraditionalForm]\\) has 3 pivot positions.\"\>"], "Output",
+TraditionalForm]\\) is \\!\\(\\*SuperscriptBox[\\(\[DoubleStruckCapitalR]\\), \
+\\(3\\)]\\).\\nThe dimension of the column space of \\!\\(\\*FormBox[RowBox[{\
+\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\\\"2\\\", \\\"7\\\", \\\"1\\\"}, \
+{\\\"8\\\", \\\"1\\\", \\\"8\\\"}, {\\\"2\\\", \\\"8\\\", \\\"4\\\"}}, \
+Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\) is 3.\\nThe rank of \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \
+\\\"\[NoBreak]\\\", GridBox[{{\\\"2\\\", \\\"7\\\", \\\"1\\\"}, {\\\"8\\\", \
+\\\"1\\\", \\\"8\\\"}, {\\\"2\\\", \\\"8\\\", \\\"4\\\"}}, Rule[RowSpacings, \
+1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\) is 3.\\nThe null space of \
+\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\\\"2\\\", \
+\\\"7\\\", \\\"1\\\"}, {\\\"8\\\", \\\"1\\\", \\\"8\\\"}, {\\\"2\\\", \\\"8\\\
+\", \\\"4\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
+Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \
+\\\"\[NoBreak]\\\", \\\")\\\"}], TraditionalForm]\\) is \
+\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\\\"0\\\"}, \
+{\\\"0\\\"}, {\\\"0\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
+Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \
+\\\"\[NoBreak]\\\", \\\")\\\"}], TraditionalForm]\\).\\nThe dimension of the \
+the null space of \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
+GridBox[{{\\\"2\\\", \\\"7\\\", \\\"1\\\"}, {\\\"8\\\", \\\"1\\\", \
+\\\"8\\\"}, {\\\"2\\\", \\\"8\\\", \\\"4\\\"}}, Rule[RowSpacings, 1], \
+Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\) is 0.\\nThe nullity is 0.\\n0 is not an eigenvalue of \\!\
+\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\\\"2\\\", \
+\\\"7\\\", \\\"1\\\"}, {\\\"8\\\", \\\"1\\\", \\\"8\\\"}, {\\\"2\\\", \\\"8\\\
+\", \\\"4\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
+Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \
+\\\"\[NoBreak]\\\", \\\")\\\"}], TraditionalForm]\\).\\nThe determinant of \
+\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\\\"2\\\", \
+\\\"7\\\", \\\"1\\\"}, {\\\"8\\\", \\\"1\\\", \\\"8\\\"}, {\\\"2\\\", \\\"8\\\
+\", \\\"4\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
+Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \
+\\\"\[NoBreak]\\\", \\\")\\\"}], TraditionalForm]\\) is not zero.\\n (Col \\!\
+\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\\\"2\\\", \
+\\\"7\\\", \\\"1\\\"}, {\\\"8\\\", \\\"1\\\", \\\"8\\\"}, {\\\"2\\\", \\\"8\\\
+\", \\\"4\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
+Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \
+\\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\)\\!\\(\\*SuperscriptBox[\\()\\), \
+\\(\[Perpendicular]\\)]\\)\[NotEqual]\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\
+\[NoBreak]\\\", GridBox[{{\\\"0\\\"}, {\\\"0\\\"}, {\\\"0\\\"}}, \
+Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\).\\n(Nul \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \
+\\\"\[NoBreak]\\\", GridBox[{{\\\"2\\\", \\\"7\\\", \\\"1\\\"}, {\\\"8\\\", \
+\\\"1\\\", \\\"8\\\"}, {\\\"2\\\", \\\"8\\\", \\\"4\\\"}}, Rule[RowSpacings, \
+1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\)\\!\\(\\*SuperscriptBox[\\()\\), \
+\\(\[Perpendicular]\\)]\\)\\!\\(\\*SuperscriptBox[\\(\[NotEqual]\
+\[DoubleStruckCapitalR]\\), \\(3\\)]\\).\\nThe row space of \
+\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\\\"2\\\", \
+\\\"7\\\", \\\"1\\\"}, {\\\"8\\\", \\\"1\\\", \\\"8\\\"}, {\\\"2\\\", \\\"8\\\
+\", \\\"4\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
+Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \
+\\\"\[NoBreak]\\\", \\\")\\\"}], TraditionalForm]\\) is \
+\\!\\(\\*SuperscriptBox[\\(\[DoubleStruckCapitalR]\\), \
+\\(3\\)]\\).\\n\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
+GridBox[{{\\\"2\\\", \\\"7\\\", \\\"1\\\"}, {\\\"8\\\", \\\"1\\\", \
+\\\"8\\\"}, {\\\"2\\\", \\\"8\\\", \\\"4\\\"}}, Rule[RowSpacings, 1], \
+Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\) has 3 singular values.\"\>"], "Output",
  TaggingRules->{},
  CellChangeTimes->{3.8649019018550515`*^9, 3.864902120019041*^9, 
-  3.864902526775124*^9, 3.870863029043929*^9, 3.8708637312870927`*^9},
- CellLabel->"Out[146]=",
- CellID->928756671,ExpressionUUID->"9d5ce5d8-cbac-43b5-b1f4-8a4d9a879ce7"]
+  3.864902526775124*^9, 3.870863029043929*^9, 3.8708637312870927`*^9, 
+  3.8713959863906403`*^9, 3.87139602201179*^9},
+ CellLabel->"Out[284]=",
+ CellID->326867896,ExpressionUUID->"bbab591a-ff92-4e2c-974f-48361c1f40a0"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
@@ -1099,7 +1275,7 @@ Cell[BoxData[
    3.8649019094110503`*^9, 3.8649019340900383`*^9}, 3.86490201495807*^9, {
    3.870863031775425*^9, 3.8708630321677737`*^9}},
  CellTags->"DefaultContent",
- CellLabel->"In[147]:=",
+ CellLabel->"In[285]:=",
  CellID->448965068,ExpressionUUID->"e601dc57-0631-4f89-affb-303199ad0431"],
 
 Cell[BoxData["\<\"\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
@@ -1108,27 +1284,166 @@ GridBox[{{\\\"2\\\", \\\"7\\\", \\\"1\\\", \\\"8\\\"}, {\\\"2\\\", \\\"1\\\", \
 \", \\\"4\\\", \\\"5\\\", \\\"2\\\"}}, Rule[RowSpacings, 1], \
 Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
 Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
-TraditionalForm]\\) is  invertible.\\n\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \
+TraditionalForm]\\) is invertible.\\n\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\
+\[NoBreak]\\\", GridBox[{{\\\"2\\\", \\\"7\\\", \\\"1\\\", \\\"8\\\"}, {\\\"2\
+\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\"}, {\\\"8\\\", \\\"4\\\", \\\"5\\\", \
+\\\"9\\\"}, {\\\"0\\\", \\\"4\\\", \\\"5\\\", \\\"2\\\"}}, Rule[RowSpacings, \
+1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\) is row equivalent to the 4 \[Times] 4 identity matrix.\\n\
+\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\\\"2\\\", \
+\\\"7\\\", \\\"1\\\", \\\"8\\\"}, {\\\"2\\\", \\\"1\\\", \\\"8\\\", \
+\\\"2\\\"}, {\\\"8\\\", \\\"4\\\", \\\"5\\\", \\\"9\\\"}, {\\\"0\\\", \\\"4\\\
+\", \\\"5\\\", \\\"2\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
+Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \
+\\\"\[NoBreak]\\\", \\\")\\\"}], TraditionalForm]\\) has 4 pivot \
+positions.\\nThe statement \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\
+\\\", GridBox[{{\\\"2\\\", \\\"7\\\", \\\"1\\\", \\\"8\\\"}, {\\\"2\\\", \
+\\\"1\\\", \\\"8\\\", \\\"2\\\"}, {\\\"8\\\", \\\"4\\\", \\\"5\\\", \
+\\\"9\\\"}, {\\\"0\\\", \\\"4\\\", \\\"5\\\", \\\"2\\\"}}, Rule[RowSpacings, \
+1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\)\\!\\(\\*TagBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
+TagBox[GridBox[{{SubscriptBox[\\\"x\\\", \\\"1\\\"]}, \
+{SubscriptBox[\\\"x\\\", \\\"2\\\"]}, {SubscriptBox[\\\"x\\\", \\\"3\\\"]}, \
+{SubscriptBox[\\\"x\\\", \\\"4\\\"]}}, Rule[RowSpacings, 1], \
+Rule[ColumnAlignments, Center], Rule[ColumnAlignments, Left]], Column], \\\"\
+\[NoBreak]\\\", \\\")\\\"}], Function[BoxForm`e$, \
+MatrixForm[BoxForm`e$]]]\\)=\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \
+\\\"\[NoBreak]\\\", GridBox[{{\\\"0\\\"}, {\\\"0\\\"}, {\\\"0\\\"}, \
+{\\\"0\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
+Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \
+\\\"\[NoBreak]\\\", \\\")\\\"}], TraditionalForm]\\) has only the trivial \
+solution.\\n\\nThe linear mapping \\!\\(\\*TagBox[RowBox[{\\\"(\\\", \\\"\
+\[NoBreak]\\\", TagBox[GridBox[{{SubscriptBox[\\\"x\\\", \\\"1\\\"]}, \
+{SubscriptBox[\\\"x\\\", \\\"2\\\"]}, {SubscriptBox[\\\"x\\\", \\\"3\\\"]}, \
+{SubscriptBox[\\\"x\\\", \\\"4\\\"]}}, Rule[RowSpacings, 1], \
+Rule[ColumnAlignments, Center], Rule[ColumnAlignments, Left]], Column], \\\"\
+\[NoBreak]\\\", \\\")\\\"}], Function[BoxForm`e$, MatrixForm[BoxForm`e$]]]\\)\
+\[Function]\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\
+\\\"2\\\", \\\"7\\\", \\\"1\\\", \\\"8\\\"}, {\\\"2\\\", \\\"1\\\", \
+\\\"8\\\", \\\"2\\\"}, {\\\"8\\\", \\\"4\\\", \\\"5\\\", \\\"9\\\"}, {\\\"0\\\
+\", \\\"4\\\", \\\"5\\\", \\\"2\\\"}}, Rule[RowSpacings, 1], \
+Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\)\\!\\(\\*TagBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
+TagBox[GridBox[{{SubscriptBox[\\\"x\\\", \\\"1\\\"]}, \
+{SubscriptBox[\\\"x\\\", \\\"2\\\"]}, {SubscriptBox[\\\"x\\\", \\\"3\\\"]}, \
+{SubscriptBox[\\\"x\\\", \\\"4\\\"]}}, Rule[RowSpacings, 1], \
+Rule[ColumnAlignments, Center], Rule[ColumnAlignments, Left]], Column], \\\"\
+\[NoBreak]\\\", \\\")\\\"}], Function[BoxForm`e$, MatrixForm[BoxForm`e$]]]\\) \
+is one-to-one and injective.\\nThe statement \\!\\(\\*FormBox[RowBox[{\\\"(\\\
+\", \\\"\[NoBreak]\\\", GridBox[{{\\\"2\\\", \\\"7\\\", \\\"1\\\", \
+\\\"8\\\"}, {\\\"2\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\"}, {\\\"8\\\", \\\"4\\\
+\", \\\"5\\\", \\\"9\\\"}, {\\\"0\\\", \\\"4\\\", \\\"5\\\", \\\"2\\\"}}, \
+Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\)\\!\\(\\*TagBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
+TagBox[GridBox[{{SubscriptBox[\\\"x\\\", \\\"1\\\"]}, \
+{SubscriptBox[\\\"x\\\", \\\"2\\\"]}, {SubscriptBox[\\\"x\\\", \\\"3\\\"]}, \
+{SubscriptBox[\\\"x\\\", \\\"4\\\"]}}, Rule[RowSpacings, 1], \
+Rule[ColumnAlignments, Center], Rule[ColumnAlignments, Left]], Column], \\\"\
+\[NoBreak]\\\", \\\")\\\"}], Function[BoxForm`e$, \
+MatrixForm[BoxForm`e$]]]\\)=b has at least one solution for all b in \
+\\!\\(\\*SuperscriptBox[\\(\[DoubleStruckCapitalR]\\), \\(4\\)]\\).\\nThe \
+columns of \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\
+\\\"2\\\", \\\"7\\\", \\\"1\\\", \\\"8\\\"}, {\\\"2\\\", \\\"1\\\", \
+\\\"8\\\", \\\"2\\\"}, {\\\"8\\\", \\\"4\\\", \\\"5\\\", \\\"9\\\"}, {\\\"0\\\
+\", \\\"4\\\", \\\"5\\\", \\\"2\\\"}}, Rule[RowSpacings, 1], \
+Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\) do form a basis for \\!\\(\\*SuperscriptBox[\\(\
+\[DoubleStruckCapitalR]\\), \\(4\\)]\\).\\nThe column space of \
+\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\\\"2\\\", \
+\\\"7\\\", \\\"1\\\", \\\"8\\\"}, {\\\"2\\\", \\\"1\\\", \\\"8\\\", \
+\\\"2\\\"}, {\\\"8\\\", \\\"4\\\", \\\"5\\\", \\\"9\\\"}, {\\\"0\\\", \\\"4\\\
+\", \\\"5\\\", \\\"2\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
+Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \
+\\\"\[NoBreak]\\\", \\\")\\\"}], TraditionalForm]\\) is \
+\\!\\(\\*SuperscriptBox[\\(\[DoubleStruckCapitalR]\\), \\(4\\)]\\).\\nThe \
+dimension of the column space of \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\
+\[NoBreak]\\\", GridBox[{{\\\"2\\\", \\\"7\\\", \\\"1\\\", \\\"8\\\"}, {\\\"2\
+\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\"}, {\\\"8\\\", \\\"4\\\", \\\"5\\\", \
+\\\"9\\\"}, {\\\"0\\\", \\\"4\\\", \\\"5\\\", \\\"2\\\"}}, Rule[RowSpacings, \
+1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\) is 4.\\nThe rank of \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \
 \\\"\[NoBreak]\\\", GridBox[{{\\\"2\\\", \\\"7\\\", \\\"1\\\", \\\"8\\\"}, \
 {\\\"2\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\"}, {\\\"8\\\", \\\"4\\\", \
 \\\"5\\\", \\\"9\\\"}, {\\\"0\\\", \\\"4\\\", \\\"5\\\", \\\"2\\\"}}, \
 Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
 Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
-TraditionalForm]\\) is  row equivalent to the 4 \[Times] 4  identity \
-matrix.\\n\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
+TraditionalForm]\\) is 4.\\nThe null space of \
+\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\\\"2\\\", \
+\\\"7\\\", \\\"1\\\", \\\"8\\\"}, {\\\"2\\\", \\\"1\\\", \\\"8\\\", \
+\\\"2\\\"}, {\\\"8\\\", \\\"4\\\", \\\"5\\\", \\\"9\\\"}, {\\\"0\\\", \\\"4\\\
+\", \\\"5\\\", \\\"2\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
+Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \
+\\\"\[NoBreak]\\\", \\\")\\\"}], TraditionalForm]\\) is \
+\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\\\"0\\\"}, \
+{\\\"0\\\"}, {\\\"0\\\"}, {\\\"0\\\"}}, Rule[RowSpacings, 1], \
+Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\).\\nThe dimension of the the null space of \
+\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\\\"2\\\", \
+\\\"7\\\", \\\"1\\\", \\\"8\\\"}, {\\\"2\\\", \\\"1\\\", \\\"8\\\", \
+\\\"2\\\"}, {\\\"8\\\", \\\"4\\\", \\\"5\\\", \\\"9\\\"}, {\\\"0\\\", \\\"4\\\
+\", \\\"5\\\", \\\"2\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
+Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \
+\\\"\[NoBreak]\\\", \\\")\\\"}], TraditionalForm]\\) is 0.\\nThe nullity is \
+0.\\n0 is not an eigenvalue of \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\
+\[NoBreak]\\\", GridBox[{{\\\"2\\\", \\\"7\\\", \\\"1\\\", \\\"8\\\"}, {\\\"2\
+\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\"}, {\\\"8\\\", \\\"4\\\", \\\"5\\\", \
+\\\"9\\\"}, {\\\"0\\\", \\\"4\\\", \\\"5\\\", \\\"2\\\"}}, Rule[RowSpacings, \
+1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\).\\nThe determinant of \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \
+\\\"\[NoBreak]\\\", GridBox[{{\\\"2\\\", \\\"7\\\", \\\"1\\\", \\\"8\\\"}, \
+{\\\"2\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\"}, {\\\"8\\\", \\\"4\\\", \
+\\\"5\\\", \\\"9\\\"}, {\\\"0\\\", \\\"4\\\", \\\"5\\\", \\\"2\\\"}}, \
+Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\) is not zero.\\n (Col \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \
+\\\"\[NoBreak]\\\", GridBox[{{\\\"2\\\", \\\"7\\\", \\\"1\\\", \\\"8\\\"}, \
+{\\\"2\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\"}, {\\\"8\\\", \\\"4\\\", \
+\\\"5\\\", \\\"9\\\"}, {\\\"0\\\", \\\"4\\\", \\\"5\\\", \\\"2\\\"}}, \
+Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\)\\!\\(\\*SuperscriptBox[\\()\\), \
+\\(\[Perpendicular]\\)]\\)\[NotEqual]\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\
+\[NoBreak]\\\", GridBox[{{\\\"0\\\"}, {\\\"0\\\"}, {\\\"0\\\"}, {\\\"0\\\"}}, \
+Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\).\\n(Nul \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \
+\\\"\[NoBreak]\\\", GridBox[{{\\\"2\\\", \\\"7\\\", \\\"1\\\", \\\"8\\\"}, \
+{\\\"2\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\"}, {\\\"8\\\", \\\"4\\\", \
+\\\"5\\\", \\\"9\\\"}, {\\\"0\\\", \\\"4\\\", \\\"5\\\", \\\"2\\\"}}, \
+Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\)\\!\\(\\*SuperscriptBox[\\()\\), \
+\\(\[Perpendicular]\\)]\\)\\!\\(\\*SuperscriptBox[\\(\[NotEqual]\
+\[DoubleStruckCapitalR]\\), \\(4\\)]\\).\\nThe row space of \
+\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\\\"2\\\", \
+\\\"7\\\", \\\"1\\\", \\\"8\\\"}, {\\\"2\\\", \\\"1\\\", \\\"8\\\", \
+\\\"2\\\"}, {\\\"8\\\", \\\"4\\\", \\\"5\\\", \\\"9\\\"}, {\\\"0\\\", \\\"4\\\
+\", \\\"5\\\", \\\"2\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
+Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \
+\\\"\[NoBreak]\\\", \\\")\\\"}], TraditionalForm]\\) is \
+\\!\\(\\*SuperscriptBox[\\(\[DoubleStruckCapitalR]\\), \
+\\(4\\)]\\).\\n\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
 GridBox[{{\\\"2\\\", \\\"7\\\", \\\"1\\\", \\\"8\\\"}, {\\\"2\\\", \\\"1\\\", \
 \\\"8\\\", \\\"2\\\"}, {\\\"8\\\", \\\"4\\\", \\\"5\\\", \\\"9\\\"}, {\\\"0\\\
 \", \\\"4\\\", \\\"5\\\", \\\"2\\\"}}, Rule[RowSpacings, 1], \
 Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
 Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
-TraditionalForm]\\) has 4 pivot positions.\"\>"], "Output",
+TraditionalForm]\\) has 4 singular values.\"\>"], "Output",
  TaggingRules->{},
  CellChangeTimes->{3.864901937830042*^9, 3.8649020152930365`*^9, 
   3.8649021203530416`*^9, 3.864902527090122*^9, 3.870863032650528*^9, 
-  3.870863733455792*^9},
+  3.870863733455792*^9, 3.8713960358986425`*^9},
  CellTags->"DefaultContent",
- CellLabel->"Out[147]=",
- CellID->594448,ExpressionUUID->"e12aa9fc-3b4c-4155-84aa-ff00a0796e85"]
+ CellLabel->"Out[285]=",
+ CellID->22708496,ExpressionUUID->"16682742-3311-4674-857a-dec5b9976291"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1162,7 +1477,7 @@ Cell[BoxData[
    3.8649019094110503`*^9, 3.8649019340900383`*^9}, 3.86490201495807*^9, {
    3.864902144031575*^9, 3.8649021959475813`*^9}},
  CellTags->"DefaultContent",
- CellLabel->"In[148]:=",
+ CellLabel->"In[286]:=",
  CellID->886520178,ExpressionUUID->"04922104-2137-4af1-aaae-8060006a35ea"],
 
 Cell[BoxData["\<\"\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
@@ -1172,230 +1487,195 @@ GridBox[{{\\\"2\\\", \\\"7\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\"}, {\\\"8\\\", \
 \\\"3\\\", \\\"5\\\"}, {\\\"3\\\", \\\"3\\\", \\\"6\\\", \\\"0\\\", \
 \\\"2\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
 Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \
-\\\"\[NoBreak]\\\", \\\")\\\"}], TraditionalForm]\\) is  invertible.\\n\\!\\(\
-\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\\\"2\\\", \
-\\\"7\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\"}, {\\\"8\\\", \\\"1\\\", \
-\\\"8\\\", \\\"2\\\", \\\"8\\\"}, {\\\"4\\\", \\\"5\\\", \\\"9\\\", \
-\\\"0\\\", \\\"4\\\"}, {\\\"5\\\", \\\"9\\\", \\\"2\\\", \\\"3\\\", \
-\\\"5\\\"}, {\\\"3\\\", \\\"3\\\", \\\"6\\\", \\\"0\\\", \\\"2\\\"}}, \
-Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
-Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
-TraditionalForm]\\) is  row equivalent to the 5 \[Times] 5  identity \
-matrix.\\n\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
+\\\"\[NoBreak]\\\", \\\")\\\"}], TraditionalForm]\\) is \
+invertible.\\n\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
 GridBox[{{\\\"2\\\", \\\"7\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\"}, {\\\"8\\\", \
 \\\"1\\\", \\\"8\\\", \\\"2\\\", \\\"8\\\"}, {\\\"4\\\", \\\"5\\\", \
 \\\"9\\\", \\\"0\\\", \\\"4\\\"}, {\\\"5\\\", \\\"9\\\", \\\"2\\\", \
 \\\"3\\\", \\\"5\\\"}, {\\\"3\\\", \\\"3\\\", \\\"6\\\", \\\"0\\\", \
 \\\"2\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
 Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \
-\\\"\[NoBreak]\\\", \\\")\\\"}], TraditionalForm]\\) has 5 pivot positions.\"\
+\\\"\[NoBreak]\\\", \\\")\\\"}], TraditionalForm]\\) is row equivalent to the \
+5 \[Times] 5 identity matrix.\\n\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\
+\[NoBreak]\\\", GridBox[{{\\\"2\\\", \\\"7\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\
+\"}, {\\\"8\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\", \\\"8\\\"}, {\\\"4\\\", \
+\\\"5\\\", \\\"9\\\", \\\"0\\\", \\\"4\\\"}, {\\\"5\\\", \\\"9\\\", \
+\\\"2\\\", \\\"3\\\", \\\"5\\\"}, {\\\"3\\\", \\\"3\\\", \\\"6\\\", \
+\\\"0\\\", \\\"2\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
+Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \
+\\\"\[NoBreak]\\\", \\\")\\\"}], TraditionalForm]\\) has 5 pivot \
+positions.\\nThe statement \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\
+\\\", GridBox[{{\\\"2\\\", \\\"7\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\"}, \
+{\\\"8\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\", \\\"8\\\"}, {\\\"4\\\", \
+\\\"5\\\", \\\"9\\\", \\\"0\\\", \\\"4\\\"}, {\\\"5\\\", \\\"9\\\", \
+\\\"2\\\", \\\"3\\\", \\\"5\\\"}, {\\\"3\\\", \\\"3\\\", \\\"6\\\", \
+\\\"0\\\", \\\"2\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
+Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \
+\\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\)\\!\\(\\*TagBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
+TagBox[GridBox[{{SubscriptBox[\\\"x\\\", \\\"1\\\"]}, \
+{SubscriptBox[\\\"x\\\", \\\"2\\\"]}, {SubscriptBox[\\\"x\\\", \\\"3\\\"]}, \
+{SubscriptBox[\\\"x\\\", \\\"4\\\"]}, {SubscriptBox[\\\"x\\\", \\\"5\\\"]}}, \
+Rule[RowSpacings, 1], Rule[ColumnAlignments, Center], Rule[ColumnAlignments, \
+Left]], Column], \\\"\[NoBreak]\\\", \\\")\\\"}], Function[BoxForm`e$, \
+MatrixForm[BoxForm`e$]]]\\)=\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \
+\\\"\[NoBreak]\\\", GridBox[{{\\\"0\\\"}, {\\\"0\\\"}, {\\\"0\\\"}, \
+{\\\"0\\\"}, {\\\"0\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
+Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \
+\\\"\[NoBreak]\\\", \\\")\\\"}], TraditionalForm]\\) has only the trivial \
+solution.\\n\\nThe linear mapping \\!\\(\\*TagBox[RowBox[{\\\"(\\\", \\\"\
+\[NoBreak]\\\", TagBox[GridBox[{{SubscriptBox[\\\"x\\\", \\\"1\\\"]}, \
+{SubscriptBox[\\\"x\\\", \\\"2\\\"]}, {SubscriptBox[\\\"x\\\", \\\"3\\\"]}, \
+{SubscriptBox[\\\"x\\\", \\\"4\\\"]}, {SubscriptBox[\\\"x\\\", \\\"5\\\"]}}, \
+Rule[RowSpacings, 1], Rule[ColumnAlignments, Center], Rule[ColumnAlignments, \
+Left]], Column], \\\"\[NoBreak]\\\", \\\")\\\"}], Function[BoxForm`e$, \
+MatrixForm[BoxForm`e$]]]\\)\[Function]\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \
+\\\"\[NoBreak]\\\", GridBox[{{\\\"2\\\", \\\"7\\\", \\\"1\\\", \\\"8\\\", \
+\\\"2\\\"}, {\\\"8\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\", \\\"8\\\"}, {\\\"4\\\
+\", \\\"5\\\", \\\"9\\\", \\\"0\\\", \\\"4\\\"}, {\\\"5\\\", \\\"9\\\", \\\"2\
+\\\", \\\"3\\\", \\\"5\\\"}, {\\\"3\\\", \\\"3\\\", \\\"6\\\", \\\"0\\\", \
+\\\"2\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
+Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \
+\\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\)\\!\\(\\*TagBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
+TagBox[GridBox[{{SubscriptBox[\\\"x\\\", \\\"1\\\"]}, \
+{SubscriptBox[\\\"x\\\", \\\"2\\\"]}, {SubscriptBox[\\\"x\\\", \\\"3\\\"]}, \
+{SubscriptBox[\\\"x\\\", \\\"4\\\"]}, {SubscriptBox[\\\"x\\\", \\\"5\\\"]}}, \
+Rule[RowSpacings, 1], Rule[ColumnAlignments, Center], Rule[ColumnAlignments, \
+Left]], Column], \\\"\[NoBreak]\\\", \\\")\\\"}], Function[BoxForm`e$, \
+MatrixForm[BoxForm`e$]]]\\) is one-to-one and injective.\\nThe statement \
+\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\\\"2\\\", \
+\\\"7\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\"}, {\\\"8\\\", \\\"1\\\", \
+\\\"8\\\", \\\"2\\\", \\\"8\\\"}, {\\\"4\\\", \\\"5\\\", \\\"9\\\", \
+\\\"0\\\", \\\"4\\\"}, {\\\"5\\\", \\\"9\\\", \\\"2\\\", \\\"3\\\", \
+\\\"5\\\"}, {\\\"3\\\", \\\"3\\\", \\\"6\\\", \\\"0\\\", \\\"2\\\"}}, \
+Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\)\\!\\(\\*TagBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
+TagBox[GridBox[{{SubscriptBox[\\\"x\\\", \\\"1\\\"]}, \
+{SubscriptBox[\\\"x\\\", \\\"2\\\"]}, {SubscriptBox[\\\"x\\\", \\\"3\\\"]}, \
+{SubscriptBox[\\\"x\\\", \\\"4\\\"]}, {SubscriptBox[\\\"x\\\", \\\"5\\\"]}}, \
+Rule[RowSpacings, 1], Rule[ColumnAlignments, Center], Rule[ColumnAlignments, \
+Left]], Column], \\\"\[NoBreak]\\\", \\\")\\\"}], Function[BoxForm`e$, \
+MatrixForm[BoxForm`e$]]]\\)=b has at least one solution for all b in \
+\\!\\(\\*SuperscriptBox[\\(\[DoubleStruckCapitalR]\\), \\(5\\)]\\).\\nThe \
+columns of \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\
+\\\"2\\\", \\\"7\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\"}, {\\\"8\\\", \
+\\\"1\\\", \\\"8\\\", \\\"2\\\", \\\"8\\\"}, {\\\"4\\\", \\\"5\\\", \
+\\\"9\\\", \\\"0\\\", \\\"4\\\"}, {\\\"5\\\", \\\"9\\\", \\\"2\\\", \
+\\\"3\\\", \\\"5\\\"}, {\\\"3\\\", \\\"3\\\", \\\"6\\\", \\\"0\\\", \
+\\\"2\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
+Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \
+\\\"\[NoBreak]\\\", \\\")\\\"}], TraditionalForm]\\) do form a basis for \
+\\!\\(\\*SuperscriptBox[\\(\[DoubleStruckCapitalR]\\), \\(5\\)]\\).\\nThe \
+column space of \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
+GridBox[{{\\\"2\\\", \\\"7\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\"}, {\\\"8\\\", \
+\\\"1\\\", \\\"8\\\", \\\"2\\\", \\\"8\\\"}, {\\\"4\\\", \\\"5\\\", \
+\\\"9\\\", \\\"0\\\", \\\"4\\\"}, {\\\"5\\\", \\\"9\\\", \\\"2\\\", \
+\\\"3\\\", \\\"5\\\"}, {\\\"3\\\", \\\"3\\\", \\\"6\\\", \\\"0\\\", \
+\\\"2\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
+Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \
+\\\"\[NoBreak]\\\", \\\")\\\"}], TraditionalForm]\\) is \
+\\!\\(\\*SuperscriptBox[\\(\[DoubleStruckCapitalR]\\), \\(5\\)]\\).\\nThe \
+dimension of the column space of \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\
+\[NoBreak]\\\", GridBox[{{\\\"2\\\", \\\"7\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\
+\"}, {\\\"8\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\", \\\"8\\\"}, {\\\"4\\\", \
+\\\"5\\\", \\\"9\\\", \\\"0\\\", \\\"4\\\"}, {\\\"5\\\", \\\"9\\\", \
+\\\"2\\\", \\\"3\\\", \\\"5\\\"}, {\\\"3\\\", \\\"3\\\", \\\"6\\\", \
+\\\"0\\\", \\\"2\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
+Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \
+\\\"\[NoBreak]\\\", \\\")\\\"}], TraditionalForm]\\) is 5.\\nThe rank of \
+\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\\\"2\\\", \
+\\\"7\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\"}, {\\\"8\\\", \\\"1\\\", \
+\\\"8\\\", \\\"2\\\", \\\"8\\\"}, {\\\"4\\\", \\\"5\\\", \\\"9\\\", \
+\\\"0\\\", \\\"4\\\"}, {\\\"5\\\", \\\"9\\\", \\\"2\\\", \\\"3\\\", \
+\\\"5\\\"}, {\\\"3\\\", \\\"3\\\", \\\"6\\\", \\\"0\\\", \\\"2\\\"}}, \
+Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\) is 5.\\nThe null space of \
+\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\\\"2\\\", \
+\\\"7\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\"}, {\\\"8\\\", \\\"1\\\", \
+\\\"8\\\", \\\"2\\\", \\\"8\\\"}, {\\\"4\\\", \\\"5\\\", \\\"9\\\", \
+\\\"0\\\", \\\"4\\\"}, {\\\"5\\\", \\\"9\\\", \\\"2\\\", \\\"3\\\", \
+\\\"5\\\"}, {\\\"3\\\", \\\"3\\\", \\\"6\\\", \\\"0\\\", \\\"2\\\"}}, \
+Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\) is \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \
+\\\"\[NoBreak]\\\", GridBox[{{\\\"0\\\"}, {\\\"0\\\"}, {\\\"0\\\"}, \
+{\\\"0\\\"}, {\\\"0\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
+Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \
+\\\"\[NoBreak]\\\", \\\")\\\"}], TraditionalForm]\\).\\nThe dimension of the \
+the null space of \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
+GridBox[{{\\\"2\\\", \\\"7\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\"}, {\\\"8\\\", \
+\\\"1\\\", \\\"8\\\", \\\"2\\\", \\\"8\\\"}, {\\\"4\\\", \\\"5\\\", \
+\\\"9\\\", \\\"0\\\", \\\"4\\\"}, {\\\"5\\\", \\\"9\\\", \\\"2\\\", \
+\\\"3\\\", \\\"5\\\"}, {\\\"3\\\", \\\"3\\\", \\\"6\\\", \\\"0\\\", \
+\\\"2\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
+Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \
+\\\"\[NoBreak]\\\", \\\")\\\"}], TraditionalForm]\\) is 0.\\nThe nullity is \
+0.\\n0 is not an eigenvalue of \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\
+\[NoBreak]\\\", GridBox[{{\\\"2\\\", \\\"7\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\
+\"}, {\\\"8\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\", \\\"8\\\"}, {\\\"4\\\", \
+\\\"5\\\", \\\"9\\\", \\\"0\\\", \\\"4\\\"}, {\\\"5\\\", \\\"9\\\", \
+\\\"2\\\", \\\"3\\\", \\\"5\\\"}, {\\\"3\\\", \\\"3\\\", \\\"6\\\", \
+\\\"0\\\", \\\"2\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
+Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \
+\\\"\[NoBreak]\\\", \\\")\\\"}], TraditionalForm]\\).\\nThe determinant of \
+\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\\\"2\\\", \
+\\\"7\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\"}, {\\\"8\\\", \\\"1\\\", \
+\\\"8\\\", \\\"2\\\", \\\"8\\\"}, {\\\"4\\\", \\\"5\\\", \\\"9\\\", \
+\\\"0\\\", \\\"4\\\"}, {\\\"5\\\", \\\"9\\\", \\\"2\\\", \\\"3\\\", \
+\\\"5\\\"}, {\\\"3\\\", \\\"3\\\", \\\"6\\\", \\\"0\\\", \\\"2\\\"}}, \
+Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\) is not zero.\\n (Col \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \
+\\\"\[NoBreak]\\\", GridBox[{{\\\"2\\\", \\\"7\\\", \\\"1\\\", \\\"8\\\", \
+\\\"2\\\"}, {\\\"8\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\", \\\"8\\\"}, {\\\"4\\\
+\", \\\"5\\\", \\\"9\\\", \\\"0\\\", \\\"4\\\"}, {\\\"5\\\", \\\"9\\\", \\\"2\
+\\\", \\\"3\\\", \\\"5\\\"}, {\\\"3\\\", \\\"3\\\", \\\"6\\\", \\\"0\\\", \
+\\\"2\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
+Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \
+\\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\)\\!\\(\\*SuperscriptBox[\\()\\), \
+\\(\[Perpendicular]\\)]\\)\[NotEqual]\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\
+\[NoBreak]\\\", GridBox[{{\\\"0\\\"}, {\\\"0\\\"}, {\\\"0\\\"}, {\\\"0\\\"}, \
+{\\\"0\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
+Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \
+\\\"\[NoBreak]\\\", \\\")\\\"}], TraditionalForm]\\).\\n(Nul \
+\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\\\"2\\\", \
+\\\"7\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\"}, {\\\"8\\\", \\\"1\\\", \
+\\\"8\\\", \\\"2\\\", \\\"8\\\"}, {\\\"4\\\", \\\"5\\\", \\\"9\\\", \
+\\\"0\\\", \\\"4\\\"}, {\\\"5\\\", \\\"9\\\", \\\"2\\\", \\\"3\\\", \
+\\\"5\\\"}, {\\\"3\\\", \\\"3\\\", \\\"6\\\", \\\"0\\\", \\\"2\\\"}}, \
+Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\)\\!\\(\\*SuperscriptBox[\\()\\), \
+\\(\[Perpendicular]\\)]\\)\\!\\(\\*SuperscriptBox[\\(\[NotEqual]\
+\[DoubleStruckCapitalR]\\), \\(5\\)]\\).\\nThe row space of \
+\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\\\"2\\\", \
+\\\"7\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\"}, {\\\"8\\\", \\\"1\\\", \
+\\\"8\\\", \\\"2\\\", \\\"8\\\"}, {\\\"4\\\", \\\"5\\\", \\\"9\\\", \
+\\\"0\\\", \\\"4\\\"}, {\\\"5\\\", \\\"9\\\", \\\"2\\\", \\\"3\\\", \
+\\\"5\\\"}, {\\\"3\\\", \\\"3\\\", \\\"6\\\", \\\"0\\\", \\\"2\\\"}}, \
+Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\) is \\!\\(\\*SuperscriptBox[\\(\[DoubleStruckCapitalR]\\), \
+\\(5\\)]\\).\\n\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
+GridBox[{{\\\"2\\\", \\\"7\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\"}, {\\\"8\\\", \
+\\\"1\\\", \\\"8\\\", \\\"2\\\", \\\"8\\\"}, {\\\"4\\\", \\\"5\\\", \
+\\\"9\\\", \\\"0\\\", \\\"4\\\"}, {\\\"5\\\", \\\"9\\\", \\\"2\\\", \
+\\\"3\\\", \\\"5\\\"}, {\\\"3\\\", \\\"3\\\", \\\"6\\\", \\\"0\\\", \
+\\\"2\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
+Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \
+\\\"\[NoBreak]\\\", \\\")\\\"}], TraditionalForm]\\) has 5 singular values.\"\
 \>"], "Output",
  TaggingRules->{},
  CellChangeTimes->{3.8649021967385855`*^9, 3.864902527462124*^9, 
-  3.8708630352841725`*^9, 3.8708631777883797`*^9, 3.870863735505285*^9},
+  3.8708630352841725`*^9, 3.8708631777883797`*^9, 3.870863735505285*^9, 
+  3.8713960403068094`*^9},
  CellTags->"DefaultContent",
- CellLabel->"Out[148]=",
- CellID->62978936,ExpressionUUID->"5eb9e1c7-4431-4e4f-8041-7bd3da63bb12"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"StringReplace", "[", 
-  RowBox[{"%124", ",", 
-   RowBox[{"Whitespace", "\[Rule]", "\"\< \>\""}]}], "]"}]], "Input",
- NumberMarks->False,
- CellLabel->"In[125]:=",
- CellID->54042871,ExpressionUUID->"17a640af-3cda-4ecc-9504-06a42a9a71e7"],
-
-Cell[BoxData["\<\"\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\" \\\", GridBox[{{\\\
-\"2\\\", \\\"7\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\"}, {\\\"8\\\", \\\"1\\\", \
-\\\"8\\\", \\\"2\\\", \\\"8\\\"}, {\\\"4\\\", \\\"5\\\", \\\"9\\\", \
-\\\"0\\\", \\\"4\\\"}, {\\\"5\\\", \\\"9\\\", \\\"2\\\", \\\"3\\\", \
-\\\"5\\\"}, {\\\"3\\\", \\\"3\\\", \\\"6\\\", \\\"0\\\", \\\"2\\\"}}, \
-Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
-Rule[ColumnAlignments, Center]], \\\" \\\", \\\")\\\"}], TraditionalForm]\\) \
-is invertible. \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\" \\\", GridBox[{{\\\"2\
-\\\", \\\"7\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\"}, {\\\"8\\\", \\\"1\\\", \
-\\\"8\\\", \\\"2\\\", \\\"8\\\"}, {\\\"4\\\", \\\"5\\\", \\\"9\\\", \
-\\\"0\\\", \\\"4\\\"}, {\\\"5\\\", \\\"9\\\", \\\"2\\\", \\\"3\\\", \
-\\\"5\\\"}, {\\\"3\\\", \\\"3\\\", \\\"6\\\", \\\"0\\\", \\\"2\\\"}}, \
-Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
-Rule[ColumnAlignments, Center]], \\\" \\\", \\\")\\\"}], TraditionalForm]\\) \
-is row equivalent to the \[Times] identity matrix. \
-\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\" \\\", GridBox[{{\\\"2\\\", \
-\\\"7\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\"}, {\\\"8\\\", \\\"1\\\", \
-\\\"8\\\", \\\"2\\\", \\\"8\\\"}, {\\\"4\\\", \\\"5\\\", \\\"9\\\", \
-\\\"0\\\", \\\"4\\\"}, {\\\"5\\\", \\\"9\\\", \\\"2\\\", \\\"3\\\", \
-\\\"5\\\"}, {\\\"3\\\", \\\"3\\\", \\\"6\\\", \\\"0\\\", \\\"2\\\"}}, \
-Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
-Rule[ColumnAlignments, Center]], \\\" \\\", \\\")\\\"}], TraditionalForm]\\) \
-pivot positions. The equation \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\" \\\", \
-GridBox[{{\\\"2\\\", \\\"7\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\"}, {\\\"8\\\", \
-\\\"1\\\", \\\"8\\\", \\\"2\\\", \\\"8\\\"}, {\\\"4\\\", \\\"5\\\", \
-\\\"9\\\", \\\"0\\\", \\\"4\\\"}, {\\\"5\\\", \\\"9\\\", \\\"2\\\", \
-\\\"3\\\", \\\"5\\\"}, {\\\"3\\\", \\\"3\\\", \\\"6\\\", \\\"0\\\", \
-\\\"2\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
-Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \\\" \\\", \\\
-\")\\\"}], TraditionalForm]\\) == only the trivial solution. The linear \
-transformation \[Function]\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\" \\\", \
-GridBox[{{\\\"2\\\", \\\"7\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\"}, {\\\"8\\\", \
-\\\"1\\\", \\\"8\\\", \\\"2\\\", \\\"8\\\"}, {\\\"4\\\", \\\"5\\\", \
-\\\"9\\\", \\\"0\\\", \\\"4\\\"}, {\\\"5\\\", \\\"9\\\", \\\"2\\\", \
-\\\"3\\\", \\\"5\\\"}, {\\\"3\\\", \\\"3\\\", \\\"6\\\", \\\"0\\\", \
-\\\"2\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
-Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \\\" \\\", \\\
-\")\\\"}], TraditionalForm]\\) is one-to-one. The equation \
-\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\" \\\", GridBox[{{\\\"2\\\", \
-\\\"7\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\"}, {\\\"8\\\", \\\"1\\\", \
-\\\"8\\\", \\\"2\\\", \\\"8\\\"}, {\\\"4\\\", \\\"5\\\", \\\"9\\\", \
-\\\"0\\\", \\\"4\\\"}, {\\\"5\\\", \\\"9\\\", \\\"2\\\", \\\"3\\\", \
-\\\"5\\\"}, {\\\"3\\\", \\\"3\\\", \\\"6\\\", \\\"0\\\", \\\"2\\\"}}, \
-Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
-Rule[ColumnAlignments, Center]], \\\" \\\", \\\")\\\"}], \
-TraditionalForm]\\)==b at least one solution for each \\!\\(\\*StyleBox[\\\"b\
-\\\",FontWeight->\\\"Plain\\\"]\\) in \\!\\(\\*SuperscriptBox[\\(\
-\[DoubleStruckCapitalR]\\), \\(\\)]\\). The columns of \
-\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\" \\\", GridBox[{{\\\"2\\\", \
-\\\"7\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\"}, {\\\"8\\\", \\\"1\\\", \
-\\\"8\\\", \\\"2\\\", \\\"8\\\"}, {\\\"4\\\", \\\"5\\\", \\\"9\\\", \
-\\\"0\\\", \\\"4\\\"}, {\\\"5\\\", \\\"9\\\", \\\"2\\\", \\\"3\\\", \
-\\\"5\\\"}, {\\\"3\\\", \\\"3\\\", \\\"6\\\", \\\"0\\\", \\\"2\\\"}}, \
-Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
-Rule[ColumnAlignments, Center]], \\\" \\\", \\\")\\\"}], TraditionalForm]\\) \
-span \\!\\(\\*SuperscriptBox[\\(\[DoubleStruckCapitalR]\\), \\(\\)]\\). The \
-linear transformation \[Function]\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\" \
-\\\", GridBox[{{\\\"2\\\", \\\"7\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\"}, \
-{\\\"8\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\", \\\"8\\\"}, {\\\"4\\\", \
-\\\"5\\\", \\\"9\\\", \\\"0\\\", \\\"4\\\"}, {\\\"5\\\", \\\"9\\\", \
-\\\"2\\\", \\\"3\\\", \\\"5\\\"}, {\\\"3\\\", \\\"3\\\", \\\"6\\\", \
-\\\"0\\\", \\\"2\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
-Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \\\" \\\", \\\
-\")\\\"}], TraditionalForm]\\) \\!\\(\\*SuperscriptBox[\\(\
-\[DoubleStruckCapitalR]\\), \\(\\)]\\) onto \\!\\(\\*SuperscriptBox[\\(\
-\[DoubleStruckCapitalR]\\), \\(\\)]\\). There a matrix C such that \
-C\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\" \\\", GridBox[{{\\\"2\\\", \
-\\\"7\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\"}, {\\\"8\\\", \\\"1\\\", \
-\\\"8\\\", \\\"2\\\", \\\"8\\\"}, {\\\"4\\\", \\\"5\\\", \\\"9\\\", \
-\\\"0\\\", \\\"4\\\"}, {\\\"5\\\", \\\"9\\\", \\\"2\\\", \\\"3\\\", \
-\\\"5\\\"}, {\\\"3\\\", \\\"3\\\", \\\"6\\\", \\\"0\\\", \\\"2\\\"}}, \
-Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
-Rule[ColumnAlignments, Center]], \\\" \\\", \\\")\\\"}], \
-TraditionalForm]\\)==. There a matrix D such that \\!\\(\\*FormBox[RowBox[{\\\
-\"(\\\", \\\" \\\", GridBox[{{\\\"2\\\", \\\"7\\\", \\\"1\\\", \\\"8\\\", \
-\\\"2\\\"}, {\\\"8\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\", \\\"8\\\"}, {\\\"4\\\
-\", \\\"5\\\", \\\"9\\\", \\\"0\\\", \\\"4\\\"}, {\\\"5\\\", \\\"9\\\", \\\"2\
-\\\", \\\"3\\\", \\\"5\\\"}, {\\\"3\\\", \\\"3\\\", \\\"6\\\", \\\"0\\\", \
-\\\"2\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
-Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \\\" \\\", \\\
-\")\\\"}], \
-TraditionalForm]\\)D==.\\!\\(\\*SuperscriptBox[\\(\\!\\(\\*FormBox[RowBox[{\\\
-\"(\\\", \\\" \\\", GridBox[{{\\\"2\\\", \\\"7\\\", \\\"1\\\", \\\"8\\\", \
-\\\"2\\\"}, {\\\"8\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\", \\\"8\\\"}, {\\\"4\\\
-\", \\\"5\\\", \\\"9\\\", \\\"0\\\", \\\"4\\\"}, {\\\"5\\\", \\\"9\\\", \\\"2\
-\\\", \\\"3\\\", \\\"5\\\"}, {\\\"3\\\", \\\"3\\\", \\\"6\\\", \\\"0\\\", \
-\\\"2\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
-Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \\\" \\\", \\\
-\")\\\"}], TraditionalForm]\\)\\), \\(\[Transpose]\\)]\\) an invertible \
-matrix. The columns of \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\" \\\", \
-GridBox[{{\\\"2\\\", \\\"7\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\"}, {\\\"8\\\", \
-\\\"1\\\", \\\"8\\\", \\\"2\\\", \\\"8\\\"}, {\\\"4\\\", \\\"5\\\", \
-\\\"9\\\", \\\"0\\\", \\\"4\\\"}, {\\\"5\\\", \\\"9\\\", \\\"2\\\", \
-\\\"3\\\", \\\"5\\\"}, {\\\"3\\\", \\\"3\\\", \\\"6\\\", \\\"0\\\", \
-\\\"2\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
-Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \\\" \\\", \\\
-\")\\\"}], TraditionalForm]\\)form a basis for \\!\\(\\*SuperscriptBox[\\(\
-\[DoubleStruckCapitalR]\\), \\(\\)]\\). The column space of \
-\\!\\(\\*SuperscriptBox[\\(\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\" \\\", \
-GridBox[{{\\\"2\\\", \\\"7\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\"}, {\\\"8\\\", \
-\\\"1\\\", \\\"8\\\", \\\"2\\\", \\\"8\\\"}, {\\\"4\\\", \\\"5\\\", \
-\\\"9\\\", \\\"0\\\", \\\"4\\\"}, {\\\"5\\\", \\\"9\\\", \\\"2\\\", \
-\\\"3\\\", \\\"5\\\"}, {\\\"3\\\", \\\"3\\\", \\\"6\\\", \\\"0\\\", \
-\\\"2\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
-Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \\\" \\\", \\\
-\")\\\"}], TraditionalForm]\\)\[DoubleStruckCapitalR]\\), \\(\\)]\\). The \
-dimension of the column space of \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\" \
-\\\", GridBox[{{\\\"2\\\", \\\"7\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\"}, \
-{\\\"8\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\", \\\"8\\\"}, {\\\"4\\\", \
-\\\"5\\\", \\\"9\\\", \\\"0\\\", \\\"4\\\"}, {\\\"5\\\", \\\"9\\\", \
-\\\"2\\\", \\\"3\\\", \\\"5\\\"}, {\\\"3\\\", \\\"3\\\", \\\"6\\\", \
-\\\"0\\\", \\\"2\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
-Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \\\" \\\", \\\
-\")\\\"}], TraditionalForm]\\). The rank of \
-\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\" \\\", GridBox[{{\\\"2\\\", \
-\\\"7\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\"}, {\\\"8\\\", \\\"1\\\", \
-\\\"8\\\", \\\"2\\\", \\\"8\\\"}, {\\\"4\\\", \\\"5\\\", \\\"9\\\", \
-\\\"0\\\", \\\"4\\\"}, {\\\"5\\\", \\\"9\\\", \\\"2\\\", \\\"3\\\", \
-\\\"5\\\"}, {\\\"3\\\", \\\"3\\\", \\\"6\\\", \\\"0\\\", \\\"2\\\"}}, \
-Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
-Rule[ColumnAlignments, Center]], \\\" \\\", \\\")\\\"}], TraditionalForm]\\). \
-The null space of \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\" \\\", GridBox[{{\\\
-\"2\\\", \\\"7\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\"}, {\\\"8\\\", \\\"1\\\", \
-\\\"8\\\", \\\"2\\\", \\\"8\\\"}, {\\\"4\\\", \\\"5\\\", \\\"9\\\", \
-\\\"0\\\", \\\"4\\\"}, {\\\"5\\\", \\\"9\\\", \\\"2\\\", \\\"3\\\", \
-\\\"5\\\"}, {\\\"3\\\", \\\"3\\\", \\\"6\\\", \\\"0\\\", \\\"2\\\"}}, \
-Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
-Rule[ColumnAlignments, Center]], \\\" \\\", \\\")\\\"}], \
-TraditionalForm]\\){}. The dimension of the null space of \
-\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\" \\\", GridBox[{{\\\"2\\\", \
-\\\"7\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\"}, {\\\"8\\\", \\\"1\\\", \
-\\\"8\\\", \\\"2\\\", \\\"8\\\"}, {\\\"4\\\", \\\"5\\\", \\\"9\\\", \
-\\\"0\\\", \\\"4\\\"}, {\\\"5\\\", \\\"9\\\", \\\"2\\\", \\\"3\\\", \
-\\\"5\\\"}, {\\\"3\\\", \\\"3\\\", \\\"6\\\", \\\"0\\\", \\\"2\\\"}}, \
-Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
-Rule[ColumnAlignments, Center]], \\\" \\\", \\\")\\\"}], TraditionalForm]\\) \
-or the nullity0. The number 0an eigenvalue of \
-\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\" \\\", GridBox[{{\\\"2\\\", \
-\\\"7\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\"}, {\\\"8\\\", \\\"1\\\", \
-\\\"8\\\", \\\"2\\\", \\\"8\\\"}, {\\\"4\\\", \\\"5\\\", \\\"9\\\", \
-\\\"0\\\", \\\"4\\\"}, {\\\"5\\\", \\\"9\\\", \\\"2\\\", \\\"3\\\", \
-\\\"5\\\"}, {\\\"3\\\", \\\"3\\\", \\\"6\\\", \\\"0\\\", \\\"2\\\"}}, \
-Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
-Rule[ColumnAlignments, Center]], \\\" \\\", \\\")\\\"}], TraditionalForm]\\). \
-The determinant of \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\" \\\", \
-GridBox[{{\\\"2\\\", \\\"7\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\"}, {\\\"8\\\", \
-\\\"1\\\", \\\"8\\\", \\\"2\\\", \\\"8\\\"}, {\\\"4\\\", \\\"5\\\", \
-\\\"9\\\", \\\"0\\\", \\\"4\\\"}, {\\\"5\\\", \\\"9\\\", \\\"2\\\", \
-\\\"3\\\", \\\"5\\\"}, {\\\"3\\\", \\\"3\\\", \\\"6\\\", \\\"0\\\", \
-\\\"2\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
-Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \\\" \\\", \\\
-\")\\\"}], TraditionalForm]\\)zero. (Col \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \
-\\\" \\\", GridBox[{{\\\"2\\\", \\\"7\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\"}, \
-{\\\"8\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\", \\\"8\\\"}, {\\\"4\\\", \
-\\\"5\\\", \\\"9\\\", \\\"0\\\", \\\"4\\\"}, {\\\"5\\\", \\\"9\\\", \
-\\\"2\\\", \\\"3\\\", \\\"5\\\"}, {\\\"3\\\", \\\"3\\\", \\\"6\\\", \
-\\\"0\\\", \\\"2\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
-Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \\\" \\\", \\\
-\")\\\"}], TraditionalForm]\\)\\!\\(\\*SuperscriptBox[\\()\\), \\(\
-\[Perpendicular]\\)]\\){0}. (Nul \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\" \
-\\\", GridBox[{{\\\"2\\\", \\\"7\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\"}, \
-{\\\"8\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\", \\\"8\\\"}, {\\\"4\\\", \
-\\\"5\\\", \\\"9\\\", \\\"0\\\", \\\"4\\\"}, {\\\"5\\\", \\\"9\\\", \
-\\\"2\\\", \\\"3\\\", \\\"5\\\"}, {\\\"3\\\", \\\"3\\\", \\\"6\\\", \
-\\\"0\\\", \\\"2\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
-Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \\\" \\\", \\\
-\")\\\"}], TraditionalForm]\\)\\!\\(\\*SuperscriptBox[\\()\\), \\(\
-\[Perpendicular]\\)]\\)\\!\\(\\*SuperscriptBox[\\(\[DoubleStruckCapitalR]\\), \
-\\(\\)]\\). Row \
-\\!\\(\\*SuperscriptBox[\\(\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\" \\\", \
-GridBox[{{\\\"2\\\", \\\"7\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\"}, {\\\"8\\\", \
-\\\"1\\\", \\\"8\\\", \\\"2\\\", \\\"8\\\"}, {\\\"4\\\", \\\"5\\\", \
-\\\"9\\\", \\\"0\\\", \\\"4\\\"}, {\\\"5\\\", \\\"9\\\", \\\"2\\\", \
-\\\"3\\\", \\\"5\\\"}, {\\\"3\\\", \\\"3\\\", \\\"6\\\", \\\"0\\\", \
-\\\"2\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
-Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \\\" \\\", \\\
-\")\\\"}], TraditionalForm]\\)\[DoubleStruckCapitalR]\\), \\(\\)]\\). \
-\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\" \\\", GridBox[{{\\\"2\\\", \
-\\\"7\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\"}, {\\\"8\\\", \\\"1\\\", \
-\\\"8\\\", \\\"2\\\", \\\"8\\\"}, {\\\"4\\\", \\\"5\\\", \\\"9\\\", \
-\\\"0\\\", \\\"4\\\"}, {\\\"5\\\", \\\"9\\\", \\\"2\\\", \\\"3\\\", \
-\\\"5\\\"}, {\\\"3\\\", \\\"3\\\", \\\"6\\\", \\\"0\\\", \\\"2\\\"}}, \
-Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
-Rule[ColumnAlignments, Center]], \\\" \\\", \\\")\\\"}], TraditionalForm]\\) \
-nonzero singular values.\"\>"], "Output",
- CellChangeTimes->{3.870863194178955*^9},
- CellLabel->"Out[125]=",
- CellID->437744504,ExpressionUUID->"77c3c3d2-4a8c-4032-ad27-81d01c5111a5"]
+ CellLabel->"Out[286]=",
+ CellID->198321544,ExpressionUUID->"ffbae4ab-24dc-4912-8757-2b81571e3e1c"]
 }, Open  ]]
 }, Open  ]],
 
@@ -1426,7 +1706,7 @@ Cell[BoxData[
     "12"}], "]"}], "]"}]], "Input",
  TaggingRules->{},
  CellChangeTimes->{{3.864902247714591*^9, 3.8649023388625774`*^9}},
- CellLabel->"In[145]:=",
+ CellLabel->"In[287]:=",
  CellID->717615602,ExpressionUUID->"7d00bc02-f5f6-4c55-abd5-71f62096cf3d"],
 
 Cell[BoxData["\<\"\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
@@ -1454,34 +1734,8 @@ GridBox[{{\\\"2\\\", \\\"7\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\", \\\"8\\\", \
 \\\"5\\\", \\\"7\\\", \\\"2\\\", \\\"9\\\", \\\"0\\\", \\\"0\\\", \\\"3\\\", \
 \\\"3\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
 Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \
-\\\"\[NoBreak]\\\", \\\")\\\"}], TraditionalForm]\\) is  invertible.\\n\\!\\(\
-\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\\\"2\\\", \
-\\\"7\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\", \\\"8\\\", \\\"1\\\", \\\"8\\\", \
-\\\"2\\\", \\\"8\\\", \\\"4\\\", \\\"5\\\"}, {\\\"9\\\", \\\"0\\\", \
-\\\"4\\\", \\\"5\\\", \\\"2\\\", \\\"3\\\", \\\"5\\\", \\\"3\\\", \\\"6\\\", \
-\\\"0\\\", \\\"2\\\", \\\"8\\\"}, {\\\"7\\\", \\\"4\\\", \\\"7\\\", \
-\\\"1\\\", \\\"3\\\", \\\"5\\\", \\\"2\\\", \\\"6\\\", \\\"6\\\", \\\"2\\\", \
-\\\"4\\\", \\\"9\\\"}, {\\\"7\\\", \\\"7\\\", \\\"5\\\", \\\"7\\\", \
-\\\"2\\\", \\\"4\\\", \\\"7\\\", \\\"0\\\", \\\"9\\\", \\\"3\\\", \\\"6\\\", \
-\\\"9\\\"}, {\\\"9\\\", \\\"9\\\", \\\"5\\\", \\\"9\\\", \\\"5\\\", \
-\\\"7\\\", \\\"4\\\", \\\"9\\\", \\\"6\\\", \\\"6\\\", \\\"9\\\", \\\"6\\\"}, \
-{\\\"7\\\", \\\"6\\\", \\\"2\\\", \\\"7\\\", \\\"7\\\", \\\"2\\\", \\\"4\\\", \
-\\\"0\\\", \\\"7\\\", \\\"6\\\", \\\"6\\\", \\\"3\\\"}, {\\\"0\\\", \
-\\\"3\\\", \\\"5\\\", \\\"3\\\", \\\"5\\\", \\\"4\\\", \\\"7\\\", \\\"5\\\", \
-\\\"9\\\", \\\"4\\\", \\\"5\\\", \\\"7\\\"}, {\\\"1\\\", \\\"3\\\", \
-\\\"8\\\", \\\"2\\\", \\\"1\\\", \\\"7\\\", \\\"8\\\", \\\"5\\\", \\\"2\\\", \
-\\\"5\\\", \\\"1\\\", \\\"6\\\"}, {\\\"6\\\", \\\"4\\\", \\\"2\\\", \
-\\\"7\\\", \\\"4\\\", \\\"2\\\", \\\"7\\\", \\\"4\\\", \\\"6\\\", \\\"6\\\", \
-\\\"3\\\", \\\"9\\\"}, {\\\"1\\\", \\\"9\\\", \\\"3\\\", \\\"2\\\", \
-\\\"0\\\", \\\"0\\\", \\\"3\\\", \\\"0\\\", \\\"5\\\", \\\"9\\\", \\\"9\\\", \
-\\\"2\\\"}, {\\\"1\\\", \\\"8\\\", \\\"1\\\", \\\"7\\\", \\\"4\\\", \
-\\\"1\\\", \\\"3\\\", \\\"5\\\", \\\"9\\\", \\\"6\\\", \\\"6\\\", \\\"2\\\"}, \
-{\\\"9\\\", \\\"0\\\", \\\"4\\\", \\\"3\\\", \\\"5\\\", \\\"7\\\", \\\"2\\\", \
-\\\"9\\\", \\\"0\\\", \\\"0\\\", \\\"3\\\", \\\"3\\\"}}, Rule[RowSpacings, \
-1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
-Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
-TraditionalForm]\\) is  row equivalent to the 12 \[Times] 12  identity \
-matrix.\\n\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
+\\\"\[NoBreak]\\\", \\\")\\\"}], TraditionalForm]\\) is \
+invertible.\\n\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
 GridBox[{{\\\"2\\\", \\\"7\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\", \\\"8\\\", \
 \\\"1\\\", \\\"8\\\", \\\"2\\\", \\\"8\\\", \\\"4\\\", \\\"5\\\"}, \
 {\\\"9\\\", \\\"0\\\", \\\"4\\\", \\\"5\\\", \\\"2\\\", \\\"3\\\", \\\"5\\\", \
@@ -1506,14 +1760,493 @@ GridBox[{{\\\"2\\\", \\\"7\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\", \\\"8\\\", \
 \\\"5\\\", \\\"7\\\", \\\"2\\\", \\\"9\\\", \\\"0\\\", \\\"0\\\", \\\"3\\\", \
 \\\"3\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
 Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \
+\\\"\[NoBreak]\\\", \\\")\\\"}], TraditionalForm]\\) is row equivalent to the \
+12 \[Times] 12 identity matrix.\\n\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\
+\[NoBreak]\\\", GridBox[{{\\\"2\\\", \\\"7\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\
+\", \\\"8\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\", \\\"8\\\", \\\"4\\\", \\\"5\\\
+\"}, {\\\"9\\\", \\\"0\\\", \\\"4\\\", \\\"5\\\", \\\"2\\\", \\\"3\\\", \\\"5\
+\\\", \\\"3\\\", \\\"6\\\", \\\"0\\\", \\\"2\\\", \\\"8\\\"}, {\\\"7\\\", \
+\\\"4\\\", \\\"7\\\", \\\"1\\\", \\\"3\\\", \\\"5\\\", \\\"2\\\", \\\"6\\\", \
+\\\"6\\\", \\\"2\\\", \\\"4\\\", \\\"9\\\"}, {\\\"7\\\", \\\"7\\\", \
+\\\"5\\\", \\\"7\\\", \\\"2\\\", \\\"4\\\", \\\"7\\\", \\\"0\\\", \\\"9\\\", \
+\\\"3\\\", \\\"6\\\", \\\"9\\\"}, {\\\"9\\\", \\\"9\\\", \\\"5\\\", \
+\\\"9\\\", \\\"5\\\", \\\"7\\\", \\\"4\\\", \\\"9\\\", \\\"6\\\", \\\"6\\\", \
+\\\"9\\\", \\\"6\\\"}, {\\\"7\\\", \\\"6\\\", \\\"2\\\", \\\"7\\\", \
+\\\"7\\\", \\\"2\\\", \\\"4\\\", \\\"0\\\", \\\"7\\\", \\\"6\\\", \\\"6\\\", \
+\\\"3\\\"}, {\\\"0\\\", \\\"3\\\", \\\"5\\\", \\\"3\\\", \\\"5\\\", \
+\\\"4\\\", \\\"7\\\", \\\"5\\\", \\\"9\\\", \\\"4\\\", \\\"5\\\", \\\"7\\\"}, \
+{\\\"1\\\", \\\"3\\\", \\\"8\\\", \\\"2\\\", \\\"1\\\", \\\"7\\\", \\\"8\\\", \
+\\\"5\\\", \\\"2\\\", \\\"5\\\", \\\"1\\\", \\\"6\\\"}, {\\\"6\\\", \
+\\\"4\\\", \\\"2\\\", \\\"7\\\", \\\"4\\\", \\\"2\\\", \\\"7\\\", \\\"4\\\", \
+\\\"6\\\", \\\"6\\\", \\\"3\\\", \\\"9\\\"}, {\\\"1\\\", \\\"9\\\", \
+\\\"3\\\", \\\"2\\\", \\\"0\\\", \\\"0\\\", \\\"3\\\", \\\"0\\\", \\\"5\\\", \
+\\\"9\\\", \\\"9\\\", \\\"2\\\"}, {\\\"1\\\", \\\"8\\\", \\\"1\\\", \
+\\\"7\\\", \\\"4\\\", \\\"1\\\", \\\"3\\\", \\\"5\\\", \\\"9\\\", \\\"6\\\", \
+\\\"6\\\", \\\"2\\\"}, {\\\"9\\\", \\\"0\\\", \\\"4\\\", \\\"3\\\", \
+\\\"5\\\", \\\"7\\\", \\\"2\\\", \\\"9\\\", \\\"0\\\", \\\"0\\\", \\\"3\\\", \
+\\\"3\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
+Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \
 \\\"\[NoBreak]\\\", \\\")\\\"}], TraditionalForm]\\) has 12 pivot \
-positions.\"\>"], "Output",
+positions.\\nThe statement \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\
+\\\", GridBox[{{\\\"2\\\", \\\"7\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\", \
+\\\"8\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\", \\\"8\\\", \\\"4\\\", \\\"5\\\"}, \
+{\\\"9\\\", \\\"0\\\", \\\"4\\\", \\\"5\\\", \\\"2\\\", \\\"3\\\", \\\"5\\\", \
+\\\"3\\\", \\\"6\\\", \\\"0\\\", \\\"2\\\", \\\"8\\\"}, {\\\"7\\\", \
+\\\"4\\\", \\\"7\\\", \\\"1\\\", \\\"3\\\", \\\"5\\\", \\\"2\\\", \\\"6\\\", \
+\\\"6\\\", \\\"2\\\", \\\"4\\\", \\\"9\\\"}, {\\\"7\\\", \\\"7\\\", \
+\\\"5\\\", \\\"7\\\", \\\"2\\\", \\\"4\\\", \\\"7\\\", \\\"0\\\", \\\"9\\\", \
+\\\"3\\\", \\\"6\\\", \\\"9\\\"}, {\\\"9\\\", \\\"9\\\", \\\"5\\\", \
+\\\"9\\\", \\\"5\\\", \\\"7\\\", \\\"4\\\", \\\"9\\\", \\\"6\\\", \\\"6\\\", \
+\\\"9\\\", \\\"6\\\"}, {\\\"7\\\", \\\"6\\\", \\\"2\\\", \\\"7\\\", \
+\\\"7\\\", \\\"2\\\", \\\"4\\\", \\\"0\\\", \\\"7\\\", \\\"6\\\", \\\"6\\\", \
+\\\"3\\\"}, {\\\"0\\\", \\\"3\\\", \\\"5\\\", \\\"3\\\", \\\"5\\\", \
+\\\"4\\\", \\\"7\\\", \\\"5\\\", \\\"9\\\", \\\"4\\\", \\\"5\\\", \\\"7\\\"}, \
+{\\\"1\\\", \\\"3\\\", \\\"8\\\", \\\"2\\\", \\\"1\\\", \\\"7\\\", \\\"8\\\", \
+\\\"5\\\", \\\"2\\\", \\\"5\\\", \\\"1\\\", \\\"6\\\"}, {\\\"6\\\", \
+\\\"4\\\", \\\"2\\\", \\\"7\\\", \\\"4\\\", \\\"2\\\", \\\"7\\\", \\\"4\\\", \
+\\\"6\\\", \\\"6\\\", \\\"3\\\", \\\"9\\\"}, {\\\"1\\\", \\\"9\\\", \
+\\\"3\\\", \\\"2\\\", \\\"0\\\", \\\"0\\\", \\\"3\\\", \\\"0\\\", \\\"5\\\", \
+\\\"9\\\", \\\"9\\\", \\\"2\\\"}, {\\\"1\\\", \\\"8\\\", \\\"1\\\", \
+\\\"7\\\", \\\"4\\\", \\\"1\\\", \\\"3\\\", \\\"5\\\", \\\"9\\\", \\\"6\\\", \
+\\\"6\\\", \\\"2\\\"}, {\\\"9\\\", \\\"0\\\", \\\"4\\\", \\\"3\\\", \
+\\\"5\\\", \\\"7\\\", \\\"2\\\", \\\"9\\\", \\\"0\\\", \\\"0\\\", \\\"3\\\", \
+\\\"3\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
+Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \
+\\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\)\\!\\(\\*TagBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
+TagBox[GridBox[{{SubscriptBox[\\\"x\\\", \\\"1\\\"]}, \
+{SubscriptBox[\\\"x\\\", \\\"2\\\"]}, {SubscriptBox[\\\"x\\\", \\\"3\\\"]}, \
+{SubscriptBox[\\\"x\\\", \\\"4\\\"]}, {SubscriptBox[\\\"x\\\", \\\"5\\\"]}, \
+{SubscriptBox[\\\"x\\\", \\\"6\\\"]}, {SubscriptBox[\\\"x\\\", \\\"7\\\"]}, \
+{SubscriptBox[\\\"x\\\", \\\"8\\\"]}, {SubscriptBox[\\\"x\\\", \\\"9\\\"]}, \
+{SubscriptBox[\\\"x\\\", \\\"10\\\"]}, {SubscriptBox[\\\"x\\\", \\\"11\\\"]}, \
+{SubscriptBox[\\\"x\\\", \\\"12\\\"]}}, Rule[RowSpacings, 1], \
+Rule[ColumnAlignments, Center], Rule[ColumnAlignments, Left]], Column], \\\"\
+\[NoBreak]\\\", \\\")\\\"}], Function[BoxForm`e$, \
+MatrixForm[BoxForm`e$]]]\\)=\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \
+\\\"\[NoBreak]\\\", GridBox[{{\\\"0\\\"}, {\\\"0\\\"}, {\\\"0\\\"}, \
+{\\\"0\\\"}, {\\\"0\\\"}, {\\\"0\\\"}, {\\\"0\\\"}, {\\\"0\\\"}, {\\\"0\\\"}, \
+{\\\"0\\\"}, {\\\"0\\\"}, {\\\"0\\\"}}, Rule[RowSpacings, 1], \
+Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\) has only the trivial solution.\\n\\nThe linear mapping \
+\\!\\(\\*TagBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
+TagBox[GridBox[{{SubscriptBox[\\\"x\\\", \\\"1\\\"]}, \
+{SubscriptBox[\\\"x\\\", \\\"2\\\"]}, {SubscriptBox[\\\"x\\\", \\\"3\\\"]}, \
+{SubscriptBox[\\\"x\\\", \\\"4\\\"]}, {SubscriptBox[\\\"x\\\", \\\"5\\\"]}, \
+{SubscriptBox[\\\"x\\\", \\\"6\\\"]}, {SubscriptBox[\\\"x\\\", \\\"7\\\"]}, \
+{SubscriptBox[\\\"x\\\", \\\"8\\\"]}, {SubscriptBox[\\\"x\\\", \\\"9\\\"]}, \
+{SubscriptBox[\\\"x\\\", \\\"10\\\"]}, {SubscriptBox[\\\"x\\\", \\\"11\\\"]}, \
+{SubscriptBox[\\\"x\\\", \\\"12\\\"]}}, Rule[RowSpacings, 1], \
+Rule[ColumnAlignments, Center], Rule[ColumnAlignments, Left]], Column], \\\"\
+\[NoBreak]\\\", \\\")\\\"}], Function[BoxForm`e$, MatrixForm[BoxForm`e$]]]\\)\
+\[Function]\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\
+\\\"2\\\", \\\"7\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\", \\\"8\\\", \\\"1\\\", \
+\\\"8\\\", \\\"2\\\", \\\"8\\\", \\\"4\\\", \\\"5\\\"}, {\\\"9\\\", \
+\\\"0\\\", \\\"4\\\", \\\"5\\\", \\\"2\\\", \\\"3\\\", \\\"5\\\", \\\"3\\\", \
+\\\"6\\\", \\\"0\\\", \\\"2\\\", \\\"8\\\"}, {\\\"7\\\", \\\"4\\\", \
+\\\"7\\\", \\\"1\\\", \\\"3\\\", \\\"5\\\", \\\"2\\\", \\\"6\\\", \\\"6\\\", \
+\\\"2\\\", \\\"4\\\", \\\"9\\\"}, {\\\"7\\\", \\\"7\\\", \\\"5\\\", \
+\\\"7\\\", \\\"2\\\", \\\"4\\\", \\\"7\\\", \\\"0\\\", \\\"9\\\", \\\"3\\\", \
+\\\"6\\\", \\\"9\\\"}, {\\\"9\\\", \\\"9\\\", \\\"5\\\", \\\"9\\\", \
+\\\"5\\\", \\\"7\\\", \\\"4\\\", \\\"9\\\", \\\"6\\\", \\\"6\\\", \\\"9\\\", \
+\\\"6\\\"}, {\\\"7\\\", \\\"6\\\", \\\"2\\\", \\\"7\\\", \\\"7\\\", \
+\\\"2\\\", \\\"4\\\", \\\"0\\\", \\\"7\\\", \\\"6\\\", \\\"6\\\", \\\"3\\\"}, \
+{\\\"0\\\", \\\"3\\\", \\\"5\\\", \\\"3\\\", \\\"5\\\", \\\"4\\\", \\\"7\\\", \
+\\\"5\\\", \\\"9\\\", \\\"4\\\", \\\"5\\\", \\\"7\\\"}, {\\\"1\\\", \
+\\\"3\\\", \\\"8\\\", \\\"2\\\", \\\"1\\\", \\\"7\\\", \\\"8\\\", \\\"5\\\", \
+\\\"2\\\", \\\"5\\\", \\\"1\\\", \\\"6\\\"}, {\\\"6\\\", \\\"4\\\", \
+\\\"2\\\", \\\"7\\\", \\\"4\\\", \\\"2\\\", \\\"7\\\", \\\"4\\\", \\\"6\\\", \
+\\\"6\\\", \\\"3\\\", \\\"9\\\"}, {\\\"1\\\", \\\"9\\\", \\\"3\\\", \
+\\\"2\\\", \\\"0\\\", \\\"0\\\", \\\"3\\\", \\\"0\\\", \\\"5\\\", \\\"9\\\", \
+\\\"9\\\", \\\"2\\\"}, {\\\"1\\\", \\\"8\\\", \\\"1\\\", \\\"7\\\", \
+\\\"4\\\", \\\"1\\\", \\\"3\\\", \\\"5\\\", \\\"9\\\", \\\"6\\\", \\\"6\\\", \
+\\\"2\\\"}, {\\\"9\\\", \\\"0\\\", \\\"4\\\", \\\"3\\\", \\\"5\\\", \
+\\\"7\\\", \\\"2\\\", \\\"9\\\", \\\"0\\\", \\\"0\\\", \\\"3\\\", \
+\\\"3\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
+Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \
+\\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\)\\!\\(\\*TagBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
+TagBox[GridBox[{{SubscriptBox[\\\"x\\\", \\\"1\\\"]}, \
+{SubscriptBox[\\\"x\\\", \\\"2\\\"]}, {SubscriptBox[\\\"x\\\", \\\"3\\\"]}, \
+{SubscriptBox[\\\"x\\\", \\\"4\\\"]}, {SubscriptBox[\\\"x\\\", \\\"5\\\"]}, \
+{SubscriptBox[\\\"x\\\", \\\"6\\\"]}, {SubscriptBox[\\\"x\\\", \\\"7\\\"]}, \
+{SubscriptBox[\\\"x\\\", \\\"8\\\"]}, {SubscriptBox[\\\"x\\\", \\\"9\\\"]}, \
+{SubscriptBox[\\\"x\\\", \\\"10\\\"]}, {SubscriptBox[\\\"x\\\", \\\"11\\\"]}, \
+{SubscriptBox[\\\"x\\\", \\\"12\\\"]}}, Rule[RowSpacings, 1], \
+Rule[ColumnAlignments, Center], Rule[ColumnAlignments, Left]], Column], \\\"\
+\[NoBreak]\\\", \\\")\\\"}], Function[BoxForm`e$, MatrixForm[BoxForm`e$]]]\\) \
+is one-to-one and injective.\\nThe statement \\!\\(\\*FormBox[RowBox[{\\\"(\\\
+\", \\\"\[NoBreak]\\\", GridBox[{{\\\"2\\\", \\\"7\\\", \\\"1\\\", \\\"8\\\", \
+\\\"2\\\", \\\"8\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\", \\\"8\\\", \\\"4\\\", \
+\\\"5\\\"}, {\\\"9\\\", \\\"0\\\", \\\"4\\\", \\\"5\\\", \\\"2\\\", \
+\\\"3\\\", \\\"5\\\", \\\"3\\\", \\\"6\\\", \\\"0\\\", \\\"2\\\", \\\"8\\\"}, \
+{\\\"7\\\", \\\"4\\\", \\\"7\\\", \\\"1\\\", \\\"3\\\", \\\"5\\\", \\\"2\\\", \
+\\\"6\\\", \\\"6\\\", \\\"2\\\", \\\"4\\\", \\\"9\\\"}, {\\\"7\\\", \
+\\\"7\\\", \\\"5\\\", \\\"7\\\", \\\"2\\\", \\\"4\\\", \\\"7\\\", \\\"0\\\", \
+\\\"9\\\", \\\"3\\\", \\\"6\\\", \\\"9\\\"}, {\\\"9\\\", \\\"9\\\", \
+\\\"5\\\", \\\"9\\\", \\\"5\\\", \\\"7\\\", \\\"4\\\", \\\"9\\\", \\\"6\\\", \
+\\\"6\\\", \\\"9\\\", \\\"6\\\"}, {\\\"7\\\", \\\"6\\\", \\\"2\\\", \
+\\\"7\\\", \\\"7\\\", \\\"2\\\", \\\"4\\\", \\\"0\\\", \\\"7\\\", \\\"6\\\", \
+\\\"6\\\", \\\"3\\\"}, {\\\"0\\\", \\\"3\\\", \\\"5\\\", \\\"3\\\", \
+\\\"5\\\", \\\"4\\\", \\\"7\\\", \\\"5\\\", \\\"9\\\", \\\"4\\\", \\\"5\\\", \
+\\\"7\\\"}, {\\\"1\\\", \\\"3\\\", \\\"8\\\", \\\"2\\\", \\\"1\\\", \
+\\\"7\\\", \\\"8\\\", \\\"5\\\", \\\"2\\\", \\\"5\\\", \\\"1\\\", \\\"6\\\"}, \
+{\\\"6\\\", \\\"4\\\", \\\"2\\\", \\\"7\\\", \\\"4\\\", \\\"2\\\", \\\"7\\\", \
+\\\"4\\\", \\\"6\\\", \\\"6\\\", \\\"3\\\", \\\"9\\\"}, {\\\"1\\\", \
+\\\"9\\\", \\\"3\\\", \\\"2\\\", \\\"0\\\", \\\"0\\\", \\\"3\\\", \\\"0\\\", \
+\\\"5\\\", \\\"9\\\", \\\"9\\\", \\\"2\\\"}, {\\\"1\\\", \\\"8\\\", \
+\\\"1\\\", \\\"7\\\", \\\"4\\\", \\\"1\\\", \\\"3\\\", \\\"5\\\", \\\"9\\\", \
+\\\"6\\\", \\\"6\\\", \\\"2\\\"}, {\\\"9\\\", \\\"0\\\", \\\"4\\\", \
+\\\"3\\\", \\\"5\\\", \\\"7\\\", \\\"2\\\", \\\"9\\\", \\\"0\\\", \\\"0\\\", \
+\\\"3\\\", \\\"3\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
+Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \
+\\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\)\\!\\(\\*TagBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
+TagBox[GridBox[{{SubscriptBox[\\\"x\\\", \\\"1\\\"]}, \
+{SubscriptBox[\\\"x\\\", \\\"2\\\"]}, {SubscriptBox[\\\"x\\\", \\\"3\\\"]}, \
+{SubscriptBox[\\\"x\\\", \\\"4\\\"]}, {SubscriptBox[\\\"x\\\", \\\"5\\\"]}, \
+{SubscriptBox[\\\"x\\\", \\\"6\\\"]}, {SubscriptBox[\\\"x\\\", \\\"7\\\"]}, \
+{SubscriptBox[\\\"x\\\", \\\"8\\\"]}, {SubscriptBox[\\\"x\\\", \\\"9\\\"]}, \
+{SubscriptBox[\\\"x\\\", \\\"10\\\"]}, {SubscriptBox[\\\"x\\\", \\\"11\\\"]}, \
+{SubscriptBox[\\\"x\\\", \\\"12\\\"]}}, Rule[RowSpacings, 1], \
+Rule[ColumnAlignments, Center], Rule[ColumnAlignments, Left]], Column], \\\"\
+\[NoBreak]\\\", \\\")\\\"}], Function[BoxForm`e$, \
+MatrixForm[BoxForm`e$]]]\\)=b has at least one solution for all b in \
+\\!\\(\\*SuperscriptBox[\\(\[DoubleStruckCapitalR]\\), \\(12\\)]\\).\\nThe \
+columns of \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\
+\\\"2\\\", \\\"7\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\", \\\"8\\\", \\\"1\\\", \
+\\\"8\\\", \\\"2\\\", \\\"8\\\", \\\"4\\\", \\\"5\\\"}, {\\\"9\\\", \
+\\\"0\\\", \\\"4\\\", \\\"5\\\", \\\"2\\\", \\\"3\\\", \\\"5\\\", \\\"3\\\", \
+\\\"6\\\", \\\"0\\\", \\\"2\\\", \\\"8\\\"}, {\\\"7\\\", \\\"4\\\", \
+\\\"7\\\", \\\"1\\\", \\\"3\\\", \\\"5\\\", \\\"2\\\", \\\"6\\\", \\\"6\\\", \
+\\\"2\\\", \\\"4\\\", \\\"9\\\"}, {\\\"7\\\", \\\"7\\\", \\\"5\\\", \
+\\\"7\\\", \\\"2\\\", \\\"4\\\", \\\"7\\\", \\\"0\\\", \\\"9\\\", \\\"3\\\", \
+\\\"6\\\", \\\"9\\\"}, {\\\"9\\\", \\\"9\\\", \\\"5\\\", \\\"9\\\", \
+\\\"5\\\", \\\"7\\\", \\\"4\\\", \\\"9\\\", \\\"6\\\", \\\"6\\\", \\\"9\\\", \
+\\\"6\\\"}, {\\\"7\\\", \\\"6\\\", \\\"2\\\", \\\"7\\\", \\\"7\\\", \
+\\\"2\\\", \\\"4\\\", \\\"0\\\", \\\"7\\\", \\\"6\\\", \\\"6\\\", \\\"3\\\"}, \
+{\\\"0\\\", \\\"3\\\", \\\"5\\\", \\\"3\\\", \\\"5\\\", \\\"4\\\", \\\"7\\\", \
+\\\"5\\\", \\\"9\\\", \\\"4\\\", \\\"5\\\", \\\"7\\\"}, {\\\"1\\\", \
+\\\"3\\\", \\\"8\\\", \\\"2\\\", \\\"1\\\", \\\"7\\\", \\\"8\\\", \\\"5\\\", \
+\\\"2\\\", \\\"5\\\", \\\"1\\\", \\\"6\\\"}, {\\\"6\\\", \\\"4\\\", \
+\\\"2\\\", \\\"7\\\", \\\"4\\\", \\\"2\\\", \\\"7\\\", \\\"4\\\", \\\"6\\\", \
+\\\"6\\\", \\\"3\\\", \\\"9\\\"}, {\\\"1\\\", \\\"9\\\", \\\"3\\\", \
+\\\"2\\\", \\\"0\\\", \\\"0\\\", \\\"3\\\", \\\"0\\\", \\\"5\\\", \\\"9\\\", \
+\\\"9\\\", \\\"2\\\"}, {\\\"1\\\", \\\"8\\\", \\\"1\\\", \\\"7\\\", \
+\\\"4\\\", \\\"1\\\", \\\"3\\\", \\\"5\\\", \\\"9\\\", \\\"6\\\", \\\"6\\\", \
+\\\"2\\\"}, {\\\"9\\\", \\\"0\\\", \\\"4\\\", \\\"3\\\", \\\"5\\\", \
+\\\"7\\\", \\\"2\\\", \\\"9\\\", \\\"0\\\", \\\"0\\\", \\\"3\\\", \
+\\\"3\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
+Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \
+\\\"\[NoBreak]\\\", \\\")\\\"}], TraditionalForm]\\) do form a basis for \
+\\!\\(\\*SuperscriptBox[\\(\[DoubleStruckCapitalR]\\), \\(12\\)]\\).\\nThe \
+column space of \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
+GridBox[{{\\\"2\\\", \\\"7\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\", \\\"8\\\", \
+\\\"1\\\", \\\"8\\\", \\\"2\\\", \\\"8\\\", \\\"4\\\", \\\"5\\\"}, \
+{\\\"9\\\", \\\"0\\\", \\\"4\\\", \\\"5\\\", \\\"2\\\", \\\"3\\\", \\\"5\\\", \
+\\\"3\\\", \\\"6\\\", \\\"0\\\", \\\"2\\\", \\\"8\\\"}, {\\\"7\\\", \
+\\\"4\\\", \\\"7\\\", \\\"1\\\", \\\"3\\\", \\\"5\\\", \\\"2\\\", \\\"6\\\", \
+\\\"6\\\", \\\"2\\\", \\\"4\\\", \\\"9\\\"}, {\\\"7\\\", \\\"7\\\", \
+\\\"5\\\", \\\"7\\\", \\\"2\\\", \\\"4\\\", \\\"7\\\", \\\"0\\\", \\\"9\\\", \
+\\\"3\\\", \\\"6\\\", \\\"9\\\"}, {\\\"9\\\", \\\"9\\\", \\\"5\\\", \
+\\\"9\\\", \\\"5\\\", \\\"7\\\", \\\"4\\\", \\\"9\\\", \\\"6\\\", \\\"6\\\", \
+\\\"9\\\", \\\"6\\\"}, {\\\"7\\\", \\\"6\\\", \\\"2\\\", \\\"7\\\", \
+\\\"7\\\", \\\"2\\\", \\\"4\\\", \\\"0\\\", \\\"7\\\", \\\"6\\\", \\\"6\\\", \
+\\\"3\\\"}, {\\\"0\\\", \\\"3\\\", \\\"5\\\", \\\"3\\\", \\\"5\\\", \
+\\\"4\\\", \\\"7\\\", \\\"5\\\", \\\"9\\\", \\\"4\\\", \\\"5\\\", \\\"7\\\"}, \
+{\\\"1\\\", \\\"3\\\", \\\"8\\\", \\\"2\\\", \\\"1\\\", \\\"7\\\", \\\"8\\\", \
+\\\"5\\\", \\\"2\\\", \\\"5\\\", \\\"1\\\", \\\"6\\\"}, {\\\"6\\\", \
+\\\"4\\\", \\\"2\\\", \\\"7\\\", \\\"4\\\", \\\"2\\\", \\\"7\\\", \\\"4\\\", \
+\\\"6\\\", \\\"6\\\", \\\"3\\\", \\\"9\\\"}, {\\\"1\\\", \\\"9\\\", \
+\\\"3\\\", \\\"2\\\", \\\"0\\\", \\\"0\\\", \\\"3\\\", \\\"0\\\", \\\"5\\\", \
+\\\"9\\\", \\\"9\\\", \\\"2\\\"}, {\\\"1\\\", \\\"8\\\", \\\"1\\\", \
+\\\"7\\\", \\\"4\\\", \\\"1\\\", \\\"3\\\", \\\"5\\\", \\\"9\\\", \\\"6\\\", \
+\\\"6\\\", \\\"2\\\"}, {\\\"9\\\", \\\"0\\\", \\\"4\\\", \\\"3\\\", \
+\\\"5\\\", \\\"7\\\", \\\"2\\\", \\\"9\\\", \\\"0\\\", \\\"0\\\", \\\"3\\\", \
+\\\"3\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
+Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \
+\\\"\[NoBreak]\\\", \\\")\\\"}], TraditionalForm]\\) is \
+\\!\\(\\*SuperscriptBox[\\(\[DoubleStruckCapitalR]\\), \\(12\\)]\\).\\nThe \
+dimension of the column space of \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\
+\[NoBreak]\\\", GridBox[{{\\\"2\\\", \\\"7\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\
+\", \\\"8\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\", \\\"8\\\", \\\"4\\\", \\\"5\\\
+\"}, {\\\"9\\\", \\\"0\\\", \\\"4\\\", \\\"5\\\", \\\"2\\\", \\\"3\\\", \\\"5\
+\\\", \\\"3\\\", \\\"6\\\", \\\"0\\\", \\\"2\\\", \\\"8\\\"}, {\\\"7\\\", \
+\\\"4\\\", \\\"7\\\", \\\"1\\\", \\\"3\\\", \\\"5\\\", \\\"2\\\", \\\"6\\\", \
+\\\"6\\\", \\\"2\\\", \\\"4\\\", \\\"9\\\"}, {\\\"7\\\", \\\"7\\\", \
+\\\"5\\\", \\\"7\\\", \\\"2\\\", \\\"4\\\", \\\"7\\\", \\\"0\\\", \\\"9\\\", \
+\\\"3\\\", \\\"6\\\", \\\"9\\\"}, {\\\"9\\\", \\\"9\\\", \\\"5\\\", \
+\\\"9\\\", \\\"5\\\", \\\"7\\\", \\\"4\\\", \\\"9\\\", \\\"6\\\", \\\"6\\\", \
+\\\"9\\\", \\\"6\\\"}, {\\\"7\\\", \\\"6\\\", \\\"2\\\", \\\"7\\\", \
+\\\"7\\\", \\\"2\\\", \\\"4\\\", \\\"0\\\", \\\"7\\\", \\\"6\\\", \\\"6\\\", \
+\\\"3\\\"}, {\\\"0\\\", \\\"3\\\", \\\"5\\\", \\\"3\\\", \\\"5\\\", \
+\\\"4\\\", \\\"7\\\", \\\"5\\\", \\\"9\\\", \\\"4\\\", \\\"5\\\", \\\"7\\\"}, \
+{\\\"1\\\", \\\"3\\\", \\\"8\\\", \\\"2\\\", \\\"1\\\", \\\"7\\\", \\\"8\\\", \
+\\\"5\\\", \\\"2\\\", \\\"5\\\", \\\"1\\\", \\\"6\\\"}, {\\\"6\\\", \
+\\\"4\\\", \\\"2\\\", \\\"7\\\", \\\"4\\\", \\\"2\\\", \\\"7\\\", \\\"4\\\", \
+\\\"6\\\", \\\"6\\\", \\\"3\\\", \\\"9\\\"}, {\\\"1\\\", \\\"9\\\", \
+\\\"3\\\", \\\"2\\\", \\\"0\\\", \\\"0\\\", \\\"3\\\", \\\"0\\\", \\\"5\\\", \
+\\\"9\\\", \\\"9\\\", \\\"2\\\"}, {\\\"1\\\", \\\"8\\\", \\\"1\\\", \
+\\\"7\\\", \\\"4\\\", \\\"1\\\", \\\"3\\\", \\\"5\\\", \\\"9\\\", \\\"6\\\", \
+\\\"6\\\", \\\"2\\\"}, {\\\"9\\\", \\\"0\\\", \\\"4\\\", \\\"3\\\", \
+\\\"5\\\", \\\"7\\\", \\\"2\\\", \\\"9\\\", \\\"0\\\", \\\"0\\\", \\\"3\\\", \
+\\\"3\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
+Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \
+\\\"\[NoBreak]\\\", \\\")\\\"}], TraditionalForm]\\) is 12.\\nThe rank of \\!\
+\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\\\"2\\\", \
+\\\"7\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\", \\\"8\\\", \\\"1\\\", \\\"8\\\", \
+\\\"2\\\", \\\"8\\\", \\\"4\\\", \\\"5\\\"}, {\\\"9\\\", \\\"0\\\", \
+\\\"4\\\", \\\"5\\\", \\\"2\\\", \\\"3\\\", \\\"5\\\", \\\"3\\\", \\\"6\\\", \
+\\\"0\\\", \\\"2\\\", \\\"8\\\"}, {\\\"7\\\", \\\"4\\\", \\\"7\\\", \
+\\\"1\\\", \\\"3\\\", \\\"5\\\", \\\"2\\\", \\\"6\\\", \\\"6\\\", \\\"2\\\", \
+\\\"4\\\", \\\"9\\\"}, {\\\"7\\\", \\\"7\\\", \\\"5\\\", \\\"7\\\", \
+\\\"2\\\", \\\"4\\\", \\\"7\\\", \\\"0\\\", \\\"9\\\", \\\"3\\\", \\\"6\\\", \
+\\\"9\\\"}, {\\\"9\\\", \\\"9\\\", \\\"5\\\", \\\"9\\\", \\\"5\\\", \
+\\\"7\\\", \\\"4\\\", \\\"9\\\", \\\"6\\\", \\\"6\\\", \\\"9\\\", \\\"6\\\"}, \
+{\\\"7\\\", \\\"6\\\", \\\"2\\\", \\\"7\\\", \\\"7\\\", \\\"2\\\", \\\"4\\\", \
+\\\"0\\\", \\\"7\\\", \\\"6\\\", \\\"6\\\", \\\"3\\\"}, {\\\"0\\\", \
+\\\"3\\\", \\\"5\\\", \\\"3\\\", \\\"5\\\", \\\"4\\\", \\\"7\\\", \\\"5\\\", \
+\\\"9\\\", \\\"4\\\", \\\"5\\\", \\\"7\\\"}, {\\\"1\\\", \\\"3\\\", \
+\\\"8\\\", \\\"2\\\", \\\"1\\\", \\\"7\\\", \\\"8\\\", \\\"5\\\", \\\"2\\\", \
+\\\"5\\\", \\\"1\\\", \\\"6\\\"}, {\\\"6\\\", \\\"4\\\", \\\"2\\\", \
+\\\"7\\\", \\\"4\\\", \\\"2\\\", \\\"7\\\", \\\"4\\\", \\\"6\\\", \\\"6\\\", \
+\\\"3\\\", \\\"9\\\"}, {\\\"1\\\", \\\"9\\\", \\\"3\\\", \\\"2\\\", \
+\\\"0\\\", \\\"0\\\", \\\"3\\\", \\\"0\\\", \\\"5\\\", \\\"9\\\", \\\"9\\\", \
+\\\"2\\\"}, {\\\"1\\\", \\\"8\\\", \\\"1\\\", \\\"7\\\", \\\"4\\\", \
+\\\"1\\\", \\\"3\\\", \\\"5\\\", \\\"9\\\", \\\"6\\\", \\\"6\\\", \\\"2\\\"}, \
+{\\\"9\\\", \\\"0\\\", \\\"4\\\", \\\"3\\\", \\\"5\\\", \\\"7\\\", \\\"2\\\", \
+\\\"9\\\", \\\"0\\\", \\\"0\\\", \\\"3\\\", \\\"3\\\"}}, Rule[RowSpacings, \
+1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\) is 12.\\nThe null space of \\!\\(\\*FormBox[RowBox[{\\\"(\
+\\\", \\\"\[NoBreak]\\\", GridBox[{{\\\"2\\\", \\\"7\\\", \\\"1\\\", \
+\\\"8\\\", \\\"2\\\", \\\"8\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\", \\\"8\\\", \
+\\\"4\\\", \\\"5\\\"}, {\\\"9\\\", \\\"0\\\", \\\"4\\\", \\\"5\\\", \
+\\\"2\\\", \\\"3\\\", \\\"5\\\", \\\"3\\\", \\\"6\\\", \\\"0\\\", \\\"2\\\", \
+\\\"8\\\"}, {\\\"7\\\", \\\"4\\\", \\\"7\\\", \\\"1\\\", \\\"3\\\", \
+\\\"5\\\", \\\"2\\\", \\\"6\\\", \\\"6\\\", \\\"2\\\", \\\"4\\\", \\\"9\\\"}, \
+{\\\"7\\\", \\\"7\\\", \\\"5\\\", \\\"7\\\", \\\"2\\\", \\\"4\\\", \\\"7\\\", \
+\\\"0\\\", \\\"9\\\", \\\"3\\\", \\\"6\\\", \\\"9\\\"}, {\\\"9\\\", \
+\\\"9\\\", \\\"5\\\", \\\"9\\\", \\\"5\\\", \\\"7\\\", \\\"4\\\", \\\"9\\\", \
+\\\"6\\\", \\\"6\\\", \\\"9\\\", \\\"6\\\"}, {\\\"7\\\", \\\"6\\\", \
+\\\"2\\\", \\\"7\\\", \\\"7\\\", \\\"2\\\", \\\"4\\\", \\\"0\\\", \\\"7\\\", \
+\\\"6\\\", \\\"6\\\", \\\"3\\\"}, {\\\"0\\\", \\\"3\\\", \\\"5\\\", \
+\\\"3\\\", \\\"5\\\", \\\"4\\\", \\\"7\\\", \\\"5\\\", \\\"9\\\", \\\"4\\\", \
+\\\"5\\\", \\\"7\\\"}, {\\\"1\\\", \\\"3\\\", \\\"8\\\", \\\"2\\\", \
+\\\"1\\\", \\\"7\\\", \\\"8\\\", \\\"5\\\", \\\"2\\\", \\\"5\\\", \\\"1\\\", \
+\\\"6\\\"}, {\\\"6\\\", \\\"4\\\", \\\"2\\\", \\\"7\\\", \\\"4\\\", \
+\\\"2\\\", \\\"7\\\", \\\"4\\\", \\\"6\\\", \\\"6\\\", \\\"3\\\", \\\"9\\\"}, \
+{\\\"1\\\", \\\"9\\\", \\\"3\\\", \\\"2\\\", \\\"0\\\", \\\"0\\\", \\\"3\\\", \
+\\\"0\\\", \\\"5\\\", \\\"9\\\", \\\"9\\\", \\\"2\\\"}, {\\\"1\\\", \
+\\\"8\\\", \\\"1\\\", \\\"7\\\", \\\"4\\\", \\\"1\\\", \\\"3\\\", \\\"5\\\", \
+\\\"9\\\", \\\"6\\\", \\\"6\\\", \\\"2\\\"}, {\\\"9\\\", \\\"0\\\", \
+\\\"4\\\", \\\"3\\\", \\\"5\\\", \\\"7\\\", \\\"2\\\", \\\"9\\\", \\\"0\\\", \
+\\\"0\\\", \\\"3\\\", \\\"3\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, \
+1], Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \\\"\
+\[NoBreak]\\\", \\\")\\\"}], TraditionalForm]\\) is \\!\\(\\*FormBox[RowBox[{\
+\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\\\"0\\\"}, {\\\"0\\\"}, \
+{\\\"0\\\"}, {\\\"0\\\"}, {\\\"0\\\"}, {\\\"0\\\"}, {\\\"0\\\"}, {\\\"0\\\"}, \
+{\\\"0\\\"}, {\\\"0\\\"}, {\\\"0\\\"}, {\\\"0\\\"}}, Rule[RowSpacings, 1], \
+Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\).\\nThe dimension of the the null space of \
+\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\\\"2\\\", \
+\\\"7\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\", \\\"8\\\", \\\"1\\\", \\\"8\\\", \
+\\\"2\\\", \\\"8\\\", \\\"4\\\", \\\"5\\\"}, {\\\"9\\\", \\\"0\\\", \
+\\\"4\\\", \\\"5\\\", \\\"2\\\", \\\"3\\\", \\\"5\\\", \\\"3\\\", \\\"6\\\", \
+\\\"0\\\", \\\"2\\\", \\\"8\\\"}, {\\\"7\\\", \\\"4\\\", \\\"7\\\", \
+\\\"1\\\", \\\"3\\\", \\\"5\\\", \\\"2\\\", \\\"6\\\", \\\"6\\\", \\\"2\\\", \
+\\\"4\\\", \\\"9\\\"}, {\\\"7\\\", \\\"7\\\", \\\"5\\\", \\\"7\\\", \
+\\\"2\\\", \\\"4\\\", \\\"7\\\", \\\"0\\\", \\\"9\\\", \\\"3\\\", \\\"6\\\", \
+\\\"9\\\"}, {\\\"9\\\", \\\"9\\\", \\\"5\\\", \\\"9\\\", \\\"5\\\", \
+\\\"7\\\", \\\"4\\\", \\\"9\\\", \\\"6\\\", \\\"6\\\", \\\"9\\\", \\\"6\\\"}, \
+{\\\"7\\\", \\\"6\\\", \\\"2\\\", \\\"7\\\", \\\"7\\\", \\\"2\\\", \\\"4\\\", \
+\\\"0\\\", \\\"7\\\", \\\"6\\\", \\\"6\\\", \\\"3\\\"}, {\\\"0\\\", \
+\\\"3\\\", \\\"5\\\", \\\"3\\\", \\\"5\\\", \\\"4\\\", \\\"7\\\", \\\"5\\\", \
+\\\"9\\\", \\\"4\\\", \\\"5\\\", \\\"7\\\"}, {\\\"1\\\", \\\"3\\\", \
+\\\"8\\\", \\\"2\\\", \\\"1\\\", \\\"7\\\", \\\"8\\\", \\\"5\\\", \\\"2\\\", \
+\\\"5\\\", \\\"1\\\", \\\"6\\\"}, {\\\"6\\\", \\\"4\\\", \\\"2\\\", \
+\\\"7\\\", \\\"4\\\", \\\"2\\\", \\\"7\\\", \\\"4\\\", \\\"6\\\", \\\"6\\\", \
+\\\"3\\\", \\\"9\\\"}, {\\\"1\\\", \\\"9\\\", \\\"3\\\", \\\"2\\\", \
+\\\"0\\\", \\\"0\\\", \\\"3\\\", \\\"0\\\", \\\"5\\\", \\\"9\\\", \\\"9\\\", \
+\\\"2\\\"}, {\\\"1\\\", \\\"8\\\", \\\"1\\\", \\\"7\\\", \\\"4\\\", \
+\\\"1\\\", \\\"3\\\", \\\"5\\\", \\\"9\\\", \\\"6\\\", \\\"6\\\", \\\"2\\\"}, \
+{\\\"9\\\", \\\"0\\\", \\\"4\\\", \\\"3\\\", \\\"5\\\", \\\"7\\\", \\\"2\\\", \
+\\\"9\\\", \\\"0\\\", \\\"0\\\", \\\"3\\\", \\\"3\\\"}}, Rule[RowSpacings, \
+1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\) is 0.\\nThe nullity is 0.\\n0 is not an eigenvalue of \\!\
+\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\\\"2\\\", \
+\\\"7\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\", \\\"8\\\", \\\"1\\\", \\\"8\\\", \
+\\\"2\\\", \\\"8\\\", \\\"4\\\", \\\"5\\\"}, {\\\"9\\\", \\\"0\\\", \
+\\\"4\\\", \\\"5\\\", \\\"2\\\", \\\"3\\\", \\\"5\\\", \\\"3\\\", \\\"6\\\", \
+\\\"0\\\", \\\"2\\\", \\\"8\\\"}, {\\\"7\\\", \\\"4\\\", \\\"7\\\", \
+\\\"1\\\", \\\"3\\\", \\\"5\\\", \\\"2\\\", \\\"6\\\", \\\"6\\\", \\\"2\\\", \
+\\\"4\\\", \\\"9\\\"}, {\\\"7\\\", \\\"7\\\", \\\"5\\\", \\\"7\\\", \
+\\\"2\\\", \\\"4\\\", \\\"7\\\", \\\"0\\\", \\\"9\\\", \\\"3\\\", \\\"6\\\", \
+\\\"9\\\"}, {\\\"9\\\", \\\"9\\\", \\\"5\\\", \\\"9\\\", \\\"5\\\", \
+\\\"7\\\", \\\"4\\\", \\\"9\\\", \\\"6\\\", \\\"6\\\", \\\"9\\\", \\\"6\\\"}, \
+{\\\"7\\\", \\\"6\\\", \\\"2\\\", \\\"7\\\", \\\"7\\\", \\\"2\\\", \\\"4\\\", \
+\\\"0\\\", \\\"7\\\", \\\"6\\\", \\\"6\\\", \\\"3\\\"}, {\\\"0\\\", \
+\\\"3\\\", \\\"5\\\", \\\"3\\\", \\\"5\\\", \\\"4\\\", \\\"7\\\", \\\"5\\\", \
+\\\"9\\\", \\\"4\\\", \\\"5\\\", \\\"7\\\"}, {\\\"1\\\", \\\"3\\\", \
+\\\"8\\\", \\\"2\\\", \\\"1\\\", \\\"7\\\", \\\"8\\\", \\\"5\\\", \\\"2\\\", \
+\\\"5\\\", \\\"1\\\", \\\"6\\\"}, {\\\"6\\\", \\\"4\\\", \\\"2\\\", \
+\\\"7\\\", \\\"4\\\", \\\"2\\\", \\\"7\\\", \\\"4\\\", \\\"6\\\", \\\"6\\\", \
+\\\"3\\\", \\\"9\\\"}, {\\\"1\\\", \\\"9\\\", \\\"3\\\", \\\"2\\\", \
+\\\"0\\\", \\\"0\\\", \\\"3\\\", \\\"0\\\", \\\"5\\\", \\\"9\\\", \\\"9\\\", \
+\\\"2\\\"}, {\\\"1\\\", \\\"8\\\", \\\"1\\\", \\\"7\\\", \\\"4\\\", \
+\\\"1\\\", \\\"3\\\", \\\"5\\\", \\\"9\\\", \\\"6\\\", \\\"6\\\", \\\"2\\\"}, \
+{\\\"9\\\", \\\"0\\\", \\\"4\\\", \\\"3\\\", \\\"5\\\", \\\"7\\\", \\\"2\\\", \
+\\\"9\\\", \\\"0\\\", \\\"0\\\", \\\"3\\\", \\\"3\\\"}}, Rule[RowSpacings, \
+1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\).\\nThe determinant of \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \
+\\\"\[NoBreak]\\\", GridBox[{{\\\"2\\\", \\\"7\\\", \\\"1\\\", \\\"8\\\", \
+\\\"2\\\", \\\"8\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\", \\\"8\\\", \\\"4\\\", \
+\\\"5\\\"}, {\\\"9\\\", \\\"0\\\", \\\"4\\\", \\\"5\\\", \\\"2\\\", \
+\\\"3\\\", \\\"5\\\", \\\"3\\\", \\\"6\\\", \\\"0\\\", \\\"2\\\", \\\"8\\\"}, \
+{\\\"7\\\", \\\"4\\\", \\\"7\\\", \\\"1\\\", \\\"3\\\", \\\"5\\\", \\\"2\\\", \
+\\\"6\\\", \\\"6\\\", \\\"2\\\", \\\"4\\\", \\\"9\\\"}, {\\\"7\\\", \
+\\\"7\\\", \\\"5\\\", \\\"7\\\", \\\"2\\\", \\\"4\\\", \\\"7\\\", \\\"0\\\", \
+\\\"9\\\", \\\"3\\\", \\\"6\\\", \\\"9\\\"}, {\\\"9\\\", \\\"9\\\", \
+\\\"5\\\", \\\"9\\\", \\\"5\\\", \\\"7\\\", \\\"4\\\", \\\"9\\\", \\\"6\\\", \
+\\\"6\\\", \\\"9\\\", \\\"6\\\"}, {\\\"7\\\", \\\"6\\\", \\\"2\\\", \
+\\\"7\\\", \\\"7\\\", \\\"2\\\", \\\"4\\\", \\\"0\\\", \\\"7\\\", \\\"6\\\", \
+\\\"6\\\", \\\"3\\\"}, {\\\"0\\\", \\\"3\\\", \\\"5\\\", \\\"3\\\", \
+\\\"5\\\", \\\"4\\\", \\\"7\\\", \\\"5\\\", \\\"9\\\", \\\"4\\\", \\\"5\\\", \
+\\\"7\\\"}, {\\\"1\\\", \\\"3\\\", \\\"8\\\", \\\"2\\\", \\\"1\\\", \
+\\\"7\\\", \\\"8\\\", \\\"5\\\", \\\"2\\\", \\\"5\\\", \\\"1\\\", \\\"6\\\"}, \
+{\\\"6\\\", \\\"4\\\", \\\"2\\\", \\\"7\\\", \\\"4\\\", \\\"2\\\", \\\"7\\\", \
+\\\"4\\\", \\\"6\\\", \\\"6\\\", \\\"3\\\", \\\"9\\\"}, {\\\"1\\\", \
+\\\"9\\\", \\\"3\\\", \\\"2\\\", \\\"0\\\", \\\"0\\\", \\\"3\\\", \\\"0\\\", \
+\\\"5\\\", \\\"9\\\", \\\"9\\\", \\\"2\\\"}, {\\\"1\\\", \\\"8\\\", \
+\\\"1\\\", \\\"7\\\", \\\"4\\\", \\\"1\\\", \\\"3\\\", \\\"5\\\", \\\"9\\\", \
+\\\"6\\\", \\\"6\\\", \\\"2\\\"}, {\\\"9\\\", \\\"0\\\", \\\"4\\\", \
+\\\"3\\\", \\\"5\\\", \\\"7\\\", \\\"2\\\", \\\"9\\\", \\\"0\\\", \\\"0\\\", \
+\\\"3\\\", \\\"3\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
+Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \
+\\\"\[NoBreak]\\\", \\\")\\\"}], TraditionalForm]\\) is not zero.\\n (Col \\!\
+\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\\\"2\\\", \
+\\\"7\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\", \\\"8\\\", \\\"1\\\", \\\"8\\\", \
+\\\"2\\\", \\\"8\\\", \\\"4\\\", \\\"5\\\"}, {\\\"9\\\", \\\"0\\\", \
+\\\"4\\\", \\\"5\\\", \\\"2\\\", \\\"3\\\", \\\"5\\\", \\\"3\\\", \\\"6\\\", \
+\\\"0\\\", \\\"2\\\", \\\"8\\\"}, {\\\"7\\\", \\\"4\\\", \\\"7\\\", \
+\\\"1\\\", \\\"3\\\", \\\"5\\\", \\\"2\\\", \\\"6\\\", \\\"6\\\", \\\"2\\\", \
+\\\"4\\\", \\\"9\\\"}, {\\\"7\\\", \\\"7\\\", \\\"5\\\", \\\"7\\\", \
+\\\"2\\\", \\\"4\\\", \\\"7\\\", \\\"0\\\", \\\"9\\\", \\\"3\\\", \\\"6\\\", \
+\\\"9\\\"}, {\\\"9\\\", \\\"9\\\", \\\"5\\\", \\\"9\\\", \\\"5\\\", \
+\\\"7\\\", \\\"4\\\", \\\"9\\\", \\\"6\\\", \\\"6\\\", \\\"9\\\", \\\"6\\\"}, \
+{\\\"7\\\", \\\"6\\\", \\\"2\\\", \\\"7\\\", \\\"7\\\", \\\"2\\\", \\\"4\\\", \
+\\\"0\\\", \\\"7\\\", \\\"6\\\", \\\"6\\\", \\\"3\\\"}, {\\\"0\\\", \
+\\\"3\\\", \\\"5\\\", \\\"3\\\", \\\"5\\\", \\\"4\\\", \\\"7\\\", \\\"5\\\", \
+\\\"9\\\", \\\"4\\\", \\\"5\\\", \\\"7\\\"}, {\\\"1\\\", \\\"3\\\", \
+\\\"8\\\", \\\"2\\\", \\\"1\\\", \\\"7\\\", \\\"8\\\", \\\"5\\\", \\\"2\\\", \
+\\\"5\\\", \\\"1\\\", \\\"6\\\"}, {\\\"6\\\", \\\"4\\\", \\\"2\\\", \
+\\\"7\\\", \\\"4\\\", \\\"2\\\", \\\"7\\\", \\\"4\\\", \\\"6\\\", \\\"6\\\", \
+\\\"3\\\", \\\"9\\\"}, {\\\"1\\\", \\\"9\\\", \\\"3\\\", \\\"2\\\", \
+\\\"0\\\", \\\"0\\\", \\\"3\\\", \\\"0\\\", \\\"5\\\", \\\"9\\\", \\\"9\\\", \
+\\\"2\\\"}, {\\\"1\\\", \\\"8\\\", \\\"1\\\", \\\"7\\\", \\\"4\\\", \
+\\\"1\\\", \\\"3\\\", \\\"5\\\", \\\"9\\\", \\\"6\\\", \\\"6\\\", \\\"2\\\"}, \
+{\\\"9\\\", \\\"0\\\", \\\"4\\\", \\\"3\\\", \\\"5\\\", \\\"7\\\", \\\"2\\\", \
+\\\"9\\\", \\\"0\\\", \\\"0\\\", \\\"3\\\", \\\"3\\\"}}, Rule[RowSpacings, \
+1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\)\\!\\(\\*SuperscriptBox[\\()\\), \
+\\(\[Perpendicular]\\)]\\)\[NotEqual]\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\
+\[NoBreak]\\\", GridBox[{{\\\"0\\\"}, {\\\"0\\\"}, {\\\"0\\\"}, {\\\"0\\\"}, \
+{\\\"0\\\"}, {\\\"0\\\"}, {\\\"0\\\"}, {\\\"0\\\"}, {\\\"0\\\"}, {\\\"0\\\"}, \
+{\\\"0\\\"}, {\\\"0\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
+Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \
+\\\"\[NoBreak]\\\", \\\")\\\"}], TraditionalForm]\\).\\n(Nul \
+\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\\\"2\\\", \
+\\\"7\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\", \\\"8\\\", \\\"1\\\", \\\"8\\\", \
+\\\"2\\\", \\\"8\\\", \\\"4\\\", \\\"5\\\"}, {\\\"9\\\", \\\"0\\\", \
+\\\"4\\\", \\\"5\\\", \\\"2\\\", \\\"3\\\", \\\"5\\\", \\\"3\\\", \\\"6\\\", \
+\\\"0\\\", \\\"2\\\", \\\"8\\\"}, {\\\"7\\\", \\\"4\\\", \\\"7\\\", \
+\\\"1\\\", \\\"3\\\", \\\"5\\\", \\\"2\\\", \\\"6\\\", \\\"6\\\", \\\"2\\\", \
+\\\"4\\\", \\\"9\\\"}, {\\\"7\\\", \\\"7\\\", \\\"5\\\", \\\"7\\\", \
+\\\"2\\\", \\\"4\\\", \\\"7\\\", \\\"0\\\", \\\"9\\\", \\\"3\\\", \\\"6\\\", \
+\\\"9\\\"}, {\\\"9\\\", \\\"9\\\", \\\"5\\\", \\\"9\\\", \\\"5\\\", \
+\\\"7\\\", \\\"4\\\", \\\"9\\\", \\\"6\\\", \\\"6\\\", \\\"9\\\", \\\"6\\\"}, \
+{\\\"7\\\", \\\"6\\\", \\\"2\\\", \\\"7\\\", \\\"7\\\", \\\"2\\\", \\\"4\\\", \
+\\\"0\\\", \\\"7\\\", \\\"6\\\", \\\"6\\\", \\\"3\\\"}, {\\\"0\\\", \
+\\\"3\\\", \\\"5\\\", \\\"3\\\", \\\"5\\\", \\\"4\\\", \\\"7\\\", \\\"5\\\", \
+\\\"9\\\", \\\"4\\\", \\\"5\\\", \\\"7\\\"}, {\\\"1\\\", \\\"3\\\", \
+\\\"8\\\", \\\"2\\\", \\\"1\\\", \\\"7\\\", \\\"8\\\", \\\"5\\\", \\\"2\\\", \
+\\\"5\\\", \\\"1\\\", \\\"6\\\"}, {\\\"6\\\", \\\"4\\\", \\\"2\\\", \
+\\\"7\\\", \\\"4\\\", \\\"2\\\", \\\"7\\\", \\\"4\\\", \\\"6\\\", \\\"6\\\", \
+\\\"3\\\", \\\"9\\\"}, {\\\"1\\\", \\\"9\\\", \\\"3\\\", \\\"2\\\", \
+\\\"0\\\", \\\"0\\\", \\\"3\\\", \\\"0\\\", \\\"5\\\", \\\"9\\\", \\\"9\\\", \
+\\\"2\\\"}, {\\\"1\\\", \\\"8\\\", \\\"1\\\", \\\"7\\\", \\\"4\\\", \
+\\\"1\\\", \\\"3\\\", \\\"5\\\", \\\"9\\\", \\\"6\\\", \\\"6\\\", \\\"2\\\"}, \
+{\\\"9\\\", \\\"0\\\", \\\"4\\\", \\\"3\\\", \\\"5\\\", \\\"7\\\", \\\"2\\\", \
+\\\"9\\\", \\\"0\\\", \\\"0\\\", \\\"3\\\", \\\"3\\\"}}, Rule[RowSpacings, \
+1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\)\\!\\(\\*SuperscriptBox[\\()\\), \
+\\(\[Perpendicular]\\)]\\)\\!\\(\\*SuperscriptBox[\\(\[NotEqual]\
+\[DoubleStruckCapitalR]\\), \\(12\\)]\\).\\nThe row space of \
+\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\\\"2\\\", \
+\\\"7\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\", \\\"8\\\", \\\"1\\\", \\\"8\\\", \
+\\\"2\\\", \\\"8\\\", \\\"4\\\", \\\"5\\\"}, {\\\"9\\\", \\\"0\\\", \
+\\\"4\\\", \\\"5\\\", \\\"2\\\", \\\"3\\\", \\\"5\\\", \\\"3\\\", \\\"6\\\", \
+\\\"0\\\", \\\"2\\\", \\\"8\\\"}, {\\\"7\\\", \\\"4\\\", \\\"7\\\", \
+\\\"1\\\", \\\"3\\\", \\\"5\\\", \\\"2\\\", \\\"6\\\", \\\"6\\\", \\\"2\\\", \
+\\\"4\\\", \\\"9\\\"}, {\\\"7\\\", \\\"7\\\", \\\"5\\\", \\\"7\\\", \
+\\\"2\\\", \\\"4\\\", \\\"7\\\", \\\"0\\\", \\\"9\\\", \\\"3\\\", \\\"6\\\", \
+\\\"9\\\"}, {\\\"9\\\", \\\"9\\\", \\\"5\\\", \\\"9\\\", \\\"5\\\", \
+\\\"7\\\", \\\"4\\\", \\\"9\\\", \\\"6\\\", \\\"6\\\", \\\"9\\\", \\\"6\\\"}, \
+{\\\"7\\\", \\\"6\\\", \\\"2\\\", \\\"7\\\", \\\"7\\\", \\\"2\\\", \\\"4\\\", \
+\\\"0\\\", \\\"7\\\", \\\"6\\\", \\\"6\\\", \\\"3\\\"}, {\\\"0\\\", \
+\\\"3\\\", \\\"5\\\", \\\"3\\\", \\\"5\\\", \\\"4\\\", \\\"7\\\", \\\"5\\\", \
+\\\"9\\\", \\\"4\\\", \\\"5\\\", \\\"7\\\"}, {\\\"1\\\", \\\"3\\\", \
+\\\"8\\\", \\\"2\\\", \\\"1\\\", \\\"7\\\", \\\"8\\\", \\\"5\\\", \\\"2\\\", \
+\\\"5\\\", \\\"1\\\", \\\"6\\\"}, {\\\"6\\\", \\\"4\\\", \\\"2\\\", \
+\\\"7\\\", \\\"4\\\", \\\"2\\\", \\\"7\\\", \\\"4\\\", \\\"6\\\", \\\"6\\\", \
+\\\"3\\\", \\\"9\\\"}, {\\\"1\\\", \\\"9\\\", \\\"3\\\", \\\"2\\\", \
+\\\"0\\\", \\\"0\\\", \\\"3\\\", \\\"0\\\", \\\"5\\\", \\\"9\\\", \\\"9\\\", \
+\\\"2\\\"}, {\\\"1\\\", \\\"8\\\", \\\"1\\\", \\\"7\\\", \\\"4\\\", \
+\\\"1\\\", \\\"3\\\", \\\"5\\\", \\\"9\\\", \\\"6\\\", \\\"6\\\", \\\"2\\\"}, \
+{\\\"9\\\", \\\"0\\\", \\\"4\\\", \\\"3\\\", \\\"5\\\", \\\"7\\\", \\\"2\\\", \
+\\\"9\\\", \\\"0\\\", \\\"0\\\", \\\"3\\\", \\\"3\\\"}}, Rule[RowSpacings, \
+1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
+Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
+TraditionalForm]\\) is \\!\\(\\*SuperscriptBox[\\(\[DoubleStruckCapitalR]\\), \
+\\(12\\)]\\).\\n\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
+GridBox[{{\\\"2\\\", \\\"7\\\", \\\"1\\\", \\\"8\\\", \\\"2\\\", \\\"8\\\", \
+\\\"1\\\", \\\"8\\\", \\\"2\\\", \\\"8\\\", \\\"4\\\", \\\"5\\\"}, \
+{\\\"9\\\", \\\"0\\\", \\\"4\\\", \\\"5\\\", \\\"2\\\", \\\"3\\\", \\\"5\\\", \
+\\\"3\\\", \\\"6\\\", \\\"0\\\", \\\"2\\\", \\\"8\\\"}, {\\\"7\\\", \
+\\\"4\\\", \\\"7\\\", \\\"1\\\", \\\"3\\\", \\\"5\\\", \\\"2\\\", \\\"6\\\", \
+\\\"6\\\", \\\"2\\\", \\\"4\\\", \\\"9\\\"}, {\\\"7\\\", \\\"7\\\", \
+\\\"5\\\", \\\"7\\\", \\\"2\\\", \\\"4\\\", \\\"7\\\", \\\"0\\\", \\\"9\\\", \
+\\\"3\\\", \\\"6\\\", \\\"9\\\"}, {\\\"9\\\", \\\"9\\\", \\\"5\\\", \
+\\\"9\\\", \\\"5\\\", \\\"7\\\", \\\"4\\\", \\\"9\\\", \\\"6\\\", \\\"6\\\", \
+\\\"9\\\", \\\"6\\\"}, {\\\"7\\\", \\\"6\\\", \\\"2\\\", \\\"7\\\", \
+\\\"7\\\", \\\"2\\\", \\\"4\\\", \\\"0\\\", \\\"7\\\", \\\"6\\\", \\\"6\\\", \
+\\\"3\\\"}, {\\\"0\\\", \\\"3\\\", \\\"5\\\", \\\"3\\\", \\\"5\\\", \
+\\\"4\\\", \\\"7\\\", \\\"5\\\", \\\"9\\\", \\\"4\\\", \\\"5\\\", \\\"7\\\"}, \
+{\\\"1\\\", \\\"3\\\", \\\"8\\\", \\\"2\\\", \\\"1\\\", \\\"7\\\", \\\"8\\\", \
+\\\"5\\\", \\\"2\\\", \\\"5\\\", \\\"1\\\", \\\"6\\\"}, {\\\"6\\\", \
+\\\"4\\\", \\\"2\\\", \\\"7\\\", \\\"4\\\", \\\"2\\\", \\\"7\\\", \\\"4\\\", \
+\\\"6\\\", \\\"6\\\", \\\"3\\\", \\\"9\\\"}, {\\\"1\\\", \\\"9\\\", \
+\\\"3\\\", \\\"2\\\", \\\"0\\\", \\\"0\\\", \\\"3\\\", \\\"0\\\", \\\"5\\\", \
+\\\"9\\\", \\\"9\\\", \\\"2\\\"}, {\\\"1\\\", \\\"8\\\", \\\"1\\\", \
+\\\"7\\\", \\\"4\\\", \\\"1\\\", \\\"3\\\", \\\"5\\\", \\\"9\\\", \\\"6\\\", \
+\\\"6\\\", \\\"2\\\"}, {\\\"9\\\", \\\"0\\\", \\\"4\\\", \\\"3\\\", \
+\\\"5\\\", \\\"7\\\", \\\"2\\\", \\\"9\\\", \\\"0\\\", \\\"0\\\", \\\"3\\\", \
+\\\"3\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
+Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \
+\\\"\[NoBreak]\\\", \\\")\\\"}], TraditionalForm]\\) has 12 singular \
+values.\"\>"], "Output",
  TaggingRules->{},
  CellChangeTimes->{
   3.864902255026577*^9, {3.864902293028573*^9, 3.8649023393785715`*^9}, 
-   3.8649025277851195`*^9, 3.8708637206236067`*^9},
- CellLabel->"Out[145]=",
- CellID->160228950,ExpressionUUID->"69427d50-4912-4d29-8734-173afe987f80"]
+   3.8649025277851195`*^9, 3.8708637206236067`*^9, 3.8713960474581847`*^9},
+ CellLabel->"Out[287]=",
+ CellID->369117071,ExpressionUUID->"8b807e2c-27fe-41c6-8c29-bb25494287af"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
@@ -1544,7 +2277,7 @@ Cell[BoxData[
     }], ")"}], "]"}]], "Input",
  TaggingRules->{},
  CellChangeTimes->{{3.8649025651471324`*^9, 3.86490257966112*^9}},
- CellLabel->"In[1]:=",
+ CellLabel->"In[288]:=",
  CellID->54499509,ExpressionUUID->"f234a810-4a00-4f18-acff-c41f257becde"],
 
 Cell[BoxData[
@@ -1556,9 +2289,9 @@ Cell[BoxData[
     RowBox[{"{", "1", "}"}], ",", 
     RowBox[{"{", "8", "}"}]}], "}"}], "]"}]], "Output",
  TaggingRules->{},
- CellChangeTimes->{3.864902580040126*^9},
- CellLabel->"Out[1]=",
- CellID->970489681,ExpressionUUID->"9de58e51-a47f-4551-9e20-a3d2d56ad274"]
+ CellChangeTimes->{3.864902580040126*^9, 3.8713960575828495`*^9},
+ CellLabel->"Out[288]=",
+ CellID->861387278,ExpressionUUID->"b9db9c93-e8ec-424a-aad5-0620808689a8"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
@@ -1790,8 +2523,8 @@ Cell[BoxData[
         {
          StyleBox[
           TemplateBox[{
-            CheckboxBox[False, {False, "Strings & Text"}], "\" \"", 
-            "\"Strings & Text\""},
+            CheckboxBox["Strings & Text", {False, "Strings & Text"}], "\" \"",
+             "\"Strings & Text\""},
            "RowDefault"],
           StripOnInput->False,
           FontSize->12]},
@@ -1910,8 +2643,10 @@ Cell[BoxData[
         {
          StyleBox[
           TemplateBox[{
-            CheckboxBox[False, {False, "Symbolic & Numeric Computation"}], 
-            "\" \"", "\"Symbolic & Numeric Computation\""},
+            CheckboxBox[
+            "Symbolic & Numeric Computation", {
+             False, "Symbolic & Numeric Computation"}], "\" \"", 
+            "\"Symbolic & Numeric Computation\""},
            "RowDefault"],
           StripOnInput->False,
           FontSize->12]},
@@ -1953,6 +2688,7 @@ Py6ygKclgQLMmio9S0Lzq0N5wvnzx906z0M9WXzuE9V5Jh16JbpVZV65P7jQ4mxC1oGfOyyjuYSgo+\
 w/OI8hAi0oJri5ocII3flzhy+QJH+\
 shGnD2d9aiTqmbbpRhvIT8FwbvypjQmdjbz4Or2gqCD3iGory0A8UTI720PIBdDC2Ogwdlm2jb0XMH\
 hm9ZCQ=="},
+ CellChangeTimes->{{3.8713960635843067`*^9, 3.871396066951621*^9}},
  CellTags->{"Categories-Checkboxes", "CheckboxCell"},
  CellID->109856820,ExpressionUUID->"d7eed61d-458a-47ba-b221-cbfec27812b1"]
 }, Open  ]],
@@ -3044,7 +3780,11 @@ there is a way to fix this."
    PassEventsDown -> False, PassEventsUp -> False},
  CellChangeTimes->{{3.864902078229045*^9, 3.8649021024920444`*^9}},
  CellTags->{"DefaultContent", "TabNext"},
- CellID->711457694,ExpressionUUID->"a1324f7f-81a6-423a-a298-f8512afb052b"]
+ CellID->711457694,ExpressionUUID->"a1324f7f-81a6-423a-a298-f8512afb052b"],
+
+Cell["I redesigned the function", "Text",
+ CellChangeTimes->{{3.87139607528286*^9, 3.8713960791253896`*^9}},
+ CellID->298440595,ExpressionUUID->"b90c2f83-8b62-46e0-8b0a-141eba90e2e2"]
 }, Open  ]]
 }, Open  ]]
 },
@@ -5378,3 +6118,4 @@ resource except for the definition notebook\""}, "PrettyTooltipTemplate"]],
   "PrivateStylesheetFormatting.nb"],
 ExpressionUUID->"a2b11c5a-0dbe-4396-9e3a-6e5389f8aca9"
 ]
+
