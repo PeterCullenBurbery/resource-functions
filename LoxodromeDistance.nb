@@ -168,9 +168,11 @@ Cell[TextData[{
   StyleBox["pointA", "TI"]], "InlineFormula",
   FontFamily->"Source Sans Pro",ExpressionUUID->
   "fcc47ecc-db57-4ca7-a058-661dc5bd0263"],
- " if you traveled there along a loxodromic path from your current location"
+ " if you traveled there along a loxodromic path from your current location \
+in kilometers"
 }], "UsageDescription",
- CellChangeTimes->{{3.8713732999613943`*^9, 3.871373348276032*^9}},
+ CellChangeTimes->{{3.8713732999613943`*^9, 3.871373348276032*^9}, {
+  3.871373766890832*^9, 3.8713737706142406`*^9}},
  CellTags->{"DefaultContent", "TabNext"},
  CellID->746063541,ExpressionUUID->"44cc3894-d893-4bc4-9ef3-74e27bc19674"]
 }, Open  ]],
@@ -198,9 +200,11 @@ Cell[TextData[{
  Cell[BoxData[
   StyleBox["pointB", "TI"]], "InlineFormula",
   FontFamily->"Source Sans Pro",ExpressionUUID->
-  "25cce7a4-1513-4217-900b-154f7b03734b"]
+  "25cce7a4-1513-4217-900b-154f7b03734b"],
+ " in kilometers"
 }], "UsageDescription",
- CellChangeTimes->{{3.8713732999613943`*^9, 3.871373368366249*^9}},
+ CellChangeTimes->{{3.8713732999613943`*^9, 3.871373368366249*^9}, {
+  3.871373771933811*^9, 3.871373775234704*^9}},
  CellTags->{"DefaultContent", "TabNext"},
  CellID->332211018,ExpressionUUID->"baf8fd20-a0c3-445a-ae0f-35d39d746066"]
 }, Open  ]]
@@ -394,6 +398,7 @@ typical Subsection names and the types of examples they normally contain:\n  \
                 "\"Neat Examples: \"", FontFamily -> "Source Sans Pro", 
                  FontWeight -> "SemiBold", FontSize -> 14, StripOnInput -> 
                  False]}, "RowDefault"], ShowStringCharacters -> False]]], 
+           
            "particularly interesting, unconventional, or otherwise unique \
 usage"}], "MoreInfoText"], Background -> GrayLevel[0.95], FrameMargins -> 20, 
         FrameStyle -> GrayLevel[0.9], RoundingRadius -> 5, ImageSize -> {
@@ -488,32 +493,104 @@ Cell["Find the distance to the north and south geomagnetic poles:", "Text",
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"LoxodromeDistance", "[", "\"\<GeomagneticNorthPole\>\"", 
+ RowBox[{"LoxodromeDistance", "[", 
+  RowBox[{"GeoPosition", "[", "\"\<NorthGeomagneticPole\>\"", "]"}], 
   "]"}]], "Input",
- CellChangeTimes->{{3.8713734537758827`*^9, 3.8713734608965473`*^9}},
- CellLabel->"In[88]:=",
+ CellChangeTimes->{{3.8713734537758827`*^9, 3.8713734608965473`*^9}, {
+  3.8713735232231827`*^9, 3.8713735409817038`*^9}},
+ CellLabel->"In[90]:=",
  CellID->48943018,ExpressionUUID->"997a7822-7d2f-4b73-83bf-0073cf5693bd"],
 
 Cell[BoxData[
- TemplateBox[{
-  "GeoPath", "invspty", 
-   "\"\\!\\(\\*RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"GeoPosition\\\", \
-\\\"[\\\", RowBox[{\\\"{\\\", RowBox[{\\\"38.410000000000004`\\\", \\\",\\\", \
-RowBox[{\\\"-\\\", \\\"82.44`\\\"}]}], \\\"}\\\"}], \\\"]\\\"}], \\\",\\\", \
-\\\"\\\\\\\"GeomagneticNorthPole\\\\\\\"\\\"}], \\\"}\\\"}]\\) is not a valid \
-specification for a geo path of type \\!\\(\\*RowBox[{\\\"\\\\\\\"Loxodrome\\\
-\\\\\"\\\"}]\\).\"", 2, 88, 8, 19474650876955409832, "Local"},
-  "MessageTemplate"]], "Message", "MSG",
- CellChangeTimes->{3.871373461169633*^9},
- CellLabel->"During evaluation of In[88]:=",
- CellID->358604494,ExpressionUUID->"69e6eb41-29cb-46cc-922f-db5922ee5573"],
+ TemplateBox[{"4733.642908882385`", "\"km\"", "kilometers", "\"Kilometers\""},
+  "Quantity"]], "Output",
+ CellChangeTimes->{
+  3.871373461264634*^9, {3.8713735270619044`*^9, 3.871373541505624*^9}},
+ CellLabel->"Out[90]=",
+ CellID->429298475,ExpressionUUID->"03205e00-9ddf-4488-a862-464762df78aa"]
+}, Open  ]],
+
+Cell[CellGroupData[{
 
 Cell[BoxData[
- TemplateBox[{"0", "\"m\"", "meters", "\"Meters\""},
+ RowBox[{"LoxodromeDistance", "[", 
+  RowBox[{"GeoPosition", "[", "\"\<SouthGeomagneticPole\>\"", "]"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.8713734537758827`*^9, 3.871373461836997*^9}, {
+  3.8713735471602745`*^9, 3.8713735517867327`*^9}},
+ CellLabel->"In[91]:=",
+ CellID->14974111,ExpressionUUID->"fac752f5-4988-42e3-b87c-4453666b99db"],
+
+Cell[BoxData[
+ TemplateBox[{"17967.12892404496`", "\"km\"", "kilometers", "\"Kilometers\""},
   "Quantity"]], "Output",
- CellChangeTimes->{3.871373461264634*^9},
- CellLabel->"Out[88]=",
- CellID->484320548,ExpressionUUID->"7419c0b0-8a47-4d8f-b17e-8e00ab3dbca4"]
+ CellChangeTimes->{3.87137355207155*^9},
+ CellLabel->"Out[91]=",
+ CellID->1670148,ExpressionUUID->"4caae112-9e66-418f-b1b8-26934ab23a83"]
+}, Open  ]],
+
+Cell["\<\
+Find the distance to the north and south geomagnetic dip poles:\
+\>", "Text",
+ CellChangeTimes->{{3.871373554484121*^9, 3.871373564498278*^9}},
+ CellID->398967393,ExpressionUUID->"9f09016c-9d98-4fec-ab57-cd4785b8e9ec"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"LoxodromeDistance", "[", 
+  RowBox[{"GeoPosition", "[", "\"\<NorthModelDipPole\>\"", "]"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.8713736235954666`*^9, 3.871373626978488*^9}},
+ CellLabel->"In[94]:=",
+ CellID->438772184,ExpressionUUID->"b2bef285-78ab-463b-8d50-7928e87de6fe"],
+
+Cell[BoxData[
+ TemplateBox[{"6964.02930803692`", "\"km\"", "kilometers", "\"Kilometers\""},
+  "Quantity"]], "Output",
+ CellChangeTimes->{3.8713736335249405`*^9},
+ CellLabel->"Out[94]=",
+ CellID->112606595,ExpressionUUID->"ff698999-4444-40c1-9177-2575c3e9aafe"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"LoxodromeDistance", "[", 
+  RowBox[{"GeoPosition", "[", "\"\<SouthModelDipPole\>\"", "]"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.8713736235954666`*^9, 3.8713736372655077`*^9}},
+ CellLabel->"In[95]:=",
+ CellID->148308502,ExpressionUUID->"4348544e-6b56-40a3-bf2c-fb154fe8ef46"],
+
+Cell[BoxData[
+ TemplateBox[{"17183.550292935368`", "\"km\"", "kilometers", "\"Kilometers\""},
+  "Quantity"]], "Output",
+ CellChangeTimes->{3.8713736430426235`*^9},
+ CellLabel->"Out[95]=",
+ CellID->102562979,ExpressionUUID->"63fe7afc-d926-474c-830c-e4b30406160c"]
+}, Open  ]],
+
+Cell["Find the distance to my antipode:", "Text",
+ CellChangeTimes->{{3.8713736424715157`*^9, 3.871373647150634*^9}},
+ CellID->463226717,ExpressionUUID->"80cf87fe-ccef-48e6-8801-507f98092718"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"LoxodromeDistance", "[", 
+  RowBox[{"GeoPosition", "[", 
+   RowBox[{"GeoAntipode", "[", "Here", "]"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8713736492270665`*^9, 3.8713736577612295`*^9}},
+ CellLabel->"In[96]:=",
+ CellID->30639067,ExpressionUUID->"cb2d099b-31dd-4dfb-8220-767e91f134d0"],
+
+Cell[BoxData[
+ TemplateBox[{"20345.425930277328`", "\"km\"", "kilometers", "\"Kilometers\""},
+  "Quantity"]], "Output",
+ CellChangeTimes->{3.871373658128373*^9},
+ CellLabel->"Out[96]=",
+ CellID->40089163,ExpressionUUID->"462df37d-7bf0-462d-9777-a1293aad7988"]
 }, Open  ]]
 }, Open  ]],
 
@@ -551,13 +628,105 @@ Cell["Options", "Subsection",
  CellTags->"DefaultContent",
  CellID->879773335,ExpressionUUID->"cfe6868b-8720-4860-a0d8-f02163eaccf9"],
 
+Cell[CellGroupData[{
+
 Cell["Applications", "Subsection",
  CellTags->"DefaultContent",
  CellID->542143288,ExpressionUUID->"b46cc389-d909-4151-ade8-91bda0b4c67d"],
 
+Cell["\<\
+Find the distance to the Empire State Building with the Resource Function \
+Wikidata GeoPosition:\
+\>", "Text",
+ CellChangeTimes->{{3.8713737136030617`*^9, 3.871373733039753*^9}},
+ CellID->594855904,ExpressionUUID->"e948f9cb-e619-48f4-9716-6c419a77627b"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EMPIRESTATEBUILDING", "=", 
+   RowBox[{
+    RowBox[{"ResourceFunction", "[", "\"\<WikidataGeoPosition\>\"", "]"}], 
+    "[", "\"\<Empire State Building\>\"", "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.8713737340086985`*^9, 3.8713737536954203`*^9}},
+ CellLabel->"In[98]:=",
+ CellID->16562880,ExpressionUUID->"6084beb3-e5b4-46b9-b13a-c225ecadd4d9"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"LoxodromeDistance", "[", "EMPIRESTATEBUILDING", "]"}]], "Input",
+ CellChangeTimes->{{3.8713737554257727`*^9, 3.8713737596080246`*^9}},
+ CellLabel->"In[99]:=",
+ CellID->61352113,ExpressionUUID->"4a361adb-b70e-48bc-a089-bd81181cb99d"],
+
+Cell[BoxData[
+ TemplateBox[{"771.2814614248456`", "\"km\"", "kilometers", "\"Kilometers\""},
+  "Quantity"]], "Output",
+ CellChangeTimes->{3.8713737598763666`*^9},
+ CellLabel->"Out[99]=",
+ CellID->70184660,ExpressionUUID->"0297f73f-a53f-49d8-95a1-453d0a3c0897"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
 Cell["Properties and Relations", "Subsection",
  CellTags->"DefaultContent",
  CellID->727494039,ExpressionUUID->"652c998f-1fe2-4af8-a0d1-f69f66945508"],
+
+Cell["\<\
+Use UnitConvert and the option \"SIBase\" to convert the output to meters:\
+\>", "Text",
+ CellChangeTimes->{{3.8713737816332507`*^9, 3.87137380251783*^9}},
+ CellID->667614922,ExpressionUUID->"aaefa1d5-fe8f-4fa2-99ca-27cb6d423938"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"UnitConvert", "[", 
+  RowBox[{
+   RowBox[{"LoxodromeDistance", "[", 
+    RowBox[{"GeoAntipode", "[", "Here", "]"}], "]"}], ",", "\"\<SIBase\>\""}],
+   "]"}]], "Input",
+ CellChangeTimes->{{3.8713738079389935`*^9, 3.871373828427122*^9}},
+ CellLabel->"In[100]:=",
+ CellID->210256881,ExpressionUUID->"478bae67-54cf-4943-834c-09cb15bdad14"],
+
+Cell[BoxData[
+ TemplateBox[{"2.034542593027733`*^7", "\"m\"", "meters", "\"Meters\""},
+  "Quantity"]], "Output",
+ CellChangeTimes->{3.871373828716934*^9},
+ CellLabel->"Out[100]=",
+ CellID->7037339,ExpressionUUID->"dd199f0f-1ba5-4022-8924-f173854fac0e"]
+}, Open  ]],
+
+Cell["\<\
+Expand out the scientific notation with Round to see the measurement exactly:\
+\>", "Text",
+ CellChangeTimes->{{3.8713738408610935`*^9, 3.8713738659405394`*^9}},
+ CellID->294453282,ExpressionUUID->"532f1ea8-ecde-4622-a96f-8a4c79db926f"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Round", "[", 
+  RowBox[{"UnitConvert", "[", 
+   RowBox[{
+    RowBox[{"LoxodromeDistance", "[", 
+     RowBox[{"GeoAntipode", "[", "Here", "]"}], "]"}], ",", 
+    "\"\<SIBase\>\""}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8713738346856856`*^9, 3.871373835769284*^9}},
+ CellLabel->"In[101]:=",
+ CellID->118188654,ExpressionUUID->"c63ce791-3a5c-46f1-a308-365f048ebf24"],
+
+Cell[BoxData[
+ TemplateBox[{"20345426", "\"m\"", "meters", "\"Meters\""},
+  "Quantity"]], "Output",
+ CellChangeTimes->{3.8713738360440702`*^9},
+ CellLabel->"Out[101]=",
+ CellID->351402980,ExpressionUUID->"c626a847-10fe-4077-ab4d-77fe69251f1d"]
+}, Open  ]]
+}, Open  ]],
 
 Cell["Possible Issues", "Subsection",
  CellTags->"DefaultContent",
@@ -608,13 +777,14 @@ publicly credited with contributing this function.", "MoreInfoText"],
  CellTags->{"Contributed By", "ContributorInformation", "TemplateCellGroup"},
  CellID->771147648,ExpressionUUID->"a8459215-2df0-4362-b6c7-f63670fac789"],
 
-Cell["Author Name", "Text",
+Cell["Peter Cullen Burbery", "Text",
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
        WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.87137366998024*^9, 3.8713736732398553`*^9}},
  CellTags->{"DefaultContent", "TabNext"},
  CellID->855757352,ExpressionUUID->"bdff1ed5-4a30-4df0-83ff-ec3cfe7407c2"]
 }, Open  ]],
@@ -650,15 +820,56 @@ concepts) that should be used to include the function in search results.",
  CellTags->{"Keywords", "TemplateCellGroup"},
  CellID->854882061,ExpressionUUID->"a3e0f9fe-c04f-4b82-87dd-5de90dff52c1"],
 
-Cell["keyword 1", "Item",
+Cell["Loxodrome", "Item",
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
        WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.871373677491021*^9, 3.871373679611257*^9}},
  CellTags->{"DefaultContent", "TabNext"},
- CellID->560424104,ExpressionUUID->"84d51be5-0aeb-405f-a4a3-1d7f9bf7c379"]
+ CellID->560424104,ExpressionUUID->"84d51be5-0aeb-405f-a4a3-1d7f9bf7c379"],
+
+Cell["Geodesy", "Item",
+ CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
+       SelectedNotebook[], After, Cell]; NotebookFind[
+       SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
+       WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
+       SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
+   PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.871373677491021*^9, 3.871373680987875*^9}},
+ CellID->131021986,ExpressionUUID->"52fdbcb1-b5a3-4779-a864-d8eed80606c4"],
+
+Cell["Spherical Trigonometry", "Item",
+ CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
+       SelectedNotebook[], After, Cell]; NotebookFind[
+       SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
+       WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
+       SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
+   PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.871373677491021*^9, 3.8713736846985807`*^9}},
+ CellID->252398057,ExpressionUUID->"ff229dce-7684-44e5-9e37-8dac733ff3d3"],
+
+Cell["Navigation", "Item",
+ CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
+       SelectedNotebook[], After, Cell]; NotebookFind[
+       SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
+       WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
+       SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
+   PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.871373677491021*^9, 3.871373686601447*^9}},
+ CellID->407727322,ExpressionUUID->"17b283f6-7405-4a92-aff1-a1a0976b2f3c"],
+
+Cell["Geography", "Item",
+ CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
+       SelectedNotebook[], After, Cell]; NotebookFind[
+       SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
+       WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
+       SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
+   PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.871373677491021*^9, 3.8713736890944214`*^9}},
+ CellID->125058459,ExpressionUUID->"db484efe-ac27-4ee4-aaad-8c1ac266461c"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -702,8 +913,10 @@ Cell[BoxData[
         {
          StyleBox[
           TemplateBox[{
-            CheckboxBox[False, {False, "Geographic Data & Computation"}], 
-            "\" \"", "\"Geographic Data & Computation\""},
+            CheckboxBox[
+            "Geographic Data & Computation", {
+             False, "Geographic Data & Computation"}], "\" \"", 
+            "\"Geographic Data & Computation\""},
            "RowDefault"],
           StripOnInput->False,
           FontSize->12]},
@@ -827,8 +1040,10 @@ Cell[BoxData[
         {
          StyleBox[
           TemplateBox[{
-            CheckboxBox[False, {False, "Higher Mathematical Computation"}], 
-            "\" \"", "\"Higher Mathematical Computation\""},
+            CheckboxBox[
+            "Higher Mathematical Computation", {
+             False, "Higher Mathematical Computation"}], "\" \"", 
+            "\"Higher Mathematical Computation\""},
            "RowDefault"],
           StripOnInput->False,
           FontSize->12]},
@@ -876,8 +1091,10 @@ Cell[BoxData[
         {
          StyleBox[
           TemplateBox[{
-            CheckboxBox[False, {False, "Symbolic & Numeric Computation"}], 
-            "\" \"", "\"Symbolic & Numeric Computation\""},
+            CheckboxBox[
+            "Symbolic & Numeric Computation", {
+             False, "Symbolic & Numeric Computation"}], "\" \"", 
+            "\"Symbolic & Numeric Computation\""},
            "RowDefault"],
           StripOnInput->False,
           FontSize->12]},
@@ -918,6 +1135,7 @@ Cell[BoxData[
 WuYdc+Ub5wvq9oc1GUlKJnXIiqJrBdBCtZQ3n11qHnCPtWMD6sV0ipOzhW1tB9/elmHINGKs+\
 zYjElVnRCE36N6oQaf518wOqwmP/BY28YvfMpmxegakyEMBGmf4cRyQYv8RYdQtkFI3PmDU1ZTKI=\
 "},
+ CellChangeTimes->{{3.8713736937128215`*^9, 3.871373700311198*^9}},
  CellTags->{"Categories", "Categories-Checkboxes", "CheckboxCell"},
  CellID->106874216,ExpressionUUID->"3728d32e-2a21-4be3-ac02-607d1258c5a3"]
 }, Open  ]],
@@ -953,15 +1171,17 @@ related to the function.", "MoreInfoText"], Background -> GrayLevel[0.95],
  CellTags->{"Related Symbols", "TemplateCellGroup"},
  CellID->525877127,ExpressionUUID->"2dbc3667-ee60-4e26-9dac-23c22bc0f7e2"],
 
-Cell["SymbolName (documented Wolfram Language symbol)", "Item",
- CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
-       SelectedNotebook[], After, Cell]; NotebookFind[
-       SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
-       WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
-       SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
-   PassEventsDown -> False, PassEventsUp -> False},
- CellTags->{"DefaultContent", "TabNext"},
- CellID->195255409,ExpressionUUID->"19ea2996-4cf2-4d6e-976f-a0846ade53ee"]
+Cell["GeoPosition", "Item",
+ CellChangeTimes->{{3.871373888824721*^9, 3.871373902085608*^9}},
+ CellID->178864494,ExpressionUUID->"dace9577-58db-4fa9-88a4-379b423a0bc2"],
+
+Cell["GeoPath", "Item",
+ CellChangeTimes->{{3.871373888824721*^9, 3.8713739033923783`*^9}},
+ CellID->146814925,ExpressionUUID->"acc3bd1c-ea78-4feb-807e-b0be7648b7fc"],
+
+Cell["GeoLength", "Item",
+ CellChangeTimes->{{3.871373888824721*^9, 3.871373904883708*^9}},
+ CellID->420714994,ExpressionUUID->"18713126-c8da-40f3-a302-37a2fcb5294b"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -995,15 +1215,39 @@ repository that are related to this function.", "MoreInfoText"], Background ->
  CellTags->{"Related Resource Objects", "TemplateCellGroup"},
  CellID->869341850,ExpressionUUID->"cc3c12f5-2ea4-4260-86a3-a3adaca2b892"],
 
-Cell["Resource Name (resources from any Wolfram repository)", "Item",
+Cell["WikidataGeoPosition", "Item",
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
        WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.871373705087499*^9, 3.8713737062247753`*^9}, {
+  3.871373871717935*^9, 3.8713738744370747`*^9}},
  CellTags->{"DefaultContent", "TabNext"},
- CellID->694609509,ExpressionUUID->"0022c243-c007-43d9-96e1-a3a6c8ad34fc"]
+ CellID->195255409,ExpressionUUID->"19ea2996-4cf2-4d6e-976f-a0846ade53ee"],
+
+Cell["GeoSpatialDistance", "Item",
+ CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
+       SelectedNotebook[], After, Cell]; NotebookFind[
+       SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
+       WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
+       SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
+   PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.871373705087499*^9, 3.8713737062247753`*^9}, {
+  3.871373871717935*^9, 3.871373879331189*^9}},
+ CellID->169985779,ExpressionUUID->"bb76cbfa-2565-4d32-88d8-caa1c2df8a63"],
+
+Cell["GeoSpatialDistanceList", "Item",
+ CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
+       SelectedNotebook[], After, Cell]; NotebookFind[
+       SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
+       WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
+       SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
+   PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.871373705087499*^9, 3.8713737062247753`*^9}, {
+  3.871373871717935*^9, 3.871373883331914*^9}},
+ CellID->401525273,ExpressionUUID->"d61dba2c-cb9b-4ede-a128-b5dc9dba1589"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1672,7 +1916,7 @@ JAZLFxBaxuyKShxfvoEfKzujYRb6FXWpA="},
  CellID->818043737,ExpressionUUID->"c7378c7b-b179-463c-8879-3564bee141ec"]
 }, Closed]]
 }, Open  ]]
-}, Closed]],
+}, Open  ]],
 
 Cell[CellGroupData[{
 
