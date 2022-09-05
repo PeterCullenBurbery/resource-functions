@@ -3,6 +3,7 @@ Notebook[{
 Cell[CellGroupData[{
 Cell["GeoCanberraDistance", "Title",
  Deletable->False,
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -18,6 +19,7 @@ Find the Canberra distance between the spatial coordinates of two geographic \
 locations or points\
 \>", "Text",
  Deletable->False,
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -83,6 +85,7 @@ Cell[BoxData[{
     RowBox[{"First", "[", 
      RowBox[{"GeoPositionXYZ", "[", "pointB", "]"}], "]"}]}], 
    "]"}]}]}], "Input",
+ TaggingRules->{},
  CellChangeTimes->{{3.871387203965211*^9, 3.8713872111583705`*^9}},
  CellTags->"DefaultContent",
  CellLabel->"In[163]:=",
@@ -158,6 +161,7 @@ Cell[CellGroupData[{
 Cell[BoxData[
  RowBox[{"GeoCanberraDistance", "[", 
   StyleBox["pointA", "TI"], "]"}]], "UsageInputs",
+ TaggingRules->{},
  CellChangeTimes->{{3.8713872480030403`*^9, 3.8713872800143085`*^9}},
  FontFamily->"Source Sans Pro",
  CellTags->{"DefaultContent", "TabNext"},
@@ -171,6 +175,7 @@ Cell[TextData[{
   "b21596f4-cf4b-48d3-a689-050c32fa595d"],
  "."
 }], "UsageDescription",
+ TaggingRules->{},
  CellChangeTimes->{{3.871387262160897*^9, 3.8713872776431875`*^9}},
  CellTags->{"DefaultContent", "TabNext"},
  CellID->746063541,ExpressionUUID->"74291b03-dcc5-4af7-ac2e-417eea0e9bf8"]
@@ -183,6 +188,7 @@ Cell[BoxData[
   RowBox[{
    StyleBox["pointA", "TI"], ",", 
    StyleBox["pointB", "TI"]}], "]"}]], "UsageInputs",
+ TaggingRules->{},
  CellChangeTimes->{{3.8713872480030403`*^9, 3.8713873023274026`*^9}},
  FontFamily->"Source Sans Pro",
  CellTags->{"DefaultContent", "TabNext"},
@@ -201,6 +207,7 @@ Cell[TextData[{
   "9e41c60b-861f-49d3-bc35-2c6d6363b241"],
  "."
 }], "UsageDescription",
+ TaggingRules->{},
  CellChangeTimes->{{3.871387262160897*^9, 3.871387304389902*^9}},
  CellTags->{"DefaultContent", "TabNext"},
  CellID->658639548,ExpressionUUID->"04ae79f3-122e-4ef0-b44e-d13ad5671b93"]
@@ -247,6 +254,7 @@ function, its development, and its usage.", "MoreInfoText"], Background ->
 Cell["\<\
 The Canberra distance is like a weighted Manhattan distance measure.\
 \>", "Notes",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -261,10 +269,12 @@ Cell["\<\
 The output will be between 0 and 3 because there are three spatial \
 coordinates vertical horizontal and depth/breadth.\
 \>", "Notes",
+ TaggingRules->{},
  CellChangeTimes->{{3.87138738164834*^9, 3.871387420251773*^9}},
  CellID->105825071,ExpressionUUID->"ee96a4cd-047f-444e-bc85-c8c0bb4a1abe"],
 
 Cell["The distance measure obeys the triangle inequality.", "Notes",
+ TaggingRules->{},
  CellChangeTimes->{{3.8713876070097065`*^9, 3.8713876153756456`*^9}},
  CellID->526234285,ExpressionUUID->"88c99255-3d28-4581-8775-d51f73d02313"]
 }, Open  ]]
@@ -430,12 +440,14 @@ usage"}], "MoreInfoText"], Background -> GrayLevel[0.95], FrameMargins -> 20,
 Cell[CellGroupData[{
 
 Cell["Basic Examples", "Subsection",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellID->619504543,ExpressionUUID->"f3f6ab43-8ed1-4719-b298-e05acfcd1d8b"],
 
 Cell["\<\
 Find the Canberra distance to a random geographical position:\
 \>", "Text",
+ TaggingRules->{},
  CellChangeTimes->{{3.8713873512802677`*^9, 3.871387365506342*^9}},
  CellTags->"DefaultContent",
  CellID->586099280,ExpressionUUID->"8d64a979-28e5-4aec-9004-3449283ac7e7"],
@@ -445,12 +457,14 @@ Cell[CellGroupData[{
 Cell[BoxData[
  RowBox[{"GeoCanberraDistance", "[", 
   RowBox[{"RandomGeoPosition", "[", "]"}], "]"}]], "Input",
+ TaggingRules->{},
  CellChangeTimes->{{3.871387368471752*^9, 3.871387377554344*^9}},
  CellTags->"DefaultContent",
  CellLabel->"In[167]:=",
  CellID->298664010,ExpressionUUID->"653c1e16-e71e-4c86-b0ba-38cf35906dfa"],
 
 Cell[BoxData["1.3972749220370704`"], "Output",
+ TaggingRules->{},
  CellChangeTimes->{{3.8713873713822193`*^9, 3.8713873778197126`*^9}},
  CellTags->"DefaultContent",
  CellLabel->"Out[167]=",
@@ -461,6 +475,7 @@ Cell[BoxData["1.3972749220370704`"], "Output",
 Cell[CellGroupData[{
 
 Cell["Scope", "Subsection",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellID->313242344,ExpressionUUID->"5c8b84df-1ad1-4eea-b2fd-3607e5dbc3a4"],
 
@@ -468,6 +483,7 @@ Cell["\<\
 Text about additional examples expanding scope (and see other sections for \
 options, applications, etc):\
 \>", "Text",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellID->291939446,ExpressionUUID->"ae228cd1-19a3-49b5-88f8-98c6d2b05730"],
 
@@ -476,12 +492,14 @@ Cell[CellGroupData[{
 Cell[BoxData[
  RowBox[{"MyFunction", "[", 
   RowBox[{"x", ",", "y", ",", "z"}], "]"}]], "Input",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellLabel->"In[2]:= ",
  CellID->448965068,ExpressionUUID->"d9e9b521-66df-47d2-92f3-9157988516ce"],
 
 Cell[BoxData[
  RowBox[{"x", " ", "y", " ", "z"}]], "Output",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellLabel->"Out[2]= ",
  CellID->494498970,ExpressionUUID->"c7864bf8-e48b-4e3f-a933-4fbcf93506b3"]
@@ -489,22 +507,26 @@ Cell[BoxData[
 }, Open  ]],
 
 Cell["Options", "Subsection",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellID->879773335,ExpressionUUID->"a2238097-94d5-40d5-829c-608979c3eac6"],
 
 Cell[CellGroupData[{
 
 Cell["Applications", "Subsection",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellID->542143288,ExpressionUUID->"90fe88fe-bd2b-4e90-8cf3-1bd751c20b93"],
 
 Cell[CellGroupData[{
 
 Cell["Antipode", "Subsubsection",
+ TaggingRules->{},
  CellChangeTimes->{{3.8713874514321575`*^9, 3.871387456753768*^9}},
  CellID->151584115,ExpressionUUID->"213c5dd6-e3be-42ec-a464-a0aea4c9b0bb"],
 
 Cell["Find the Canberra distance to your antipode:", "Text",
+ TaggingRules->{},
  CellChangeTimes->{{3.8713874430367336`*^9, 3.8713874697691813`*^9}},
  CellID->174234867,ExpressionUUID->"0b6f25ce-e336-48a9-808f-8520e7bb0f38"],
 
@@ -513,11 +535,13 @@ Cell[CellGroupData[{
 Cell[BoxData[
  RowBox[{"GeoCanberraDistance", "[", 
   RowBox[{"GeoAntipode", "[", "Here", "]"}], "]"}]], "Input",
+ TaggingRules->{},
  CellChangeTimes->{{3.87138747111578*^9, 3.871387485331387*^9}},
  CellLabel->"In[168]:=",
  CellID->147632769,ExpressionUUID->"cb6d872c-6288-43cf-97fa-80aa974af46d"],
 
 Cell[BoxData["3.`"], "Output",
+ TaggingRules->{},
  CellChangeTimes->{3.871387485675133*^9},
  CellLabel->"Out[168]=",
  CellID->797198800,ExpressionUUID->"c49d068f-7cd9-423f-acb4-6b2e059f9426"]
@@ -527,10 +551,12 @@ Cell[BoxData["3.`"], "Output",
 Cell[CellGroupData[{
 
 Cell["Special Geographic points", "Subsubsection",
+ TaggingRules->{},
  CellChangeTimes->{{3.8713875084416084`*^9, 3.8713875135591*^9}},
  CellID->609569464,ExpressionUUID->"787e4d93-e55f-4dfe-a6fc-b1f2260fb430"],
 
 Cell["Find the Canberra weighted distance for null island:", "Text",
+ TaggingRules->{},
  CellChangeTimes->{{3.8713875147012663`*^9, 3.871387524141448*^9}},
  CellID->448440510,ExpressionUUID->"73d5f1c0-5777-4141-ba46-220ddc2402c1"],
 
@@ -539,17 +565,20 @@ Cell[CellGroupData[{
 Cell[BoxData[
  RowBox[{"GeoCanberraDistance", "[", 
   RowBox[{"GeoPosition", "[", "\"\<NullIsland\>\"", "]"}], "]"}]], "Input",
+ TaggingRules->{},
  CellChangeTimes->{{3.8713875258602057`*^9, 3.8713875313282185`*^9}},
  CellLabel->"In[169]:=",
  CellID->399269225,ExpressionUUID->"9c5f6591-1e9c-4896-afe9-23650f48ed55"],
 
 Cell[BoxData["2.812866303114989`"], "Output",
+ TaggingRules->{},
  CellChangeTimes->{3.871387531640483*^9},
  CellLabel->"Out[169]=",
  CellID->572521308,ExpressionUUID->"d23f3c09-60da-48d7-a3ee-f59007707ff7"]
 }, Open  ]],
 
 Cell["The antipode of null island:", "Text",
+ TaggingRules->{},
  CellChangeTimes->{{3.8713875361308827`*^9, 3.8713875430238285`*^9}},
  CellID->177222371,ExpressionUUID->"2e84e238-32a3-4092-b211-15fdec61a122"],
 
@@ -560,17 +589,20 @@ Cell[BoxData[
   RowBox[{"GeoAntipode", "[", 
    RowBox[{"GeoPosition", "[", "\"\<NullIsland\>\"", "]"}], "]"}], 
   "]"}]], "Input",
+ TaggingRules->{},
  CellChangeTimes->{{3.8713875258602057`*^9, 3.871387550258439*^9}},
  CellLabel->"In[170]:=",
  CellID->271314871,ExpressionUUID->"8d398df9-67e1-4a50-87ba-fe8c3a2de9ec"],
 
 Cell[BoxData["3.`"], "Output",
+ TaggingRules->{},
  CellChangeTimes->{3.871387550521413*^9},
  CellLabel->"Out[170]=",
  CellID->189842294,ExpressionUUID->"bf081a66-2bb7-4924-a87b-d375278fa741"]
 }, Open  ]],
 
 Cell["The north pole:", "Text",
+ TaggingRules->{},
  CellChangeTimes->{{3.8713875562270985`*^9, 3.8713875585557566`*^9}},
  CellID->47745231,ExpressionUUID->"ffe41426-71f2-4115-96b1-1a0bc8645e32"],
 
@@ -579,17 +611,20 @@ Cell[CellGroupData[{
 Cell[BoxData[
  RowBox[{"GeoCanberraDistance", "[", 
   RowBox[{"GeoPosition", "[", "\"\<NorthPole\>\"", "]"}], "]"}]], "Input",
+ TaggingRules->{},
  CellChangeTimes->{{3.871387559477355*^9, 3.8713875670464144`*^9}},
  CellLabel->"In[171]:=",
  CellID->187305885,ExpressionUUID->"c585f43f-cd96-4035-b5ec-93306eec7d88"],
 
 Cell[BoxData["2.2345655678804857`"], "Output",
+ TaggingRules->{},
  CellChangeTimes->{3.871387567330405*^9},
  CellLabel->"Out[171]=",
  CellID->175619484,ExpressionUUID->"a0eb44f2-eac4-4b2c-afc0-1bfedb197b78"]
 }, Open  ]],
 
 Cell["The south pole:", "Text",
+ TaggingRules->{},
  CellChangeTimes->{{3.871387568933963*^9, 3.8713875713623743`*^9}},
  CellID->202322930,ExpressionUUID->"c106e5c9-e470-4517-89ee-22873833e49f"],
 
@@ -598,17 +633,20 @@ Cell[CellGroupData[{
 Cell[BoxData[
  RowBox[{"GeoCanberraDistance", "[", 
   RowBox[{"GeoPosition", "[", "\"\<SouthPole\>\"", "]"}], "]"}]], "Input",
+ TaggingRules->{},
  CellChangeTimes->{{3.8713875721263523`*^9, 3.871387581153615*^9}},
  CellLabel->"In[172]:=",
  CellID->106265093,ExpressionUUID->"fca8fb78-2add-423a-aa40-873ca006eb53"],
 
 Cell[BoxData["2.999999999999999`"], "Output",
+ TaggingRules->{},
  CellChangeTimes->{3.871387581461376*^9},
  CellLabel->"Out[172]=",
  CellID->571654433,ExpressionUUID->"93b7b447-29af-446b-a9b3-8d5df1dcbcd6"]
 }, Open  ]],
 
 Cell["The north magnetic pole:", "Text",
+ TaggingRules->{},
  CellChangeTimes->{{3.871387583477364*^9, 3.871387588570155*^9}},
  CellID->128624936,ExpressionUUID->"4c071c60-f414-459a-8f0d-384612c98472"],
 
@@ -618,17 +656,20 @@ Cell[BoxData[
  RowBox[{"GeoCanberraDistance", "[", 
   RowBox[{"GeoPosition", "[", "\"\<NorthGeomagneticPole\>\"", "]"}], 
   "]"}]], "Input",
+ TaggingRules->{},
  CellChangeTimes->{{3.8713875721263523`*^9, 3.8713875955052185`*^9}},
  CellLabel->"In[173]:=",
  CellID->20008995,ExpressionUUID->"d04a527f-6d40-47c3-9973-32fb37278de9"],
 
 Cell[BoxData["1.2603499683360033`"], "Output",
+ TaggingRules->{},
  CellChangeTimes->{3.8713875958012247`*^9},
  CellLabel->"Out[173]=",
  CellID->50632169,ExpressionUUID->"a967267f-ffc3-420e-a0da-d78c1076b940"]
 }, Open  ]],
 
 Cell["The south geomagnetic pole:", "Text",
+ TaggingRules->{},
  CellChangeTimes->{{3.8713875968452215`*^9, 3.8713876024876595`*^9}},
  CellID->39715625,ExpressionUUID->"ba571245-7960-44cc-8f84-dce5c1bc8464"],
 
@@ -638,17 +679,20 @@ Cell[BoxData[
  RowBox[{"GeoCanberraDistance", "[", 
   RowBox[{"GeoPosition", "[", "\"\<SouthGeomagneticPole\>\"", "]"}], 
   "]"}]], "Input",
+ TaggingRules->{},
  CellChangeTimes->{{3.8713876216175966`*^9, 3.871387629283511*^9}},
  CellLabel->"In[174]:=",
  CellID->199378037,ExpressionUUID->"d537e158-a76a-4e6a-ae08-1efe42c675da"],
 
 Cell[BoxData["3.`"], "Output",
+ TaggingRules->{},
  CellChangeTimes->{3.8713876295555162`*^9},
  CellLabel->"Out[174]=",
  CellID->221785567,ExpressionUUID->"2564b2b7-66ef-4c69-ac0c-ff57eb162616"]
 }, Open  ]],
 
 Cell["The north dip pole:", "Text",
+ TaggingRules->{},
  CellChangeTimes->{{3.871387630627495*^9, 3.8713876357940526`*^9}},
  CellID->837546014,ExpressionUUID->"939a286d-b4e4-4bcd-9601-6b60f8e09926"],
 
@@ -658,17 +702,20 @@ Cell[BoxData[
  RowBox[{"GeoCanberraDistance", "[", 
   RowBox[{"GeoPosition", "[", "\"\<NorthModelDipPole\>\"", "]"}], 
   "]"}]], "Input",
+ TaggingRules->{},
  CellChangeTimes->{{3.8713876216175966`*^9, 3.8713876430553417`*^9}},
  CellLabel->"In[175]:=",
  CellID->54726031,ExpressionUUID->"abf56a1d-0a4f-4836-890a-a116a08ae0bb"],
 
 Cell[BoxData["2.2335136623424026`"], "Output",
+ TaggingRules->{},
  CellChangeTimes->{3.8713876509175644`*^9},
  CellLabel->"Out[175]=",
  CellID->63053391,ExpressionUUID->"78b88160-4dca-4772-9024-58c60ad96556"]
 }, Open  ]],
 
 Cell["The south dip pole:", "Text",
+ TaggingRules->{},
  CellChangeTimes->{{3.871387647310062*^9, 3.8713876503097844`*^9}},
  CellID->128577383,ExpressionUUID->"5c22f5b5-0078-4424-9c56-8c93b96ad948"],
 
@@ -678,11 +725,13 @@ Cell[BoxData[
  RowBox[{"GeoCanberraDistance", "[", 
   RowBox[{"GeoPosition", "[", "\"\<SouthModelDipPole\>\"", "]"}], 
   "]"}]], "Input",
+ TaggingRules->{},
  CellChangeTimes->{{3.8713876216175966`*^9, 3.8713876556935925`*^9}},
  CellLabel->"In[176]:=",
  CellID->174304804,ExpressionUUID->"610467ec-0091-4517-af39-fc537414d771"],
 
 Cell[BoxData["3.`"], "Output",
+ TaggingRules->{},
  CellChangeTimes->{3.8713876619234896`*^9},
  CellLabel->"Out[176]=",
  CellID->426776291,ExpressionUUID->"b3c97a2e-91e0-4991-b9e6-ed6e504be7b1"]
@@ -692,6 +741,7 @@ Cell[BoxData["3.`"], "Output",
 Cell[CellGroupData[{
 
 Cell["Empire State Building", "Subsubsection",
+ TaggingRules->{},
  CellChangeTimes->{{3.871387666519271*^9, 3.871387678728772*^9}},
  CellID->604398616,ExpressionUUID->"56cdfbaf-eea9-4815-b87a-8fa359668881"],
 
@@ -699,6 +749,7 @@ Cell["\<\
 Find the Canberra distance for the Empire State Building with \
 WikidataGeoPosition:\
 \>", "Text",
+ TaggingRules->{},
  CellChangeTimes->{{3.871387679972762*^9, 3.871387694768346*^9}},
  CellID->367113298,ExpressionUUID->"39bbab35-a191-4b0a-9fa9-cc2b6734833c"],
 
@@ -709,11 +760,13 @@ Cell[BoxData[
   RowBox[{
    RowBox[{"ResourceFunction", "[", "\"\<WikidataGeoPosition\>\"", "]"}], 
    "[", "\"\<Empire State Building\>\"", "]"}], "]"}]], "Input",
+ TaggingRules->{},
  CellChangeTimes->{{3.871387696236846*^9, 3.871387714099825*^9}},
  CellLabel->"In[177]:=",
  CellID->200693211,ExpressionUUID->"976ff61c-ec1d-410b-90ae-202a045272b7"],
 
 Cell[BoxData["0.3963959599675622`"], "Output",
+ TaggingRules->{},
  CellChangeTimes->{3.87138771921846*^9},
  CellLabel->"Out[177]=",
  CellID->699482772,ExpressionUUID->"d46a90d7-6321-4819-93ca-5cda9c1e4008"]
@@ -722,14 +775,17 @@ Cell[BoxData["0.3963959599675622`"], "Output",
 }, Open  ]],
 
 Cell["Properties and Relations", "Subsection",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellID->727494039,ExpressionUUID->"a58448dd-2836-474d-a97d-4685e0eea32b"],
 
 Cell["Possible Issues", "Subsection",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellID->471245215,ExpressionUUID->"c08982b6-a1f2-424e-94e6-77ee1f2c8cab"],
 
 Cell["Neat Examples", "Subsection",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellID->303071976,ExpressionUUID->"319a7157-71dc-493a-9982-44f81bd6c881"]
 }, Open  ]],
@@ -775,6 +831,7 @@ publicly credited with contributing this function.", "MoreInfoText"],
  CellID->771147648,ExpressionUUID->"4d830888-2a24-40e0-979d-add5a73f7196"],
 
 Cell["Peter Cullen Burbery", "Text",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -818,6 +875,7 @@ concepts) that should be used to include the function in search results.",
  CellID->854882061,ExpressionUUID->"8c6ba356-419c-4edb-b9d9-835582fad37c"],
 
 Cell["Geography", "Item",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -829,6 +887,7 @@ Cell["Geography", "Item",
  CellID->560424104,ExpressionUUID->"0f2aee97-162f-4806-ae4f-7249a52c4aeb"],
 
 Cell["Distance measures", "Item",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -839,6 +898,7 @@ Cell["Distance measures", "Item",
  CellID->342248665,ExpressionUUID->"f3253860-6291-4ce6-8184-76c4da62e16f"],
 
 Cell["Canberra distance", "Item",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -849,6 +909,7 @@ Cell["Canberra distance", "Item",
  CellID->205833666,ExpressionUUID->"b312fd63-6356-436d-9071-eb65759bbc7e"],
 
 Cell["Manhattan distance", "Item",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -1159,6 +1220,7 @@ related to the function.", "MoreInfoText"], Background -> GrayLevel[0.95],
  CellID->525877127,ExpressionUUID->"66537d54-63c0-4246-8942-c8c8efdba4ad"],
 
 Cell["CanberraDistance", "Item",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -1170,6 +1232,7 @@ Cell["CanberraDistance", "Item",
  CellID->195255409,ExpressionUUID->"203319a0-b434-43b2-9452-402cabc57149"],
 
 Cell["ManhattanDistance", "Item",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -1180,6 +1243,7 @@ Cell["ManhattanDistance", "Item",
  CellID->89456301,ExpressionUUID->"bbc4b595-5566-4cc7-81b3-43111cb4a281"],
 
 Cell["GeoPositionXYZ", "Item",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -1190,6 +1254,7 @@ Cell["GeoPositionXYZ", "Item",
  CellID->208525360,ExpressionUUID->"42b24474-eb7e-42ca-b575-5c778640819a"],
 
 Cell["GeoPosition", "Item",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -1232,6 +1297,7 @@ repository that are related to this function.", "MoreInfoText"], Background ->
  CellID->869341850,ExpressionUUID->"bd931398-b27a-4a46-8290-1e3e98320312"],
 
 Cell["WikidataGeoPosition", "Item",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -1243,6 +1309,7 @@ Cell["WikidataGeoPosition", "Item",
  CellID->694609509,ExpressionUUID->"75b68837-ff9f-49bb-b559-bb1254830f6f"],
 
 Cell["GeoSpatialDistance", "Item",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -1285,6 +1352,7 @@ repository).", "MoreInfoText"], Background -> GrayLevel[0.95], FrameMargins ->
  CellID->788767010,ExpressionUUID->"5cfedbf4-58a4-444e-800b-e747d87bc962"],
 
 Cell["Source, reference or citation information", "Text",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -1327,6 +1395,7 @@ to the function.", "MoreInfoText"], Background -> GrayLevel[0.95],
  CellID->341958311,ExpressionUUID->"80f04d2f-9a8d-4872-91fd-3b9da79a1954"],
 
 Cell["Link to other related material", "Item",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -1391,12 +1460,14 @@ Cell[CellGroupData[{
 Cell[BoxData[
  RowBox[{"MyFunction", "[", 
   RowBox[{"x", ",", "y"}], "]"}]], "Input",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellLabel->"In[3]:=",
  CellID->770806,ExpressionUUID->"ba6d844f-23b2-48d0-b72a-994f28961221"],
 
 Cell[BoxData[
  RowBox[{"x", " ", "y"}]], "Output",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellLabel->"Out[3]=",
  CellID->759771806,ExpressionUUID->"e20729ce-d676-4eea-b205-c0b20e2573a9"]
@@ -1469,7 +1540,9 @@ Cell[TextData[{
    "Wolfram Language Version"},
  CellID->267876551,ExpressionUUID->"55812c01-32a9-4da6-a187-e388651a5abd"],
 
-Cell["13.0+", "Text",
+Cell["13.1+", "Text",
+ TaggingRules->{},
+ CellChangeTimes->{3.871387795988687*^9},
  CellTags->{"DefaultContent", "ScrapeDefault"},
  CellID->788185540,ExpressionUUID->"e2efc0b4-d853-4a57-968c-b9cf08af3f49"]
 }, Open  ]],
@@ -1955,6 +2028,7 @@ that are otherwise beyond the scope of the function documentation.",
  CellID->897529167,ExpressionUUID->"02b72280-2174-495f-9425-b19be506432e"],
 
 Cell["Additional information about limitations, issues, etc.", "Text",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -1997,6 +2071,7 @@ resource.", "MoreInfoText"], Background -> GrayLevel[0.95], FrameMargins ->
  CellID->321610809,ExpressionUUID->"fe0b028c-49a7-497a-9073-cdebb3930d84"],
 
 Cell["Additional information for the reviewer.", "Text",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -2012,6 +2087,228 @@ WindowSize->{1152, Automatic},
 WindowMargins->{{
   Automatic, -5.399999999999864}, {-5.399999999999977, Automatic}},
 Visible->True,
+DockedCells->{
+  Cell[
+   BoxData[
+    TemplateBox[{}, "MainGridTemplate"]], "DockedCell", 
+   CellMargins -> {{-10, -10}, {-8, -8}}, CellFrame -> 0, Background -> 
+   RGBColor[0.92157, 0.34118, 0.10588], CellTags -> {"MainDockedCell"}, 
+   CacheGraphics -> False], 
+  Cell[
+   BoxData[
+    TemplateBox[{}, "ToolsGridTemplate"]], "DockedCell", 
+   TaggingRules -> {"Tools" -> True}, CellTags -> {"ToolbarDockedCell"}, 
+   CellFrameMargins -> {{0, 0}, {2, 2}}, CellFrame -> {{0, 0}, {1, 0}}, 
+   CacheGraphics -> False, CellOpen -> Dynamic[
+     CurrentValue[
+      EvaluationNotebook[], {TaggingRules, "ToolsOpen"}, True]]], 
+  Cell[
+   BoxData[
+    StyleBox[
+     TagBox[
+      GridBox[{{
+         ItemBox[
+          TagBox[
+           GridBox[{{
+              OverlayBox[{
+                StyleBox[
+                 TagBox[
+                  DynamicModuleBox[{Typeset`var$$ = False}, 
+                   InterpretationBox[
+                    StyleBox[
+                    PaneSelectorBox[{False -> GridBox[{{
+                    OpenerBox[
+                    Dynamic[Typeset`var$$], Appearance -> Automatic, Enabled -> 
+                    Automatic, AutoAction -> False, ContinuousAction -> 
+                    False], 
+                    StyleBox[
+                    DynamicBox[
+                    ToBoxes[
+                    DateString[
+                    TimeZoneConvert[
+                    DateObject[
+                    3.871387811567606`17.340441667579835*^9, TimeZone -> 
+                    0]], {"MonthName", " ", "DayShort", ", ", "Year", " ", 
+                    "Hour12Short", ":", "Minute", " ", "AMPMLowerCase"}], 
+                    StandardForm], SingleEvaluation -> True, Evaluator -> 
+                    "System"], FontSlant -> Italic, FontColor -> 
+                    GrayLevel[0.5], FontSize -> 0.9 Inherited, StripOnInput -> 
+                    False]}}, GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                    AutoDelete -> False, 
+                    GridBoxBackground -> {"Columns" -> {{Automatic}}}, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{0.2}}, "Rows" -> {{0.5}}}, 
+                    BaselinePosition -> {1, 1}], True -> GridBox[{{
+                    OpenerBox[
+                    Dynamic[Typeset`var$$], Appearance -> Automatic, Enabled -> 
+                    Automatic, AutoAction -> False, ContinuousAction -> 
+                    False], 
+                    StyleBox[
+                    DynamicBox[
+                    ToBoxes[
+                    DateString[
+                    TimeZoneConvert[
+                    DateObject[
+                    3.871387811567606`17.340441667579835*^9, TimeZone -> 
+                    0]], {"MonthName", " ", "DayShort", ", ", "Year", " ", 
+                    "Hour12Short", ":", "Minute", " ", "AMPMLowerCase"}], 
+                    StandardForm], SingleEvaluation -> True, Evaluator -> 
+                    "System"], FontSlant -> Italic, FontColor -> 
+                    GrayLevel[0.5], FontSize -> 0.9 Inherited, StripOnInput -> 
+                    False]}, {"", 
+                    PaneBox["\"\"", ImageMargins -> 0]}}, 
+                    GridBoxAlignment -> {"Columns" -> {{Left}}}, AutoDelete -> 
+                    False, GridBoxBackground -> {"Columns" -> {{Automatic}}}, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{0.2}}, "Rows" -> {{0.5}}}, 
+                    BaselinePosition -> {1, 1}]}, 
+                    Dynamic[Typeset`var$$], Alignment -> Automatic, ImageSize -> 
+                    Automatic, ImageMargins -> 0, BaseStyle -> {}, 
+                    DefaultBaseStyle -> "OpenerView", BaselinePosition -> 
+                    Baseline], Deployed -> False, StripOnInput -> False], 
+                    OpenerView[{
+                    Style[
+                    Dynamic[
+                    DateString[
+                    TimeZoneConvert[
+                    DateObject[
+                    3.871387811567606`17.340441667579835*^9, TimeZone -> 
+                    0]], {"MonthName", " ", "DayShort", ", ", "Year", " ", 
+                    "Hour12Short", ":", "Minute", " ", "AMPMLowerCase"}], 
+                    SingleEvaluation -> True, Evaluator -> "System"], 
+                    FontSlant -> Italic, FontColor -> GrayLevel[0.5], 
+                    FontSize -> 0.9 Inherited], ""}, False]], 
+                   DynamicModuleValues -> Automatic], Setting[#, {0}]& ], 
+                 ShowContents -> False, StripOnInput -> False], 
+                StyleBox[
+                 DynamicBox[
+                  ToBoxes[
+                   DateString[
+                    TimeZoneConvert[
+                    DateObject[
+                    3.871387811567606`17.340441667579835*^9, TimeZone -> 
+                    0]], {"MonthName", " ", "DayShort", ", ", "Year", " ", 
+                    "Hour12Short", ":", "Minute", " ", "AMPMLowerCase"}], 
+                   StandardForm], SingleEvaluation -> True, Evaluator -> 
+                  "System"], FontSlant -> Italic, FontColor -> GrayLevel[0.5],
+                  FontSize -> 0.9 Inherited, StripOnInput -> False]}, 
+               Alignment -> {Right, Baseline}], "\"   \"", 
+              ItemBox[
+               
+               DynamicModuleBox[{
+                DefinitionNotebookClient`Utilities`PackagePrivate`pi$$ = 
+                 Mouseover[
+                   Dynamic[
+                   DefinitionNotebookClient`$StripeProgressDisplay, 
+                    TrackedSymbols :> {
+                    DefinitionNotebookClient`$StripeProgressDisplay}], 
+                   Button["Abort \[RightGuillemet]", FrontEndExecute[
+                    FrontEnd`EvaluatorAbort[Automatic]]; 
+                    DefinitionNotebookClient`$ButtonsDisabled = False; Null, 
+                    Appearance -> None, BaseStyle -> Dynamic[
+                    FEPrivate`If[
+                    CurrentValue["MouseOver"], {"HyperlinkActive"}, {
+                    "Hyperlink"}]], Method -> "Preemptive"], ImageSize -> 
+                   All]}, 
+                DynamicBox[
+                 ToBoxes[
+                 DefinitionNotebookClient`Utilities`PackagePrivate`pi$$, 
+                  StandardForm], 
+                 TrackedSymbols :> {
+                  DefinitionNotebookClient`Utilities`PackagePrivate`pi$$}], 
+                Initialization :> 
+                If[$SessionID =!= 19474735306078163083, 
+                  DefinitionNotebookClient`Utilities`PackagePrivate`pi$$ = 
+                  ""], DynamicModuleValues :> {}], ItemSize -> Scaled[0.75], 
+               StripOnInput -> False]}}, 
+            GridBoxAlignment -> {
+             "Columns" -> {{Left}}, "Rows" -> {{Baseline}}}, AutoDelete -> 
+            False, GridBoxItemSize -> {
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], "Grid"], 
+          ItemSize -> Fit, StripOnInput -> False], 
+         ItemBox["\"\"", ItemSize -> All, StripOnInput -> False], 
+         ItemBox[
+          TagBox[
+           ButtonBox[
+            TagBox[
+             PaneSelectorBox[{False -> GraphicsBox[{
+                  GrayLevel[
+                   NCache[
+                    Rational[64, 85], 0.7529411764705882]], 
+                  
+                  PolygonBox[{{-0.282842712474619, -0.42426406871192845`}, \
+{-0.42426406871192845`, -0.282842712474619}, {0.282842712474619, 
+                   0.42426406871192845`}, {0.42426406871192845`, 
+                   0.282842712474619}}], 
+                  
+                  PolygonBox[{{0.42426406871192845`, -0.282842712474619}, {
+                   0.282842712474619, -0.42426406871192845`}, \
+{-0.42426406871192845`, 0.282842712474619}, {-0.282842712474619, 
+                   0.42426406871192845`}}]}, ImageSize -> 18, 
+                 PlotRangePadding -> 0, PlotRange -> 0.7, Background -> None],
+                True -> GraphicsBox[{
+                  GrayLevel[
+                   NCache[
+                    Rational[128, 255], 0.5019607843137255]], 
+                  
+                  PolygonBox[{{-0.282842712474619, -0.42426406871192845`}, \
+{-0.42426406871192845`, -0.282842712474619}, {0.282842712474619, 
+                   0.42426406871192845`}, {0.42426406871192845`, 
+                   0.282842712474619}}], 
+                  
+                  PolygonBox[{{0.42426406871192845`, -0.282842712474619}, {
+                   0.282842712474619, -0.42426406871192845`}, \
+{-0.42426406871192845`, 0.282842712474619}, {-0.282842712474619, 
+                   0.42426406871192845`}}]}, ImageSize -> 18, 
+                 PlotRangePadding -> 0, PlotRange -> 0.7, Background -> 
+                 None]}, 
+              Dynamic[
+               CurrentValue["MouseOver"]], ImageSize -> Automatic, 
+              FrameMargins -> 0], 
+             MouseAppearanceTag["LinkHand"]], ButtonFunction :> 
+            With[{DefinitionNotebookClient`Stripes`PackagePrivate`nbo$ = 
+               EvaluationNotebook[]}, 
+              CurrentValue[
+               DefinitionNotebookClient`Stripes`PackagePrivate`nbo$, 
+                DockedCells] = If[
+                TrueQ[
+                 MemberQ[
+                  CurrentValue["ModifierKeys"], "Control"]], 
+                DeleteCases[
+                 Flatten[{
+                   CurrentValue[
+                   DefinitionNotebookClient`Stripes`PackagePrivate`nbo$, 
+                    DockedCells]}], 
+                 Cell[
+                  Blank[], "StripeCell", 
+                  BlankNullSequence[]]], 
+                DeleteCases[
+                 Flatten[{
+                   CurrentValue[
+                   DefinitionNotebookClient`Stripes`PackagePrivate`nbo$, 
+                    DockedCells]}], 
+                 Condition[
+                  Pattern[DefinitionNotebookClient`Stripes`PackagePrivate`c$, 
+                   Blank[Cell]], 
+                  Not[
+                   FreeQ[
+                   DefinitionNotebookClient`Stripes`PackagePrivate`c$, 
+                    "1a4f27a9-76ff-416f-a5e5-1bb75b54233d"]]]]]], Appearance -> 
+            None, BoxID -> "1a4f27a9-76ff-416f-a5e5-1bb75b54233d", Evaluator -> 
+            Automatic, Method -> "Preemptive"], 
+           MouseAppearanceTag["LinkHand"]], ItemSize -> All, StripOnInput -> 
+          False]}}, 
+       GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Baseline}}}, 
+       AutoDelete -> False, 
+       GridBoxItemSize -> {
+        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], "Grid"], 
+     "Text", FontSize -> 12, FontColor -> GrayLevel[0.25], StripOnInput -> 
+     False]], "StripeCell", CellFrameMargins -> {{20, 5}, {2, 2}}, 
+   CellFrame -> {{0, 0}, {1, 0}}, CellFrameColor -> GrayLevel[0.75]]},
 TaggingRules->{
  "ResourceType" -> "Function", "ResourceCreateNotebook" -> True, 
   "TemplateVersion" -> "1.6.4", "CreationTimestamp" -> 
@@ -2059,7 +2356,8 @@ WyabbVsUI30dbWyR5mC4Y6npzAQV7A7CHW8e0ORJGTUV01ufdzMGR2GbTwVmCj3d8A9cd0NNHoiRcl\
     "Contexts" -> {
      "FunctionResource`", "FunctionResource`DefinitionNotebook`"}, 
     "DefaultContentMethod" -> "Legacy"}, "ToolsOpen" -> True, "StatusMessage" -> 
-  "", "SubmissionReviewData" -> {"Review" -> False}, "AutoUpdate" -> True},
+  ProgressIndicator[Appearance -> "Necklace"], 
+  "SubmissionReviewData" -> {"Review" -> False}, "AutoUpdate" -> True},
 CreateCellID->True,
 FrontEndVersion->"13.1 for Microsoft Windows (64-bit) (June 16, 2022)",
 StyleDefinitions->Notebook[{
@@ -2385,7 +2683,6 @@ VX/aMEEQzrerjFhhelYAzofFB3r8AgApYdcE
                     15.75, 17.25}, {15.75, 5.25}, {6.75, 5.25}, {6.75, 
                     17.25}, {8.25, 17.25}, {8.25, 18.}}, {{9.75, 17.25}, {
                     12.75, 17.25}, {12.75, 16.5}, {9.75, 16.5}}}], 
-                    
                     FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}, {{0, 2,
                      0}, {0, 1, 0}, {0, 1, 0}}, {{0, 2, 0}, {0, 1, 0}, {0, 1, 
                     0}}, {{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{8.25, 
@@ -2502,7 +2799,6 @@ VX/aMEEQzrerjFhhelYAzofFB3r8AgApYdcE
                 StyleBox[
                 "\"Template Input\"", "Text", FontFamily -> "Source Sans Pro",
                   FontSize -> 11, StripOnInput -> False], 
-                
                 "\"Format selection automatically using appropriate \
 documentation styles\""}, "PrettyTooltipTemplate"], ButtonFunction :> 
               With[{RSNB`nb$ = ButtonNotebook[], RSNB`$cp$ = $ContextPath}, 
@@ -3962,7 +4258,6 @@ MRfdXpi7YPph7oaZD/MXzB5c4QCzBwA/Dn+d
             "]]}, 
           FaceForm[#]], 
          StyleBox[{
-           
            FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1,
               0}, {0, 1, 0}}, {{1, 4, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}, {1,
               3, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}}}, {{{8.1753, 7.4169}, {
