@@ -1,0 +1,172 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      5984,        164]
+NotebookOptionsPosition[      4411,        128]
+NotebookOutlinePosition[      4848,        145]
+CellTagsIndexPosition[      4805,        142]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"GeoCanberraDistance", "[", "pointA_", "]"}], ":=", 
+  RowBox[{"CanberraDistance", "[", 
+   RowBox[{
+    RowBox[{"First", "[", 
+     RowBox[{"GeoPositionXYZ", "[", "pointA", "]"}], "]"}], ",", 
+    RowBox[{"First", "[", 
+     RowBox[{"GeoPositionXYZ", "[", "Here", "]"}], "]"}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"GeoCanberraDistance", "[", 
+   RowBox[{"pointA_", ",", "pointB_"}], "]"}], ":=", 
+  RowBox[{"CanberraDistance", "[", 
+   RowBox[{
+    RowBox[{"First", "[", 
+     RowBox[{"GeoPositionXYZ", "[", "pointA", "]"}], "]"}], ",", 
+    RowBox[{"First", "[", 
+     RowBox[{"GeoPositionXYZ", "[", "pointB", "]"}], "]"}]}], 
+   "]"}]}]}], "Input",
+ CellChangeTimes->{{3.871385409208542*^9, 3.871385488648432*^9}, {
+  3.871385525177707*^9, 3.8713855385782475`*^9}},
+ CellLabel->"In[46]:=",ExpressionUUID->"9bbe75b4-0df4-4fd5-911e-87b685fb2816"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GeoCanberraDistance", "[", 
+  RowBox[{"GeoAntipode", "[", "Here", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8713854733317337`*^9, 3.87138548207393*^9}},
+ CellLabel->"In[38]:=",ExpressionUUID->"317e46ee-ba19-4fc5-a82d-a8a8b6466c3e"],
+
+Cell[BoxData["3.`"], "Output",
+ CellChangeTimes->{3.8713854824642825`*^9},
+ CellLabel->"Out[38]=",ExpressionUUID->"bf34383a-99c0-450b-b405-c962238f431e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GeoCanberraDistance", "[", 
+  RowBox[{"GeoPosition", "[", "\"\<NullIsland\>\"", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8713854733317337`*^9, 3.871385502137744*^9}},
+ CellLabel->"In[45]:=",ExpressionUUID->"08a3bf30-d699-480c-9744-a9eae3a83e74"],
+
+Cell[BoxData["2.812866303114989`"], "Output",
+ CellChangeTimes->{3.871385502574969*^9, 3.871385534452984*^9},
+ CellLabel->"Out[45]=",ExpressionUUID->"1961670d-a938-4d60-95d1-0cf22930ad4f"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Rationalize", "[", 
+  RowBox[{"GeoCanberraDistance", "[", 
+   RowBox[{"GeoPosition", "[", "\"\<NullIsland\>\"", "]"}], "]"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.8713855080977764`*^9, 3.871385513379269*^9}},
+ CellLabel->"In[44]:=",ExpressionUUID->"7dd762d9-ff17-4a91-8237-ae77df87a7dd"],
+
+Cell[BoxData["2.812866303114989`"], "Output",
+ CellChangeTimes->{{3.8713855137227783`*^9, 3.871385532843609*^9}},
+ CellLabel->"Out[44]=",ExpressionUUID->"cb7d5f5b-e293-434a-8617-31d5e12ac119"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GeoPositionXYZ", "[", "Here", "]"}]], "Input",
+ CellChangeTimes->{{3.8713855609269023`*^9, 3.871385565993574*^9}},
+ CellLabel->"In[48]:=",ExpressionUUID->"de28e899-47b0-479f-be31-ee89f4fa2479"],
+
+Cell[BoxData[
+ RowBox[{"GeoPositionXYZ", "[", 
+  RowBox[{"{", 
+   RowBox[{"658385.206894855`", ",", 
+    RowBox[{"-", "4.960783332820038`*^6"}], ",", "3.9412058980811113`*^6"}], 
+   "}"}], "]"}]], "Output",
+ CellChangeTimes->{3.8713855663129377`*^9},
+ CellLabel->"Out[48]=",ExpressionUUID->"c42a6d4b-2082-4c21-925b-6abf312a3788"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Round", "/@", 
+  RowBox[{"First", "[", 
+   RowBox[{"GeoPositionXYZ", "[", "Here", "]"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.8713855668286085`*^9, 3.8713855808009334`*^9}},
+ CellLabel->"In[51]:=",ExpressionUUID->"df4dd43f-0bd0-4b8c-b15f-02a88099c6a4"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"658385", ",", 
+   RowBox[{"-", "4960783"}], ",", "3941206"}], "}"}]], "Output",
+ CellChangeTimes->{{3.8713855681097994`*^9, 3.871385581222823*^9}},
+ CellLabel->"Out[51]=",ExpressionUUID->"34ade7f8-8193-4b42-bfac-d5a7630cff58"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"CanberraDistance", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"a", ",", "b", ",", "c"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], "]"}]], "Input",ExpressionUUID\
+->"c65f65e4-4664-418b-8683-110cee7e1335"]
+},
+WindowSize->{1152., 585.6},
+WindowMargins->{{
+  Automatic, -5.399999999999864}, {-5.399999999999977, Automatic}},
+FrontEndVersion->"13.1 for Microsoft Windows (64-bit) (June 16, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"1ff2ec86-f284-4d54-a6dc-a10bf4fae625"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 905, 22, 48, "Input",ExpressionUUID->"9bbe75b4-0df4-4fd5-911e-87b685fb2816"],
+Cell[CellGroupData[{
+Cell[1488, 46, 259, 4, 28, "Input",ExpressionUUID->"317e46ee-ba19-4fc5-a82d-a8a8b6466c3e"],
+Cell[1750, 52, 153, 2, 32, "Output",ExpressionUUID->"bf34383a-99c0-450b-b405-c962238f431e"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1940, 59, 274, 4, 28, "Input",ExpressionUUID->"08a3bf30-d699-480c-9744-a9eae3a83e74"],
+Cell[2217, 65, 188, 2, 32, "Output",ExpressionUUID->"1961670d-a938-4d60-95d1-0cf22930ad4f"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2442, 72, 316, 6, 28, "Input",ExpressionUUID->"7dd762d9-ff17-4a91-8237-ae77df87a7dd"],
+Cell[2761, 80, 192, 2, 32, "Output",ExpressionUUID->"cb7d5f5b-e293-434a-8617-31d5e12ac119"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2990, 87, 217, 3, 28, "Input",ExpressionUUID->"de28e899-47b0-479f-be31-ee89f4fa2479"],
+Cell[3210, 92, 329, 7, 35, "Output",ExpressionUUID->"c42a6d4b-2082-4c21-925b-6abf312a3788"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3576, 104, 280, 5, 28, "Input",ExpressionUUID->"df4dd43f-0bd0-4b8c-b15f-02a88099c6a4"],
+Cell[3859, 111, 266, 5, 55, "Output",ExpressionUUID->"34ade7f8-8193-4b42-bfac-d5a7630cff58"]
+}, Open  ]],
+Cell[4140, 119, 267, 7, 28, "Input",ExpressionUUID->"c65f65e4-4664-418b-8683-110cee7e1335"]
+}
+]
+*)
+
