@@ -154,18 +154,55 @@ documentation pages for examples."}], "MoreInfoText"], Background ->
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"MyFunction", "[", "arg", "]"}]], "UsageInputs",
+ RowBox[{"LoxodromeDistance", "[", 
+  StyleBox["pointA", "TI"], "]"}]], "UsageInputs",
+ CellChangeTimes->{{3.871373293991789*^9, 3.871373297514594*^9}, 
+   3.8713733463063335`*^9},
  FontFamily->"Source Sans Pro",
  CellTags->{"DefaultContent", "TabNext"},
  CellID->67839508,ExpressionUUID->"7fe1023f-80d1-4728-a5fe-d9ede56e1a6e"],
 
 Cell[TextData[{
- "explanation of what use of the argument ",
- StyleBox["arg", "TI"],
- " does."
+ "find the distance to ",
+ Cell[BoxData[
+  StyleBox["pointA", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "fcc47ecc-db57-4ca7-a058-661dc5bd0263"],
+ " if you traveled there along a loxodromic path from your current location"
 }], "UsageDescription",
+ CellChangeTimes->{{3.8713732999613943`*^9, 3.871373348276032*^9}},
  CellTags->{"DefaultContent", "TabNext"},
  CellID->746063541,ExpressionUUID->"44cc3894-d893-4bc4-9ef3-74e27bc19674"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"LoxodromeDistance", "[", 
+  RowBox[{
+   StyleBox["pointA", "TI"], ",", " ", 
+   StyleBox["pointB", "TI"]}], "]"}]], "UsageInputs",
+ CellChangeTimes->{{3.871373293991789*^9, 3.871373297514594*^9}, {
+  3.8713733463063335`*^9, 3.871373372408425*^9}},
+ FontFamily->"Source Sans Pro",
+ CellTags->{"DefaultContent", "TabNext"},
+ CellID->297890939,ExpressionUUID->"250f171a-8f6d-4d7d-8ddb-386962d37961"],
+
+Cell[TextData[{
+ "find the distance to ",
+ Cell[BoxData[
+  StyleBox["pointA", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "ca2bb913-1315-40b7-921b-c8d9336807da"],
+ " if you traveled there along a loxodromic path from ",
+ Cell[BoxData[
+  StyleBox["pointB", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "25cce7a4-1513-4217-900b-154f7b03734b"]
+}], "UsageDescription",
+ CellChangeTimes->{{3.8713732999613943`*^9, 3.871373368366249*^9}},
+ CellTags->{"DefaultContent", "TabNext"},
+ CellID->332211018,ExpressionUUID->"baf8fd20-a0c3-445a-ae0f-35d39d746066"]
 }, Open  ]]
 }, Open  ]],
 
@@ -381,24 +418,102 @@ Cell["Basic Examples", "Subsection",
  CellTags->"DefaultContent",
  CellID->619504543,ExpressionUUID->"532ba8fc-96fd-49a9-a3b9-92a97e001efd"],
 
-Cell["Text about the example:", "Text",
+Cell["\<\
+Find the distance to Null Island with 0 latitude and 0 longitude along a \
+loxodrome:\
+\>", "Text",
+ CellChangeTimes->{{3.871373377636837*^9, 3.8713733980884595`*^9}},
  CellTags->"DefaultContent",
  CellID->586099280,ExpressionUUID->"1d8f3634-2377-4e6d-a0c5-3f9a297e7616"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"MyFunction", "[", 
-  RowBox[{"x", ",", "y"}], "]"}]], "Input",
- CellTags->"DefaultContent",
- CellLabel->"In[1]:= ",
- CellID->298664010,ExpressionUUID->"9929d23f-ef11-499e-9cc7-c455ca530712"],
+ RowBox[{"LoxodromeDistance", "[", 
+  RowBox[{"GeoPosition", "[", "\"\<NullIsland\>\"", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.871373399739954*^9, 3.871373405799429*^9}},
+ CellLabel->"In[85]:=",
+ CellID->373180193,ExpressionUUID->"e325a4eb-b36c-49fe-9c6c-2456bc4fea90"],
 
 Cell[BoxData[
- RowBox[{"x", " ", "y"}]], "Output",
- CellTags->"DefaultContent",
- CellLabel->"Out[1]= ",
- CellID->832981051,ExpressionUUID->"733cd262-89c5-4d2c-aea9-45bb519f926b"]
+ TemplateBox[{"9473.125859004258`", "\"km\"", "kilometers", "\"Kilometers\""},
+  "Quantity"]], "Output",
+ CellChangeTimes->{3.871373406081092*^9},
+ CellLabel->"Out[85]=",
+ CellID->388663195,ExpressionUUID->"b6d9267f-f3ee-47b0-93ce-890303e70991"]
+}, Open  ]],
+
+Cell["Find the distance to the north and south poles:", "Text",
+ CellChangeTimes->{{3.8713734230662923`*^9, 3.8713734303695765`*^9}},
+ CellID->51027292,ExpressionUUID->"a7d65c85-e8c6-4124-823e-1af12f646f56"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"LoxodromeDistance", "[", 
+  RowBox[{"GeoPosition", "[", "\"\<NorthPole\>\"", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.871373431678073*^9, 3.871373437529333*^9}},
+ CellLabel->"In[86]:=",
+ CellID->380602543,ExpressionUUID->"dcbbc71a-730e-4ec3-af50-fa69daa45e09"],
+
+Cell[BoxData[
+ TemplateBox[{"5753.397811991666`", "\"km\"", "kilometers", "\"Kilometers\""},
+  "Quantity"]], "Output",
+ CellChangeTimes->{3.871373437842073*^9},
+ CellLabel->"Out[86]=",
+ CellID->248175218,ExpressionUUID->"988caff8-359d-469e-93fa-30f47257e472"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"LoxodromeDistance", "[", 
+  RowBox[{"GeoPosition", "[", "\"\<SouthPole\>\"", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.871373431678073*^9, 3.871373442307837*^9}},
+ CellLabel->"In[87]:=",
+ CellID->253159429,ExpressionUUID->"f8141e17-33ea-44bc-b27e-4e0ca4bb0d46"],
+
+Cell[BoxData[
+ TemplateBox[{"14254.973896120102`", "\"km\"", "kilometers", "\"Kilometers\""},
+  "Quantity"]], "Output",
+ CellChangeTimes->{3.8713734425972567`*^9},
+ CellLabel->"Out[87]=",
+ CellID->735192943,ExpressionUUID->"90a7b75f-b466-4fd3-a5e8-87b9962ff4e1"]
+}, Open  ]],
+
+Cell["Find the distance to the north and south geomagnetic poles:", "Text",
+ CellChangeTimes->{{3.8713734435506577`*^9, 3.8713734524569798`*^9}},
+ CellID->498239798,ExpressionUUID->"1582f194-bb2c-4b3e-aa06-dde958709530"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"LoxodromeDistance", "[", "\"\<GeomagneticNorthPole\>\"", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.8713734537758827`*^9, 3.8713734608965473`*^9}},
+ CellLabel->"In[88]:=",
+ CellID->48943018,ExpressionUUID->"997a7822-7d2f-4b73-83bf-0073cf5693bd"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "GeoPath", "invspty", 
+   "\"\\!\\(\\*RowBox[{\\\"{\\\", RowBox[{RowBox[{\\\"GeoPosition\\\", \
+\\\"[\\\", RowBox[{\\\"{\\\", RowBox[{\\\"38.410000000000004`\\\", \\\",\\\", \
+RowBox[{\\\"-\\\", \\\"82.44`\\\"}]}], \\\"}\\\"}], \\\"]\\\"}], \\\",\\\", \
+\\\"\\\\\\\"GeomagneticNorthPole\\\\\\\"\\\"}], \\\"}\\\"}]\\) is not a valid \
+specification for a geo path of type \\!\\(\\*RowBox[{\\\"\\\\\\\"Loxodrome\\\
+\\\\\"\\\"}]\\).\"", 2, 88, 8, 19474650876955409832, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.871373461169633*^9},
+ CellLabel->"During evaluation of In[88]:=",
+ CellID->358604494,ExpressionUUID->"69e6eb41-29cb-46cc-922f-db5922ee5573"],
+
+Cell[BoxData[
+ TemplateBox[{"0", "\"m\"", "meters", "\"Meters\""},
+  "Quantity"]], "Output",
+ CellChangeTimes->{3.871373461264634*^9},
+ CellLabel->"Out[88]=",
+ CellID->484320548,ExpressionUUID->"7419c0b0-8a47-4d8f-b17e-8e00ab3dbca4"]
 }, Open  ]]
 }, Open  ]],
 
@@ -1697,7 +1812,7 @@ WyabbVsUI30dbWyR5mC4Y6npzAQV7A7CHW8e0ORJGTUV01ufdzMGR2GbTwVmCj3d8A9cd0NNHoiRcl\
     "Contexts" -> {
      "FunctionResource`", "FunctionResource`DefinitionNotebook`"}, 
     "DefaultContentMethod" -> "Legacy"}, "ToolsOpen" -> True, "StatusMessage" -> 
-  "", "SubmissionReviewData" -> {"Review" -> False}},
+  "", "SubmissionReviewData" -> {"Review" -> False}, "AutoUpdate" -> True},
 CreateCellID->True,
 FrontEndVersion->"13.1 for Microsoft Windows (64-bit) (June 16, 2022)",
 StyleDefinitions->Notebook[{
