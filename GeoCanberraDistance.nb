@@ -262,7 +262,11 @@ The output will be between 0 and 3 because there are three spatial \
 coordinates vertical horizontal and depth/breadth.\
 \>", "Notes",
  CellChangeTimes->{{3.87138738164834*^9, 3.871387420251773*^9}},
- CellID->105825071,ExpressionUUID->"ee96a4cd-047f-444e-bc85-c8c0bb4a1abe"]
+ CellID->105825071,ExpressionUUID->"ee96a4cd-047f-444e-bc85-c8c0bb4a1abe"],
+
+Cell["The distance measure obeys the triangle inequality.", "Notes",
+ CellChangeTimes->{{3.8713876070097065`*^9, 3.8713876153756456`*^9}},
+ CellID->526234285,ExpressionUUID->"88c99255-3d28-4581-8775-d51f73d02313"]
 }, Open  ]]
 }, Open  ]],
 
@@ -488,9 +492,234 @@ Cell["Options", "Subsection",
  CellTags->"DefaultContent",
  CellID->879773335,ExpressionUUID->"a2238097-94d5-40d5-829c-608979c3eac6"],
 
+Cell[CellGroupData[{
+
 Cell["Applications", "Subsection",
  CellTags->"DefaultContent",
  CellID->542143288,ExpressionUUID->"90fe88fe-bd2b-4e90-8cf3-1bd751c20b93"],
+
+Cell[CellGroupData[{
+
+Cell["Antipode", "Subsubsection",
+ CellChangeTimes->{{3.8713874514321575`*^9, 3.871387456753768*^9}},
+ CellID->151584115,ExpressionUUID->"213c5dd6-e3be-42ec-a464-a0aea4c9b0bb"],
+
+Cell["Find the Canberra distance to your antipode:", "Text",
+ CellChangeTimes->{{3.8713874430367336`*^9, 3.8713874697691813`*^9}},
+ CellID->174234867,ExpressionUUID->"0b6f25ce-e336-48a9-808f-8520e7bb0f38"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GeoCanberraDistance", "[", 
+  RowBox[{"GeoAntipode", "[", "Here", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.87138747111578*^9, 3.871387485331387*^9}},
+ CellLabel->"In[168]:=",
+ CellID->147632769,ExpressionUUID->"cb6d872c-6288-43cf-97fa-80aa974af46d"],
+
+Cell[BoxData["3.`"], "Output",
+ CellChangeTimes->{3.871387485675133*^9},
+ CellLabel->"Out[168]=",
+ CellID->797198800,ExpressionUUID->"c49d068f-7cd9-423f-acb4-6b2e059f9426"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Special Geographic points", "Subsubsection",
+ CellChangeTimes->{{3.8713875084416084`*^9, 3.8713875135591*^9}},
+ CellID->609569464,ExpressionUUID->"787e4d93-e55f-4dfe-a6fc-b1f2260fb430"],
+
+Cell["Find the Canberra weighted distance for null island:", "Text",
+ CellChangeTimes->{{3.8713875147012663`*^9, 3.871387524141448*^9}},
+ CellID->448440510,ExpressionUUID->"73d5f1c0-5777-4141-ba46-220ddc2402c1"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GeoCanberraDistance", "[", 
+  RowBox[{"GeoPosition", "[", "\"\<NullIsland\>\"", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8713875258602057`*^9, 3.8713875313282185`*^9}},
+ CellLabel->"In[169]:=",
+ CellID->399269225,ExpressionUUID->"9c5f6591-1e9c-4896-afe9-23650f48ed55"],
+
+Cell[BoxData["2.812866303114989`"], "Output",
+ CellChangeTimes->{3.871387531640483*^9},
+ CellLabel->"Out[169]=",
+ CellID->572521308,ExpressionUUID->"d23f3c09-60da-48d7-a3ee-f59007707ff7"]
+}, Open  ]],
+
+Cell["The antipode of null island:", "Text",
+ CellChangeTimes->{{3.8713875361308827`*^9, 3.8713875430238285`*^9}},
+ CellID->177222371,ExpressionUUID->"2e84e238-32a3-4092-b211-15fdec61a122"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GeoCanberraDistance", "[", 
+  RowBox[{"GeoAntipode", "[", 
+   RowBox[{"GeoPosition", "[", "\"\<NullIsland\>\"", "]"}], "]"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.8713875258602057`*^9, 3.871387550258439*^9}},
+ CellLabel->"In[170]:=",
+ CellID->271314871,ExpressionUUID->"8d398df9-67e1-4a50-87ba-fe8c3a2de9ec"],
+
+Cell[BoxData["3.`"], "Output",
+ CellChangeTimes->{3.871387550521413*^9},
+ CellLabel->"Out[170]=",
+ CellID->189842294,ExpressionUUID->"bf081a66-2bb7-4924-a87b-d375278fa741"]
+}, Open  ]],
+
+Cell["The north pole:", "Text",
+ CellChangeTimes->{{3.8713875562270985`*^9, 3.8713875585557566`*^9}},
+ CellID->47745231,ExpressionUUID->"ffe41426-71f2-4115-96b1-1a0bc8645e32"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GeoCanberraDistance", "[", 
+  RowBox[{"GeoPosition", "[", "\"\<NorthPole\>\"", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.871387559477355*^9, 3.8713875670464144`*^9}},
+ CellLabel->"In[171]:=",
+ CellID->187305885,ExpressionUUID->"c585f43f-cd96-4035-b5ec-93306eec7d88"],
+
+Cell[BoxData["2.2345655678804857`"], "Output",
+ CellChangeTimes->{3.871387567330405*^9},
+ CellLabel->"Out[171]=",
+ CellID->175619484,ExpressionUUID->"a0eb44f2-eac4-4b2c-afc0-1bfedb197b78"]
+}, Open  ]],
+
+Cell["The south pole:", "Text",
+ CellChangeTimes->{{3.871387568933963*^9, 3.8713875713623743`*^9}},
+ CellID->202322930,ExpressionUUID->"c106e5c9-e470-4517-89ee-22873833e49f"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GeoCanberraDistance", "[", 
+  RowBox[{"GeoPosition", "[", "\"\<SouthPole\>\"", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8713875721263523`*^9, 3.871387581153615*^9}},
+ CellLabel->"In[172]:=",
+ CellID->106265093,ExpressionUUID->"fca8fb78-2add-423a-aa40-873ca006eb53"],
+
+Cell[BoxData["2.999999999999999`"], "Output",
+ CellChangeTimes->{3.871387581461376*^9},
+ CellLabel->"Out[172]=",
+ CellID->571654433,ExpressionUUID->"93b7b447-29af-446b-a9b3-8d5df1dcbcd6"]
+}, Open  ]],
+
+Cell["The north magnetic pole:", "Text",
+ CellChangeTimes->{{3.871387583477364*^9, 3.871387588570155*^9}},
+ CellID->128624936,ExpressionUUID->"4c071c60-f414-459a-8f0d-384612c98472"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GeoCanberraDistance", "[", 
+  RowBox[{"GeoPosition", "[", "\"\<NorthGeomagneticPole\>\"", "]"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.8713875721263523`*^9, 3.8713875955052185`*^9}},
+ CellLabel->"In[173]:=",
+ CellID->20008995,ExpressionUUID->"d04a527f-6d40-47c3-9973-32fb37278de9"],
+
+Cell[BoxData["1.2603499683360033`"], "Output",
+ CellChangeTimes->{3.8713875958012247`*^9},
+ CellLabel->"Out[173]=",
+ CellID->50632169,ExpressionUUID->"a967267f-ffc3-420e-a0da-d78c1076b940"]
+}, Open  ]],
+
+Cell["The south geomagnetic pole:", "Text",
+ CellChangeTimes->{{3.8713875968452215`*^9, 3.8713876024876595`*^9}},
+ CellID->39715625,ExpressionUUID->"ba571245-7960-44cc-8f84-dce5c1bc8464"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GeoCanberraDistance", "[", 
+  RowBox[{"GeoPosition", "[", "\"\<SouthGeomagneticPole\>\"", "]"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.8713876216175966`*^9, 3.871387629283511*^9}},
+ CellLabel->"In[174]:=",
+ CellID->199378037,ExpressionUUID->"d537e158-a76a-4e6a-ae08-1efe42c675da"],
+
+Cell[BoxData["3.`"], "Output",
+ CellChangeTimes->{3.8713876295555162`*^9},
+ CellLabel->"Out[174]=",
+ CellID->221785567,ExpressionUUID->"2564b2b7-66ef-4c69-ac0c-ff57eb162616"]
+}, Open  ]],
+
+Cell["The north dip pole:", "Text",
+ CellChangeTimes->{{3.871387630627495*^9, 3.8713876357940526`*^9}},
+ CellID->837546014,ExpressionUUID->"939a286d-b4e4-4bcd-9601-6b60f8e09926"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GeoCanberraDistance", "[", 
+  RowBox[{"GeoPosition", "[", "\"\<NorthModelDipPole\>\"", "]"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.8713876216175966`*^9, 3.8713876430553417`*^9}},
+ CellLabel->"In[175]:=",
+ CellID->54726031,ExpressionUUID->"abf56a1d-0a4f-4836-890a-a116a08ae0bb"],
+
+Cell[BoxData["2.2335136623424026`"], "Output",
+ CellChangeTimes->{3.8713876509175644`*^9},
+ CellLabel->"Out[175]=",
+ CellID->63053391,ExpressionUUID->"78b88160-4dca-4772-9024-58c60ad96556"]
+}, Open  ]],
+
+Cell["The south dip pole:", "Text",
+ CellChangeTimes->{{3.871387647310062*^9, 3.8713876503097844`*^9}},
+ CellID->128577383,ExpressionUUID->"5c22f5b5-0078-4424-9c56-8c93b96ad948"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GeoCanberraDistance", "[", 
+  RowBox[{"GeoPosition", "[", "\"\<SouthModelDipPole\>\"", "]"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.8713876216175966`*^9, 3.8713876556935925`*^9}},
+ CellLabel->"In[176]:=",
+ CellID->174304804,ExpressionUUID->"610467ec-0091-4517-af39-fc537414d771"],
+
+Cell[BoxData["3.`"], "Output",
+ CellChangeTimes->{3.8713876619234896`*^9},
+ CellLabel->"Out[176]=",
+ CellID->426776291,ExpressionUUID->"b3c97a2e-91e0-4991-b9e6-ed6e504be7b1"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Empire State Building", "Subsubsection",
+ CellChangeTimes->{{3.871387666519271*^9, 3.871387678728772*^9}},
+ CellID->604398616,ExpressionUUID->"56cdfbaf-eea9-4815-b87a-8fa359668881"],
+
+Cell["\<\
+Find the Canberra distance for the Empire State Building with \
+WikidataGeoPosition:\
+\>", "Text",
+ CellChangeTimes->{{3.871387679972762*^9, 3.871387694768346*^9}},
+ CellID->367113298,ExpressionUUID->"39bbab35-a191-4b0a-9fa9-cc2b6734833c"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GeoCanberraDistance", "[", 
+  RowBox[{
+   RowBox[{"ResourceFunction", "[", "\"\<WikidataGeoPosition\>\"", "]"}], 
+   "[", "\"\<Empire State Building\>\"", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.871387696236846*^9, 3.871387714099825*^9}},
+ CellLabel->"In[177]:=",
+ CellID->200693211,ExpressionUUID->"976ff61c-ec1d-410b-90ae-202a045272b7"],
+
+Cell[BoxData["0.3963959599675622`"], "Output",
+ CellChangeTimes->{3.87138771921846*^9},
+ CellLabel->"Out[177]=",
+ CellID->699482772,ExpressionUUID->"d46a90d7-6321-4819-93ca-5cda9c1e4008"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
 
 Cell["Properties and Relations", "Subsection",
  CellTags->"DefaultContent",
@@ -545,13 +774,14 @@ publicly credited with contributing this function.", "MoreInfoText"],
  CellTags->{"Contributed By", "ContributorInformation", "TemplateCellGroup"},
  CellID->771147648,ExpressionUUID->"4d830888-2a24-40e0-979d-add5a73f7196"],
 
-Cell["Author Name", "Text",
+Cell["Peter Cullen Burbery", "Text",
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
        WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.8713877316158433`*^9, 3.871387734537679*^9}},
  CellTags->{"DefaultContent", "TabNext"},
  CellID->855757352,ExpressionUUID->"93c8af0d-070c-4d6d-ab2a-4165666ecf59"]
 }, Open  ]],
@@ -587,15 +817,46 @@ concepts) that should be used to include the function in search results.",
  CellTags->{"Keywords", "TemplateCellGroup"},
  CellID->854882061,ExpressionUUID->"8c6ba356-419c-4edb-b9d9-835582fad37c"],
 
-Cell["keyword 1", "Item",
+Cell["Geography", "Item",
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
        WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.871387738022048*^9, 3.871387739278083*^9}},
  CellTags->{"DefaultContent", "TabNext"},
- CellID->560424104,ExpressionUUID->"0f2aee97-162f-4806-ae4f-7249a52c4aeb"]
+ CellID->560424104,ExpressionUUID->"0f2aee97-162f-4806-ae4f-7249a52c4aeb"],
+
+Cell["Distance measures", "Item",
+ CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
+       SelectedNotebook[], After, Cell]; NotebookFind[
+       SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
+       WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
+       SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
+   PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.871387738022048*^9, 3.871387741532976*^9}},
+ CellID->342248665,ExpressionUUID->"f3253860-6291-4ce6-8184-76c4da62e16f"],
+
+Cell["Canberra distance", "Item",
+ CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
+       SelectedNotebook[], After, Cell]; NotebookFind[
+       SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
+       WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
+       SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
+   PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.871387738022048*^9, 3.8713877467451305`*^9}},
+ CellID->205833666,ExpressionUUID->"b312fd63-6356-436d-9071-eb65759bbc7e"],
+
+Cell["Manhattan distance", "Item",
+ CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
+       SelectedNotebook[], After, Cell]; NotebookFind[
+       SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
+       WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
+       SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
+   PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.871387738022048*^9, 3.871387749321853*^9}},
+ CellID->682200972,ExpressionUUID->"5d820eab-8637-40eb-8d13-b43ae7c762bb"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -639,8 +900,10 @@ Cell[BoxData[
         {
          StyleBox[
           TemplateBox[{
-            CheckboxBox[False, {False, "Geographic Data & Computation"}], 
-            "\" \"", "\"Geographic Data & Computation\""},
+            CheckboxBox[
+            "Geographic Data & Computation", {
+             False, "Geographic Data & Computation"}], "\" \"", 
+            "\"Geographic Data & Computation\""},
            "RowDefault"],
           StripOnInput->False,
           FontSize->12]},
@@ -764,8 +1027,10 @@ Cell[BoxData[
         {
          StyleBox[
           TemplateBox[{
-            CheckboxBox[False, {False, "Higher Mathematical Computation"}], 
-            "\" \"", "\"Higher Mathematical Computation\""},
+            CheckboxBox[
+            "Higher Mathematical Computation", {
+             False, "Higher Mathematical Computation"}], "\" \"", 
+            "\"Higher Mathematical Computation\""},
            "RowDefault"],
           StripOnInput->False,
           FontSize->12]},
@@ -813,8 +1078,10 @@ Cell[BoxData[
         {
          StyleBox[
           TemplateBox[{
-            CheckboxBox[False, {False, "Symbolic & Numeric Computation"}], 
-            "\" \"", "\"Symbolic & Numeric Computation\""},
+            CheckboxBox[
+            "Symbolic & Numeric Computation", {
+             False, "Symbolic & Numeric Computation"}], "\" \"", 
+            "\"Symbolic & Numeric Computation\""},
            "RowDefault"],
           StripOnInput->False,
           FontSize->12]},
@@ -855,6 +1122,7 @@ Cell[BoxData[
 WuYdc+Ub5wvq9oc1GUlKJnXIiqJrBdBCtZQ3n11qHnCPtWMD6sV0ipOzhW1tB9/elmHINGKs+\
 zYjElVnRCE36N6oQaf518wOqwmP/BY28YvfMpmxegakyEMBGmf4cRyQYv8RYdQtkFI3PmDU1ZTKI=\
 "},
+ CellChangeTimes->{{3.871387752150073*^9, 3.871387754697118*^9}},
  CellTags->{"Categories", "Categories-Checkboxes", "CheckboxCell"},
  CellID->106874216,ExpressionUUID->"07ff2060-d8f9-4dc1-987a-42b997d55723"]
 }, Open  ]],
@@ -890,15 +1158,46 @@ related to the function.", "MoreInfoText"], Background -> GrayLevel[0.95],
  CellTags->{"Related Symbols", "TemplateCellGroup"},
  CellID->525877127,ExpressionUUID->"66537d54-63c0-4246-8942-c8c8efdba4ad"],
 
-Cell["SymbolName (documented Wolfram Language symbol)", "Item",
+Cell["CanberraDistance", "Item",
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
        WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.87138775704087*^9, 3.871387759290819*^9}},
  CellTags->{"DefaultContent", "TabNext"},
- CellID->195255409,ExpressionUUID->"203319a0-b434-43b2-9452-402cabc57149"]
+ CellID->195255409,ExpressionUUID->"203319a0-b434-43b2-9452-402cabc57149"],
+
+Cell["ManhattanDistance", "Item",
+ CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
+       SelectedNotebook[], After, Cell]; NotebookFind[
+       SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
+       WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
+       SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
+   PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.87138775704087*^9, 3.8713877623535433`*^9}},
+ CellID->89456301,ExpressionUUID->"bbc4b595-5566-4cc7-81b3-43111cb4a281"],
+
+Cell["GeoPositionXYZ", "Item",
+ CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
+       SelectedNotebook[], After, Cell]; NotebookFind[
+       SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
+       WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
+       SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
+   PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.87138775704087*^9, 3.8713877656972933`*^9}},
+ CellID->208525360,ExpressionUUID->"42b24474-eb7e-42ca-b575-5c778640819a"],
+
+Cell["GeoPosition", "Item",
+ CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
+       SelectedNotebook[], After, Cell]; NotebookFind[
+       SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
+       WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
+       SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
+   PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.87138775704087*^9, 3.871387767275407*^9}},
+ CellID->211569682,ExpressionUUID->"225e2fe5-2047-4e0d-a1e1-71cc4c0fd191"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -932,15 +1231,26 @@ repository that are related to this function.", "MoreInfoText"], Background ->
  CellTags->{"Related Resource Objects", "TemplateCellGroup"},
  CellID->869341850,ExpressionUUID->"bd931398-b27a-4a46-8290-1e3e98320312"],
 
-Cell["Resource Name (resources from any Wolfram repository)", "Item",
+Cell["WikidataGeoPosition", "Item",
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
        WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.871387770487641*^9, 3.871387773591336*^9}},
  CellTags->{"DefaultContent", "TabNext"},
- CellID->694609509,ExpressionUUID->"75b68837-ff9f-49bb-b559-bb1254830f6f"]
+ CellID->694609509,ExpressionUUID->"75b68837-ff9f-49bb-b559-bb1254830f6f"],
+
+Cell["GeoSpatialDistance", "Item",
+ CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
+       SelectedNotebook[], After, Cell]; NotebookFind[
+       SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
+       WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
+       SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
+   PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.871387770487641*^9, 3.8713877764426327`*^9}},
+ CellID->868547276,ExpressionUUID->"307ce30b-9bff-46fe-8f87-5b7173ba4d3e"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1609,7 +1919,7 @@ JAZLFxBaxuyKShxfvoEfKzujYRb6FXWpA="},
  CellID->818043737,ExpressionUUID->"623a70af-de19-4c23-9b23-86b23a369636"]
 }, Closed]]
 }, Open  ]]
-}, Closed]],
+}, Open  ]],
 
 Cell[CellGroupData[{
 
