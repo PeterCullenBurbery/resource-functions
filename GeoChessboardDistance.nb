@@ -3,6 +3,7 @@ Notebook[{
 Cell[CellGroupData[{
 Cell["GeoChessboardDistance", "Title",
  Deletable->False,
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -15,10 +16,11 @@ Cell["GeoChessboardDistance", "Title",
  CellID->863144461,ExpressionUUID->"0890d698-7d4f-4c7f-b93d-afb2aeee0e2e"],
 
 Cell["\<\
-gives the chessboard, Chebyshev, or sup norm distance between two geographic \
+Gives the chessboard, Chebyshev, or sup norm distance between two geographic \
 points in space relative to Earth's center\
 \>", "Text",
  Deletable->False,
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -29,7 +31,7 @@ points in space relative to Earth's center\
   3.8713827672087154`*^9, 3.8713827788303146`*^9}, {3.8713835847681055`*^9, 
   3.8713836159028807`*^9}},
  CellTags->{"DefaultContent", "Description", "TabNext", "TemplateCell"},
- CellID->660820806,ExpressionUUID->"1db166f5-a793-47f1-8e33-a854cd9f2088"],
+ CellID->660820806,ExpressionUUID->"08ce3712-c78a-4f3f-a6e4-66c6980d55f1"],
 
 Cell[CellGroupData[{
 
@@ -91,6 +93,7 @@ Cell[BoxData[{
       RowBox[{"First", "[", 
        RowBox[{"GeoPositionXYZ", "[", "pointB", "]"}], "]"}]}], "]"}], ",", 
     "\"\<Meters\>\""}], "]"}]}]}], "Input",
+ TaggingRules->{},
  CellChangeTimes->{{3.871375174668559*^9, 3.871375193276129*^9}, {
   3.871375233838044*^9, 3.871375262091727*^9}, {3.871375317916798*^9, 
   3.8713753250362167`*^9}, {3.87137554433384*^9, 3.8713755732816935`*^9}, {
@@ -167,19 +170,59 @@ documentation pages for examples."}], "MoreInfoText"], Background ->
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"GeoChessboard", "[", "arg", "]"}]], "UsageInputs",
- CellChangeTimes->{{3.871383644778611*^9, 3.871383647821265*^9}},
+ RowBox[{"GeoChessboardDistance", "[", 
+  StyleBox["pointA", "TI"], "]"}]], "UsageInputs",
+ TaggingRules->{},
+ CellChangeTimes->{{3.871383644778611*^9, 3.871383692852639*^9}},
  FontFamily->"Source Sans Pro",
  CellTags->{"DefaultContent", "TabNext"},
  CellID->67839508,ExpressionUUID->"8e01e44c-e544-486f-817f-dbfa9c4b41a1"],
 
 Cell[TextData[{
- "explanation of what use of the argument ",
- StyleBox["arg", "TI"],
- " does."
+ "gives the chessboard, Chebyshev, or sup norm distance between your location \
+and ",
+ Cell[BoxData[
+  StyleBox["pointA", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "986dd2e2-75b5-4566-9a93-da2bd26cfa18"],
+ "."
 }], "UsageDescription",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8713836702405005`*^9, 3.8713836949763823`*^9}},
  CellTags->{"DefaultContent", "TabNext"},
  CellID->746063541,ExpressionUUID->"1a4d12ea-051c-4347-af1f-c19c9d50b0fb"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GeoChessboardDistance", "[", 
+  RowBox[{
+   StyleBox["pointA", "TI"], ",", " ", 
+   StyleBox["pointB", "TI"]}], "]"}]], "UsageInputs",
+ TaggingRules->{},
+ CellChangeTimes->{{3.871383644778611*^9, 3.8713837305379105`*^9}},
+ FontFamily->"Source Sans Pro",
+ CellTags->{"DefaultContent", "TabNext"},
+ CellID->43372243,ExpressionUUID->"bcdd7bb7-0f86-4de8-b515-c636c9ae642d"],
+
+Cell[TextData[{
+ "gives the chessboard, Chebyshev, or sup norm distance between ",
+ Cell[BoxData[
+  StyleBox["pointA", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "5e23342f-d7cb-436b-a554-17fe8ed2ac3a"],
+ " and ",
+ Cell[BoxData[
+  StyleBox["pointB", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "11e259a4-497c-48d3-885a-d204730475fb"],
+ " in space relative to Earth\[CloseCurlyQuote]s center."
+}], "UsageDescription",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8713836702405005`*^9, 3.871383738346085*^9}},
+ CellTags->{"DefaultContent", "TabNext"},
+ CellID->63688638,ExpressionUUID->"adb0c6a7-fdd0-416d-ab98-66e6ae63c60b"]
 }, Open  ]]
 }, Open  ]],
 
@@ -221,6 +264,7 @@ function, its development, and its usage.", "MoreInfoText"], Background ->
  CellID->447261062,ExpressionUUID->"42698a06-1910-49b4-8b3b-ffbd1ada42a2"],
 
 Cell["Additional information about usage and options.", "Notes",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -392,10 +436,12 @@ usage"}], "MoreInfoText"], Background -> GrayLevel[0.95], FrameMargins -> 20,
 Cell[CellGroupData[{
 
 Cell["Basic Examples", "Subsection",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellID->619504543,ExpressionUUID->"84657786-0b17-438a-b9b5-fbe3c83b2ad0"],
 
 Cell["Find the ", "Text",
+ TaggingRules->{},
  CellChangeTimes->{{3.871382794541532*^9, 3.8713827956040297`*^9}},
  CellTags->"DefaultContent",
  CellID->586099280,ExpressionUUID->"7cc32fce-b866-4748-a29a-a54f916c8559"],
@@ -405,6 +451,7 @@ Cell[CellGroupData[{
 Cell[BoxData[
  RowBox[{"GeoChessboardDistance", "[", 
   RowBox[{"GeoPosition", "[", "\"\<NullIsland\>\"", "]"}], "]"}]], "Input",
+ TaggingRules->{},
  CellChangeTimes->{{3.8713752868079762`*^9, 3.871375298023279*^9}},
  CellLabel->"In[3]:=",
  CellID->356614870,ExpressionUUID->"d1c47577-776e-4101-a376-0c22f1d3dd44"],
@@ -412,6 +459,7 @@ Cell[BoxData[
 Cell[BoxData[
  TemplateBox[{"5.719751793105145`*^6", "\"m\"", "meters", "\"Meters\""},
   "Quantity"]], "Output",
+ TaggingRules->{},
  CellChangeTimes->{
   3.8713752983921394`*^9, {3.87137556358434*^9, 3.871375578737076*^9}, 
    3.871382791150623*^9},
@@ -426,6 +474,7 @@ Cell[BoxData[
   RowBox[{"GeoChessboardDistance", "[", 
    RowBox[{"GeoPosition", "[", "\"\<NullIsland\>\"", "]"}], "]"}], 
   "]"}]], "Input",
+ TaggingRules->{},
  CellChangeTimes->{{3.8713755811897335`*^9, 3.8713755822844486`*^9}},
  CellLabel->"In[4]:=",
  CellID->86755508,ExpressionUUID->"16977d31-1d2c-4f08-848c-6ac0b302b131"],
@@ -433,6 +482,7 @@ Cell[BoxData[
 Cell[BoxData[
  TemplateBox[{"5719752", "\"m\"", "meters", "\"Meters\""},
   "Quantity"]], "Output",
+ TaggingRules->{},
  CellChangeTimes->{3.8713755825946703`*^9, 3.8713827915100203`*^9},
  CellLabel->"Out[4]=",
  CellID->106151316,ExpressionUUID->"43baad3f-47f2-4287-aff0-30ab12c1e484"]
@@ -442,6 +492,7 @@ Cell[BoxData[
 Cell[CellGroupData[{
 
 Cell["Scope", "Subsection",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellID->313242344,ExpressionUUID->"50d5b9ca-05f0-4ea2-bb96-d06377c478ba"],
 
@@ -449,6 +500,7 @@ Cell["\<\
 Text about additional examples expanding scope (and see other sections for \
 options, applications, etc):\
 \>", "Text",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellID->291939446,ExpressionUUID->"07d1bfae-5c71-42f8-a217-d7ebf12499c0"],
 
@@ -457,12 +509,14 @@ Cell[CellGroupData[{
 Cell[BoxData[
  RowBox[{"MyFunction", "[", 
   RowBox[{"x", ",", "y", ",", "z"}], "]"}]], "Input",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellLabel->"In[2]:= ",
  CellID->448965068,ExpressionUUID->"8504542d-ab70-40d6-a3f3-5e766756f285"],
 
 Cell[BoxData[
  RowBox[{"x", " ", "y", " ", "z"}]], "Output",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellLabel->"Out[2]= ",
  CellID->494498970,ExpressionUUID->"0108ce26-a8bb-46c1-b6fe-fe10adc2f13c"]
@@ -470,22 +524,27 @@ Cell[BoxData[
 }, Open  ]],
 
 Cell["Options", "Subsection",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellID->879773335,ExpressionUUID->"0341db7c-5001-4ffc-a438-d5b43b479936"],
 
 Cell["Applications", "Subsection",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellID->542143288,ExpressionUUID->"2dff96ac-74fa-4ce4-bb52-e328208a8402"],
 
 Cell["Properties and Relations", "Subsection",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellID->727494039,ExpressionUUID->"8938abdf-6391-4a9b-94a0-fb304a8bfa88"],
 
 Cell["Possible Issues", "Subsection",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellID->471245215,ExpressionUUID->"707c2dc7-6cf2-4128-8c03-93860a1889dc"],
 
 Cell["Neat Examples", "Subsection",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellID->303071976,ExpressionUUID->"20b3b0a4-bcb3-440d-84db-5222be084a15"]
 }, Open  ]],
@@ -531,6 +590,7 @@ publicly credited with contributing this function.", "MoreInfoText"],
  CellID->771147648,ExpressionUUID->"5d431f15-d472-4771-8941-352b813eb3e1"],
 
 Cell["Author Name", "Text",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -573,6 +633,7 @@ concepts) that should be used to include the function in search results.",
  CellID->854882061,ExpressionUUID->"b1309488-3806-430e-b1b0-8e13a6439e3d"],
 
 Cell["keyword 1", "Item",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -876,6 +937,7 @@ related to the function.", "MoreInfoText"], Background -> GrayLevel[0.95],
  CellID->525877127,ExpressionUUID->"2fcd8610-16f0-474a-ab4e-ad18a3e29669"],
 
 Cell["SymbolName (documented Wolfram Language symbol)", "Item",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -918,6 +980,7 @@ repository that are related to this function.", "MoreInfoText"], Background ->
  CellID->869341850,ExpressionUUID->"95a1cb35-2cc4-4450-a02a-0c34f9cb1c9b"],
 
 Cell["Resource Name (resources from any Wolfram repository)", "Item",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -960,6 +1023,7 @@ repository).", "MoreInfoText"], Background -> GrayLevel[0.95], FrameMargins ->
  CellID->788767010,ExpressionUUID->"58154397-d92a-4984-af58-a35d6131fcd4"],
 
 Cell["Source, reference or citation information", "Text",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -1002,6 +1066,7 @@ to the function.", "MoreInfoText"], Background -> GrayLevel[0.95],
  CellID->341958311,ExpressionUUID->"afaa5abe-e82a-4298-ac14-b5a72b59431f"],
 
 Cell["Link to other related material", "Item",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -1066,12 +1131,14 @@ Cell[CellGroupData[{
 Cell[BoxData[
  RowBox[{"MyFunction", "[", 
   RowBox[{"x", ",", "y"}], "]"}]], "Input",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellLabel->"In[3]:=",
  CellID->770806,ExpressionUUID->"d88338b7-46fb-42ee-9e98-52241defb7b4"],
 
 Cell[BoxData[
  RowBox[{"x", " ", "y"}]], "Output",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellLabel->"Out[3]=",
  CellID->759771806,ExpressionUUID->"60d49611-4993-452e-93a0-6a97ec30c335"]
@@ -1145,6 +1212,7 @@ Cell[TextData[{
  CellID->267876551,ExpressionUUID->"9b831446-3efe-4175-8d5c-7de738eaeb0f"],
 
 Cell["13.0+", "Text",
+ TaggingRules->{},
  CellTags->{"DefaultContent", "ScrapeDefault"},
  CellID->788185540,ExpressionUUID->"478538df-0a64-4a93-b352-754638042370"]
 }, Open  ]],
@@ -1422,7 +1490,6 @@ Cell[BoxData[
          StyleBox[
           TemplateBox[{
             CheckboxBox["WebEvaluation", {False, "WebEvaluation"}], "\" \"", 
-            
             TemplateBox[{
              "\"WebEvaluation\"", 
               "\"Cloud evaluation initiated by an HTTP request\""}, 
@@ -1630,6 +1697,7 @@ that are otherwise beyond the scope of the function documentation.",
  CellID->897529167,ExpressionUUID->"c9ba5874-cd67-4a29-9fb5-2f2af861c4b9"],
 
 Cell["Additional information about limitations, issues, etc.", "Text",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -1672,6 +1740,7 @@ resource.", "MoreInfoText"], Background -> GrayLevel[0.95], FrameMargins ->
  CellID->321610809,ExpressionUUID->"1c1f90ce-e12e-41d9-98ea-685faa5e4a65"],
 
 Cell["Additional information for the reviewer.", "Text",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -1687,6 +1756,317 @@ WindowSize->{1152, Automatic},
 WindowMargins->{{
   Automatic, -5.399999999999864}, {-5.399999999999977, Automatic}},
 Visible->True,
+DockedCells->{
+  Cell[
+   BoxData[
+    TemplateBox[{}, "MainGridTemplate"]], "DockedCell", 
+   CellMargins -> {{-10, -10}, {-8, -8}}, CellFrame -> 0, Background -> 
+   RGBColor[0.92157, 0.34118, 0.10588], CellTags -> {"MainDockedCell"}, 
+   CacheGraphics -> False], 
+  Cell[
+   BoxData[
+    TemplateBox[{}, "ToolsGridTemplate"]], "DockedCell", 
+   TaggingRules -> {"Tools" -> True}, CellTags -> {"ToolbarDockedCell"}, 
+   CellFrameMargins -> {{0, 0}, {2, 2}}, CellFrame -> {{0, 0}, {1, 0}}, 
+   CacheGraphics -> False, CellOpen -> Dynamic[
+     CurrentValue[
+      EvaluationNotebook[], {TaggingRules, "ToolsOpen"}, True]]], 
+  Cell[
+   BoxData[
+    StyleBox[
+     TagBox[
+      GridBox[{{
+         ItemBox[
+          TagBox[
+           GridBox[{{
+              OverlayBox[{
+                StyleBox[
+                 TagBox[
+                  DynamicModuleBox[{Typeset`var$$ = False}, 
+                   InterpretationBox[
+                    StyleBox[
+                    PaneSelectorBox[{False -> GridBox[{{
+                    OpenerBox[
+                    Dynamic[Typeset`var$$], Appearance -> Automatic, Enabled -> 
+                    Automatic, AutoAction -> False, ContinuousAction -> 
+                    False], 
+                    StyleBox[
+                    DynamicBox[
+                    ToBoxes[
+                    DateString[
+                    TimeZoneConvert[
+                    DateObject[
+                    3.8713837490957051`17.340441211849193*^9, TimeZone -> 
+                    0]], {"MonthName", " ", "DayShort", ", ", "Year", " ", 
+                    "Hour12Short", ":", "Minute", " ", "AMPMLowerCase"}], 
+                    StandardForm], SingleEvaluation -> True, Evaluator -> 
+                    "System"], FontSlant -> Italic, FontColor -> 
+                    GrayLevel[0.5], FontSize -> 0.9 Inherited, StripOnInput -> 
+                    False]}}, GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                    AutoDelete -> False, 
+                    GridBoxBackground -> {"Columns" -> {{Automatic}}}, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{0.2}}, "Rows" -> {{0.5}}}, 
+                    BaselinePosition -> {1, 1}], True -> GridBox[{{
+                    OpenerBox[
+                    Dynamic[Typeset`var$$], Appearance -> Automatic, Enabled -> 
+                    Automatic, AutoAction -> False, ContinuousAction -> 
+                    False], 
+                    StyleBox[
+                    DynamicBox[
+                    ToBoxes[
+                    DateString[
+                    TimeZoneConvert[
+                    DateObject[
+                    3.8713837490957051`17.340441211849193*^9, TimeZone -> 
+                    0]], {"MonthName", " ", "DayShort", ", ", "Year", " ", 
+                    "Hour12Short", ":", "Minute", " ", "AMPMLowerCase"}], 
+                    StandardForm], SingleEvaluation -> True, Evaluator -> 
+                    "System"], FontSlant -> Italic, FontColor -> 
+                    GrayLevel[0.5], FontSize -> 0.9 Inherited, StripOnInput -> 
+                    False]}, {"", 
+                    PaneBox["\"\"", ImageMargins -> 0]}}, 
+                    GridBoxAlignment -> {"Columns" -> {{Left}}}, AutoDelete -> 
+                    False, GridBoxBackground -> {"Columns" -> {{Automatic}}}, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{0.2}}, "Rows" -> {{0.5}}}, 
+                    BaselinePosition -> {1, 1}]}, 
+                    Dynamic[Typeset`var$$], Alignment -> Automatic, ImageSize -> 
+                    Automatic, ImageMargins -> 0, BaseStyle -> {}, 
+                    DefaultBaseStyle -> "OpenerView", BaselinePosition -> 
+                    Baseline], Deployed -> False, StripOnInput -> False], 
+                    OpenerView[{
+                    Style[
+                    Dynamic[
+                    DateString[
+                    TimeZoneConvert[
+                    DateObject[
+                    3.8713837490957051`17.340441211849193*^9, TimeZone -> 
+                    0]], {"MonthName", " ", "DayShort", ", ", "Year", " ", 
+                    "Hour12Short", ":", "Minute", " ", "AMPMLowerCase"}], 
+                    SingleEvaluation -> True, Evaluator -> "System"], 
+                    FontSlant -> Italic, FontColor -> GrayLevel[0.5], 
+                    FontSize -> 0.9 Inherited], ""}, False]], 
+                   DynamicModuleValues -> Automatic], Setting[#, {0}]& ], 
+                 ShowContents -> False, StripOnInput -> False], 
+                StyleBox[
+                 DynamicBox[
+                  ToBoxes[
+                   DateString[
+                    TimeZoneConvert[
+                    DateObject[
+                    3.8713837490957051`17.340441211849193*^9, TimeZone -> 
+                    0]], {"MonthName", " ", "DayShort", ", ", "Year", " ", 
+                    "Hour12Short", ":", "Minute", " ", "AMPMLowerCase"}], 
+                   StandardForm], SingleEvaluation -> True, Evaluator -> 
+                  "System"], FontSlant -> Italic, FontColor -> GrayLevel[0.5],
+                  FontSize -> 0.9 Inherited, StripOnInput -> False]}, 
+               Alignment -> {Right, Baseline}], "\"   \"", 
+              ItemBox[
+              "\"Found 1 potential issue and 2 suggestions\"", ItemSize -> 
+               Scaled[0.75], StripOnInput -> False]}}, 
+            GridBoxAlignment -> {
+             "Columns" -> {{Left}}, "Rows" -> {{Baseline}}}, AutoDelete -> 
+            False, GridBoxItemSize -> {
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], "Grid"], 
+          ItemSize -> Fit, StripOnInput -> False], 
+         ItemBox[
+          StyleBox[
+           ActionMenuBox[
+            TagBox[
+             TagBox[
+              GridBox[{{
+                 TemplateBox[{
+                   TagBox[
+                    GridBox[{{
+                    TemplateBox[{
+                    RGBColor[1., 0.4627450980392157, 0.], 
+                    RGBColor[1., 1., 1.], 10, {{0, 18}, {-2, 17}}}, 
+                    "SuggestionIconTemplate"], 
+                    StyleBox[
+                    "1", FontColor -> GrayLevel[0.5], FontSize -> 9, 
+                    StripOnInput -> False]}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Center}}}, AutoDelete -> 
+                    False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {"Columns" -> {{0.25}}}], "Grid"], 
+                   "\"Potential issues found\""}, "PrettyTooltipTemplate"], 
+                 TemplateBox[{
+                   TagBox[
+                    GridBox[{{
+                    TemplateBox[{
+                    RGBColor[
+                    0.49019607843137253`, 0.49019607843137253`, 
+                    0.49019607843137253`], 
+                    RGBColor[1., 1., 1.], 10, {{0, 18}, {-2, 17}}}, 
+                    "SuggestionIconTemplate"], 
+                    StyleBox[
+                    "2", FontColor -> GrayLevel[0.5], FontSize -> 9, 
+                    StripOnInput -> False]}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Center}}}, AutoDelete -> 
+                    False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {"Columns" -> {{0.25}}}], "Grid"], 
+                   "\"Suggestions found\""}, "PrettyTooltipTemplate"], 
+                 "\"   \""}}, AutoDelete -> False, 
+               GridBoxItemSize -> {
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+              "Grid"], 
+             MouseAppearanceTag["LinkHand"]], {TemplateBox[{
+                TemplateBox[{
+                  RGBColor[
+                  0.49019607843137253`, 0.49019607843137253`, 
+                   0.49019607843137253`], 
+                  RGBColor[1., 1., 1.], 10, {{0, 18}, {-2, 17}}}, 
+                 "SuggestionIconTemplate"], "\" \"", 
+                "\"The description should usually start with a capital letter\
+\""}, "RowDefault"] :> (
+              DefinitionNotebookClient`LoadDefinitionNotebook["Function", 
+                NotebookObject[
+                "9833758b-fb59-449d-853b-d8fb422df4e3", 
+                 "77ad013f-7bbd-47f9-ac13-bc8fa311c0ed"]]; 
+              DefinitionNotebookClient`PackageScope`setHint[
+               "Suggestion", "Function", 
+                ParentNotebook[
+                 CellObject[
+                 "1db166f5-a793-47f1-8e33-a854cd9f2088", 
+                  "59511719-6998-4292-bb6c-b2bd3dcd9bf5"]], 660820806, 
+                "DescriptionNotCapitalized", {
+                "gives the chessboard, Chebyshev, or sup norm distance \
+between two geographic points in space relative to Earth's center"}]; 
+              DefinitionNotebookClient`PackageScope`seek[
+                CellObject[
+                "1db166f5-a793-47f1-8e33-a854cd9f2088", 
+                 "59511719-6998-4292-bb6c-b2bd3dcd9bf5"]]; Null), TemplateBox[{
+                TemplateBox[{
+                  RGBColor[
+                  0.49019607843137253`, 0.49019607843137253`, 
+                   0.49019607843137253`], 
+                  RGBColor[1., 1., 1.], 10, {{0, 18}, {-2, 17}}}, 
+                 "SuggestionIconTemplate"], "\" \"", 
+                "\"Example captions should usually end in a colon when \
+appearing before input\""}, "RowDefault"] :> (
+              DefinitionNotebookClient`LoadDefinitionNotebook["Function", 
+                NotebookObject[
+                "9833758b-fb59-449d-853b-d8fb422df4e3", 
+                 "77ad013f-7bbd-47f9-ac13-bc8fa311c0ed"]]; 
+              DefinitionNotebookClient`PackageScope`setHint[
+               "Suggestion", "Function", 
+                ParentNotebook[
+                 CellObject[
+                 "7cc32fce-b866-4748-a29a-a54f916c8559", 
+                  "19214cf6-3b7c-4156-a608-6bdfae3d2c41"]], 586099280, 
+                "ExampleTextLastCharacter", {}]; 
+              DefinitionNotebookClient`PackageScope`seek[
+                CellObject[
+                "7cc32fce-b866-4748-a29a-a54f916c8559", 
+                 "19214cf6-3b7c-4156-a608-6bdfae3d2c41"]]; Null), TemplateBox[{
+                TemplateBox[{
+                  RGBColor[1., 0.4627450980392157, 0.], 
+                  RGBColor[1., 1., 1.], 10, {{0, 18}, {-2, 17}}}, 
+                 "SuggestionIconTemplate"], "\" \"", 
+                "\"No author information given\""}, "RowDefault"] :> (
+              DefinitionNotebookClient`LoadDefinitionNotebook["Function", 
+                NotebookObject[
+                "9833758b-fb59-449d-853b-d8fb422df4e3", 
+                 "77ad013f-7bbd-47f9-ac13-bc8fa311c0ed"]]; 
+              DefinitionNotebookClient`PackageScope`setHint[
+               "Warning", "Function", 
+                ParentNotebook[
+                 CellObject[
+                 "5d431f15-d472-4771-8941-352b813eb3e1", 
+                  "7096eec9-53c7-4b44-a791-a9624f542cef"]], 771147648, 
+                "AuthorNotSet", {}]; 
+              DefinitionNotebookClient`PackageScope`seek[
+                CellObject[
+                "5d431f15-d472-4771-8941-352b813eb3e1", 
+                 "7096eec9-53c7-4b44-a791-a9624f542cef"]]; Null)}, Appearance -> 
+            None, Method -> "Queued"], "BoxID" -> "WarningCountButton", 
+           StripOnInput -> False], ItemSize -> All, StripOnInput -> False], 
+         ItemBox[
+          TagBox[
+           ButtonBox[
+            TagBox[
+             PaneSelectorBox[{False -> GraphicsBox[{
+                  GrayLevel[
+                   NCache[
+                    Rational[64, 85], 0.7529411764705882]], 
+                  
+                  PolygonBox[{{-0.282842712474619, -0.42426406871192845`}, \
+{-0.42426406871192845`, -0.282842712474619}, {0.282842712474619, 
+                   0.42426406871192845`}, {0.42426406871192845`, 
+                   0.282842712474619}}], 
+                  
+                  PolygonBox[{{0.42426406871192845`, -0.282842712474619}, {
+                   0.282842712474619, -0.42426406871192845`}, \
+{-0.42426406871192845`, 0.282842712474619}, {-0.282842712474619, 
+                   0.42426406871192845`}}]}, ImageSize -> 18, 
+                 PlotRangePadding -> 0, PlotRange -> 0.7, Background -> None],
+                True -> GraphicsBox[{
+                  GrayLevel[
+                   NCache[
+                    Rational[128, 255], 0.5019607843137255]], 
+                  
+                  PolygonBox[{{-0.282842712474619, -0.42426406871192845`}, \
+{-0.42426406871192845`, -0.282842712474619}, {0.282842712474619, 
+                   0.42426406871192845`}, {0.42426406871192845`, 
+                   0.282842712474619}}], 
+                  
+                  PolygonBox[{{0.42426406871192845`, -0.282842712474619}, {
+                   0.282842712474619, -0.42426406871192845`}, \
+{-0.42426406871192845`, 0.282842712474619}, {-0.282842712474619, 
+                   0.42426406871192845`}}]}, ImageSize -> 18, 
+                 PlotRangePadding -> 0, PlotRange -> 0.7, Background -> 
+                 None]}, 
+              Dynamic[
+               CurrentValue["MouseOver"]], ImageSize -> Automatic, 
+              FrameMargins -> 0], 
+             MouseAppearanceTag["LinkHand"]], ButtonFunction :> 
+            With[{DefinitionNotebookClient`Stripes`PackagePrivate`nbo$ = 
+               EvaluationNotebook[]}, 
+              CurrentValue[
+               DefinitionNotebookClient`Stripes`PackagePrivate`nbo$, 
+                DockedCells] = If[
+                TrueQ[
+                 MemberQ[
+                  CurrentValue["ModifierKeys"], "Control"]], 
+                DeleteCases[
+                 Flatten[{
+                   CurrentValue[
+                   DefinitionNotebookClient`Stripes`PackagePrivate`nbo$, 
+                    DockedCells]}], 
+                 Cell[
+                  Blank[], "StripeCell", 
+                  BlankNullSequence[]]], 
+                DeleteCases[
+                 Flatten[{
+                   CurrentValue[
+                   DefinitionNotebookClient`Stripes`PackagePrivate`nbo$, 
+                    DockedCells]}], 
+                 Condition[
+                  Pattern[DefinitionNotebookClient`Stripes`PackagePrivate`c$, 
+                   Blank[Cell]], 
+                  Not[
+                   FreeQ[
+                   DefinitionNotebookClient`Stripes`PackagePrivate`c$, 
+                    "0087260b-a649-4a7b-8113-72d8964769dd"]]]]]], Appearance -> 
+            None, BoxID -> "0087260b-a649-4a7b-8113-72d8964769dd", Evaluator -> 
+            Automatic, Method -> "Preemptive"], 
+           MouseAppearanceTag["LinkHand"]], ItemSize -> All, StripOnInput -> 
+          False]}}, 
+       GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Baseline}}}, 
+       AutoDelete -> False, 
+       GridBoxItemSize -> {
+        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], "Grid"], 
+     "Text", FontSize -> 12, FontColor -> GrayLevel[0.25], StripOnInput -> 
+     False]], "StripeCell", CellFrameMargins -> {{20, 5}, {2, 2}}, 
+   CellFrame -> {{0, 0}, {1, 0}}, CellFrameColor -> GrayLevel[0.75]]},
 TaggingRules->{
  "ResourceType" -> "Function", "ResourceCreateNotebook" -> True, 
   "TemplateVersion" -> "1.6.4", "CreationTimestamp" -> 
@@ -1734,7 +2114,7 @@ WyabbVsUI30dbWyR5mC4Y6npzAQV7A7CHW8e0ORJGTUV01ufdzMGR2GbTwVmCj3d8A9cd0NNHoiRcl\
     "Contexts" -> {
      "FunctionResource`", "FunctionResource`DefinitionNotebook`"}, 
     "DefaultContentMethod" -> "Legacy"}, "ToolsOpen" -> True, "StatusMessage" -> 
-  "", "SubmissionReviewData" -> {"Review" -> False}},
+  "", "SubmissionReviewData" -> {"Review" -> False}, "AutoUpdate" -> True},
 CreateCellID->True,
 FrontEndVersion->"13.1 for Microsoft Windows (64-bit) (June 16, 2022)",
 StyleDefinitions->Notebook[{
@@ -2177,7 +2557,6 @@ VX/aMEEQzrerjFhhelYAzofFB3r8AgApYdcE
                 StyleBox[
                 "\"Template Input\"", "Text", FontFamily -> "Source Sans Pro",
                   FontSize -> 11, StripOnInput -> False], 
-                
                 "\"Format selection automatically using appropriate \
 documentation styles\""}, "PrettyTooltipTemplate"], ButtonFunction :> 
               With[{RSNB`nb$ = ButtonNotebook[], RSNB`$cp$ = $ContextPath}, 
