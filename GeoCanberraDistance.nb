@@ -13,8 +13,10 @@ Cell["GeoCanberraDistance", "Title",
  CellTags->{"Name", "TemplateCell", "Title", "TabNext"},
  CellID->863144461,ExpressionUUID->"76a5a12f-54f1-4b85-9cfd-1c25f735812b"],
 
-Cell["One-line description explaining the function\[CloseCurlyQuote]s basic \
-purpose", "Text",
+Cell["\<\
+Find the Canberra distance between the spatial coordinates of two geographic \
+locations or points\
+\>", "Text",
  Deletable->False,
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
@@ -22,6 +24,7 @@ purpose", "Text",
        WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.871387213830244*^9, 3.8713872445811663`*^9}},
  CellTags->{"DefaultContent", "Description", "TabNext", "TemplateCell"},
  CellID->660820806,ExpressionUUID->"b0996afc-8730-4b49-98de-0ea1eb3a1041"],
 
@@ -59,10 +62,30 @@ evaluated before creating the Examples section below.", "MoreInfoText"],
  CellTags->{"Definition", "Function", "TemplateCellGroup"},
  CellID->292731158,ExpressionUUID->"4f33d434-5b8c-48fb-9207-3041f56b5483"],
 
-Cell[BoxData[
+Cell[BoxData[{
+ RowBox[{"ClearAll", "[", "GeoCanberraDistance", "]"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"MyFunction", "[", "]"}], ":=", "xxxx"}]], "Input",
+  RowBox[{"GeoCanberraDistance", "[", "pointA_", "]"}], ":=", 
+  RowBox[{"CanberraDistance", "[", 
+   RowBox[{
+    RowBox[{"First", "[", 
+     RowBox[{"GeoPositionXYZ", "[", "pointA", "]"}], "]"}], ",", 
+    RowBox[{"First", "[", 
+     RowBox[{"GeoPositionXYZ", "[", "Here", "]"}], "]"}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"GeoCanberraDistance", "[", 
+   RowBox[{"pointA_", ",", "pointB_"}], "]"}], ":=", 
+  RowBox[{"CanberraDistance", "[", 
+   RowBox[{
+    RowBox[{"First", "[", 
+     RowBox[{"GeoPositionXYZ", "[", "pointA", "]"}], "]"}], ",", 
+    RowBox[{"First", "[", 
+     RowBox[{"GeoPositionXYZ", "[", "pointB", "]"}], "]"}]}], 
+   "]"}]}]}], "Input",
+ CellChangeTimes->{{3.871387203965211*^9, 3.8713872111583705`*^9}},
  CellTags->"DefaultContent",
+ CellLabel->"In[163]:=",
  CellID->876320555,ExpressionUUID->"98b459fb-ff60-4472-94bc-9104fff48087"]
 }, Open  ]],
 
@@ -133,18 +156,54 @@ documentation pages for examples."}], "MoreInfoText"], Background ->
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"MyFunction", "[", "arg", "]"}]], "UsageInputs",
+ RowBox[{"GeoCanberraDistance", "[", 
+  StyleBox["pointA", "TI"], "]"}]], "UsageInputs",
+ CellChangeTimes->{{3.8713872480030403`*^9, 3.8713872800143085`*^9}},
  FontFamily->"Source Sans Pro",
  CellTags->{"DefaultContent", "TabNext"},
  CellID->67839508,ExpressionUUID->"247313fa-2c89-4e62-9911-7ac26da8f59c"],
 
 Cell[TextData[{
- "explanation of what use of the argument ",
- StyleBox["arg", "TI"],
- " does."
+ "gives the Canberra distance between your location and ",
+ Cell[BoxData[
+  StyleBox["pointA", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "b21596f4-cf4b-48d3-a689-050c32fa595d"],
+ "."
 }], "UsageDescription",
+ CellChangeTimes->{{3.871387262160897*^9, 3.8713872776431875`*^9}},
  CellTags->{"DefaultContent", "TabNext"},
  CellID->746063541,ExpressionUUID->"74291b03-dcc5-4af7-ac2e-417eea0e9bf8"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GeoCanberraDistance", "[", 
+  RowBox[{
+   StyleBox["pointA", "TI"], ",", 
+   StyleBox["pointB", "TI"]}], "]"}]], "UsageInputs",
+ CellChangeTimes->{{3.8713872480030403`*^9, 3.8713873023274026`*^9}},
+ FontFamily->"Source Sans Pro",
+ CellTags->{"DefaultContent", "TabNext"},
+ CellID->211197180,ExpressionUUID->"87dc5a71-baed-44fb-92a0-da7b5f25a864"],
+
+Cell[TextData[{
+ "gives the Canberra distance between ",
+ Cell[BoxData[
+  StyleBox["pointA", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "e501082a-dd6b-4b13-bd04-e784a181f67c"],
+ " and ",
+ Cell[BoxData[
+  StyleBox["pointB", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "9e41c60b-861f-49d3-bc35-2c6d6363b241"],
+ "."
+}], "UsageDescription",
+ CellChangeTimes->{{3.871387262160897*^9, 3.871387304389902*^9}},
+ CellTags->{"DefaultContent", "TabNext"},
+ CellID->658639548,ExpressionUUID->"04ae79f3-122e-4ef0-b44e-d13ad5671b93"]
 }, Open  ]]
 }, Open  ]],
 
@@ -1676,7 +1735,7 @@ WyabbVsUI30dbWyR5mC4Y6npzAQV7A7CHW8e0ORJGTUV01ufdzMGR2GbTwVmCj3d8A9cd0NNHoiRcl\
     "Contexts" -> {
      "FunctionResource`", "FunctionResource`DefinitionNotebook`"}, 
     "DefaultContentMethod" -> "Legacy"}, "ToolsOpen" -> True, "StatusMessage" -> 
-  "", "SubmissionReviewData" -> {"Review" -> False}},
+  "", "SubmissionReviewData" -> {"Review" -> False}, "AutoUpdate" -> True},
 CreateCellID->True,
 FrontEndVersion->"13.1 for Microsoft Windows (64-bit) (June 16, 2022)",
 StyleDefinitions->Notebook[{
