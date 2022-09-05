@@ -280,28 +280,6 @@ documentation pages for examples."}], "MoreInfoText"], Background ->
 
 Cell[CellGroupData[{
 
-Cell[BoxData["InvertibleMatrixTheorem"], "UsageInputs",
- TaggingRules->{},
- CellChangeTimes->{{3.864901628740039*^9, 3.8649016332930493`*^9}},
- FontFamily->"Source Sans Pro",
- CellTags->{"DefaultContent", "TabNext"},
- CellID->67839508,ExpressionUUID->"b607b5b9-a3d3-4fd0-a4fd-4ae09f5527f3"],
-
-Cell[TextData[{
- "returns a string with details on the matrix based on the Invertible Matrix \
-Theorem from David C. Lay's ",
- StyleBox["Linear Algebra and Its Applications",
-  FontSlant->"Italic"],
- " textbook."
-}], "UsageDescription",
- TaggingRules->{},
- CellChangeTimes->{{3.864901679063053*^9, 3.8649017341050487`*^9}},
- CellTags->{"DefaultContent", "TabNext"},
- CellID->746063541,ExpressionUUID->"bd40804a-7ae4-4769-a35e-6022fd1938bc"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
 Cell[BoxData[
  RowBox[{"InvertibleMatrixTheorem", "[", 
   StyleBox["matrix", "TI"], "]"}]], "UsageInputs",
@@ -385,10 +363,28 @@ The input matrix must be square with the same number of rows and columns.\
  CellTags->{"DefaultContent", "TabNext"},
  CellID->422531486,ExpressionUUID->"346039e6-bfbd-40ed-be1c-e1f17b3d4769"],
 
-Cell["The matrix is formatted with TraditionalForm.", "Notes",
+Cell[TextData[{
+ "The matrix is formatted with ",
+ Cell[BoxData[
+  TagBox[
+   ButtonBox[
+    StyleBox["TraditionalForm", "SymbolsRefLink",
+     ShowStringCharacters->True,
+     FontFamily->"Source Sans Pro"],
+    BaseStyle->Dynamic[
+      FEPrivate`If[
+       CurrentValue["MouseOver"], {
+       "Link", FontColor -> RGBColor[0.8549, 0.39608, 0.1451]}, {"Link"}]],
+    ButtonData->"paclet:ref/TraditionalForm",
+    ContentPadding->False],
+   MouseAppearanceTag["LinkHand"]]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "acbba7c0-a9d5-4488-9f81-1e764a9e5f64"],
+ "."
+}], "Notes",
  TaggingRules->{},
  CellChangeTimes->{{3.86490195227705*^9, 3.864901960172061*^9}, {
-  3.871396172222086*^9, 3.871396173732606*^9}},
+   3.871396172222086*^9, 3.871396173732606*^9}, 3.871396216236658*^9},
  CellID->599585491,ExpressionUUID->"a9c73239-d6a6-45f1-8734-b809b3fe176c"]
 }, Open  ]]
 }, Open  ]],
@@ -559,11 +555,11 @@ Cell["Basic Examples", "Subsection",
  CellID->619504543,ExpressionUUID->"900c6394-2b6d-4e7f-a175-ea8e9a1cddf7"],
 
 Cell["\<\
-Evaluate different linear algebra concepts for a matrix with 2 rows and 2 \
-columns:\
+Write mathematical statements about a two by two matrix that is not singular:\
 \>", "Text",
  TaggingRules->{},
- CellChangeTimes->{{3.8649018007410774`*^9, 3.864901832520042*^9}},
+ CellChangeTimes->{{3.8649018007410774`*^9, 3.864901832520042*^9}, {
+  3.871396227534399*^9, 3.871396257833214*^9}},
  CellTags->"DefaultContent",
  CellID->586099280,ExpressionUUID->"acd2b17d-cc4f-4f06-aba7-d8cbafb49296"],
 
@@ -718,36 +714,42 @@ TraditionalForm]\\)has 2 singular values.\"\>"], "Output",
  CellID->305649089,ExpressionUUID->"a4edd6c7-ac3f-46ea-b3e3-da01d242c832"]
 }, Open  ]],
 
+Cell["\<\
+Write mathematical statements about a matrix that is singular:\
+\>", "Text",
+ CellChangeTimes->{{3.871396263580513*^9, 3.8713962726335163`*^9}},
+ CellID->152606169,ExpressionUUID->"9af7ee31-2418-4ea4-90f2-376644c5b414"],
+
 Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"InvertibleMatrixTheorem", "[", 
   RowBox[{"(", GridBox[{
      {"0", "0"},
-     {"1", "0"}
+     {"0", "0"}
     }], ")"}], "]"}]], "Input",
  TaggingRules->{},
  CellChangeTimes->{{3.8708632237133627`*^9, 3.8708632254882956`*^9}, {
-  3.8708632717699385`*^9, 3.8708632773105707`*^9}},
- CellLabel->"In[280]:=",
+   3.8708632717699385`*^9, 3.8708632773105707`*^9}, 3.8713962752473974`*^9},
+ CellLabel->"In[289]:=",
  CellID->32974011,ExpressionUUID->"1f758f61-b984-40b1-b7f1-4d774b790109"],
 
 Cell[BoxData["\<\"\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
-GridBox[{{\\\"0\\\", \\\"0\\\"}, {\\\"1\\\", \\\"0\\\"}}, Rule[RowSpacings, \
+GridBox[{{\\\"0\\\", \\\"0\\\"}, {\\\"0\\\", \\\"0\\\"}}, Rule[RowSpacings, \
 1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
 Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
 TraditionalForm]\\) is not invertible.\\n\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \
-\\\"\[NoBreak]\\\", GridBox[{{\\\"0\\\", \\\"0\\\"}, {\\\"1\\\", \\\"0\\\"}}, \
+\\\"\[NoBreak]\\\", GridBox[{{\\\"0\\\", \\\"0\\\"}, {\\\"0\\\", \\\"0\\\"}}, \
 Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
 Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
 TraditionalForm]\\) is not row equivalent to the 2 \[Times] 2 identity \
 matrix.\\n\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
-GridBox[{{\\\"0\\\", \\\"0\\\"}, {\\\"1\\\", \\\"0\\\"}}, Rule[RowSpacings, \
+GridBox[{{\\\"0\\\", \\\"0\\\"}, {\\\"0\\\", \\\"0\\\"}}, Rule[RowSpacings, \
 1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
 Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
 TraditionalForm]\\) does not have 2 pivot positions.\\nThe statement \
 \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\\\"0\\\", \
-\\\"0\\\"}, {\\\"1\\\", \\\"0\\\"}}, Rule[RowSpacings, 1], \
+\\\"0\\\"}, {\\\"0\\\", \\\"0\\\"}}, Rule[RowSpacings, 1], \
 Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
 Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
 TraditionalForm]\\)\\!\\(\\*TagBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
@@ -766,7 +768,7 @@ TagBox[GridBox[{{SubscriptBox[\\\"x\\\", \\\"1\\\"]}, \
 Rule[ColumnAlignments, Center], Rule[ColumnAlignments, Left]], Column], \\\"\
 \[NoBreak]\\\", \\\")\\\"}], Function[BoxForm`e$, MatrixForm[BoxForm`e$]]]\\)\
 \[Function]\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\
-\\\"0\\\", \\\"0\\\"}, {\\\"1\\\", \\\"0\\\"}}, Rule[RowSpacings, 1], \
+\\\"0\\\", \\\"0\\\"}, {\\\"0\\\", \\\"0\\\"}}, Rule[RowSpacings, 1], \
 Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
 Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
 TraditionalForm]\\)\\!\\(\\*TagBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
@@ -776,7 +778,7 @@ Rule[ColumnAlignments, Center], Rule[ColumnAlignments, Left]], Column], \\\"\
 \[NoBreak]\\\", \\\")\\\"}], Function[BoxForm`e$, MatrixForm[BoxForm`e$]]]\\) \
 is not one-to-one and not injective.\\nThe statement \
 \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\\\"0\\\", \
-\\\"0\\\"}, {\\\"1\\\", \\\"0\\\"}}, Rule[RowSpacings, 1], \
+\\\"0\\\"}, {\\\"0\\\", \\\"0\\\"}}, Rule[RowSpacings, 1], \
 Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
 Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
 TraditionalForm]\\)\\!\\(\\*TagBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
@@ -787,28 +789,28 @@ Rule[ColumnAlignments, Center], Rule[ColumnAlignments, Left]], Column], \\\"\
 MatrixForm[BoxForm`e$]]]\\)=b does not have at least one solution for all b \
 in \\!\\(\\*SuperscriptBox[\\(\[DoubleStruckCapitalR]\\), \\(2\\)]\\).\\nThe \
 columns of \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\
-\\\"0\\\", \\\"0\\\"}, {\\\"1\\\", \\\"0\\\"}}, Rule[RowSpacings, 1], \
+\\\"0\\\", \\\"0\\\"}, {\\\"0\\\", \\\"0\\\"}}, Rule[RowSpacings, 1], \
 Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
 Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
 TraditionalForm]\\) do not form a basis for \\!\\(\\*SuperscriptBox[\\(\
 \[DoubleStruckCapitalR]\\), \\(2\\)]\\).\\nThe column space of \
 \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\\\"0\\\", \
-\\\"0\\\"}, {\\\"1\\\", \\\"0\\\"}}, Rule[RowSpacings, 1], \
+\\\"0\\\"}, {\\\"0\\\", \\\"0\\\"}}, Rule[RowSpacings, 1], \
 Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
 Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
 TraditionalForm]\\) is not \\!\\(\\*SuperscriptBox[\\(\[DoubleStruckCapitalR]\
 \\), \\(2\\)]\\).\\nThe dimension of the column space of \
 \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\\\"0\\\", \
-\\\"0\\\"}, {\\\"1\\\", \\\"0\\\"}}, Rule[RowSpacings, 1], \
+\\\"0\\\"}, {\\\"0\\\", \\\"0\\\"}}, Rule[RowSpacings, 1], \
 Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
 Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
 TraditionalForm]\\) is not 2.\\nThe rank of \
 \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\\\"0\\\", \
-\\\"0\\\"}, {\\\"1\\\", \\\"0\\\"}}, Rule[RowSpacings, 1], \
+\\\"0\\\"}, {\\\"0\\\", \\\"0\\\"}}, Rule[RowSpacings, 1], \
 Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
 Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
 TraditionalForm]\\) is not 2.\\nThe null space of \\!\\(\\*FormBox[RowBox[{\\\
-\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\\\"0\\\", \\\"0\\\"}, {\\\"1\\\", \
+\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\\\"0\\\", \\\"0\\\"}, {\\\"0\\\", \
 \\\"0\\\"}}, Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], \
 Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \
 \\\"\[NoBreak]\\\", \\\")\\\"}], TraditionalForm]\\) is not \
@@ -817,20 +819,20 @@ Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \
 Rule[RowAlignments, Baseline], Rule[ColumnAlignments, Center]], \
 \\\"\[NoBreak]\\\", \\\")\\\"}], TraditionalForm]\\).\\nThe dimension of the \
 the null space of \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
-GridBox[{{\\\"0\\\", \\\"0\\\"}, {\\\"1\\\", \\\"0\\\"}}, Rule[RowSpacings, \
+GridBox[{{\\\"0\\\", \\\"0\\\"}, {\\\"0\\\", \\\"0\\\"}}, Rule[RowSpacings, \
 1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
 Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
 TraditionalForm]\\) is not 0.\\nThe nullity is not 0.\\n0 is an eigenvalue of \
 \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", GridBox[{{\\\"0\\\", \
-\\\"0\\\"}, {\\\"1\\\", \\\"0\\\"}}, Rule[RowSpacings, 1], \
+\\\"0\\\"}, {\\\"0\\\", \\\"0\\\"}}, Rule[RowSpacings, 1], \
 Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
 Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
 TraditionalForm]\\).\\nThe determinant of \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \
-\\\"\[NoBreak]\\\", GridBox[{{\\\"0\\\", \\\"0\\\"}, {\\\"1\\\", \\\"0\\\"}}, \
+\\\"\[NoBreak]\\\", GridBox[{{\\\"0\\\", \\\"0\\\"}, {\\\"0\\\", \\\"0\\\"}}, \
 Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
 Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
 TraditionalForm]\\) is zero.\\n (Col \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\
-\[NoBreak]\\\", GridBox[{{\\\"0\\\", \\\"0\\\"}, {\\\"1\\\", \\\"0\\\"}}, \
+\[NoBreak]\\\", GridBox[{{\\\"0\\\", \\\"0\\\"}, {\\\"0\\\", \\\"0\\\"}}, \
 Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
 Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
 TraditionalForm]\\)\\!\\(\\*SuperscriptBox[\\()\\), \
@@ -839,21 +841,21 @@ TraditionalForm]\\)\\!\\(\\*SuperscriptBox[\\()\\), \
 Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
 Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
 TraditionalForm]\\).\\n(Nul \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \
-\\\"\[NoBreak]\\\", GridBox[{{\\\"0\\\", \\\"0\\\"}, {\\\"1\\\", \\\"0\\\"}}, \
+\\\"\[NoBreak]\\\", GridBox[{{\\\"0\\\", \\\"0\\\"}, {\\\"0\\\", \\\"0\\\"}}, \
 Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
 Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
 TraditionalForm]\\)\\!\\(\\*SuperscriptBox[\\()\\), \
 \\(\[Perpendicular]\\)]\\)\\!\\(\\*SuperscriptBox[\\(=\[DoubleStruckCapitalR]\
 \\), \\(2\\)]\\).\\nThe row space of \\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\
-\[NoBreak]\\\", GridBox[{{\\\"0\\\", \\\"0\\\"}, {\\\"1\\\", \\\"0\\\"}}, \
+\[NoBreak]\\\", GridBox[{{\\\"0\\\", \\\"0\\\"}, {\\\"0\\\", \\\"0\\\"}}, \
 Rule[RowSpacings, 1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
 Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
 TraditionalForm]\\) is not \\!\\(\\*SuperscriptBox[\\(\[DoubleStruckCapitalR]\
 \\), \\(2\\)]\\).\\n\\!\\(\\*FormBox[RowBox[{\\\"(\\\", \\\"\[NoBreak]\\\", \
-GridBox[{{\\\"0\\\", \\\"0\\\"}, {\\\"1\\\", \\\"0\\\"}}, Rule[RowSpacings, \
+GridBox[{{\\\"0\\\", \\\"0\\\"}, {\\\"0\\\", \\\"0\\\"}}, Rule[RowSpacings, \
 1], Rule[ColumnSpacings, 1], Rule[RowAlignments, Baseline], \
 Rule[ColumnAlignments, Center]], \\\"\[NoBreak]\\\", \\\")\\\"}], \
-TraditionalForm]\\)does not have 2 singular values.\"\>"], "Output",
+TraditionalForm]\\) does not have 2 singular values.\"\>"], "Output",
  TaggingRules->{},
  CellChangeTimes->{
   3.870863226256773*^9, 3.8708632900660777`*^9, 3.870863599663395*^9, 
@@ -864,9 +866,9 @@ TraditionalForm]\\)does not have 2 singular values.\"\>"], "Output",
    3.870867475263528*^9}, 3.8708675470542464`*^9, 3.8708676323004465`*^9, 
    3.870867889553524*^9, 3.8713952881139765`*^9, 3.8713953495356283`*^9, 
    3.871395462544036*^9, 3.871395530412409*^9, 3.8713957410814004`*^9, 
-   3.8713958401007957`*^9, 3.871395966841879*^9},
- CellLabel->"Out[280]=",
- CellID->137906959,ExpressionUUID->"227e2fc2-72fc-4eda-866c-5c1b7cc97476"]
+   3.8713958401007957`*^9, 3.871395966841879*^9, 3.871396275707445*^9},
+ CellLabel->"Out[289]=",
+ CellID->725771298,ExpressionUUID->"3ebfab60-e7bc-4af7-8a06-76e6087f9f73"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -2854,6 +2856,7 @@ repository).", "MoreInfoText"], Background -> GrayLevel[0.95], FrameMargins ->
  CellID->788767010,ExpressionUUID->"d285a87d-4a60-4b42-9229-1a1f93563fac"],
 
 Cell["Source, reference or citation information", "Text",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -2896,6 +2899,7 @@ to the function.", "MoreInfoText"], Background -> GrayLevel[0.95],
  CellID->341958311,ExpressionUUID->"248b983d-dc4c-4da6-8573-59a86a5cc78d"],
 
 Cell["Link to other related material", "Item",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -3032,6 +3036,7 @@ Cell[TextData[{
  CellID->267876551,ExpressionUUID->"b8ea3fb7-b43b-4c86-bdf5-c9c3fefd4a60"],
 
 Cell["13.0+", "Text",
+ TaggingRules->{},
  CellTags->{"DefaultContent", "ScrapeDefault"},
  CellID->788185540,ExpressionUUID->"f3c6e8f4-a817-4bdc-ac1b-0bdafdcc374a"]
 }, Open  ]],
@@ -3517,6 +3522,7 @@ that are otherwise beyond the scope of the function documentation.",
  CellID->897529167,ExpressionUUID->"085583c8-cad7-4c01-b7d4-7238fb89f5e9"],
 
 Cell["Additional information about limitations, issues, etc.", "Text",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -3776,6 +3782,197 @@ DockedCells->{
                     "d70a2798-fb7f-48c3-a3b0-367f7ec63414"]]]]]], Appearance -> 
             None, BoxID -> "d70a2798-fb7f-48c3-a3b0-367f7ec63414", Evaluator -> 
             Automatic, Method -> "Preemptive"], 
+           MouseAppearanceTag["LinkHand"]], ItemSize -> All, StripOnInput -> 
+          False]}}, 
+       GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Baseline}}}, 
+       AutoDelete -> False, 
+       GridBoxItemSize -> {
+        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], "Grid"], 
+     "Text", FontSize -> 12, FontColor -> GrayLevel[0.25], StripOnInput -> 
+     False]], "StripeCell", CellFrameMargins -> {{20, 5}, {2, 2}}, 
+   CellFrame -> {{0, 0}, {1, 0}}, CellFrameColor -> GrayLevel[0.75]], 
+  Cell[
+   BoxData[
+    StyleBox[
+     TagBox[
+      GridBox[{{
+         ItemBox[
+          TagBox[
+           GridBox[{{
+              OverlayBox[{
+                StyleBox[
+                 TagBox[
+                  DynamicModuleBox[{Typeset`var$$ = False}, 
+                   InterpretationBox[
+                    StyleBox[
+                    PaneSelectorBox[{False -> GridBox[{{
+                    OpenerBox[
+                    Dynamic[Typeset`var$$], Appearance -> Automatic, Enabled -> 
+                    Automatic, AutoAction -> False, ContinuousAction -> 
+                    False], 
+                    StyleBox[
+                    DynamicBox[
+                    ToBoxes[
+                    DateString[
+                    TimeZoneConvert[
+                    DateObject[
+                    3.8713961990727599`17.340442608493905*^9, TimeZone -> 
+                    0]], {"MonthName", " ", "DayShort", ", ", "Year", " ", 
+                    "Hour12Short", ":", "Minute", " ", "AMPMLowerCase"}], 
+                    StandardForm], SingleEvaluation -> True, Evaluator -> 
+                    "System"], FontSlant -> Italic, FontColor -> 
+                    GrayLevel[0.5], FontSize -> 0.9 Inherited, StripOnInput -> 
+                    False]}}, GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                    AutoDelete -> False, 
+                    GridBoxBackground -> {"Columns" -> {{Automatic}}}, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{0.2}}, "Rows" -> {{0.5}}}, 
+                    BaselinePosition -> {1, 1}], True -> GridBox[{{
+                    OpenerBox[
+                    Dynamic[Typeset`var$$], Appearance -> Automatic, Enabled -> 
+                    Automatic, AutoAction -> False, ContinuousAction -> 
+                    False], 
+                    StyleBox[
+                    DynamicBox[
+                    ToBoxes[
+                    DateString[
+                    TimeZoneConvert[
+                    DateObject[
+                    3.8713961990727599`17.340442608493905*^9, TimeZone -> 
+                    0]], {"MonthName", " ", "DayShort", ", ", "Year", " ", 
+                    "Hour12Short", ":", "Minute", " ", "AMPMLowerCase"}], 
+                    StandardForm], SingleEvaluation -> True, Evaluator -> 
+                    "System"], FontSlant -> Italic, FontColor -> 
+                    GrayLevel[0.5], FontSize -> 0.9 Inherited, StripOnInput -> 
+                    False]}, {"", 
+                    PaneBox["\"\"", ImageMargins -> 0]}}, 
+                    GridBoxAlignment -> {"Columns" -> {{Left}}}, AutoDelete -> 
+                    False, GridBoxBackground -> {"Columns" -> {{Automatic}}}, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{0.2}}, "Rows" -> {{0.5}}}, 
+                    BaselinePosition -> {1, 1}]}, 
+                    Dynamic[Typeset`var$$], Alignment -> Automatic, ImageSize -> 
+                    Automatic, ImageMargins -> 0, BaseStyle -> {}, 
+                    DefaultBaseStyle -> "OpenerView", BaselinePosition -> 
+                    Baseline], Deployed -> False, StripOnInput -> False], 
+                    OpenerView[{
+                    Style[
+                    Dynamic[
+                    DateString[
+                    TimeZoneConvert[
+                    DateObject[
+                    3.8713961990727599`17.340442608493905*^9, TimeZone -> 
+                    0]], {"MonthName", " ", "DayShort", ", ", "Year", " ", 
+                    "Hour12Short", ":", "Minute", " ", "AMPMLowerCase"}], 
+                    SingleEvaluation -> True, Evaluator -> "System"], 
+                    FontSlant -> Italic, FontColor -> GrayLevel[0.5], 
+                    FontSize -> 0.9 Inherited], ""}, False]], 
+                   DynamicModuleValues -> Automatic], Setting[#, {0}]& ], 
+                 ShowContents -> False, StripOnInput -> False], 
+                StyleBox[
+                 DynamicBox[
+                  ToBoxes[
+                   DateString[
+                    TimeZoneConvert[
+                    DateObject[
+                    3.8713961990727599`17.340442608493905*^9, TimeZone -> 
+                    0]], {"MonthName", " ", "DayShort", ", ", "Year", " ", 
+                    "Hour12Short", ":", "Minute", " ", "AMPMLowerCase"}], 
+                   StandardForm], SingleEvaluation -> True, Evaluator -> 
+                  "System"], FontSlant -> Italic, FontColor -> GrayLevel[0.5],
+                  FontSize -> 0.9 Inherited, StripOnInput -> False]}, 
+               Alignment -> {Right, Baseline}], "\"   \"", 
+              ItemBox[
+               TagBox[
+                GridBox[{{
+                   StyleBox["\"\[Checkmark]\"", FontColor -> RGBColor[0, 
+                    Rational[2, 3], 0], FontSize -> 16, FontWeight -> "Heavy",
+                     StripOnInput -> False], "\"No issues found\""}}, 
+                 GridBoxAlignment -> {
+                  "Columns" -> {{Left}}, "Rows" -> {{Center}}}, AutoDelete -> 
+                 False, GridBoxItemSize -> {
+                  "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                 GridBoxSpacings -> {"Columns" -> {{0.5}}}], "Grid"], 
+               ItemSize -> Scaled[0.75], StripOnInput -> False]}}, 
+            GridBoxAlignment -> {
+             "Columns" -> {{Left}}, "Rows" -> {{Baseline}}}, AutoDelete -> 
+            False, GridBoxItemSize -> {
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], "Grid"], 
+          ItemSize -> Fit, StripOnInput -> False], 
+         ItemBox["\"\"", ItemSize -> All, StripOnInput -> False], 
+         ItemBox[
+          TagBox[
+           ButtonBox[
+            TagBox[
+             PaneSelectorBox[{False -> GraphicsBox[{
+                  GrayLevel[
+                   NCache[
+                    Rational[64, 85], 0.7529411764705882]], 
+                  
+                  PolygonBox[{{-0.282842712474619, -0.42426406871192845`}, \
+{-0.42426406871192845`, -0.282842712474619}, {0.282842712474619, 
+                   0.42426406871192845`}, {0.42426406871192845`, 
+                   0.282842712474619}}], 
+                  
+                  PolygonBox[{{0.42426406871192845`, -0.282842712474619}, {
+                   0.282842712474619, -0.42426406871192845`}, \
+{-0.42426406871192845`, 0.282842712474619}, {-0.282842712474619, 
+                   0.42426406871192845`}}]}, ImageSize -> 18, 
+                 PlotRangePadding -> 0, PlotRange -> 0.7, Background -> None],
+                True -> GraphicsBox[{
+                  GrayLevel[
+                   NCache[
+                    Rational[128, 255], 0.5019607843137255]], 
+                  
+                  PolygonBox[{{-0.282842712474619, -0.42426406871192845`}, \
+{-0.42426406871192845`, -0.282842712474619}, {0.282842712474619, 
+                   0.42426406871192845`}, {0.42426406871192845`, 
+                   0.282842712474619}}], 
+                  
+                  PolygonBox[{{0.42426406871192845`, -0.282842712474619}, {
+                   0.282842712474619, -0.42426406871192845`}, \
+{-0.42426406871192845`, 0.282842712474619}, {-0.282842712474619, 
+                   0.42426406871192845`}}]}, ImageSize -> 18, 
+                 PlotRangePadding -> 0, PlotRange -> 0.7, Background -> 
+                 None]}, 
+              Dynamic[
+               CurrentValue["MouseOver"]], ImageSize -> Automatic, 
+              FrameMargins -> 0], 
+             MouseAppearanceTag["LinkHand"]], ButtonFunction :> 
+            With[{DefinitionNotebookClient`Stripes`PackagePrivate`nbo$ = 
+               EvaluationNotebook[]}, 
+              CurrentValue[
+               DefinitionNotebookClient`Stripes`PackagePrivate`nbo$, 
+                DockedCells] = If[
+                TrueQ[
+                 MemberQ[
+                  CurrentValue["ModifierKeys"], "Control"]], 
+                DeleteCases[
+                 Flatten[{
+                   CurrentValue[
+                   DefinitionNotebookClient`Stripes`PackagePrivate`nbo$, 
+                    DockedCells]}], 
+                 Cell[
+                  Blank[], "StripeCell", 
+                  BlankNullSequence[]]], 
+                DeleteCases[
+                 Flatten[{
+                   CurrentValue[
+                   DefinitionNotebookClient`Stripes`PackagePrivate`nbo$, 
+                    DockedCells]}], 
+                 Condition[
+                  Pattern[DefinitionNotebookClient`Stripes`PackagePrivate`c$, 
+                   Blank[Cell]], 
+                  Not[
+                   FreeQ[
+                   DefinitionNotebookClient`Stripes`PackagePrivate`c$, 
+                    "a5108b87-5247-4bb8-a95f-d3a1cc0a6e7e"]]]]]], Appearance -> N\
+one, BoxID -> "a5108b87-5247-4bb8-a95f-d3a1cc0a6e7e", Evaluator -> Automatic, 
+            Method -> "Preemptive"], 
            MouseAppearanceTag["LinkHand"]], ItemSize -> All, StripOnInput -> 
           False]}}, 
        GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Baseline}}}, 
