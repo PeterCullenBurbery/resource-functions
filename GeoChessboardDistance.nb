@@ -14,7 +14,10 @@ Cell["GeoChessboardDistance", "Title",
  CellTags->{"Name", "TemplateCell", "Title", "TabNext"},
  CellID->863144461,ExpressionUUID->"0890d698-7d4f-4c7f-b93d-afb2aeee0e2e"],
 
-Cell["find the ", "Text",
+Cell["\<\
+gives the chessboard, Chebyshev, or sup norm distance between two geographic \
+points in space relative to Earth's center\
+\>", "Text",
  Deletable->False,
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
@@ -22,7 +25,9 @@ Cell["find the ", "Text",
        WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
- CellChangeTimes->{{3.871375646853528*^9, 3.871375650210128*^9}},
+ CellChangeTimes->{{3.871375646853528*^9, 3.871375650210128*^9}, {
+  3.8713827672087154`*^9, 3.8713827788303146`*^9}, {3.8713835847681055`*^9, 
+  3.8713836159028807`*^9}},
  CellTags->{"DefaultContent", "Description", "TabNext", "TemplateCell"},
  CellID->660820806,ExpressionUUID->"1db166f5-a793-47f1-8e33-a854cd9f2088"],
 
@@ -73,12 +78,25 @@ Cell[BoxData[{
        RowBox[{"GeoPositionXYZ", "[", "Here", "]"}], "]"}], ",", 
       RowBox[{"First", "[", 
        RowBox[{"GeoPositionXYZ", "[", "pointA", "]"}], "]"}]}], "]"}], ",", 
+    "\"\<Meters\>\""}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"GeoChessboardDistance", "[", 
+   RowBox[{"pointA_", ",", "pointB_"}], "]"}], ":=", 
+  RowBox[{"Quantity", "[", 
+   RowBox[{
+    RowBox[{"ChessboardDistance", "[", 
+     RowBox[{
+      RowBox[{"First", "[", 
+       RowBox[{"GeoPositionXYZ", "[", "pointA", "]"}], "]"}], ",", 
+      RowBox[{"First", "[", 
+       RowBox[{"GeoPositionXYZ", "[", "pointB", "]"}], "]"}]}], "]"}], ",", 
     "\"\<Meters\>\""}], "]"}]}]}], "Input",
  CellChangeTimes->{{3.871375174668559*^9, 3.871375193276129*^9}, {
   3.871375233838044*^9, 3.871375262091727*^9}, {3.871375317916798*^9, 
-  3.8713753250362167`*^9}, {3.87137554433384*^9, 3.8713755732816935`*^9}},
+  3.8713753250362167`*^9}, {3.87137554433384*^9, 3.8713755732816935`*^9}, {
+  3.871383628132721*^9, 3.871383640005554*^9}},
  CellTags->"DefaultContent",
- CellLabel->"In[149]:=",
+ CellLabel->"In[7]:=",
  CellID->876320555,ExpressionUUID->"43ab3e82-8c52-4fe6-9ee7-c90144333876"]
 }, Open  ]],
 
@@ -149,7 +167,8 @@ documentation pages for examples."}], "MoreInfoText"], Background ->
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"MyFunction", "[", "arg", "]"}]], "UsageInputs",
+ RowBox[{"GeoChessboard", "[", "arg", "]"}]], "UsageInputs",
+ CellChangeTimes->{{3.871383644778611*^9, 3.871383647821265*^9}},
  FontFamily->"Source Sans Pro",
  CellTags->{"DefaultContent", "TabNext"},
  CellID->67839508,ExpressionUUID->"8e01e44c-e544-486f-817f-dbfa9c4b41a1"],
@@ -376,31 +395,10 @@ Cell["Basic Examples", "Subsection",
  CellTags->"DefaultContent",
  CellID->619504543,ExpressionUUID->"84657786-0b17-438a-b9b5-fbe3c83b2ad0"],
 
-Cell["Text about the example:", "Text",
+Cell["Find the ", "Text",
+ CellChangeTimes->{{3.871382794541532*^9, 3.8713827956040297`*^9}},
  CellTags->"DefaultContent",
  CellID->586099280,ExpressionUUID->"7cc32fce-b866-4748-a29a-a54f916c8559"],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"MyFunction", "[", 
-  RowBox[{"x", ",", "y"}], "]"}]], "Input",
- CellTags->"DefaultContent",
- CellLabel->"In[1]:= ",
- CellID->298664010,ExpressionUUID->"b7e95d80-4a1e-4686-b422-7399f73e0679"],
-
-Cell[BoxData[
- RowBox[{"x", " ", "y"}]], "Output",
- CellTags->"DefaultContent",
- CellLabel->"Out[1]= ",
- CellID->832981051,ExpressionUUID->"0e15235b-4d3b-4c2e-b234-e56d80f9d74c"]
-}, Open  ]],
-
-Cell[BoxData[
- RowBox[{"Remove", "[", "GeoChessBoardDistance", "]"}]], "Input",
- CellChangeTimes->{{3.8713752677601967`*^9, 3.871375278477354*^9}},
- CellLabel->"In[142]:=",
- CellID->13600347,ExpressionUUID->"e64d06b9-6ac5-4228-ba7f-59f5be241b71"],
 
 Cell[CellGroupData[{
 
@@ -408,16 +406,17 @@ Cell[BoxData[
  RowBox[{"GeoChessboardDistance", "[", 
   RowBox[{"GeoPosition", "[", "\"\<NullIsland\>\"", "]"}], "]"}]], "Input",
  CellChangeTimes->{{3.8713752868079762`*^9, 3.871375298023279*^9}},
- CellLabel->"In[151]:=",
+ CellLabel->"In[3]:=",
  CellID->356614870,ExpressionUUID->"d1c47577-776e-4101-a376-0c22f1d3dd44"],
 
 Cell[BoxData[
  TemplateBox[{"5.719751793105145`*^6", "\"m\"", "meters", "\"Meters\""},
   "Quantity"]], "Output",
  CellChangeTimes->{
-  3.8713752983921394`*^9, {3.87137556358434*^9, 3.871375578737076*^9}},
- CellLabel->"Out[151]=",
- CellID->71333757,ExpressionUUID->"d7040d73-aac3-4fe5-b7ef-90b4518d2999"]
+  3.8713752983921394`*^9, {3.87137556358434*^9, 3.871375578737076*^9}, 
+   3.871382791150623*^9},
+ CellLabel->"Out[3]=",
+ CellID->868261843,ExpressionUUID->"d5b3942d-c69d-4714-b92b-9829000833ec"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -428,15 +427,15 @@ Cell[BoxData[
    RowBox[{"GeoPosition", "[", "\"\<NullIsland\>\"", "]"}], "]"}], 
   "]"}]], "Input",
  CellChangeTimes->{{3.8713755811897335`*^9, 3.8713755822844486`*^9}},
- CellLabel->"In[152]:=",
+ CellLabel->"In[4]:=",
  CellID->86755508,ExpressionUUID->"16977d31-1d2c-4f08-848c-6ac0b302b131"],
 
 Cell[BoxData[
  TemplateBox[{"5719752", "\"m\"", "meters", "\"Meters\""},
   "Quantity"]], "Output",
- CellChangeTimes->{3.8713755825946703`*^9},
- CellLabel->"Out[152]=",
- CellID->233466252,ExpressionUUID->"5237d27d-7c8b-4bbc-a21f-9ee01dd738f6"]
+ CellChangeTimes->{3.8713755825946703`*^9, 3.8713827915100203`*^9},
+ CellLabel->"Out[4]=",
+ CellID->106151316,ExpressionUUID->"43baad3f-47f2-4287-aff0-30ab12c1e484"]
 }, Open  ]]
 }, Open  ]],
 
