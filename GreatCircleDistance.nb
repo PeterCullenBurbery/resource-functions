@@ -421,24 +421,194 @@ Cell["Basic Examples", "Subsection",
  CellTags->"DefaultContent",
  CellID->619504543,ExpressionUUID->"f1f95458-a5e8-4bfa-ac38-e5f7ec7a374b"],
 
-Cell["Text about the example:", "Text",
+Cell["Find the distance to your antipode along a great circle:", "Text",
+ CellChangeTimes->{{3.87137472168013*^9, 3.8713747325542765`*^9}},
+ CellID->134263692,ExpressionUUID->"ef031643-2790-41c3-a0fb-6b761d9cfbce"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GreatCircleDistance", "[", 
+  RowBox[{"GeoAntipode", "[", "Here", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8713747348178797`*^9, 3.871374740919424*^9}},
+ CellLabel->"In[126]:=",
+ CellID->173432279,ExpressionUUID->"ecb2a2be-6a0a-4974-921f-23a74c97f43e"],
+
+Cell[BoxData[
+ TemplateBox[{"20025.378406444837`", "\"km\"", "kilometers", "\"Kilometers\""},
+  "Quantity"]], "Output",
+ CellChangeTimes->{3.871374741327712*^9},
+ CellLabel->"Out[126]=",
+ CellID->1562550,ExpressionUUID->"bcfd11be-17c0-4d93-8056-4e5fef961c32"]
+}, Open  ]],
+
+Cell["\<\
+Find the distance to Null Island with 0 latitude and 0 longitude along a \
+great circle:\
+\>", "Text",
+ CellChangeTimes->{{3.871374692481776*^9, 3.871374698050089*^9}},
  CellTags->"DefaultContent",
  CellID->586099280,ExpressionUUID->"325189a2-6566-43ce-80ae-4caae34bdb58"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"MyFunction", "[", 
-  RowBox[{"x", ",", "y"}], "]"}]], "Input",
- CellTags->"DefaultContent",
- CellLabel->"In[1]:= ",
- CellID->298664010,ExpressionUUID->"b5239479-2f5a-45f6-a70d-7484364fee29"],
+ RowBox[{"GreatCircleDistance", "[", 
+  RowBox[{"GeoPosition", "[", "\"\<NullIsland\>\"", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8713746999949436`*^9, 3.871374706089216*^9}},
+ CellLabel->"In[125]:=",
+ CellID->168069103,ExpressionUUID->"7589b666-8d49-4660-bd09-dc68ddbb0231"],
 
 Cell[BoxData[
- RowBox[{"x", " ", "y"}]], "Output",
- CellTags->"DefaultContent",
- CellLabel->"Out[1]= ",
- CellID->832981051,ExpressionUUID->"25566d60-3fca-4040-986d-12ab00b60210"]
+ TemplateBox[{"9352.67911233612`", "\"km\"", "kilometers", "\"Kilometers\""},
+  "Quantity"]], "Output",
+ CellChangeTimes->{3.8713747064839687`*^9},
+ CellLabel->"Out[125]=",
+ CellID->158876305,ExpressionUUID->"ae42338a-7526-4531-9002-a176434e7bf5"]
+}, Open  ]],
+
+Cell["Find the distance to the north and south poles:", "Text",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8713734230662923`*^9, 3.8713734303695765`*^9}},
+ CellID->51027292,ExpressionUUID->"9abfa9c0-7c26-47d3-b45b-fdf156e6ba0b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GreatCircleDistance", "[", 
+  RowBox[{"GeoPosition", "[", "\"\<NorthPole\>\"", "]"}], "]"}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.871373431678073*^9, 3.871373437529333*^9}, {
+  3.8713747703309975`*^9, 3.871374773303328*^9}},
+ CellLabel->"In[127]:=",
+ CellID->380602543,ExpressionUUID->"c2fe062e-6882-4355-88c5-dae3214fec62"],
+
+Cell[BoxData[
+ TemplateBox[{"23453.305995865434`", "\"km\"", "kilometers", "\"Kilometers\""},
+  "Quantity"]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{3.871373437842073*^9, 3.8713747735590906`*^9},
+ CellLabel->"Out[127]=",
+ CellID->174950145,ExpressionUUID->"0c53142d-4ac0-4919-bacb-fa109115f519"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"LoxodromeDistance", "[", 
+  RowBox[{"GeoPosition", "[", "\"\<SouthPole\>\"", "]"}], "]"}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.871373431678073*^9, 3.871373442307837*^9}},
+ CellLabel->"In[87]:=",
+ CellID->253159429,ExpressionUUID->"0dc168a7-1161-4595-99b4-daf471e7f2b0"],
+
+Cell[BoxData[
+ TemplateBox[{"14254.973896120102`", "\"km\"", "kilometers", "\"Kilometers\""},
+  "Quantity"]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{3.8713734425972567`*^9},
+ CellLabel->"Out[87]=",
+ CellID->735192943,ExpressionUUID->"125b3c36-5115-43b5-9730-5e4c947d55be"]
+}, Open  ]],
+
+Cell["Find the distance to the north and south geomagnetic poles:", "Text",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8713734435506577`*^9, 3.8713734524569798`*^9}},
+ CellID->498239798,ExpressionUUID->"e7bc317d-35fc-4f0b-a829-8f79f8b2c5ed"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GreatCircleDistance", "[", 
+  RowBox[{"GeoPosition", "[", "\"\<NorthGeomagneticPole\>\"", "]"}], 
+  "]"}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8713734537758827`*^9, 3.8713734608965473`*^9}, {
+  3.8713735232231827`*^9, 3.8713735409817038`*^9}, {3.871374777000529*^9, 
+  3.8713747781128936`*^9}},
+ CellLabel->"In[128]:=",
+ CellID->48943018,ExpressionUUID->"a8542470-a76b-463f-aa1c-05af02144c27"],
+
+Cell[BoxData[
+ TemplateBox[{"4729.524906953508`", "\"km\"", "kilometers", "\"Kilometers\""},
+  "Quantity"]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{
+  3.871373461264634*^9, {3.8713735270619044`*^9, 3.871373541505624*^9}, 
+   3.871374778346919*^9},
+ CellLabel->"Out[128]=",
+ CellID->447882061,ExpressionUUID->"19f8d868-f078-4346-8eac-f00d128e5870"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GreatCircleDistance", "[", 
+  RowBox[{"GeoPosition", "[", "\"\<SouthGeomagneticPole\>\"", "]"}], 
+  "]"}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8713734537758827`*^9, 3.871373461836997*^9}, {
+  3.8713735471602745`*^9, 3.8713735517867327`*^9}, {3.8713747815256166`*^9, 
+  3.8713747828386097`*^9}},
+ CellLabel->"In[129]:=",
+ CellID->14974111,ExpressionUUID->"d76fe098-139d-42cf-8960-69715e6db278"],
+
+Cell[BoxData[
+ TemplateBox[{"15274.440653794938`", "\"km\"", "kilometers", "\"Kilometers\""},
+  "Quantity"]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{3.87137355207155*^9, 3.8713747830829043`*^9},
+ CellLabel->"Out[129]=",
+ CellID->889590581,ExpressionUUID->"e7b7380a-ec11-4403-928b-1a715dc9e775"]
+}, Open  ]],
+
+Cell["\<\
+Find the distance to the north and south geomagnetic dip poles:\
+\>", "Text",
+ TaggingRules->{},
+ CellChangeTimes->{{3.871373554484121*^9, 3.871373564498278*^9}},
+ CellID->398967393,ExpressionUUID->"4dcf0938-791c-469b-aff3-f00c6b946ea9"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GreatCircleDistance", "[", 
+  RowBox[{"GeoPosition", "[", "\"\<NorthModelDipPole\>\"", "]"}], 
+  "]"}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8713736235954666`*^9, 3.871373626978488*^9}, {
+  3.8713747870716953`*^9, 3.8713747883662443`*^9}},
+ CellLabel->"In[130]:=",
+ CellID->438772184,ExpressionUUID->"0a12842e-720a-415a-a2dd-188f701588dd"],
+
+Cell[BoxData[
+ TemplateBox[{"6024.3279545266905`", "\"km\"", "kilometers", "\"Kilometers\""},
+  "Quantity"]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{3.8713736335249405`*^9, 3.8713747946876154`*^9},
+ CellLabel->"Out[130]=",
+ CellID->292359710,ExpressionUUID->"efbf2657-65db-4b7f-84c6-99f3a40f76ac"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GreatCircleDistance", "[", 
+  RowBox[{"GeoPosition", "[", "\"\<SouthModelDipPole\>\"", "]"}], 
+  "]"}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8713736235954666`*^9, 3.8713736372655077`*^9}, {
+  3.871374792785864*^9, 3.8713747940986156`*^9}},
+ CellLabel->"In[131]:=",
+ CellID->148308502,ExpressionUUID->"58084fee-d7ee-4dcc-9ad4-8a551516bbf2"],
+
+Cell[BoxData[
+ TemplateBox[{"16229.943197223754`", "\"km\"", "kilometers", "\"Kilometers\""},
+  "Quantity"]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{3.8713736430426235`*^9, 3.8713747996706066`*^9},
+ CellLabel->"Out[131]=",
+ CellID->132862982,ExpressionUUID->"86051b15-b391-4e4c-9c4c-8352396b7565"]
 }, Open  ]]
 }, Open  ]],
 
@@ -1414,7 +1584,6 @@ Cell[BoxData[
          StyleBox[
           TemplateBox[{
             CheckboxBox["Session", {False, "Session"}], "\" \"", 
-            
             TemplateBox[{
              "\"Session\"", "\"Local or cloud interactive session\""}, 
              "PrettyTooltipTemplate"]},
