@@ -244,15 +244,25 @@ function, its development, and its usage.", "MoreInfoText"], Background ->
  CellTags->{"Details & Options", "Notes", "TemplateCellGroup"},
  CellID->447261062,ExpressionUUID->"f4685655-2862-43c5-b81b-134da59a9504"],
 
-Cell["Additional information about usage and options.", "Notes",
+Cell["\<\
+The Canberra distance is like a weighted Manhattan distance measure.\
+\>", "Notes",
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
        WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.8713873231942444`*^9, 3.871387344206679*^9}},
  CellTags->{"DefaultContent", "TabNext"},
- CellID->422531486,ExpressionUUID->"fa80b147-b51c-45ce-b0b0-adb0b2e73604"]
+ CellID->422531486,ExpressionUUID->"fa80b147-b51c-45ce-b0b0-adb0b2e73604"],
+
+Cell["\<\
+The output will be between 0 and 3 because there are three spatial \
+coordinates vertical horizontal and depth/breadth.\
+\>", "Notes",
+ CellChangeTimes->{{3.87138738164834*^9, 3.871387420251773*^9}},
+ CellID->105825071,ExpressionUUID->"ee96a4cd-047f-444e-bc85-c8c0bb4a1abe"]
 }, Open  ]]
 }, Open  ]],
 
@@ -419,24 +429,28 @@ Cell["Basic Examples", "Subsection",
  CellTags->"DefaultContent",
  CellID->619504543,ExpressionUUID->"f3f6ab43-8ed1-4719-b298-e05acfcd1d8b"],
 
-Cell["Text about the example:", "Text",
+Cell["\<\
+Find the Canberra distance to a random geographical position:\
+\>", "Text",
+ CellChangeTimes->{{3.8713873512802677`*^9, 3.871387365506342*^9}},
  CellTags->"DefaultContent",
  CellID->586099280,ExpressionUUID->"8d64a979-28e5-4aec-9004-3449283ac7e7"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"MyFunction", "[", 
-  RowBox[{"x", ",", "y"}], "]"}]], "Input",
+ RowBox[{"GeoCanberraDistance", "[", 
+  RowBox[{"RandomGeoPosition", "[", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.871387368471752*^9, 3.871387377554344*^9}},
  CellTags->"DefaultContent",
- CellLabel->"In[1]:= ",
+ CellLabel->"In[167]:=",
  CellID->298664010,ExpressionUUID->"653c1e16-e71e-4c86-b0ba-38cf35906dfa"],
 
-Cell[BoxData[
- RowBox[{"x", " ", "y"}]], "Output",
+Cell[BoxData["1.3972749220370704`"], "Output",
+ CellChangeTimes->{{3.8713873713822193`*^9, 3.8713873778197126`*^9}},
  CellTags->"DefaultContent",
- CellLabel->"Out[1]= ",
- CellID->832981051,ExpressionUUID->"9f549128-36c2-40d0-aebf-9aa428675cdb"]
+ CellLabel->"Out[167]=",
+ CellID->262458670,ExpressionUUID->"cc7a90c9-b782-49e7-bf44-d45dd0fde5f6"]
 }, Open  ]]
 }, Open  ]],
 
