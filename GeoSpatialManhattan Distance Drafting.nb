@@ -1,0 +1,807 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     30610,        797]
+NotebookOptionsPosition[     26704,        720]
+NotebookOutlinePosition[     27141,        737]
+CellTagsIndexPosition[     27098,        734]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"First", "[", 
+  RowBox[{"GeoPositionXYZ", "[", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8713699014935007`*^9, 3.8713699071004534`*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"d1f6f531-0151-4e25-9c2e-1d03c697127d"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "GeoPositionXYZ", "argt", 
+   "\"\\!\\(\\*RowBox[{\\\"GeoPositionXYZ\\\"}]\\) called with \
+\\!\\(\\*RowBox[{\\\"0\\\"}]\\) arguments; \\!\\(\\*RowBox[{\\\"1\\\"}]\\) or \
+\\!\\(\\*RowBox[{\\\"2\\\"}]\\) arguments are expected.\"", 2, 1, 1, 
+   19474650876955409832, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.871369907637312*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"9c313880-6f93-4b9b-8104-5e49fcb3d158"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "First", "nofirst", 
+   "\"\\!\\(\\*RowBox[{\\\"GeoPositionXYZ\\\", \\\"[\\\", \\\"]\\\"}]\\) has \
+zero length and no first element.\"", 2, 1, 2, 19474650876955409832, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.8713699076993265`*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"4fff5e93-4b4d-436d-a912-df6b0857b1b9"],
+
+Cell[BoxData[
+ RowBox[{"First", "[", 
+  RowBox[{"GeoPositionXYZ", "[", "]"}], "]"}]], "Output",
+ CellChangeTimes->{3.871369907794324*^9},
+ CellLabel->"Out[1]=",ExpressionUUID->"a3c4371d-1d1d-44d7-95ac-4ee08efd628b"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"First", "[", 
+  RowBox[{"GeoPositionXYZ", "[", "Here", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8713699014935007`*^9, 3.8713699110704646`*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"333c1bdd-5258-4ab7-afef-d45c28417eba"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"658385.206894855`", ",", 
+   RowBox[{"-", "4.960783332820038`*^6"}], ",", "3.9412058980811113`*^6"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.8713699143190527`*^9},
+ CellLabel->"Out[2]=",ExpressionUUID->"085ff0f9-eba7-42a8-8b04-977af227e2ad"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"WikidataGeoPosition", "=", 
+  RowBox[{
+  "ResourceFunction", "[", "\"\<WikidataGeoPosition\>\"", "]"}]}]], "Input",
+ CellChangeTimes->{{3.8713699202919135`*^9, 3.8713699373266325`*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"27d8ea5a-d1a9-47bf-a737-8220c263b57f"],
+
+Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   DynamicModuleBox[{Typeset`open = False}, 
+    FrameBox[
+     PaneSelectorBox[{False->GridBox[{
+        {
+         PaneBox[GridBox[{
+            {
+             StyleBox[
+              StyleBox[
+               AdjustmentBox["\<\"[\[FilledSmallSquare]]\"\>",
+                BoxBaselineShift->-0.25,
+                BoxMargins->{{0, 0}, {-1, -1}}], "ResourceFunctionIcon",
+               
+               FontColor->RGBColor[
+                0.8745098039215686, 0.2784313725490196, 0.03137254901960784]],
+              ShowStringCharacters->False,
+              FontFamily->"Source Sans Pro Black",
+              FontSize->0.6538461538461539 Inherited,
+              FontWeight->"Heavy",
+              PrivateFontOptions->{"OperatorSubstitution"->False}], 
+             StyleBox[
+              RowBox[{
+               StyleBox["WikidataGeoPosition", "ResourceFunctionLabel"], " "}],
+              ShowAutoStyles->False,
+              ShowStringCharacters->False,
+              FontSize->Rational[12, 13] Inherited,
+              FontColor->GrayLevel[0.1]]}
+           },
+           GridBoxSpacings->{"Columns" -> {{0.25}}}],
+          Alignment->Left,
+          BaseStyle->{LineSpacing -> {0, 0}, LineBreakWithin -> False},
+          BaselinePosition->Baseline,
+          FrameMargins->{{3, 0}, {0, 0}}], 
+         ItemBox[
+          PaneBox[
+           TogglerBox[Dynamic[Typeset`open], {True->
+            
+            DynamicBox[FEPrivate`FrontEndResource[
+             "FEBitmaps", "IconizeCloser"],
+             ImageSizeCache->{11., {2., 9.}}], False->
+            
+            DynamicBox[FEPrivate`FrontEndResource[
+             "FEBitmaps", "IconizeOpener"],
+             ImageSizeCache->{11., {2., 9.}}]},
+            Appearance->None,
+            BaselinePosition->Baseline,
+            ContentPadding->False,
+            FrameMargins->0],
+           Alignment->Left,
+           BaselinePosition->Baseline,
+           FrameMargins->{{1, 1}, {0, 0}}],
+          Frame->{{
+             RGBColor[
+             0.8313725490196079, 0.8470588235294118, 0.8509803921568627, 0.5],
+              False}, {False, False}}]}
+       },
+       BaselinePosition->{1, 1},
+       GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+       GridBoxSpacings->{"Columns" -> {{0}}, "Rows" -> {{0}}}], True->GridBox[{
+        {GridBox[{
+           {
+            PaneBox[GridBox[{
+               {
+                StyleBox[
+                 AdjustmentBox[
+                  
+                  StyleBox["\<\"[\[FilledSmallSquare]]\"\>", 
+                   "ResourceFunctionIcon",
+                   
+                   FontColor->RGBColor[
+                    0.8745098039215686, 0.2784313725490196, 
+                    0.03137254901960784]],
+                  BoxBaselineShift->-0.25,
+                  BoxMargins->{{0, 0}, {-1, -1}}],
+                 ShowStringCharacters->False,
+                 FontFamily->"Source Sans Pro Black",
+                 FontSize->0.6538461538461539 Inherited,
+                 FontWeight->"Heavy",
+                 PrivateFontOptions->{"OperatorSubstitution"->False}], 
+                StyleBox[
+                 RowBox[{
+                  StyleBox["WikidataGeoPosition", "ResourceFunctionLabel"], 
+                  " "}],
+                 ShowAutoStyles->False,
+                 ShowStringCharacters->False,
+                 FontSize->Rational[12, 13] Inherited,
+                 FontColor->GrayLevel[0.1]]}
+              },
+              GridBoxSpacings->{"Columns" -> {{0.25}}}],
+             Alignment->Left,
+             BaseStyle->{LineSpacing -> {0, 0}, LineBreakWithin -> False},
+             BaselinePosition->Baseline,
+             FrameMargins->{{3, 0}, {0, 0}}], 
+            ItemBox[
+             PaneBox[
+              TogglerBox[Dynamic[Typeset`open], {True->
+               
+               DynamicBox[FEPrivate`FrontEndResource[
+                "FEBitmaps", "IconizeCloser"]], False->
+               DynamicBox[FEPrivate`FrontEndResource[
+                "FEBitmaps", "IconizeOpener"]]},
+               Appearance->None,
+               BaselinePosition->Baseline,
+               ContentPadding->False,
+               FrameMargins->0],
+              Alignment->Left,
+              BaselinePosition->Baseline,
+              FrameMargins->{{1, 1}, {0, 0}}],
+             Frame->{{
+                RGBColor[
+                0.8313725490196079, 0.8470588235294118, 0.8509803921568627, 
+                 0.5], False}, {False, False}}]}
+          },
+          BaselinePosition->{1, 1},
+          GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+          
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+          GridBoxSpacings->{"Columns" -> {{0}}, "Rows" -> {{0}}}]},
+        {
+         StyleBox[
+          PaneBox[GridBox[{
+             {
+              RowBox[{
+               TagBox["\<\"Version (latest): \"\>",
+                "IconizedLabel"], " ", 
+               TagBox["\<\"1.0.0\"\>",
+                "IconizedItem"]}]},
+             {
+              TagBox[
+               
+               TemplateBox[{
+                "\"Documentation \[RightGuillemet]\"", 
+                 "https://resources.wolframcloud.com/FunctionRepository/\
+resources/7dc4e349-ce13-48e5-bf57-68291ee9badc/"},
+                "HyperlinkURL"],
+               "IconizedItem"]}
+            },
+            DefaultBaseStyle->"Column",
+            GridBoxAlignment->{"Columns" -> {{Left}}},
+            
+            GridBoxItemSize->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+           Alignment->Left,
+           BaselinePosition->Baseline,
+           FrameMargins->{{5, 4}, {0, 4}}], "DialogStyle",
+          FontFamily->"Roboto",
+          FontSize->11]}
+       },
+       BaselinePosition->{1, 1},
+       GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+       GridBoxDividers->{"Columns" -> {{None}}, "Rows" -> {False, {
+            GrayLevel[0.8]}, False}},
+       GridBoxItemSize->{
+        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]}, Dynamic[
+      Typeset`open],
+      BaselinePosition->Baseline,
+      ImageSize->Automatic],
+     Background->RGBColor[
+      0.9686274509803922, 0.9764705882352941, 0.984313725490196],
+     BaselinePosition->Baseline,
+     DefaultBaseStyle->{},
+     FrameMargins->{{0, 0}, {1, 0}},
+     FrameStyle->RGBColor[
+      0.8313725490196079, 0.8470588235294118, 0.8509803921568627],
+     RoundingRadius->4]],
+   {"FunctionResourceBox", 
+    RGBColor[0.8745098039215686, 0.2784313725490196, 0.03137254901960784], 
+    "WikidataGeoPosition"},
+   TagBoxNote->"FunctionResourceBox"],
+  ResourceFunction[
+   ResourceObject[<|
+    "Name" -> "WikidataGeoPosition", "ShortName" -> "WikidataGeoPosition", 
+     "UUID" -> "7dc4e349-ce13-48e5-bf57-68291ee9badc", "ResourceType" -> 
+     "Function", "Version" -> "1.0.0", "Description" -> 
+     "Find the geographical coordinates of a place using Wikidata", 
+     "RepositoryLocation" -> 
+     URL["https://www.wolframcloud.com/obj/resourcesystem/api/1.0"], 
+     "SymbolName" -> 
+     "FunctionRepository`$d37826aa65c24497aa810e734ebbb060`\
+WikidataGeoPosition", "FunctionLocation" -> 
+     CloudObject[
+      "https://www.wolframcloud.com/obj/3da37d86-cfe8-481f-9a2d-d755ba29789b"]\
+|>, ResourceSystemBase -> Automatic]],
+  Selectable->False]], "Output",
+ CellChangeTimes->{3.871369938734819*^9},
+ CellLabel->"Out[4]=",ExpressionUUID->"ec7e1156-ffa3-4a42-ba0e-d6e4da6b8f80"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"WikidataGeoPosition", "[", "\"\<Empire State Building\>\"", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.8713699397688093`*^9, 3.8713699452911005`*^9}},
+ CellLabel->"In[5]:=",ExpressionUUID->"287fbbab-be56-4301-b978-80b5146f77c2"],
+
+Cell[BoxData[
+ RowBox[{"GeoPosition", "[", 
+  RowBox[{"{", 
+   RowBox[{"40.748333333333`", ",", 
+    RowBox[{"-", "73.985277777778`"}]}], "}"}], "]"}]], "Output",
+ CellChangeTimes->{3.871369949662723*^9},
+ CellLabel->"Out[5]=",ExpressionUUID->"e0fbf135-ffea-4d27-a71e-b1b56219a13b"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"First", "[", 
+  RowBox[{"GeoPositionXYZ", "[", 
+   RowBox[{"WikidataGeoPosition", "[", "\"\<Empire State Building\>\"", "]"}],
+    "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.871369947973747*^9, 3.8713699566671963`*^9}},
+ CellLabel->"In[6]:=",ExpressionUUID->"d124e518-7414-4f34-b942-116f7a607d8b"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1.3349712740931972`*^6", ",", 
+   RowBox[{"-", "4.65108726236241`*^6"}], ",", "4.141290410851442`*^6"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.8713699573295717`*^9},
+ CellLabel->"Out[6]=",ExpressionUUID->"9c06a1e6-90e3-4d23-b621-2bcb0c3a259f"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ManhattanDistance", "[", 
+  RowBox[{
+   RowBox[{"First", "[", 
+    RowBox[{"GeoPositionXYZ", "[", 
+     RowBox[{
+     "WikidataGeoPosition", "[", "\"\<Empire State Building\>\"", "]"}], 
+     "]"}], "]"}], ",", 
+   RowBox[{"First", "[", 
+    RowBox[{"GeoPositionXYZ", "[", "Here", "]"}], "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8713699630991135`*^9, 3.8713699759762745`*^9}},
+ CellLabel->"In[8]:=",ExpressionUUID->"56cedfac-ee6c-425f-95cf-b0ac89db86e4"],
+
+Cell[BoxData["1.1863666504263007`*^6"], "Output",
+ CellChangeTimes->{{3.871369970987571*^9, 3.8713699776654005`*^9}},
+ CellLabel->"Out[8]=",ExpressionUUID->"603b0a0b-8df4-4ea3-ae89-7081b4526430"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Quantity", "[", 
+  RowBox[{
+   RowBox[{"ManhattanDistance", "[", 
+    RowBox[{
+     RowBox[{"First", "[", 
+      RowBox[{"GeoPositionXYZ", "[", 
+       RowBox[{
+       "WikidataGeoPosition", "[", "\"\<Empire State Building\>\"", "]"}], 
+       "]"}], "]"}], ",", 
+     RowBox[{"First", "[", 
+      RowBox[{"GeoPositionXYZ", "[", "Here", "]"}], "]"}]}], "]"}], ",", 
+   "\"\<Meters\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.8713699812044373`*^9, 3.871369984252303*^9}},
+ CellLabel->"In[9]:=",ExpressionUUID->"deb823a2-bcde-4d34-b44e-d788acb82c7a"],
+
+Cell[BoxData[
+ TemplateBox[{"1.1863666504263007`*^6", "\"m\"", "meters", "\"Meters\""},
+  "Quantity"]], "Output",
+ CellChangeTimes->{3.871369984938056*^9},
+ CellLabel->"Out[9]=",ExpressionUUID->"a606b43d-3cf4-496f-9153-4e45a98dd89c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GeoSpatialDistance", "=", 
+  RowBox[{
+  "ResourceFunction", "[", "\"\<GeoSpatialDistance\>\"", "]"}]}]], "Input",
+ CellChangeTimes->{{3.871369990235148*^9, 3.8713700067782288`*^9}},
+ CellLabel->"In[10]:=",ExpressionUUID->"22bc5a57-d069-41d5-aa18-df9dbb477bb6"],
+
+Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   DynamicModuleBox[{Typeset`open = False}, 
+    FrameBox[
+     PaneSelectorBox[{False->GridBox[{
+        {
+         PaneBox[GridBox[{
+            {
+             StyleBox[
+              StyleBox[
+               AdjustmentBox["\<\"[\[FilledSmallSquare]]\"\>",
+                BoxBaselineShift->-0.25,
+                BoxMargins->{{0, 0}, {-1, -1}}], "ResourceFunctionIcon",
+               
+               FontColor->RGBColor[
+                0.8745098039215686, 0.2784313725490196, 0.03137254901960784]],
+              ShowStringCharacters->False,
+              FontFamily->"Source Sans Pro Black",
+              FontSize->0.6538461538461539 Inherited,
+              FontWeight->"Heavy",
+              PrivateFontOptions->{"OperatorSubstitution"->False}], 
+             StyleBox[
+              RowBox[{
+               StyleBox["GeoSpatialDistance", "ResourceFunctionLabel"], " "}],
+              ShowAutoStyles->False,
+              ShowStringCharacters->False,
+              FontSize->Rational[12, 13] Inherited,
+              FontColor->GrayLevel[0.1]]}
+           },
+           GridBoxSpacings->{"Columns" -> {{0.25}}}],
+          Alignment->Left,
+          BaseStyle->{LineSpacing -> {0, 0}, LineBreakWithin -> False},
+          BaselinePosition->Baseline,
+          FrameMargins->{{3, 0}, {0, 0}}], 
+         ItemBox[
+          PaneBox[
+           TogglerBox[Dynamic[Typeset`open], {True->
+            
+            DynamicBox[FEPrivate`FrontEndResource[
+             "FEBitmaps", "IconizeCloser"],
+             ImageSizeCache->{11., {2., 9.}}], False->
+            
+            DynamicBox[FEPrivate`FrontEndResource[
+             "FEBitmaps", "IconizeOpener"],
+             ImageSizeCache->{11., {2., 9.}}]},
+            Appearance->None,
+            BaselinePosition->Baseline,
+            ContentPadding->False,
+            FrameMargins->0],
+           Alignment->Left,
+           BaselinePosition->Baseline,
+           FrameMargins->{{1, 1}, {0, 0}}],
+          Frame->{{
+             RGBColor[
+             0.8313725490196079, 0.8470588235294118, 0.8509803921568627, 0.5],
+              False}, {False, False}}]}
+       },
+       BaselinePosition->{1, 1},
+       GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+       GridBoxSpacings->{"Columns" -> {{0}}, "Rows" -> {{0}}}], True->GridBox[{
+        {GridBox[{
+           {
+            PaneBox[GridBox[{
+               {
+                StyleBox[
+                 AdjustmentBox[
+                  
+                  StyleBox["\<\"[\[FilledSmallSquare]]\"\>", 
+                   "ResourceFunctionIcon",
+                   
+                   FontColor->RGBColor[
+                    0.8745098039215686, 0.2784313725490196, 
+                    0.03137254901960784]],
+                  BoxBaselineShift->-0.25,
+                  BoxMargins->{{0, 0}, {-1, -1}}],
+                 ShowStringCharacters->False,
+                 FontFamily->"Source Sans Pro Black",
+                 FontSize->0.6538461538461539 Inherited,
+                 FontWeight->"Heavy",
+                 PrivateFontOptions->{"OperatorSubstitution"->False}], 
+                StyleBox[
+                 RowBox[{
+                  StyleBox["GeoSpatialDistance", "ResourceFunctionLabel"], 
+                  " "}],
+                 ShowAutoStyles->False,
+                 ShowStringCharacters->False,
+                 FontSize->Rational[12, 13] Inherited,
+                 FontColor->GrayLevel[0.1]]}
+              },
+              GridBoxSpacings->{"Columns" -> {{0.25}}}],
+             Alignment->Left,
+             BaseStyle->{LineSpacing -> {0, 0}, LineBreakWithin -> False},
+             BaselinePosition->Baseline,
+             FrameMargins->{{3, 0}, {0, 0}}], 
+            ItemBox[
+             PaneBox[
+              TogglerBox[Dynamic[Typeset`open], {True->
+               
+               DynamicBox[FEPrivate`FrontEndResource[
+                "FEBitmaps", "IconizeCloser"]], False->
+               DynamicBox[FEPrivate`FrontEndResource[
+                "FEBitmaps", "IconizeOpener"]]},
+               Appearance->None,
+               BaselinePosition->Baseline,
+               ContentPadding->False,
+               FrameMargins->0],
+              Alignment->Left,
+              BaselinePosition->Baseline,
+              FrameMargins->{{1, 1}, {0, 0}}],
+             Frame->{{
+                RGBColor[
+                0.8313725490196079, 0.8470588235294118, 0.8509803921568627, 
+                 0.5], False}, {False, False}}]}
+          },
+          BaselinePosition->{1, 1},
+          GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+          
+          GridBoxItemSize->{
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+          GridBoxSpacings->{"Columns" -> {{0}}, "Rows" -> {{0}}}]},
+        {
+         StyleBox[
+          PaneBox[GridBox[{
+             {
+              RowBox[{
+               TagBox["\<\"Version (latest): \"\>",
+                "IconizedLabel"], " ", 
+               TagBox["\<\"1.1.0\"\>",
+                "IconizedItem"]}]},
+             {
+              TagBox[
+               
+               TemplateBox[{
+                "\"Documentation \[RightGuillemet]\"", 
+                 "https://resources.wolframcloud.com/FunctionRepository/\
+resources/0adc3d95-99ad-4ac7-996b-d1b88289fa64/"},
+                "HyperlinkURL"],
+               "IconizedItem"]}
+            },
+            DefaultBaseStyle->"Column",
+            GridBoxAlignment->{"Columns" -> {{Left}}},
+            
+            GridBoxItemSize->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+           Alignment->Left,
+           BaselinePosition->Baseline,
+           FrameMargins->{{5, 4}, {0, 4}}], "DialogStyle",
+          FontFamily->"Roboto",
+          FontSize->11]}
+       },
+       BaselinePosition->{1, 1},
+       GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+       GridBoxDividers->{"Columns" -> {{None}}, "Rows" -> {False, {
+            GrayLevel[0.8]}, False}},
+       GridBoxItemSize->{
+        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]}, Dynamic[
+      Typeset`open],
+      BaselinePosition->Baseline,
+      ImageSize->Automatic],
+     Background->RGBColor[
+      0.9686274509803922, 0.9764705882352941, 0.984313725490196],
+     BaselinePosition->Baseline,
+     DefaultBaseStyle->{},
+     FrameMargins->{{0, 0}, {1, 0}},
+     FrameStyle->RGBColor[
+      0.8313725490196079, 0.8470588235294118, 0.8509803921568627],
+     RoundingRadius->4]],
+   {"FunctionResourceBox", 
+    RGBColor[0.8745098039215686, 0.2784313725490196, 0.03137254901960784], 
+    "GeoSpatialDistance"},
+   TagBoxNote->"FunctionResourceBox"],
+  ResourceFunction[
+   ResourceObject[<|
+    "Name" -> "GeoSpatialDistance", "ShortName" -> "GeoSpatialDistance", 
+     "UUID" -> "0adc3d95-99ad-4ac7-996b-d1b88289fa64", "ResourceType" -> 
+     "Function", "Version" -> "1.1.0", "Description" -> 
+     "Find the spatial distance between two points on Earth", 
+     "RepositoryLocation" -> 
+     URL["https://www.wolframcloud.com/obj/resourcesystem/api/1.0"], 
+     "SymbolName" -> 
+     "FunctionRepository`$35925fdfdb594f9e9f70b6f6b3d6b4d7`\
+GeoSpatialDistance", "FunctionLocation" -> 
+     CloudObject[
+      "https://www.wolframcloud.com/obj/e5e93994-b70f-40a1-9f58-1f322bb874eb"]\
+|>, {ResourceSystemBase -> 
+     "https://www.wolframcloud.com/obj/resourcesystem/api/1.0"}]],
+  Selectable->False]], "Output",
+ CellChangeTimes->{3.8713700091727285`*^9},
+ CellLabel->"Out[10]=",ExpressionUUID->"798aced1-32cc-4177-a928-db1ad494bac9"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GeoSpatialDistance", "[", 
+  RowBox[{
+   RowBox[{"WikidataGeoPosition", "[", "\"\<Empire State Building\>\"", "]"}],
+    ",", "Here"}], "]"}]], "Input",
+ CellChangeTimes->{{3.87137000869777*^9, 3.8713700226681085`*^9}},
+ CellLabel->"In[11]:=",ExpressionUUID->"88f4fa69-b96d-46ed-99b4-4bd1846e6555"],
+
+Cell[BoxData[
+ TemplateBox[{"770.5285034535427`", "\"km\"", "kilometers", "\"Kilometers\""},
+  "Quantity"]], "Output",
+ CellChangeTimes->{3.8713700241305637`*^9},
+ CellLabel->"Out[11]=",ExpressionUUID->"6aab2700-a0f7-448b-a542-b32af825b074"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"UnitConvert", "[", 
+  RowBox[{
+   RowBox[{"GeoSpatialDistance", "[", 
+    RowBox[{
+     RowBox[{
+     "WikidataGeoPosition", "[", "\"\<Empire State Building\>\"", "]"}], ",", 
+     "Here"}], "]"}], ",", "\"\<SIBase\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.8713700304200454`*^9, 3.8713700397865624`*^9}},
+ CellLabel->"In[12]:=",ExpressionUUID->"78486a6b-3eea-4fe9-b74f-1c86ec165812"],
+
+Cell[BoxData[
+ TemplateBox[{"770528.5034535427`", "\"m\"", "meters", "\"Meters\""},
+  "Quantity"]], "Output",
+ CellChangeTimes->{3.87137004046455*^9},
+ CellLabel->"Out[12]=",ExpressionUUID->"485d40d2-906e-4341-a9af-efe9b845e40a"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"Quantity", "[", 
+  RowBox[{
+   RowBox[{"ManhattanDistance", "[", 
+    RowBox[{
+     RowBox[{"First", "[", 
+      RowBox[{"GeoPositionXYZ", "[", "Here", "]"}], "]"}], ",", 
+     RowBox[{"First", "[", 
+      RowBox[{"GeoPositionXYZ", "[", "Here", "]"}], "]"}]}], "]"}], ",", 
+   "\"\<Meters\>\""}], "]"}]], "Input",
+ CellChangeTimes->{
+  3.8713700735724506`*^9},ExpressionUUID->"e1971503-943f-4e46-a208-\
+f8717db01d01"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"First", "[", 
+  RowBox[{"GeoPosition", "[", "Here", "]"}], "]"}]], "Input",
+ CellChangeTimes->{3.871370100657621*^9},
+ CellLabel->"In[14]:=",ExpressionUUID->"69c9a32a-d3a9-4ed1-80f9-29a918e6ab51"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"38.410000000000004`", ",", 
+   RowBox[{"-", "82.44`"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.87137009640562*^9, 3.8713701010223727`*^9}},
+ CellLabel->"Out[14]=",ExpressionUUID->"207edd58-3930-4d4a-856e-2b2a4001604f"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Join", "[", 
+  RowBox[{
+   RowBox[{"First", "[", 
+    RowBox[{"GeoPosition", "[", "Here", "]"}], "]"}], ",", 
+   RowBox[{"{", "1000", "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8713701020420675`*^9, 3.871370114849818*^9}},
+ CellLabel->"In[16]:=",ExpressionUUID->"a14c1325-2edf-4e3d-b344-3f3bb84a43f3"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"38.410000000000004`", ",", 
+   RowBox[{"-", "82.44`"}], ",", "1000"}], "}"}]], "Output",
+ CellChangeTimes->{{3.8713701087969303`*^9, 3.871370115217104*^9}},
+ CellLabel->"Out[16]=",ExpressionUUID->"d54b7c3c-ccf4-494d-9835-aa3ceeab7e86"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GeoPositionXYZ", "[", 
+  RowBox[{"GeoPosition", "[", 
+   RowBox[{"Join", "[", 
+    RowBox[{
+     RowBox[{"First", "[", 
+      RowBox[{"GeoPosition", "[", "Here", "]"}], "]"}], ",", 
+     RowBox[{"{", "1000", "}"}]}], "]"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8713701166623387`*^9, 3.871370132285148*^9}},
+ CellLabel->"In[18]:=",ExpressionUUID->"3695bd01-33c9-4256-a08e-91e3f69123f5"],
+
+Cell[BoxData[
+ RowBox[{"GeoPositionXYZ", "[", 
+  RowBox[{"{", 
+   RowBox[{"658488.2987577332`", ",", 
+    RowBox[{"-", "4.96156010664448`*^6"}], ",", "3.9418271826322395`*^6"}], 
+   "}"}], "]"}]], "Output",
+ CellChangeTimes->{{3.871370121501724*^9, 3.871370132565925*^9}},
+ CellLabel->"Out[18]=",ExpressionUUID->"c8754288-14ed-4dce-a578-8245c3541a19"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"First", "[", 
+  RowBox[{"GeoPositionXYZ", "[", 
+   RowBox[{"GeoPosition", "[", 
+    RowBox[{"Join", "[", 
+     RowBox[{
+      RowBox[{"First", "[", 
+       RowBox[{"GeoPosition", "[", "Here", "]"}], "]"}], ",", 
+      RowBox[{"{", "1000", "}"}]}], "]"}], "]"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.871370121888255*^9, 3.871370137511473*^9}},
+ CellLabel->"In[19]:=",ExpressionUUID->"775eb2ea-e37a-4ea3-a528-c91592fe9a6c"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"658488.2987577332`", ",", 
+   RowBox[{"-", "4.96156010664448`*^6"}], ",", "3.9418271826322395`*^6"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.8713701378300886`*^9},
+ CellLabel->"Out[19]=",ExpressionUUID->"69ba6b37-9866-48e2-8d6b-845990ef2905"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Quantity", "[", 
+  RowBox[{
+   RowBox[{"ManhattanDistance", "[", 
+    RowBox[{
+     RowBox[{"First", "[", 
+      RowBox[{"GeoPositionXYZ", "[", "Here", "]"}], "]"}], ",", 
+     RowBox[{"First", "[", 
+      RowBox[{"GeoPositionXYZ", "[", 
+       RowBox[{"GeoPosition", "[", 
+        RowBox[{"Join", "[", 
+         RowBox[{
+          RowBox[{"First", "[", 
+           RowBox[{"GeoPosition", "[", "Here", "]"}], "]"}], ",", 
+          RowBox[{"{", "1000", "}"}]}], "]"}], "]"}], "]"}], "]"}]}], "]"}], 
+   ",", "\"\<Meters\>\""}], "]"}]], "Input",
+ CellChangeTimes->{3.8713701539707823`*^9},
+ CellLabel->"In[20]:=",ExpressionUUID->"cd23369a-165f-45e1-92ed-a34354db8d7c"],
+
+Cell[BoxData[
+ TemplateBox[{"1501.1502384477062`", "\"m\"", "meters", "\"Meters\""},
+  "Quantity"]], "Output",
+ CellChangeTimes->{3.8713701545355043`*^9},
+ CellLabel->"Out[20]=",ExpressionUUID->"e1f8a3d3-e44c-45b5-8558-3619e479b0c4"]
+}, Open  ]]
+},
+WindowSize->{1152., 585.6},
+WindowMargins->{{
+  Automatic, -5.399999999999864}, {-5.399999999999977, Automatic}},
+FrontEndVersion->"13.1 for Microsoft Windows (64-bit) (June 16, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"0bc14469-2ef8-472e-83ef-4ef0c15ad4b0"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 242, 4, 28, "Input",ExpressionUUID->"d1f6f531-0151-4e25-9c2e-1d03c697127d"],
+Cell[825, 28, 494, 11, 28, "Message",ExpressionUUID->"9c313880-6f93-4b9b-8104-5e49fcb3d158"],
+Cell[1322, 41, 398, 9, 28, "Message",ExpressionUUID->"4fff5e93-4b4d-436d-a912-df6b0857b1b9"],
+Cell[1723, 52, 215, 4, 32, "Output",ExpressionUUID->"a3c4371d-1d1d-44d7-95ac-4ee08efd628b"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1975, 61, 250, 4, 28, "Input",ExpressionUUID->"333c1bdd-5258-4ab7-afef-d45c28417eba"],
+Cell[2228, 67, 284, 6, 35, "Output",ExpressionUUID->"085ff0f9-eba7-42a8-8b04-977af227e2ad"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2549, 78, 287, 5, 28, "Input",ExpressionUUID->"27d8ea5a-d1a9-47bf-a737-8220c263b57f"],
+Cell[2839, 85, 7620, 189, 38, "Output",ExpressionUUID->"ec7e1156-ffa3-4a42-ba0e-d6e4da6b8f80"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10496, 279, 251, 4, 28, "Input",ExpressionUUID->"287fbbab-be56-4301-b978-80b5146f77c2"],
+Cell[10750, 285, 282, 6, 32, "Output",ExpressionUUID->"e0fbf135-ffea-4d27-a71e-b1b56219a13b"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11069, 296, 324, 6, 28, "Input",ExpressionUUID->"d124e518-7414-4f34-b942-116f7a607d8b"],
+Cell[11396, 304, 287, 6, 35, "Output",ExpressionUUID->"9c06a1e6-90e3-4d23-b621-2bcb0c3a259f"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11720, 315, 485, 11, 28, "Input",ExpressionUUID->"56cedfac-ee6c-425f-95cf-b0ac89db86e4"],
+Cell[12208, 328, 195, 2, 32, "Output",ExpressionUUID->"603b0a0b-8df4-4ea3-ae89-7081b4526430"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12440, 335, 575, 14, 28, "Input",ExpressionUUID->"deb823a2-bcde-4d34-b44e-d788acb82c7a"],
+Cell[13018, 351, 233, 4, 41, "Output",ExpressionUUID->"a606b43d-3cf4-496f-9153-4e45a98dd89c"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13288, 360, 284, 5, 28, "Input",ExpressionUUID->"22bc5a57-d069-41d5-aa18-df9dbb477bb6"],
+Cell[13575, 367, 7667, 190, 38, "Output",ExpressionUUID->"798aced1-32cc-4177-a928-db1ad494bac9"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21279, 562, 322, 6, 28, "Input",ExpressionUUID->"88f4fa69-b96d-46ed-99b4-4bd1846e6555"],
+Cell[21604, 570, 241, 4, 38, "Output",ExpressionUUID->"6aab2700-a0f7-448b-a542-b32af825b074"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21882, 579, 412, 9, 28, "Input",ExpressionUUID->"78486a6b-3eea-4fe9-b74f-1c86ec165812"],
+Cell[22297, 590, 229, 4, 38, "Output",ExpressionUUID->"485d40d2-906e-4341-a9af-efe9b845e40a"]
+}, Open  ]],
+Cell[22541, 597, 441, 12, 28, "Input",ExpressionUUID->"e1971503-943f-4e46-a208-f8717db01d01"],
+Cell[CellGroupData[{
+Cell[23007, 613, 220, 4, 28, "Input",ExpressionUUID->"69c9a32a-d3a9-4ed1-80f9-29a918e6ab51"],
+Cell[23230, 619, 261, 5, 32, "Output",ExpressionUUID->"207edd58-3930-4d4a-856e-2b2a4001604f"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23528, 629, 330, 7, 28, "Input",ExpressionUUID->"a14c1325-2edf-4e3d-b344-3f3bb84a43f3"],
+Cell[23861, 638, 275, 5, 32, "Output",ExpressionUUID->"d54b7c3c-ccf4-494d-9835-aa3ceeab7e86"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[24173, 648, 418, 9, 28, "Input",ExpressionUUID->"3695bd01-33c9-4256-a08e-91e3f69123f5"],
+Cell[24594, 659, 351, 7, 58, "Output",ExpressionUUID->"c8754288-14ed-4dce-a578-8245c3541a19"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[24982, 671, 454, 10, 28, "Input",ExpressionUUID->"775eb2ea-e37a-4ea3-a528-c91592fe9a6c"],
+Cell[25439, 683, 285, 6, 35, "Output",ExpressionUUID->"69ba6b37-9866-48e2-8d6b-845990ef2905"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[25761, 694, 691, 17, 28, "Input",ExpressionUUID->"cd23369a-165f-45e1-92ed-a34354db8d7c"],
+Cell[26455, 713, 233, 4, 38, "Output",ExpressionUUID->"e1f8a3d3-e44c-45b5-8558-3619e479b0c4"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
