@@ -440,9 +440,81 @@ Cell["Basic Examples", "Subsection",
  CellTags->"DefaultContent",
  CellID->619504543,ExpressionUUID->"84657786-0b17-438a-b9b5-fbe3c83b2ad0"],
 
-Cell["Find the ", "Text",
+Cell["Find the chessboard distance to your antipode:", "Text",
+ CellChangeTimes->{{3.87137472168013*^9, 3.8713747325542765`*^9}, {
+  3.87138397686049*^9, 3.871383981744863*^9}},
+ CellID->134263692,ExpressionUUID->"07db043e-1035-4c1b-a1d1-fecf0d4941d6"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GeoChessboardDistance", "[", 
+  RowBox[{"GeoAntipode", "[", "Here", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8713747348178797`*^9, 3.871374740919424*^9}, {
+  3.8713839230816293`*^9, 3.871383924159731*^9}},
+ CellLabel->"In[13]:=",
+ CellID->173432279,ExpressionUUID->"62a252f0-7194-4f19-a7d2-5d9412728301"],
+
+Cell[BoxData[
+ TemplateBox[{"9.921566665640077`*^6", "\"m\"", "meters", "\"Meters\""},
+  "Quantity"]], "Output",
+ CellChangeTimes->{3.871374741327712*^9, 3.8713839244407434`*^9},
+ CellLabel->"Out[13]=",
+ CellID->465410515,ExpressionUUID->"88c5e229-95f6-46e7-bf81-3203ea25636c"]
+}, Open  ]],
+
+Cell[TextData[{
+ "Use ",
+ Cell[BoxData[
+  TagBox[
+   ButtonBox[
+    StyleBox["Round", "SymbolsRefLink",
+     ShowStringCharacters->True,
+     FontFamily->"Source Sans Pro"],
+    BaseStyle->Dynamic[
+      FEPrivate`If[
+       CurrentValue["MouseOver"], {
+       "Link", FontColor -> RGBColor[0.8549, 0.39608, 0.1451]}, {"Link"}]],
+    ButtonData->"paclet:ref/Round",
+    ContentPadding->False],
+   MouseAppearanceTag["LinkHand"]]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "7f1fec2a-1ed8-4c03-8f36-28ecb3d2d8fc"],
+ " to see more digits of the distance:"
+}], "Text",
+ CellChangeTimes->{{3.8713838288147917`*^9, 3.8713838666944313`*^9}},
+ CellID->108042002,ExpressionUUID->"d824f499-d0dd-49e7-8d94-a918c9532117"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Round", "[", 
+  RowBox[{"GeoChessboardDistance", "[", 
+   RowBox[{"GeoAntipode", "[", "Here", "]"}], "]"}], "]"}]], "Input",
  TaggingRules->{},
- CellChangeTimes->{{3.871382794541532*^9, 3.8713827956040297`*^9}},
+ CellChangeTimes->{{3.8713755811897335`*^9, 3.8713755822844486`*^9}, {
+  3.8713839364381666`*^9, 3.8713839386256046`*^9}},
+ CellLabel->"In[14]:=",
+ CellID->418792242,ExpressionUUID->"e7a297b7-d0c3-4ab9-8acb-07e2c90dc565"],
+
+Cell[BoxData[
+ TemplateBox[{"9921567", "\"m\"", "meters", "\"Meters\""},
+  "Quantity"]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{3.8713755825946703`*^9, 3.8713827915100203`*^9, 
+  3.8713839389224844`*^9},
+ CellLabel->"Out[14]=",
+ CellID->188634388,ExpressionUUID->"d75815b7-4630-4a82-adce-948bf5720e86"]
+}, Open  ]],
+
+Cell["\<\
+Find the chessboard distance between your position and Null Island, the name \
+for the point on Earth's surface assigned the coordinates 0 latitude and 0 \
+longitude:\
+\>", "Text",
+ TaggingRules->{},
+ CellChangeTimes->{{3.871382794541532*^9, 3.8713827956040297`*^9}, {
+  3.871383785471036*^9, 3.871383821526428*^9}},
  CellTags->"DefaultContent",
  CellID->586099280,ExpressionUUID->"7cc32fce-b866-4748-a29a-a54f916c8559"],
 
@@ -453,7 +525,7 @@ Cell[BoxData[
   RowBox[{"GeoPosition", "[", "\"\<NullIsland\>\"", "]"}], "]"}]], "Input",
  TaggingRules->{},
  CellChangeTimes->{{3.8713752868079762`*^9, 3.871375298023279*^9}},
- CellLabel->"In[3]:=",
+ CellLabel->"In[10]:=",
  CellID->356614870,ExpressionUUID->"d1c47577-776e-4101-a376-0c22f1d3dd44"],
 
 Cell[BoxData[
@@ -462,10 +534,32 @@ Cell[BoxData[
  TaggingRules->{},
  CellChangeTimes->{
   3.8713752983921394`*^9, {3.87137556358434*^9, 3.871375578737076*^9}, 
-   3.871382791150623*^9},
- CellLabel->"Out[3]=",
- CellID->868261843,ExpressionUUID->"d5b3942d-c69d-4714-b92b-9829000833ec"]
+   3.871382791150623*^9, 3.871383824090045*^9},
+ CellLabel->"Out[10]=",
+ CellID->46396990,ExpressionUUID->"a90d6898-aa03-4eb3-95e7-4cfb8b51ed4b"]
 }, Open  ]],
+
+Cell[TextData[{
+ "Use ",
+ Cell[BoxData[
+  TagBox[
+   ButtonBox[
+    StyleBox["Round", "SymbolsRefLink",
+     ShowStringCharacters->True,
+     FontFamily->"Source Sans Pro"],
+    BaseStyle->Dynamic[
+      FEPrivate`If[
+       CurrentValue["MouseOver"], {
+       "Link", FontColor -> RGBColor[0.8549, 0.39608, 0.1451]}, {"Link"}]],
+    ButtonData->"paclet:ref/Round",
+    ContentPadding->False],
+   MouseAppearanceTag["LinkHand"]]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "68154c5f-4181-4640-8028-04ce0feccc6d"],
+ " to see more digits of the distance:"
+}], "Text",
+ CellChangeTimes->{{3.8713838288147917`*^9, 3.8713838666944313`*^9}},
+ CellID->90447660,ExpressionUUID->"e5df109c-4e20-4098-a9cb-4eb872ca2039"],
 
 Cell[CellGroupData[{
 
@@ -528,10 +622,459 @@ Cell["Options", "Subsection",
  CellTags->"DefaultContent",
  CellID->879773335,ExpressionUUID->"0341db7c-5001-4ffc-a438-d5b43b479936"],
 
+Cell[CellGroupData[{
+
 Cell["Applications", "Subsection",
  TaggingRules->{},
  CellTags->"DefaultContent",
  CellID->542143288,ExpressionUUID->"2dff96ac-74fa-4ce4-bb52-e328208a8402"],
+
+Cell[CellGroupData[{
+
+Cell["North Pole", "Subsubsection",
+ CellChangeTimes->{{3.8713839604739833`*^9, 3.871383962056988*^9}},
+ CellID->446848944,ExpressionUUID->"10e4638f-6645-4969-8c07-7e3d16bdf44c"],
+
+Cell["\<\
+Find the chessboard distance between your position and the North Pole:\
+\>", "Text",
+ TaggingRules->{},
+ CellChangeTimes->{{3.871382794541532*^9, 3.8713827956040297`*^9}, {
+  3.871383785471036*^9, 3.871383821526428*^9}, {3.871384009457144*^9, 
+  3.871384011743962*^9}},
+ CellTags->"DefaultContent",
+ CellID->418690681,ExpressionUUID->"138fd763-8ccc-415d-bba8-45c26c6e4575"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GeoChessboardDistance", "[", 
+  RowBox[{"GeoPosition", "[", "\"\<NorthPole\>\"", "]"}], "]"}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8713752868079762`*^9, 3.871375298023279*^9}, {
+  3.8713839924167395`*^9, 3.8713839938546143`*^9}},
+ CellLabel->"In[15]:=",
+ CellID->84162171,ExpressionUUID->"f01958ce-1b61-499b-8a90-f558f1d579a2"],
+
+Cell[BoxData[
+ TemplateBox[{"4.960783332820038`*^6", "\"m\"", "meters", "\"Meters\""},
+  "Quantity"]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{
+  3.8713752983921394`*^9, {3.87137556358434*^9, 3.871375578737076*^9}, 
+   3.871382791150623*^9, 3.871383824090045*^9, 3.871383994182475*^9},
+ CellLabel->"Out[15]=",
+ CellID->50867548,ExpressionUUID->"f77e4761-91f7-4431-9d34-3e8168b34cb0"]
+}, Open  ]],
+
+Cell[TextData[{
+ "Use ",
+ Cell[BoxData[
+  TagBox[
+   ButtonBox[
+    StyleBox["Round", "SymbolsRefLink",
+     ShowStringCharacters->True,
+     FontFamily->"Source Sans Pro"],
+    BaseStyle->Dynamic[
+      FEPrivate`If[
+       CurrentValue["MouseOver"], {
+       "Link", FontColor -> RGBColor[0.8549, 0.39608, 0.1451]}, {"Link"}]],
+    ButtonData->"paclet:ref/Round",
+    ContentPadding->False],
+   MouseAppearanceTag["LinkHand"]]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "9bc87fbd-15da-43f1-91c1-a272f4220a2a"],
+ " to see more digits of the distance:"
+}], "Text",
+ CellChangeTimes->{{3.8713838288147917`*^9, 3.8713838666944313`*^9}},
+ CellID->169853994,ExpressionUUID->"0584f5ce-6b46-4cad-9d24-88ddfbf56b40"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Round", "[", 
+  RowBox[{"GeoChessboardDistance", "[", 
+   RowBox[{"GeoPosition", "[", "\"\<NorthPole\>\"", "]"}], "]"}], 
+  "]"}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8713755811897335`*^9, 3.8713755822844486`*^9}, {
+  3.8713839978452682`*^9, 3.871383999204905*^9}},
+ CellLabel->"In[16]:=",
+ CellID->937485440,ExpressionUUID->"b0e97050-7f53-486a-8135-e957dc4c9e2c"],
+
+Cell[BoxData[
+ TemplateBox[{"4960783", "\"m\"", "meters", "\"Meters\""},
+  "Quantity"]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{3.8713755825946703`*^9, 3.8713827915100203`*^9, 
+  3.871383999564028*^9},
+ CellLabel->"Out[16]=",
+ CellID->154334328,ExpressionUUID->"f91dc81b-f070-4008-bfa1-95b60bfdf298"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["South Pole", "Subsubsection",
+ CellChangeTimes->{{3.8713839604739833`*^9, 3.871383962056988*^9}, {
+  3.8713840334893465`*^9, 3.8713840344977217`*^9}},
+ CellID->272728270,ExpressionUUID->"bba1a88d-0809-42d8-b2e0-69505138c75c"],
+
+Cell["\<\
+Find the chessboard distance between your position and the South Pole:\
+\>", "Text",
+ TaggingRules->{},
+ CellChangeTimes->{{3.871382794541532*^9, 3.8713827956040297`*^9}, {
+  3.871383785471036*^9, 3.871383821526428*^9}, {3.871384009457144*^9, 
+  3.871384011743962*^9}, {3.871384057106168*^9, 3.871384058053214*^9}},
+ CellTags->"DefaultContent",
+ CellID->58241384,ExpressionUUID->"1a330910-40ec-4a88-aa9c-f4e2078d6f44"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GeoChessboardDistance", "[", 
+  RowBox[{"GeoPosition", "[", "\"\<SouthPole\>\"", "]"}], "]"}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8713752868079762`*^9, 3.871375298023279*^9}, {
+  3.8713839924167395`*^9, 3.8713839938546143`*^9}, {3.871384041432144*^9, 
+  3.8713840429166927`*^9}},
+ CellLabel->"In[17]:=",
+ CellID->152101355,ExpressionUUID->"a8b64bd5-6de1-4ffb-a5ad-1cc6b99c07df"],
+
+Cell[BoxData[
+ TemplateBox[{"1.0297958212221473`*^7", "\"m\"", "meters", "\"Meters\""},
+  "Quantity"]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{
+  3.8713752983921394`*^9, {3.87137556358434*^9, 3.871375578737076*^9}, 
+   3.871382791150623*^9, 3.871383824090045*^9, 3.871383994182475*^9, 
+   3.8713840432287855`*^9},
+ CellLabel->"Out[17]=",
+ CellID->43993665,ExpressionUUID->"d4651162-d29c-4245-84cb-dcb2aeb7c11e"]
+}, Open  ]],
+
+Cell[TextData[{
+ "Use ",
+ Cell[BoxData[
+  TagBox[
+   ButtonBox[
+    StyleBox["Round", "SymbolsRefLink",
+     ShowStringCharacters->True,
+     FontFamily->"Source Sans Pro"],
+    BaseStyle->Dynamic[
+      FEPrivate`If[
+       CurrentValue["MouseOver"], {
+       "Link", FontColor -> RGBColor[0.8549, 0.39608, 0.1451]}, {"Link"}]],
+    ButtonData->"paclet:ref/Round",
+    ContentPadding->False],
+   MouseAppearanceTag["LinkHand"]]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "ef13a549-fe15-4726-a2d5-0c9b5b061826"],
+ " to see more digits of the distance:"
+}], "Text",
+ CellChangeTimes->{{3.8713838288147917`*^9, 3.8713838666944313`*^9}},
+ CellID->104580484,ExpressionUUID->"a3970562-c497-47d1-aa7a-5baf1db27ea0"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Round", "[", 
+  RowBox[{"GeoChessboardDistance", "[", 
+   RowBox[{"GeoPosition", "[", "\"\<SouthPole\>\"", "]"}], "]"}], 
+  "]"}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8713755811897335`*^9, 3.8713755822844486`*^9}, {
+  3.8713839978452682`*^9, 3.871383999204905*^9}, {3.871384046416549*^9, 
+  3.871384047838185*^9}},
+ CellLabel->"In[18]:=",
+ CellID->2578612,ExpressionUUID->"63678b61-2c3b-42da-bbd9-b1f46e47e674"],
+
+Cell[BoxData[
+ TemplateBox[{"10297958", "\"m\"", "meters", "\"Meters\""},
+  "Quantity"]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{3.8713755825946703`*^9, 3.8713827915100203`*^9, 
+  3.871383999564028*^9, 3.871384048150674*^9},
+ CellLabel->"Out[18]=",
+ CellID->220724113,ExpressionUUID->"51fa1867-2051-41c2-86bf-d598e126dcf4"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Geomagnetic North Pole", "Subsubsection",
+ CellChangeTimes->{{3.8713839604739833`*^9, 3.871383962056988*^9}, {
+  3.871384061084143*^9, 3.871384064330464*^9}},
+ CellID->177742713,ExpressionUUID->"f1c64411-59a2-4450-aa84-466ea3a39db1"],
+
+Cell["\<\
+Find the chessboard distance between your position and the North geomagnetic \
+Pole:\
+\>", "Text",
+ TaggingRules->{},
+ CellChangeTimes->{{3.871382794541532*^9, 3.8713827956040297`*^9}, {
+  3.871383785471036*^9, 3.871383821526428*^9}, {3.871384009457144*^9, 
+  3.871384011743962*^9}, {3.871384085678465*^9, 3.871384087756591*^9}},
+ CellTags->"DefaultContent",
+ CellID->114283486,ExpressionUUID->"048636ee-cd80-4119-b884-626a74841f70"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GeoChessboardDistance", "[", 
+  RowBox[{"GeoPosition", "[", "\"\<NorthGeomagneticPole\>\"", "]"}], 
+  "]"}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8713752868079762`*^9, 3.871375298023279*^9}, {
+  3.8713839924167395`*^9, 3.8713839938546143`*^9}, {3.8713840664710684`*^9, 
+  3.8713840740305986`*^9}},
+ CellLabel->"In[19]:=",
+ CellID->493683654,ExpressionUUID->"380923c1-980f-45ac-9a65-e675c322116c"],
+
+Cell[BoxData[
+ TemplateBox[{"3.975313156837729`*^6", "\"m\"", "meters", "\"Meters\""},
+  "Quantity"]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{
+  3.8713752983921394`*^9, {3.87137556358434*^9, 3.871375578737076*^9}, 
+   3.871382791150623*^9, 3.871383824090045*^9, 3.871383994182475*^9, 
+   3.8713840753271427`*^9},
+ CellLabel->"Out[19]=",
+ CellID->351158049,ExpressionUUID->"50c286f9-eee3-466e-afb7-bcb1e5ce93d4"]
+}, Open  ]],
+
+Cell[TextData[{
+ "Use ",
+ Cell[BoxData[
+  TagBox[
+   ButtonBox[
+    StyleBox["Round", "SymbolsRefLink",
+     ShowStringCharacters->True,
+     FontFamily->"Source Sans Pro"],
+    BaseStyle->Dynamic[
+      FEPrivate`If[
+       CurrentValue["MouseOver"], {
+       "Link", FontColor -> RGBColor[0.8549, 0.39608, 0.1451]}, {"Link"}]],
+    ButtonData->"paclet:ref/Round",
+    ContentPadding->False],
+   MouseAppearanceTag["LinkHand"]]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "47a5990e-1fa9-48d6-95a1-76ed1eb5dd22"],
+ " to see more digits of the distance:"
+}], "Text",
+ CellChangeTimes->{{3.8713838288147917`*^9, 3.8713838666944313`*^9}},
+ CellID->19060008,ExpressionUUID->"4d5ef58c-3070-4087-b35d-17d482ff149e"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Round", "[", 
+  RowBox[{"GeoChessboardDistance", "[", 
+   RowBox[{"GeoPosition", "[", "\"\<NorthGeomagneticPole\>\"", "]"}], "]"}], 
+  "]"}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8713755811897335`*^9, 3.8713755822844486`*^9}, {
+  3.8713839978452682`*^9, 3.871383999204905*^9}, {3.8713840789369297`*^9, 
+  3.8713840826940217`*^9}},
+ CellLabel->"In[20]:=",
+ CellID->977430012,ExpressionUUID->"dac1456e-01b0-49df-ac9e-7fad57e3af9c"],
+
+Cell[BoxData[
+ TemplateBox[{"3975313", "\"m\"", "meters", "\"Meters\""},
+  "Quantity"]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{3.8713755825946703`*^9, 3.8713827915100203`*^9, 
+  3.871383999564028*^9, 3.871384082990716*^9},
+ CellLabel->"Out[20]=",
+ CellID->45814156,ExpressionUUID->"e2a0a208-81b9-487f-a7af-d65c3a37ef19"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Geomagnetic South Pole", "Subsubsection",
+ CellChangeTimes->{{3.8713839604739833`*^9, 3.871383962056988*^9}, {
+  3.871384061084143*^9, 3.871384064330464*^9}, {3.8713840950132976`*^9, 
+  3.8713840957632313`*^9}},
+ CellID->181880283,ExpressionUUID->"b20797d5-c203-48e0-9438-e78e20007ae5"],
+
+Cell["\<\
+Find the chessboard distance between your position and the South geomagnetic \
+Pole:\
+\>", "Text",
+ TaggingRules->{},
+ CellChangeTimes->{{3.871382794541532*^9, 3.8713827956040297`*^9}, {
+  3.871383785471036*^9, 3.871383821526428*^9}, {3.871384009457144*^9, 
+  3.871384011743962*^9}, {3.871384085678465*^9, 3.871384107544078*^9}},
+ CellTags->"DefaultContent",
+ CellID->820375484,ExpressionUUID->"54a47f7b-2223-49b9-86b4-acdd529a97c8"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GeoChessboardDistance", "[", 
+  RowBox[{"GeoPosition", "[", "\"\<SouthGeomagneticPole\>\"", "]"}], 
+  "]"}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8713752868079762`*^9, 3.871375298023279*^9}, {
+  3.8713839924167395`*^9, 3.8713839938546143`*^9}, {3.8713840664710684`*^9, 
+  3.8713841000960474`*^9}},
+ CellLabel->"In[21]:=",
+ CellID->380845615,ExpressionUUID->"aa15c3e9-8b34-4c34-93e6-7961b784bbe7"],
+
+Cell[BoxData[
+ TemplateBox[{"1.0214150392025575`*^7", "\"m\"", "meters", "\"Meters\""},
+  "Quantity"]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{
+  3.8713752983921394`*^9, {3.87137556358434*^9, 3.871375578737076*^9}, 
+   3.871382791150623*^9, 3.871383824090045*^9, 3.871383994182475*^9, {
+   3.8713840753271427`*^9, 3.871384100361679*^9}},
+ CellLabel->"Out[21]=",
+ CellID->196291664,ExpressionUUID->"bb983dea-3201-457e-9fa9-d76909f349e0"]
+}, Open  ]],
+
+Cell[TextData[{
+ "Use ",
+ Cell[BoxData[
+  TagBox[
+   ButtonBox[
+    StyleBox["Round", "SymbolsRefLink",
+     ShowStringCharacters->True,
+     FontFamily->"Source Sans Pro"],
+    BaseStyle->Dynamic[
+      FEPrivate`If[
+       CurrentValue["MouseOver"], {
+       "Link", FontColor -> RGBColor[0.8549, 0.39608, 0.1451]}, {"Link"}]],
+    ButtonData->"paclet:ref/Round",
+    ContentPadding->False],
+   MouseAppearanceTag["LinkHand"]]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "7ea4d149-1d99-42ec-818c-610b84b45d85"],
+ " to see more digits of the distance:"
+}], "Text",
+ CellChangeTimes->{{3.8713838288147917`*^9, 3.8713838666944313`*^9}},
+ CellID->158583241,ExpressionUUID->"5ede6c92-c3d7-435c-9b7e-a35abe1daffa"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Round", "[", 
+  RowBox[{"GeoChessboardDistance", "[", 
+   RowBox[{"GeoPosition", "[", "\"\<SouthGeomagneticPole\>\"", "]"}], "]"}], 
+  "]"}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8713755811897335`*^9, 3.8713755822844486`*^9}, {
+  3.8713839978452682`*^9, 3.871383999204905*^9}, {3.8713840789369297`*^9, 
+  3.871384114247021*^9}},
+ CellLabel->"In[22]:=",
+ CellID->409132772,ExpressionUUID->"4dc08c0b-4684-4eb3-9f6b-4dd5ded122c5"],
+
+Cell[BoxData[
+ TemplateBox[{"10214150", "\"m\"", "meters", "\"Meters\""},
+  "Quantity"]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{3.8713755825946703`*^9, 3.8713827915100203`*^9, 
+  3.871383999564028*^9, 3.871384082990716*^9, 3.871384114574916*^9},
+ CellLabel->"Out[22]=",
+ CellID->72657886,ExpressionUUID->"9cea62b7-2494-4e1f-a471-7c2600ff499b"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Geomagnetic Model North Dip Pole", "Subsubsection",
+ CellChangeTimes->{{3.8713839604739833`*^9, 3.871383962056988*^9}, {
+  3.871384061084143*^9, 3.871384064330464*^9}, {3.8713840950132976`*^9, 
+  3.8713841278585815`*^9}},
+ CellID->487093945,ExpressionUUID->"21a3aa28-3bf2-40a2-a6a0-92acf85a8edd"],
+
+Cell["\<\
+Find the chessboard distance between your position and the North geomagnetic \
+Pole:\
+\>", "Text",
+ TaggingRules->{},
+ CellChangeTimes->{{3.871382794541532*^9, 3.8713827956040297`*^9}, {
+  3.871383785471036*^9, 3.871383821526428*^9}, {3.871384009457144*^9, 
+  3.871384011743962*^9}, {3.871384085678465*^9, 3.871384107544078*^9}, {
+  3.8713842008830137`*^9, 3.871384201476748*^9}},
+ CellTags->"DefaultContent",
+ CellID->304589208,ExpressionUUID->"f1ca8d31-45c0-4eab-b655-a068b447d565"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GeoChessboardDistance", "[", 
+  RowBox[{"GeoPosition", "[", "\"\<NorthModelDipPole\>\"", "]"}], 
+  "]"}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8713752868079762`*^9, 3.871375298023279*^9}, {
+  3.8713839924167395`*^9, 3.8713839938546143`*^9}, {3.8713840664710684`*^9, 
+  3.8713841000960474`*^9}, {3.871384131873957*^9, 3.871384193096795*^9}},
+ CellLabel->"In[26]:=",
+ CellID->52863194,ExpressionUUID->"546a57ea-2b7d-43de-9d17-ed7c09ab724d"],
+
+Cell[BoxData[
+ TemplateBox[{"5.183884769855077`*^6", "\"m\"", "meters", "\"Meters\""},
+  "Quantity"]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{
+  3.8713752983921394`*^9, {3.87137556358434*^9, 3.871375578737076*^9}, 
+   3.871382791150623*^9, 3.871383824090045*^9, 3.871383994182475*^9, {
+   3.8713840753271427`*^9, 3.871384100361679*^9}, {3.8713841459730387`*^9, 
+   3.871384166749324*^9}, 3.871384202038978*^9},
+ CellLabel->"Out[26]=",
+ CellID->191224973,ExpressionUUID->"f5b2afe2-d7c8-4793-b474-067eff5ce2c5"]
+}, Open  ]],
+
+Cell[TextData[{
+ "Use ",
+ Cell[BoxData[
+  TagBox[
+   ButtonBox[
+    StyleBox["Round", "SymbolsRefLink",
+     ShowStringCharacters->True,
+     FontFamily->"Source Sans Pro"],
+    BaseStyle->Dynamic[
+      FEPrivate`If[
+       CurrentValue["MouseOver"], {
+       "Link", FontColor -> RGBColor[0.8549, 0.39608, 0.1451]}, {"Link"}]],
+    ButtonData->"paclet:ref/Round",
+    ContentPadding->False],
+   MouseAppearanceTag["LinkHand"]]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "f5dddfbc-22ae-4741-9745-a86ec91e983c"],
+ " to see more digits of the distance:"
+}], "Text",
+ CellChangeTimes->{{3.8713838288147917`*^9, 3.8713838666944313`*^9}},
+ CellID->115867240,ExpressionUUID->"41a751b7-181e-4bc5-ac4d-ab9c81410e2e"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Round", "[", 
+  RowBox[{"GeoChessboardDistance", "[", 
+   RowBox[{"GeoPosition", "[", "\"\<SouthGeomagneticPole\>\"", "]"}], "]"}], 
+  "]"}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8713755811897335`*^9, 3.8713755822844486`*^9}, {
+  3.8713839978452682`*^9, 3.871383999204905*^9}, {3.8713840789369297`*^9, 
+  3.871384114247021*^9}},
+ CellLabel->"In[22]:=",
+ CellID->173365664,ExpressionUUID->"0772f7ef-a541-491d-be9c-1f7d1d437614"],
+
+Cell[BoxData[
+ TemplateBox[{"10214150", "\"m\"", "meters", "\"Meters\""},
+  "Quantity"]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{3.8713755825946703`*^9, 3.8713827915100203`*^9, 
+  3.871383999564028*^9, 3.871384082990716*^9, 3.871384114574916*^9},
+ CellLabel->"Out[22]=",
+ CellID->181109200,ExpressionUUID->"30d35c81-9155-48d9-9b34-7600b43fc1f5"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
 
 Cell["Properties and Relations", "Subsection",
  TaggingRules->{},
@@ -1490,6 +2033,7 @@ Cell[BoxData[
          StyleBox[
           TemplateBox[{
             CheckboxBox["WebEvaluation", {False, "WebEvaluation"}], "\" \"", 
+            
             TemplateBox[{
              "\"WebEvaluation\"", 
               "\"Cloud evaluation initiated by an HTTP request\""}, 
@@ -1770,303 +2314,7 @@ DockedCells->{
    CellFrameMargins -> {{0, 0}, {2, 2}}, CellFrame -> {{0, 0}, {1, 0}}, 
    CacheGraphics -> False, CellOpen -> Dynamic[
      CurrentValue[
-      EvaluationNotebook[], {TaggingRules, "ToolsOpen"}, True]]], 
-  Cell[
-   BoxData[
-    StyleBox[
-     TagBox[
-      GridBox[{{
-         ItemBox[
-          TagBox[
-           GridBox[{{
-              OverlayBox[{
-                StyleBox[
-                 TagBox[
-                  DynamicModuleBox[{Typeset`var$$ = False}, 
-                   InterpretationBox[
-                    StyleBox[
-                    PaneSelectorBox[{False -> GridBox[{{
-                    OpenerBox[
-                    Dynamic[Typeset`var$$], Appearance -> Automatic, Enabled -> 
-                    Automatic, AutoAction -> False, ContinuousAction -> 
-                    False], 
-                    StyleBox[
-                    DynamicBox[
-                    ToBoxes[
-                    DateString[
-                    TimeZoneConvert[
-                    DateObject[
-                    3.8713837490957051`17.340441211849193*^9, TimeZone -> 
-                    0]], {"MonthName", " ", "DayShort", ", ", "Year", " ", 
-                    "Hour12Short", ":", "Minute", " ", "AMPMLowerCase"}], 
-                    StandardForm], SingleEvaluation -> True, Evaluator -> 
-                    "System"], FontSlant -> Italic, FontColor -> 
-                    GrayLevel[0.5], FontSize -> 0.9 Inherited, StripOnInput -> 
-                    False]}}, GridBoxAlignment -> {"Columns" -> {{Left}}}, 
-                    AutoDelete -> False, 
-                    GridBoxBackground -> {"Columns" -> {{Automatic}}}, 
-                    GridBoxItemSize -> {
-                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
-                    GridBoxSpacings -> {
-                    "Columns" -> {{0.2}}, "Rows" -> {{0.5}}}, 
-                    BaselinePosition -> {1, 1}], True -> GridBox[{{
-                    OpenerBox[
-                    Dynamic[Typeset`var$$], Appearance -> Automatic, Enabled -> 
-                    Automatic, AutoAction -> False, ContinuousAction -> 
-                    False], 
-                    StyleBox[
-                    DynamicBox[
-                    ToBoxes[
-                    DateString[
-                    TimeZoneConvert[
-                    DateObject[
-                    3.8713837490957051`17.340441211849193*^9, TimeZone -> 
-                    0]], {"MonthName", " ", "DayShort", ", ", "Year", " ", 
-                    "Hour12Short", ":", "Minute", " ", "AMPMLowerCase"}], 
-                    StandardForm], SingleEvaluation -> True, Evaluator -> 
-                    "System"], FontSlant -> Italic, FontColor -> 
-                    GrayLevel[0.5], FontSize -> 0.9 Inherited, StripOnInput -> 
-                    False]}, {"", 
-                    PaneBox["\"\"", ImageMargins -> 0]}}, 
-                    GridBoxAlignment -> {"Columns" -> {{Left}}}, AutoDelete -> 
-                    False, GridBoxBackground -> {"Columns" -> {{Automatic}}}, 
-                    GridBoxItemSize -> {
-                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
-                    GridBoxSpacings -> {
-                    "Columns" -> {{0.2}}, "Rows" -> {{0.5}}}, 
-                    BaselinePosition -> {1, 1}]}, 
-                    Dynamic[Typeset`var$$], Alignment -> Automatic, ImageSize -> 
-                    Automatic, ImageMargins -> 0, BaseStyle -> {}, 
-                    DefaultBaseStyle -> "OpenerView", BaselinePosition -> 
-                    Baseline], Deployed -> False, StripOnInput -> False], 
-                    OpenerView[{
-                    Style[
-                    Dynamic[
-                    DateString[
-                    TimeZoneConvert[
-                    DateObject[
-                    3.8713837490957051`17.340441211849193*^9, TimeZone -> 
-                    0]], {"MonthName", " ", "DayShort", ", ", "Year", " ", 
-                    "Hour12Short", ":", "Minute", " ", "AMPMLowerCase"}], 
-                    SingleEvaluation -> True, Evaluator -> "System"], 
-                    FontSlant -> Italic, FontColor -> GrayLevel[0.5], 
-                    FontSize -> 0.9 Inherited], ""}, False]], 
-                   DynamicModuleValues -> Automatic], Setting[#, {0}]& ], 
-                 ShowContents -> False, StripOnInput -> False], 
-                StyleBox[
-                 DynamicBox[
-                  ToBoxes[
-                   DateString[
-                    TimeZoneConvert[
-                    DateObject[
-                    3.8713837490957051`17.340441211849193*^9, TimeZone -> 
-                    0]], {"MonthName", " ", "DayShort", ", ", "Year", " ", 
-                    "Hour12Short", ":", "Minute", " ", "AMPMLowerCase"}], 
-                   StandardForm], SingleEvaluation -> True, Evaluator -> 
-                  "System"], FontSlant -> Italic, FontColor -> GrayLevel[0.5],
-                  FontSize -> 0.9 Inherited, StripOnInput -> False]}, 
-               Alignment -> {Right, Baseline}], "\"   \"", 
-              ItemBox[
-              "\"Found 1 potential issue and 2 suggestions\"", ItemSize -> 
-               Scaled[0.75], StripOnInput -> False]}}, 
-            GridBoxAlignment -> {
-             "Columns" -> {{Left}}, "Rows" -> {{Baseline}}}, AutoDelete -> 
-            False, GridBoxItemSize -> {
-             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], "Grid"], 
-          ItemSize -> Fit, StripOnInput -> False], 
-         ItemBox[
-          StyleBox[
-           ActionMenuBox[
-            TagBox[
-             TagBox[
-              GridBox[{{
-                 TemplateBox[{
-                   TagBox[
-                    GridBox[{{
-                    TemplateBox[{
-                    RGBColor[1., 0.4627450980392157, 0.], 
-                    RGBColor[1., 1., 1.], 10, {{0, 18}, {-2, 17}}}, 
-                    "SuggestionIconTemplate"], 
-                    StyleBox[
-                    "1", FontColor -> GrayLevel[0.5], FontSize -> 9, 
-                    StripOnInput -> False]}}, 
-                    GridBoxAlignment -> {
-                    "Columns" -> {{Left}}, "Rows" -> {{Center}}}, AutoDelete -> 
-                    False, GridBoxItemSize -> {
-                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
-                    GridBoxSpacings -> {"Columns" -> {{0.25}}}], "Grid"], 
-                   "\"Potential issues found\""}, "PrettyTooltipTemplate"], 
-                 TemplateBox[{
-                   TagBox[
-                    GridBox[{{
-                    TemplateBox[{
-                    RGBColor[
-                    0.49019607843137253`, 0.49019607843137253`, 
-                    0.49019607843137253`], 
-                    RGBColor[1., 1., 1.], 10, {{0, 18}, {-2, 17}}}, 
-                    "SuggestionIconTemplate"], 
-                    StyleBox[
-                    "2", FontColor -> GrayLevel[0.5], FontSize -> 9, 
-                    StripOnInput -> False]}}, 
-                    GridBoxAlignment -> {
-                    "Columns" -> {{Left}}, "Rows" -> {{Center}}}, AutoDelete -> 
-                    False, GridBoxItemSize -> {
-                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
-                    GridBoxSpacings -> {"Columns" -> {{0.25}}}], "Grid"], 
-                   "\"Suggestions found\""}, "PrettyTooltipTemplate"], 
-                 "\"   \""}}, AutoDelete -> False, 
-               GridBoxItemSize -> {
-                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
-              "Grid"], 
-             MouseAppearanceTag["LinkHand"]], {TemplateBox[{
-                TemplateBox[{
-                  RGBColor[
-                  0.49019607843137253`, 0.49019607843137253`, 
-                   0.49019607843137253`], 
-                  RGBColor[1., 1., 1.], 10, {{0, 18}, {-2, 17}}}, 
-                 "SuggestionIconTemplate"], "\" \"", 
-                "\"The description should usually start with a capital letter\
-\""}, "RowDefault"] :> (
-              DefinitionNotebookClient`LoadDefinitionNotebook["Function", 
-                NotebookObject[
-                "9833758b-fb59-449d-853b-d8fb422df4e3", 
-                 "77ad013f-7bbd-47f9-ac13-bc8fa311c0ed"]]; 
-              DefinitionNotebookClient`PackageScope`setHint[
-               "Suggestion", "Function", 
-                ParentNotebook[
-                 CellObject[
-                 "1db166f5-a793-47f1-8e33-a854cd9f2088", 
-                  "59511719-6998-4292-bb6c-b2bd3dcd9bf5"]], 660820806, 
-                "DescriptionNotCapitalized", {
-                "gives the chessboard, Chebyshev, or sup norm distance \
-between two geographic points in space relative to Earth's center"}]; 
-              DefinitionNotebookClient`PackageScope`seek[
-                CellObject[
-                "1db166f5-a793-47f1-8e33-a854cd9f2088", 
-                 "59511719-6998-4292-bb6c-b2bd3dcd9bf5"]]; Null), TemplateBox[{
-                TemplateBox[{
-                  RGBColor[
-                  0.49019607843137253`, 0.49019607843137253`, 
-                   0.49019607843137253`], 
-                  RGBColor[1., 1., 1.], 10, {{0, 18}, {-2, 17}}}, 
-                 "SuggestionIconTemplate"], "\" \"", 
-                "\"Example captions should usually end in a colon when \
-appearing before input\""}, "RowDefault"] :> (
-              DefinitionNotebookClient`LoadDefinitionNotebook["Function", 
-                NotebookObject[
-                "9833758b-fb59-449d-853b-d8fb422df4e3", 
-                 "77ad013f-7bbd-47f9-ac13-bc8fa311c0ed"]]; 
-              DefinitionNotebookClient`PackageScope`setHint[
-               "Suggestion", "Function", 
-                ParentNotebook[
-                 CellObject[
-                 "7cc32fce-b866-4748-a29a-a54f916c8559", 
-                  "19214cf6-3b7c-4156-a608-6bdfae3d2c41"]], 586099280, 
-                "ExampleTextLastCharacter", {}]; 
-              DefinitionNotebookClient`PackageScope`seek[
-                CellObject[
-                "7cc32fce-b866-4748-a29a-a54f916c8559", 
-                 "19214cf6-3b7c-4156-a608-6bdfae3d2c41"]]; Null), TemplateBox[{
-                TemplateBox[{
-                  RGBColor[1., 0.4627450980392157, 0.], 
-                  RGBColor[1., 1., 1.], 10, {{0, 18}, {-2, 17}}}, 
-                 "SuggestionIconTemplate"], "\" \"", 
-                "\"No author information given\""}, "RowDefault"] :> (
-              DefinitionNotebookClient`LoadDefinitionNotebook["Function", 
-                NotebookObject[
-                "9833758b-fb59-449d-853b-d8fb422df4e3", 
-                 "77ad013f-7bbd-47f9-ac13-bc8fa311c0ed"]]; 
-              DefinitionNotebookClient`PackageScope`setHint[
-               "Warning", "Function", 
-                ParentNotebook[
-                 CellObject[
-                 "5d431f15-d472-4771-8941-352b813eb3e1", 
-                  "7096eec9-53c7-4b44-a791-a9624f542cef"]], 771147648, 
-                "AuthorNotSet", {}]; 
-              DefinitionNotebookClient`PackageScope`seek[
-                CellObject[
-                "5d431f15-d472-4771-8941-352b813eb3e1", 
-                 "7096eec9-53c7-4b44-a791-a9624f542cef"]]; Null)}, Appearance -> 
-            None, Method -> "Queued"], "BoxID" -> "WarningCountButton", 
-           StripOnInput -> False], ItemSize -> All, StripOnInput -> False], 
-         ItemBox[
-          TagBox[
-           ButtonBox[
-            TagBox[
-             PaneSelectorBox[{False -> GraphicsBox[{
-                  GrayLevel[
-                   NCache[
-                    Rational[64, 85], 0.7529411764705882]], 
-                  
-                  PolygonBox[{{-0.282842712474619, -0.42426406871192845`}, \
-{-0.42426406871192845`, -0.282842712474619}, {0.282842712474619, 
-                   0.42426406871192845`}, {0.42426406871192845`, 
-                   0.282842712474619}}], 
-                  
-                  PolygonBox[{{0.42426406871192845`, -0.282842712474619}, {
-                   0.282842712474619, -0.42426406871192845`}, \
-{-0.42426406871192845`, 0.282842712474619}, {-0.282842712474619, 
-                   0.42426406871192845`}}]}, ImageSize -> 18, 
-                 PlotRangePadding -> 0, PlotRange -> 0.7, Background -> None],
-                True -> GraphicsBox[{
-                  GrayLevel[
-                   NCache[
-                    Rational[128, 255], 0.5019607843137255]], 
-                  
-                  PolygonBox[{{-0.282842712474619, -0.42426406871192845`}, \
-{-0.42426406871192845`, -0.282842712474619}, {0.282842712474619, 
-                   0.42426406871192845`}, {0.42426406871192845`, 
-                   0.282842712474619}}], 
-                  
-                  PolygonBox[{{0.42426406871192845`, -0.282842712474619}, {
-                   0.282842712474619, -0.42426406871192845`}, \
-{-0.42426406871192845`, 0.282842712474619}, {-0.282842712474619, 
-                   0.42426406871192845`}}]}, ImageSize -> 18, 
-                 PlotRangePadding -> 0, PlotRange -> 0.7, Background -> 
-                 None]}, 
-              Dynamic[
-               CurrentValue["MouseOver"]], ImageSize -> Automatic, 
-              FrameMargins -> 0], 
-             MouseAppearanceTag["LinkHand"]], ButtonFunction :> 
-            With[{DefinitionNotebookClient`Stripes`PackagePrivate`nbo$ = 
-               EvaluationNotebook[]}, 
-              CurrentValue[
-               DefinitionNotebookClient`Stripes`PackagePrivate`nbo$, 
-                DockedCells] = If[
-                TrueQ[
-                 MemberQ[
-                  CurrentValue["ModifierKeys"], "Control"]], 
-                DeleteCases[
-                 Flatten[{
-                   CurrentValue[
-                   DefinitionNotebookClient`Stripes`PackagePrivate`nbo$, 
-                    DockedCells]}], 
-                 Cell[
-                  Blank[], "StripeCell", 
-                  BlankNullSequence[]]], 
-                DeleteCases[
-                 Flatten[{
-                   CurrentValue[
-                   DefinitionNotebookClient`Stripes`PackagePrivate`nbo$, 
-                    DockedCells]}], 
-                 Condition[
-                  Pattern[DefinitionNotebookClient`Stripes`PackagePrivate`c$, 
-                   Blank[Cell]], 
-                  Not[
-                   FreeQ[
-                   DefinitionNotebookClient`Stripes`PackagePrivate`c$, 
-                    "0087260b-a649-4a7b-8113-72d8964769dd"]]]]]], Appearance -> 
-            None, BoxID -> "0087260b-a649-4a7b-8113-72d8964769dd", Evaluator -> 
-            Automatic, Method -> "Preemptive"], 
-           MouseAppearanceTag["LinkHand"]], ItemSize -> All, StripOnInput -> 
-          False]}}, 
-       GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Baseline}}}, 
-       AutoDelete -> False, 
-       GridBoxItemSize -> {
-        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], "Grid"], 
-     "Text", FontSize -> 12, FontColor -> GrayLevel[0.25], StripOnInput -> 
-     False]], "StripeCell", CellFrameMargins -> {{20, 5}, {2, 2}}, 
-   CellFrame -> {{0, 0}, {1, 0}}, CellFrameColor -> GrayLevel[0.75]]},
+      EvaluationNotebook[], {TaggingRules, "ToolsOpen"}, True]]]},
 TaggingRules->{
  "ResourceType" -> "Function", "ResourceCreateNotebook" -> True, 
   "TemplateVersion" -> "1.6.4", "CreationTimestamp" -> 
