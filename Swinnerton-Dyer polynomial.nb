@@ -65,25 +65,29 @@ Cell[BoxData[{
   "]"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"SwinnertonDyerPolynomial", "[", 
-   RowBox[{"n_", ",", 
-    RowBox[{"variable_", ":", "x"}]}], "]"}], ":=", 
-  RowBox[{"Fold", "[", 
    RowBox[{
+    RowBox[{"n_", "?", "IntegerQ"}], ",", 
+    RowBox[{"variable_", ":", "x"}]}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"Fold", "[", 
     RowBox[{
-     RowBox[{"Expand", "[", 
-      RowBox[{
-       RowBox[{"(", 
-        RowBox[{"#1", "/.", 
-         RowBox[{"x", "->", 
-          RowBox[{"x", "+", "#2"}]}]}], ")"}], 
-       RowBox[{"(", 
-        RowBox[{"#1", "/.", 
-         RowBox[{"x", "->", 
-          RowBox[{"x", "-", "#2"}]}]}], ")"}]}], "]"}], "&"}], ",", "x", ",", 
-    RowBox[{"Sqrt", "[", 
-     RowBox[{"Prime", "[", 
-      RowBox[{"Range", "[", "n", "]"}], "]"}], "]"}]}], "]"}]}]}], "Input",
- CellChangeTimes->{{3.8720722849716563`*^9, 3.872072319047844*^9}},
+     RowBox[{
+      RowBox[{"Expand", "[", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"#1", "/.", 
+          RowBox[{"x", "->", 
+           RowBox[{"x", "+", "#2"}]}]}], ")"}], 
+        RowBox[{"(", 
+         RowBox[{"#1", "/.", 
+          RowBox[{"x", "->", 
+           RowBox[{"x", "-", "#2"}]}]}], ")"}]}], "]"}], "&"}], ",", "x", ",", 
+     RowBox[{"Sqrt", "[", 
+      RowBox[{"Prime", "[", 
+       RowBox[{"Range", "[", "n", "]"}], "]"}], "]"}]}], "]"}], "/;", 
+   RowBox[{"n", ">", "0"}]}]}]}], "Input",
+ CellChangeTimes->{{3.8720722849716563`*^9, 3.872072319047844*^9}, {
+  3.8720725677763643`*^9, 3.8720725756037974`*^9}},
  CellTags->"DefaultContent",
  CellLabel->"In[23]:=",
  CellID->876320555,ExpressionUUID->"a0159030-fce9-4b40-b621-32fde1623247"]
@@ -156,8 +160,10 @@ documentation pages for examples."}], "MoreInfoText"], Background ->
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"SwinnertonDyerPolynomial", "[", "n", "]"}]], "UsageInputs",
- CellChangeTimes->{{3.872072324499991*^9, 3.8720723263593116`*^9}},
+ RowBox[{"SwinnertonDyerPolynomial", "[", 
+  StyleBox["n", "TI"], "]"}]], "UsageInputs",
+ CellChangeTimes->{{3.872072324499991*^9, 3.8720723263593116`*^9}, 
+   3.8720723620851502`*^9},
  FontFamily->"Source Sans Pro",
  CellTags->{"DefaultContent", "TabNext"},
  CellID->67839508,ExpressionUUID->"f4f6511e-c758-4175-9052-0a3e1c684b5e"],
@@ -173,6 +179,36 @@ Cell[TextData[{
  CellChangeTimes->{{3.8720723302032795`*^9, 3.8720723528465858`*^9}},
  CellTags->{"DefaultContent", "TabNext"},
  CellID->746063541,ExpressionUUID->"9e931463-635b-4870-a9e5-7aafbe42e4ba"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SwinnertonDyerPolynomial", "[", 
+  RowBox[{
+   StyleBox["n", "TI"], ",", 
+   StyleBox["variable", "TI"]}], "]"}]], "UsageInputs",
+ CellChangeTimes->{{3.872072324499991*^9, 3.8720723263593116`*^9}, {
+  3.8720723620851502`*^9, 3.872072395944453*^9}},
+ FontFamily->"Source Sans Pro",
+ CellTags->{"DefaultContent", "TabNext"},
+ CellID->299643492,ExpressionUUID->"439b5f2d-e0a5-49ad-ae27-27fdc3c82fa2"],
+
+Cell[TextData[{
+ "computes the ",
+ Cell[BoxData[
+  StyleBox["n", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "45ac3f3b-c85f-4fde-bef6-7d8924137fa6"],
+ "th Swinnerton-Dyer polynomial with the indeterminate ",
+ Cell[BoxData[
+  StyleBox["variable", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "0eb6bc49-eb18-4f8b-9025-429c33faab84"]
+}], "UsageDescription",
+ CellChangeTimes->{{3.8720723302032795`*^9, 3.872072393521943*^9}},
+ CellTags->{"DefaultContent", "TabNext"},
+ CellID->921987,ExpressionUUID->"b132d79d-ce8a-4ac7-95f4-2c946f5b5484"]
 }, Open  ]]
 }, Open  ]],
 
@@ -213,13 +249,18 @@ function, its development, and its usage.", "MoreInfoText"], Background ->
  CellTags->{"Details & Options", "Notes", "TemplateCellGroup"},
  CellID->447261062,ExpressionUUID->"7a4161e8-64ed-4d25-96b6-2ebe901a7758"],
 
-Cell["Additional information about usage and options.", "Notes",
+Cell["\<\
+The Swinnerton-Dyer polynomial is related to the Swinnerton-Dyer conjecture, \
+which is one of the seven millenium prize problems that the Clay Institute \
+will award a million dollars to the first accepted proof.\
+\>", "Notes",
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
        WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.8720724002435265`*^9, 3.8720724396660805`*^9}},
  CellTags->{"DefaultContent", "TabNext"},
  CellID->422531486,ExpressionUUID->"af96299a-22d2-427e-817c-129099e8dd00"]
 }, Open  ]]
@@ -388,24 +429,74 @@ Cell["Basic Examples", "Subsection",
  CellTags->"DefaultContent",
  CellID->619504543,ExpressionUUID->"ae97acfc-cf2c-4e86-9e13-71bb34e43011"],
 
-Cell["Text about the example:", "Text",
+Cell["Compute the fourth Swinnerton-Dyer polynomial:", "Text",
+ CellChangeTimes->{{3.872072447448484*^9, 3.8720724575894947`*^9}},
  CellTags->"DefaultContent",
  CellID->586099280,ExpressionUUID->"7128e486-a625-4686-bd0c-d2244f46dfe0"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"MyFunction", "[", 
-  RowBox[{"x", ",", "y"}], "]"}]], "Input",
- CellTags->"DefaultContent",
- CellLabel->"In[1]:= ",
- CellID->298664010,ExpressionUUID->"7bad4735-65b4-4940-9850-411d5816b7d3"],
+ RowBox[{"SwinnertonDyerPolynomial", "[", "4", "]"}]], "Input",
+ CellChangeTimes->{{3.8720724592609634`*^9, 3.8720724619950886`*^9}},
+ CellLabel->"In[25]:=",
+ CellID->97327864,ExpressionUUID->"3147f1d4-e485-4aa2-a423-bba192ef0bea"],
 
 Cell[BoxData[
- RowBox[{"x", " ", "y"}]], "Output",
- CellTags->"DefaultContent",
- CellLabel->"Out[1]= ",
- CellID->832981051,ExpressionUUID->"45539a36-2498-4cd9-939e-bbf1c3b0dbeb"]
+ RowBox[{"46225", "-", 
+  RowBox[{"5596840", " ", 
+   SuperscriptBox["x", "2"]}], "+", 
+  RowBox[{"13950764", " ", 
+   SuperscriptBox["x", "4"]}], "-", 
+  RowBox[{"7453176", " ", 
+   SuperscriptBox["x", "6"]}], "+", 
+  RowBox[{"1513334", " ", 
+   SuperscriptBox["x", "8"]}], "-", 
+  RowBox[{"141912", " ", 
+   SuperscriptBox["x", "10"]}], "+", 
+  RowBox[{"6476", " ", 
+   SuperscriptBox["x", "12"]}], "-", 
+  RowBox[{"136", " ", 
+   SuperscriptBox["x", "14"]}], "+", 
+  SuperscriptBox["x", "16"]}]], "Output",
+ CellChangeTimes->{3.8720724623540087`*^9},
+ CellLabel->"Out[25]=",
+ CellID->349141602,ExpressionUUID->"cd2bbca6-18ca-4570-9509-1e6bcb1d3ecd"]
+}, Open  ]],
+
+Cell["Use the indeterminate y:", "Text",
+ CellChangeTimes->{{3.8720724650097885`*^9, 3.872072473934283*^9}},
+ CellID->39566582,ExpressionUUID->"ebb948b7-bca2-4d29-9a04-f96a54987c64"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SwinnertonDyerPolynomial", "[", 
+  RowBox[{"4", ",", "y"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8720724592609634`*^9, 3.8720724787456875`*^9}},
+ CellLabel->"In[26]:=",
+ CellID->306721609,ExpressionUUID->"c409b457-838c-4fea-873a-66f7c0f66e90"],
+
+Cell[BoxData[
+ RowBox[{"46225", "-", 
+  RowBox[{"5596840", " ", 
+   SuperscriptBox["x", "2"]}], "+", 
+  RowBox[{"13950764", " ", 
+   SuperscriptBox["x", "4"]}], "-", 
+  RowBox[{"7453176", " ", 
+   SuperscriptBox["x", "6"]}], "+", 
+  RowBox[{"1513334", " ", 
+   SuperscriptBox["x", "8"]}], "-", 
+  RowBox[{"141912", " ", 
+   SuperscriptBox["x", "10"]}], "+", 
+  RowBox[{"6476", " ", 
+   SuperscriptBox["x", "12"]}], "-", 
+  RowBox[{"136", " ", 
+   SuperscriptBox["x", "14"]}], "+", 
+  SuperscriptBox["x", "16"]}]], "Output",
+ CellChangeTimes->{3.8720724789796543`*^9},
+ CellLabel->"Out[26]=",
+ CellID->707601390,ExpressionUUID->"8f746c25-92a4-4365-b61d-05f84d0f0b22"]
 }, Open  ]]
 }, Open  ]],
 
@@ -451,9 +542,36 @@ Cell["Properties and Relations", "Subsection",
  CellTags->"DefaultContent",
  CellID->727494039,ExpressionUUID->"690cf296-0f78-430e-b2b6-316a54bdd42d"],
 
+Cell[CellGroupData[{
+
 Cell["Possible Issues", "Subsection",
  CellTags->"DefaultContent",
  CellID->471245215,ExpressionUUID->"60a4e97d-bcc2-43d4-89d4-fc951af39387"],
+
+Cell["\<\
+The function only works for small values of n. Here a full minute, 60 \
+seconds, is not sufficient co compute the result:\
+\>", "Text",
+ CellChangeTimes->{{3.872072518672411*^9, 3.8720725628087473`*^9}},
+ CellID->300786456,ExpressionUUID->"9d975669-cbb7-49be-a440-00c871c16b58"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TimeConstrained", "[", 
+  RowBox[{
+   RowBox[{"SwinnertonDyerPolynomial", "[", "100", "]"}], ",", "60"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.8720725298117547`*^9, 3.872072545812313*^9}},
+ CellLabel->"In[27]:=",
+ CellID->26449071,ExpressionUUID->"465dca71-4a5e-40b2-8eac-3232b2a9fb0c"],
+
+Cell[BoxData["$Aborted"], "Output",
+ CellChangeTimes->{3.872072606065323*^9},
+ CellLabel->"Out[27]=",
+ CellID->27125814,ExpressionUUID->"ff54d0bf-5d3b-4e0d-ac1e-6ba602da9fe9"]
+}, Open  ]]
+}, Open  ]],
 
 Cell["Neat Examples", "Subsection",
  CellTags->"DefaultContent",
@@ -500,13 +618,14 @@ publicly credited with contributing this function.", "MoreInfoText"],
  CellTags->{"Contributed By", "ContributorInformation", "TemplateCellGroup"},
  CellID->771147648,ExpressionUUID->"1b689a21-d5bf-4e77-b346-b88f1779cb90"],
 
-Cell["Author Name", "Text",
+Cell["Peter Cullen Burbeyr", "Text",
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
        WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.872072491283367*^9, 3.872072494079256*^9}},
  CellTags->{"DefaultContent", "TabNext"},
  CellID->855757352,ExpressionUUID->"3e97303e-46d3-45c3-bcc9-ad3284f6c3f8"]
 }, Open  ]],
@@ -542,15 +661,36 @@ concepts) that should be used to include the function in search results.",
  CellTags->{"Keywords", "TemplateCellGroup"},
  CellID->854882061,ExpressionUUID->"edb2becf-ebeb-4f99-9f7e-e1f94b6e24c3"],
 
-Cell["keyword 1", "Item",
+Cell["Millenium Problems", "Item",
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
        WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.8720724967352533`*^9, 3.872072500751484*^9}},
  CellTags->{"DefaultContent", "TabNext"},
- CellID->560424104,ExpressionUUID->"0972e1dc-790f-4963-aa37-3de231885c95"]
+ CellID->560424104,ExpressionUUID->"0972e1dc-790f-4963-aa37-3de231885c95"],
+
+Cell["Clay Mathematical Institute", "Item",
+ CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
+       SelectedNotebook[], After, Cell]; NotebookFind[
+       SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
+       WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
+       SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
+   PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.8720724967352533`*^9, 3.872072505687858*^9}},
+ CellID->724425686,ExpressionUUID->"8bccc76e-d5c0-4bac-b341-d5b25152d4e7"],
+
+Cell["Polynomials", "Item",
+ CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
+       SelectedNotebook[], After, Cell]; NotebookFind[
+       SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
+       WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
+       SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
+   PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.8720724967352533`*^9, 3.8720725075002995`*^9}},
+ CellID->393930557,ExpressionUUID->"ac3b2c0b-2a37-4a8f-9834-984a61bb225f"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -634,8 +774,10 @@ Cell[BoxData[
       FontSize->12], 
      StyleBox[
       TemplateBox[{
-        CheckboxBox[False, {False, "Higher Mathematical Computation"}], 
-        "\" \"", "\"Higher Mathematical Computation\""},
+        CheckboxBox[
+        "Higher Mathematical Computation", {
+         False, "Higher Mathematical Computation"}], "\" \"", 
+        "\"Higher Mathematical Computation\""},
        "RowDefault"],
       StripOnInput->False,
       FontSize->12]},
@@ -724,8 +866,10 @@ Cell[BoxData[
       FontSize->12], 
      StyleBox[
       TemplateBox[{
-        CheckboxBox[False, {False, "Symbolic & Numeric Computation"}], 
-        "\" \"", "\"Symbolic & Numeric Computation\""},
+        CheckboxBox[
+        "Symbolic & Numeric Computation", {
+         False, "Symbolic & Numeric Computation"}], "\" \"", 
+        "\"Symbolic & Numeric Computation\""},
        "RowDefault"],
       StripOnInput->False,
       FontSize->12]},
@@ -782,6 +926,7 @@ Cell[BoxData[
 WuYdc+Ub5wvq9oc1GUlKJnXIiqJrBdBCtZQ3n11qHnCPtWMD6sV0ipOzhW1tB9/elmHINGKs+\
 zYjElVnRCE36N6oQaf518wOqwmP/BY28YvfMpmxegakyEMBGmf4cRyQYv8RYdQtkFI3PmDU1ZTKI=\
 "},
+ CellChangeTimes->{{3.8720725097494106`*^9, 3.8720725115941687`*^9}},
  CellTags->{"Categories", "Categories-Checkboxes", "CheckboxCell"},
  CellID->384866247,ExpressionUUID->"527e0a30-b8b7-4b16-8ddb-7d6b582a18ca"]
 }, Open  ]],
@@ -817,15 +962,46 @@ related to the function.", "MoreInfoText"], Background -> GrayLevel[0.95],
  CellTags->{"Related Symbols", "TemplateCellGroup"},
  CellID->525877127,ExpressionUUID->"24cd14bf-00b9-4cec-bef9-f6bbb921a5ea"],
 
-Cell["SymbolName (documented Wolfram Language symbol)", "Item",
+Cell["CoefficientList", "Item",
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
        WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.872072584368823*^9, 3.8720725867276583`*^9}},
  CellTags->{"DefaultContent", "TabNext"},
- CellID->195255409,ExpressionUUID->"8c6bbf19-ea2c-47d4-a0ae-5370b553f3ef"]
+ CellID->195255409,ExpressionUUID->"8c6bbf19-ea2c-47d4-a0ae-5370b553f3ef"],
+
+Cell["Fold", "Item",
+ CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
+       SelectedNotebook[], After, Cell]; NotebookFind[
+       SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
+       WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
+       SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
+   PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.872072584368823*^9, 3.87207258835258*^9}},
+ CellID->19564451,ExpressionUUID->"642d51e2-8461-426d-826d-fccffb373184"],
+
+Cell["Expand", "Item",
+ CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
+       SelectedNotebook[], After, Cell]; NotebookFind[
+       SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
+       WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
+       SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
+   PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.872072584368823*^9, 3.8720725897428894`*^9}},
+ CellID->155055808,ExpressionUUID->"58a11712-9126-4597-b284-ad1503816516"],
+
+Cell["Prime", "Item",
+ CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
+       SelectedNotebook[], After, Cell]; NotebookFind[
+       SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
+       WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
+       SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
+   PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.872072584368823*^9, 3.872072591211665*^9}},
+ CellID->234625584,ExpressionUUID->"299aab7a-834a-4b83-a62b-3da1b862f15f"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1450,7 +1626,7 @@ JAZLFxBaxuyKShxfvoEfKzujYRb6FXWpA="},
  CellID->605080198,ExpressionUUID->"ad4cf9bd-0326-4c14-9e9f-9b391cde007b"]
 }, Closed]]
 }, Open  ]]
-}, Closed]],
+}, Open  ]],
 
 Cell[CellGroupData[{
 
