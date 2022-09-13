@@ -59,10 +59,46 @@ evaluated before creating the Examples section below.", "MoreInfoText"],
  CellTags->{"Definition", "Function", "TemplateCellGroup"},
  CellID->292731158,ExpressionUUID->"c269ff4d-0b98-4b27-a117-91d349b2ebfe"],
 
-Cell[BoxData[
+Cell[BoxData[{
+ RowBox[{"ClearAll", "[", "UlamSpiral", "]"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"MyFunction", "[", "]"}], ":=", "xxxx"}]], "Input",
+  RowBox[{
+   RowBox[{"UlamSpiral", "[", "n_", "]"}], ":=", 
+   RowBox[{"Partition", "[", 
+    RowBox[{
+     RowBox[{"Permute", "[", 
+      RowBox[{
+       RowBox[{"Range", "[", 
+        RowBox[{"n", "^", "2"}], "]"}], ",", 
+       RowBox[{"Accumulate", "[", 
+        RowBox[{"Take", "[", 
+         RowBox[{
+          RowBox[{"Flatten", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"n", "^", "2"}], "+", "1"}], "}"}], "/", "2"}], ",", 
+             RowBox[{"Table", "\n", "\t", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{
+                 RowBox[{"(", 
+                  RowBox[{"-", "1"}], ")"}], "^", "j"}], " ", "i"}], ",", 
+               RowBox[{"{", 
+                RowBox[{"j", ",", "n"}], "}"}], ",", 
+               RowBox[{"{", 
+                RowBox[{"i", ",", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"-", "1"}], ",", "n"}], "}"}]}], "}"}], ",", 
+               RowBox[{"{", "j", "}"}]}], "]"}]}], "}"}], "]"}], ",", 
+          RowBox[{"n", "^", "2"}]}], "]"}], "]"}]}], "]"}], ",", "n"}], 
+    "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.872084579217926*^9, 3.8720845912618237`*^9}},
  CellTags->"DefaultContent",
+ CellLabel->"In[3]:=",
  CellID->876320555,ExpressionUUID->"b6e4c44d-836e-44ab-b3b6-843543786e70"]
 }, Open  ]],
 
@@ -98,7 +134,6 @@ then pressing ",
                 If[$OperatingSystem === "MacOSX", "\[ReturnKey]", 
                  "\[EnterKey]"], StandardForm], SingleEvaluation -> True, 
                Evaluator -> "System"], ShowStringCharacters -> False]]], 
-           
            " to add a brief explanation of the function\[CloseCurlyQuote]s \
 behavior for that structure. Pressing ", 
            Cell[
