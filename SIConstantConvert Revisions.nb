@@ -283,10 +283,11 @@ documentation pages for examples."}], "MoreInfoText"], Background ->
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"MyFunction", "[", "arg", "]"}]], "UsageInputs",
+ RowBox[{"SIConstantConvert", "[", "arg", "]"}]], "UsageInputs",
+ CellChangeTimes->{{3.8724368419445143`*^9, 3.8724368443943915`*^9}},
  FontFamily->"Source Sans Pro",
  CellTags->{"DefaultContent", "TabNext"},
- CellID->67839508,ExpressionUUID->"57891b94-2f7e-4637-92db-2a932030252c"],
+ CellID->67839508,ExpressionUUID->"88d9a0ad-142c-419d-ad18-0ee76b49a3a3"],
 
 Cell[TextData[{
  "explanation of what use of the argument ",
@@ -294,7 +295,7 @@ Cell[TextData[{
  " does."
 }], "UsageDescription",
  CellTags->{"DefaultContent", "TabNext"},
- CellID->746063541,ExpressionUUID->"bc7999b2-7f22-466c-8e11-e862ffab797d"]
+ CellID->746063541,ExpressionUUID->"e4444c12-d397-420b-a8a4-04f8cc484c0b"]
 }, Open  ]]
 }, Open  ]],
 
@@ -884,866 +885,919 @@ Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"SIDERIVEDUNITSWITHSPECIALNAMES", "=", 
-  RowBox[{"{", 
+  RowBox[{"AssociationThread", "[", 
    RowBox[{
-    RowBox[{"Quantity", "[", "\"\<Becquerels\>\"", "]"}], ",", 
-    RowBox[{"Quantity", "[", "\"\<Coulombs\>\"", "]"}], ",", 
-    RowBox[{"Quantity", "[", "\"\<DegreesCelsius\>\"", "]"}], ",", 
-    RowBox[{"Quantity", "[", "\"\<Farads\>\"", "]"}], ",", 
-    RowBox[{"Quantity", "[", "\"\<Gray\>\"", "]"}], ",", 
-    RowBox[{"Quantity", "[", "\"\<Henry\>\"", "]"}], ",", 
-    RowBox[{"Quantity", "[", "\"\<Hertz\>\"", "]"}], ",", 
-    RowBox[{"Quantity", "[", "\"\<Joule\>\"", "]"}], ",", 
-    RowBox[{"Quantity", "[", "\"\<Lumen\>\"", "]"}], ",", 
-    RowBox[{"Quantity", "[", "\"\<Lux\>\"", "]"}], ",", 
-    RowBox[{"Quantity", "[", "\"\<Newton\>\"", "]"}], ",", 
-    RowBox[{"Quantity", "[", "\"\<Ohm\>\"", "]"}], ",", 
-    RowBox[{"Quantity", "[", "\"\<Pascals\>\"", "]"}], ",", 
-    RowBox[{"Quantity", "[", "\"\<Radian\>\"", "]"}], ",", 
-    RowBox[{"Quantity", "[", "\"\<Siemens\>\"", "]"}], ",", 
-    RowBox[{"Quantity", "[", "\"\<Sieverts\>\"", "]"}], ",", 
-    RowBox[{"Quantity", "[", "\"\<Tesla\>\"", "]"}], ",", 
-    RowBox[{"Quantity", "[", "\"\<Volt\>\"", "]"}], ",", 
-    RowBox[{"Quantity", "[", "\"\<Watt\>\"", "]"}], ",", 
-    RowBox[{"Quantity", "[", "\"\<Webers\>\"", "]"}]}], "}"}]}]], "Input",
- CellChangeTimes->{{3.8724348494900093`*^9, 3.8724349374802814`*^9}, {
-  3.8724349747557435`*^9, 3.8724350076341124`*^9}},
- CellLabel->"In[10]:=",
- CellID->655307244,ExpressionUUID->"6a749fab-24aa-4677-9218-de4e46c5fbb0"],
+    RowBox[{"{", 
+     RowBox[{
+     "\"\<plane-angle\>\"", ",", "\"\<solid-angle\>\"", ",", 
+      "\"\<frequency\>\"", ",", "\"\<force\>\"", ",", 
+      "\"\<pressure-stress\>\"", ",", "\"\<energy-work-amount-of-heat\>\"", 
+      ",", "\"\<power-radiant-flux\>\"", ",", "\"\<electric-charge\>\"", ",", 
+      "\"\<electric-potential-difference\>\"", ",", "\"\<capacitance\>\"", 
+      ",", "\"\<electric-resistance\>\"", ",", "\"\<electric-conductance\>\"",
+       ",", "\"\<magnetic-flux\>\"", ",", "\"\<magnetic-flux-density\>\"", 
+      ",", "\"\<inductance\>\"", ",", "\"\<Celsius-temperature\>\"", ",", 
+      "\"\<luminous-flux\>\"", ",", "\"\<illuminance\>\"", ",", 
+      "\"\<activity-referred-to-a-radionuclide\>\"", ",", 
+      "\"\<absorbed-dose-kerma\>\"", ",", "\"\<dose-equivalent\>\"", ",", 
+      "\"\<catalytic-activity\>\""}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Quantity", "[", "\"\<Radians\>\"", "]"}], ",", 
+      RowBox[{"Quantity", "[", "\"\<Steradians\>\"", "]"}], ",", 
+      RowBox[{"Quantity", "[", "\"\<Hertz\>\"", "]"}], ",", 
+      RowBox[{"Quantity", "[", "\"\<Newtons\>\"", "]"}], ",", 
+      RowBox[{"Quantity", "[", "\"\<Pascals\>\"", "]"}], ",", 
+      RowBox[{"Quantity", "[", "\"\<Joules\>\"", "]"}], ",", 
+      RowBox[{"Quantity", "[", "\"\<Watts\>\"", "]"}], ",", 
+      RowBox[{"Quantity", "[", "\"\<Coulombs\>\"", "]"}], ",", 
+      RowBox[{"Quantity", "[", "\"\<Volt\>\"", "]"}], ",", 
+      RowBox[{"Quantity", "[", "\"\<Farads\>\"", "]"}], ",", 
+      RowBox[{"Quantity", "[", "\"\<Ohm\>\"", "]"}], ",", 
+      RowBox[{"Quantity", "[", "\"\<Siemens\>\"", "]"}], ",", 
+      RowBox[{"Quantity", "[", "\"\<Weber\>\"", "]"}], ",", 
+      RowBox[{"Quantity", "[", "\"\<Teslas\>\"", "]"}], ",", 
+      RowBox[{"Quantity", "[", "\"\<Henry\>\"", "]"}], ",", 
+      RowBox[{"Quantity", "[", "\"\<DegreesCelsius\>\"", "]"}], ",", 
+      RowBox[{"Quantity", "[", "\"\<Lumen\>\"", "]"}], ",", 
+      RowBox[{"Quantity", "[", "\"\<Lux\>\"", "]"}], ",", 
+      RowBox[{"Quantity", "[", "\"\<Becquerels\>\"", "]"}], ",", 
+      RowBox[{"Quantity", "[", "\"\<Gray\>\"", "]"}], ",", 
+      RowBox[{"Quantity", "[", "\"\<Sieverts\>\"", "]"}], ",", 
+      RowBox[{"Quantity", "[", "\"\<Katals\>\"", "]"}]}], "}"}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.8724357028803015`*^9, 3.8724359823950386`*^9}, {
+  3.87243602377654*^9, 3.8724360292739687`*^9}},
+ CellLabel->"In[29]:=",
+ CellID->598918335,ExpressionUUID->"cc8e1273-fc12-4c69-b013-46eae98a56f3"],
 
 Cell[BoxData[
- RowBox[{"{", 
+ RowBox[{"\[LeftAssociation]", 
   RowBox[{
-   TemplateBox[{"1", "\"Bq\"", "becquerel", "\"Becquerels\""},
-    "Quantity"], ",", 
-   TemplateBox[{"1", "\"C\"", "coulomb", "\"Coulombs\""},
-    "Quantity"], ",", 
-   TemplateBox[{"1", "\"\[Degree]C\"", "degree Celsius", "\"DegreesCelsius\""},
-    "Quantity"], ",", 
-   TemplateBox[{"1", "\"F\"", "farad", "\"Farads\""},
-    "Quantity"], ",", 
-   TemplateBox[{"1", "\"Gy\"", "gray", "\"Grays\""},
-    "Quantity"], ",", 
-   TemplateBox[{"1", "\"H\"", "henry", "\"Henries\""},
-    "Quantity"], ",", 
-   TemplateBox[{"1", "\"Hz\"", "hertz", "\"Hertz\""},
-    "Quantity"], ",", 
-   TemplateBox[{"1", "\"J\"", "joule", "\"Joules\""},
-    "Quantity"], ",", 
-   TemplateBox[{"1", "\"lm\"", "lumen", "\"Lumens\""},
-    "Quantity"], ",", 
-   TemplateBox[{"1", "\"lx\"", "lux", "\"Lux\""},
-    "Quantity"], ",", 
-   TemplateBox[{"1", "\"N\"", "newton", "\"Newtons\""},
-    "Quantity"], ",", 
-   TemplateBox[{"1", "\"\[CapitalOmega]\"", "ohm", "\"Ohms\""},
-    "Quantity"], ",", 
-   TemplateBox[{"1", "\"Pa\"", "pascal", "\"Pascals\""},
-    "Quantity"], ",", 
-   TemplateBox[{"1", "\"rad\"", "radian", "\"Radians\""},
-    "Quantity"], ",", 
-   TemplateBox[{"1", "\"S\"", "siemens", "\"Siemens\""},
-    "Quantity"], ",", 
-   TemplateBox[{"1", "\"Sv\"", "sievert", "\"Sieverts\""},
-    "Quantity"], ",", 
-   TemplateBox[{"1", "\"T\"", "tesla", "\"Teslas\""},
-    "Quantity"], ",", 
-   TemplateBox[{"1", "\"V\"", "volt", "\"Volts\""},
-    "Quantity"], ",", 
-   TemplateBox[{"1", "\"W\"", "watt", "\"Watts\""},
-    "Quantity"], ",", 
-   TemplateBox[{"1", "\"Wb\"", "weber", "\"Webers\""},
-    "Quantity"]}], "}"}]], "Output",
- CellChangeTimes->{3.872434938880104*^9, 3.872435008229109*^9},
- CellLabel->"Out[10]=",
- CellID->46679021,ExpressionUUID->"1744d84f-ffc8-4072-9f70-b3038e7aeddb"]
+   RowBox[{"\<\"plane-angle\"\>", "\[Rule]", 
+    TemplateBox[{"1", "\"rad\"", "radian", "\"Radians\""},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"solid-angle\"\>", "\[Rule]", 
+    TemplateBox[{"1", "\"sr\"", "steradian", "\"Steradians\""},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"frequency\"\>", "\[Rule]", 
+    TemplateBox[{"1", "\"Hz\"", "hertz", "\"Hertz\""},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"force\"\>", "\[Rule]", 
+    TemplateBox[{"1", "\"N\"", "newton", "\"Newtons\""},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"pressure-stress\"\>", "\[Rule]", 
+    TemplateBox[{"1", "\"Pa\"", "pascal", "\"Pascals\""},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"energy-work-amount-of-heat\"\>", "\[Rule]", 
+    TemplateBox[{"1", "\"J\"", "joule", "\"Joules\""},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"power-radiant-flux\"\>", "\[Rule]", 
+    TemplateBox[{"1", "\"W\"", "watt", "\"Watts\""},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"electric-charge\"\>", "\[Rule]", 
+    TemplateBox[{"1", "\"C\"", "coulomb", "\"Coulombs\""},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"electric-potential-difference\"\>", "\[Rule]", 
+    TemplateBox[{"1", "\"V\"", "volt", "\"Volts\""},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"capacitance\"\>", "\[Rule]", 
+    TemplateBox[{"1", "\"F\"", "farad", "\"Farads\""},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"electric-resistance\"\>", "\[Rule]", 
+    TemplateBox[{"1", "\"\[CapitalOmega]\"", "ohm", "\"Ohms\""},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"electric-conductance\"\>", "\[Rule]", 
+    TemplateBox[{"1", "\"S\"", "siemens", "\"Siemens\""},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"magnetic-flux\"\>", "\[Rule]", 
+    TemplateBox[{"1", "\"Wb\"", "weber", "\"Webers\""},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"magnetic-flux-density\"\>", "\[Rule]", 
+    TemplateBox[{"1", "\"T\"", "tesla", "\"Teslas\""},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"inductance\"\>", "\[Rule]", 
+    TemplateBox[{"1", "\"H\"", "henry", "\"Henries\""},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"Celsius-temperature\"\>", "\[Rule]", 
+    TemplateBox[{
+     "1", "\"\[Degree]C\"", "degree Celsius", "\"DegreesCelsius\""},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"luminous-flux\"\>", "\[Rule]", 
+    TemplateBox[{"1", "\"lm\"", "lumen", "\"Lumens\""},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"illuminance\"\>", "\[Rule]", 
+    TemplateBox[{"1", "\"lx\"", "lux", "\"Lux\""},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"activity-referred-to-a-radionuclide\"\>", "\[Rule]", 
+    TemplateBox[{"1", "\"Bq\"", "becquerel", "\"Becquerels\""},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"absorbed-dose-kerma\"\>", "\[Rule]", 
+    TemplateBox[{"1", "\"Gy\"", "gray", "\"Grays\""},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"dose-equivalent\"\>", "\[Rule]", 
+    TemplateBox[{"1", "\"Sv\"", "sievert", "\"Sieverts\""},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"catalytic-activity\"\>", "\[Rule]", 
+    TemplateBox[{"1", "\"kat\"", "katal", "\"Katals\""},
+     "Quantity"]}]}], "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{{3.8724359737770414`*^9, 3.872435993984917*^9}, 
+   3.8724360295222535`*^9},
+ CellLabel->"Out[29]=",
+ CellID->73194663,ExpressionUUID->"c9dfdcb5-ca06-4010-bebe-2194615f585b"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"AssociationMap", "[", 
-  RowBox[{"SIConstantConvert", ",", "SIDERIVEDUNITSWITHSPECIALNAMES"}], 
-  "]"}]], "Input",
- CellChangeTimes->{{3.872434941592493*^9, 3.872434944504922*^9}, {
-  3.872435046782986*^9, 3.8724350558879013`*^9}},
- CellLabel->"In[15]:=",
- CellID->235463246,ExpressionUUID->"eb602c8b-e942-4b06-a12c-734f62158223"],
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"#", ",", 
+     RowBox[{"SIConstantConvert", "[", "#", "]"}], ",", 
+     RowBox[{"N", "[", 
+      RowBox[{"SIConstantConvert", "[", "#", "]"}], "]"}]}], "}"}], "&"}], "/@",
+   "SIDERIVEDUNITSWITHSPECIALNAMES"}]], "Input",
+ CellChangeTimes->{{3.872436035042858*^9, 3.8724360455029945`*^9}},
+ CellLabel->"In[30]:=",
+ CellID->88102106,ExpressionUUID->"275805de-9843-432a-bac7-f29f0a8383c9"],
 
 Cell[BoxData[
  RowBox[{"\[LeftAssociation]", 
   RowBox[{
-   RowBox[{
-    TemplateBox[{"1", "\"Bq\"", "becquerel", "\"Becquerels\""},
-     "Quantity"], "\[Rule]", 
-    TemplateBox[{
-      InterpretationBox["\[InvisibleSpace]", 1], 
-      RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
-        SubscriptBox[
-         TemplateBox[{"\"(\"", 
-           TemplateBox[{
-             
-             TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
-              SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
-          "RowDefault"], "\"hfs\""]}], 
-      "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+   RowBox[{"\<\"plane-angle\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"1", "\"rad\"", "radian", "\"Radians\""},
+       "Quantity"], ",", "1", ",", "1.`"}], "}"}]}], ",", 
+   RowBox[{"\<\"solid-angle\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"1", "\"sr\"", "steradian", "\"Steradians\""},
+       "Quantity"], ",", "1", ",", "1.`"}], "}"}]}], ",", 
+   RowBox[{"\<\"frequency\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"1", "\"Hz\"", "hertz", "\"Hertz\""},
+       "Quantity"], ",", 
+      TemplateBox[{
+        InterpretationBox["\[InvisibleSpace]", 1], 
+        RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+          SubscriptBox[
+           TemplateBox[{"\"(\"", 
+             TemplateBox[{
+               
+               TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+            "RowDefault"], "\"hfs\""]}], 
+        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
 atom", "\"Cesium133HyperfineSplittingFrequency\""},
-     "Quantity"]}], ",", 
-   RowBox[{
-    TemplateBox[{"1", "\"C\"", "coulomb", "\"Coulombs\""},
-     "Quantity"], "\[Rule]", 
-    TemplateBox[{
-      InterpretationBox["\[InvisibleSpace]", 1], 
-      StyleBox["\"e\"", Italic, StripOnInput -> False], "elementary charge", 
-      "\"ElementaryCharge\""},
-     "Quantity"]}], ",", 
-   RowBox[{
-    TemplateBox[{
-     "1", "\"\[Degree]C\"", "degree Celsius", "\"DegreesCelsius\""},
-     "Quantity"], "\[Rule]", 
-    TemplateBox[{"1", 
-      RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
-        SubscriptBox[
-         TemplateBox[{"\"(\"", 
-           TemplateBox[{
-             
-             TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
-              SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
-          "RowDefault"], "\"hfs\""], "\[ThinSpace]", 
-        StyleBox["\"h\"", StripOnInput -> False, FontSlant -> Italic], 
-        "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
-        StyleBox["\"k\"", StripOnInput -> False, FontSlant -> Italic]}], 
-      "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
-atom Planck constant per Boltzmann constant", 
-      FractionBox[
-       RowBox[{
-        "\"Cesium133HyperfineSplittingFrequency\"", " ", 
-         "\"PlanckConstant\""}], "\"BoltzmannConstant\""]},
-     "Quantity"]}], ",", 
-   RowBox[{
-    TemplateBox[{"1", "\"F\"", "farad", "\"Farads\""},
-     "Quantity"], "\[Rule]", 
-    TemplateBox[{"1", 
-      RowBox[{
-        SuperscriptBox[
-         StyleBox["\"e\"", StripOnInput -> False, FontSlant -> Italic], "2"], 
-        "\[NegativeMediumSpace]", "\"/(\"", "\[InvisibleSpace]", 
-        "\"\[CapitalDelta]\[Nu]\"", 
-        SubscriptBox[
-         TemplateBox[{"\"(\"", 
-           TemplateBox[{
-             
-             TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
-              SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
-          "RowDefault"], "\"hfs\""], "\[ThinSpace]", 
-        StyleBox["\"h\"", StripOnInput -> False, FontSlant -> Italic], 
-        "\[InvisibleSpace]", "\")\""}], 
-      "elementary charge squared per ground state hyperfine splitting \
-frequency of the cesium\[Hyphen]133 atom Planck constant", 
-      FractionBox[
-       SuperscriptBox["\"ElementaryCharge\"", "2"], 
-       RowBox[{
-        "\"Cesium133HyperfineSplittingFrequency\"", " ", 
-         "\"PlanckConstant\""}]]},
-     "Quantity"]}], ",", 
-   RowBox[{
-    TemplateBox[{"1", "\"Gy\"", "gray", "\"Grays\""},
-     "Quantity"], "\[Rule]", 
-    TemplateBox[{"1", 
-      RowBox[{
-        SuperscriptBox[
-         StyleBox["\"c\"", Italic, StripOnInput -> False], "2"]}], 
-      "speed of light squared", 
-      SuperscriptBox["\"SpeedOfLight\"", "2"]},
-     "Quantity"]}], ",", 
-   RowBox[{
-    TemplateBox[{"1", "\"H\"", "henry", "\"Henries\""},
-     "Quantity"], "\[Rule]", 
-    TemplateBox[{"1", 
-      RowBox[{
-        StyleBox["\"h\"", StripOnInput -> False, FontSlant -> Italic], 
-        "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", 
-        "\"\[CapitalDelta]\[Nu]\"", 
-        SubscriptBox[
-         TemplateBox[{"\"(\"", 
-           TemplateBox[{
-             
-             TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
-              SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
-          "RowDefault"], "\"hfs\""], "\[ThinSpace]", 
-        SuperscriptBox[
-         StyleBox["\"e\"", StripOnInput -> False, FontSlant -> Italic], "2"], 
-        "\[InvisibleSpace]", "\")\""}], 
-      "Planck constant per ground state hyperfine splitting frequency of the \
-cesium\[Hyphen]133 atom elementary charge squared", 
-      FractionBox["\"PlanckConstant\"", 
-       RowBox[{"\"Cesium133HyperfineSplittingFrequency\"", " ", 
-         SuperscriptBox["\"ElementaryCharge\"", "2"]}]]},
-     "Quantity"]}], ",", 
-   RowBox[{
-    TemplateBox[{"1", "\"Hz\"", "hertz", "\"Hertz\""},
-     "Quantity"], "\[Rule]", 
-    TemplateBox[{
-      InterpretationBox["\[InvisibleSpace]", 1], 
-      RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
-        SubscriptBox[
-         TemplateBox[{"\"(\"", 
-           TemplateBox[{
-             
-             TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
-              SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
-          "RowDefault"], "\"hfs\""]}], 
-      "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+       "Quantity"], ",", 
+      TemplateBox[{"1.`", 
+        RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+          SubscriptBox[
+           TemplateBox[{"\"(\"", 
+             TemplateBox[{
+               
+               TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+            "RowDefault"], "\"hfs\""]}], 
+        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
 atom", "\"Cesium133HyperfineSplittingFrequency\""},
-     "Quantity"]}], ",", 
-   RowBox[{
-    TemplateBox[{"1", "\"J\"", "joule", "\"Joules\""},
-     "Quantity"], "\[Rule]", 
-    TemplateBox[{"1", 
-      RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
-        SubscriptBox[
-         TemplateBox[{"\"(\"", 
-           TemplateBox[{
-             
-             TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
-              SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
-          "RowDefault"], "\"hfs\""], "\[ThinSpace]", 
-        StyleBox["\"h\"", StripOnInput -> False, FontSlant -> Italic]}], 
-      "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
-atom Planck constant", 
-      RowBox[{
-       "\"Cesium133HyperfineSplittingFrequency\"", " ", 
-        "\"PlanckConstant\""}]},
-     "Quantity"]}], ",", 
-   RowBox[{
-    TemplateBox[{"1", "\"lm\"", "lumen", "\"Lumens\""},
-     "Quantity"], "\[Rule]", 
-    TemplateBox[{
-      FractionBox[
-      "2000000000000000000000000000000000000000", 
-       "76486793830390329632626020921"], 
-      RowBox[{
-        SuperscriptBox[
-         RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
-           SubscriptBox[
-            TemplateBox[{"\"(\"", 
-              TemplateBox[{
-                
-                TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
-                 SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
-             "RowDefault"], "\"hfs\""]}], "2"], "\[InvisibleSpace]", 
-        SubscriptBox[
-         StyleBox["\"K\"", Italic, StripOnInput -> False], "\"cd\""], 
-        "\[ThinSpace]", 
-        StyleBox["\"h\"", Italic, StripOnInput -> False]}], 
-      "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
-atom squared luminous efficacy of monochromatic radiation of frequency 540 \
-THz Planck constants", 
-      RowBox[{
-        SuperscriptBox["\"Cesium133HyperfineSplittingFrequency\"", "2"], " ", 
-        "\"MonochromaticRadiation540THzLuminousEfficacy\"", " ", 
-        "\"PlanckConstant\""}]},
-     "Quantity"]}], ",", 
-   RowBox[{
-    TemplateBox[{"1", "\"lx\"", "lux", "\"Lux\""},
-     "Quantity"], "\[Rule]", 
-    TemplateBox[{
-      FractionBox[
-      "36683884846400720000000000000000000000000000000000000", 
-       "1319076867799721157992993870790075478454926041"], 
-      RowBox[{
-        SuperscriptBox[
-         RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
-           SubscriptBox[
-            TemplateBox[{"\"(\"", 
-              TemplateBox[{
-                
-                TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
-                 SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
-             "RowDefault"], "\"hfs\""]}], "4"], "\[InvisibleSpace]", 
-        SubscriptBox[
-         StyleBox["\"K\"", Italic, StripOnInput -> False], "\"cd\""], 
-        "\[ThinSpace]", 
-        StyleBox["\"h\"", Italic, StripOnInput -> False], "\[InvisibleSpace]",
-         "\"/\"", "\[InvisibleSpace]", 
-        SuperscriptBox[
-         StyleBox["\"c\"", Italic, StripOnInput -> False], "2"]}], 
-      "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
-atom to the fourth luminous efficacy of monochromatic radiation of frequency \
-540 THz Planck constants per speed of light squared", 
-      FractionBox[
-       RowBox[{
-         SuperscriptBox["\"Cesium133HyperfineSplittingFrequency\"", "4"], " ",
-          "\"MonochromaticRadiation540THzLuminousEfficacy\"", " ", 
-         "\"PlanckConstant\""}], 
-       SuperscriptBox["\"SpeedOfLight\"", "2"]]},
-     "Quantity"]}], ",", 
-   RowBox[{
-    TemplateBox[{"1", "\"N\"", "newton", "\"Newtons\""},
-     "Quantity"], "\[Rule]", 
-    TemplateBox[{"1", 
-      RowBox[{
-        SuperscriptBox[
-         RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
-           SubscriptBox[
-            TemplateBox[{"\"(\"", 
-              TemplateBox[{
-                
-                TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
-                 SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
-             "RowDefault"], "\"hfs\""]}], "2"], "\[InvisibleSpace]", 
-        StyleBox["\"h\"", Italic, StripOnInput -> False], "\[InvisibleSpace]",
-         "\"/\"", "\[InvisibleSpace]", 
-        StyleBox["\"c\"", Italic, StripOnInput -> False]}], 
-      "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+       "Quantity"]}], "}"}]}], ",", 
+   RowBox[{"\<\"force\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"1", "\"N\"", "newton", "\"Newtons\""},
+       "Quantity"], ",", 
+      TemplateBox[{"1", 
+        RowBox[{
+          SuperscriptBox[
+           RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+             SubscriptBox[
+              TemplateBox[{"\"(\"", 
+                TemplateBox[{
+                  
+                  TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                   SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+               "RowDefault"], "\"hfs\""]}], "2"], "\[InvisibleSpace]", 
+          StyleBox["\"h\"", Italic, StripOnInput -> False], 
+          "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          StyleBox["\"c\"", Italic, StripOnInput -> False]}], 
+        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
 atom squared Planck constant per speed of light", 
-      FractionBox[
-       RowBox[{
-         SuperscriptBox["\"Cesium133HyperfineSplittingFrequency\"", "2"], " ",
-          "\"PlanckConstant\""}], "\"SpeedOfLight\""]},
-     "Quantity"]}], ",", 
-   RowBox[{
-    TemplateBox[{"1", "\"\[CapitalOmega]\"", "ohm", "\"Ohms\""},
-     "Quantity"], "\[Rule]", 
-    TemplateBox[{"1", 
-      RowBox[{
-        StyleBox["\"h\"", Italic, StripOnInput -> False], "\[InvisibleSpace]",
-         "\"/\"", "\[InvisibleSpace]", 
-        SuperscriptBox[
-         StyleBox["\"e\"", Italic, StripOnInput -> False], "2"]}], 
-      "Planck constant per elementary charge squared", 
-      FractionBox["\"PlanckConstant\"", 
-       SuperscriptBox["\"ElementaryCharge\"", "2"]]},
-     "Quantity"]}], ",", 
-   RowBox[{
-    TemplateBox[{"1", "\"Pa\"", "pascal", "\"Pascals\""},
-     "Quantity"], "\[Rule]", 
-    TemplateBox[{"1", 
-      RowBox[{
-        SuperscriptBox[
-         RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
-           SubscriptBox[
-            TemplateBox[{"\"(\"", 
-              TemplateBox[{
-                
-                TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
-                 SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
-             "RowDefault"], "\"hfs\""]}], "4"], "\[InvisibleSpace]", 
-        StyleBox["\"h\"", Italic, StripOnInput -> False], "\[InvisibleSpace]",
-         "\"/\"", "\[InvisibleSpace]", 
-        SuperscriptBox[
-         StyleBox["\"c\"", Italic, StripOnInput -> False], "3"]}], 
-      "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+        FractionBox[
+         RowBox[{
+           SuperscriptBox["\"Cesium133HyperfineSplittingFrequency\"", "2"], 
+           " ", "\"PlanckConstant\""}], "\"SpeedOfLight\""]},
+       "Quantity"], ",", 
+      TemplateBox[{"1.`", 
+        RowBox[{
+          SuperscriptBox[
+           RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+             SubscriptBox[
+              TemplateBox[{"\"(\"", 
+                TemplateBox[{
+                  
+                  TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                   SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+               "RowDefault"], "\"hfs\""]}], "2"], "\[InvisibleSpace]", 
+          StyleBox["\"h\"", Italic, StripOnInput -> False], 
+          "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          StyleBox["\"c\"", Italic, StripOnInput -> False]}], 
+        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+atom squared Planck constants per speed of light", 
+        FractionBox[
+         RowBox[{
+           SuperscriptBox["\"Cesium133HyperfineSplittingFrequency\"", "2"], 
+           " ", "\"PlanckConstant\""}], "\"SpeedOfLight\""]},
+       "Quantity"]}], "}"}]}], ",", 
+   RowBox[{"\<\"pressure-stress\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"1", "\"Pa\"", "pascal", "\"Pascals\""},
+       "Quantity"], ",", 
+      TemplateBox[{"1", 
+        RowBox[{
+          SuperscriptBox[
+           RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+             SubscriptBox[
+              TemplateBox[{"\"(\"", 
+                TemplateBox[{
+                  
+                  TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                   SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+               "RowDefault"], "\"hfs\""]}], "4"], "\[InvisibleSpace]", 
+          StyleBox["\"h\"", Italic, StripOnInput -> False], 
+          "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          SuperscriptBox[
+           StyleBox["\"c\"", Italic, StripOnInput -> False], "3"]}], 
+        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
 atom to the fourth Planck constant per speed of light cubed", 
-      FractionBox[
-       RowBox[{
-         SuperscriptBox["\"Cesium133HyperfineSplittingFrequency\"", "4"], " ",
-          "\"PlanckConstant\""}], 
-       SuperscriptBox["\"SpeedOfLight\"", "3"]]},
-     "Quantity"]}], ",", 
-   RowBox[{
-    TemplateBox[{"1", "\"rad\"", "radian", "\"Radians\""},
-     "Quantity"], "\[Rule]", "1"}], ",", 
-   RowBox[{
-    TemplateBox[{"1", "\"S\"", "siemens", "\"Siemens\""},
-     "Quantity"], "\[Rule]", 
-    TemplateBox[{"1", 
-      RowBox[{
-        SuperscriptBox[
-         StyleBox["\"e\"", Italic, StripOnInput -> False], "2"], 
-        "\[NegativeMediumSpace]", "\"/\"", "\[InvisibleSpace]", 
-        StyleBox["\"h\"", Italic, StripOnInput -> False]}], 
-      "elementary charge squared per Planck constant", 
-      FractionBox[
-       SuperscriptBox["\"ElementaryCharge\"", "2"], "\"PlanckConstant\""]},
-     "Quantity"]}], ",", 
-   RowBox[{
-    TemplateBox[{"1", "\"Sv\"", "sievert", "\"Sieverts\""},
-     "Quantity"], "\[Rule]", 
-    TemplateBox[{"1", 
-      RowBox[{
-        SuperscriptBox[
-         StyleBox["\"c\"", Italic, StripOnInput -> False], "2"]}], 
-      "speed of light squared", 
-      SuperscriptBox["\"SpeedOfLight\"", "2"]},
-     "Quantity"]}], ",", 
-   RowBox[{
-    TemplateBox[{"1", "\"T\"", "tesla", "\"Teslas\""},
-     "Quantity"], "\[Rule]", 
-    TemplateBox[{"1", 
-      RowBox[{
-        SuperscriptBox[
-         RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
-           SubscriptBox[
-            TemplateBox[{"\"(\"", 
-              TemplateBox[{
-                
-                TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
-                 SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
-             "RowDefault"], "\"hfs\""]}], "2"], "\[InvisibleSpace]", 
-        StyleBox["\"h\"", Italic, StripOnInput -> False], "\[InvisibleSpace]",
-         "\"/(\"", "\[InvisibleSpace]", 
-        StyleBox["\"e\"", Italic, StripOnInput -> False], "\[ThinSpace]", 
-        SuperscriptBox[
-         StyleBox["\"c\"", Italic, StripOnInput -> False], "2"], 
-        "\[InvisibleSpace]", "\")\""}], 
-      "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
-atom squared Planck constant per elementary charge speed of light squared", 
-      FractionBox[
-       RowBox[{
-         SuperscriptBox["\"Cesium133HyperfineSplittingFrequency\"", "2"], " ",
-          "\"PlanckConstant\""}], 
-       RowBox[{"\"ElementaryCharge\"", " ", 
-         SuperscriptBox["\"SpeedOfLight\"", "2"]}]]},
-     "Quantity"]}], ",", 
-   RowBox[{
-    TemplateBox[{"1", "\"V\"", "volt", "\"Volts\""},
-     "Quantity"], "\[Rule]", 
-    TemplateBox[{"1", 
-      RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
-        SubscriptBox[
-         TemplateBox[{"\"(\"", 
-           TemplateBox[{
-             
-             TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
-              SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
-          "RowDefault"], "\"hfs\""], "\[ThinSpace]", 
-        StyleBox["\"h\"", StripOnInput -> False, FontSlant -> Italic], 
-        "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
-        StyleBox["\"e\"", StripOnInput -> False, FontSlant -> Italic]}], 
-      "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
-atom Planck constant per elementary charge", 
-      FractionBox[
-       RowBox[{
-        "\"Cesium133HyperfineSplittingFrequency\"", " ", 
-         "\"PlanckConstant\""}], "\"ElementaryCharge\""]},
-     "Quantity"]}], ",", 
-   RowBox[{
-    TemplateBox[{"1", "\"W\"", "watt", "\"Watts\""},
-     "Quantity"], "\[Rule]", 
-    TemplateBox[{"1", 
-      RowBox[{
-        SuperscriptBox[
-         RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
-           SubscriptBox[
-            TemplateBox[{"\"(\"", 
-              TemplateBox[{
-                
-                TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
-                 SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
-             "RowDefault"], "\"hfs\""]}], "2"], "\[InvisibleSpace]", 
-        StyleBox["\"h\"", Italic, StripOnInput -> False]}], 
-      "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
-atom squared Planck constant", 
-      RowBox[{
-        SuperscriptBox["\"Cesium133HyperfineSplittingFrequency\"", "2"], " ", 
-        "\"PlanckConstant\""}]},
-     "Quantity"]}], ",", 
-   RowBox[{
-    TemplateBox[{"1", "\"Wb\"", "weber", "\"Webers\""},
-     "Quantity"], "\[Rule]", 
-    TemplateBox[{"1", 
-      RowBox[{
-        StyleBox["\"h\"", Italic, StripOnInput -> False], "\[InvisibleSpace]",
-         "\"/\"", "\[InvisibleSpace]", 
-        StyleBox["\"e\"", Italic, StripOnInput -> False]}], 
-      "Planck constant per elementary charge", 
-      FractionBox["\"PlanckConstant\"", "\"ElementaryCharge\""]},
-     "Quantity"]}]}], "\[RightAssociation]"}]], "Output",
- CellChangeTimes->{3.8724349448917513`*^9, 3.872435009683714*^9, 
-  3.8724350565607443`*^9},
- CellLabel->"Out[15]=",
- CellID->521355209,ExpressionUUID->"671de368-68cc-4c21-9290-a9f0f274cfaa"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"AssociationMap", "[", 
-  RowBox[{
-   RowBox[{
-    RowBox[{"N", "[", 
-     RowBox[{"SIConstantConvert", "[", "#", "]"}], "]"}], "&"}], ",", 
-   "SIDERIVEDUNITSWITHSPECIALNAMES"}], "]"}]], "Input",
- CellChangeTimes->{{3.872435013742296*^9, 3.872435014398056*^9}, {
-  3.872435061267001*^9, 3.872435070201231*^9}},
- CellLabel->"In[16]:=",
- CellID->301497741,ExpressionUUID->"fd161550-7a69-4b4b-b8ef-78a36a5d0659"],
-
-Cell[BoxData[
- RowBox[{"\[LeftAssociation]", 
-  RowBox[{
-   RowBox[{
-    TemplateBox[{"1", "\"Bq\"", "becquerel", "\"Becquerels\""},
-     "Quantity"], "\[Rule]", 
-    TemplateBox[{"1.`", 
-      RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
-        SubscriptBox[
-         TemplateBox[{"\"(\"", 
-           TemplateBox[{
-             
-             TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
-              SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
-          "RowDefault"], "\"hfs\""]}], 
-      "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
-atom", "\"Cesium133HyperfineSplittingFrequency\""},
-     "Quantity"]}], ",", 
-   RowBox[{
-    TemplateBox[{"1", "\"C\"", "coulomb", "\"Coulombs\""},
-     "Quantity"], "\[Rule]", 
-    TemplateBox[{"1.`", 
-      StyleBox["\"e\"", Italic, StripOnInput -> False], "elementary charges", 
-      "\"ElementaryCharge\""},
-     "Quantity"]}], ",", 
-   RowBox[{
-    TemplateBox[{
-     "1", "\"\[Degree]C\"", "degree Celsius", "\"DegreesCelsius\""},
-     "Quantity"], "\[Rule]", 
-    TemplateBox[{"1.`", 
-      RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
-        SubscriptBox[
-         TemplateBox[{"\"(\"", 
-           TemplateBox[{
-             
-             TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
-              SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
-          "RowDefault"], "\"hfs\""], "\[ThinSpace]", 
-        StyleBox["\"h\"", StripOnInput -> False, FontSlant -> Italic], 
-        "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
-        StyleBox["\"k\"", StripOnInput -> False, FontSlant -> Italic]}], 
-      "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
-atom Planck constants per Boltzmann constant", 
-      FractionBox[
-       RowBox[{
-        "\"Cesium133HyperfineSplittingFrequency\"", " ", 
-         "\"PlanckConstant\""}], "\"BoltzmannConstant\""]},
-     "Quantity"]}], ",", 
-   RowBox[{
-    TemplateBox[{"1", "\"F\"", "farad", "\"Farads\""},
-     "Quantity"], "\[Rule]", 
-    TemplateBox[{"1.`", 
-      RowBox[{
-        SuperscriptBox[
-         StyleBox["\"e\"", StripOnInput -> False, FontSlant -> Italic], "2"], 
-        "\[NegativeMediumSpace]", "\"/(\"", "\[InvisibleSpace]", 
-        "\"\[CapitalDelta]\[Nu]\"", 
-        SubscriptBox[
-         TemplateBox[{"\"(\"", 
-           TemplateBox[{
-             
-             TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
-              SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
-          "RowDefault"], "\"hfs\""], "\[ThinSpace]", 
-        StyleBox["\"h\"", StripOnInput -> False, FontSlant -> Italic], 
-        "\[InvisibleSpace]", "\")\""}], 
-      "elementary charges squared per ground state hyperfine splitting \
-frequency of the cesium\[Hyphen]133 atom Planck constant", 
-      FractionBox[
-       SuperscriptBox["\"ElementaryCharge\"", "2"], 
-       RowBox[{
-        "\"Cesium133HyperfineSplittingFrequency\"", " ", 
-         "\"PlanckConstant\""}]]},
-     "Quantity"]}], ",", 
-   RowBox[{
-    TemplateBox[{"1", "\"Gy\"", "gray", "\"Grays\""},
-     "Quantity"], "\[Rule]", 
-    TemplateBox[{"1.`", 
-      RowBox[{
-        SuperscriptBox[
-         StyleBox["\"c\"", Italic, StripOnInput -> False], "2"]}], 
-      "speed of light squared", 
-      SuperscriptBox["\"SpeedOfLight\"", "2"]},
-     "Quantity"]}], ",", 
-   RowBox[{
-    TemplateBox[{"1", "\"H\"", "henry", "\"Henries\""},
-     "Quantity"], "\[Rule]", 
-    TemplateBox[{"1.`", 
-      RowBox[{
-        StyleBox["\"h\"", StripOnInput -> False, FontSlant -> Italic], 
-        "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", 
-        "\"\[CapitalDelta]\[Nu]\"", 
-        SubscriptBox[
-         TemplateBox[{"\"(\"", 
-           TemplateBox[{
-             
-             TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
-              SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
-          "RowDefault"], "\"hfs\""], "\[ThinSpace]", 
-        SuperscriptBox[
-         StyleBox["\"e\"", StripOnInput -> False, FontSlant -> Italic], "2"], 
-        "\[InvisibleSpace]", "\")\""}], 
-      "Planck constants per ground state hyperfine splitting frequency of the \
-cesium\[Hyphen]133 atom elementary charge squared", 
-      FractionBox["\"PlanckConstant\"", 
-       RowBox[{"\"Cesium133HyperfineSplittingFrequency\"", " ", 
-         SuperscriptBox["\"ElementaryCharge\"", "2"]}]]},
-     "Quantity"]}], ",", 
-   RowBox[{
-    TemplateBox[{"1", "\"Hz\"", "hertz", "\"Hertz\""},
-     "Quantity"], "\[Rule]", 
-    TemplateBox[{"1.`", 
-      RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
-        SubscriptBox[
-         TemplateBox[{"\"(\"", 
-           TemplateBox[{
-             
-             TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
-              SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
-          "RowDefault"], "\"hfs\""]}], 
-      "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
-atom", "\"Cesium133HyperfineSplittingFrequency\""},
-     "Quantity"]}], ",", 
-   RowBox[{
-    TemplateBox[{"1", "\"J\"", "joule", "\"Joules\""},
-     "Quantity"], "\[Rule]", 
-    TemplateBox[{"1.`", 
-      RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
-        SubscriptBox[
-         TemplateBox[{"\"(\"", 
-           TemplateBox[{
-             
-             TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
-              SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
-          "RowDefault"], "\"hfs\""], "\[ThinSpace]", 
-        StyleBox["\"h\"", StripOnInput -> False, FontSlant -> Italic]}], 
-      "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+        FractionBox[
+         RowBox[{
+           SuperscriptBox["\"Cesium133HyperfineSplittingFrequency\"", "4"], 
+           " ", "\"PlanckConstant\""}], 
+         SuperscriptBox["\"SpeedOfLight\"", "3"]]},
+       "Quantity"], ",", 
+      TemplateBox[{"1.`", 
+        RowBox[{
+          SuperscriptBox[
+           RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+             SubscriptBox[
+              TemplateBox[{"\"(\"", 
+                TemplateBox[{
+                  
+                  TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                   SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+               "RowDefault"], "\"hfs\""]}], "4"], "\[InvisibleSpace]", 
+          StyleBox["\"h\"", Italic, StripOnInput -> False], 
+          "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          SuperscriptBox[
+           StyleBox["\"c\"", Italic, StripOnInput -> False], "3"]}], 
+        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+atom to the fourth Planck constants per speed of light cubed", 
+        FractionBox[
+         RowBox[{
+           SuperscriptBox["\"Cesium133HyperfineSplittingFrequency\"", "4"], 
+           " ", "\"PlanckConstant\""}], 
+         SuperscriptBox["\"SpeedOfLight\"", "3"]]},
+       "Quantity"]}], "}"}]}], ",", 
+   RowBox[{"\<\"energy-work-amount-of-heat\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"1", "\"J\"", "joule", "\"Joules\""},
+       "Quantity"], ",", 
+      TemplateBox[{"1", 
+        RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+          SubscriptBox[
+           TemplateBox[{"\"(\"", 
+             TemplateBox[{
+               
+               TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+            "RowDefault"], "\"hfs\""], "\[ThinSpace]", 
+          StyleBox["\"h\"", StripOnInput -> False, FontSlant -> Italic]}], 
+        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+atom Planck constant", 
+        RowBox[{
+         "\"Cesium133HyperfineSplittingFrequency\"", " ", 
+          "\"PlanckConstant\""}]},
+       "Quantity"], ",", 
+      TemplateBox[{"1.`", 
+        RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+          SubscriptBox[
+           TemplateBox[{"\"(\"", 
+             TemplateBox[{
+               
+               TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+            "RowDefault"], "\"hfs\""], "\[ThinSpace]", 
+          StyleBox["\"h\"", StripOnInput -> False, FontSlant -> Italic]}], 
+        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
 atom Planck constants", 
-      RowBox[{
-       "\"Cesium133HyperfineSplittingFrequency\"", " ", 
-        "\"PlanckConstant\""}]},
-     "Quantity"]}], ",", 
-   RowBox[{
-    TemplateBox[{"1", "\"lm\"", "lumen", "\"Lumens\""},
-     "Quantity"], "\[Rule]", 
-    TemplateBox[{"2.6148304822856155`*^10", 
-      RowBox[{
-        SuperscriptBox[
-         RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
-           SubscriptBox[
-            TemplateBox[{"\"(\"", 
-              TemplateBox[{
-                
-                TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
-                 SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
-             "RowDefault"], "\"hfs\""]}], "2"], "\[InvisibleSpace]", 
-        SubscriptBox[
-         StyleBox["\"K\"", Italic, StripOnInput -> False], "\"cd\""], 
-        "\[ThinSpace]", 
-        StyleBox["\"h\"", Italic, StripOnInput -> False]}], 
-      "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+        RowBox[{
+         "\"Cesium133HyperfineSplittingFrequency\"", " ", 
+          "\"PlanckConstant\""}]},
+       "Quantity"]}], "}"}]}], ",", 
+   RowBox[{"\<\"power-radiant-flux\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"1", "\"W\"", "watt", "\"Watts\""},
+       "Quantity"], ",", 
+      TemplateBox[{"1", 
+        RowBox[{
+          SuperscriptBox[
+           RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+             SubscriptBox[
+              TemplateBox[{"\"(\"", 
+                TemplateBox[{
+                  
+                  TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                   SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+               "RowDefault"], "\"hfs\""]}], "2"], "\[InvisibleSpace]", 
+          StyleBox["\"h\"", Italic, StripOnInput -> False]}], 
+        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+atom squared Planck constant", 
+        RowBox[{
+          SuperscriptBox["\"Cesium133HyperfineSplittingFrequency\"", "2"], 
+          " ", "\"PlanckConstant\""}]},
+       "Quantity"], ",", 
+      TemplateBox[{"1.`", 
+        RowBox[{
+          SuperscriptBox[
+           RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+             SubscriptBox[
+              TemplateBox[{"\"(\"", 
+                TemplateBox[{
+                  
+                  TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                   SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+               "RowDefault"], "\"hfs\""]}], "2"], "\[InvisibleSpace]", 
+          StyleBox["\"h\"", Italic, StripOnInput -> False]}], 
+        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+atom squared Planck constants", 
+        RowBox[{
+          SuperscriptBox["\"Cesium133HyperfineSplittingFrequency\"", "2"], 
+          " ", "\"PlanckConstant\""}]},
+       "Quantity"]}], "}"}]}], ",", 
+   RowBox[{"\<\"electric-charge\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"1", "\"C\"", "coulomb", "\"Coulombs\""},
+       "Quantity"], ",", 
+      TemplateBox[{
+        InterpretationBox["\[InvisibleSpace]", 1], 
+        StyleBox["\"e\"", Italic, StripOnInput -> False], "elementary charge",
+         "\"ElementaryCharge\""},
+       "Quantity"], ",", 
+      TemplateBox[{"1.`", 
+        StyleBox["\"e\"", Italic, StripOnInput -> False], 
+        "elementary charges", "\"ElementaryCharge\""},
+       "Quantity"]}], "}"}]}], ",", 
+   RowBox[{"\<\"electric-potential-difference\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"1", "\"V\"", "volt", "\"Volts\""},
+       "Quantity"], ",", 
+      TemplateBox[{"1", 
+        RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+          SubscriptBox[
+           TemplateBox[{"\"(\"", 
+             TemplateBox[{
+               
+               TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+            "RowDefault"], "\"hfs\""], "\[ThinSpace]", 
+          StyleBox["\"h\"", StripOnInput -> False, FontSlant -> Italic], 
+          "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          StyleBox["\"e\"", StripOnInput -> False, FontSlant -> Italic]}], 
+        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+atom Planck constant per elementary charge", 
+        FractionBox[
+         RowBox[{
+          "\"Cesium133HyperfineSplittingFrequency\"", " ", 
+           "\"PlanckConstant\""}], "\"ElementaryCharge\""]},
+       "Quantity"], ",", 
+      TemplateBox[{"1.`", 
+        RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+          SubscriptBox[
+           TemplateBox[{"\"(\"", 
+             TemplateBox[{
+               
+               TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+            "RowDefault"], "\"hfs\""], "\[ThinSpace]", 
+          StyleBox["\"h\"", StripOnInput -> False, FontSlant -> Italic], 
+          "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          StyleBox["\"e\"", StripOnInput -> False, FontSlant -> Italic]}], 
+        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+atom Planck constants per elementary charge", 
+        FractionBox[
+         RowBox[{
+          "\"Cesium133HyperfineSplittingFrequency\"", " ", 
+           "\"PlanckConstant\""}], "\"ElementaryCharge\""]},
+       "Quantity"]}], "}"}]}], ",", 
+   RowBox[{"\<\"capacitance\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"1", "\"F\"", "farad", "\"Farads\""},
+       "Quantity"], ",", 
+      TemplateBox[{"1", 
+        RowBox[{
+          SuperscriptBox[
+           StyleBox["\"e\"", StripOnInput -> False, FontSlant -> Italic], 
+           "2"], "\[NegativeMediumSpace]", "\"/(\"", "\[InvisibleSpace]", 
+          "\"\[CapitalDelta]\[Nu]\"", 
+          SubscriptBox[
+           TemplateBox[{"\"(\"", 
+             TemplateBox[{
+               
+               TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+            "RowDefault"], "\"hfs\""], "\[ThinSpace]", 
+          StyleBox["\"h\"", StripOnInput -> False, FontSlant -> Italic], 
+          "\[InvisibleSpace]", "\")\""}], 
+        "elementary charge squared per ground state hyperfine splitting \
+frequency of the cesium\[Hyphen]133 atom Planck constant", 
+        FractionBox[
+         SuperscriptBox["\"ElementaryCharge\"", "2"], 
+         RowBox[{
+          "\"Cesium133HyperfineSplittingFrequency\"", " ", 
+           "\"PlanckConstant\""}]]},
+       "Quantity"], ",", 
+      TemplateBox[{"1.`", 
+        RowBox[{
+          SuperscriptBox[
+           StyleBox["\"e\"", StripOnInput -> False, FontSlant -> Italic], 
+           "2"], "\[NegativeMediumSpace]", "\"/(\"", "\[InvisibleSpace]", 
+          "\"\[CapitalDelta]\[Nu]\"", 
+          SubscriptBox[
+           TemplateBox[{"\"(\"", 
+             TemplateBox[{
+               
+               TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+            "RowDefault"], "\"hfs\""], "\[ThinSpace]", 
+          StyleBox["\"h\"", StripOnInput -> False, FontSlant -> Italic], 
+          "\[InvisibleSpace]", "\")\""}], 
+        "elementary charges squared per ground state hyperfine splitting \
+frequency of the cesium\[Hyphen]133 atom Planck constant", 
+        FractionBox[
+         SuperscriptBox["\"ElementaryCharge\"", "2"], 
+         RowBox[{
+          "\"Cesium133HyperfineSplittingFrequency\"", " ", 
+           "\"PlanckConstant\""}]]},
+       "Quantity"]}], "}"}]}], ",", 
+   RowBox[{"\<\"electric-resistance\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"1", "\"\[CapitalOmega]\"", "ohm", "\"Ohms\""},
+       "Quantity"], ",", 
+      TemplateBox[{"1", 
+        RowBox[{
+          StyleBox["\"h\"", Italic, StripOnInput -> False], 
+          "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          SuperscriptBox[
+           StyleBox["\"e\"", Italic, StripOnInput -> False], "2"]}], 
+        "Planck constant per elementary charge squared", 
+        FractionBox["\"PlanckConstant\"", 
+         SuperscriptBox["\"ElementaryCharge\"", "2"]]},
+       "Quantity"], ",", 
+      TemplateBox[{"1.`", 
+        RowBox[{
+          StyleBox["\"h\"", Italic, StripOnInput -> False], 
+          "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          SuperscriptBox[
+           StyleBox["\"e\"", Italic, StripOnInput -> False], "2"]}], 
+        "Planck constants per elementary charge squared", 
+        FractionBox["\"PlanckConstant\"", 
+         SuperscriptBox["\"ElementaryCharge\"", "2"]]},
+       "Quantity"]}], "}"}]}], ",", 
+   RowBox[{"\<\"electric-conductance\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"1", "\"S\"", "siemens", "\"Siemens\""},
+       "Quantity"], ",", 
+      TemplateBox[{"1", 
+        RowBox[{
+          SuperscriptBox[
+           StyleBox["\"e\"", Italic, StripOnInput -> False], "2"], 
+          "\[NegativeMediumSpace]", "\"/\"", "\[InvisibleSpace]", 
+          StyleBox["\"h\"", Italic, StripOnInput -> False]}], 
+        "elementary charge squared per Planck constant", 
+        FractionBox[
+         SuperscriptBox["\"ElementaryCharge\"", "2"], "\"PlanckConstant\""]},
+       "Quantity"], ",", 
+      TemplateBox[{"1.`", 
+        RowBox[{
+          SuperscriptBox[
+           StyleBox["\"e\"", Italic, StripOnInput -> False], "2"], 
+          "\[NegativeMediumSpace]", "\"/\"", "\[InvisibleSpace]", 
+          StyleBox["\"h\"", Italic, StripOnInput -> False]}], 
+        "elementary charges squared per Planck constant", 
+        FractionBox[
+         SuperscriptBox["\"ElementaryCharge\"", "2"], "\"PlanckConstant\""]},
+       "Quantity"]}], "}"}]}], ",", 
+   RowBox[{"\<\"magnetic-flux\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"1", "\"Wb\"", "weber", "\"Webers\""},
+       "Quantity"], ",", 
+      TemplateBox[{"1", 
+        RowBox[{
+          StyleBox["\"h\"", Italic, StripOnInput -> False], 
+          "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          StyleBox["\"e\"", Italic, StripOnInput -> False]}], 
+        "Planck constant per elementary charge", 
+        FractionBox["\"PlanckConstant\"", "\"ElementaryCharge\""]},
+       "Quantity"], ",", 
+      TemplateBox[{"1.`", 
+        RowBox[{
+          StyleBox["\"h\"", Italic, StripOnInput -> False], 
+          "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          StyleBox["\"e\"", Italic, StripOnInput -> False]}], 
+        "Planck constants per elementary charge", 
+        FractionBox["\"PlanckConstant\"", "\"ElementaryCharge\""]},
+       "Quantity"]}], "}"}]}], ",", 
+   RowBox[{"\<\"magnetic-flux-density\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"1", "\"T\"", "tesla", "\"Teslas\""},
+       "Quantity"], ",", 
+      TemplateBox[{"1", 
+        RowBox[{
+          SuperscriptBox[
+           RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+             SubscriptBox[
+              TemplateBox[{"\"(\"", 
+                TemplateBox[{
+                  
+                  TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                   SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+               "RowDefault"], "\"hfs\""]}], "2"], "\[InvisibleSpace]", 
+          StyleBox["\"h\"", Italic, StripOnInput -> False], 
+          "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", 
+          StyleBox["\"e\"", Italic, StripOnInput -> False], "\[ThinSpace]", 
+          SuperscriptBox[
+           StyleBox["\"c\"", Italic, StripOnInput -> False], "2"], 
+          "\[InvisibleSpace]", "\")\""}], 
+        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+atom squared Planck constant per elementary charge speed of light squared", 
+        FractionBox[
+         RowBox[{
+           SuperscriptBox["\"Cesium133HyperfineSplittingFrequency\"", "2"], 
+           " ", "\"PlanckConstant\""}], 
+         RowBox[{"\"ElementaryCharge\"", " ", 
+           SuperscriptBox["\"SpeedOfLight\"", "2"]}]]},
+       "Quantity"], ",", 
+      TemplateBox[{"1.`", 
+        RowBox[{
+          SuperscriptBox[
+           RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+             SubscriptBox[
+              TemplateBox[{"\"(\"", 
+                TemplateBox[{
+                  
+                  TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                   SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+               "RowDefault"], "\"hfs\""]}], "2"], "\[InvisibleSpace]", 
+          StyleBox["\"h\"", Italic, StripOnInput -> False], 
+          "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", 
+          StyleBox["\"e\"", Italic, StripOnInput -> False], "\[ThinSpace]", 
+          SuperscriptBox[
+           StyleBox["\"c\"", Italic, StripOnInput -> False], "2"], 
+          "\[InvisibleSpace]", "\")\""}], 
+        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+atom squared Planck constants per elementary charge speed of light squared", 
+        FractionBox[
+         RowBox[{
+           SuperscriptBox["\"Cesium133HyperfineSplittingFrequency\"", "2"], 
+           " ", "\"PlanckConstant\""}], 
+         RowBox[{"\"ElementaryCharge\"", " ", 
+           SuperscriptBox["\"SpeedOfLight\"", "2"]}]]},
+       "Quantity"]}], "}"}]}], ",", 
+   RowBox[{"\<\"inductance\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"1", "\"H\"", "henry", "\"Henries\""},
+       "Quantity"], ",", 
+      TemplateBox[{"1", 
+        RowBox[{
+          StyleBox["\"h\"", StripOnInput -> False, FontSlant -> Italic], 
+          "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", 
+          "\"\[CapitalDelta]\[Nu]\"", 
+          SubscriptBox[
+           TemplateBox[{"\"(\"", 
+             TemplateBox[{
+               
+               TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+            "RowDefault"], "\"hfs\""], "\[ThinSpace]", 
+          SuperscriptBox[
+           StyleBox["\"e\"", StripOnInput -> False, FontSlant -> Italic], 
+           "2"], "\[InvisibleSpace]", "\")\""}], 
+        "Planck constant per ground state hyperfine splitting frequency of \
+the cesium\[Hyphen]133 atom elementary charge squared", 
+        FractionBox["\"PlanckConstant\"", 
+         RowBox[{"\"Cesium133HyperfineSplittingFrequency\"", " ", 
+           SuperscriptBox["\"ElementaryCharge\"", "2"]}]]},
+       "Quantity"], ",", 
+      TemplateBox[{"1.`", 
+        RowBox[{
+          StyleBox["\"h\"", StripOnInput -> False, FontSlant -> Italic], 
+          "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", 
+          "\"\[CapitalDelta]\[Nu]\"", 
+          SubscriptBox[
+           TemplateBox[{"\"(\"", 
+             TemplateBox[{
+               
+               TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+            "RowDefault"], "\"hfs\""], "\[ThinSpace]", 
+          SuperscriptBox[
+           StyleBox["\"e\"", StripOnInput -> False, FontSlant -> Italic], 
+           "2"], "\[InvisibleSpace]", "\")\""}], 
+        "Planck constants per ground state hyperfine splitting frequency of \
+the cesium\[Hyphen]133 atom elementary charge squared", 
+        FractionBox["\"PlanckConstant\"", 
+         RowBox[{"\"Cesium133HyperfineSplittingFrequency\"", " ", 
+           SuperscriptBox["\"ElementaryCharge\"", "2"]}]]},
+       "Quantity"]}], "}"}]}], ",", 
+   RowBox[{"\<\"Celsius-temperature\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{
+       "1", "\"\[Degree]C\"", "degree Celsius", "\"DegreesCelsius\""},
+       "Quantity"], ",", 
+      TemplateBox[{"1", 
+        RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+          SubscriptBox[
+           TemplateBox[{"\"(\"", 
+             TemplateBox[{
+               
+               TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+            "RowDefault"], "\"hfs\""], "\[ThinSpace]", 
+          StyleBox["\"h\"", StripOnInput -> False, FontSlant -> Italic], 
+          "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          StyleBox["\"k\"", StripOnInput -> False, FontSlant -> Italic]}], 
+        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+atom Planck constant per Boltzmann constant", 
+        FractionBox[
+         RowBox[{
+          "\"Cesium133HyperfineSplittingFrequency\"", " ", 
+           "\"PlanckConstant\""}], "\"BoltzmannConstant\""]},
+       "Quantity"], ",", 
+      TemplateBox[{"1.`", 
+        RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+          SubscriptBox[
+           TemplateBox[{"\"(\"", 
+             TemplateBox[{
+               
+               TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+            "RowDefault"], "\"hfs\""], "\[ThinSpace]", 
+          StyleBox["\"h\"", StripOnInput -> False, FontSlant -> Italic], 
+          "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          StyleBox["\"k\"", StripOnInput -> False, FontSlant -> Italic]}], 
+        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+atom Planck constants per Boltzmann constant", 
+        FractionBox[
+         RowBox[{
+          "\"Cesium133HyperfineSplittingFrequency\"", " ", 
+           "\"PlanckConstant\""}], "\"BoltzmannConstant\""]},
+       "Quantity"]}], "}"}]}], ",", 
+   RowBox[{"\<\"luminous-flux\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"1", "\"lm\"", "lumen", "\"Lumens\""},
+       "Quantity"], ",", 
+      TemplateBox[{
+        FractionBox[
+        "2000000000000000000000000000000000000000", 
+         "76486793830390329632626020921"], 
+        RowBox[{
+          SuperscriptBox[
+           RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+             SubscriptBox[
+              TemplateBox[{"\"(\"", 
+                TemplateBox[{
+                  
+                  TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                   SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+               "RowDefault"], "\"hfs\""]}], "2"], "\[InvisibleSpace]", 
+          SubscriptBox[
+           StyleBox["\"K\"", Italic, StripOnInput -> False], "\"cd\""], 
+          "\[ThinSpace]", 
+          StyleBox["\"h\"", Italic, StripOnInput -> False]}], 
+        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
 atom squared luminous efficacy of monochromatic radiation of frequency 540 \
 THz Planck constants", 
-      RowBox[{
-        SuperscriptBox["\"Cesium133HyperfineSplittingFrequency\"", "2"], " ", 
-        "\"MonochromaticRadiation540THzLuminousEfficacy\"", " ", 
-        "\"PlanckConstant\""}]},
-     "Quantity"]}], ",", 
-   RowBox[{
-    TemplateBox[{"1", "\"lx\"", "lux", "\"Lux\""},
-     "Quantity"], "\[Rule]", 
-    TemplateBox[{"2.7810270759725373`*^7", 
-      RowBox[{
-        SuperscriptBox[
-         RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
-           SubscriptBox[
-            TemplateBox[{"\"(\"", 
-              TemplateBox[{
-                
-                TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
-                 SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
-             "RowDefault"], "\"hfs\""]}], "4"], "\[InvisibleSpace]", 
-        SubscriptBox[
-         StyleBox["\"K\"", Italic, StripOnInput -> False], "\"cd\""], 
-        "\[ThinSpace]", 
-        StyleBox["\"h\"", Italic, StripOnInput -> False], "\[InvisibleSpace]",
-         "\"/\"", "\[InvisibleSpace]", 
-        SuperscriptBox[
-         StyleBox["\"c\"", Italic, StripOnInput -> False], "2"]}], 
-      "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+        RowBox[{
+          SuperscriptBox["\"Cesium133HyperfineSplittingFrequency\"", "2"], 
+          " ", "\"MonochromaticRadiation540THzLuminousEfficacy\"", " ", 
+          "\"PlanckConstant\""}]},
+       "Quantity"], ",", 
+      TemplateBox[{"2.6148304822856155`*^10", 
+        RowBox[{
+          SuperscriptBox[
+           RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+             SubscriptBox[
+              TemplateBox[{"\"(\"", 
+                TemplateBox[{
+                  
+                  TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                   SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+               "RowDefault"], "\"hfs\""]}], "2"], "\[InvisibleSpace]", 
+          SubscriptBox[
+           StyleBox["\"K\"", Italic, StripOnInput -> False], "\"cd\""], 
+          "\[ThinSpace]", 
+          StyleBox["\"h\"", Italic, StripOnInput -> False]}], 
+        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+atom squared luminous efficacy of monochromatic radiation of frequency 540 \
+THz Planck constants", 
+        RowBox[{
+          SuperscriptBox["\"Cesium133HyperfineSplittingFrequency\"", "2"], 
+          " ", "\"MonochromaticRadiation540THzLuminousEfficacy\"", " ", 
+          "\"PlanckConstant\""}]},
+       "Quantity"]}], "}"}]}], ",", 
+   RowBox[{"\<\"illuminance\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"1", "\"lx\"", "lux", "\"Lux\""},
+       "Quantity"], ",", 
+      TemplateBox[{
+        FractionBox[
+        "36683884846400720000000000000000000000000000000000000", 
+         "1319076867799721157992993870790075478454926041"], 
+        RowBox[{
+          SuperscriptBox[
+           RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+             SubscriptBox[
+              TemplateBox[{"\"(\"", 
+                TemplateBox[{
+                  
+                  TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                   SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+               "RowDefault"], "\"hfs\""]}], "4"], "\[InvisibleSpace]", 
+          SubscriptBox[
+           StyleBox["\"K\"", Italic, StripOnInput -> False], "\"cd\""], 
+          "\[ThinSpace]", 
+          StyleBox["\"h\"", Italic, StripOnInput -> False], 
+          "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          SuperscriptBox[
+           StyleBox["\"c\"", Italic, StripOnInput -> False], "2"]}], 
+        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
 atom to the fourth luminous efficacy of monochromatic radiation of frequency \
 540 THz Planck constants per speed of light squared", 
-      FractionBox[
-       RowBox[{
-         SuperscriptBox["\"Cesium133HyperfineSplittingFrequency\"", "4"], " ",
-          "\"MonochromaticRadiation540THzLuminousEfficacy\"", " ", 
-         "\"PlanckConstant\""}], 
-       SuperscriptBox["\"SpeedOfLight\"", "2"]]},
-     "Quantity"]}], ",", 
-   RowBox[{
-    TemplateBox[{"1", "\"N\"", "newton", "\"Newtons\""},
-     "Quantity"], "\[Rule]", 
-    TemplateBox[{"1.`", 
-      RowBox[{
-        SuperscriptBox[
-         RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
-           SubscriptBox[
-            TemplateBox[{"\"(\"", 
-              TemplateBox[{
-                
-                TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
-                 SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
-             "RowDefault"], "\"hfs\""]}], "2"], "\[InvisibleSpace]", 
-        StyleBox["\"h\"", Italic, StripOnInput -> False], "\[InvisibleSpace]",
-         "\"/\"", "\[InvisibleSpace]", 
-        StyleBox["\"c\"", Italic, StripOnInput -> False]}], 
-      "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
-atom squared Planck constants per speed of light", 
-      FractionBox[
-       RowBox[{
-         SuperscriptBox["\"Cesium133HyperfineSplittingFrequency\"", "2"], " ",
-          "\"PlanckConstant\""}], "\"SpeedOfLight\""]},
-     "Quantity"]}], ",", 
-   RowBox[{
-    TemplateBox[{"1", "\"\[CapitalOmega]\"", "ohm", "\"Ohms\""},
-     "Quantity"], "\[Rule]", 
-    TemplateBox[{"1.`", 
-      RowBox[{
-        StyleBox["\"h\"", Italic, StripOnInput -> False], "\[InvisibleSpace]",
-         "\"/\"", "\[InvisibleSpace]", 
-        SuperscriptBox[
-         StyleBox["\"e\"", Italic, StripOnInput -> False], "2"]}], 
-      "Planck constants per elementary charge squared", 
-      FractionBox["\"PlanckConstant\"", 
-       SuperscriptBox["\"ElementaryCharge\"", "2"]]},
-     "Quantity"]}], ",", 
-   RowBox[{
-    TemplateBox[{"1", "\"Pa\"", "pascal", "\"Pascals\""},
-     "Quantity"], "\[Rule]", 
-    TemplateBox[{"1.`", 
-      RowBox[{
-        SuperscriptBox[
-         RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
-           SubscriptBox[
-            TemplateBox[{"\"(\"", 
-              TemplateBox[{
-                
-                TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
-                 SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
-             "RowDefault"], "\"hfs\""]}], "4"], "\[InvisibleSpace]", 
-        StyleBox["\"h\"", Italic, StripOnInput -> False], "\[InvisibleSpace]",
-         "\"/\"", "\[InvisibleSpace]", 
-        SuperscriptBox[
-         StyleBox["\"c\"", Italic, StripOnInput -> False], "3"]}], 
-      "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
-atom to the fourth Planck constants per speed of light cubed", 
-      FractionBox[
-       RowBox[{
-         SuperscriptBox["\"Cesium133HyperfineSplittingFrequency\"", "4"], " ",
-          "\"PlanckConstant\""}], 
-       SuperscriptBox["\"SpeedOfLight\"", "3"]]},
-     "Quantity"]}], ",", 
-   RowBox[{
-    TemplateBox[{"1", "\"rad\"", "radian", "\"Radians\""},
-     "Quantity"], "\[Rule]", "1.`"}], ",", 
-   RowBox[{
-    TemplateBox[{"1", "\"S\"", "siemens", "\"Siemens\""},
-     "Quantity"], "\[Rule]", 
-    TemplateBox[{"1.`", 
-      RowBox[{
-        SuperscriptBox[
-         StyleBox["\"e\"", Italic, StripOnInput -> False], "2"], 
-        "\[NegativeMediumSpace]", "\"/\"", "\[InvisibleSpace]", 
-        StyleBox["\"h\"", Italic, StripOnInput -> False]}], 
-      "elementary charges squared per Planck constant", 
-      FractionBox[
-       SuperscriptBox["\"ElementaryCharge\"", "2"], "\"PlanckConstant\""]},
-     "Quantity"]}], ",", 
-   RowBox[{
-    TemplateBox[{"1", "\"Sv\"", "sievert", "\"Sieverts\""},
-     "Quantity"], "\[Rule]", 
-    TemplateBox[{"1.`", 
-      RowBox[{
-        SuperscriptBox[
-         StyleBox["\"c\"", Italic, StripOnInput -> False], "2"]}], 
-      "speed of light squared", 
-      SuperscriptBox["\"SpeedOfLight\"", "2"]},
-     "Quantity"]}], ",", 
-   RowBox[{
-    TemplateBox[{"1", "\"T\"", "tesla", "\"Teslas\""},
-     "Quantity"], "\[Rule]", 
-    TemplateBox[{"1.`", 
-      RowBox[{
-        SuperscriptBox[
-         RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
-           SubscriptBox[
-            TemplateBox[{"\"(\"", 
-              TemplateBox[{
-                
-                TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
-                 SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
-             "RowDefault"], "\"hfs\""]}], "2"], "\[InvisibleSpace]", 
-        StyleBox["\"h\"", Italic, StripOnInput -> False], "\[InvisibleSpace]",
-         "\"/(\"", "\[InvisibleSpace]", 
-        StyleBox["\"e\"", Italic, StripOnInput -> False], "\[ThinSpace]", 
-        SuperscriptBox[
-         StyleBox["\"c\"", Italic, StripOnInput -> False], "2"], 
-        "\[InvisibleSpace]", "\")\""}], 
-      "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
-atom squared Planck constants per elementary charge speed of light squared", 
-      FractionBox[
-       RowBox[{
-         SuperscriptBox["\"Cesium133HyperfineSplittingFrequency\"", "2"], " ",
-          "\"PlanckConstant\""}], 
-       RowBox[{"\"ElementaryCharge\"", " ", 
-         SuperscriptBox["\"SpeedOfLight\"", "2"]}]]},
-     "Quantity"]}], ",", 
-   RowBox[{
-    TemplateBox[{"1", "\"V\"", "volt", "\"Volts\""},
-     "Quantity"], "\[Rule]", 
-    TemplateBox[{"1.`", 
-      RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
-        SubscriptBox[
-         TemplateBox[{"\"(\"", 
-           TemplateBox[{
-             
-             TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
-              SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
-          "RowDefault"], "\"hfs\""], "\[ThinSpace]", 
-        StyleBox["\"h\"", StripOnInput -> False, FontSlant -> Italic], 
-        "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
-        StyleBox["\"e\"", StripOnInput -> False, FontSlant -> Italic]}], 
-      "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
-atom Planck constants per elementary charge", 
-      FractionBox[
-       RowBox[{
-        "\"Cesium133HyperfineSplittingFrequency\"", " ", 
-         "\"PlanckConstant\""}], "\"ElementaryCharge\""]},
-     "Quantity"]}], ",", 
-   RowBox[{
-    TemplateBox[{"1", "\"W\"", "watt", "\"Watts\""},
-     "Quantity"], "\[Rule]", 
-    TemplateBox[{"1.`", 
-      RowBox[{
-        SuperscriptBox[
-         RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
-           SubscriptBox[
-            TemplateBox[{"\"(\"", 
-              TemplateBox[{
-                
-                TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
-                 SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
-             "RowDefault"], "\"hfs\""]}], "2"], "\[InvisibleSpace]", 
-        StyleBox["\"h\"", Italic, StripOnInput -> False]}], 
-      "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
-atom squared Planck constants", 
-      RowBox[{
-        SuperscriptBox["\"Cesium133HyperfineSplittingFrequency\"", "2"], " ", 
-        "\"PlanckConstant\""}]},
-     "Quantity"]}], ",", 
-   RowBox[{
-    TemplateBox[{"1", "\"Wb\"", "weber", "\"Webers\""},
-     "Quantity"], "\[Rule]", 
-    TemplateBox[{"1.`", 
-      RowBox[{
-        StyleBox["\"h\"", Italic, StripOnInput -> False], "\[InvisibleSpace]",
-         "\"/\"", "\[InvisibleSpace]", 
-        StyleBox["\"e\"", Italic, StripOnInput -> False]}], 
-      "Planck constants per elementary charge", 
-      FractionBox["\"PlanckConstant\"", "\"ElementaryCharge\""]},
-     "Quantity"]}]}], "\[RightAssociation]"}]], "Output",
- CellChangeTimes->{3.8724350148776464`*^9, 3.872435071724049*^9},
- CellLabel->"Out[16]=",
- CellID->132702624,ExpressionUUID->"c53e567a-819a-4b98-825f-f990ad559805"]
+        FractionBox[
+         RowBox[{
+           SuperscriptBox["\"Cesium133HyperfineSplittingFrequency\"", "4"], 
+           " ", "\"MonochromaticRadiation540THzLuminousEfficacy\"", " ", 
+           "\"PlanckConstant\""}], 
+         SuperscriptBox["\"SpeedOfLight\"", "2"]]},
+       "Quantity"], ",", 
+      TemplateBox[{"2.7810270759725373`*^7", 
+        RowBox[{
+          SuperscriptBox[
+           RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+             SubscriptBox[
+              TemplateBox[{"\"(\"", 
+                TemplateBox[{
+                  
+                  TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                   SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+               "RowDefault"], "\"hfs\""]}], "4"], "\[InvisibleSpace]", 
+          SubscriptBox[
+           StyleBox["\"K\"", Italic, StripOnInput -> False], "\"cd\""], 
+          "\[ThinSpace]", 
+          StyleBox["\"h\"", Italic, StripOnInput -> False], 
+          "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          SuperscriptBox[
+           StyleBox["\"c\"", Italic, StripOnInput -> False], "2"]}], 
+        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+atom to the fourth luminous efficacy of monochromatic radiation of frequency \
+540 THz Planck constants per speed of light squared", 
+        FractionBox[
+         RowBox[{
+           SuperscriptBox["\"Cesium133HyperfineSplittingFrequency\"", "4"], 
+           " ", "\"MonochromaticRadiation540THzLuminousEfficacy\"", " ", 
+           "\"PlanckConstant\""}], 
+         SuperscriptBox["\"SpeedOfLight\"", "2"]]},
+       "Quantity"]}], "}"}]}], ",", 
+   RowBox[{"\<\"activity-referred-to-a-radionuclide\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"1", "\"Bq\"", "becquerel", "\"Becquerels\""},
+       "Quantity"], ",", 
+      TemplateBox[{
+        InterpretationBox["\[InvisibleSpace]", 1], 
+        RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+          SubscriptBox[
+           TemplateBox[{"\"(\"", 
+             TemplateBox[{
+               
+               TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+            "RowDefault"], "\"hfs\""]}], 
+        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+atom", "\"Cesium133HyperfineSplittingFrequency\""},
+       "Quantity"], ",", 
+      TemplateBox[{"1.`", 
+        RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+          SubscriptBox[
+           TemplateBox[{"\"(\"", 
+             TemplateBox[{
+               
+               TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+            "RowDefault"], "\"hfs\""]}], 
+        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+atom", "\"Cesium133HyperfineSplittingFrequency\""},
+       "Quantity"]}], "}"}]}], ",", 
+   RowBox[{"\<\"absorbed-dose-kerma\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"1", "\"Gy\"", "gray", "\"Grays\""},
+       "Quantity"], ",", 
+      TemplateBox[{"1", 
+        RowBox[{
+          SuperscriptBox[
+           StyleBox["\"c\"", Italic, StripOnInput -> False], "2"]}], 
+        "speed of light squared", 
+        SuperscriptBox["\"SpeedOfLight\"", "2"]},
+       "Quantity"], ",", 
+      TemplateBox[{"1.`", 
+        RowBox[{
+          SuperscriptBox[
+           StyleBox["\"c\"", Italic, StripOnInput -> False], "2"]}], 
+        "speed of light squared", 
+        SuperscriptBox["\"SpeedOfLight\"", "2"]},
+       "Quantity"]}], "}"}]}], ",", 
+   RowBox[{"\<\"dose-equivalent\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"1", "\"Sv\"", "sievert", "\"Sieverts\""},
+       "Quantity"], ",", 
+      TemplateBox[{"1", 
+        RowBox[{
+          SuperscriptBox[
+           StyleBox["\"c\"", Italic, StripOnInput -> False], "2"]}], 
+        "speed of light squared", 
+        SuperscriptBox["\"SpeedOfLight\"", "2"]},
+       "Quantity"], ",", 
+      TemplateBox[{"1.`", 
+        RowBox[{
+          SuperscriptBox[
+           StyleBox["\"c\"", Italic, StripOnInput -> False], "2"]}], 
+        "speed of light squared", 
+        SuperscriptBox["\"SpeedOfLight\"", "2"]},
+       "Quantity"]}], "}"}]}], ",", 
+   RowBox[{"\<\"catalytic-activity\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"1", "\"kat\"", "katal", "\"Katals\""},
+       "Quantity"], ",", 
+      TemplateBox[{"1", 
+        RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+          SubscriptBox[
+           TemplateBox[{"\"(\"", 
+             TemplateBox[{
+               
+               TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+            "RowDefault"], "\"hfs\""], "\[InvisibleSpace]", "\"/\"", 
+          "\[InvisibleSpace]", 
+          SubscriptBox[
+           StyleBox["\"N\"", StripOnInput -> False, FontSlant -> Italic], 
+           StyleBox["\"A\"", StripOnInput -> False, FontSlant -> Italic]]}], 
+        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+atom per Avogadro constant", 
+        FractionBox[
+        "\"Cesium133HyperfineSplittingFrequency\"", "\"AvogadroConstant\""]},
+       "Quantity"], ",", 
+      TemplateBox[{"1.`", 
+        RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+          SubscriptBox[
+           TemplateBox[{"\"(\"", 
+             TemplateBox[{
+               
+               TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+            "RowDefault"], "\"hfs\""], "\[InvisibleSpace]", "\"/\"", 
+          "\[InvisibleSpace]", 
+          SubscriptBox[
+           StyleBox["\"N\"", StripOnInput -> False, FontSlant -> Italic], 
+           StyleBox["\"A\"", StripOnInput -> False, FontSlant -> Italic]]}], 
+        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+atom per Avogadro constant", 
+        FractionBox[
+        "\"Cesium133HyperfineSplittingFrequency\"", "\"AvogadroConstant\""]},
+       "Quantity"]}], "}"}]}]}], "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{3.8724360461453457`*^9},
+ CellLabel->"Out[30]=",
+ CellID->96056475,ExpressionUUID->"cf4defbe-362d-4621-b11a-10aaa4cf97ab"]
 }, Open  ]],
 
 Cell["SI derived units:", "Text",
@@ -1875,10 +1929,13 @@ Cell[BoxData[
   RowBox[{
    RowBox[{"{", 
     RowBox[{"#", ",", 
-     RowBox[{"SIConstantConvert", "[", "#", "]"}]}], "}"}], "&"}], "/@", 
-  "DERIVEDQUANTITIESINSIUNITS"}]], "Input",
- CellChangeTimes->{{3.872435453743038*^9, 3.8724354635256042`*^9}},
- CellLabel->"In[19]:=",
+     RowBox[{"SIConstantConvert", "[", "#", "]"}], ",", 
+     RowBox[{"N", "[", 
+      RowBox[{"SIConstantConvert", "[", "#", "]"}], "]"}]}], "}"}], "&"}], "/@",
+   "DERIVEDQUANTITIESINSIUNITS"}]], "Input",
+ CellChangeTimes->{{3.872435453743038*^9, 3.8724354635256042`*^9}, {
+  3.8724360828992386`*^9, 3.87243609084768*^9}},
+ CellLabel->"In[31]:=",
  CellID->619879524,ExpressionUUID->"1792e110-5b71-49c0-9422-6b4017d43f80"],
 
 Cell[BoxData[
@@ -1890,6 +1947,23 @@ Cell[BoxData[
       TemplateBox[{"1", "\"m\"", "meter", "\"Meters\""},
        "Quantity"], ",", 
       TemplateBox[{"1", 
+        RowBox[{
+          StyleBox["\"c\"", StripOnInput -> False, FontSlant -> Italic], 
+          "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          "\"\[CapitalDelta]\[Nu]\"", 
+          SubscriptBox[
+           TemplateBox[{"\"(\"", 
+             TemplateBox[{
+               
+               TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+            "RowDefault"], "\"hfs\""]}], 
+        "speed of light per ground state hyperfine splitting frequency of the \
+cesium\[Hyphen]133 atom", 
+        FractionBox[
+        "\"SpeedOfLight\"", "\"Cesium133HyperfineSplittingFrequency\""]},
+       "Quantity"], ",", 
+      TemplateBox[{"1.`", 
         RowBox[{
           StyleBox["\"c\"", StripOnInput -> False, FontSlant -> Italic], 
           "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
@@ -1927,6 +2001,23 @@ cesium\[Hyphen]133 atom",
 cesium\[Hyphen]133 atom", 
         FractionBox[
         "\"SpeedOfLight\"", "\"Cesium133HyperfineSplittingFrequency\""]},
+       "Quantity"], ",", 
+      TemplateBox[{"1.`", 
+        RowBox[{
+          StyleBox["\"c\"", StripOnInput -> False, FontSlant -> Italic], 
+          "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          "\"\[CapitalDelta]\[Nu]\"", 
+          SubscriptBox[
+           TemplateBox[{"\"(\"", 
+             TemplateBox[{
+               
+               TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+            "RowDefault"], "\"hfs\""]}], 
+        "speed of light per ground state hyperfine splitting frequency of the \
+cesium\[Hyphen]133 atom", 
+        FractionBox[
+        "\"SpeedOfLight\"", "\"Cesium133HyperfineSplittingFrequency\""]},
        "Quantity"]}], "}"}]}], ",", 
    RowBox[{"\<\"speed-velocity\"\>", "\[Rule]", 
     RowBox[{"{", 
@@ -1939,6 +2030,10 @@ cesium\[Hyphen]133 atom",
        "Quantity"], ",", 
       TemplateBox[{
         InterpretationBox["\[InvisibleSpace]", 1], 
+        StyleBox["\"c\"", Italic, StripOnInput -> False], "speed of light", 
+        "\"SpeedOfLight\""},
+       "Quantity"], ",", 
+      TemplateBox[{"1.`", 
         StyleBox["\"c\"", Italic, StripOnInput -> False], "speed of light", 
         "\"SpeedOfLight\""},
        "Quantity"]}], "}"}]}], ",", 
@@ -1955,6 +2050,10 @@ cesium\[Hyphen]133 atom",
         InterpretationBox["\[InvisibleSpace]", 1], 
         StyleBox["\"c\"", Italic, StripOnInput -> False], "speed of light", 
         "\"SpeedOfLight\""},
+       "Quantity"], ",", 
+      TemplateBox[{"1.`", 
+        StyleBox["\"c\"", Italic, StripOnInput -> False], "speed of light", 
+        "\"SpeedOfLight\""},
        "Quantity"]}], "}"}]}], ",", 
    RowBox[{"\<\"wavenumber\"\>", "\[Rule]", 
     RowBox[{"{", 
@@ -1962,6 +2061,23 @@ cesium\[Hyphen]133 atom",
       TemplateBox[{"1", "\"m\"", "meter", "\"Meters\""},
        "Quantity"], ",", 
       TemplateBox[{"1", 
+        RowBox[{
+          StyleBox["\"c\"", StripOnInput -> False, FontSlant -> Italic], 
+          "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          "\"\[CapitalDelta]\[Nu]\"", 
+          SubscriptBox[
+           TemplateBox[{"\"(\"", 
+             TemplateBox[{
+               
+               TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+            "RowDefault"], "\"hfs\""]}], 
+        "speed of light per ground state hyperfine splitting frequency of the \
+cesium\[Hyphen]133 atom", 
+        FractionBox[
+        "\"SpeedOfLight\"", "\"Cesium133HyperfineSplittingFrequency\""]},
+       "Quantity"], ",", 
+      TemplateBox[{"1.`", 
         RowBox[{
           StyleBox["\"c\"", StripOnInput -> False, FontSlant -> Italic], 
           "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
@@ -2009,6 +2125,29 @@ atom squared Planck constant per speed of light cubed",
            SuperscriptBox["\"Cesium133HyperfineSplittingFrequency\"", "2"], 
            " ", "\"PlanckConstant\""}], 
          SuperscriptBox["\"SpeedOfLight\"", "3"]]},
+       "Quantity"], ",", 
+      TemplateBox[{"1.`", 
+        RowBox[{
+          SuperscriptBox[
+           RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+             SubscriptBox[
+              TemplateBox[{"\"(\"", 
+                TemplateBox[{
+                  
+                  TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                   SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+               "RowDefault"], "\"hfs\""]}], "2"], "\[InvisibleSpace]", 
+          StyleBox["\"h\"", Italic, StripOnInput -> False], 
+          "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          SuperscriptBox[
+           StyleBox["\"c\"", Italic, StripOnInput -> False], "3"]}], 
+        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+atom squared Planck constants per speed of light cubed", 
+        FractionBox[
+         RowBox[{
+           SuperscriptBox["\"Cesium133HyperfineSplittingFrequency\"", "2"], 
+           " ", "\"PlanckConstant\""}], 
+         SuperscriptBox["\"SpeedOfLight\"", "3"]]},
        "Quantity"]}], "}"}]}], ",", 
    RowBox[{"\<\"surface-density\"\>", "\[Rule]", 
     RowBox[{"{", 
@@ -2023,6 +2162,14 @@ atom squared Planck constant per speed of light cubed",
           "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
           StyleBox["\"c\"", Italic, StripOnInput -> False]}], 
         "Planck constant per speed of light", 
+        FractionBox["\"PlanckConstant\"", "\"SpeedOfLight\""]},
+       "Quantity"], ",", 
+      TemplateBox[{"1.`", 
+        RowBox[{
+          StyleBox["\"h\"", Italic, StripOnInput -> False], 
+          "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          StyleBox["\"c\"", Italic, StripOnInput -> False]}], 
+        "Planck constants per speed of light", 
         FractionBox["\"PlanckConstant\"", "\"SpeedOfLight\""]},
        "Quantity"]}], "}"}]}], ",", 
    RowBox[{"\<\"specific-volume\"\>", "\[Rule]", 
@@ -2039,6 +2186,14 @@ atom squared Planck constant per speed of light cubed",
           StyleBox["\"c\"", Italic, StripOnInput -> False]}], 
         "Planck constant per speed of light", 
         FractionBox["\"PlanckConstant\"", "\"SpeedOfLight\""]},
+       "Quantity"], ",", 
+      TemplateBox[{"1.`", 
+        RowBox[{
+          StyleBox["\"h\"", Italic, StripOnInput -> False], 
+          "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          StyleBox["\"c\"", Italic, StripOnInput -> False]}], 
+        "Planck constants per speed of light", 
+        FractionBox["\"PlanckConstant\"", "\"SpeedOfLight\""]},
        "Quantity"]}], "}"}]}], ",", 
    RowBox[{"\<\"current-density\"\>", "\[Rule]", 
     RowBox[{"{", 
@@ -2053,6 +2208,13 @@ atom squared Planck constant per speed of light cubed",
           StyleBox["\"c\"", Italic, StripOnInput -> False]}], 
         "elementary charge speed of light", 
         RowBox[{"\"ElementaryCharge\"", " ", "\"SpeedOfLight\""}]},
+       "Quantity"], ",", 
+      TemplateBox[{"1.`", 
+        RowBox[{
+          StyleBox["\"e\"", Italic, StripOnInput -> False], "\[ThinSpace]", 
+          StyleBox["\"c\"", Italic, StripOnInput -> False]}], 
+        "elementary charge speed of light", 
+        RowBox[{"\"ElementaryCharge\"", " ", "\"SpeedOfLight\""}]},
        "Quantity"]}], "}"}]}], ",", 
    RowBox[{"\<\"magnetic-field-strength\"\>", "\[Rule]", 
     RowBox[{"{", 
@@ -2062,6 +2224,13 @@ atom squared Planck constant per speed of light cubed",
         RowBox[{"\"Amperes\"", " ", "\"Meters\""}]},
        "Quantity"], ",", 
       TemplateBox[{"1", 
+        RowBox[{
+          StyleBox["\"e\"", Italic, StripOnInput -> False], "\[ThinSpace]", 
+          StyleBox["\"c\"", Italic, StripOnInput -> False]}], 
+        "elementary charge speed of light", 
+        RowBox[{"\"ElementaryCharge\"", " ", "\"SpeedOfLight\""}]},
+       "Quantity"], ",", 
+      TemplateBox[{"1.`", 
         RowBox[{
           StyleBox["\"e\"", Italic, StripOnInput -> False], "\[ThinSpace]", 
           StyleBox["\"c\"", Italic, StripOnInput -> False]}], 
@@ -2097,6 +2266,29 @@ cesium\[Hyphen]133 atom Avogadro constant",
          RowBox[{
           "\"AvogadroConstant\"", " ", 
            "\"Cesium133HyperfineSplittingFrequency\""}]]},
+       "Quantity"], ",", 
+      TemplateBox[{"1.`", 
+        RowBox[{
+          StyleBox["\"c\"", StripOnInput -> False, FontSlant -> Italic], 
+          "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", 
+          "\"\[CapitalDelta]\[Nu]\"", 
+          SubscriptBox[
+           TemplateBox[{"\"(\"", 
+             TemplateBox[{
+               
+               TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+            "RowDefault"], "\"hfs\""], "\[ThinSpace]", 
+          SubscriptBox[
+           StyleBox["\"N\"", StripOnInput -> False, FontSlant -> Italic], 
+           StyleBox["\"A\"", StripOnInput -> False, FontSlant -> Italic]], 
+          "\[InvisibleSpace]", "\")\""}], 
+        "speed of light per ground state hyperfine splitting frequency of the \
+cesium\[Hyphen]133 atom Avogadro constant", 
+        FractionBox["\"SpeedOfLight\"", 
+         RowBox[{
+          "\"AvogadroConstant\"", " ", 
+           "\"Cesium133HyperfineSplittingFrequency\""}]]},
        "Quantity"]}], "}"}]}], ",", 
    RowBox[{"\<\"mass-concentration\"\>", "\[Rule]", 
     RowBox[{"{", 
@@ -2111,6 +2303,14 @@ cesium\[Hyphen]133 atom Avogadro constant",
           "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
           StyleBox["\"c\"", Italic, StripOnInput -> False]}], 
         "Planck constant per speed of light", 
+        FractionBox["\"PlanckConstant\"", "\"SpeedOfLight\""]},
+       "Quantity"], ",", 
+      TemplateBox[{"1.`", 
+        RowBox[{
+          StyleBox["\"h\"", Italic, StripOnInput -> False], 
+          "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          StyleBox["\"c\"", Italic, StripOnInput -> False]}], 
+        "Planck constants per speed of light", 
         FractionBox["\"PlanckConstant\"", "\"SpeedOfLight\""]},
        "Quantity"]}], "}"}]}], ",", 
    RowBox[{"\<\"luminance\"\>", "\[Rule]", 
@@ -2149,262 +2349,6 @@ constant speed of light per radian squared",
            "\"MonochromaticRadiation540THzLuminousEfficacy\"", " ", 
            "\"PlanckConstant\"", " ", "\"SpeedOfLight\""}], 
          SuperscriptBox["\"Radians\"", "2"]]},
-       "Quantity"]}], "}"}]}]}], "\[RightAssociation]"}]], "Output",
- CellChangeTimes->{3.872435463946498*^9},
- CellLabel->"Out[19]=",
- CellID->119575190,ExpressionUUID->"e1066de6-9d7d-49ce-8bc8-09c6cb60f0f3"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{
-   RowBox[{"{", 
-    RowBox[{"#", ",", 
-     RowBox[{"N", "@", 
-      RowBox[{"SIConstantConvert", "[", "#", "]"}]}]}], "}"}], "&"}], "/@", 
-  "DERIVEDQUANTITIESINSIUNITS"}]], "Input",
- CellChangeTimes->{{3.872435453743038*^9, 3.8724354869946203`*^9}},
- CellLabel->"In[20]:=",
- CellID->574311568,ExpressionUUID->"04763a8e-1677-455b-9288-8fa1ca153033"],
-
-Cell[BoxData[
- RowBox[{"\[LeftAssociation]", 
-  RowBox[{
-   RowBox[{"\<\"area\"\>", "\[Rule]", 
-    RowBox[{"{", 
-     RowBox[{
-      TemplateBox[{"1", "\"m\"", "meter", "\"Meters\""},
-       "Quantity"], ",", 
-      TemplateBox[{"1.`", 
-        RowBox[{
-          StyleBox["\"c\"", StripOnInput -> False, FontSlant -> Italic], 
-          "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
-          "\"\[CapitalDelta]\[Nu]\"", 
-          SubscriptBox[
-           TemplateBox[{"\"(\"", 
-             TemplateBox[{
-               
-               TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
-                SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
-            "RowDefault"], "\"hfs\""]}], 
-        "speed of light per ground state hyperfine splitting frequency of the \
-cesium\[Hyphen]133 atom", 
-        FractionBox[
-        "\"SpeedOfLight\"", "\"Cesium133HyperfineSplittingFrequency\""]},
-       "Quantity"]}], "}"}]}], ",", 
-   RowBox[{"\<\"volume\"\>", "\[Rule]", 
-    RowBox[{"{", 
-     RowBox[{
-      TemplateBox[{"1", "\"m\"", "meter", "\"Meters\""},
-       "Quantity"], ",", 
-      TemplateBox[{"1.`", 
-        RowBox[{
-          StyleBox["\"c\"", StripOnInput -> False, FontSlant -> Italic], 
-          "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
-          "\"\[CapitalDelta]\[Nu]\"", 
-          SubscriptBox[
-           TemplateBox[{"\"(\"", 
-             TemplateBox[{
-               
-               TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
-                SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
-            "RowDefault"], "\"hfs\""]}], 
-        "speed of light per ground state hyperfine splitting frequency of the \
-cesium\[Hyphen]133 atom", 
-        FractionBox[
-        "\"SpeedOfLight\"", "\"Cesium133HyperfineSplittingFrequency\""]},
-       "Quantity"]}], "}"}]}], ",", 
-   RowBox[{"\<\"speed-velocity\"\>", "\[Rule]", 
-    RowBox[{"{", 
-     RowBox[{
-      TemplateBox[{"1", 
-        RowBox[{
-         "\"m\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
-          "\"s\""}], "meter per second", 
-        FractionBox["\"Meters\"", "\"Seconds\""]},
-       "Quantity"], ",", 
-      TemplateBox[{"1.`", 
-        StyleBox["\"c\"", Italic, StripOnInput -> False], "speed of light", 
-        "\"SpeedOfLight\""},
-       "Quantity"]}], "}"}]}], ",", 
-   RowBox[{"\<\"acceleration\"\>", "\[Rule]", 
-    RowBox[{"{", 
-     RowBox[{
-      TemplateBox[{"1", 
-        RowBox[{
-         "\"m\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
-          "\"s\""}], "meter per second", 
-        FractionBox["\"Meters\"", "\"Seconds\""]},
-       "Quantity"], ",", 
-      TemplateBox[{"1.`", 
-        StyleBox["\"c\"", Italic, StripOnInput -> False], "speed of light", 
-        "\"SpeedOfLight\""},
-       "Quantity"]}], "}"}]}], ",", 
-   RowBox[{"\<\"wavenumber\"\>", "\[Rule]", 
-    RowBox[{"{", 
-     RowBox[{
-      TemplateBox[{"1", "\"m\"", "meter", "\"Meters\""},
-       "Quantity"], ",", 
-      TemplateBox[{"1.`", 
-        RowBox[{
-          StyleBox["\"c\"", StripOnInput -> False, FontSlant -> Italic], 
-          "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
-          "\"\[CapitalDelta]\[Nu]\"", 
-          SubscriptBox[
-           TemplateBox[{"\"(\"", 
-             TemplateBox[{
-               
-               TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
-                SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
-            "RowDefault"], "\"hfs\""]}], 
-        "speed of light per ground state hyperfine splitting frequency of the \
-cesium\[Hyphen]133 atom", 
-        FractionBox[
-        "\"SpeedOfLight\"", "\"Cesium133HyperfineSplittingFrequency\""]},
-       "Quantity"]}], "}"}]}], ",", 
-   RowBox[{"\<\"density-mass-density\"\>", "\[Rule]", 
-    RowBox[{"{", 
-     RowBox[{
-      TemplateBox[{"1", 
-        RowBox[{
-         "\"kg\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
-          "\"m\""}], "kilogram per meter", 
-        FractionBox["\"Kilograms\"", "\"Meters\""]},
-       "Quantity"], ",", 
-      TemplateBox[{"1.`", 
-        RowBox[{
-          SuperscriptBox[
-           RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
-             SubscriptBox[
-              TemplateBox[{"\"(\"", 
-                TemplateBox[{
-                  
-                  TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
-                   SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
-               "RowDefault"], "\"hfs\""]}], "2"], "\[InvisibleSpace]", 
-          StyleBox["\"h\"", Italic, StripOnInput -> False], 
-          "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
-          SuperscriptBox[
-           StyleBox["\"c\"", Italic, StripOnInput -> False], "3"]}], 
-        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
-atom squared Planck constants per speed of light cubed", 
-        FractionBox[
-         RowBox[{
-           SuperscriptBox["\"Cesium133HyperfineSplittingFrequency\"", "2"], 
-           " ", "\"PlanckConstant\""}], 
-         SuperscriptBox["\"SpeedOfLight\"", "3"]]},
-       "Quantity"]}], "}"}]}], ",", 
-   RowBox[{"\<\"surface-density\"\>", "\[Rule]", 
-    RowBox[{"{", 
-     RowBox[{
-      TemplateBox[{"1", 
-        RowBox[{"\"kg\"", "\[ThinSpace]", "\"m\""}], "kilogram meter", 
-        RowBox[{"\"Kilograms\"", " ", "\"Meters\""}]},
-       "Quantity"], ",", 
-      TemplateBox[{"1.`", 
-        RowBox[{
-          StyleBox["\"h\"", Italic, StripOnInput -> False], 
-          "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
-          StyleBox["\"c\"", Italic, StripOnInput -> False]}], 
-        "Planck constants per speed of light", 
-        FractionBox["\"PlanckConstant\"", "\"SpeedOfLight\""]},
-       "Quantity"]}], "}"}]}], ",", 
-   RowBox[{"\<\"specific-volume\"\>", "\[Rule]", 
-    RowBox[{"{", 
-     RowBox[{
-      TemplateBox[{"1", 
-        RowBox[{"\"kg\"", "\[ThinSpace]", "\"m\""}], "kilogram meter", 
-        RowBox[{"\"Kilograms\"", " ", "\"Meters\""}]},
-       "Quantity"], ",", 
-      TemplateBox[{"1.`", 
-        RowBox[{
-          StyleBox["\"h\"", Italic, StripOnInput -> False], 
-          "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
-          StyleBox["\"c\"", Italic, StripOnInput -> False]}], 
-        "Planck constants per speed of light", 
-        FractionBox["\"PlanckConstant\"", "\"SpeedOfLight\""]},
-       "Quantity"]}], "}"}]}], ",", 
-   RowBox[{"\<\"current-density\"\>", "\[Rule]", 
-    RowBox[{"{", 
-     RowBox[{
-      TemplateBox[{"1", 
-        RowBox[{"\"m\"", "\[ThinSpace]", "\"A\""}], "meter ampere", 
-        RowBox[{"\"Amperes\"", " ", "\"Meters\""}]},
-       "Quantity"], ",", 
-      TemplateBox[{"1.`", 
-        RowBox[{
-          StyleBox["\"e\"", Italic, StripOnInput -> False], "\[ThinSpace]", 
-          StyleBox["\"c\"", Italic, StripOnInput -> False]}], 
-        "elementary charge speed of light", 
-        RowBox[{"\"ElementaryCharge\"", " ", "\"SpeedOfLight\""}]},
-       "Quantity"]}], "}"}]}], ",", 
-   RowBox[{"\<\"magnetic-field-strength\"\>", "\[Rule]", 
-    RowBox[{"{", 
-     RowBox[{
-      TemplateBox[{"1", 
-        RowBox[{"\"m\"", "\[ThinSpace]", "\"A\""}], "meter ampere", 
-        RowBox[{"\"Amperes\"", " ", "\"Meters\""}]},
-       "Quantity"], ",", 
-      TemplateBox[{"1.`", 
-        RowBox[{
-          StyleBox["\"e\"", Italic, StripOnInput -> False], "\[ThinSpace]", 
-          StyleBox["\"c\"", Italic, StripOnInput -> False]}], 
-        "elementary charge speed of light", 
-        RowBox[{"\"ElementaryCharge\"", " ", "\"SpeedOfLight\""}]},
-       "Quantity"]}], "}"}]}], ",", 
-   RowBox[{"\<\"amount-of-substance-concentration\"\>", "\[Rule]", 
-    RowBox[{"{", 
-     RowBox[{
-      TemplateBox[{"1", 
-        RowBox[{"\"m\"", "\[ThinSpace]", "\"mol\""}], "meter mole", 
-        RowBox[{"\"Meters\"", " ", "\"Moles\""}]},
-       "Quantity"], ",", 
-      TemplateBox[{"1.`", 
-        RowBox[{
-          StyleBox["\"c\"", StripOnInput -> False, FontSlant -> Italic], 
-          "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", 
-          "\"\[CapitalDelta]\[Nu]\"", 
-          SubscriptBox[
-           TemplateBox[{"\"(\"", 
-             TemplateBox[{
-               
-               TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
-                SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
-            "RowDefault"], "\"hfs\""], "\[ThinSpace]", 
-          SubscriptBox[
-           StyleBox["\"N\"", StripOnInput -> False, FontSlant -> Italic], 
-           StyleBox["\"A\"", StripOnInput -> False, FontSlant -> Italic]], 
-          "\[InvisibleSpace]", "\")\""}], 
-        "speed of light per ground state hyperfine splitting frequency of the \
-cesium\[Hyphen]133 atom Avogadro constant", 
-        FractionBox["\"SpeedOfLight\"", 
-         RowBox[{
-          "\"AvogadroConstant\"", " ", 
-           "\"Cesium133HyperfineSplittingFrequency\""}]]},
-       "Quantity"]}], "}"}]}], ",", 
-   RowBox[{"\<\"mass-concentration\"\>", "\[Rule]", 
-    RowBox[{"{", 
-     RowBox[{
-      TemplateBox[{"1", 
-        RowBox[{"\"kg\"", "\[ThinSpace]", "\"m\""}], "kilogram meter", 
-        RowBox[{"\"Kilograms\"", " ", "\"Meters\""}]},
-       "Quantity"], ",", 
-      TemplateBox[{"1.`", 
-        RowBox[{
-          StyleBox["\"h\"", Italic, StripOnInput -> False], 
-          "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
-          StyleBox["\"c\"", Italic, StripOnInput -> False]}], 
-        "Planck constants per speed of light", 
-        FractionBox["\"PlanckConstant\"", "\"SpeedOfLight\""]},
-       "Quantity"]}], "}"}]}], ",", 
-   RowBox[{"\<\"luminance\"\>", "\[Rule]", 
-    RowBox[{"{", 
-     RowBox[{
-      TemplateBox[{"1", 
-        RowBox[{"\"m\"", "\[ThinSpace]", "\"cd\""}], "meter candela", 
-        RowBox[{"\"Candelas\"", " ", "\"Meters\""}]},
        "Quantity"], ",", 
       TemplateBox[{"8.017938117917288`*^11", 
         RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
@@ -2433,9 +2377,1482 @@ constant speed of light per radian squared",
            "\"PlanckConstant\"", " ", "\"SpeedOfLight\""}], 
          SuperscriptBox["\"Radians\"", "2"]]},
        "Quantity"]}], "}"}]}]}], "\[RightAssociation]"}]], "Output",
- CellChangeTimes->{3.8724354873554955`*^9},
- CellLabel->"Out[20]=",
- CellID->110644602,ExpressionUUID->"d98096b1-6488-43b1-a8df-e194bae11c05"]
+ CellChangeTimes->{3.872435463946498*^9, 3.8724360914574385`*^9},
+ CellLabel->"Out[31]=",
+ CellID->208342224,ExpressionUUID->"fbf74e6f-1ae9-4021-8c6b-18d4408d0157"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SICOHERENTDERIVEDUNITSWHOSENAMESANDSYMBOLSINCLUDESICOHERENTDERIVEDUN\
+ITSWITHSPECIALNAMESANDSYMBOLS", "=", 
+  RowBox[{"AssociationThread", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+     "\"\<dynamic-viscosity\>\"", ",", "\"\<moment-of-force\>\"", ",", 
+      "\"\<surface-tension\>\"", ",", 
+      "\"\<angular-velocity-angular-frequency\>\"", ",", 
+      "\"\<angular-acceleration\>\"", ",", 
+      "\"\<heat-flux-density-irradiance\>\"", ",", 
+      "\"\<heat-capacity-entropy\>\"", ",", 
+      "\"\<specific-heat-capacity-specific-entropy\>\"", ",", 
+      "\"\<specific-energy\>\"", ",", "\"\<thermal-conductivity\>\"", ",", 
+      "\"\<energy-density\>\"", ",", "\"\<electric-field-strength\>\"", ",", 
+      "\"\<electric-charge-density\>\"", ",", 
+      "\"\<surface-charge-density\>\"", ",", "\"\<electric-flux-density\>\"", 
+      ",", "\"\<permittivity\>\"", ",", "\"\<permeability\>\"", ",", 
+      "\"\<molar-energy\>\"", ",", 
+      "\"\<molar-entropy-molar-heat-capacity\>\"", ",", 
+      "\"\<exposure-x-ray-\[Gamma]-ray\>\"", ",", 
+      "\"\<absorbed-dose-rate\>\"", ",", "\"\<radiant-intensity\>\"", ",", 
+      "\"\<radiance\>\"", ",", "\"\<catalytic-activity-concentration\>\""}], 
+     "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Quantity", "[", 
+       RowBox[{"None", ",", 
+        RowBox[{"\"\<Pascals\>\"", " ", "\"\<Seconds\>\""}]}], "]"}], ",", 
+      RowBox[{"Quantity", "[", 
+       RowBox[{"None", ",", 
+        RowBox[{"\"\<Meters\>\"", " ", "\"\<Newtons\>\""}]}], "]"}], ",", 
+      RowBox[{"Quantity", "[", 
+       RowBox[{"None", ",", 
+        FractionBox["\"\<Newtons\>\"", "\"\<Meters\>\""]}], "]"}], ",", 
+      RowBox[{"Quantity", "[", 
+       RowBox[{"\"\<Radians\>\"", 
+        SuperscriptBox["\"\<Seconds\>\"", 
+         RowBox[{"-", "1"}]]}], "]"}], ",", 
+      RowBox[{"Quantity", "[", 
+       RowBox[{"\"\<Radians\>\"", 
+        SuperscriptBox["\"\<Seconds\>\"", 
+         RowBox[{"-", "2"}]]}], "]"}], ",", 
+      RowBox[{"Quantity", "[", 
+       RowBox[{"\"\<Watts\>\"", 
+        SuperscriptBox["\"\<Meters\>\"", 
+         RowBox[{"-", "2"}]]}], "]"}], ",", 
+      RowBox[{"Quantity", "[", 
+       RowBox[{"\"\<Joules\>\"", "/", "\"\<Kelvins\>\""}], "]"}], ",", 
+      RowBox[{"Quantity", "[", 
+       RowBox[{"\"\<Joules\>\"", 
+        SuperscriptBox["\"\<Kelvins\>\"", 
+         RowBox[{"-", "1"}]], 
+        SuperscriptBox["\"\<Kilograms\>\"", 
+         RowBox[{"-", "1"}]]}], "]"}], ",", 
+      RowBox[{"Quantity", "[", 
+       RowBox[{"\"\<Joules\>\"", 
+        SuperscriptBox["\"\<Kilograms\>\"", 
+         RowBox[{"-", "1"}]]}], "]"}], ",", 
+      RowBox[{"Quantity", "[", 
+       RowBox[{"\"\<Watts\>\"", 
+        SuperscriptBox["\"\<Meters\>\"", 
+         RowBox[{"-", "1"}]], 
+        SuperscriptBox["\"\<Kelvins\>\"", 
+         RowBox[{"-", "1"}]]}], "]"}], ",", 
+      RowBox[{"Quantity", "[", 
+       RowBox[{"\"\<Joules\>\"", 
+        SuperscriptBox["\"\<Meters\>\"", 
+         RowBox[{"-", "3"}]]}], "]"}], ",", 
+      RowBox[{"Quantity", "[", 
+       RowBox[{"\"\<Volts\>\"", 
+        SuperscriptBox["\"\<Meters\>\"", 
+         RowBox[{"-", "1"}]]}], "]"}], ",", 
+      RowBox[{"Quantity", "[", 
+       RowBox[{"\"\<Coulombs\>\"", 
+        SuperscriptBox["\"\<Meters\>\"", 
+         RowBox[{"-", "3"}]]}], "]"}], ",", 
+      RowBox[{"Quantity", "[", 
+       RowBox[{"\"\<Coulombs\>\"", 
+        SuperscriptBox["\"\<Meters\>\"", 
+         RowBox[{"-", "2"}]]}], "]"}], ",", 
+      RowBox[{"Quantity", "[", 
+       RowBox[{"\"\<Coulombs\>\"", 
+        SuperscriptBox["\"\<Meters\>\"", 
+         RowBox[{"-", "2"}]]}], "]"}], ",", 
+      RowBox[{"Quantity", "[", 
+       RowBox[{"\"\<Farads\>\"", 
+        SuperscriptBox["\"\<Meters\>\"", 
+         RowBox[{"-", "1"}]]}], "]"}], ",", 
+      RowBox[{"Quantity", "[", 
+       RowBox[{"\"\<Henries\>\"", 
+        SuperscriptBox["\"\<Meters\>\"", 
+         RowBox[{"-", "1"}]]}], "]"}], ",", 
+      RowBox[{"Quantity", "[", 
+       RowBox[{"\"\<Joules\>\"", 
+        SuperscriptBox["\"\<Moles\>\"", 
+         RowBox[{"-", "1"}]]}], "]"}], ",", 
+      RowBox[{"Quantity", "[", 
+       RowBox[{"\"\<Joules\>\"", 
+        SuperscriptBox["\"\<Kelvins\>\"", 
+         RowBox[{"-", "1"}]], 
+        SuperscriptBox["\"\<Moles\>\"", 
+         RowBox[{"-", "1"}]]}], "]"}], ",", 
+      RowBox[{"Quantity", "[", 
+       RowBox[{"\"\<Coulombs\>\"", 
+        SuperscriptBox["\"\<Kilograms\>\"", 
+         RowBox[{"-", "1"}]]}], "]"}], ",", 
+      RowBox[{"Quantity", "[", 
+       RowBox[{"\"\<Grays\>\"", 
+        SuperscriptBox["\"\<Seconds\>\"", 
+         RowBox[{"-", "1"}]]}], "]"}], ",", 
+      RowBox[{"Quantity", "[", 
+       RowBox[{"\"\<Watts\>\"", 
+        SuperscriptBox["\"\<Steradians\>\"", 
+         RowBox[{"-", "1"}]]}], "]"}], ",", 
+      RowBox[{"Quantity", "[", 
+       RowBox[{"\"\<Watts\>\"", 
+        SuperscriptBox["\"\<Steradians\>\"", 
+         RowBox[{"-", "1"}]], 
+        SuperscriptBox["\"\<Meters\>\"", 
+         RowBox[{"-", "2"}]]}], "]"}], ",", 
+      RowBox[{"Quantity", "[", 
+       RowBox[{"\"\<Katals\>\"", 
+        SuperscriptBox["\"\<Meters\>\"", 
+         RowBox[{"-", "3"}]]}], "]"}]}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.872436112962854*^9, 3.872436329113185*^9}, {
+  3.8724363885498066`*^9, 3.872436744803529*^9}},
+ CellLabel->"In[44]:=",
+ CellID->157738429,ExpressionUUID->"9ea45560-eb7f-4e8a-aa54-805f2b7d010d"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"dynamic-viscosity\"\>", "\[Rule]", 
+    TemplateBox[{
+      InterpretationBox["\[InvisibleSpace]", 1], 
+      RowBox[{"\"s\"", "\[ThinSpace]", "\"Pa\""}], "second pascals", 
+      RowBox[{"\"Pascals\"", " ", "\"Seconds\""}]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"moment-of-force\"\>", "\[Rule]", 
+    TemplateBox[{
+      InterpretationBox["\[InvisibleSpace]", 1], 
+      RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}], "meter newtons", 
+      RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"surface-tension\"\>", "\[Rule]", 
+    TemplateBox[{
+      InterpretationBox["\[InvisibleSpace]", 1], 
+      RowBox[{
+       "\"N\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", "\"m\""}], 
+      "newtons per meter", 
+      FractionBox["\"Newtons\"", "\"Meters\""]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"angular-velocity-angular-frequency\"\>", "\[Rule]", 
+    TemplateBox[{"1", 
+      RowBox[{
+       "\"rad\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+        "\"s\""}], "radian per second", 
+      FractionBox["\"Radians\"", "\"Seconds\""]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"angular-acceleration\"\>", "\[Rule]", 
+    TemplateBox[{"1", 
+      RowBox[{"\"rad\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+        SuperscriptBox["\"s\"", "2"]}], "radian per second squared", 
+      FractionBox["\"Radians\"", 
+       SuperscriptBox["\"Seconds\"", "2"]]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"heat-flux-density-irradiance\"\>", "\[Rule]", 
+    TemplateBox[{"1", 
+      RowBox[{"\"W\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+        SuperscriptBox["\"m\"", "2"]}], "watt per meter squared", 
+      FractionBox["\"Watts\"", 
+       SuperscriptBox["\"Meters\"", "2"]]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"heat-capacity-entropy\"\>", "\[Rule]", 
+    TemplateBox[{"1", 
+      RowBox[{
+       "\"J\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", "\"K\""}], 
+      "joule per kelvin", 
+      FractionBox["\"Joules\"", "\"Kelvins\""]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"specific-heat-capacity-specific-entropy\"\>", "\[Rule]", 
+    TemplateBox[{"1", 
+      RowBox[{
+       "\"J\"", "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", "\"kg\"", 
+        "\[ThinSpace]", "\"K\"", "\[InvisibleSpace]", "\")\""}], 
+      "joule per kilogram kelvin", 
+      FractionBox["\"Joules\"", 
+       RowBox[{"\"Kelvins\"", " ", "\"Kilograms\""}]]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"specific-energy\"\>", "\[Rule]", 
+    TemplateBox[{"1", 
+      RowBox[{
+       "\"J\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", "\"kg\""}],
+       "joule per kilogram", 
+      FractionBox["\"Joules\"", "\"Kilograms\""]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"thermal-conductivity\"\>", "\[Rule]", 
+    TemplateBox[{"1", 
+      RowBox[{
+       "\"W\"", "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", "\"m\"", 
+        "\[ThinSpace]", "\"K\"", "\[InvisibleSpace]", "\")\""}], 
+      "watt per meter kelvin", 
+      FractionBox["\"Watts\"", 
+       RowBox[{"\"Kelvins\"", " ", "\"Meters\""}]]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"energy-density\"\>", "\[Rule]", 
+    TemplateBox[{"1", 
+      RowBox[{"\"J\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+        SuperscriptBox["\"m\"", "3"]}], "joule per meter cubed", 
+      FractionBox["\"Joules\"", 
+       SuperscriptBox["\"Meters\"", "3"]]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"electric-field-strength\"\>", "\[Rule]", 
+    TemplateBox[{"1", 
+      RowBox[{
+       "\"V\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", "\"m\""}], 
+      "volt per meter", 
+      FractionBox["\"Volts\"", "\"Meters\""]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"electric-charge-density\"\>", "\[Rule]", 
+    TemplateBox[{"1", 
+      RowBox[{"\"C\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+        SuperscriptBox["\"m\"", "3"]}], "coulomb per meter cubed", 
+      FractionBox["\"Coulombs\"", 
+       SuperscriptBox["\"Meters\"", "3"]]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"surface-charge-density\"\>", "\[Rule]", 
+    TemplateBox[{"1", 
+      RowBox[{"\"C\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+        SuperscriptBox["\"m\"", "2"]}], "coulomb per meter squared", 
+      FractionBox["\"Coulombs\"", 
+       SuperscriptBox["\"Meters\"", "2"]]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"electric-flux-density\"\>", "\[Rule]", 
+    TemplateBox[{"1", 
+      RowBox[{"\"C\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+        SuperscriptBox["\"m\"", "2"]}], "coulomb per meter squared", 
+      FractionBox["\"Coulombs\"", 
+       SuperscriptBox["\"Meters\"", "2"]]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"permittivity\"\>", "\[Rule]", 
+    TemplateBox[{"1", 
+      RowBox[{
+       "\"F\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", "\"m\""}], 
+      "farad per meter", 
+      FractionBox["\"Farads\"", "\"Meters\""]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"permeability\"\>", "\[Rule]", 
+    TemplateBox[{"1", 
+      RowBox[{
+       "\"H\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", "\"m\""}], 
+      "henry per meter", 
+      FractionBox["\"Henries\"", "\"Meters\""]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"molar-energy\"\>", "\[Rule]", 
+    TemplateBox[{"1", 
+      RowBox[{
+       "\"J\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+        "\"mol\""}], "joule per mole", 
+      FractionBox["\"Joules\"", "\"Moles\""]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"molar-entropy-molar-heat-capacity\"\>", "\[Rule]", 
+    TemplateBox[{"1", 
+      RowBox[{
+       "\"J\"", "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", "\"K\"", 
+        "\[ThinSpace]", "\"mol\"", "\[InvisibleSpace]", "\")\""}], 
+      "joule per kelvin mole", 
+      FractionBox["\"Joules\"", 
+       RowBox[{"\"Kelvins\"", " ", "\"Moles\""}]]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"exposure-x-ray-\[Gamma]-ray\"\>", "\[Rule]", 
+    TemplateBox[{"1", 
+      RowBox[{
+       "\"C\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", "\"kg\""}],
+       "coulomb per kilogram", 
+      FractionBox["\"Coulombs\"", "\"Kilograms\""]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"absorbed-dose-rate\"\>", "\[Rule]", 
+    TemplateBox[{"1", 
+      RowBox[{
+       "\"Gy\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", "\"s\""}],
+       "gray per second", 
+      FractionBox["\"Grays\"", "\"Seconds\""]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"radiant-intensity\"\>", "\[Rule]", 
+    TemplateBox[{"1", 
+      RowBox[{
+       "\"W\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", "\"sr\""}],
+       "watt per steradian", 
+      FractionBox["\"Watts\"", "\"Steradians\""]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"radiance\"\>", "\[Rule]", 
+    TemplateBox[{"1", 
+      RowBox[{"\"W\"", "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", 
+        SuperscriptBox["\"m\"", "2"], "\[InvisibleSpace]", "\"sr\"", 
+        "\[InvisibleSpace]", "\")\""}], "watt per meter squared steradian", 
+      FractionBox["\"Watts\"", 
+       RowBox[{
+         SuperscriptBox["\"Meters\"", "2"], " ", "\"Steradians\""}]]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"catalytic-activity-concentration\"\>", "\[Rule]", 
+    TemplateBox[{"1", 
+      RowBox[{"\"kat\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+        SuperscriptBox["\"m\"", "3"]}], "katal per meter cubed", 
+      FractionBox["\"Katals\"", 
+       SuperscriptBox["\"Meters\"", "3"]]},
+     "Quantity"]}]}], "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{{3.872436238484767*^9, 3.872436271762488*^9}, {
+   3.872436319643247*^9, 3.872436329394396*^9}, 3.872436407398363*^9, 
+   3.8724365055099883`*^9, 3.872436700684453*^9, {3.872436733233393*^9, 
+   3.8724367453202333`*^9}},
+ CellLabel->"Out[44]=",
+ CellID->808335468,ExpressionUUID->"f9865023-19e9-41c0-a8fd-07b2949dbb16"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"#", ",", 
+     RowBox[{"SIConstantConvert", "[", "#", "]"}], ",", 
+     RowBox[{"N", "[", 
+      RowBox[{"SIConstantConvert", "[", "#", "]"}], "]"}]}], "}"}], "&"}], "/@",
+   "SICOHERENTDERIVEDUNITSWHOSENAMESANDSYMBOLSINCLUDESICOHERENTDERIVEDUNITSWIT\
+HSPECIALNAMESANDSYMBOLS"}]], "Input",
+ CellChangeTimes->{{3.8724363342855124`*^9, 3.8724363524666867`*^9}},
+ CellLabel->"In[45]:=",
+ CellID->369727949,ExpressionUUID->"1ed112bf-c0b5-4e6c-8fb2-3c4aeea346eb"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"dynamic-viscosity\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{
+        InterpretationBox["\[InvisibleSpace]", 1], 
+        RowBox[{"\"s\"", "\[ThinSpace]", "\"Pa\""}], "second pascals", 
+        RowBox[{"\"Pascals\"", " ", "\"Seconds\""}]},
+       "Quantity"], ",", 
+      TemplateBox[{"1", 
+        RowBox[{
+          SuperscriptBox[
+           RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+             SubscriptBox[
+              TemplateBox[{"\"(\"", 
+                TemplateBox[{
+                  
+                  TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                   SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+               "RowDefault"], "\"hfs\""]}], "3"], "\[InvisibleSpace]", 
+          StyleBox["\"h\"", Italic, StripOnInput -> False], 
+          "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          SuperscriptBox[
+           StyleBox["\"c\"", Italic, StripOnInput -> False], "3"]}], 
+        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+atom cubed Planck constant per speed of light cubed", 
+        FractionBox[
+         RowBox[{
+           SuperscriptBox["\"Cesium133HyperfineSplittingFrequency\"", "3"], 
+           " ", "\"PlanckConstant\""}], 
+         SuperscriptBox["\"SpeedOfLight\"", "3"]]},
+       "Quantity"], ",", 
+      TemplateBox[{"1.`", 
+        RowBox[{
+          SuperscriptBox[
+           RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+             SubscriptBox[
+              TemplateBox[{"\"(\"", 
+                TemplateBox[{
+                  
+                  TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                   SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+               "RowDefault"], "\"hfs\""]}], "3"], "\[InvisibleSpace]", 
+          StyleBox["\"h\"", Italic, StripOnInput -> False], 
+          "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          SuperscriptBox[
+           StyleBox["\"c\"", Italic, StripOnInput -> False], "3"]}], 
+        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+atom cubed Planck constants per speed of light cubed", 
+        FractionBox[
+         RowBox[{
+           SuperscriptBox["\"Cesium133HyperfineSplittingFrequency\"", "3"], 
+           " ", "\"PlanckConstant\""}], 
+         SuperscriptBox["\"SpeedOfLight\"", "3"]]},
+       "Quantity"]}], "}"}]}], ",", 
+   RowBox[{"\<\"moment-of-force\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{
+        InterpretationBox["\[InvisibleSpace]", 1], 
+        RowBox[{"\"m\"", "\[ThinSpace]", "\"N\""}], "meter newtons", 
+        RowBox[{"\"Meters\"", " ", "\"Newtons\""}]},
+       "Quantity"], ",", 
+      TemplateBox[{"1", 
+        RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+          SubscriptBox[
+           TemplateBox[{"\"(\"", 
+             TemplateBox[{
+               
+               TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+            "RowDefault"], "\"hfs\""], "\[ThinSpace]", 
+          StyleBox["\"h\"", StripOnInput -> False, FontSlant -> Italic]}], 
+        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+atom Planck constant", 
+        RowBox[{
+         "\"Cesium133HyperfineSplittingFrequency\"", " ", 
+          "\"PlanckConstant\""}]},
+       "Quantity"], ",", 
+      TemplateBox[{"1.`", 
+        RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+          SubscriptBox[
+           TemplateBox[{"\"(\"", 
+             TemplateBox[{
+               
+               TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+            "RowDefault"], "\"hfs\""], "\[ThinSpace]", 
+          StyleBox["\"h\"", StripOnInput -> False, FontSlant -> Italic]}], 
+        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+atom Planck constants", 
+        RowBox[{
+         "\"Cesium133HyperfineSplittingFrequency\"", " ", 
+          "\"PlanckConstant\""}]},
+       "Quantity"]}], "}"}]}], ",", 
+   RowBox[{"\<\"surface-tension\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{
+        InterpretationBox["\[InvisibleSpace]", 1], 
+        RowBox[{
+         "\"N\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          "\"m\""}], "newtons per meter", 
+        FractionBox["\"Newtons\"", "\"Meters\""]},
+       "Quantity"], ",", 
+      TemplateBox[{"1", 
+        RowBox[{
+          SuperscriptBox[
+           RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+             SubscriptBox[
+              TemplateBox[{"\"(\"", 
+                TemplateBox[{
+                  
+                  TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                   SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+               "RowDefault"], "\"hfs\""]}], "3"], "\[InvisibleSpace]", 
+          StyleBox["\"h\"", Italic, StripOnInput -> False], 
+          "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          SuperscriptBox[
+           StyleBox["\"c\"", Italic, StripOnInput -> False], "2"]}], 
+        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+atom cubed Planck constant per speed of light squared", 
+        FractionBox[
+         RowBox[{
+           SuperscriptBox["\"Cesium133HyperfineSplittingFrequency\"", "3"], 
+           " ", "\"PlanckConstant\""}], 
+         SuperscriptBox["\"SpeedOfLight\"", "2"]]},
+       "Quantity"], ",", 
+      TemplateBox[{"1.`", 
+        RowBox[{
+          SuperscriptBox[
+           RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+             SubscriptBox[
+              TemplateBox[{"\"(\"", 
+                TemplateBox[{
+                  
+                  TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                   SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+               "RowDefault"], "\"hfs\""]}], "3"], "\[InvisibleSpace]", 
+          StyleBox["\"h\"", Italic, StripOnInput -> False], 
+          "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          SuperscriptBox[
+           StyleBox["\"c\"", Italic, StripOnInput -> False], "2"]}], 
+        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+atom cubed Planck constants per speed of light squared", 
+        FractionBox[
+         RowBox[{
+           SuperscriptBox["\"Cesium133HyperfineSplittingFrequency\"", "3"], 
+           " ", "\"PlanckConstant\""}], 
+         SuperscriptBox["\"SpeedOfLight\"", "2"]]},
+       "Quantity"]}], "}"}]}], ",", 
+   RowBox[{"\<\"angular-velocity-angular-frequency\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"1", 
+        RowBox[{
+         "\"rad\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          "\"s\""}], "radian per second", 
+        FractionBox["\"Radians\"", "\"Seconds\""]},
+       "Quantity"], ",", 
+      TemplateBox[{
+        InterpretationBox["\[InvisibleSpace]", 1], 
+        RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+          SubscriptBox[
+           TemplateBox[{"\"(\"", 
+             TemplateBox[{
+               
+               TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+            "RowDefault"], "\"hfs\""]}], 
+        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+atom", "\"Cesium133HyperfineSplittingFrequency\""},
+       "Quantity"], ",", 
+      TemplateBox[{"1.`", 
+        RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+          SubscriptBox[
+           TemplateBox[{"\"(\"", 
+             TemplateBox[{
+               
+               TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+            "RowDefault"], "\"hfs\""]}], 
+        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+atom", "\"Cesium133HyperfineSplittingFrequency\""},
+       "Quantity"]}], "}"}]}], ",", 
+   RowBox[{"\<\"angular-acceleration\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"1", 
+        RowBox[{"\"rad\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          SuperscriptBox["\"s\"", "2"]}], "radian per second squared", 
+        FractionBox["\"Radians\"", 
+         SuperscriptBox["\"Seconds\"", "2"]]},
+       "Quantity"], ",", 
+      TemplateBox[{"1", 
+        RowBox[{
+          SuperscriptBox[
+           RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+             SubscriptBox[
+              TemplateBox[{"\"(\"", 
+                TemplateBox[{
+                  
+                  TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                   SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+               "RowDefault"], "\"hfs\""]}], "2"]}], 
+        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+atom squared", 
+        SuperscriptBox["\"Cesium133HyperfineSplittingFrequency\"", "2"]},
+       "Quantity"], ",", 
+      TemplateBox[{"1.`", 
+        RowBox[{
+          SuperscriptBox[
+           RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+             SubscriptBox[
+              TemplateBox[{"\"(\"", 
+                TemplateBox[{
+                  
+                  TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                   SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+               "RowDefault"], "\"hfs\""]}], "2"]}], 
+        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+atom squared", 
+        SuperscriptBox["\"Cesium133HyperfineSplittingFrequency\"", "2"]},
+       "Quantity"]}], "}"}]}], ",", 
+   RowBox[{"\<\"heat-flux-density-irradiance\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"1", 
+        RowBox[{"\"W\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          SuperscriptBox["\"m\"", "2"]}], "watt per meter squared", 
+        FractionBox["\"Watts\"", 
+         SuperscriptBox["\"Meters\"", "2"]]},
+       "Quantity"], ",", 
+      TemplateBox[{"1", 
+        RowBox[{
+          SuperscriptBox[
+           RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+             SubscriptBox[
+              TemplateBox[{"\"(\"", 
+                TemplateBox[{
+                  
+                  TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                   SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+               "RowDefault"], "\"hfs\""]}], "4"], "\[InvisibleSpace]", 
+          StyleBox["\"h\"", Italic, StripOnInput -> False], 
+          "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          SuperscriptBox[
+           StyleBox["\"c\"", Italic, StripOnInput -> False], "2"]}], 
+        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+atom to the fourth Planck constant per speed of light squared", 
+        FractionBox[
+         RowBox[{
+           SuperscriptBox["\"Cesium133HyperfineSplittingFrequency\"", "4"], 
+           " ", "\"PlanckConstant\""}], 
+         SuperscriptBox["\"SpeedOfLight\"", "2"]]},
+       "Quantity"], ",", 
+      TemplateBox[{"1.`", 
+        RowBox[{
+          SuperscriptBox[
+           RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+             SubscriptBox[
+              TemplateBox[{"\"(\"", 
+                TemplateBox[{
+                  
+                  TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                   SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+               "RowDefault"], "\"hfs\""]}], "4"], "\[InvisibleSpace]", 
+          StyleBox["\"h\"", Italic, StripOnInput -> False], 
+          "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          SuperscriptBox[
+           StyleBox["\"c\"", Italic, StripOnInput -> False], "2"]}], 
+        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+atom to the fourth Planck constants per speed of light squared", 
+        FractionBox[
+         RowBox[{
+           SuperscriptBox["\"Cesium133HyperfineSplittingFrequency\"", "4"], 
+           " ", "\"PlanckConstant\""}], 
+         SuperscriptBox["\"SpeedOfLight\"", "2"]]},
+       "Quantity"]}], "}"}]}], ",", 
+   RowBox[{"\<\"heat-capacity-entropy\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"1", 
+        RowBox[{
+         "\"J\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          "\"K\""}], "joule per kelvin", 
+        FractionBox["\"Joules\"", "\"Kelvins\""]},
+       "Quantity"], ",", 
+      TemplateBox[{
+        InterpretationBox["\[InvisibleSpace]", 1], 
+        StyleBox["\"k\"", Italic, StripOnInput -> False], 
+        "Boltzmann constant", "\"BoltzmannConstant\""},
+       "Quantity"], ",", 
+      TemplateBox[{"1.`", 
+        StyleBox["\"k\"", Italic, StripOnInput -> False], 
+        "Boltzmann constants", "\"BoltzmannConstant\""},
+       "Quantity"]}], "}"}]}], ",", 
+   RowBox[{"\<\"specific-heat-capacity-specific-entropy\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"1", 
+        RowBox[{
+         "\"J\"", "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", 
+          "\"kg\"", "\[ThinSpace]", "\"K\"", "\[InvisibleSpace]", "\")\""}], 
+        "joule per kilogram kelvin", 
+        FractionBox["\"Joules\"", 
+         RowBox[{"\"Kelvins\"", " ", "\"Kilograms\""}]]},
+       "Quantity"], ",", 
+      TemplateBox[{"1", 
+        RowBox[{
+          StyleBox["\"k\"", StripOnInput -> False, FontSlant -> Italic], 
+          "\[ThinSpace]", 
+          SuperscriptBox[
+           StyleBox["\"c\"", StripOnInput -> False, FontSlant -> Italic], 
+           "2"], "\[NegativeMediumSpace]", "\"/(\"", "\[InvisibleSpace]", 
+          "\"\[CapitalDelta]\[Nu]\"", 
+          SubscriptBox[
+           TemplateBox[{"\"(\"", 
+             TemplateBox[{
+               
+               TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+            "RowDefault"], "\"hfs\""], "\[ThinSpace]", 
+          StyleBox["\"h\"", StripOnInput -> False, FontSlant -> Italic], 
+          "\[InvisibleSpace]", "\")\""}], 
+        "Boltzmann constant speed of light squared per ground state hyperfine \
+splitting frequency of the cesium\[Hyphen]133 atom Planck constant", 
+        FractionBox[
+         RowBox[{"\"BoltzmannConstant\"", " ", 
+           SuperscriptBox["\"SpeedOfLight\"", "2"]}], 
+         RowBox[{
+          "\"Cesium133HyperfineSplittingFrequency\"", " ", 
+           "\"PlanckConstant\""}]]},
+       "Quantity"], ",", 
+      TemplateBox[{"1.`", 
+        RowBox[{
+          StyleBox["\"k\"", StripOnInput -> False, FontSlant -> Italic], 
+          "\[ThinSpace]", 
+          SuperscriptBox[
+           StyleBox["\"c\"", StripOnInput -> False, FontSlant -> Italic], 
+           "2"], "\[NegativeMediumSpace]", "\"/(\"", "\[InvisibleSpace]", 
+          "\"\[CapitalDelta]\[Nu]\"", 
+          SubscriptBox[
+           TemplateBox[{"\"(\"", 
+             TemplateBox[{
+               
+               TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+            "RowDefault"], "\"hfs\""], "\[ThinSpace]", 
+          StyleBox["\"h\"", StripOnInput -> False, FontSlant -> Italic], 
+          "\[InvisibleSpace]", "\")\""}], 
+        "Boltzmann constant speed of light squared per ground state hyperfine \
+splitting frequency of the cesium\[Hyphen]133 atom Planck constant", 
+        FractionBox[
+         RowBox[{"\"BoltzmannConstant\"", " ", 
+           SuperscriptBox["\"SpeedOfLight\"", "2"]}], 
+         RowBox[{
+          "\"Cesium133HyperfineSplittingFrequency\"", " ", 
+           "\"PlanckConstant\""}]]},
+       "Quantity"]}], "}"}]}], ",", 
+   RowBox[{"\<\"specific-energy\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"1", 
+        RowBox[{
+         "\"J\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          "\"kg\""}], "joule per kilogram", 
+        FractionBox["\"Joules\"", "\"Kilograms\""]},
+       "Quantity"], ",", 
+      TemplateBox[{"1", 
+        RowBox[{
+          SuperscriptBox[
+           StyleBox["\"c\"", Italic, StripOnInput -> False], "2"]}], 
+        "speed of light squared", 
+        SuperscriptBox["\"SpeedOfLight\"", "2"]},
+       "Quantity"], ",", 
+      TemplateBox[{"1.`", 
+        RowBox[{
+          SuperscriptBox[
+           StyleBox["\"c\"", Italic, StripOnInput -> False], "2"]}], 
+        "speed of light squared", 
+        SuperscriptBox["\"SpeedOfLight\"", "2"]},
+       "Quantity"]}], "}"}]}], ",", 
+   RowBox[{"\<\"thermal-conductivity\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"1", 
+        RowBox[{
+         "\"W\"", "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", "\"m\"",
+           "\[ThinSpace]", "\"K\"", "\[InvisibleSpace]", "\")\""}], 
+        "watt per meter kelvin", 
+        FractionBox["\"Watts\"", 
+         RowBox[{"\"Kelvins\"", " ", "\"Meters\""}]]},
+       "Quantity"], ",", 
+      TemplateBox[{"1", 
+        RowBox[{
+          SuperscriptBox[
+           RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+             SubscriptBox[
+              TemplateBox[{"\"(\"", 
+                TemplateBox[{
+                  
+                  TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                   SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+               "RowDefault"], "\"hfs\""]}], "2"], "\[InvisibleSpace]", 
+          StyleBox["\"k\"", Italic, StripOnInput -> False], 
+          "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          StyleBox["\"c\"", Italic, StripOnInput -> False]}], 
+        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+atom squared Boltzmann constant per speed of light", 
+        FractionBox[
+         RowBox[{"\"BoltzmannConstant\"", " ", 
+           SuperscriptBox["\"Cesium133HyperfineSplittingFrequency\"", "2"]}], 
+         "\"SpeedOfLight\""]},
+       "Quantity"], ",", 
+      TemplateBox[{"1.`", 
+        RowBox[{
+          SuperscriptBox[
+           RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+             SubscriptBox[
+              TemplateBox[{"\"(\"", 
+                TemplateBox[{
+                  
+                  TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                   SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+               "RowDefault"], "\"hfs\""]}], "2"], "\[InvisibleSpace]", 
+          StyleBox["\"k\"", Italic, StripOnInput -> False], 
+          "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          StyleBox["\"c\"", Italic, StripOnInput -> False]}], 
+        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+atom squared Boltzmann constants per speed of light", 
+        FractionBox[
+         RowBox[{"\"BoltzmannConstant\"", " ", 
+           SuperscriptBox["\"Cesium133HyperfineSplittingFrequency\"", "2"]}], 
+         "\"SpeedOfLight\""]},
+       "Quantity"]}], "}"}]}], ",", 
+   RowBox[{"\<\"energy-density\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"1", 
+        RowBox[{"\"J\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          SuperscriptBox["\"m\"", "3"]}], "joule per meter cubed", 
+        FractionBox["\"Joules\"", 
+         SuperscriptBox["\"Meters\"", "3"]]},
+       "Quantity"], ",", 
+      TemplateBox[{"1", 
+        RowBox[{
+          SuperscriptBox[
+           RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+             SubscriptBox[
+              TemplateBox[{"\"(\"", 
+                TemplateBox[{
+                  
+                  TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                   SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+               "RowDefault"], "\"hfs\""]}], "4"], "\[InvisibleSpace]", 
+          StyleBox["\"h\"", Italic, StripOnInput -> False], 
+          "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          SuperscriptBox[
+           StyleBox["\"c\"", Italic, StripOnInput -> False], "3"]}], 
+        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+atom to the fourth Planck constant per speed of light cubed", 
+        FractionBox[
+         RowBox[{
+           SuperscriptBox["\"Cesium133HyperfineSplittingFrequency\"", "4"], 
+           " ", "\"PlanckConstant\""}], 
+         SuperscriptBox["\"SpeedOfLight\"", "3"]]},
+       "Quantity"], ",", 
+      TemplateBox[{"1.`", 
+        RowBox[{
+          SuperscriptBox[
+           RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+             SubscriptBox[
+              TemplateBox[{"\"(\"", 
+                TemplateBox[{
+                  
+                  TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                   SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+               "RowDefault"], "\"hfs\""]}], "4"], "\[InvisibleSpace]", 
+          StyleBox["\"h\"", Italic, StripOnInput -> False], 
+          "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          SuperscriptBox[
+           StyleBox["\"c\"", Italic, StripOnInput -> False], "3"]}], 
+        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+atom to the fourth Planck constants per speed of light cubed", 
+        FractionBox[
+         RowBox[{
+           SuperscriptBox["\"Cesium133HyperfineSplittingFrequency\"", "4"], 
+           " ", "\"PlanckConstant\""}], 
+         SuperscriptBox["\"SpeedOfLight\"", "3"]]},
+       "Quantity"]}], "}"}]}], ",", 
+   RowBox[{"\<\"electric-field-strength\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"1", 
+        RowBox[{
+         "\"V\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          "\"m\""}], "volt per meter", 
+        FractionBox["\"Volts\"", "\"Meters\""]},
+       "Quantity"], ",", 
+      TemplateBox[{"1", 
+        RowBox[{
+          SuperscriptBox[
+           RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+             SubscriptBox[
+              TemplateBox[{"\"(\"", 
+                TemplateBox[{
+                  
+                  TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                   SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+               "RowDefault"], "\"hfs\""]}], "2"], "\[InvisibleSpace]", 
+          StyleBox["\"h\"", Italic, StripOnInput -> False], 
+          "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", 
+          StyleBox["\"e\"", Italic, StripOnInput -> False], "\[ThinSpace]", 
+          StyleBox["\"c\"", Italic, StripOnInput -> False], 
+          "\[InvisibleSpace]", "\")\""}], 
+        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+atom squared Planck constant per elementary charge speed of light", 
+        FractionBox[
+         RowBox[{
+           SuperscriptBox["\"Cesium133HyperfineSplittingFrequency\"", "2"], 
+           " ", "\"PlanckConstant\""}], 
+         RowBox[{"\"ElementaryCharge\"", " ", "\"SpeedOfLight\""}]]},
+       "Quantity"], ",", 
+      TemplateBox[{"1.`", 
+        RowBox[{
+          SuperscriptBox[
+           RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+             SubscriptBox[
+              TemplateBox[{"\"(\"", 
+                TemplateBox[{
+                  
+                  TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                   SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+               "RowDefault"], "\"hfs\""]}], "2"], "\[InvisibleSpace]", 
+          StyleBox["\"h\"", Italic, StripOnInput -> False], 
+          "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", 
+          StyleBox["\"e\"", Italic, StripOnInput -> False], "\[ThinSpace]", 
+          StyleBox["\"c\"", Italic, StripOnInput -> False], 
+          "\[InvisibleSpace]", "\")\""}], 
+        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+atom squared Planck constants per elementary charge speed of light", 
+        FractionBox[
+         RowBox[{
+           SuperscriptBox["\"Cesium133HyperfineSplittingFrequency\"", "2"], 
+           " ", "\"PlanckConstant\""}], 
+         RowBox[{"\"ElementaryCharge\"", " ", "\"SpeedOfLight\""}]]},
+       "Quantity"]}], "}"}]}], ",", 
+   RowBox[{"\<\"electric-charge-density\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"1", 
+        RowBox[{"\"C\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          SuperscriptBox["\"m\"", "3"]}], "coulomb per meter cubed", 
+        FractionBox["\"Coulombs\"", 
+         SuperscriptBox["\"Meters\"", "3"]]},
+       "Quantity"], ",", 
+      TemplateBox[{"1", 
+        RowBox[{
+          SuperscriptBox[
+           RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+             SubscriptBox[
+              TemplateBox[{"\"(\"", 
+                TemplateBox[{
+                  
+                  TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                   SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+               "RowDefault"], "\"hfs\""]}], "3"], "\[InvisibleSpace]", 
+          StyleBox["\"e\"", Italic, StripOnInput -> False], 
+          "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          SuperscriptBox[
+           StyleBox["\"c\"", Italic, StripOnInput -> False], "3"]}], 
+        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+atom cubed elementary charge per speed of light cubed", 
+        FractionBox[
+         RowBox[{
+           SuperscriptBox["\"Cesium133HyperfineSplittingFrequency\"", "3"], 
+           " ", "\"ElementaryCharge\""}], 
+         SuperscriptBox["\"SpeedOfLight\"", "3"]]},
+       "Quantity"], ",", 
+      TemplateBox[{"1.`", 
+        RowBox[{
+          SuperscriptBox[
+           RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+             SubscriptBox[
+              TemplateBox[{"\"(\"", 
+                TemplateBox[{
+                  
+                  TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                   SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+               "RowDefault"], "\"hfs\""]}], "3"], "\[InvisibleSpace]", 
+          StyleBox["\"e\"", Italic, StripOnInput -> False], 
+          "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          SuperscriptBox[
+           StyleBox["\"c\"", Italic, StripOnInput -> False], "3"]}], 
+        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+atom cubed elementary charges per speed of light cubed", 
+        FractionBox[
+         RowBox[{
+           SuperscriptBox["\"Cesium133HyperfineSplittingFrequency\"", "3"], 
+           " ", "\"ElementaryCharge\""}], 
+         SuperscriptBox["\"SpeedOfLight\"", "3"]]},
+       "Quantity"]}], "}"}]}], ",", 
+   RowBox[{"\<\"surface-charge-density\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"1", 
+        RowBox[{"\"C\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          SuperscriptBox["\"m\"", "2"]}], "coulomb per meter squared", 
+        FractionBox["\"Coulombs\"", 
+         SuperscriptBox["\"Meters\"", "2"]]},
+       "Quantity"], ",", 
+      TemplateBox[{"1", 
+        RowBox[{
+          SuperscriptBox[
+           RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+             SubscriptBox[
+              TemplateBox[{"\"(\"", 
+                TemplateBox[{
+                  
+                  TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                   SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+               "RowDefault"], "\"hfs\""]}], "2"], "\[InvisibleSpace]", 
+          StyleBox["\"e\"", Italic, StripOnInput -> False], 
+          "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          SuperscriptBox[
+           StyleBox["\"c\"", Italic, StripOnInput -> False], "2"]}], 
+        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+atom squared elementary charge per speed of light squared", 
+        FractionBox[
+         RowBox[{
+           SuperscriptBox["\"Cesium133HyperfineSplittingFrequency\"", "2"], 
+           " ", "\"ElementaryCharge\""}], 
+         SuperscriptBox["\"SpeedOfLight\"", "2"]]},
+       "Quantity"], ",", 
+      TemplateBox[{"1.`", 
+        RowBox[{
+          SuperscriptBox[
+           RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+             SubscriptBox[
+              TemplateBox[{"\"(\"", 
+                TemplateBox[{
+                  
+                  TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                   SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+               "RowDefault"], "\"hfs\""]}], "2"], "\[InvisibleSpace]", 
+          StyleBox["\"e\"", Italic, StripOnInput -> False], 
+          "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          SuperscriptBox[
+           StyleBox["\"c\"", Italic, StripOnInput -> False], "2"]}], 
+        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+atom squared elementary charges per speed of light squared", 
+        FractionBox[
+         RowBox[{
+           SuperscriptBox["\"Cesium133HyperfineSplittingFrequency\"", "2"], 
+           " ", "\"ElementaryCharge\""}], 
+         SuperscriptBox["\"SpeedOfLight\"", "2"]]},
+       "Quantity"]}], "}"}]}], ",", 
+   RowBox[{"\<\"electric-flux-density\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"1", 
+        RowBox[{"\"C\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          SuperscriptBox["\"m\"", "2"]}], "coulomb per meter squared", 
+        FractionBox["\"Coulombs\"", 
+         SuperscriptBox["\"Meters\"", "2"]]},
+       "Quantity"], ",", 
+      TemplateBox[{"1", 
+        RowBox[{
+          SuperscriptBox[
+           RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+             SubscriptBox[
+              TemplateBox[{"\"(\"", 
+                TemplateBox[{
+                  
+                  TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                   SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+               "RowDefault"], "\"hfs\""]}], "2"], "\[InvisibleSpace]", 
+          StyleBox["\"e\"", Italic, StripOnInput -> False], 
+          "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          SuperscriptBox[
+           StyleBox["\"c\"", Italic, StripOnInput -> False], "2"]}], 
+        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+atom squared elementary charge per speed of light squared", 
+        FractionBox[
+         RowBox[{
+           SuperscriptBox["\"Cesium133HyperfineSplittingFrequency\"", "2"], 
+           " ", "\"ElementaryCharge\""}], 
+         SuperscriptBox["\"SpeedOfLight\"", "2"]]},
+       "Quantity"], ",", 
+      TemplateBox[{"1.`", 
+        RowBox[{
+          SuperscriptBox[
+           RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+             SubscriptBox[
+              TemplateBox[{"\"(\"", 
+                TemplateBox[{
+                  
+                  TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                   SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+               "RowDefault"], "\"hfs\""]}], "2"], "\[InvisibleSpace]", 
+          StyleBox["\"e\"", Italic, StripOnInput -> False], 
+          "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          SuperscriptBox[
+           StyleBox["\"c\"", Italic, StripOnInput -> False], "2"]}], 
+        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+atom squared elementary charges per speed of light squared", 
+        FractionBox[
+         RowBox[{
+           SuperscriptBox["\"Cesium133HyperfineSplittingFrequency\"", "2"], 
+           " ", "\"ElementaryCharge\""}], 
+         SuperscriptBox["\"SpeedOfLight\"", "2"]]},
+       "Quantity"]}], "}"}]}], ",", 
+   RowBox[{"\<\"permittivity\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"1", 
+        RowBox[{
+         "\"F\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          "\"m\""}], "farad per meter", 
+        FractionBox["\"Farads\"", "\"Meters\""]},
+       "Quantity"], ",", 
+      TemplateBox[{"1", 
+        RowBox[{
+          SuperscriptBox[
+           StyleBox["\"e\"", Italic, StripOnInput -> False], "2"], 
+          "\[NegativeMediumSpace]", "\"/(\"", "\[InvisibleSpace]", 
+          StyleBox["\"h\"", Italic, StripOnInput -> False], "\[ThinSpace]", 
+          StyleBox["\"c\"", Italic, StripOnInput -> False], 
+          "\[InvisibleSpace]", "\")\""}], 
+        "elementary charge squared per Planck constant speed of light", 
+        FractionBox[
+         SuperscriptBox["\"ElementaryCharge\"", "2"], 
+         RowBox[{"\"PlanckConstant\"", " ", "\"SpeedOfLight\""}]]},
+       "Quantity"], ",", 
+      TemplateBox[{"1.`", 
+        RowBox[{
+          SuperscriptBox[
+           StyleBox["\"e\"", Italic, StripOnInput -> False], "2"], 
+          "\[NegativeMediumSpace]", "\"/(\"", "\[InvisibleSpace]", 
+          StyleBox["\"h\"", Italic, StripOnInput -> False], "\[ThinSpace]", 
+          StyleBox["\"c\"", Italic, StripOnInput -> False], 
+          "\[InvisibleSpace]", "\")\""}], 
+        "elementary charges squared per Planck constant speed of light", 
+        FractionBox[
+         SuperscriptBox["\"ElementaryCharge\"", "2"], 
+         RowBox[{"\"PlanckConstant\"", " ", "\"SpeedOfLight\""}]]},
+       "Quantity"]}], "}"}]}], ",", 
+   RowBox[{"\<\"permeability\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"1", 
+        RowBox[{
+         "\"H\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          "\"m\""}], "henry per meter", 
+        FractionBox["\"Henries\"", "\"Meters\""]},
+       "Quantity"], ",", 
+      TemplateBox[{"1", 
+        RowBox[{
+          StyleBox["\"h\"", Italic, StripOnInput -> False], 
+          "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", 
+          SuperscriptBox[
+           StyleBox["\"e\"", Italic, StripOnInput -> False], "2"], 
+          "\[InvisibleSpace]", 
+          StyleBox["\"c\"", Italic, StripOnInput -> False], 
+          "\[InvisibleSpace]", "\")\""}], 
+        "Planck constant per elementary charge squared speed of light", 
+        FractionBox["\"PlanckConstant\"", 
+         RowBox[{
+           SuperscriptBox["\"ElementaryCharge\"", "2"], " ", 
+           "\"SpeedOfLight\""}]]},
+       "Quantity"], ",", 
+      TemplateBox[{"1.`", 
+        RowBox[{
+          StyleBox["\"h\"", Italic, StripOnInput -> False], 
+          "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", 
+          SuperscriptBox[
+           StyleBox["\"e\"", Italic, StripOnInput -> False], "2"], 
+          "\[InvisibleSpace]", 
+          StyleBox["\"c\"", Italic, StripOnInput -> False], 
+          "\[InvisibleSpace]", "\")\""}], 
+        "Planck constants per elementary charge squared speed of light", 
+        FractionBox["\"PlanckConstant\"", 
+         RowBox[{
+           SuperscriptBox["\"ElementaryCharge\"", "2"], " ", 
+           "\"SpeedOfLight\""}]]},
+       "Quantity"]}], "}"}]}], ",", 
+   RowBox[{"\<\"molar-energy\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"1", 
+        RowBox[{
+         "\"J\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          "\"mol\""}], "joule per mole", 
+        FractionBox["\"Joules\"", "\"Moles\""]},
+       "Quantity"], ",", 
+      TemplateBox[{"1", 
+        RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+          SubscriptBox[
+           TemplateBox[{"\"(\"", 
+             TemplateBox[{
+               
+               TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+            "RowDefault"], "\"hfs\""], "\[ThinSpace]", 
+          SubscriptBox[
+           StyleBox["\"N\"", StripOnInput -> False, FontSlant -> Italic], 
+           StyleBox["\"A\"", StripOnInput -> False, FontSlant -> Italic]], 
+          "\[ThinSpace]", 
+          StyleBox["\"h\"", StripOnInput -> False, FontSlant -> Italic]}], 
+        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+atom Avogadro constant Planck constant", 
+        RowBox[{
+         "\"AvogadroConstant\"", " ", 
+          "\"Cesium133HyperfineSplittingFrequency\"", " ", 
+          "\"PlanckConstant\""}]},
+       "Quantity"], ",", 
+      TemplateBox[{"1.`", 
+        RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+          SubscriptBox[
+           TemplateBox[{"\"(\"", 
+             TemplateBox[{
+               
+               TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+            "RowDefault"], "\"hfs\""], "\[ThinSpace]", 
+          SubscriptBox[
+           StyleBox["\"N\"", StripOnInput -> False, FontSlant -> Italic], 
+           StyleBox["\"A\"", StripOnInput -> False, FontSlant -> Italic]], 
+          "\[ThinSpace]", 
+          StyleBox["\"h\"", StripOnInput -> False, FontSlant -> Italic]}], 
+        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+atom Avogadro constant Planck constants", 
+        RowBox[{
+         "\"AvogadroConstant\"", " ", 
+          "\"Cesium133HyperfineSplittingFrequency\"", " ", 
+          "\"PlanckConstant\""}]},
+       "Quantity"]}], "}"}]}], ",", 
+   RowBox[{"\<\"molar-entropy-molar-heat-capacity\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"1", 
+        RowBox[{
+         "\"J\"", "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", "\"K\"",
+           "\[ThinSpace]", "\"mol\"", "\[InvisibleSpace]", "\")\""}], 
+        "joule per kelvin mole", 
+        FractionBox["\"Joules\"", 
+         RowBox[{"\"Kelvins\"", " ", "\"Moles\""}]]},
+       "Quantity"], ",", 
+      TemplateBox[{"1", 
+        RowBox[{
+          SubscriptBox[
+           StyleBox["\"N\"", Italic, StripOnInput -> False], 
+           StyleBox["\"A\"", Italic, StripOnInput -> False]], "\[ThinSpace]", 
+          StyleBox["\"k\"", Italic, StripOnInput -> False]}], 
+        "Avogadro constant Boltzmann constant", 
+        RowBox[{"\"AvogadroConstant\"", " ", "\"BoltzmannConstant\""}]},
+       "Quantity"], ",", 
+      TemplateBox[{"1.`", 
+        RowBox[{
+          SubscriptBox[
+           StyleBox["\"N\"", Italic, StripOnInput -> False], 
+           StyleBox["\"A\"", Italic, StripOnInput -> False]], "\[ThinSpace]", 
+          StyleBox["\"k\"", Italic, StripOnInput -> False]}], 
+        "Avogadro constant Boltzmann constants", 
+        RowBox[{"\"AvogadroConstant\"", " ", "\"BoltzmannConstant\""}]},
+       "Quantity"]}], "}"}]}], ",", 
+   RowBox[{"\<\"exposure-x-ray-\[Gamma]-ray\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"1", 
+        RowBox[{
+         "\"C\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          "\"kg\""}], "coulomb per kilogram", 
+        FractionBox["\"Coulombs\"", "\"Kilograms\""]},
+       "Quantity"], ",", 
+      TemplateBox[{"1", 
+        RowBox[{
+          StyleBox["\"e\"", StripOnInput -> False, FontSlant -> Italic], 
+          "\[ThinSpace]", 
+          SuperscriptBox[
+           StyleBox["\"c\"", StripOnInput -> False, FontSlant -> Italic], 
+           "2"], "\[NegativeMediumSpace]", "\"/(\"", "\[InvisibleSpace]", 
+          "\"\[CapitalDelta]\[Nu]\"", 
+          SubscriptBox[
+           TemplateBox[{"\"(\"", 
+             TemplateBox[{
+               
+               TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+            "RowDefault"], "\"hfs\""], "\[ThinSpace]", 
+          StyleBox["\"h\"", StripOnInput -> False, FontSlant -> Italic], 
+          "\[InvisibleSpace]", "\")\""}], 
+        "elementary charge speed of light squared per ground state hyperfine \
+splitting frequency of the cesium\[Hyphen]133 atom Planck constant", 
+        FractionBox[
+         RowBox[{"\"ElementaryCharge\"", " ", 
+           SuperscriptBox["\"SpeedOfLight\"", "2"]}], 
+         RowBox[{
+          "\"Cesium133HyperfineSplittingFrequency\"", " ", 
+           "\"PlanckConstant\""}]]},
+       "Quantity"], ",", 
+      TemplateBox[{"1.`", 
+        RowBox[{
+          StyleBox["\"e\"", StripOnInput -> False, FontSlant -> Italic], 
+          "\[ThinSpace]", 
+          SuperscriptBox[
+           StyleBox["\"c\"", StripOnInput -> False, FontSlant -> Italic], 
+           "2"], "\[NegativeMediumSpace]", "\"/(\"", "\[InvisibleSpace]", 
+          "\"\[CapitalDelta]\[Nu]\"", 
+          SubscriptBox[
+           TemplateBox[{"\"(\"", 
+             TemplateBox[{
+               
+               TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+            "RowDefault"], "\"hfs\""], "\[ThinSpace]", 
+          StyleBox["\"h\"", StripOnInput -> False, FontSlant -> Italic], 
+          "\[InvisibleSpace]", "\")\""}], 
+        "elementary charge speed of light squared per ground state hyperfine \
+splitting frequency of the cesium\[Hyphen]133 atom Planck constant", 
+        FractionBox[
+         RowBox[{"\"ElementaryCharge\"", " ", 
+           SuperscriptBox["\"SpeedOfLight\"", "2"]}], 
+         RowBox[{
+          "\"Cesium133HyperfineSplittingFrequency\"", " ", 
+           "\"PlanckConstant\""}]]},
+       "Quantity"]}], "}"}]}], ",", 
+   RowBox[{"\<\"absorbed-dose-rate\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"1", 
+        RowBox[{
+         "\"Gy\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          "\"s\""}], "gray per second", 
+        FractionBox["\"Grays\"", "\"Seconds\""]},
+       "Quantity"], ",", 
+      TemplateBox[{"1", 
+        RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+          SubscriptBox[
+           TemplateBox[{"\"(\"", 
+             TemplateBox[{
+               
+               TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+            "RowDefault"], "\"hfs\""], "\[ThinSpace]", 
+          SuperscriptBox[
+           StyleBox["\"c\"", StripOnInput -> False, FontSlant -> Italic], 
+           "2"]}], "ground state hyperfine splitting frequency of the cesium\
+\[Hyphen]133 atom speed of light squared", 
+        RowBox[{"\"Cesium133HyperfineSplittingFrequency\"", " ", 
+          SuperscriptBox["\"SpeedOfLight\"", "2"]}]},
+       "Quantity"], ",", 
+      TemplateBox[{"1.`", 
+        RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+          SubscriptBox[
+           TemplateBox[{"\"(\"", 
+             TemplateBox[{
+               
+               TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+            "RowDefault"], "\"hfs\""], "\[ThinSpace]", 
+          SuperscriptBox[
+           StyleBox["\"c\"", StripOnInput -> False, FontSlant -> Italic], 
+           "2"]}], "ground state hyperfine splitting frequency of the cesium\
+\[Hyphen]133 atom speed of light squared", 
+        RowBox[{"\"Cesium133HyperfineSplittingFrequency\"", " ", 
+          SuperscriptBox["\"SpeedOfLight\"", "2"]}]},
+       "Quantity"]}], "}"}]}], ",", 
+   RowBox[{"\<\"radiant-intensity\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"1", 
+        RowBox[{
+         "\"W\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          "\"sr\""}], "watt per steradian", 
+        FractionBox["\"Watts\"", "\"Steradians\""]},
+       "Quantity"], ",", 
+      TemplateBox[{"1", 
+        RowBox[{
+          SuperscriptBox[
+           RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+             SubscriptBox[
+              TemplateBox[{"\"(\"", 
+                TemplateBox[{
+                  
+                  TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                   SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+               "RowDefault"], "\"hfs\""]}], "2"], "\[InvisibleSpace]", 
+          StyleBox["\"h\"", Italic, StripOnInput -> False]}], 
+        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+atom squared Planck constant", 
+        RowBox[{
+          SuperscriptBox["\"Cesium133HyperfineSplittingFrequency\"", "2"], 
+          " ", "\"PlanckConstant\""}]},
+       "Quantity"], ",", 
+      TemplateBox[{"1.`", 
+        RowBox[{
+          SuperscriptBox[
+           RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+             SubscriptBox[
+              TemplateBox[{"\"(\"", 
+                TemplateBox[{
+                  
+                  TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                   SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+               "RowDefault"], "\"hfs\""]}], "2"], "\[InvisibleSpace]", 
+          StyleBox["\"h\"", Italic, StripOnInput -> False]}], 
+        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+atom squared Planck constants", 
+        RowBox[{
+          SuperscriptBox["\"Cesium133HyperfineSplittingFrequency\"", "2"], 
+          " ", "\"PlanckConstant\""}]},
+       "Quantity"]}], "}"}]}], ",", 
+   RowBox[{"\<\"radiance\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"1", 
+        RowBox[{"\"W\"", "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", 
+          SuperscriptBox["\"m\"", "2"], "\[InvisibleSpace]", "\"sr\"", 
+          "\[InvisibleSpace]", "\")\""}], "watt per meter squared steradian", 
+        FractionBox["\"Watts\"", 
+         RowBox[{
+           SuperscriptBox["\"Meters\"", "2"], " ", "\"Steradians\""}]]},
+       "Quantity"], ",", 
+      TemplateBox[{"1", 
+        RowBox[{
+          SuperscriptBox[
+           RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+             SubscriptBox[
+              TemplateBox[{"\"(\"", 
+                TemplateBox[{
+                  
+                  TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                   SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+               "RowDefault"], "\"hfs\""]}], "4"], "\[InvisibleSpace]", 
+          StyleBox["\"h\"", Italic, StripOnInput -> False], 
+          "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          SuperscriptBox[
+           StyleBox["\"c\"", Italic, StripOnInput -> False], "2"]}], 
+        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+atom to the fourth Planck constant per speed of light squared", 
+        FractionBox[
+         RowBox[{
+           SuperscriptBox["\"Cesium133HyperfineSplittingFrequency\"", "4"], 
+           " ", "\"PlanckConstant\""}], 
+         SuperscriptBox["\"SpeedOfLight\"", "2"]]},
+       "Quantity"], ",", 
+      TemplateBox[{"1.`", 
+        RowBox[{
+          SuperscriptBox[
+           RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+             SubscriptBox[
+              TemplateBox[{"\"(\"", 
+                TemplateBox[{
+                  
+                  TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                   SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+               "RowDefault"], "\"hfs\""]}], "4"], "\[InvisibleSpace]", 
+          StyleBox["\"h\"", Italic, StripOnInput -> False], 
+          "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          SuperscriptBox[
+           StyleBox["\"c\"", Italic, StripOnInput -> False], "2"]}], 
+        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+atom to the fourth Planck constants per speed of light squared", 
+        FractionBox[
+         RowBox[{
+           SuperscriptBox["\"Cesium133HyperfineSplittingFrequency\"", "4"], 
+           " ", "\"PlanckConstant\""}], 
+         SuperscriptBox["\"SpeedOfLight\"", "2"]]},
+       "Quantity"]}], "}"}]}], ",", 
+   RowBox[{"\<\"catalytic-activity-concentration\"\>", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      TemplateBox[{"1", 
+        RowBox[{"\"kat\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          SuperscriptBox["\"m\"", "3"]}], "katal per meter cubed", 
+        FractionBox["\"Katals\"", 
+         SuperscriptBox["\"Meters\"", "3"]]},
+       "Quantity"], ",", 
+      TemplateBox[{"1", 
+        RowBox[{
+          SuperscriptBox[
+           RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+             SubscriptBox[
+              TemplateBox[{"\"(\"", 
+                TemplateBox[{
+                  
+                  TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                   SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+               "RowDefault"], "\"hfs\""]}], "4"], "\[NegativeMediumSpace]", 
+          "\"/(\"", "\[InvisibleSpace]", 
+          SubscriptBox[
+           StyleBox["\"N\"", Italic, StripOnInput -> False], 
+           StyleBox["\"A\"", Italic, StripOnInput -> False]], "\[ThinSpace]", 
+          SuperscriptBox[
+           StyleBox["\"c\"", Italic, StripOnInput -> False], "3"], 
+          "\[InvisibleSpace]", "\")\""}], 
+        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+atom to the fourth per Avogadro constant speed of light cubed", 
+        FractionBox[
+         SuperscriptBox["\"Cesium133HyperfineSplittingFrequency\"", "4"], 
+         RowBox[{"\"AvogadroConstant\"", " ", 
+           SuperscriptBox["\"SpeedOfLight\"", "3"]}]]},
+       "Quantity"], ",", 
+      TemplateBox[{"1.`", 
+        RowBox[{
+          SuperscriptBox[
+           RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+             SubscriptBox[
+              TemplateBox[{"\"(\"", 
+                TemplateBox[{
+                  
+                  TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+                   SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+               "RowDefault"], "\"hfs\""]}], "4"], "\[NegativeMediumSpace]", 
+          "\"/(\"", "\[InvisibleSpace]", 
+          SubscriptBox[
+           StyleBox["\"N\"", Italic, StripOnInput -> False], 
+           StyleBox["\"A\"", Italic, StripOnInput -> False]], "\[ThinSpace]", 
+          SuperscriptBox[
+           StyleBox["\"c\"", Italic, StripOnInput -> False], "3"], 
+          "\[InvisibleSpace]", "\")\""}], 
+        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+atom to the fourth per Avogadro constant speed of light cubed", 
+        FractionBox[
+         SuperscriptBox["\"Cesium133HyperfineSplittingFrequency\"", "4"], 
+         RowBox[{"\"AvogadroConstant\"", " ", 
+           SuperscriptBox["\"SpeedOfLight\"", "3"]}]]},
+       "Quantity"]}], "}"}]}]}], "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{3.8724363528767424`*^9, 3.872436408614008*^9, 
+  3.8724367551687937`*^9},
+ CellLabel->"Out[45]=",
+ CellID->80977155,ExpressionUUID->"4a0303d2-dfd6-4856-bd95-32f4c2b0cc6a"]
 }, Open  ]]
 }, Open  ]],
 
@@ -3683,7 +5100,7 @@ Cell["Additional information for the reviewer.", "Text",
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{576, Automatic},
+WindowSize->{1152, Automatic},
 WindowMargins->{{
   Automatic, -5.399999999999864}, {-5.399999999999977, Automatic}},
 Visible->True,
@@ -3733,7 +5150,7 @@ WyabbVsUI30dbWyR5mC4Y6npzAQV7A7CHW8e0ORJGTUV01ufdzMGR2GbTwVmCj3d8A9cd0NNHoiRcl\
     "Contexts" -> {
      "FunctionResource`", "FunctionResource`DefinitionNotebook`"}, 
     "DefaultContentMethod" -> "Legacy"}, "ToolsOpen" -> True, "StatusMessage" -> 
-  "", "SubmissionReviewData" -> {"Review" -> False}},
+  "", "SubmissionReviewData" -> {"Review" -> False}, "TryRealOnly" -> False},
 CreateCellID->True,
 FrontEndVersion->"13.1 for Microsoft Windows (64-bit) (June 16, 2022)",
 StyleDefinitions->Notebook[{
