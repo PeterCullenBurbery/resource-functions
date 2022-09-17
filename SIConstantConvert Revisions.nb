@@ -3,6 +3,7 @@ Notebook[{
 Cell[CellGroupData[{
 Cell["SIConstantConvert", "Title",
  Deletable->False,
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -13,15 +14,19 @@ Cell["SIConstantConvert", "Title",
  CellTags->{"Name", "TemplateCell", "Title", "TabNext"},
  CellID->863144461,ExpressionUUID->"2c02e5e4-ecd0-4650-95f6-5e5566946820"],
 
-Cell["One-line description explaining the function\[CloseCurlyQuote]s basic \
-purpose", "Text",
+Cell["\<\
+find a representation of a unit in terms of the seven defining constants of \
+the SI\
+\>", "Text",
  Deletable->False,
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
        WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.872437127562142*^9, 3.872437163622707*^9}},
  CellTags->{"DefaultContent", "Description", "TabNext", "TemplateCell"},
  CellID->660820806,ExpressionUUID->"34576a31-c1c8-4b84-85df-708696d83ec5"],
 
@@ -210,6 +215,7 @@ Cell[BoxData[{
           RowBox[{"Join", "[", 
            RowBox[{"multipliers", ",", "angleextra"}], "]"}]}]}], "]"}], ",", 
        RowBox[{"Times", "@@", "multipliers"}]}], "]"}]}]}], "]"}]}]}], "Input",
+ TaggingRules->{},
  CellChangeTimes->{3.8724346876512136`*^9},
  CellTags->"DefaultContent",
  CellLabel->"In[1]:=",
@@ -285,6 +291,7 @@ Cell[CellGroupData[{
 Cell[BoxData[
  RowBox[{"SIConstantConvert", "[", 
   StyleBox["unit", "TI"], "]"}]], "UsageInputs",
+ TaggingRules->{},
  CellChangeTimes->{{3.8724368419445143`*^9, 3.8724368443943915`*^9}, {
   3.8724368812214794`*^9, 3.8724368866058373`*^9}},
  FontFamily->"Source Sans Pro",
@@ -296,12 +303,13 @@ Cell[TextData[{
  Cell[BoxData[
   StyleBox["unit", "TI"]], "InlineFormula",
   FontFamily->"Source Sans Pro",ExpressionUUID->
-  "47c3227b-67b9-4830-b426-d91de80387c2"],
- " in terms of the seven defining constants of the SI"
+  "6865207d-f477-4f5e-a980-fed88fc817af"],
+ " in terms of the seven defining constants of the SI."
 }], "UsageDescription",
+ TaggingRules->{},
  CellChangeTimes->{{3.8724368530332093`*^9, 3.8724368922978373`*^9}},
  CellTags->{"DefaultContent", "TabNext"},
- CellID->746063541,ExpressionUUID->"e4444c12-d397-420b-a8a4-04f8cc484c0b"]
+ CellID->746063541,ExpressionUUID->"7106a862-cfe6-4363-a685-4f6db0ddcab4"]
 }, Open  ]]
 }, Open  ]],
 
@@ -343,6 +351,7 @@ function, its development, and its usage.", "MoreInfoText"], Background ->
  CellID->447261062,ExpressionUUID->"1746c12a-1f71-4c9c-ab15-92693136483c"],
 
 Cell["Additional information about usage and options.", "Notes",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -514,12 +523,14 @@ usage"}], "MoreInfoText"], Background -> GrayLevel[0.95], FrameMargins -> 20,
 Cell[CellGroupData[{
 
 Cell["Basic Examples", "Subsection",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellID->619504543,ExpressionUUID->"547e78c0-b675-42ce-90bf-684458cc4b7b"],
 
 Cell["\<\
 Convert SI base units into combinations of physical constants:\
 \>", "Text",
+ TaggingRules->{},
  CellChangeTimes->{{3.872435095090625*^9, 3.8724351044512415`*^9}},
  CellTags->"DefaultContent",
  CellID->586099280,ExpressionUUID->"d25d0caf-2303-48c8-987f-b0d698c69bcb"],
@@ -546,6 +557,7 @@ Cell[BoxData[
       RowBox[{"Quantity", "[", "\"\<Moles\>\"", "]"}], ",", 
       RowBox[{"Quantity", "[", "\"\<Candelas\>\"", "]"}]}], "}"}]}], 
    "]"}]}]], "Input",
+ TaggingRules->{},
  CellChangeTimes->{{3.872434712384445*^9, 3.8724347208802366`*^9}, {
   3.872434771929753*^9, 3.8724348299700766`*^9}, {3.872435506311618*^9, 
   3.87243557081034*^9}, {3.8724356325288553`*^9, 3.8724356339416437`*^9}},
@@ -577,6 +589,7 @@ Cell[BoxData[
    RowBox[{"\<\"luminous-intensity\"\>", "\[Rule]", 
     TemplateBox[{"1", "\"cd\"", "candela", "\"Candelas\""},
      "Quantity"]}]}], "\[RightAssociation]"}]], "Output",
+ TaggingRules->{},
  CellChangeTimes->{
   3.872434830350564*^9, {3.8724355721667385`*^9, 3.8724355917036123`*^9}},
  CellTags->"DefaultContent",
@@ -595,6 +608,7 @@ Cell[BoxData[
      RowBox[{"N", "[", 
       RowBox[{"SIConstantConvert", "[", "#", "]"}], "]"}]}], "}"}], "&"}], "/@",
    "SIBASEUNITS"}]], "Input",
+ TaggingRules->{},
  CellChangeTimes->{{3.872435580965404*^9, 3.872435621449873*^9}},
  CellLabel->"In[26]:=",
  CellID->100960491,ExpressionUUID->"ef8ede52-7467-455f-96a6-0217d75509e7"],
@@ -882,12 +896,14 @@ THz Planck constants per radian squared",
            "\"PlanckConstant\""}], 
          SuperscriptBox["\"Radians\"", "2"]]},
        "Quantity"]}], "}"}]}]}], "\[RightAssociation]"}]], "Output",
+ TaggingRules->{},
  CellChangeTimes->{{3.87243558644755*^9, 3.872435622077403*^9}},
  CellLabel->"Out[26]=",
  CellID->907146275,ExpressionUUID->"a66f4134-6a07-44f9-9974-2d05ed08e14c"]
 }, Open  ]],
 
 Cell["Convert SI derived units with special names:", "Text",
+ TaggingRules->{},
  CellChangeTimes->{{3.8724369079047737`*^9, 3.8724369155330997`*^9}},
  CellID->122990904,ExpressionUUID->"2b905963-5c7a-4665-979c-ebcb7fd1fea4"],
 
@@ -936,6 +952,7 @@ Cell[BoxData[
       RowBox[{"Quantity", "[", "\"\<Sieverts\>\"", "]"}], ",", 
       RowBox[{"Quantity", "[", "\"\<Katals\>\"", "]"}]}], "}"}]}], 
    "]"}]}]], "Input",
+ TaggingRules->{},
  CellChangeTimes->{{3.8724357028803015`*^9, 3.8724359823950386`*^9}, {
   3.87243602377654*^9, 3.8724360292739687`*^9}},
  CellLabel->"In[29]:=",
@@ -1011,6 +1028,7 @@ Cell[BoxData[
    RowBox[{"\<\"catalytic-activity\"\>", "\[Rule]", 
     TemplateBox[{"1", "\"kat\"", "katal", "\"Katals\""},
      "Quantity"]}]}], "\[RightAssociation]"}]], "Output",
+ TaggingRules->{},
  CellChangeTimes->{{3.8724359737770414`*^9, 3.872435993984917*^9}, 
    3.8724360295222535`*^9},
  CellLabel->"Out[29]=",
@@ -1028,6 +1046,7 @@ Cell[BoxData[
      RowBox[{"N", "[", 
       RowBox[{"SIConstantConvert", "[", "#", "]"}], "]"}]}], "}"}], "&"}], "/@",
    "SIDERIVEDUNITSWITHSPECIALNAMES"}]], "Input",
+ TaggingRules->{},
  CellChangeTimes->{{3.872436035042858*^9, 3.8724360455029945`*^9}},
  CellLabel->"In[30]:=",
  CellID->88102106,ExpressionUUID->"275805de-9843-432a-bac7-f29f0a8383c9"],
@@ -1805,12 +1824,14 @@ atom per Avogadro constant",
         FractionBox[
         "\"Cesium133HyperfineSplittingFrequency\"", "\"AvogadroConstant\""]},
        "Quantity"]}], "}"}]}]}], "\[RightAssociation]"}]], "Output",
+ TaggingRules->{},
  CellChangeTimes->{3.8724360461453457`*^9},
  CellLabel->"Out[30]=",
  CellID->96056475,ExpressionUUID->"cf4defbe-362d-4621-b11a-10aaa4cf97ab"]
 }, Open  ]],
 
 Cell["SI derived units:", "Text",
+ TaggingRules->{},
  CellChangeTimes->{{3.8724351380817814`*^9, 3.87243514169588*^9}},
  CellID->89448723,ExpressionUUID->"990cd29a-20d4-42d2-aaee-765fca793da2"],
 
@@ -1855,6 +1876,7 @@ Cell[BoxData[
       RowBox[{"Quantity", "[", 
        RowBox[{"\"\<Candelas\>\"", "\"\<Meters\>\""}], "]"}]}], "}"}]}], 
    "]"}]}]], "Input",
+ TaggingRules->{},
  CellChangeTimes->{{3.872435144469147*^9, 3.8724354328154807`*^9}},
  CellLabel->"In[18]:=",
  CellID->124927313,ExpressionUUID->"dfc597df-27f5-4e78-b575-b332da999050"],
@@ -1927,6 +1949,7 @@ Cell[BoxData[
       RowBox[{"\"m\"", "\[ThinSpace]", "\"cd\""}], "meter candela", 
       RowBox[{"\"Candelas\"", " ", "\"Meters\""}]},
      "Quantity"]}]}], "\[RightAssociation]"}]], "Output",
+ TaggingRules->{},
  CellChangeTimes->{3.8724353168280983`*^9, 3.8724354351711245`*^9},
  CellLabel->"Out[18]=",
  CellID->25871031,ExpressionUUID->"7ab1972d-ff77-4f9b-a6c1-36232d4b1b5b"]
@@ -1943,6 +1966,7 @@ Cell[BoxData[
      RowBox[{"N", "[", 
       RowBox[{"SIConstantConvert", "[", "#", "]"}], "]"}]}], "}"}], "&"}], "/@",
    "DERIVEDQUANTITIESINSIUNITS"}]], "Input",
+ TaggingRules->{},
  CellChangeTimes->{{3.872435453743038*^9, 3.8724354635256042`*^9}, {
   3.8724360828992386`*^9, 3.87243609084768*^9}},
  CellLabel->"In[31]:=",
@@ -2387,6 +2411,7 @@ constant speed of light per radian squared",
            "\"PlanckConstant\"", " ", "\"SpeedOfLight\""}], 
          SuperscriptBox["\"Radians\"", "2"]]},
        "Quantity"]}], "}"}]}]}], "\[RightAssociation]"}]], "Output",
+ TaggingRules->{},
  CellChangeTimes->{3.872435463946498*^9, 3.8724360914574385`*^9},
  CellLabel->"Out[31]=",
  CellID->208342224,ExpressionUUID->"fbf74e6f-1ae9-4021-8c6b-18d4408d0157"]
@@ -2396,6 +2421,7 @@ Cell["\<\
 Convert SI coherent derived units whose names and symbols include coherent \
 derived units with special names and symbols:\
 \>", "Text",
+ TaggingRules->{},
  CellChangeTimes->{{3.8724369310384912`*^9, 3.872436950908476*^9}},
  CellID->29165739,ExpressionUUID->"a77f7059-7bf2-4ad7-b8c4-8fbe37743f63"],
 
@@ -2527,6 +2553,7 @@ ITSWITHSPECIALNAMESANDSYMBOLS", "=",
        RowBox[{"\"\<Katals\>\"", 
         SuperscriptBox["\"\<Meters\>\"", 
          RowBox[{"-", "3"}]]}], "]"}]}], "}"}]}], "]"}]}]], "Input",
+ TaggingRules->{},
  CellChangeTimes->{{3.872436112962854*^9, 3.872436329113185*^9}, {
   3.8724363885498066`*^9, 3.872436744803529*^9}},
  CellLabel->"In[44]:=",
@@ -2710,6 +2737,7 @@ Cell[BoxData[
       FractionBox["\"Katals\"", 
        SuperscriptBox["\"Meters\"", "3"]]},
      "Quantity"]}]}], "\[RightAssociation]"}]], "Output",
+ TaggingRules->{},
  CellChangeTimes->{{3.872436238484767*^9, 3.872436271762488*^9}, {
    3.872436319643247*^9, 3.872436329394396*^9}, 3.872436407398363*^9, 
    3.8724365055099883`*^9, 3.872436700684453*^9, {3.872436733233393*^9, 
@@ -2730,6 +2758,7 @@ Cell[BoxData[
       RowBox[{"SIConstantConvert", "[", "#", "]"}], "]"}]}], "}"}], "&"}], "/@",
    "SICOHERENTDERIVEDUNITSWHOSENAMESANDSYMBOLSINCLUDESICOHERENTDERIVEDUNITSWIT\
 HSPECIALNAMESANDSYMBOLS"}]], "Input",
+ TaggingRules->{},
  CellChangeTimes->{{3.8724363342855124`*^9, 3.8724363524666867`*^9}},
  CellLabel->"In[45]:=",
  CellID->369727949,ExpressionUUID->"1ed112bf-c0b5-4e6c-8fb2-3c4aeea346eb"],
@@ -2999,7 +3028,6 @@ atom to the fourth Planck constant per speed of light squared",
              SubscriptBox[
               TemplateBox[{"\"(\"", 
                 TemplateBox[{
-                  
                   TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
                    SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
                "RowDefault"], "\"hfs\""]}], "4"], "\[InvisibleSpace]", 
@@ -3866,6 +3894,7 @@ atom to the fourth per Avogadro constant speed of light cubed",
          RowBox[{"\"AvogadroConstant\"", " ", 
            SuperscriptBox["\"SpeedOfLight\"", "3"]}]]},
        "Quantity"]}], "}"}]}]}], "\[RightAssociation]"}]], "Output",
+ TaggingRules->{},
  CellChangeTimes->{3.8724363528767424`*^9, 3.872436408614008*^9, 
   3.8724367551687937`*^9},
  CellLabel->"Out[45]=",
@@ -3876,6 +3905,7 @@ atom to the fourth per Avogadro constant speed of light cubed",
 Cell[CellGroupData[{
 
 Cell["Scope", "Subsection",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellID->313242344,ExpressionUUID->"41d72348-28b6-4186-a0f6-a115416fc23a"],
 
@@ -3883,6 +3913,7 @@ Cell["\<\
 Text about additional examples expanding scope (and see other sections for \
 options, applications, etc):\
 \>", "Text",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellID->291939446,ExpressionUUID->"cf943d2c-8b86-4ca4-82af-e4d1f9e8d367"],
 
@@ -3891,12 +3922,14 @@ Cell[CellGroupData[{
 Cell[BoxData[
  RowBox[{"MyFunction", "[", 
   RowBox[{"x", ",", "y", ",", "z"}], "]"}]], "Input",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellLabel->"In[2]:= ",
  CellID->448965068,ExpressionUUID->"8053240c-48e9-4c3b-ae3a-7324dfcfba49"],
 
 Cell[BoxData[
  RowBox[{"x", " ", "y", " ", "z"}]], "Output",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellLabel->"Out[2]= ",
  CellID->494498970,ExpressionUUID->"707d424b-9c3c-47d2-8b6b-29f2dc301587"]
@@ -3904,20 +3937,24 @@ Cell[BoxData[
 }, Open  ]],
 
 Cell["Options", "Subsection",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellID->879773335,ExpressionUUID->"a9f7e647-d814-44ae-86ae-5a057e5af554"],
 
 Cell["Applications", "Subsection",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellID->542143288,ExpressionUUID->"db191a13-a03d-4867-b116-1ff55e48e46c"],
 
 Cell["Properties and Relations", "Subsection",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellID->727494039,ExpressionUUID->"5bbd6f09-a143-40ce-a1d4-c799d57d2c61"],
 
 Cell[CellGroupData[{
 
 Cell["Possible Issues", "Subsection",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellID->471245215,ExpressionUUID->"67795c24-f6cb-4373-b0be-94305c1c9e8e"],
 
@@ -3925,6 +3962,7 @@ Cell["\<\
 Due to an inconsistency with radians, units with candelas and older units \
 like candlepower might not be able to be converted:\
 \>", "Text",
+ TaggingRules->{},
  CellChangeTimes->{{3.8724369575514317`*^9, 3.872437003181633*^9}},
  CellID->160718454,ExpressionUUID->"d662164d-90c8-4307-8b51-e4e44f4f2b6d"],
 
@@ -3934,6 +3972,7 @@ Cell[BoxData[
  RowBox[{"SIConstantConvert", "[", 
   RowBox[{"Quantity", "[", 
    RowBox[{"\"\<Candelas\>\"", "\"\<Lumens\>\""}], "]"}], "]"}]], "Input",
+ TaggingRules->{},
  CellChangeTimes->{{3.8724369745322804`*^9, 3.872436989789672*^9}},
  CellLabel->"In[48]:=",
  CellID->301053944,ExpressionUUID->"d6c16606-7803-455d-8e45-09ff22b72f67"],
@@ -3950,11 +3989,13 @@ SuperscriptBox[\\\"\\\\\\\"MonochromaticRadiation540THzLuminousEfficacy\\\\\\\
 SuperscriptBox[\\\"\\\\\\\"PlanckConstant\\\\\\\"\\\", \\\"2\\\"]}]\\) are \
 incompatible units\"", 2, 48, 10, 19481628741941371386, "Local"},
   "MessageTemplate"]], "Message", "MSG",
+ TaggingRules->{},
  CellChangeTimes->{3.8724369900639477`*^9},
  CellLabel->"During evaluation of In[48]:=",
  CellID->499856,ExpressionUUID->"b5939913-1403-48c4-95c1-f59f40a2fac0"],
 
 Cell[BoxData["$Failed"], "Output",
+ TaggingRules->{},
  CellChangeTimes->{{3.8724369797044525`*^9, 3.872436990167882*^9}},
  CellLabel->"Out[48]=",
  CellID->190781085,ExpressionUUID->"c24ecb83-ec66-4d59-894b-955a4168482f"]
@@ -3964,10 +4005,12 @@ Cell[BoxData["$Failed"], "Output",
 Cell[CellGroupData[{
 
 Cell["Neat Examples", "Subsection",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellID->303071976,ExpressionUUID->"f1d93c60-0952-45c2-85f9-5de6ef87059a"],
 
 Cell["Combine all the examples:", "Text",
+ TaggingRules->{},
  CellChangeTimes->{{3.8724370125789623`*^9, 3.8724370167221155`*^9}},
  CellID->196966533,ExpressionUUID->"0d1534de-ecf0-435b-ba5c-dfc2fe7e5ea2"],
 
@@ -3980,6 +4023,7 @@ Cell[BoxData[
    "SIBASEUNITS", ",", "SIDERIVEDUNITSWITHSPECIALNAMES", ",", 
     "SICOHERENTDERIVEDUNITSWHOSENAMESANDSYMBOLSINCLUDESICOHERENTDERIVEDUNITSWI\
 THSPECIALNAMESANDSYMBOLS"}], "]"}]}]], "Input",
+ TaggingRules->{},
  CellChangeTimes->{{3.8724370273354287`*^9, 3.872437055275926*^9}},
  CellLabel->"In[52]:=",
  CellID->19940672,ExpressionUUID->"6435472c-4104-4d44-8430-58668394dccd"],
@@ -4250,6 +4294,7 @@ Cell[BoxData[
       FractionBox["\"Katals\"", 
        SuperscriptBox["\"Meters\"", "3"]]},
      "Quantity"]}]}], "\[RightAssociation]"}]], "Output",
+ TaggingRules->{},
  CellChangeTimes->{{3.872437055535939*^9, 3.8724370793947935`*^9}},
  CellLabel->"Out[52]=",
  CellID->604379370,ExpressionUUID->"8ad1e4bc-5afa-4a97-a85b-d0e1d5d417b3"]
@@ -4266,6 +4311,7 @@ Cell[BoxData[
      RowBox[{"N", "[", 
       RowBox[{"SIConstantConvert", "[", "#", "]"}], "]"}]}], "}"}], "&"}], "/@",
    "COMBINATIONS"}]], "Input",
+ TaggingRules->{},
  CellChangeTimes->{{3.87243706210019*^9, 3.8724370753974476`*^9}},
  CellLabel->"In[53]:=",
  CellID->32767909,ExpressionUUID->"3e0cd71b-146c-4109-ac97-60bf59b84894"],
@@ -4701,6 +4747,7 @@ atom to the fourth Planck constants per speed of light cubed",
           SubscriptBox[
            TemplateBox[{"\"(\"", 
              TemplateBox[{
+               
                TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
                 SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
             "RowDefault"], "\"hfs\""], "\[ThinSpace]", 
@@ -5164,6 +5211,7 @@ THz Planck constants",
              SubscriptBox[
               TemplateBox[{"\"(\"", 
                 TemplateBox[{
+                  
                   TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
                    SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
                "RowDefault"], "\"hfs\""]}], "4"], "\[InvisibleSpace]", 
@@ -6268,8 +6316,9 @@ splitting frequency of the cesium\[Hyphen]133 atom Planck constant",
             "RowDefault"], "\"hfs\""], "\[ThinSpace]", 
           SuperscriptBox[
            StyleBox["\"c\"", StripOnInput -> False, FontSlant -> Italic], 
-           "2"]}], "ground state hyperfine splitting frequency of the cesium\
-\[Hyphen]133 atom speed of light squared", 
+           "2"]}], 
+        "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+atom speed of light squared", 
         RowBox[{"\"Cesium133HyperfineSplittingFrequency\"", " ", 
           SuperscriptBox["\"SpeedOfLight\"", "2"]}]},
        "Quantity"], ",", 
@@ -6450,6 +6499,7 @@ atom to the fourth per Avogadro constant speed of light cubed",
          RowBox[{"\"AvogadroConstant\"", " ", 
            SuperscriptBox["\"SpeedOfLight\"", "3"]}]]},
        "Quantity"]}], "}"}]}]}], "\[RightAssociation]"}]], "Output",
+ TaggingRules->{},
  CellChangeTimes->{{3.8724370721552577`*^9, 3.8724370839055443`*^9}},
  CellLabel->"Out[53]=",
  CellID->70890885,ExpressionUUID->"a17fdec6-ed03-4516-9b59-923a8e565c02"]
@@ -6497,13 +6547,15 @@ publicly credited with contributing this function.", "MoreInfoText"],
  CellTags->{"Contributed By", "ContributorInformation", "TemplateCellGroup"},
  CellID->771147648,ExpressionUUID->"6b0879eb-45bb-4bbb-b000-381fa83f77c7"],
 
-Cell["Author Name", "Text",
+Cell["Peter Cullen Burbery", "Text",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
        WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.8724371732954082`*^9, 3.8724371759443083`*^9}},
  CellTags->{"DefaultContent", "TabNext"},
  CellID->855757352,ExpressionUUID->"ed0c2561-24ee-416b-a270-77a8f8cb6691"]
 }, Open  ]],
@@ -6540,6 +6592,7 @@ concepts) that should be used to include the function in search results.",
  CellID->854882061,ExpressionUUID->"6e4908b1-0975-4e8c-b347-95ac6b9dd50e"],
 
 Cell["keyword 1", "Item",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -6843,6 +6896,7 @@ related to the function.", "MoreInfoText"], Background -> GrayLevel[0.95],
  CellID->525877127,ExpressionUUID->"de4e7c6d-4a06-467b-a864-3cfe68cf6392"],
 
 Cell["SymbolName (documented Wolfram Language symbol)", "Item",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -6885,6 +6939,7 @@ repository that are related to this function.", "MoreInfoText"], Background ->
  CellID->869341850,ExpressionUUID->"407516a3-c5ff-4428-958e-f5ba41138110"],
 
 Cell["Resource Name (resources from any Wolfram repository)", "Item",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -6927,6 +6982,7 @@ repository).", "MoreInfoText"], Background -> GrayLevel[0.95], FrameMargins ->
  CellID->788767010,ExpressionUUID->"6cdb597f-836d-422a-9ae6-7a1cd5a3055d"],
 
 Cell["Source, reference or citation information", "Text",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -6969,6 +7025,7 @@ to the function.", "MoreInfoText"], Background -> GrayLevel[0.95],
  CellID->341958311,ExpressionUUID->"c53d7317-d20d-4de6-ade1-3e10fb9a3ced"],
 
 Cell["Link to other related material", "Item",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -7033,12 +7090,14 @@ Cell[CellGroupData[{
 Cell[BoxData[
  RowBox[{"MyFunction", "[", 
   RowBox[{"x", ",", "y"}], "]"}]], "Input",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellLabel->"In[3]:=",
  CellID->770806,ExpressionUUID->"449aed82-c3f0-4f88-bcf6-bb7125e5b212"],
 
 Cell[BoxData[
  RowBox[{"x", " ", "y"}]], "Output",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellLabel->"Out[3]=",
  CellID->759771806,ExpressionUUID->"97d44f53-271f-47c2-aa6d-a4f17dac2407"]
@@ -7112,6 +7171,7 @@ Cell[TextData[{
  CellID->267876551,ExpressionUUID->"4a6ef18e-3c24-478e-9394-c076009880f6"],
 
 Cell["13.0+", "Text",
+ TaggingRules->{},
  CellTags->{"DefaultContent", "ScrapeDefault"},
  CellID->788185540,ExpressionUUID->"2ab458f4-1cde-4cfa-972d-1c4aa47513a6"]
 }, Open  ]],
@@ -7561,7 +7621,7 @@ JAZLFxBaxuyKShxfvoEfKzujYRb6FXWpA="},
  CellID->818043737,ExpressionUUID->"d9694a49-bbbb-4e48-b48d-6eb442007eca"]
 }, Closed]]
 }, Open  ]]
-}, Closed]],
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -7597,6 +7657,7 @@ that are otherwise beyond the scope of the function documentation.",
  CellID->897529167,ExpressionUUID->"528a9528-c544-4cc2-b35d-6fac7d401ca6"],
 
 Cell["Additional information about limitations, issues, etc.", "Text",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -7639,6 +7700,7 @@ resource.", "MoreInfoText"], Background -> GrayLevel[0.95], FrameMargins ->
  CellID->321610809,ExpressionUUID->"be628715-cf8c-4fff-bb88-1f21ecec912d"],
 
 Cell["Additional information for the reviewer.", "Text",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -7654,6 +7716,312 @@ WindowSize->{1152, Automatic},
 WindowMargins->{{
   Automatic, -5.399999999999864}, {-5.399999999999977, Automatic}},
 Visible->True,
+DockedCells->{
+  Cell[
+   BoxData[
+    TemplateBox[{}, "MainGridTemplate"]], "DockedCell", 
+   CellMargins -> {{-10, -10}, {-8, -8}}, CellFrame -> 0, Background -> 
+   RGBColor[0.92157, 0.34118, 0.10588], CellTags -> {"MainDockedCell"}, 
+   CacheGraphics -> False], 
+  Cell[
+   BoxData[
+    TemplateBox[{}, "ToolsGridTemplate"]], "DockedCell", 
+   TaggingRules -> {"Tools" -> True}, CellTags -> {"ToolbarDockedCell"}, 
+   CellFrameMargins -> {{0, 0}, {2, 2}}, CellFrame -> {{0, 0}, {1, 0}}, 
+   CacheGraphics -> False, CellOpen -> Dynamic[
+     CurrentValue[
+      EvaluationNotebook[], {TaggingRules, "ToolsOpen"}, True]]], 
+  Cell[
+   BoxData[
+    StyleBox[
+     TagBox[
+      GridBox[{{
+         ItemBox[
+          TagBox[
+           GridBox[{{
+              OverlayBox[{
+                StyleBox[
+                 TagBox[
+                  DynamicModuleBox[{Typeset`var$$ = False}, 
+                   InterpretationBox[
+                    StyleBox[
+                    PaneSelectorBox[{False -> GridBox[{{
+                    OpenerBox[
+                    Dynamic[Typeset`var$$], Appearance -> Automatic, Enabled -> 
+                    Automatic, AutoAction -> False, ContinuousAction -> 
+                    False], 
+                    StyleBox[
+                    DynamicBox[
+                    ToBoxes[
+                    DateString[
+                    TimeZoneConvert[
+                    DateObject[
+                    3.8724371148804637`17.3405593630716*^9, TimeZone -> 0]], {
+                    "MonthName", " ", "DayShort", ", ", "Year", " ", 
+                    "Hour12Short", ":", "Minute", " ", "AMPMLowerCase"}], 
+                    StandardForm], SingleEvaluation -> True, Evaluator -> 
+                    "System"], FontSlant -> Italic, FontColor -> 
+                    GrayLevel[0.5], FontSize -> 0.9 Inherited, StripOnInput -> 
+                    False]}}, GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                    AutoDelete -> False, 
+                    GridBoxBackground -> {"Columns" -> {{Automatic}}}, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{0.2}}, "Rows" -> {{0.5}}}, 
+                    BaselinePosition -> {1, 1}], True -> GridBox[{{
+                    OpenerBox[
+                    Dynamic[Typeset`var$$], Appearance -> Automatic, Enabled -> 
+                    Automatic, AutoAction -> False, ContinuousAction -> 
+                    False], 
+                    StyleBox[
+                    DynamicBox[
+                    ToBoxes[
+                    DateString[
+                    TimeZoneConvert[
+                    DateObject[
+                    3.8724371148804637`17.3405593630716*^9, TimeZone -> 0]], {
+                    "MonthName", " ", "DayShort", ", ", "Year", " ", 
+                    "Hour12Short", ":", "Minute", " ", "AMPMLowerCase"}], 
+                    StandardForm], SingleEvaluation -> True, Evaluator -> 
+                    "System"], FontSlant -> Italic, FontColor -> 
+                    GrayLevel[0.5], FontSize -> 0.9 Inherited, StripOnInput -> 
+                    False]}, {"", 
+                    PaneBox["\"\"", ImageMargins -> 0]}}, 
+                    GridBoxAlignment -> {"Columns" -> {{Left}}}, AutoDelete -> 
+                    False, GridBoxBackground -> {"Columns" -> {{Automatic}}}, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{0.2}}, "Rows" -> {{0.5}}}, 
+                    BaselinePosition -> {1, 1}]}, 
+                    Dynamic[Typeset`var$$], Alignment -> Automatic, ImageSize -> 
+                    Automatic, ImageMargins -> 0, BaseStyle -> {}, 
+                    DefaultBaseStyle -> "OpenerView", BaselinePosition -> 
+                    Baseline], Deployed -> False, StripOnInput -> False], 
+                    OpenerView[{
+                    Style[
+                    Dynamic[
+                    DateString[
+                    TimeZoneConvert[
+                    DateObject[
+                    3.8724371148804637`17.3405593630716*^9, TimeZone -> 0]], {
+                    "MonthName", " ", "DayShort", ", ", "Year", " ", 
+                    "Hour12Short", ":", "Minute", " ", "AMPMLowerCase"}], 
+                    SingleEvaluation -> True, Evaluator -> "System"], 
+                    FontSlant -> Italic, FontColor -> GrayLevel[0.5], 
+                    FontSize -> 0.9 Inherited], ""}, False]], 
+                   DynamicModuleValues -> Automatic], Setting[#, {0}]& ], 
+                 ShowContents -> False, StripOnInput -> False], 
+                StyleBox[
+                 DynamicBox[
+                  ToBoxes[
+                   DateString[
+                    TimeZoneConvert[
+                    DateObject[
+                    3.8724371148804637`17.3405593630716*^9, TimeZone -> 0]], {
+                    "MonthName", " ", "DayShort", ", ", "Year", " ", 
+                    "Hour12Short", ":", "Minute", " ", "AMPMLowerCase"}], 
+                   StandardForm], SingleEvaluation -> True, Evaluator -> 
+                  "System"], FontSlant -> Italic, FontColor -> GrayLevel[0.5],
+                  FontSize -> 0.9 Inherited, StripOnInput -> False]}, 
+               Alignment -> {Right, Baseline}], "\"   \"", 
+              ItemBox[
+              "\"Found 2 potential issues and 1 suggestion\"", ItemSize -> 
+               Scaled[0.75], StripOnInput -> False]}}, 
+            GridBoxAlignment -> {
+             "Columns" -> {{Left}}, "Rows" -> {{Baseline}}}, AutoDelete -> 
+            False, GridBoxItemSize -> {
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], "Grid"], 
+          ItemSize -> Fit, StripOnInput -> False], 
+         ItemBox[
+          StyleBox[
+           ActionMenuBox[
+            TagBox[
+             TagBox[
+              GridBox[{{
+                 TemplateBox[{
+                   TagBox[
+                    GridBox[{{
+                    TemplateBox[{
+                    RGBColor[1., 0.4627450980392157, 0.], 
+                    RGBColor[1., 1., 1.], 10, {{0, 18}, {-2, 17}}}, 
+                    "SuggestionIconTemplate"], 
+                    StyleBox[
+                    "2", FontColor -> GrayLevel[0.5], FontSize -> 9, 
+                    StripOnInput -> False]}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Center}}}, AutoDelete -> 
+                    False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {"Columns" -> {{0.25}}}], "Grid"], 
+                   "\"Potential issues found\""}, "PrettyTooltipTemplate"], 
+                 TemplateBox[{
+                   TagBox[
+                    GridBox[{{
+                    TemplateBox[{
+                    RGBColor[
+                    0.49019607843137253`, 0.49019607843137253`, 
+                    0.49019607843137253`], 
+                    RGBColor[1., 1., 1.], 10, {{0, 18}, {-2, 17}}}, 
+                    "SuggestionIconTemplate"], 
+                    StyleBox[
+                    "1", FontColor -> GrayLevel[0.5], FontSize -> 9, 
+                    StripOnInput -> False]}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Center}}}, AutoDelete -> 
+                    False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {"Columns" -> {{0.25}}}], "Grid"], 
+                   "\"Suggestions found\""}, "PrettyTooltipTemplate"], 
+                 "\"   \""}}, AutoDelete -> False, 
+               GridBoxItemSize -> {
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+              "Grid"], 
+             MouseAppearanceTag["LinkHand"]], {TemplateBox[{
+                TemplateBox[{
+                  RGBColor[1., 0.4627450980392157, 0.], 
+                  RGBColor[1., 1., 1.], 10, {{0, 18}, {-2, 17}}}, 
+                 "SuggestionIconTemplate"], "\" \"", 
+                "\"Description not set\""}, "RowDefault"] :> (
+              DefinitionNotebookClient`LoadDefinitionNotebook["Function", 
+                NotebookObject[
+                "087cc29f-fc80-4601-b5f7-b69d52805e7a", 
+                 "ee85bea0-c27a-4bd7-83ed-3761747a7f4e"]]; 
+              DefinitionNotebookClient`PackageScope`setHint[
+               "Warning", "Function", 
+                ParentNotebook[
+                 CellObject[
+                 "34576a31-c1c8-4b84-85df-708696d83ec5", 
+                  "5dcbff8c-1f30-4fa4-966e-e893286b5ece"]], 660820806, 
+                "DescriptionNotSet", {}]; 
+              DefinitionNotebookClient`PackageScope`seek[
+                CellObject[
+                "34576a31-c1c8-4b84-85df-708696d83ec5", 
+                 "5dcbff8c-1f30-4fa4-966e-e893286b5ece"]]; Null), TemplateBox[{
+                TemplateBox[{
+                  RGBColor[
+                  0.49019607843137253`, 0.49019607843137253`, 
+                   0.49019607843137253`], 
+                  RGBColor[1., 1., 1.], 10, {{0, 18}, {-2, 17}}}, 
+                 "SuggestionIconTemplate"], "\" \"", 
+                "\"Usage descriptions should end in a period (.)\""}, 
+               "RowDefault"] :> (
+              DefinitionNotebookClient`LoadDefinitionNotebook["Function", 
+                NotebookObject[
+                "087cc29f-fc80-4601-b5f7-b69d52805e7a", 
+                 "ee85bea0-c27a-4bd7-83ed-3761747a7f4e"]]; 
+              DefinitionNotebookClient`PackageScope`setHint[
+               "Suggestion", "Function", 
+                ParentNotebook[
+                 CellObject[
+                 "e4444c12-d397-420b-a8a4-04f8cc484c0b", 
+                  "f849748d-794d-4d92-86e5-a2ee519a50d0"]], 746063541, 
+                "UsageDescriptionNeedsPeriod", {}]; 
+              DefinitionNotebookClient`PackageScope`seek[
+                CellObject[
+                "e4444c12-d397-420b-a8a4-04f8cc484c0b", 
+                 "f849748d-794d-4d92-86e5-a2ee519a50d0"]]; Null), TemplateBox[{
+                TemplateBox[{
+                  RGBColor[1., 0.4627450980392157, 0.], 
+                  RGBColor[1., 1., 1.], 10, {{0, 18}, {-2, 17}}}, 
+                 "SuggestionIconTemplate"], "\" \"", 
+                "\"No author information given\""}, "RowDefault"] :> (
+              DefinitionNotebookClient`LoadDefinitionNotebook["Function", 
+                NotebookObject[
+                "087cc29f-fc80-4601-b5f7-b69d52805e7a", 
+                 "ee85bea0-c27a-4bd7-83ed-3761747a7f4e"]]; 
+              DefinitionNotebookClient`PackageScope`setHint[
+               "Warning", "Function", 
+                ParentNotebook[
+                 CellObject[
+                 "6b0879eb-45bb-4bbb-b000-381fa83f77c7", 
+                  "5d79be12-a178-4ac2-9657-e4f2f5f1db3f"]], 771147648, 
+                "AuthorNotSet", {}]; 
+              DefinitionNotebookClient`PackageScope`seek[
+                CellObject[
+                "6b0879eb-45bb-4bbb-b000-381fa83f77c7", 
+                 "5d79be12-a178-4ac2-9657-e4f2f5f1db3f"]]; Null)}, Appearance -> 
+            None, Method -> "Queued"], "BoxID" -> "WarningCountButton", 
+           StripOnInput -> False], ItemSize -> All, StripOnInput -> False], 
+         ItemBox[
+          TagBox[
+           ButtonBox[
+            TagBox[
+             PaneSelectorBox[{False -> GraphicsBox[{
+                  GrayLevel[
+                   NCache[
+                    Rational[64, 85], 0.7529411764705882]], 
+                  
+                  PolygonBox[{{-0.282842712474619, -0.42426406871192845`}, \
+{-0.42426406871192845`, -0.282842712474619}, {0.282842712474619, 
+                   0.42426406871192845`}, {0.42426406871192845`, 
+                   0.282842712474619}}], 
+                  
+                  PolygonBox[{{0.42426406871192845`, -0.282842712474619}, {
+                   0.282842712474619, -0.42426406871192845`}, \
+{-0.42426406871192845`, 0.282842712474619}, {-0.282842712474619, 
+                   0.42426406871192845`}}]}, ImageSize -> 18, 
+                 PlotRangePadding -> 0, PlotRange -> 0.7, Background -> None],
+                True -> GraphicsBox[{
+                  GrayLevel[
+                   NCache[
+                    Rational[128, 255], 0.5019607843137255]], 
+                  
+                  PolygonBox[{{-0.282842712474619, -0.42426406871192845`}, \
+{-0.42426406871192845`, -0.282842712474619}, {0.282842712474619, 
+                   0.42426406871192845`}, {0.42426406871192845`, 
+                   0.282842712474619}}], 
+                  
+                  PolygonBox[{{0.42426406871192845`, -0.282842712474619}, {
+                   0.282842712474619, -0.42426406871192845`}, \
+{-0.42426406871192845`, 0.282842712474619}, {-0.282842712474619, 
+                   0.42426406871192845`}}]}, ImageSize -> 18, 
+                 PlotRangePadding -> 0, PlotRange -> 0.7, Background -> 
+                 None]}, 
+              Dynamic[
+               CurrentValue["MouseOver"]], ImageSize -> Automatic, 
+              FrameMargins -> 0], 
+             MouseAppearanceTag["LinkHand"]], ButtonFunction :> 
+            With[{DefinitionNotebookClient`Stripes`PackagePrivate`nbo$ = 
+               EvaluationNotebook[]}, 
+              CurrentValue[
+               DefinitionNotebookClient`Stripes`PackagePrivate`nbo$, 
+                DockedCells] = If[
+                TrueQ[
+                 MemberQ[
+                  CurrentValue["ModifierKeys"], "Control"]], 
+                DeleteCases[
+                 Flatten[{
+                   CurrentValue[
+                   DefinitionNotebookClient`Stripes`PackagePrivate`nbo$, 
+                    DockedCells]}], 
+                 Cell[
+                  Blank[], "StripeCell", 
+                  BlankNullSequence[]]], 
+                DeleteCases[
+                 Flatten[{
+                   CurrentValue[
+                   DefinitionNotebookClient`Stripes`PackagePrivate`nbo$, 
+                    DockedCells]}], 
+                 Condition[
+                  Pattern[DefinitionNotebookClient`Stripes`PackagePrivate`c$, 
+                   Blank[Cell]], 
+                  Not[
+                   FreeQ[
+                   DefinitionNotebookClient`Stripes`PackagePrivate`c$, 
+                    "bf3578a6-dfa2-4864-a5c3-cf847eee0d38"]]]]]], Appearance -> 
+            None, BoxID -> "bf3578a6-dfa2-4864-a5c3-cf847eee0d38", Evaluator -> 
+            Automatic, Method -> "Preemptive"], 
+           MouseAppearanceTag["LinkHand"]], ItemSize -> All, StripOnInput -> 
+          False]}}, 
+       GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Baseline}}}, 
+       AutoDelete -> False, 
+       GridBoxItemSize -> {
+        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], "Grid"], 
+     "Text", FontSize -> 12, FontColor -> GrayLevel[0.25], StripOnInput -> 
+     False]], "StripeCell", CellFrameMargins -> {{20, 5}, {2, 2}}, 
+   CellFrame -> {{0, 0}, {1, 0}}, CellFrameColor -> GrayLevel[0.75]]},
 TaggingRules->{
  "ResourceType" -> "Function", "ResourceCreateNotebook" -> True, 
   "TemplateVersion" -> "1.6.4", "CreationTimestamp" -> 
@@ -8144,7 +8512,6 @@ VX/aMEEQzrerjFhhelYAzofFB3r8AgApYdcE
                 StyleBox[
                 "\"Template Input\"", "Text", FontFamily -> "Source Sans Pro",
                   FontSize -> 11, StripOnInput -> False], 
-                
                 "\"Format selection automatically using appropriate \
 documentation styles\""}, "PrettyTooltipTemplate"], ButtonFunction :> 
               With[{RSNB`nb$ = ButtonNotebook[], RSNB`$cp$ = $ContextPath}, 
