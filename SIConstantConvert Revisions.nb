@@ -59,10 +59,160 @@ evaluated before creating the Examples section below.", "MoreInfoText"],
  CellTags->{"Definition", "Function", "TemplateCellGroup"},
  CellID->292731158,ExpressionUUID->"6513b058-ab02-42b3-884b-2962bd164f73"],
 
-Cell[BoxData[
+Cell[BoxData[{
+ RowBox[{"ClearAll", "[", "SIConstantConvert", "]"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"MyFunction", "[", "]"}], ":=", "xxxx"}]], "Input",
+  RowBox[{"SIConstantConvert", "[", "unit_", "]"}], ":=", 
+  RowBox[{"Block", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+     "assoc", ",", "canonicalassoc", ",", "canonicalvector", ",", 
+      "HYPERFINETRANSITIONFREQUENCYOFCAESIUM", ",", "SPEEDOFLIGHTINVACUUM", 
+      ",", "PLANCKCONSTANT", ",", "ELEMENTARYCHARGE", ",", 
+      "BOLTZMANNCONSTANT", ",", "AVOGADROCONSTANT", ",", 
+      "LUMINOUSEFFICACYMONOCHROMATICRADIATION", ",", "DEFININGCONSTANTS", ",",
+       "SIEXACTCONSTANTS", ",", "multipliers", ",", "angleextra"}], "}"}], 
+    ",", 
+    RowBox[{
+     RowBox[{"assoc", "=", 
+      RowBox[{"Association", "[", 
+       RowBox[{"Rule", "@@@", 
+        RowBox[{"UnitDimensions", "[", "unit", "]"}]}], "]"}]}], ";", 
+     RowBox[{"canonicalassoc", "=", 
+      RowBox[{"Append", "[", 
+       RowBox[{
+        RowBox[{"Association", "[", 
+         RowBox[{
+          RowBox[{"\"\<TimeUnit\>\"", "\[Rule]", "0"}], ",", 
+          RowBox[{"\"\<LengthUnit\>\"", "\[Rule]", "0"}], ",", 
+          RowBox[{"\"\<MassUnit\>\"", "\[Rule]", "0"}], ",", 
+          RowBox[{"\"\<ElectricCurrentUnit\>\"", "\[Rule]", "0"}], ",", 
+          RowBox[{"\"\<TemperatureUnit\>\"", "\[Rule]", "0"}], ",", 
+          RowBox[{"\"\<AmountUnit\>\"", "\[Rule]", "0"}], ",", 
+          RowBox[{"\"\<LuminousIntensityUnit\>\"", "\[Rule]", "0"}]}], "]"}], 
+        ",", "assoc"}], "]"}]}], ";", 
+     RowBox[{"canonicalvector", "=", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"canonicalassoc", "[", "\"\<TimeUnit\>\"", "]"}], ",", 
+        RowBox[{"canonicalassoc", "[", "\"\<LengthUnit\>\"", "]"}], ",", 
+        RowBox[{"canonicalassoc", "[", "\"\<MassUnit\>\"", "]"}], ",", 
+        RowBox[{"canonicalassoc", "[", "\"\<ElectricCurrentUnit\>\"", "]"}], 
+        ",", 
+        RowBox[{"canonicalassoc", "[", "\"\<TemperatureUnit\>\"", "]"}], ",", 
+        RowBox[{"canonicalassoc", "[", "\"\<AmountUnit\>\"", "]"}], ",", 
+        RowBox[{
+        "canonicalassoc", "[", "\"\<LuminousIntensityUnit\>\"", "]"}]}], 
+       "}"}]}], ";", 
+     RowBox[{"HYPERFINETRANSITIONFREQUENCYOFCAESIUM", "=", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "1"}], ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", 
+        ",", "0"}], "}"}]}], ";", 
+     RowBox[{"SPEEDOFLIGHTINVACUUM", "=", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "1"}], ",", "1", ",", "0", ",", "0", ",", "0", ",", "0", 
+        ",", "0"}], "}"}]}], ";", 
+     RowBox[{"PLANCKCONSTANT", "=", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "1"}], ",", "2", ",", "1", ",", "0", ",", "0", ",", "0", 
+        ",", "0"}], "}"}]}], ";", 
+     RowBox[{"ELEMENTARYCHARGE", "=", 
+      RowBox[{"{", 
+       RowBox[{
+       "1", ",", "0", ",", "0", ",", "1", ",", "0", ",", "0", ",", "0"}], 
+       "}"}]}], ";", 
+     RowBox[{"BOLTZMANNCONSTANT", "=", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "2"}], ",", "2", ",", "1", ",", "0", ",", 
+        RowBox[{"-", "1"}], ",", "0", ",", "0"}], "}"}]}], ";", 
+     RowBox[{"AVOGADROCONSTANT", "=", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "0", ",", "0", ",", "0", ",", "0", ",", 
+        RowBox[{"-", "1"}], ",", "0"}], "}"}]}], ";", 
+     RowBox[{"LUMINOUSEFFICACYMONOCHROMATICRADIATION", "=", 
+      RowBox[{"{", 
+       RowBox[{"3", ",", 
+        RowBox[{"-", "2"}], ",", 
+        RowBox[{"-", "1"}], ",", "0", ",", "0", ",", "0", ",", "1"}], "}"}]}],
+      ";", 
+     RowBox[{"DEFININGCONSTANTS", "=", 
+      RowBox[{"{", 
+       RowBox[{
+       "HYPERFINETRANSITIONFREQUENCYOFCAESIUM", ",", "SPEEDOFLIGHTINVACUUM", 
+        ",", "PLANCKCONSTANT", ",", "ELEMENTARYCHARGE", ",", 
+        "BOLTZMANNCONSTANT", ",", "AVOGADROCONSTANT", ",", 
+        "LUMINOUSEFFICACYMONOCHROMATICRADIATION"}], "}"}]}], ";", 
+     RowBox[{"SIEXACTCONSTANTS", "=", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+        "Quantity", "[", "\"\<Cesium133HyperfineSplittingFrequency\>\"", 
+         "]"}], ",", 
+        RowBox[{"Quantity", "[", "\"\<SpeedOfLight\>\"", "]"}], ",", 
+        RowBox[{"Quantity", "[", "\"\<PlanckConstant\>\"", "]"}], ",", 
+        RowBox[{"Quantity", "[", "\"\<ElementaryCharge\>\"", "]"}], ",", 
+        RowBox[{"Quantity", "[", "\"\<BoltzmannConstant\>\"", "]"}], ",", 
+        RowBox[{"Quantity", "[", "\"\<AvogadroConstant\>\"", "]"}], ",", 
+        RowBox[{
+        "Quantity", "[", 
+         "\"\<MonochromaticRadiation540THzLuminousEfficacy\>\"", "]"}]}], 
+       "}"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"multipliers", "=", 
+      RowBox[{"Power", "@@@", 
+       RowBox[{"Transpose", "[", 
+        RowBox[{"{", 
+         RowBox[{"SIEXACTCONSTANTS", ",", 
+          RowBox[{"LinearSolve", "[", 
+           RowBox[{
+            RowBox[{"Transpose", "[", "DEFININGCONSTANTS", "]"}], ",", 
+            "canonicalvector"}], "]"}]}], "}"}], "]"}]}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"angleextra", "=", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"UnitDimensions", "[", 
+         RowBox[{"UnitSimplify", "[", 
+          RowBox[{
+           RowBox[{"unit", "/", 
+            RowBox[{
+            "Quantity", "[", 
+             "\"\<MonochromaticRadiation540THzLuminousEfficacy\>\"", "]"}]}], 
+           ",", 
+           RowBox[{"UnityDimensions", "->", 
+            RowBox[{"{", 
+             RowBox[{
+             "\"\<TimeUnit\>\"", ",", "\"\<LengthUnit\>\"", ",", 
+              "\"\<MassUnit\>\"", ",", "\"\<ElectricCurrentUnit\>\"", ",", 
+              "\"\<TemperatureUnit\>\"", ",", "\"\<AmountUnit\>\"", ",", 
+              "\"\<LuminousIntensityUnit\>\""}], "}"}]}]}], "]"}], "]"}], 
+        ")"}], "/.", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"\"\<AngleUnit\>\"", ",", "x_"}], "}"}], ":>", 
+         RowBox[{"Quantity", "[", 
+          SuperscriptBox["\"\<Radians\>\"", "x"], "]"}]}], "}"}]}]}], ";", 
+     "\[IndentingNewLine]", "multipliers", ";", "\[IndentingNewLine]", 
+     "angleextra", ";", "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"canonicalassoc", "[", "\"\<LuminousIntensityUnit\>\"", "]"}],
+         "!=", "0"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"UnitConvert", "[", 
+        RowBox[{"unit", ",", 
+         RowBox[{"Times", "@@", 
+          RowBox[{"Join", "[", 
+           RowBox[{"multipliers", ",", "angleextra"}], "]"}]}]}], "]"}], ",", 
+       RowBox[{"Times", "@@", "multipliers"}]}], "]"}]}]}], "]"}]}]}], "Input",
+ CellChangeTimes->{3.8724346876512136`*^9},
  CellTags->"DefaultContent",
+ CellLabel->"In[1]:=",
  CellID->876320555,ExpressionUUID->"c4d88d15-d63e-4c1e-8d97-452e03e9cd55"]
 }, Open  ]],
 
@@ -1430,7 +1580,6 @@ Cell[BoxData[
          StyleBox[
           TemplateBox[{
             CheckboxBox["Scheduled", {False, "Scheduled"}], "\" \"", 
-            
             TemplateBox[{"\"Scheduled\"", "\"Scheduled task\""}, 
              "PrettyTooltipTemplate"]},
            "RowDefault"],
