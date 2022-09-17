@@ -63,10 +63,9 @@ evaluated before creating the Examples section below.", "MoreInfoText"],
  CellID->292731158,ExpressionUUID->"0f564e07-3202-44ab-befe-5377f243d0a4"],
 
 Cell[BoxData[{
- RowBox[{"ClearAll", "[", "CanonicalConstantsproduct", 
-  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ClearAll", "[", "SIConstantConvert", "]"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"CanonicalConstantsproduct", "[", "unit_", "]"}], ":=", 
+  RowBox[{"SIConstantConvert", "[", "unit_", "]"}], ":=", 
   RowBox[{"Block", "[", 
    RowBox[{
     RowBox[{"{", 
@@ -214,9 +213,9 @@ Cell[BoxData[{
           RowBox[{"Join", "[", 
            RowBox[{"multipliers", ",", "angleextra"}], "]"}]}]}], "]"}], ",", 
        RowBox[{"Times", "@@", "multipliers"}]}], "]"}]}]}], "]"}]}]}], "Input",
- CellChangeTimes->{3.8724292729428825`*^9},
+ CellChangeTimes->{{3.8724292729428825`*^9, 3.872429301692108*^9}},
  CellTags->"DefaultContent",
- CellLabel->"In[365]:=",
+ CellLabel->"In[369]:=",
  CellID->876320555,ExpressionUUID->"1e1c76c2-ebf9-41b5-ba25-8b2329b93e8d"]
 }, Open  ]],
 
@@ -287,16 +286,22 @@ documentation pages for examples."}], "MoreInfoText"], Background ->
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"MyFunction", "[", "arg", "]"}]], "UsageInputs",
+ RowBox[{"SIConstantConvert", "[", 
+  StyleBox["unit", "TI"], "]"}]], "UsageInputs",
+ CellChangeTimes->{{3.872429306820253*^9, 3.8724293229999247`*^9}},
  FontFamily->"Source Sans Pro",
  CellTags->{"DefaultContent", "TabNext"},
  CellID->67839508,ExpressionUUID->"c9e26b15-975a-4321-902e-c76ed515bba5"],
 
 Cell[TextData[{
- "explanation of what use of the argument ",
- StyleBox["arg", "TI"],
- " does."
+ "converts ",
+ Cell[BoxData[
+  StyleBox["unit", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "a736b800-2d91-436b-883d-664c458e70f6"],
+ " to the product of the defining constants of the SI raised to integer powers"
 }], "UsageDescription",
+ CellChangeTimes->{{3.872429326511551*^9, 3.872429353770989*^9}},
  CellTags->{"DefaultContent", "TabNext"},
  CellID->746063541,ExpressionUUID->"ca9dc525-cee9-4f4c-b638-5363ba317f33"]
 }, Open  ]]
@@ -339,15 +344,109 @@ function, its development, and its usage.", "MoreInfoText"], Background ->
  CellTags->{"Details & Options", "Notes", "TemplateCellGroup"},
  CellID->447261062,ExpressionUUID->"db9a6c21-80ff-4c5e-91fa-faef94e78617"],
 
-Cell["Additional information about usage and options.", "Notes",
+Cell["\<\
+There is an issue with candela and related units for luminous intensity like \
+candlepower.\
+\>", "Notes",
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
        WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.8724293571400647`*^9, 3.8724293749455214`*^9}},
  CellTags->{"DefaultContent", "TabNext"},
- CellID->422531486,ExpressionUUID->"8cf46e0e-b798-4f06-a765-4213dfa20e06"]
+ CellID->422531486,ExpressionUUID->"8cf46e0e-b798-4f06-a765-4213dfa20e06"],
+
+Cell[TextData[{
+ "The identity ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"1", " ", "cd"}], " ", "=", " ", 
+    RowBox[{
+     RowBox[{"(", 
+      FractionBox[
+       SubscriptBox["K", "cd"], "683"], ")"}], "kg", " ", 
+     SuperscriptBox[
+      StyleBox["m",
+       FontSlant->"Plain"], "2"], 
+     SuperscriptBox[
+      StyleBox["s",
+       FontSlant->"Plain"], 
+      RowBox[{"-", "3"}]], 
+     SuperscriptBox["sr", 
+      RowBox[{"-", "1"}]]}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "2090d271-6b8b-4eb5-86ce-9183d90febd5"],
+ " does not work in Mathematica."
+}], "Notes",
+ CellChangeTimes->{{3.8724293759255*^9, 3.872429446462401*^9}},
+ CellID->169198734,ExpressionUUID->"af768fea-7d85-4fee-b36a-43e8df80f186"],
+
+Cell[TextData[{
+ "The test ",
+ Cell[BoxData[
+  RowBox[{
+   RowBox[{"Quantity", "[", 
+    RowBox[{"1", ",", "\"\<Candelas\>\""}], "]"}], "===", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      FractionBox["1", "683"], 
+      RowBox[{"Quantity", "[", 
+       RowBox[{
+       "1", ",", "\"\<MonochromaticRadiation540THzLuminousEfficacy\>\""}], 
+       "]"}]}], ")"}], 
+    RowBox[{"Quantity", "[", 
+     RowBox[{"1", ",", "\"\<Kilograms\>\""}], "]"}], 
+    SuperscriptBox[
+     RowBox[{"Quantity", "[", 
+      RowBox[{"1", ",", "\"\<Meters\>\""}], "]"}], "2"], 
+    SuperscriptBox[
+     RowBox[{"Quantity", "[", 
+      RowBox[{"1", ",", "\"\<Seconds\>\""}], "]"}], 
+     RowBox[{"-", "3"}]], " ", 
+    SuperscriptBox[
+     RowBox[{"Quantity", "[", 
+      RowBox[{"1", ",", "\"\<Steradians\>\""}], "]"}], 
+     RowBox[{"-", "1"}]]}]}]], "Input",
+  CellChangeTimes->{{3.8724294543134084`*^9, 3.872429514209593*^9}},
+  ExpressionUUID->"61d67953-9956-48ff-9fb1-569f989f9899"],
+ "returns false."
+}], "Notes",
+ CellChangeTimes->{{3.872429449061396*^9, 3.8724294505765595`*^9}, {
+  3.872429546759057*^9, 3.8724295589405355`*^9}},
+ CellID->219445160,ExpressionUUID->"e44dbece-38fd-4177-b278-3d8183300d03"],
+
+Cell["\<\
+Hopefully this inconsistency will be updated in future releases of \
+Mathematica.\
+\>", "Notes",
+ CellChangeTimes->{{3.8724295674156632`*^9, 3.8724295808255463`*^9}},
+ CellID->19420346,ExpressionUUID->"beea3b36-f7ce-4e6f-957b-a0c7550c1184"],
+
+Cell[TextData[{
+ "The details are available at NIST's ",
+ ButtonBox["SI Brochure",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.330-\
+2019.pdf"], None},
+  ButtonNote->
+   "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.330-2019.\
+pdf"],
+ "."
+}], "Notes",
+ CellChangeTimes->{{3.872429581827856*^9, 3.8724296138403254`*^9}},
+ CellID->149893128,ExpressionUUID->"6baa4121-9699-47f2-8593-c0ddad8e908f"],
+
+Cell["\<\
+There shouldn't be any issues if you aren't using candelas or angles like \
+radians or steradians or other luminous intensity units.\
+\>", "Notes",
+ CellChangeTimes->{{3.872429629414979*^9, 3.8724296570208726`*^9}},
+ CellID->478833960,ExpressionUUID->"829e8937-a25c-4c32-b65c-4d0dd293e736"]
 }, Open  ]]
 }, Open  ]],
 
@@ -514,24 +613,200 @@ Cell["Basic Examples", "Subsection",
  CellTags->"DefaultContent",
  CellID->619504543,ExpressionUUID->"7843d665-5c28-4a3a-a2c5-522a05bee402"],
 
-Cell["Text about the example:", "Text",
+Cell["\<\
+Convert the seven base units to a combination of the SI defining constants:\
+\>", "Text",
+ CellChangeTimes->{{3.8724296974654016`*^9, 3.872429726137314*^9}},
  CellTags->"DefaultContent",
  CellID->586099280,ExpressionUUID->"75a140b1-de1f-4e01-8d67-c3320dcb8ebd"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"MyFunction", "[", 
-  RowBox[{"x", ",", "y"}], "]"}]], "Input",
- CellTags->"DefaultContent",
- CellLabel->"In[1]:= ",
- CellID->298664010,ExpressionUUID->"4cad78d5-7a63-43c5-bf26-749d3787aff3"],
+ RowBox[{"SIConstantConvert", "/@", 
+  RowBox[{"EntityList", "[", 
+   RowBox[{"\"\<PhysicalConstant\>\"", ",", "\"\<SIDefining\>\""}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.872429708700303*^9, 3.8724297463129015`*^9}},
+ CellLabel->"In[375]:=",
+ CellID->529782122,ExpressionUUID->"827b94fb-2cd6-4fcb-8ed7-94f7e8d55bb0"],
 
 Cell[BoxData[
- RowBox[{"x", " ", "y"}]], "Output",
- CellTags->"DefaultContent",
- CellLabel->"Out[1]= ",
- CellID->832981051,ExpressionUUID->"59042e69-43e1-4631-ae07-f6552963b62a"]
+ TemplateBox[{
+  "EntityList", "bool", 
+   "\"True or False expected at position \\!\\(\\*RowBox[{\\\"2\\\"}]\\) in \
+\\!\\(\\*RowBox[{\\\"EntityList\\\", \\\"[\\\", \
+RowBox[{\\\"\\\\\\\"PhysicalConstant\\\\\\\"\\\", \\\",\\\", \
+\\\"\\\\\\\"SIDefining\\\\\\\"\\\"}], \\\"]\\\"}]\\).\"", 2, 375, 116, 
+   19481530930193409726, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.8724297472477756`*^9},
+ CellLabel->"During evaluation of In[375]:=",
+ CellID->3187097,ExpressionUUID->"686e590a-6c46-49df-85ea-5ccacc5fe34f"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Quantity", "unkunit", 
+   "\"Unable to interpret unit specification \
+\\!\\(\\*RowBox[{\\\"\\\\\\\"PhysicalConstant\\\\\\\"\\\"}]\\).\"", 2, 375, 
+   117, 19481530930193409726, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.8724297479262877`*^9},
+ CellLabel->"During evaluation of In[375]:=",
+ CellID->91565912,ExpressionUUID->"bf5e1fab-b8df-48a7-bfa9-08fe9935ebaf"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Append", "invdt", 
+   "\"The argument \\!\\(\\*RowBox[{\\\"Association\\\", \\\"[\\\", \
+RowBox[{\\\"Rule\\\", \\\"@@@\\\", RowBox[{\\\"UnitDimensions\\\", \\\"[\\\", \
+\\\"\\\\\\\"PhysicalConstant\\\\\\\"\\\", \\\"]\\\"}]}], \\\"]\\\"}]\\) is \
+not a rule or a list of rules.\"", 2, 375, 118, 19481530930193409726, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.872429748023305*^9},
+ CellLabel->"During evaluation of In[375]:=",
+ CellID->102442129,ExpressionUUID->"ba31321b-6948-4ca2-8345-a70a6fb81f04"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Append", "argx", 
+   "\"\\!\\(\\*RowBox[{\\\"Append\\\"}]\\) called with \\!\\(\\*RowBox[{\\\"2\
+\\\"}]\\) arguments; 1 argument is expected.\"", 2, 375, 119, 
+   19481530930193409726, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.872429748144293*^9},
+ CellLabel->"During evaluation of In[375]:=",
+ CellID->408247063,ExpressionUUID->"8d637d39-717a-44dd-a545-2b45f16c04ab"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Append", "argx", 
+   "\"\\!\\(\\*RowBox[{\\\"Append\\\"}]\\) called with \\!\\(\\*RowBox[{\\\"2\
+\\\"}]\\) arguments; 1 argument is expected.\"", 2, 375, 120, 
+   19481530930193409726, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.8724297482703047`*^9},
+ CellLabel->"During evaluation of In[375]:=",
+ CellID->361184650,ExpressionUUID->"503840fc-f858-485b-9cad-bccbbf448668"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Append", "argx", 
+   "\"\\!\\(\\*RowBox[{\\\"Append\\\"}]\\) called with \\!\\(\\*RowBox[{\\\"2\
+\\\"}]\\) arguments; 1 argument is expected.\"", 2, 375, 121, 
+   19481530930193409726, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.872429748401286*^9},
+ CellLabel->"During evaluation of In[375]:=",
+ CellID->138360720,ExpressionUUID->"cc51e10e-5792-49cb-aa78-e0aa73d8b174"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General", "stop", 
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"Append\\\", \\\"::\\\", \
+\\\"argx\\\"}], \\\"MessageName\\\"]\\) will be suppressed during this \
+calculation.\"", 2, 375, 122, 19481530930193409726, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.8724297485282793`*^9},
+ CellLabel->"During evaluation of In[375]:=",
+ CellID->393059271,ExpressionUUID->"7c3e8485-b6b4-4b60-95bf-2bb268c91b9e"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Quantity", "unkunit", 
+   "\"Unable to interpret unit specification \
+\\!\\(\\*RowBox[{\\\"\\\\\\\"SIDefining\\\\\\\"\\\"}]\\).\"", 2, 375, 123, 
+   19481530930193409726, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.8724297491629257`*^9},
+ CellLabel->"During evaluation of In[375]:=",
+ CellID->594964362,ExpressionUUID->"5992ece3-5cce-42be-af09-c098830c3117"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Append", "invdt", 
+   "\"The argument \\!\\(\\*RowBox[{\\\"Association\\\", \\\"[\\\", \
+RowBox[{\\\"Rule\\\", \\\"@@@\\\", RowBox[{\\\"UnitDimensions\\\", \\\"[\\\", \
+\\\"\\\\\\\"SIDefining\\\\\\\"\\\", \\\"]\\\"}]}], \\\"]\\\"}]\\) is not a \
+rule or a list of rules.\"", 2, 375, 124, 19481530930193409726, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.8724297492649245`*^9},
+ CellLabel->"During evaluation of In[375]:=",
+ CellID->189418015,ExpressionUUID->"feb1140e-8d8b-4ef4-b51e-55ef4e823028"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "EntityList", "bool", 
+   "\"True or False expected at position \\!\\(\\*RowBox[{\\\"2\\\"}]\\) in \
+\\!\\(\\*RowBox[{\\\"EntityList\\\", \\\"[\\\", RowBox[{RowBox[{\\\"\
+\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}], \\\",\\\", \
+RowBox[{\\\"\[LeftSkeleton]\\\", \\\"1\\\", \\\"\[RightSkeleton]\\\"}]}], \
+\\\"]\\\"}]\\).\"", 2, 375, 125, 19481530930193409726, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.8724297493669252`*^9},
+ CellLabel->"During evaluation of In[375]:=",
+ CellID->58288852,ExpressionUUID->"49689294-c7b8-44c2-8e83-4770f0e322bb"],
+
+Cell[BoxData[
+ RowBox[{"EntityList", "[", 
+  RowBox[{
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"Append", "[", 
+        RowBox[{
+         RowBox[{"\[LeftAssociation]", 
+          RowBox[{
+           RowBox[{"\<\"TimeUnit\"\>", "\[Rule]", "0"}], ",", 
+           RowBox[{"\<\"LengthUnit\"\>", "\[Rule]", "0"}], ",", 
+           RowBox[{"\<\"MassUnit\"\>", "\[Rule]", "0"}], ",", 
+           RowBox[{"\<\"ElectricCurrentUnit\"\>", "\[Rule]", "0"}], ",", 
+           RowBox[{"\<\"TemperatureUnit\"\>", "\[Rule]", "0"}], ",", 
+           RowBox[{"\<\"AmountUnit\"\>", "\[Rule]", "0"}], ",", 
+           RowBox[{"\<\"LuminousIntensityUnit\"\>", "\[Rule]", "0"}]}], 
+          "\[RightAssociation]"}], ",", 
+         RowBox[{"Association", "[", 
+          RowBox[{"Rule", "@@@", 
+           RowBox[{"UnitDimensions", "[", "\<\"PhysicalConstant\"\>", "]"}]}],
+           "]"}]}], "]"}], "[", "\<\"LuminousIntensityUnit\"\>", "]"}], 
+      "\[NotEqual]", "0"}], ",", 
+     RowBox[{"UnitConvert", "[", 
+      RowBox[{"\<\"PhysicalConstant\"\>", ",", 
+       RowBox[{"Times", "@@", 
+        RowBox[{"Join", "[", 
+         RowBox[{"multipliers", ",", "angleextra"}], "]"}]}]}], "]"}], ",", 
+     RowBox[{"Times", "@@", "multipliers"}]}], "]"}], ",", 
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"Append", "[", 
+        RowBox[{
+         RowBox[{"\[LeftAssociation]", 
+          RowBox[{
+           RowBox[{"\<\"TimeUnit\"\>", "\[Rule]", "0"}], ",", 
+           RowBox[{"\<\"LengthUnit\"\>", "\[Rule]", "0"}], ",", 
+           RowBox[{"\<\"MassUnit\"\>", "\[Rule]", "0"}], ",", 
+           RowBox[{"\<\"ElectricCurrentUnit\"\>", "\[Rule]", "0"}], ",", 
+           RowBox[{"\<\"TemperatureUnit\"\>", "\[Rule]", "0"}], ",", 
+           RowBox[{"\<\"AmountUnit\"\>", "\[Rule]", "0"}], ",", 
+           RowBox[{"\<\"LuminousIntensityUnit\"\>", "\[Rule]", "0"}]}], 
+          "\[RightAssociation]"}], ",", 
+         RowBox[{"Association", "[", 
+          RowBox[{"Rule", "@@@", 
+           RowBox[{"UnitDimensions", "[", "\<\"SIDefining\"\>", "]"}]}], 
+          "]"}]}], "]"}], "[", "\<\"LuminousIntensityUnit\"\>", "]"}], 
+      "\[NotEqual]", "0"}], ",", 
+     RowBox[{"UnitConvert", "[", 
+      RowBox[{"\<\"SIDefining\"\>", ",", 
+       RowBox[{"Times", "@@", 
+        RowBox[{"Join", "[", 
+         RowBox[{"multipliers", ",", "angleextra"}], "]"}]}]}], "]"}], ",", 
+     RowBox[{"Times", "@@", "multipliers"}]}], "]"}]}], "]"}]], "Output",
+ CellChangeTimes->{3.8724297494719553`*^9},
+ CellLabel->"Out[375]=",
+ CellID->713328682,ExpressionUUID->"92cb7edf-049c-4bd2-ae1f-448007bcc2ad"]
 }, Open  ]]
 }, Open  ]],
 
@@ -577,9 +852,58 @@ Cell["Properties and Relations", "Subsection",
  CellTags->"DefaultContent",
  CellID->727494039,ExpressionUUID->"5892072c-5030-404a-ba9f-c1a5959feed9"],
 
+Cell[CellGroupData[{
+
 Cell["Possible Issues", "Subsection",
  CellTags->"DefaultContent",
  CellID->471245215,ExpressionUUID->"9259402a-3dcd-45dd-b4e9-9e722b44e3aa"],
+
+Cell["\<\
+There are some inconsistencies in Mathematica because the following identity, \
+which is true, returns False in Mathematica:\
+\>", "Text",
+ CellChangeTimes->{{3.8724296713805647`*^9, 3.8724296891256046`*^9}},
+ CellID->64544,ExpressionUUID->"e5bb9831-6bd0-4896-a55e-5280743174a0"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Quantity", "[", 
+   RowBox[{"1", ",", "\"\<Candelas\>\""}], "]"}], "===", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     FractionBox["1", "683"], 
+     RowBox[{"Quantity", "[", 
+      RowBox[{
+      "1", ",", "\"\<MonochromaticRadiation540THzLuminousEfficacy\>\""}], 
+      "]"}]}], ")"}], 
+   RowBox[{"Quantity", "[", 
+    RowBox[{"1", ",", "\"\<Kilograms\>\""}], "]"}], 
+   SuperscriptBox[
+    RowBox[{"Quantity", "[", 
+     RowBox[{"1", ",", "\"\<Meters\>\""}], "]"}], "2"], 
+   SuperscriptBox[
+    RowBox[{"Quantity", "[", 
+     RowBox[{"1", ",", "\"\<Seconds\>\""}], "]"}], 
+    RowBox[{"-", "3"}]], " ", 
+   SuperscriptBox[
+    RowBox[{"Quantity", "[", 
+     RowBox[{"1", ",", "\"\<Steradians\>\""}], "]"}], 
+    RowBox[{"-", "1"}]]}]}]], "Input",
+ CellChangeTimes->{{3.8724294543134084`*^9, 3.872429514209593*^9}},
+ CellTags->"DefaultContent",
+ CellLabel->"In[371]:=",
+ CellID->298664010,ExpressionUUID->"4cad78d5-7a63-43c5-bf26-749d3787aff3"],
+
+Cell[BoxData["False"], "Output",
+ CellChangeTimes->{3.8724295155680575`*^9},
+ CellTags->"DefaultContent",
+ CellLabel->"Out[371]=",
+ CellID->361132217,ExpressionUUID->"0ab7dd19-2ca8-4fb1-8279-fa4b2d129b63"]
+}, Open  ]]
+}, Open  ]],
 
 Cell["Neat Examples", "Subsection",
  CellTags->"DefaultContent",
@@ -1546,7 +1870,6 @@ Cell[BoxData[
          StyleBox[
           TemplateBox[{
             CheckboxBox["Script", {False, "Script"}], "\" \"", 
-            
             TemplateBox[{"\"Script\"", "\"Script run in batch mode\""}, 
              "PrettyTooltipTemplate"]},
            "RowDefault"],
@@ -1780,7 +2103,7 @@ Cell["Additional information for the reviewer.", "Text",
 }, Open  ]]
 },
 WindowSize->{574.8, Automatic},
-WindowMargins->{{-4.8, Automatic}, {Automatic, 0}},
+WindowMargins->{{Automatic, -4.7999999999999545`}, {Automatic, 0}},
 Visible->True,
 TaggingRules->{
  "ResourceType" -> "Function", "ResourceCreateNotebook" -> True, 
@@ -1828,7 +2151,7 @@ WyabbVsUI30dbWyR5mC4Y6npzAQV7A7CHW8e0ORJGTUV01ufdzMGR2GbTwVmCj3d8A9cd0NNHoiRcl\
     "Contexts" -> {
      "FunctionResource`", "FunctionResource`DefinitionNotebook`"}, 
     "DefaultContentMethod" -> "Legacy"}, "ToolsOpen" -> True, "StatusMessage" -> 
-  "", "SubmissionReviewData" -> {"Review" -> False}},
+  "", "SubmissionReviewData" -> {"Review" -> False}, "AutoUpdate" -> True},
 CreateCellID->True,
 FrontEndVersion->"13.1 for Microsoft Windows (64-bit) (June 16, 2022)",
 StyleDefinitions->Notebook[{
@@ -2271,6 +2594,7 @@ VX/aMEEQzrerjFhhelYAzofFB3r8AgApYdcE
                 StyleBox[
                 "\"Template Input\"", "Text", FontFamily -> "Source Sans Pro",
                   FontSize -> 11, StripOnInput -> False], 
+                
                 "\"Format selection automatically using appropriate \
 documentation styles\""}, "PrettyTooltipTemplate"], ButtonFunction :> 
               With[{RSNB`nb$ = ButtonNotebook[], RSNB`$cp$ = $ContextPath}, 
