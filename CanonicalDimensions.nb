@@ -71,18 +71,20 @@ Cell[BoxData[{
        RowBox[{"Rule", "@@@", 
         RowBox[{"UnitDimensions", "[", "unit", "]"}]}], "]"}]}], ";", 
      RowBox[{"Append", "[", 
-      RowBox[{"Association", "[", 
-       RowBox[{
-        RowBox[{"\"\<TimeUnit\>\"", "\[Rule]", "0"}], ",", 
-        RowBox[{"\"\<LengthUnit\>\"", "\[Rule]", "0"}], ",", 
-        RowBox[{"\"\<MassUnit\>\"", "\[Rule]", "0"}], ",", 
-        RowBox[{"\"\<ElectricCurrentUnit\>\"", "\[Rule]", "0"}], ",", 
-        RowBox[{"\"\<TemperatureUnit\>\"", "\[Rule]", "0"}], ",", 
-        RowBox[{"\"\<AmountUnit\>\"", "\[Rule]", "0"}], ",", 
-        RowBox[{"\"\<LuminousIntensityUnit\>\"", "\[Rule]", "0"}]}], "]"}], 
-      "]"}]}]}], "]"}]}]}], "Input",
- CellChangeTimes->{{3.87243745207437*^9, 3.872437505390521*^9}},
- CellLabel->"In[57]:=",
+      RowBox[{
+       RowBox[{"Association", "[", 
+        RowBox[{
+         RowBox[{"\"\<TimeUnit\>\"", "\[Rule]", "0"}], ",", 
+         RowBox[{"\"\<LengthUnit\>\"", "\[Rule]", "0"}], ",", 
+         RowBox[{"\"\<MassUnit\>\"", "\[Rule]", "0"}], ",", 
+         RowBox[{"\"\<ElectricCurrentUnit\>\"", "\[Rule]", "0"}], ",", 
+         RowBox[{"\"\<TemperatureUnit\>\"", "\[Rule]", "0"}], ",", 
+         RowBox[{"\"\<AmountUnit\>\"", "\[Rule]", "0"}], ",", 
+         RowBox[{"\"\<LuminousIntensityUnit\>\"", "\[Rule]", "0"}]}], "]"}], 
+       ",", "assoc"}], "]"}]}]}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.87243745207437*^9, 3.872437505390521*^9}, {
+  3.872437550407419*^9, 3.87243755123715*^9}},
+ CellLabel->"In[60]:=",
  CellID->58985046,ExpressionUUID->"9a3bb2fa-0585-4d73-8a2c-12ccc351caf4"],
 
 Cell[BoxData[{
@@ -544,17 +546,29 @@ Cell["Text about the example:", "Text",
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"MyFunction", "[", 
-  RowBox[{"x", ",", "y"}], "]"}]], "Input",
+ RowBox[{"CanonicalDimensions", "[", 
+  RowBox[{"Quantity", "[", "\"\<Webers\>\"", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.872437530431309*^9, 3.872437536681878*^9}},
  CellTags->"DefaultContent",
- CellLabel->"In[1]:= ",
+ CellLabel->"In[62]:=",
  CellID->298664010,ExpressionUUID->"0bda10d8-a319-4b75-8f28-f2232849f021"],
 
 Cell[BoxData[
- RowBox[{"x", " ", "y"}]], "Output",
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"TemperatureUnit\"\>", "\[Rule]", "0"}], ",", 
+   RowBox[{"\<\"AmountUnit\"\>", "\[Rule]", "0"}], ",", 
+   RowBox[{"\<\"LuminousIntensityUnit\"\>", "\[Rule]", "0"}], ",", 
+   RowBox[{"\<\"ElectricCurrentUnit\"\>", "\[Rule]", 
+    RowBox[{"-", "1"}]}], ",", 
+   RowBox[{"\<\"LengthUnit\"\>", "\[Rule]", "2"}], ",", 
+   RowBox[{"\<\"MassUnit\"\>", "\[Rule]", "1"}], ",", 
+   RowBox[{"\<\"TimeUnit\"\>", "\[Rule]", 
+    RowBox[{"-", "2"}]}]}], "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{{3.8724375369601173`*^9, 3.87243755669091*^9}},
  CellTags->"DefaultContent",
- CellLabel->"Out[1]= ",
- CellID->832981051,ExpressionUUID->"664b8213-625b-464c-a963-2e162adbfd7f"]
+ CellLabel->"Out[62]=",
+ CellID->142817229,ExpressionUUID->"526ebc0b-3734-4bd0-b794-2689fd2f7f5f"]
 }, Open  ]]
 }, Open  ]],
 
@@ -1802,7 +1816,7 @@ Cell["Additional information for the reviewer.", "Text",
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{1152, Automatic},
+WindowSize->{576, Automatic},
 WindowMargins->{{
   Automatic, -5.399999999999864}, {-5.399999999999977, Automatic}},
 Visible->True,
