@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    281638,       6120]
-NotebookOptionsPosition[    154289,       3643]
-NotebookOutlinePosition[    267929,       5815]
-CellTagsIndexPosition[    267548,       5801]
+NotebookDataLength[    282265,       6139]
+NotebookOptionsPosition[    154500,       3653]
+NotebookOutlinePosition[    268177,       5826]
+CellTagsIndexPosition[    267796,       5812]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -3498,24 +3498,23 @@ Cell["hartree atomic units", "Section",
  CellID->605986953,ExpressionUUID->"0a628ec7-5906-4314-afd1-5b624e9ad8db"],
 
 Cell[BoxData[{
- RowBox[{"ClearAll", "[", "SIConstantConvert", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ClearAll", "[", "HartreeAtomicConvert", 
+  "]"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"SetAttributes", "[", 
-   RowBox[{"SIConstantConvert", ",", "Listable"}], "]"}], 
+   RowBox[{"HartreeAtomicConvert", ",", "Listable"}], "]"}], 
   ";"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"SIConstantConvert", "[", 
+  RowBox[{"HartreeAtomicConvert", "[", 
    RowBox[{"unit_", "?", "QuantityQ"}], "]"}], ":=", 
   RowBox[{"Block", "[", 
    RowBox[{
     RowBox[{"{", 
      RowBox[{
      "assoc", ",", "canonicalassoc", ",", "canonicalvector", ",", 
-      "HYPERFINETRANSITIONFREQUENCYOFCAESIUM", ",", "SPEEDOFLIGHTINVACUUM", 
-      ",", "PLANCKCONSTANT", ",", "ELEMENTARYCHARGE", ",", 
-      "BOLTZMANNCONSTANT", ",", "AVOGADROCONSTANT", ",", 
-      "LUMINOUSEFFICACYMONOCHROMATICRADIATION", ",", "DEFININGCONSTANTS", ",",
-       "SIEXACTCONSTANTS", ",", "angleprocessedunit"}], "}"}], ",", 
+      "REDUCEDPLANCKCONSTANT", ",", "ELEMENTARYCHARGE", ",", "BOHRRADIUS", 
+      ",", "ELECTRONRELATIVISTICMASS", ",", "DEFININGCONSTANTS", ",", 
+      "SIEXACTCONSTANTS", ",", "angleprocessedunit"}], "}"}], ",", 
     RowBox[{
      RowBox[{"angleprocessedunit", "=", 
       RowBox[{"UnitSimplify", "[", 
@@ -3552,17 +3551,12 @@ Cell[BoxData[{
         RowBox[{
         "canonicalassoc", "[", "\"\<LuminousIntensityUnit\>\"", "]"}]}], 
        "}"}]}], ";", 
-     RowBox[{"HYPERFINETRANSITIONFREQUENCYOFCAESIUM", "=", 
+     RowBox[{"BOHRRADIUS", "=", 
       RowBox[{"{", 
        RowBox[{
-        RowBox[{"-", "1"}], ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", 
-        ",", "0"}], "}"}]}], ";", 
-     RowBox[{"SPEEDOFLIGHTINVACUUM", "=", 
-      RowBox[{"{", 
-       RowBox[{
-        RowBox[{"-", "1"}], ",", "1", ",", "0", ",", "0", ",", "0", ",", "0", 
-        ",", "0"}], "}"}]}], ";", 
-     RowBox[{"PLANCKCONSTANT", "=", 
+       "0", ",", "1", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0"}], 
+       "}"}]}], ";", 
+     RowBox[{"REDUCEDPLANCKCONSTANT", "=", 
       RowBox[{"{", 
        RowBox[{
         RowBox[{"-", "1"}], ",", "2", ",", "1", ",", "0", ",", "0", ",", "0", 
@@ -3571,79 +3565,96 @@ Cell[BoxData[{
       RowBox[{"{", 
        RowBox[{
        "1", ",", "0", ",", "0", ",", "1", ",", "0", ",", "0", ",", "0"}], 
-       "}"}]}], ";", 
-     RowBox[{"BOLTZMANNCONSTANT", "=", 
+       "}"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"ELECTRONRELATIVISTICMASS", "=", 
       RowBox[{"{", 
        RowBox[{
-        RowBox[{"-", "2"}], ",", "2", ",", "1", ",", "0", ",", 
-        RowBox[{"-", "1"}], ",", "0", ",", "0"}], "}"}]}], ";", 
-     RowBox[{"AVOGADROCONSTANT", "=", 
-      RowBox[{"{", 
-       RowBox[{"0", ",", "0", ",", "0", ",", "0", ",", "0", ",", 
-        RowBox[{"-", "1"}], ",", "0"}], "}"}]}], ";", 
-     RowBox[{"LUMINOUSEFFICACYMONOCHROMATICRADIATION", "=", 
-      RowBox[{"{", 
-       RowBox[{"3", ",", 
-        RowBox[{"-", "2"}], ",", 
-        RowBox[{"-", "1"}], ",", "0", ",", "0", ",", "0", ",", "1"}], "}"}]}],
-      ";", 
+       "0", ",", "0", ",", "1", ",", "0", ",", "0", ",", "0", ",", "0"}], 
+       "}"}]}], ";", "\[IndentingNewLine]", 
      RowBox[{"DEFININGCONSTANTS", "=", 
       RowBox[{"{", 
        RowBox[{
-       "HYPERFINETRANSITIONFREQUENCYOFCAESIUM", ",", "SPEEDOFLIGHTINVACUUM", 
-        ",", "PLANCKCONSTANT", ",", "ELEMENTARYCHARGE", ",", 
-        "BOLTZMANNCONSTANT", ",", "AVOGADROCONSTANT", ",", 
-        "LUMINOUSEFFICACYMONOCHROMATICRADIATION"}], "}"}]}], ";", 
+       "REDUCEDPLANCKCONSTANT", ",", "ELEMENTARYCHARGE", ",", "BOHRRADIUS", 
+        ",", "ELECTRONRELATIVISTICMASS"}], "}"}]}], ";", 
      RowBox[{"SIEXACTCONSTANTS", "=", 
       RowBox[{"{", 
        RowBox[{
-        RowBox[{
-        "Quantity", "[", "\"\<Cesium133HyperfineSplittingFrequency\>\"", 
-         "]"}], ",", 
-        RowBox[{"Quantity", "[", "\"\<SpeedOfLight\>\"", "]"}], ",", 
-        RowBox[{"Quantity", "[", "\"\<PlanckConstant\>\"", "]"}], ",", 
+        RowBox[{"Quantity", "[", "\"\<ReducedPlanckConstant\>\"", "]"}], ",", 
         RowBox[{"Quantity", "[", "\"\<ElementaryCharge\>\"", "]"}], ",", 
-        RowBox[{"Quantity", "[", "\"\<BoltzmannConstant\>\"", "]"}], ",", 
-        RowBox[{"Quantity", "[", "\"\<AvogadroConstant\>\"", "]"}], ",", 
-        RowBox[{"UnitSimplify", "[", 
-         RowBox[{
-          RowBox[{
-          "Quantity", "[", 
-           "\"\<MonochromaticRadiation540THzLuminousEfficacy\>\"", "]"}], ",", 
-          RowBox[{"UnityDimensions", "->", "Automatic"}]}], "]"}]}], "}"}]}], 
-     ";", "\[IndentingNewLine]", 
-     RowBox[{"UnitConvert", "[", 
-      RowBox[{"angleprocessedunit", ",", 
-       RowBox[{"Times", "@@", 
-        RowBox[{"Power", "@@@", 
-         RowBox[{"Transpose", "[", 
-          RowBox[{"{", 
-           RowBox[{"SIEXACTCONSTANTS", ",", 
-            RowBox[{"LinearSolve", "[", 
-             RowBox[{
-              RowBox[{"Transpose", "[", "DEFININGCONSTANTS", "]"}], ",", 
-              "canonicalvector"}], "]"}]}], "}"}], "]"}]}]}]}], "]"}]}]}], 
+        RowBox[{"Quantity", "[", "\"\<BohrRadius\>\"", "]"}], ",", 
+        RowBox[{
+        "Quantity", "[", "\"\<ElectronRelativeAtomicMass\>\"", "]"}]}], 
+       "}"}]}], ";", "canonicalassoc"}]}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"UnitConvert", "[", 
+     RowBox[{"angleprocessedunit", ",", 
+      RowBox[{"Times", "@@", 
+       RowBox[{"Power", "@@@", 
+        RowBox[{"Transpose", "[", 
+         RowBox[{"{", 
+          RowBox[{"SIEXACTCONSTANTS", ",", 
+           RowBox[{"LinearSolve", "[", 
+            RowBox[{
+             RowBox[{"Transpose", "[", "DEFININGCONSTANTS", "]"}], ",", 
+             "canonicalvector"}], "]"}]}], "}"}], "]"}]}]}]}], "]"}], "*)"}], 
    "]"}]}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"SIConstantConvert", "[", "dist_", "]"}], ":=", 
-  RowBox[{
-   RowBox[{"UnitConvert", "[", 
-    RowBox[{"dist", ",", 
-     RowBox[{"QuantityUnit", "[", 
-      RowBox[{"SIConstantConvert", "[", 
-       RowBox[{"Quantity", "[", 
-        RowBox[{"QuantityUnit", "[", "dist", "]"}], "]"}], "]"}], "]"}]}], 
-    "]"}], "/;", 
+  RowBox[{"(*", 
    RowBox[{
-    RowBox[{"Head", "[", "dist", "]"}], "==", 
-    "QuantityDistribution"}]}]}]}], "Input",
- CellID->80245706,ExpressionUUID->"9e655614-97bf-4d77-b177-c78a0b4d7761"]
+    RowBox[{"SIConstantConvert", "[", "dist_", "]"}], ":=", 
+    RowBox[{
+     RowBox[{"UnitConvert", "[", 
+      RowBox[{"dist", ",", 
+       RowBox[{"QuantityUnit", "[", 
+        RowBox[{"SIConstantConvert", "[", 
+         RowBox[{"Quantity", "[", 
+          RowBox[{"QuantityUnit", "[", "dist", "]"}], "]"}], "]"}], "]"}]}], 
+      "]"}], "/;", 
+     RowBox[{
+      RowBox[{"Head", "[", "dist", "]"}], "==", "QuantityDistribution"}]}]}], 
+   "*)"}]}]}], "Input",
+ CellChangeTimes->{{3.8727774172811046`*^9, 3.8727774761061535`*^9}, {
+  3.8727775172490635`*^9, 3.872777531194092*^9}, {3.872777584896881*^9, 
+  3.872777721899808*^9}},
+ CellLabel->"In[9]:=",
+ CellID->80245706,ExpressionUUID->"9e655614-97bf-4d77-b177-c78a0b4d7761"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"HartreeAtomicConvert", "[", 
+  RowBox[{"Quantity", "[", "\"\<Webers\>\"", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.872777725096833*^9, 3.8727777438910847`*^9}},
+ CellLabel->"In[14]:=",
+ CellID->217091945,ExpressionUUID->"c8176915-3081-482b-9ea3-08a0a9cef483"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"TemperatureUnit\"\>", "\[Rule]", "0"}], ",", 
+   RowBox[{"\<\"AmountUnit\"\>", "\[Rule]", "0"}], ",", 
+   RowBox[{"\<\"LuminousIntensityUnit\"\>", "\[Rule]", "0"}], ",", 
+   RowBox[{"\<\"ElectricCurrentUnit\"\>", "\[Rule]", 
+    RowBox[{"-", "1"}]}], ",", 
+   RowBox[{"\<\"LengthUnit\"\>", "\[Rule]", "2"}], ",", 
+   RowBox[{"\<\"MassUnit\"\>", "\[Rule]", "1"}], ",", 
+   RowBox[{"\<\"TimeUnit\"\>", "\[Rule]", 
+    RowBox[{"-", "2"}]}]}], "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{{3.872777731355651*^9, 3.8727777441960754`*^9}},
+ CellLabel->"Out[14]=",
+ CellID->57769203,ExpressionUUID->"fa0f25cf-b642-4f55-9179-11cb2029966a"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.8727777086790648`*^9, 3.87277770972775*^9}},
+ CellID->99628780,ExpressionUUID->"202dd9ef-8686-4624-acc5-f2d44385e114"]
 }, Open  ]]
 }, Open  ]]
 },
 ClosingSaveDialog->False,
-WindowSize->{574.8, 575.4},
-WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+WindowSize->{1152., 585.6},
+WindowMargins->{{
+  Automatic, -5.399999999999864}, {-5.399999999999977, Automatic}},
 TaggingRules->{
  "ResourceType" -> "ComputationalEssay", "ResourceCreateNotebook" -> True, 
   "TemplateVersion" -> <||>, "CreationTimestamp" -> 
@@ -5800,16 +5811,16 @@ CellTagsIndex->{
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"Examples", 265802, 5758},
- {"Your Essay Title", 265988, 5762},
- {"AuthorName", 266168, 5766},
- {"Abstract", 266327, 5770},
- {"TemplateCell", 266508, 5774},
- {"SectionHeader", 266690, 5778},
- {"ExampleTopicSentence", 266866, 5782},
- {"ExampleCodeText", 267041, 5786},
- {"ExampleInput", 267211, 5790},
- {"ExampleOutput", 267377, 5794}
+ {"Examples", 266050, 5769},
+ {"Your Essay Title", 266236, 5773},
+ {"AuthorName", 266416, 5777},
+ {"Abstract", 266575, 5781},
+ {"TemplateCell", 266756, 5785},
+ {"SectionHeader", 266938, 5789},
+ {"ExampleTopicSentence", 267114, 5793},
+ {"ExampleCodeText", 267289, 5797},
+ {"ExampleInput", 267459, 5801},
+ {"ExampleOutput", 267625, 5805}
  }
 *)
 (*NotebookFileOutline
@@ -6085,19 +6096,19 @@ Cell[CellGroupData[{
 Cell[140958, 3283, 182, 2, 67, "Section",ExpressionUUID->"c09f4df0-6c42-491b-a637-27c0bdec318a",
  CellID->683173334],
 Cell[CellGroupData[{
-Cell[141165, 3289, 721, 19, 86, "Input",ExpressionUUID->"18616427-03bb-4e13-a20e-65dc9be87ab0",
+Cell[141165, 3289, 721, 19, 48, "Input",ExpressionUUID->"18616427-03bb-4e13-a20e-65dc9be87ab0",
  CellID->85403664],
 Cell[141889, 3310, 984, 23, 61, "Output",ExpressionUUID->"3e0b247d-696a-48d7-a0d4-d694e8a03d87",
  CellID->390966402]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[142910, 3338, 767, 20, 105, "Input",ExpressionUUID->"fd4743a2-f083-4479-ae2b-dd4bafbb8302",
+Cell[142910, 3338, 767, 20, 48, "Input",ExpressionUUID->"fd4743a2-f083-4479-ae2b-dd4bafbb8302",
  CellID->416387529],
 Cell[143680, 3360, 176, 3, 32, "Output",ExpressionUUID->"e97d3ca3-34e3-4b2a-baa1-57364744b958",
  CellID->256618468]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[143893, 3368, 516, 13, 48, "Input",ExpressionUUID->"ecda91af-8c87-48af-945c-2cce65794830",
+Cell[143893, 3368, 516, 13, 28, "Input",ExpressionUUID->"ecda91af-8c87-48af-945c-2cce65794830",
  CellID->330008392],
 Cell[144412, 3383, 928, 25, 46, "Output",ExpressionUUID->"6b958378-8654-429e-b723-21e43f6ae298",
  CellID->254881279]
@@ -6109,7 +6120,7 @@ Cell[145842, 3427, 639, 17, 44, "Output",ExpressionUUID->"660a25b8-a2e0-4d7d-993
  CellID->167715915]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[146518, 3449, 511, 13, 53, "Input",ExpressionUUID->"0916cf94-4edc-4c78-aee4-7583e83c783b",
+Cell[146518, 3449, 511, 13, 31, "Input",ExpressionUUID->"0916cf94-4edc-4c78-aee4-7583e83c783b",
  CellID->455768611],
 Cell[147032, 3464, 929, 25, 46, "Output",ExpressionUUID->"8513626a-5bec-47fc-82d6-cb61cb54e959",
  CellID->50496295]
@@ -6118,8 +6129,16 @@ Cell[147032, 3464, 929, 25, 46, "Output",ExpressionUUID->"8513626a-5bec-47fc-82d
 Cell[CellGroupData[{
 Cell[148010, 3495, 180, 2, 67, "Section",ExpressionUUID->"0a628ec7-5906-4314-afd1-5b624e9ad8db",
  CellID->605986953],
-Cell[148193, 3499, 6068, 140, 1056, "Input",ExpressionUUID->"9e655614-97bf-4d77-b177-c78a0b4d7761",
- CellID->80245706]
+Cell[148193, 3499, 5067, 120, 409, "Input",ExpressionUUID->"9e655614-97bf-4d77-b177-c78a0b4d7761",
+ CellID->80245706],
+Cell[CellGroupData[{
+Cell[153285, 3623, 288, 5, 28, "Input",ExpressionUUID->"c8176915-3081-482b-9ea3-08a0a9cef483",
+ CellID->217091945],
+Cell[153576, 3630, 714, 14, 32, "Output",ExpressionUUID->"fa0f25cf-b642-4f55-9179-11cb2029966a",
+ CellID->57769203]
+}, Open  ]],
+Cell[154305, 3647, 167, 2, 28, "Input",ExpressionUUID->"202dd9ef-8686-4624-acc5-f2d44385e114",
+ CellID->99628780]
 }, Open  ]]
 }, Open  ]]
 }
