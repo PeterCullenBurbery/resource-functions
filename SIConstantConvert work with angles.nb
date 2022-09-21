@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    282265,       6139]
-NotebookOptionsPosition[    154500,       3653]
-NotebookOutlinePosition[    268177,       5826]
-CellTagsIndexPosition[    267796,       5812]
+NotebookDataLength[    356732,       8206]
+NotebookOptionsPosition[    216505,       5444]
+NotebookOutlinePosition[    330181,       7617]
+CellTagsIndexPosition[    329800,       7603]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -3514,7 +3514,7 @@ Cell[BoxData[{
      "assoc", ",", "canonicalassoc", ",", "canonicalvector", ",", 
       "REDUCEDPLANCKCONSTANT", ",", "ELEMENTARYCHARGE", ",", "BOHRRADIUS", 
       ",", "ELECTRONRELATIVISTICMASS", ",", "DEFININGCONSTANTS", ",", 
-      "SIEXACTCONSTANTS", ",", "angleprocessedunit"}], "}"}], ",", 
+      "HARTREECONSTANTS", ",", "angleprocessedunit"}], "}"}], ",", 
     RowBox[{
      RowBox[{"angleprocessedunit", "=", 
       RowBox[{"UnitSimplify", "[", 
@@ -3574,17 +3574,64 @@ Cell[BoxData[{
      RowBox[{"DEFININGCONSTANTS", "=", 
       RowBox[{"{", 
        RowBox[{
-       "REDUCEDPLANCKCONSTANT", ",", "ELEMENTARYCHARGE", ",", "BOHRRADIUS", 
-        ",", "ELECTRONRELATIVISTICMASS"}], "}"}]}], ";", 
-     RowBox[{"SIEXACTCONSTANTS", "=", 
+       "REDUCEDPLANCKCONSTANT", ",", "BOHRRADIUS", ",", 
+        "ELECTRONRELATIVISTICMASS", ",", "ELEMENTARYCHARGE"}], "}"}]}], ";", 
+     RowBox[{"HARTREECONSTANTS", "=", 
       RowBox[{"{", 
        RowBox[{
         RowBox[{"Quantity", "[", "\"\<ReducedPlanckConstant\>\"", "]"}], ",", 
         RowBox[{"Quantity", "[", "\"\<ElementaryCharge\>\"", "]"}], ",", 
         RowBox[{"Quantity", "[", "\"\<BohrRadius\>\"", "]"}], ",", 
+        RowBox[{"Quantity", "[", "\"\<ElectronMass\>\"", "]"}]}], "}"}]}], 
+     ";", "canonicalassoc", ";", "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"!", 
+        RowBox[{"MatchQ", "[", 
+         RowBox[{"canonicalvector", ",", 
+          RowBox[{"{", 
+           RowBox[{
+           "_", ",", "_", ",", "_", ",", "_", ",", "0", ",", "0", ",", "0"}], 
+           "}"}]}], "]"}]}], ",", 
+       "\"\<The unit you entered is not part of a coherent system of units \
+with time, length, mass, and electrical and magnetic quantities. There is no \
+way to express the unit in Hartree atomic units.\>\"", ",", 
+       RowBox[{"UnitConvert", "[", 
+        RowBox[{"angleprocessedunit", ",", 
+         RowBox[{"Times", "@@", 
+          RowBox[{"Power", "@@@", 
+           RowBox[{"Transpose", "[", 
+            RowBox[{"{", 
+             RowBox[{"HARTREECONSTANTS", ",", 
+              RowBox[{"LinearSolve", "[", 
+               RowBox[{
+                RowBox[{"Transpose", "[", "DEFININGCONSTANTS", "]"}], ",", 
+                "canonicalvector"}], "]"}]}], "}"}], "]"}]}]}]}], "]"}]}], 
+      RowBox[{"(*", 
+       RowBox[{"(*", 
         RowBox[{
-        "Quantity", "[", "\"\<ElectronRelativeAtomicMass\>\"", "]"}]}], 
-       "}"}]}], ";", "canonicalassoc"}]}], "\[IndentingNewLine]", 
+         RowBox[{"LinearSolve", "[", 
+          RowBox[{
+           RowBox[{"Transpose", "[", "DEFININGCONSTANTS", "]"}], ",", 
+           RowBox[{"Take", "[", 
+            RowBox[{"canonicalvector", ",", "4"}], "]"}]}], "]"}], ";"}], 
+        "*)"}], 
+       RowBox[{"Transpose", "[", "DEFININGCONSTANTS", "]"}], "*)"}], 
+      "]"}]}]}], 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"UnitConvert", "[", 
+      RowBox[{"angleprocessedunit", ",", 
+       RowBox[{"Times", "@@", 
+        RowBox[{"Power", "@@@", 
+         RowBox[{"Transpose", "[", 
+          RowBox[{"{", 
+           RowBox[{"HARTREECONSTANTS", ",", 
+            RowBox[{"LinearSolve", "[", 
+             RowBox[{
+              RowBox[{"Transpose", "[", "DEFININGCONSTANTS", "]"}], ",", 
+              "canonicalvector"}], "]"}]}], "}"}], "]"}]}]}]}], "]"}], "]"}], 
+    "*)"}], "\[IndentingNewLine]", 
    RowBox[{"(*", 
     RowBox[{"UnitConvert", "[", 
      RowBox[{"angleprocessedunit", ",", 
@@ -3614,9 +3661,17 @@ Cell[BoxData[{
       RowBox[{"Head", "[", "dist", "]"}], "==", "QuantityDistribution"}]}]}], 
    "*)"}]}]}], "Input",
  CellChangeTimes->{{3.8727774172811046`*^9, 3.8727774761061535`*^9}, {
-  3.8727775172490635`*^9, 3.872777531194092*^9}, {3.872777584896881*^9, 
-  3.872777721899808*^9}},
- CellLabel->"In[9]:=",
+   3.8727775172490635`*^9, 3.872777531194092*^9}, {3.872777584896881*^9, 
+   3.872777721899808*^9}, {3.8727777767576*^9, 3.872777783349424*^9}, 
+   3.872777838186392*^9, {3.8727778871109667`*^9, 3.872778038961171*^9}, {
+   3.8727781104076843`*^9, 3.8727782082296057`*^9}, {3.8727784318532043`*^9, 
+   3.8727784408929415`*^9}, {3.8727785154484777`*^9, 3.872778555735716*^9}, {
+   3.872778751261173*^9, 3.8727787715570917`*^9}, {3.872778884549818*^9, 
+   3.8727788878189125`*^9}, {3.8727789664475803`*^9, 3.872778966824021*^9}, 
+   3.8727789986464586`*^9, {3.8727790943426805`*^9, 3.8727791014076304`*^9}, {
+   3.872779991755498*^9, 3.872780012320959*^9}, {3.8727800497953835`*^9, 
+   3.8727800667089787`*^9}},
+ CellLabel->"In[141]:=",
  CellID->80245706,ExpressionUUID->"9e655614-97bf-4d77-b177-c78a0b4d7761"],
 
 Cell[CellGroupData[{
@@ -3645,14 +3700,1750 @@ Cell[BoxData[
  CellID->57769203,ExpressionUUID->"fa0f25cf-b642-4f55-9179-11cb2029966a"]
 }, Open  ]],
 
-Cell[BoxData[""], "Input",
- CellChangeTimes->{{3.8727777086790648`*^9, 3.87277770972775*^9}},
- CellID->99628780,ExpressionUUID->"202dd9ef-8686-4624-acc5-f2d44385e114"]
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"HartreeAtomicConvert", "[", 
+  RowBox[{"Quantity", "[", "\"\<Webers\>\"", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.872777725096833*^9, 3.8727777438910847`*^9}, 
+   3.8727778347850323`*^9},
+ CellLabel->"In[22]:=",
+ CellID->293091475,ExpressionUUID->"3a7a94f3-a66f-4105-a8cb-e0ae60e1f994"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"-", "2"}], ",", "2", ",", "1", ",", 
+   RowBox[{"-", "1"}], ",", "0", ",", "0", ",", "0"}], "}"}]], "Output",
+ CellChangeTimes->{3.872777840815666*^9},
+ CellLabel->"Out[22]=",
+ CellID->123123385,ExpressionUUID->"1125f6c6-3360-4b04-84c7-c42547d7251a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"HartreeAtomicConvert", "[", 
+  RowBox[{"Quantity", "[", "\"\<Katals\>\"", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.872777844234193*^9, 3.8727778541826077`*^9}},
+ CellLabel->"In[23]:=",
+ CellID->410533359,ExpressionUUID->"8c54e675-de71-4753-bee5-538b75e1bbaf"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"-", "1"}], ",", "0", ",", "0", ",", "0", ",", "0", ",", "1", ",", 
+   "0"}], "}"}]], "Output",
+ CellChangeTimes->{3.872777854432255*^9},
+ CellLabel->"Out[23]=",
+ CellID->358273748,ExpressionUUID->"b23bb7dc-0a06-4f70-8877-bc0ec298f338"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"MatchQ", "[", 
+  RowBox[{
+   RowBox[{"HartreeAtomicConvert", "[", 
+    RowBox[{"Quantity", "[", "\"\<Katals\>\"", "]"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"_", ",", "_", ",", "_", ",", "_", ",", "0", ",", "0", ",", "0"}],
+     "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.87277785704734*^9, 3.8727778661594977`*^9}},
+ CellLabel->"In[24]:=",
+ CellID->591514068,ExpressionUUID->"051ebfb6-6929-479b-bdab-e8f77c55bb8a"],
+
+Cell[BoxData["False"], "Output",
+ CellChangeTimes->{3.8727778664859266`*^9},
+ CellLabel->"Out[24]=",
+ CellID->274880215,ExpressionUUID->"bfeea1b3-3728-46b3-ab65-50577d709114"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"MatchQ", "[", 
+  RowBox[{
+   RowBox[{"HartreeAtomicConvert", "[", 
+    RowBox[{"Quantity", "[", "\"\<Webers\>\"", "]"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"_", ",", "_", ",", "_", ",", "_", ",", "0", ",", "0", ",", "0"}],
+     "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.87277785704734*^9, 3.872777871027178*^9}},
+ CellLabel->"In[25]:=",
+ CellID->75818308,ExpressionUUID->"d6b8b7bc-afa8-403f-851f-aaefd4d117d3"],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{3.872777871328783*^9},
+ CellLabel->"Out[25]=",
+ CellID->9420422,ExpressionUUID->"03356012-29af-4d66-9bdc-d45be87b9a0c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"MatchQ", "[", 
+  RowBox[{
+   RowBox[{"HartreeAtomicConvert", "[", 
+    RowBox[{"Quantity", "[", "\"\<Webers\>\"", "]"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"_", ",", "_", ",", "_", ",", "_", ",", "0", ",", "0", ",", "0"}],
+     "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.87277785704734*^9, 3.872777871027178*^9}, 
+   3.872778044678403*^9},
+ CellLabel->"In[29]:=",
+ CellID->59523795,ExpressionUUID->"5a1f36b2-d631-4a01-874e-9a66123d2a14"],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{3.8727780451015663`*^9},
+ CellLabel->"Out[29]=",
+ CellID->618302799,ExpressionUUID->"3a39ef4f-5644-4d61-923e-05b136d19b06"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"HartreeAtomicConvert", "[", 
+  RowBox[{"Quantity", "[", "\"\<Webers\>\"", "]"}], "]"}]], "Input",
+ CellLabel->"In[50]:=",
+ CellID->184538369,ExpressionUUID->"a7164579-620d-4386-b6de-a0d569600d10"],
+
+Cell[BoxData[
+ TemplateBox[{
+   FractionBox[
+    RowBox[{"21362355120000000000000", " ", "\[Pi]"}], "44173801"], 
+   RowBox[{"\"\[HBar]\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+     StyleBox["\"e\"", Italic, StripOnInput -> False]}], 
+   "reduced Planck constants per elementary charge", 
+   FractionBox["\"ReducedPlanckConstant\"", "\"ElementaryCharge\""]},
+  "Quantity"]], "Output",
+ CellChangeTimes->{
+  3.872778077881263*^9, {3.872778130210241*^9, 3.872778146815225*^9}, 
+   3.8727782179933157`*^9},
+ CellLabel->"Out[50]=",
+ CellID->480767063,ExpressionUUID->"faa89dac-6968-4007-a7db-7f33522592e1"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"HartreeAtomicConvert", "[", 
+  RowBox[{"Quantity", "[", "\"\<Katals\>\"", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.872778080960682*^9, 3.8727780816507435`*^9}},
+ CellLabel->"In[46]:=",
+ CellID->498887866,ExpressionUUID->"500304db-f26c-4279-b094-905001c557de"],
+
+Cell[BoxData["\<\"The unit you entered is not part of a coherent system of \
+units with time, length, mass, and electrical and magnetic quantities. There \
+is no way to express the unit in Hartree atomic units.\"\>"], "Output",
+ CellChangeTimes->{
+  3.8727780819009857`*^9, {3.8727781314934297`*^9, 3.8727781667670803`*^9}},
+ CellLabel->"Out[46]=",
+ CellID->68718385,ExpressionUUID->"bd79fd94-adaf-44b0-8301-18577394482c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"HartreeAtomicConvert", "[", 
+  RowBox[{"Quantity", "[", 
+   RowBox[{
+    SuperscriptBox["\"\<ElementaryCharge\>\"", "3"], 
+    RowBox[{
+     SuperscriptBox["\"\<BohrRadius\>\"", "3"], "/", 
+     SuperscriptBox["\"\<HartreeEnergy\>\"", "2"]}]}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8727782357620716`*^9, 3.8727783208671293`*^9}},
+ CellLabel->"In[51]:=",
+ CellID->151881303,ExpressionUUID->"a0a8d573-a69c-46b8-b5d8-d56560050f64"],
+
+Cell[BoxData["$Failed"], "Output",
+ CellChangeTimes->{3.872778322624507*^9},
+ CellLabel->"Out[51]=",
+ CellID->103070895,ExpressionUUID->"5ab0947f-9e40-4777-82f1-847b7d6a766e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Quantity", "[", 
+  RowBox[{
+   SuperscriptBox["\"\<ElementaryCharge\>\"", "3"], 
+   RowBox[{
+    SuperscriptBox["\"\<BohrRadius\>\"", "3"], "/", 
+    SuperscriptBox["\"\<HartreeEnergy\>\"", "2"]}]}], "]"}]], "Input",
+ CellLabel->"In[52]:=",
+ CellID->53628309,ExpressionUUID->"40194d5a-6cf5-489c-9cac-cf7c4e077481"],
+
+Cell[BoxData[
+ TemplateBox[{"1", 
+   RowBox[{
+     SubsuperscriptBox[
+      StyleBox["\"a\"", Italic, StripOnInput -> False], "0", "3"], 
+     "\[InvisibleSpace]", 
+     SuperscriptBox[
+      StyleBox["\"e\"", Italic, StripOnInput -> False], "3"], 
+     "\[NegativeMediumSpace]", "\"/\"", "\[InvisibleSpace]", 
+     SubsuperscriptBox[
+      StyleBox["\"E\"", Italic, StripOnInput -> False], "\"h\"", "2"]}], 
+   "Bohr radius cubed elementary charge cubed per Hartree energy squared", 
+   FractionBox[
+    RowBox[{
+      SuperscriptBox["\"BohrRadius\"", "3"], " ", 
+      SuperscriptBox["\"ElementaryCharge\"", "3"]}], 
+    SuperscriptBox["\"HartreeEnergy\"", "2"]]},
+  "Quantity"]], "Output",
+ CellChangeTimes->{3.8727783298185716`*^9},
+ CellLabel->"Out[52]=",
+ CellID->762344710,ExpressionUUID->"fb020c08-6c0d-47b5-a17d-47a22d21cb42"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"UnitConvert", "[", 
+  RowBox[{"Quantity", "[", 
+   RowBox[{"1", ",", 
+    FractionBox[
+     RowBox[{
+      SuperscriptBox["\"\<BohrRadius\>\"", "3"], " ", 
+      SuperscriptBox["\"\<ElementaryCharge\>\"", "3"]}], 
+     SuperscriptBox["\"\<HartreeEnergy\>\"", "2"]]}], "]"}], "]"}]], "Input",
+ NumberMarks->False,
+ CellLabel->"In[53]:=",
+ CellID->263845697,ExpressionUUID->"b8d0d934-f530-428d-a3a2-0222f32517f5"],
+
+Cell[BoxData[
+ TemplateBox[{"3.206361306098425188580169`9.038736258290466*^-53", 
+   RowBox[{
+     SuperscriptBox["\"s\"", "7"], "\[InvisibleSpace]", 
+     SuperscriptBox["\"A\"", "3"], "\[NegativeMediumSpace]", "\"/(\"", 
+     "\[InvisibleSpace]", 
+     SuperscriptBox["\"kg\"", "2"], "\[InvisibleSpace]", "\"m\"", 
+     "\[InvisibleSpace]", "\")\""}], 
+   "second to the 7 amperes cubed per kilogram squared meter", 
+   FractionBox[
+    RowBox[{
+      SuperscriptBox["\"Amperes\"", "3"], " ", 
+      SuperscriptBox["\"Seconds\"", "7"]}], 
+    RowBox[{
+      SuperscriptBox["\"Kilograms\"", "2"], " ", "\"Meters\""}]]},
+  "Quantity"]], "Output",
+ CellChangeTimes->{3.872778331854951*^9},
+ CellLabel->"Out[53]=",
+ CellID->1603239,ExpressionUUID->"db1e8ad6-ad85-41f2-bbb3-a911fce56e67"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"HartreeAtomicConvert", "[", 
+  RowBox[{"Quantity", "[", 
+   RowBox[{
+    SuperscriptBox["\"\<ElementaryCharge\>\"", "3"], 
+    RowBox[{
+     SuperscriptBox["\"\<BohrRadius\>\"", "3"], "/", 
+     SuperscriptBox["\"\<HartreeEnergy\>\"", "2"]}]}], "]"}], "]"}]], "Input",
+ CellLabel->"In[59]:=",
+ CellID->206232064,ExpressionUUID->"7b609c7a-d8ad-41bb-989e-f7949028205e"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"-", "4"}], ",", "3", ",", "7", ",", "2"}], "}"}]], "Output",
+ CellChangeTimes->{3.872778449637708*^9},
+ CellLabel->"Out[59]=",
+ CellID->448407158,ExpressionUUID->"8c916401-08a8-413a-8750-a2a63dd0aea2"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"UnitConvert", "[", 
+  RowBox[{"angleprocessedunit", ",", 
+   RowBox[{"Times", "@@", 
+    RowBox[{"Power", "@@@", 
+     RowBox[{"Transpose", "[", 
+      RowBox[{"{", 
+       RowBox[{"HARTREECONSTANTS", ",", 
+        RowBox[{"LinearSolve", "[", 
+         RowBox[{
+          RowBox[{"Transpose", "[", "DEFININGCONSTANTS", "]"}], ",", 
+          "canonicalvector"}], "]"}]}], "}"}], "]"}]}]}]}], "]"}]], "Input",
+ CellID->190465664,ExpressionUUID->"3501e563-f2db-481a-81ea-ffcf2bf68c17"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"HARTREECONSTANTS", "=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"Quantity", "[", "\"\<ReducedPlanckConstant\>\"", "]"}], ",", 
+    RowBox[{"Quantity", "[", "\"\<ElementaryCharge\>\"", "]"}], ",", 
+    RowBox[{"Quantity", "[", "\"\<BohrRadius\>\"", "]"}], ",", 
+    RowBox[{"Quantity", "[", "\"\<ElectronRelativeAtomicMass\>\"", "]"}]}], 
+   "}"}]}]], "Input",
+ CellLabel->"In[67]:=",
+ CellID->73069635,ExpressionUUID->"7de06576-ea88-42dd-a970-838e8cfdba9d"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TemplateBox[{
+     InterpretationBox["\[InvisibleSpace]", 1], "\"\[HBar]\"", 
+     "reduced Planck constant", "\"ReducedPlanckConstant\""},
+    "Quantity"], ",", 
+   TemplateBox[{
+     InterpretationBox["\[InvisibleSpace]", 1], 
+     StyleBox["\"e\"", Italic, StripOnInput -> False], "elementary charge", 
+     "\"ElementaryCharge\""},
+    "Quantity"], ",", 
+   TemplateBox[{
+     InterpretationBox["\[InvisibleSpace]", 1], 
+     SubscriptBox[
+      StyleBox["\"a\"", Italic, StripOnInput -> False], "0"], "Bohr radius", 
+     "\"BohrRadius\""},
+    "Quantity"], ",", 
+   TemplateBox[{
+     InterpretationBox["\[InvisibleSpace]", 1], 
+     RowBox[{
+       SubscriptBox[
+        StyleBox["\"A\"", Italic, StripOnInput -> False], 
+        StyleBox["\"r\"", Italic, StripOnInput -> False]], "(", 
+       StyleBox["\"e\"", Italic, StripOnInput -> False], ")"}], 
+     "electron relative atomic mass", "\"ElectronRelativeAtomicMass\""},
+    "Quantity"]}], "}"}]], "Output",
+ CellChangeTimes->{3.8727785970677776`*^9},
+ CellLabel->"Out[67]=",
+ CellID->280221950,ExpressionUUID->"d3f09960-a885-45d9-9066-20b378a3aa49"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"UnitConvert", "[", 
+  RowBox[{"Quantity", "[", 
+   RowBox[{"1", ",", 
+    FractionBox[
+     RowBox[{
+      SuperscriptBox["\"\<BohrRadius\>\"", "3"], " ", 
+      SuperscriptBox["\"\<ElementaryCharge\>\"", "3"]}], 
+     SuperscriptBox["\"\<HartreeEnergy\>\"", "2"]]}], "]"}], "]"}]], "Input",
+ CellLabel->"In[73]:=",
+ CellID->249242013,ExpressionUUID->"2ee43ec2-95f9-4863-993f-21d156fdcd69"],
+
+Cell[BoxData[
+ TemplateBox[{"3.206361306098425188580169`9.038736258290466*^-53", 
+   RowBox[{
+     SuperscriptBox["\"s\"", "7"], "\[InvisibleSpace]", 
+     SuperscriptBox["\"A\"", "3"], "\[NegativeMediumSpace]", "\"/(\"", 
+     "\[InvisibleSpace]", 
+     SuperscriptBox["\"kg\"", "2"], "\[InvisibleSpace]", "\"m\"", 
+     "\[InvisibleSpace]", "\")\""}], 
+   "second to the 7 amperes cubed per kilogram squared meter", 
+   FractionBox[
+    RowBox[{
+      SuperscriptBox["\"Amperes\"", "3"], " ", 
+      SuperscriptBox["\"Seconds\"", "7"]}], 
+    RowBox[{
+      SuperscriptBox["\"Kilograms\"", "2"], " ", "\"Meters\""}]]},
+  "Quantity"]], "Output",
+ CellChangeTimes->{3.8727786329680915`*^9},
+ CellLabel->"Out[73]=",
+ CellID->267895131,ExpressionUUID->"82c1d2c7-1cf7-4d00-8085-b54cf33a5a6b"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Transpose", "[", 
+  RowBox[{"{", 
+   RowBox[{"HARTREECONSTANTS", ",", 
+    RowBox[{"HartreeAtomicConvert", "[", 
+     RowBox[{"Quantity", "[", 
+      RowBox[{
+       SuperscriptBox["\"\<ElementaryCharge\>\"", "3"], 
+       RowBox[{
+        SuperscriptBox["\"\<BohrRadius\>\"", "3"], "/", 
+        SuperscriptBox["\"\<HartreeEnergy\>\"", "2"]}]}], "]"}], "]"}]}], 
+   "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8727785998355207`*^9, 3.872778610458783*^9}},
+ CellLabel->"In[72]:=",
+ CellID->367940535,ExpressionUUID->"8b8d5b66-b5b5-4a8a-936b-65fd33cc6eed"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{
+       InterpretationBox["\[InvisibleSpace]", 1], "\"\[HBar]\"", 
+       "reduced Planck constant", "\"ReducedPlanckConstant\""},
+      "Quantity"], ",", 
+     RowBox[{"-", "4"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{
+       InterpretationBox["\[InvisibleSpace]", 1], 
+       StyleBox["\"e\"", Italic, StripOnInput -> False], "elementary charge", 
+       "\"ElementaryCharge\""},
+      "Quantity"], ",", "7"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{
+       InterpretationBox["\[InvisibleSpace]", 1], 
+       SubscriptBox[
+        StyleBox["\"a\"", Italic, StripOnInput -> False], "0"], "Bohr radius",
+        "\"BohrRadius\""},
+      "Quantity"], ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{
+       InterpretationBox["\[InvisibleSpace]", 1], 
+       RowBox[{
+         SubscriptBox[
+          StyleBox["\"A\"", Italic, StripOnInput -> False], 
+          StyleBox["\"r\"", Italic, StripOnInput -> False]], "(", 
+         StyleBox["\"e\"", Italic, StripOnInput -> False], ")"}], 
+       "electron relative atomic mass", "\"ElectronRelativeAtomicMass\""},
+      "Quantity"], ",", "3"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.872778611255148*^9, 3.872778620733961*^9}},
+ CellLabel->"Out[72]=",
+ CellID->586145616,ExpressionUUID->"ee94fc4b-b07a-497d-b66e-1c0b13bace29"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Power", "@@@", 
+  RowBox[{"Transpose", "[", 
+   RowBox[{"{", 
+    RowBox[{"HARTREECONSTANTS", ",", 
+     RowBox[{"HartreeAtomicConvert", "[", 
+      RowBox[{"Quantity", "[", 
+       RowBox[{
+        SuperscriptBox["\"\<ElementaryCharge\>\"", "3"], 
+        RowBox[{
+         SuperscriptBox["\"\<BohrRadius\>\"", "3"], "/", 
+         SuperscriptBox["\"\<HartreeEnergy\>\"", "2"]}]}], "]"}], "]"}]}], 
+    "}"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.8727786513401256`*^9, 3.8727786531944895`*^9}},
+ CellLabel->"In[74]:=",
+ CellID->94243023,ExpressionUUID->"3c7ebd95-aa12-4f33-b649-46aaf89274ad"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TemplateBox[{"1", 
+     RowBox[{"\"/\"", "\[InvisibleSpace]", 
+       SuperscriptBox["\"\[HBar]\"", "4"]}], 
+     "per reduced Planck constant to the fourth", 
+     FractionBox["1", 
+      SuperscriptBox["\"ReducedPlanckConstant\"", "4"]]},
+    "Quantity"], ",", 
+   TemplateBox[{"1", 
+     RowBox[{
+       SuperscriptBox[
+        StyleBox["\"e\"", Italic, StripOnInput -> False], "7"]}], 
+     "elementary charge to the 7", 
+     SuperscriptBox["\"ElementaryCharge\"", "7"]},
+    "Quantity"], ",", 
+   TemplateBox[{"1", 
+     RowBox[{
+       SubsuperscriptBox[
+        StyleBox["\"a\"", Italic, StripOnInput -> False], "0", "2"]}], 
+     "Bohr radius squared", 
+     SuperscriptBox["\"BohrRadius\"", "2"]},
+    "Quantity"], ",", 
+   TemplateBox[{"1", 
+     RowBox[{
+       SuperscriptBox[
+        RowBox[{
+          SubscriptBox[
+           StyleBox["\"A\"", Italic, StripOnInput -> False], 
+           StyleBox["\"r\"", Italic, StripOnInput -> False]], "(", 
+          StyleBox["\"e\"", Italic, StripOnInput -> False], ")"}], "3"]}], 
+     "electron relative atomic mass cubed", 
+     SuperscriptBox["\"ElectronRelativeAtomicMass\"", "3"]},
+    "Quantity"]}], "}"}]], "Output",
+ CellChangeTimes->{3.8727786535046377`*^9},
+ CellLabel->"Out[74]=",
+ CellID->224167499,ExpressionUUID->"17182fcf-fd1f-44af-88a3-90a5e121e5da"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Times", "@@", 
+  RowBox[{"Power", "@@@", 
+   RowBox[{"Transpose", "[", 
+    RowBox[{"{", 
+     RowBox[{"HARTREECONSTANTS", ",", 
+      RowBox[{"HartreeAtomicConvert", "[", 
+       RowBox[{"Quantity", "[", 
+        RowBox[{
+         SuperscriptBox["\"\<ElementaryCharge\>\"", "3"], 
+         RowBox[{
+          SuperscriptBox["\"\<BohrRadius\>\"", "3"], "/", 
+          SuperscriptBox["\"\<HartreeEnergy\>\"", "2"]}]}], "]"}], "]"}]}], 
+     "}"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.8727786593519545`*^9, 3.872778661741268*^9}},
+ CellLabel->"In[75]:=",
+ CellID->259985961,ExpressionUUID->"c5f1311e-f865-4d75-ac37-4c57c3f71846"],
+
+Cell[BoxData[
+ TemplateBox[{"1", 
+   RowBox[{
+     SuperscriptBox[
+      RowBox[{
+        SubscriptBox[
+         StyleBox["\"A\"", Italic, StripOnInput -> False], 
+         StyleBox["\"r\"", Italic, StripOnInput -> False]], "(", 
+        StyleBox["\"e\"", Italic, StripOnInput -> False], ")"}], "3"], 
+     "\[InvisibleSpace]", 
+     SubsuperscriptBox[
+      StyleBox["\"a\"", Italic, StripOnInput -> False], "0", "2"], 
+     "\[InvisibleSpace]", 
+     SuperscriptBox[
+      StyleBox["\"e\"", Italic, StripOnInput -> False], "7"], 
+     "\[NegativeMediumSpace]", "\"/\"", "\[InvisibleSpace]", 
+     SuperscriptBox["\"\[HBar]\"", "4"]}], 
+   "electron relative atomic mass cubed Bohr radius squared elementary charge \
+to the 7 per reduced Planck constant to the fourth", 
+   FractionBox[
+    RowBox[{
+      SuperscriptBox["\"BohrRadius\"", "2"], " ", 
+      SuperscriptBox["\"ElectronRelativeAtomicMass\"", "3"], " ", 
+      SuperscriptBox["\"ElementaryCharge\"", "7"]}], 
+    SuperscriptBox["\"ReducedPlanckConstant\"", "4"]]},
+  "Quantity"]], "Output",
+ CellChangeTimes->{3.8727786621544323`*^9},
+ CellLabel->"Out[75]=",
+ CellID->104185600,ExpressionUUID->"3d0a8997-1e6b-4d82-9994-1789d2e970bc"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"UnitDimensions", "[", 
+  RowBox[{"Times", "@@", 
+   RowBox[{"Power", "@@@", 
+    RowBox[{"Transpose", "[", 
+     RowBox[{"{", 
+      RowBox[{"HARTREECONSTANTS", ",", 
+       RowBox[{"HartreeAtomicConvert", "[", 
+        RowBox[{"Quantity", "[", 
+         RowBox[{
+          SuperscriptBox["\"\<ElementaryCharge\>\"", "3"], 
+          RowBox[{
+           SuperscriptBox["\"\<BohrRadius\>\"", "3"], "/", 
+           SuperscriptBox["\"\<HartreeEnergy\>\"", "2"]}]}], "]"}], "]"}]}], 
+      "}"}], "]"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8727786749632587`*^9, 3.872778678240472*^9}},
+ CellLabel->"In[77]:=",
+ CellID->214440803,ExpressionUUID->"c09254ff-aff8-4061-a16c-21f66a369cbe"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\<\"ElectricCurrentUnit\"\>", ",", "7"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"LengthUnit\"\>", ",", 
+     RowBox[{"-", "6"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"MassUnit\"\>", ",", 
+     RowBox[{"-", "4"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"TimeUnit\"\>", ",", "11"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.8727786786704454`*^9},
+ CellLabel->"Out[77]=",
+ CellID->145351033,ExpressionUUID->"faacae23-f4b1-422d-aff9-af818333c38a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"UnitDimensions", "[", 
+  RowBox[{"UnitConvert", "[", 
+   RowBox[{"Quantity", "[", 
+    RowBox[{"1", ",", 
+     FractionBox[
+      RowBox[{
+       SuperscriptBox["\"\<BohrRadius\>\"", "3"], " ", 
+       SuperscriptBox["\"\<ElementaryCharge\>\"", "3"]}], 
+      SuperscriptBox["\"\<HartreeEnergy\>\"", "2"]]}], "]"}], "]"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.8727786861667247`*^9, 3.8727786881269608`*^9}},
+ CellLabel->"In[78]:=",
+ CellID->102577110,ExpressionUUID->"5397949b-d74b-4088-a92f-d6056b04fa73"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\<\"ElectricCurrentUnit\"\>", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"LengthUnit\"\>", ",", 
+     RowBox[{"-", "1"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"MassUnit\"\>", ",", 
+     RowBox[{"-", "2"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"TimeUnit\"\>", ",", "7"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.872778688661873*^9},
+ CellLabel->"Out[78]=",
+ CellID->1467971,ExpressionUUID->"09273c65-0382-4852-a1ed-6584b9a30762"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"HartreeAtomicConvert", "[", 
+  RowBox[{"Quantity", "[", 
+   RowBox[{
+    SuperscriptBox["\"\<ElementaryCharge\>\"", "3"], 
+    RowBox[{
+     SuperscriptBox["\"\<BohrRadius\>\"", "3"], "/", 
+     SuperscriptBox["\"\<HartreeEnergy\>\"", "2"]}]}], "]"}], "]"}]], "Input",
+ CellLabel->"In[85]:=",
+ CellID->479984577,ExpressionUUID->"ed302dc6-3106-4e74-be72-60ec5249cf1c"],
+
+Cell[BoxData[
+ RowBox[{"LinearSolve", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1"}], ",", "0", ",", "0", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "1", ",", "0", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0", ",", "1", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", "0", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", "0", ",", "0"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"7", ",", 
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "2"}], ",", "3"}], "}"}]}], "]"}]], "Output",
+ CellChangeTimes->{3.872778908129346*^9},
+ CellLabel->"Out[85]=",
+ CellID->279092599,ExpressionUUID->"a9177df5-7c60-4e39-a85e-84f326a99d69"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"HartreeAtomicConvert", "[", 
+  RowBox[{"Quantity", "[", 
+   RowBox[{
+    SuperscriptBox["\"\<ElementaryCharge\>\"", "3"], 
+    RowBox[{
+     SuperscriptBox["\"\<BohrRadius\>\"", "3"], "/", 
+     SuperscriptBox["\"\<HartreeEnergy\>\"", "2"]}]}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{3.872778973651863*^9},
+ CellLabel->"In[103]:=",
+ CellID->678168291,ExpressionUUID->"fff92c78-89f9-41a9-8aa2-849d01d9ed7e"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "0", ",", "0", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "1", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "1", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "0", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "0", ",", "0"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.872778974046838*^9, 3.8727790040153418`*^9}, 
+   3.872779049153452*^9},
+ CellLabel->"Out[103]=",
+ CellID->73569648,ExpressionUUID->"4aa82f3c-7eee-486a-b9c1-abb4a0fddd81"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"HartreeAtomicConvert", "[", 
+  RowBox[{"Quantity", "[", 
+   RowBox[{
+    SuperscriptBox["\"\<ElementaryCharge\>\"", "3"], 
+    RowBox[{
+     SuperscriptBox["\"\<BohrRadius\>\"", "3"], "/", 
+     SuperscriptBox["\"\<HartreeEnergy\>\"", "2"]}]}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{3.872778973651863*^9, 3.872779108555431*^9},
+ CellLabel->"In[107]:=",
+ CellID->37794842,ExpressionUUID->"71b6317a-277b-4a36-9e00-d23ffd58774e"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "0", ",", "0", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "1", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "1", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "0", ",", "1"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.872779108958226*^9},
+ CellLabel->"Out[107]=",
+ CellID->141382000,ExpressionUUID->"d907836e-6b83-49f4-8f63-d7b4d15af111"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"UnitDimensions", "[", 
+  RowBox[{"Quantity", "[", 
+   RowBox[{
+    SuperscriptBox["\"\<ElementaryCharge\>\"", "3"], 
+    RowBox[{
+     SuperscriptBox["\"\<BohrRadius\>\"", "3"], "/", 
+     SuperscriptBox["\"\<HartreeEnergy\>\"", "2"]}]}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8727791344460864`*^9, 3.8727791363748455`*^9}},
+ CellLabel->"In[108]:=",
+ CellID->122015226,ExpressionUUID->"467c5948-2e58-4f02-a448-0e4b002956a4"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\<\"ElectricCurrentUnit\"\>", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"LengthUnit\"\>", ",", 
+     RowBox[{"-", "1"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"MassUnit\"\>", ",", 
+     RowBox[{"-", "2"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"TimeUnit\"\>", ",", "7"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.872779136811894*^9},
+ CellLabel->"Out[108]=",
+ CellID->26126584,ExpressionUUID->"f8b5bd7f-22c2-4d37-9bd4-d5c37305715a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"LinearSolve", "[", 
+  RowBox[{
+   RowBox[{"HartreeAtomicConvert", "[", 
+    RowBox[{"Quantity", "[", 
+     RowBox[{
+      SuperscriptBox["\"\<ElementaryCharge\>\"", "3"], 
+      RowBox[{
+       SuperscriptBox["\"\<BohrRadius\>\"", "3"], "/", 
+       SuperscriptBox["\"\<HartreeEnergy\>\"", "2"]}]}], "]"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"7", ",", 
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "2"}], ",", "3"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8727791161488323`*^9, 3.8727791472395663`*^9}},
+ CellLabel->"In[109]:=",
+ CellID->4147331,ExpressionUUID->"f49d423e-487b-466f-a62e-8daff69b4176"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"-", "4"}], ",", "7", ",", "2", ",", "3"}], "}"}]], "Output",
+ CellChangeTimes->{3.872779147603425*^9},
+ CellLabel->"Out[109]=",
+ CellID->552446276,ExpressionUUID->"577930db-9a68-4d3f-9b41-cbfe96323b06"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"LinearSolve", "[", 
+   RowBox[{
+    RowBox[{"HartreeAtomicConvert", "[", 
+     RowBox[{"Quantity", "[", 
+      RowBox[{
+       SuperscriptBox["\"\<ElementaryCharge\>\"", "3"], 
+       RowBox[{
+        SuperscriptBox["\"\<BohrRadius\>\"", "3"], "/", 
+        SuperscriptBox["\"\<HartreeEnergy\>\"", "2"]}]}], "]"}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"7", ",", 
+      RowBox[{"-", "1"}], ",", 
+      RowBox[{"-", "2"}], ",", "3"}], "}"}]}], "]"}], "."}]], "Input",
+ CellChangeTimes->{{3.8727791161488323`*^9, 3.8727791472395663`*^9}, {
+  3.872779190892517*^9, 3.872779194279586*^9}},
+ CellID->175262737,ExpressionUUID->"24e9d36b-3655-4bd0-a9b1-5ec5d7312f2b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"BOHRRADIUS", "=", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1", ",", "0", ",", "0"}], "}"}]}], ";", 
+  RowBox[{"REDUCEDPLANCKCONSTANT", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "2", ",", "1", ",", "0"}], "}"}]}], ";", 
+  RowBox[{"ELEMENTARYCHARGE", "=", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "0", ",", "1"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ELECTRONRELATIVISTICMASS", "=", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "1", ",", "0"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"DEFININGCONSTANTS", "=", 
+  RowBox[{"{", 
+   RowBox[{
+   "REDUCEDPLANCKCONSTANT", ",", "BOHRRADIUS", ",", 
+    "ELECTRONRELATIVISTICMASS", ",", "ELEMENTARYCHARGE"}], "}"}]}]}], "Input",
+ CellLabel->"In[111]:=",
+ CellID->19984625,ExpressionUUID->"c9397c05-9777-4fff-8616-8c7483c90bd7"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "2", ",", "1", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "1", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "0", ",", "1"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.872779224990754*^9},
+ CellLabel->"Out[113]=",
+ CellID->379639956,ExpressionUUID->"c3bdd024-f85a-4c1a-9899-928f96ff605f"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"LinearSolve", "[", 
+   RowBox[{
+    RowBox[{"HartreeAtomicConvert", "[", 
+     RowBox[{"Quantity", "[", 
+      RowBox[{
+       SuperscriptBox["\"\<ElementaryCharge\>\"", "3"], 
+       RowBox[{
+        SuperscriptBox["\"\<BohrRadius\>\"", "3"], "/", 
+        SuperscriptBox["\"\<HartreeEnergy\>\"", "2"]}]}], "]"}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"7", ",", 
+      RowBox[{"-", "1"}], ",", 
+      RowBox[{"-", "2"}], ",", "3"}], "}"}]}], "]"}], ".", 
+  "DEFININGCONSTANTS"}]], "Input",
+ CellChangeTimes->{{3.8727792070185957`*^9, 3.8727792301621485`*^9}},
+ CellLabel->"In[114]:=",
+ CellID->71180256,ExpressionUUID->"c1b9cf35-0241-4a8e-b222-123d546932d4"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"7", ",", 
+   RowBox[{"-", "1"}], ",", 
+   RowBox[{"-", "2"}], ",", "3"}], "}"}]], "Output",
+ CellChangeTimes->{3.872779230498949*^9},
+ CellLabel->"Out[114]=",
+ CellID->12801477,ExpressionUUID->"961ca9b7-c910-42b8-996e-b5764420f7e0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"HARTREECONSTANTS", ",", 
+   RowBox[{"LinearSolve", "[", 
+    RowBox[{
+     RowBox[{"HartreeAtomicConvert", "[", 
+      RowBox[{"Quantity", "[", 
+       RowBox[{
+        SuperscriptBox["\"\<ElementaryCharge\>\"", "3"], 
+        RowBox[{
+         SuperscriptBox["\"\<BohrRadius\>\"", "3"], "/", 
+         SuperscriptBox["\"\<HartreeEnergy\>\"", "2"]}]}], "]"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"7", ",", 
+       RowBox[{"-", "1"}], ",", 
+       RowBox[{"-", "2"}], ",", "3"}], "}"}]}], "]"}]}], "}"}]], "Input",
+ CellChangeTimes->{{3.872779287604165*^9, 3.8727792919037466`*^9}},
+ CellLabel->"In[116]:=",
+ CellID->244226095,ExpressionUUID->"15ba212c-4fba-4bb1-bfac-ccd57a2ef6ca"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{
+       InterpretationBox["\[InvisibleSpace]", 1], "\"\[HBar]\"", 
+       "reduced Planck constant", "\"ReducedPlanckConstant\""},
+      "Quantity"], ",", 
+     TemplateBox[{
+       InterpretationBox["\[InvisibleSpace]", 1], 
+       StyleBox["\"e\"", Italic, StripOnInput -> False], "elementary charge", 
+       "\"ElementaryCharge\""},
+      "Quantity"], ",", 
+     TemplateBox[{
+       InterpretationBox["\[InvisibleSpace]", 1], 
+       SubscriptBox[
+        StyleBox["\"a\"", Italic, StripOnInput -> False], "0"], "Bohr radius",
+        "\"BohrRadius\""},
+      "Quantity"], ",", 
+     TemplateBox[{
+       InterpretationBox["\[InvisibleSpace]", 1], 
+       RowBox[{
+         SubscriptBox[
+          StyleBox["\"A\"", Italic, StripOnInput -> False], 
+          StyleBox["\"r\"", Italic, StripOnInput -> False]], "(", 
+         StyleBox["\"e\"", Italic, StripOnInput -> False], ")"}], 
+       "electron relative atomic mass", "\"ElectronRelativeAtomicMass\""},
+      "Quantity"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "4"}], ",", "7", ",", "2", ",", "3"}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.872779292426565*^9},
+ CellLabel->"Out[116]=",
+ CellID->786626590,ExpressionUUID->"ae3b540e-ac1a-491f-87d9-176a6eba0b08"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Transpose", "[", 
+  RowBox[{"{", 
+   RowBox[{"HARTREECONSTANTS", ",", 
+    RowBox[{"LinearSolve", "[", 
+     RowBox[{
+      RowBox[{"HartreeAtomicConvert", "[", 
+       RowBox[{"Quantity", "[", 
+        RowBox[{
+         SuperscriptBox["\"\<ElementaryCharge\>\"", "3"], 
+         RowBox[{
+          SuperscriptBox["\"\<BohrRadius\>\"", "3"], "/", 
+          SuperscriptBox["\"\<HartreeEnergy\>\"", "2"]}]}], "]"}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"7", ",", 
+        RowBox[{"-", "1"}], ",", 
+        RowBox[{"-", "2"}], ",", "3"}], "}"}]}], "]"}]}], "}"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.8727792945026407`*^9, 3.8727792974735475`*^9}},
+ CellLabel->"In[117]:=",
+ CellID->437819798,ExpressionUUID->"656045b2-38c8-4c85-9207-4b8cb6373441"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{
+       InterpretationBox["\[InvisibleSpace]", 1], "\"\[HBar]\"", 
+       "reduced Planck constant", "\"ReducedPlanckConstant\""},
+      "Quantity"], ",", 
+     RowBox[{"-", "4"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{
+       InterpretationBox["\[InvisibleSpace]", 1], 
+       StyleBox["\"e\"", Italic, StripOnInput -> False], "elementary charge", 
+       "\"ElementaryCharge\""},
+      "Quantity"], ",", "7"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{
+       InterpretationBox["\[InvisibleSpace]", 1], 
+       SubscriptBox[
+        StyleBox["\"a\"", Italic, StripOnInput -> False], "0"], "Bohr radius",
+        "\"BohrRadius\""},
+      "Quantity"], ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{
+       InterpretationBox["\[InvisibleSpace]", 1], 
+       RowBox[{
+         SubscriptBox[
+          StyleBox["\"A\"", Italic, StripOnInput -> False], 
+          StyleBox["\"r\"", Italic, StripOnInput -> False]], "(", 
+         StyleBox["\"e\"", Italic, StripOnInput -> False], ")"}], 
+       "electron relative atomic mass", "\"ElectronRelativeAtomicMass\""},
+      "Quantity"], ",", "3"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.8727792978437753`*^9},
+ CellLabel->"Out[117]=",
+ CellID->38166636,ExpressionUUID->"f36d680a-1f87-4f8a-9410-52c4357efc74"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Power", "@@@", 
+  RowBox[{"Transpose", "[", 
+   RowBox[{"{", 
+    RowBox[{"HARTREECONSTANTS", ",", 
+     RowBox[{"LinearSolve", "[", 
+      RowBox[{
+       RowBox[{"HartreeAtomicConvert", "[", 
+        RowBox[{"Quantity", "[", 
+         RowBox[{
+          SuperscriptBox["\"\<ElementaryCharge\>\"", "3"], 
+          RowBox[{
+           SuperscriptBox["\"\<BohrRadius\>\"", "3"], "/", 
+           SuperscriptBox["\"\<HartreeEnergy\>\"", "2"]}]}], "]"}], "]"}], 
+       ",", 
+       RowBox[{"{", 
+        RowBox[{"7", ",", 
+         RowBox[{"-", "1"}], ",", 
+         RowBox[{"-", "2"}], ",", "3"}], "}"}]}], "]"}]}], "}"}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.8727793051629143`*^9, 3.8727793069944925`*^9}},
+ CellLabel->"In[118]:=",
+ CellID->657208737,ExpressionUUID->"84c3b47a-6ce6-43a1-8319-2b09447d607d"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TemplateBox[{"1", 
+     RowBox[{"\"/\"", "\[InvisibleSpace]", 
+       SuperscriptBox["\"\[HBar]\"", "4"]}], 
+     "per reduced Planck constant to the fourth", 
+     FractionBox["1", 
+      SuperscriptBox["\"ReducedPlanckConstant\"", "4"]]},
+    "Quantity"], ",", 
+   TemplateBox[{"1", 
+     RowBox[{
+       SuperscriptBox[
+        StyleBox["\"e\"", Italic, StripOnInput -> False], "7"]}], 
+     "elementary charge to the 7", 
+     SuperscriptBox["\"ElementaryCharge\"", "7"]},
+    "Quantity"], ",", 
+   TemplateBox[{"1", 
+     RowBox[{
+       SubsuperscriptBox[
+        StyleBox["\"a\"", Italic, StripOnInput -> False], "0", "2"]}], 
+     "Bohr radius squared", 
+     SuperscriptBox["\"BohrRadius\"", "2"]},
+    "Quantity"], ",", 
+   TemplateBox[{"1", 
+     RowBox[{
+       SuperscriptBox[
+        RowBox[{
+          SubscriptBox[
+           StyleBox["\"A\"", Italic, StripOnInput -> False], 
+           StyleBox["\"r\"", Italic, StripOnInput -> False]], "(", 
+          StyleBox["\"e\"", Italic, StripOnInput -> False], ")"}], "3"]}], 
+     "electron relative atomic mass cubed", 
+     SuperscriptBox["\"ElectronRelativeAtomicMass\"", "3"]},
+    "Quantity"]}], "}"}]], "Output",
+ CellChangeTimes->{3.8727793073054314`*^9},
+ CellLabel->"Out[118]=",
+ CellID->193520347,ExpressionUUID->"5b23def2-78ea-40bd-bca4-db47fd546800"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Times", "@@", 
+  RowBox[{"Power", "@@@", 
+   RowBox[{"Transpose", "[", 
+    RowBox[{"{", 
+     RowBox[{"HARTREECONSTANTS", ",", 
+      RowBox[{"LinearSolve", "[", 
+       RowBox[{
+        RowBox[{"HartreeAtomicConvert", "[", 
+         RowBox[{"Quantity", "[", 
+          RowBox[{
+           SuperscriptBox["\"\<ElementaryCharge\>\"", "3"], 
+           RowBox[{
+            SuperscriptBox["\"\<BohrRadius\>\"", "3"], "/", 
+            SuperscriptBox["\"\<HartreeEnergy\>\"", "2"]}]}], "]"}], "]"}], 
+        ",", 
+        RowBox[{"{", 
+         RowBox[{"7", ",", 
+          RowBox[{"-", "1"}], ",", 
+          RowBox[{"-", "2"}], ",", "3"}], "}"}]}], "]"}]}], "}"}], 
+    "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.8727793093923016`*^9, 3.8727793108195963`*^9}},
+ CellLabel->"In[119]:=",
+ CellID->610827879,ExpressionUUID->"cb627313-b6d4-4a3a-a2e5-b79e14e8cb09"],
+
+Cell[BoxData[
+ TemplateBox[{"1", 
+   RowBox[{
+     SuperscriptBox[
+      RowBox[{
+        SubscriptBox[
+         StyleBox["\"A\"", Italic, StripOnInput -> False], 
+         StyleBox["\"r\"", Italic, StripOnInput -> False]], "(", 
+        StyleBox["\"e\"", Italic, StripOnInput -> False], ")"}], "3"], 
+     "\[InvisibleSpace]", 
+     SubsuperscriptBox[
+      StyleBox["\"a\"", Italic, StripOnInput -> False], "0", "2"], 
+     "\[InvisibleSpace]", 
+     SuperscriptBox[
+      StyleBox["\"e\"", Italic, StripOnInput -> False], "7"], 
+     "\[NegativeMediumSpace]", "\"/\"", "\[InvisibleSpace]", 
+     SuperscriptBox["\"\[HBar]\"", "4"]}], 
+   "electron relative atomic mass cubed Bohr radius squared elementary charge \
+to the 7 per reduced Planck constant to the fourth", 
+   FractionBox[
+    RowBox[{
+      SuperscriptBox["\"BohrRadius\"", "2"], " ", 
+      SuperscriptBox["\"ElectronRelativeAtomicMass\"", "3"], " ", 
+      SuperscriptBox["\"ElementaryCharge\"", "7"]}], 
+    SuperscriptBox["\"ReducedPlanckConstant\"", "4"]]},
+  "Quantity"]], "Output",
+ CellChangeTimes->{3.8727793111643696`*^9},
+ CellLabel->"Out[119]=",
+ CellID->266713867,ExpressionUUID->"fab1183b-3e19-465d-b70e-be0a4c61c059"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"UnitDimensions", "[", 
+  RowBox[{"Times", "@@", 
+   RowBox[{"Power", "@@@", 
+    RowBox[{"Transpose", "[", 
+     RowBox[{"{", 
+      RowBox[{"HARTREECONSTANTS", ",", 
+       RowBox[{"LinearSolve", "[", 
+        RowBox[{
+         RowBox[{"HartreeAtomicConvert", "[", 
+          RowBox[{"Quantity", "[", 
+           RowBox[{
+            SuperscriptBox["\"\<ElementaryCharge\>\"", "3"], 
+            RowBox[{
+             SuperscriptBox["\"\<BohrRadius\>\"", "3"], "/", 
+             SuperscriptBox["\"\<HartreeEnergy\>\"", "2"]}]}], "]"}], "]"}], 
+         ",", 
+         RowBox[{"{", 
+          RowBox[{"7", ",", 
+           RowBox[{"-", "1"}], ",", 
+           RowBox[{"-", "2"}], ",", "3"}], "}"}]}], "]"}]}], "}"}], "]"}]}]}],
+   "]"}]], "Input",
+ CellChangeTimes->{{3.8727793163443766`*^9, 3.8727793179872494`*^9}},
+ CellLabel->"In[120]:=",
+ CellID->436016019,ExpressionUUID->"c780265b-1202-4625-a497-7739bfad2cfd"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\<\"ElectricCurrentUnit\"\>", ",", "7"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"LengthUnit\"\>", ",", 
+     RowBox[{"-", "6"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"MassUnit\"\>", ",", 
+     RowBox[{"-", "4"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"TimeUnit\"\>", ",", "11"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.8727793182957478`*^9},
+ CellLabel->"Out[120]=",
+ CellID->48713979,ExpressionUUID->"6ee1ebe6-f1c2-4eea-81a8-6b191ec8cd2b"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Det", "@", 
+  RowBox[{"(", GridBox[{
+     {
+      RowBox[{"-", "1"}], "0", "0", "1"},
+     {"2", "1", "0", "0"},
+     {"1", "0", "1", "0"},
+     {"0", "0", "0", "1"}
+    }], ")"}]}]], "Input",
+ CellChangeTimes->{{3.872779664142931*^9, 3.872779689479639*^9}},
+ CellLabel->"In[121]:=",
+ CellID->388861335,ExpressionUUID->"ff04e629-1796-44ec-9a02-06e0d6ce3f96"],
+
+Cell[BoxData[
+ RowBox[{"-", "1"}]], "Output",
+ CellChangeTimes->{3.8727796898508816`*^9},
+ CellLabel->"Out[121]=",
+ CellID->293203165,ExpressionUUID->"b5230d7e-3334-43df-ad52-142f608c991c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Inverse", "@", 
+   RowBox[{"(", GridBox[{
+      {
+       RowBox[{"-", "1"}], "0", "0", "1"},
+      {"2", "1", "0", "0"},
+      {"1", "0", "1", "0"},
+      {"0", "0", "0", "1"}
+     }], ")"}]}], "//", "MatrixForm"}]], "Input",
+ CellChangeTimes->{{3.872779664142931*^9, 3.8727797004126616`*^9}},
+ CellLabel->"In[123]:=",
+ CellID->742705636,ExpressionUUID->"425b1c26-4187-46cb-ab9b-999b5371eae3"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      RowBox[{"-", "1"}], "0", "0", "1"},
+     {"2", "1", "0", 
+      RowBox[{"-", "2"}]},
+     {"1", "0", "1", 
+      RowBox[{"-", "1"}]},
+     {"0", "0", "0", "1"}
+    },
+    GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{{3.8727796969686193`*^9, 3.8727797007876267`*^9}},
+ CellLabel->"Out[123]//MatrixForm=",
+ CellID->38275943,ExpressionUUID->"a86b089b-0a63-4a03-89f9-3fcfc9363e16"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"RowReduce", "[", 
+   RowBox[{"(", GridBox[{
+      {
+       RowBox[{"-", "1"}], "0", "0", "1", "7"},
+      {"2", "1", "0", "0", 
+       RowBox[{"-", "1"}]},
+      {"1", "0", "1", "0", 
+       RowBox[{"-", "2"}]},
+      {"0", "0", "0", "1", "3"}
+     }], ")"}], "]"}], "//", "MatrixForm"}]], "Input",
+ CellChangeTimes->{{3.8727797084977503`*^9, 3.872779725198738*^9}},
+ CellLabel->"In[125]:=",
+ CellID->42242531,ExpressionUUID->"594d6ce2-6467-4c59-97ad-e7975c415689"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", "0", "0", "0", 
+      RowBox[{"-", "4"}]},
+     {"0", "1", "0", "0", "7"},
+     {"0", "0", "1", "0", "2"},
+     {"0", "0", "0", "1", "3"}
+    },
+    GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.872779725424863*^9},
+ CellLabel->"Out[125]//MatrixForm=",
+ CellID->163935801,ExpressionUUID->"08577ff5-2e89-4d15-9e14-94aec1014a47"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"RowReduce", "[", 
+   TagBox[
+    RowBox[{"(", "\[NoBreak]", GridBox[{
+       {
+        RowBox[{"-", "1"}], "0", "0", "1", "7"},
+       {"2", "1", "0", 
+        RowBox[{"-", "2"}], 
+        RowBox[{"-", "1"}]},
+       {"1", "0", "1", 
+        RowBox[{"-", "1"}], 
+        RowBox[{"-", "2"}]},
+       {"0", "0", "0", "1", "3"}
+      },
+      GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}}], "\[NoBreak]", ")"}],
+    Function[BoxForm`e$, 
+     MatrixForm[BoxForm`e$]]], "]"}], "//", "MatrixForm"}]], "Input",
+ CellChangeTimes->{{3.8727797084977503`*^9, 3.872779748063699*^9}},
+ CellLabel->"In[126]:=",
+ CellID->115438540,ExpressionUUID->"72ce90cc-f227-44ff-87fd-b52ea24f5edd"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", "0", "0", "0", 
+      RowBox[{"-", "4"}]},
+     {"0", "1", "0", "0", "13"},
+     {"0", "0", "1", "0", "5"},
+     {"0", "0", "0", "1", "3"}
+    },
+    GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.872779748439246*^9},
+ CellLabel->"Out[126]//MatrixForm=",
+ CellID->155705369,ExpressionUUID->"a02208eb-ae76-42db-a3a7-fa8b2621e17b"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"UnitDimensions", "[", 
+  RowBox[{"Times", "@@", 
+   RowBox[{"Power", "@@@", 
+    RowBox[{"Transpose", "[", 
+     RowBox[{"{", 
+      RowBox[{"HARTREECONSTANTS", ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "4"}], ",", "13", ",", "5", ",", "3"}], "}"}]}], "}"}], 
+     "]"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8727797752463017`*^9, 3.8727797802425585`*^9}},
+ CellLabel->"In[127]:=",
+ CellID->361248811,ExpressionUUID->"d5216581-5eda-4a7d-a5b3-60fc9f875033"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\<\"ElectricCurrentUnit\"\>", ",", "13"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"LengthUnit\"\>", ",", 
+     RowBox[{"-", "3"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"MassUnit\"\>", ",", 
+     RowBox[{"-", "4"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"TimeUnit\"\>", ",", "17"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.872779781036742*^9},
+ CellLabel->"Out[127]=",
+ CellID->32585745,ExpressionUUID->"b00c7afa-40ec-493f-b178-95c97355f755"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"UnitDimensions", "[", 
+  RowBox[{"Times", "@@", 
+   RowBox[{"Power", "@@@", 
+    RowBox[{"Transpose", "[", 
+     RowBox[{"{", 
+      RowBox[{"HARTREECONSTANTS", ",", 
+       RowBox[{"LinearSolve", "[", 
+        RowBox[{
+         RowBox[{"HartreeAtomicConvert", "[", 
+          RowBox[{"Quantity", "[", 
+           RowBox[{
+            SuperscriptBox["\"\<ElementaryCharge\>\"", "3"], 
+            RowBox[{
+             SuperscriptBox["\"\<BohrRadius\>\"", "3"], "/", 
+             SuperscriptBox["\"\<HartreeEnergy\>\"", "2"]}]}], "]"}], "]"}], 
+         ",", 
+         RowBox[{"{", 
+          RowBox[{"7", ",", 
+           RowBox[{"-", "1"}], ",", 
+           RowBox[{"-", "2"}], ",", "3"}], "}"}]}], "]"}]}], "}"}], "]"}]}]}],
+   "]"}]], "Input",
+ CellID->132823364,ExpressionUUID->"61b653d4-7d1c-4614-a636-3f2a10d0afbe"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"RowReduce", "[", 
+   RowBox[{"(", GridBox[{
+      {
+       RowBox[{"-", "1"}], "0", "0", "1", "7"},
+      {"2", "1", "0", "0", 
+       RowBox[{"-", "1"}]},
+      {"1", "0", "1", "0", 
+       RowBox[{"-", "2"}]},
+      {"0", "0", "0", "1", "3"}
+     }], ")"}], "]"}], "//", "MatrixForm"}]], "Input",
+ CellLabel->"In[128]:=",
+ CellID->453080379,ExpressionUUID->"f29e4a88-48d8-4436-8d42-5cc6fa9e8056"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", "0", "0", "0", 
+      RowBox[{"-", "4"}]},
+     {"0", "1", "0", "0", "7"},
+     {"0", "0", "1", "0", "2"},
+     {"0", "0", "0", "1", "3"}
+    },
+    GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.872779842799287*^9},
+ CellLabel->"Out[128]//MatrixForm=",
+ CellID->235743736,ExpressionUUID->"62c25bd9-6c13-4b3c-b816-810f0453296d"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  SuperscriptBox[
+   RowBox[{"Quantity", "[", "\"\<ReducedPlanckConstant\>\"", "]"}], 
+   RowBox[{"-", "4"}]], 
+  SuperscriptBox[
+   RowBox[{"Quantity", "[", "\"\<BohrRadius\>\"", "]"}], "7"], 
+  SuperscriptBox[
+   RowBox[{"Quantity", "[", "\"\<ElectronR\>\"", "]"}], "2"], 
+  RowBox[{"Quantity", "[", "]"}]}]], "Input",
+ CellChangeTimes->{{3.8727798475433626`*^9, 3.8727799029836063`*^9}},
+ CellID->194964698,ExpressionUUID->"f80b261e-5ece-402e-8783-c82686db9ab0"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"UnitDimensions", "[", 
+  RowBox[{"Quantity", "[", "\"\<ElectronRelativeAtomicMass\>\"", "]"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.872779907915973*^9, 3.8727799179385247`*^9}},
+ CellLabel->"In[129]:=",
+ CellID->537054116,ExpressionUUID->"6372f826-9ac1-41a1-90e7-2ef7b3399e2a"],
+
+Cell[BoxData[
+ RowBox[{"{", "}"}]], "Output",
+ CellChangeTimes->{3.8727799182881804`*^9},
+ CellLabel->"Out[129]=",
+ CellID->524260040,ExpressionUUID->"202bb1b0-5368-4f3a-9efb-4cc45348f82f"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"UnitDimensions", "[", 
+  RowBox[{"Quantity", "[", "\"\<ElectronRelativeAtomicMass\>\"", "]"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.872779907915973*^9, 3.872779923327524*^9}},
+ CellID->39186509,ExpressionUUID->"ea0e0df2-5e5e-48f8-85f8-9fe77c2e4617"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  TemplateBox[{"\"electron\"", 
+    RowBox[{"Entity", "[", 
+      RowBox[{"\"Particle\"", ",", "\"Electron\""}], "]"}], 
+    "\"Entity[\\\"Particle\\\", \\\"Electron\\\"]\"", "\"particle\""},
+   "Entity"], "[", 
+  TemplateBox[{"\"mass\"", 
+    RowBox[{"EntityProperty", "[", 
+      RowBox[{"\"Particle\"", ",", "\"Mass\""}], "]"}], 
+    "\"EntityProperty[\\\"Particle\\\", \\\"Mass\\\"]\""},
+   "EntityProperty"], "]"}]], "Input",
+ CellChangeTimes->{3.87277994284152*^9},
+ CellLabel->"In[131]:=",
+ CellID->745452941,ExpressionUUID->"f2e8ab3b-8ea6-4a40-9568-9d6c9fe874a7"],
+
+Cell[BoxData[
+ TemplateBox[{"510.9989461`10.", 
+   RowBox[{"\"keV\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+     SuperscriptBox[
+      StyleBox["\"c\"", Italic, StripOnInput -> False], "2"]}], 
+   "kiloelectronvolts per speed of light squared", 
+   FractionBox["\"Kiloelectronvolts\"", 
+    SuperscriptBox["\"SpeedOfLight\"", "2"]]},
+  "Quantity"]], "Output",
+ CellChangeTimes->{{3.872779949275258*^9, 3.872779953333082*^9}},
+ CellLabel->"Out[131]=",
+ CellID->109418241,ExpressionUUID->"0854c707-7f91-4bd4-b9e6-eb321f5c4204"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Quantity", "[", "\"\<ElectronMass\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.87277994284152*^9, 3.872779965891114*^9}},
+ CellLabel->"In[132]:=",
+ CellID->310209360,ExpressionUUID->"c246ddd2-4148-4cce-9fee-13f5a44c0f42"],
+
+Cell[BoxData[
+ TemplateBox[{
+   InterpretationBox["\[InvisibleSpace]", 1], 
+   SubscriptBox[
+    StyleBox["\"m\"", Italic, StripOnInput -> False], 
+    StyleBox["\"e\"", Italic, StripOnInput -> False]], "electron mass", 
+   "\"ElectronMass\""},
+  "Quantity"]], "Output",
+ CellChangeTimes->{3.872779966186612*^9},
+ CellLabel->"Out[132]=",
+ CellID->18576753,ExpressionUUID->"44509b0f-1931-4b93-81bd-2378785b77e7"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"UnitConvert", "[", 
+  RowBox[{"Quantity", "[", "\"\<ElectronMass\>\"", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.872779968421955*^9, 3.8727799706685524`*^9}},
+ CellLabel->"In[133]:=",
+ CellID->66657204,ExpressionUUID->"5a024e11-03f9-4776-b330-61e78d5aeb8c"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "9.10938370150000079003439766`9.211300968617545*^-31", "\"kg\"", 
+   "kilograms", "\"Kilograms\""},
+  "Quantity"]], "Output",
+ CellChangeTimes->{3.872779970973284*^9},
+ CellLabel->"Out[133]=",
+ CellID->76908986,ExpressionUUID->"64e4d4f3-3f69-4592-8d61-5ee134b81b02"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"HartreeAtomicConvert", "[", 
+  RowBox[{"Quantity", "[", 
+   RowBox[{
+    SuperscriptBox["\"\<ElementaryCharge\>\"", "3"], 
+    RowBox[{
+     SuperscriptBox["\"\<BohrRadius\>\"", "3"], "/", 
+     SuperscriptBox["\"\<HartreeEnergy\>\"", "2"]}]}], "]"}], "]"}]], "Input",
+ CellLabel->"In[144]:=",
+ CellID->324823866,ExpressionUUID->"e6501530-92d4-49f0-a230-907fe910ec21"],
+
+Cell[BoxData["$Failed"], "Output",
+ CellChangeTimes->{3.8727800340525713`*^9, 3.8727800738230047`*^9},
+ CellLabel->"Out[144]=",
+ CellID->49906212,ExpressionUUID->"a475372b-ce2c-45f6-838d-2967509b00dd"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"BOHRRADIUS", "=", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0"}],
+     "}"}]}], ";", 
+  RowBox[{"REDUCEDPLANCKCONSTANT", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "2", ",", "1", ",", "0", ",", "0", ",", "0", 
+     ",", "0"}], "}"}]}], ";", 
+  RowBox[{"ELEMENTARYCHARGE", "=", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "0", ",", "1", ",", "0", ",", "0", ",", "0"}],
+     "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ELECTRONRELATIVISTICMASS", "=", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "1", ",", "0", ",", "0", ",", "0", ",", "0"}],
+     "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DEFININGCONSTANTS", "=", 
+   RowBox[{"{", 
+    RowBox[{
+    "REDUCEDPLANCKCONSTANT", ",", "BOHRRADIUS", ",", 
+     "ELECTRONRELATIVISTICMASS", ",", "ELEMENTARYCHARGE"}], "}"}]}], ";", 
+  RowBox[{"HARTREECONSTANTS", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Quantity", "[", "\"\<ReducedPlanckConstant\>\"", "]"}], ",", 
+     RowBox[{"Quantity", "[", "\"\<ElementaryCharge\>\"", "]"}], ",", 
+     RowBox[{"Quantity", "[", "\"\<BohrRadius\>\"", "]"}], ",", 
+     RowBox[{"Quantity", "[", "\"\<ElectronMass\>\"", "]"}]}], 
+    "}"}]}]}]}], "Input",
+ CellLabel->"In[145]:=",
+ CellID->898154367,ExpressionUUID->"861be21b-73c8-4b6c-ab9a-99c79934a8bc"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TemplateBox[{
+     InterpretationBox["\[InvisibleSpace]", 1], "\"\[HBar]\"", 
+     "reduced Planck constant", "\"ReducedPlanckConstant\""},
+    "Quantity"], ",", 
+   TemplateBox[{
+     InterpretationBox["\[InvisibleSpace]", 1], 
+     StyleBox["\"e\"", Italic, StripOnInput -> False], "elementary charge", 
+     "\"ElementaryCharge\""},
+    "Quantity"], ",", 
+   TemplateBox[{
+     InterpretationBox["\[InvisibleSpace]", 1], 
+     SubscriptBox[
+      StyleBox["\"a\"", Italic, StripOnInput -> False], "0"], "Bohr radius", 
+     "\"BohrRadius\""},
+    "Quantity"], ",", 
+   TemplateBox[{
+     InterpretationBox["\[InvisibleSpace]", 1], 
+     SubscriptBox[
+      StyleBox["\"m\"", Italic, StripOnInput -> False], 
+      StyleBox["\"e\"", Italic, StripOnInput -> False]], "electron mass", 
+     "\"ElectronMass\""},
+    "Quantity"]}], "}"}]], "Output",
+ CellChangeTimes->{3.872780104580716*^9},
+ CellLabel->"Out[147]=",
+ CellID->294919338,ExpressionUUID->"d1a87ed1-9485-46f8-9f01-878d70092ed6"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"QuantityDimensions", "[", "unit_", "]"}], ":=", 
+  RowBox[{"Block", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"assoc", ",", "canonicalassoc"}], "}"}], ",", 
+    RowBox[{
+     RowBox[{"assoc", "=", 
+      RowBox[{"Association", "[", 
+       RowBox[{"Rule", "@@@", 
+        RowBox[{"UnitDimensions", "[", "unit", "]"}]}], "]"}]}], ";", 
+     RowBox[{"Append", "[", 
+      RowBox[{
+       RowBox[{"Association", "[", 
+        RowBox[{
+         RowBox[{"\"\<TimeUnit\>\"", "\[Rule]", "0"}], ",", 
+         RowBox[{"\"\<LengthUnit\>\"", "\[Rule]", "0"}], ",", 
+         RowBox[{"\"\<MassUnit\>\"", "\[Rule]", "0"}], ",", 
+         RowBox[{"\"\<ElectricCurrentUnit\>\"", "\[Rule]", "0"}], ",", 
+         RowBox[{"\"\<TemperatureUnit\>\"", "\[Rule]", "0"}], ",", 
+         RowBox[{"\"\<AmountUnit\>\"", "\[Rule]", "0"}], ",", 
+         RowBox[{"\"\<LuminousIntensityUnit\>\"", "\[Rule]", "0"}]}], "]"}], 
+       ",", "assoc"}], "]"}]}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.872780169247495*^9, 3.872780188241049*^9}},
+ CellLabel->"In[149]:=",
+ CellID->287022700,ExpressionUUID->"969638ba-ef9a-4498-989a-3a06e3f085ba"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"QuantityVector", "[", "unit_", "]"}], ":=", 
+  RowBox[{"Block", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"assoc", ",", "canonicalassoc"}], "}"}], ",", 
+    RowBox[{
+     RowBox[{"assoc", "=", 
+      RowBox[{"Association", "[", 
+       RowBox[{"Rule", "@@@", 
+        RowBox[{"UnitDimensions", "[", "unit", "]"}]}], "]"}]}], ";", 
+     RowBox[{"canonicalassoc", "=", 
+      RowBox[{"Append", "[", 
+       RowBox[{
+        RowBox[{"Association", "[", 
+         RowBox[{
+          RowBox[{"\"\<TimeUnit\>\"", "\[Rule]", "0"}], ",", 
+          RowBox[{"\"\<LengthUnit\>\"", "\[Rule]", "0"}], ",", 
+          RowBox[{"\"\<MassUnit\>\"", "\[Rule]", "0"}], ",", 
+          RowBox[{"\"\<ElectricCurrentUnit\>\"", "\[Rule]", "0"}], ",", 
+          RowBox[{"\"\<TemperatureUnit\>\"", "\[Rule]", "0"}], ",", 
+          RowBox[{"\"\<AmountUnit\>\"", "\[Rule]", "0"}], ",", 
+          RowBox[{"\"\<LuminousIntensityUnit\>\"", "\[Rule]", "0"}]}], "]"}], 
+        ",", "assoc"}], "]"}]}], ";", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"canonicalassoc", "[", "\"\<TimeUnit\>\"", "]"}], ",", 
+       RowBox[{"canonicalassoc", "[", "\"\<LengthUnit\>\"", "]"}], ",", 
+       RowBox[{"canonicalassoc", "[", "\"\<MassUnit\>\"", "]"}], ",", 
+       RowBox[{"canonicalassoc", "[", "\"\<ElectricCurrentUnit\>\"", "]"}], 
+       ",", 
+       RowBox[{"canonicalassoc", "[", "\"\<TemperatureUnit\>\"", "]"}], ",", 
+       RowBox[{"canonicalassoc", "[", "\"\<AmountUnit\>\"", "]"}], ",", 
+       RowBox[{
+       "canonicalassoc", "[", "\"\<LuminousIntensityUnit\>\"", "]"}]}], 
+      "}"}]}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.87278011437494*^9, 3.8727801658453407`*^9}},
+ CellLabel->"In[148]:=",
+ CellID->502501939,ExpressionUUID->"487b7ab3-d7bd-4dba-a45f-3c2d774e5db1"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"QuantityDimensions", "[", 
+  RowBox[{"Quantity", "[", 
+   RowBox[{
+    SuperscriptBox["\"\<ElementaryCharge\>\"", "3"], 
+    RowBox[{
+     SuperscriptBox["\"\<BohrRadius\>\"", "3"], "/", 
+     SuperscriptBox["\"\<HartreeEnergy\>\"", "2"]}]}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8727801909759493`*^9, 3.872780209337846*^9}},
+ CellLabel->"In[150]:=",
+ CellID->880751644,ExpressionUUID->"2a170f83-9069-4bc3-a46c-c77dc7cd822d"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"TemperatureUnit\"\>", "\[Rule]", "0"}], ",", 
+   RowBox[{"\<\"AmountUnit\"\>", "\[Rule]", "0"}], ",", 
+   RowBox[{"\<\"LuminousIntensityUnit\"\>", "\[Rule]", "0"}], ",", 
+   RowBox[{"\<\"ElectricCurrentUnit\"\>", "\[Rule]", "3"}], ",", 
+   RowBox[{"\<\"LengthUnit\"\>", "\[Rule]", 
+    RowBox[{"-", "1"}]}], ",", 
+   RowBox[{"\<\"MassUnit\"\>", "\[Rule]", 
+    RowBox[{"-", "2"}]}], ",", 
+   RowBox[{"\<\"TimeUnit\"\>", "\[Rule]", "7"}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{3.872780210005453*^9},
+ CellLabel->"Out[150]=",
+ CellID->37901429,ExpressionUUID->"d5a76a3d-4d54-411b-b9ff-023c5dd96d4d"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"QuantityVector", "[", 
+  RowBox[{"Quantity", "[", 
+   RowBox[{
+    SuperscriptBox["\"\<ElementaryCharge\>\"", "3"], 
+    RowBox[{
+     SuperscriptBox["\"\<BohrRadius\>\"", "3"], "/", 
+     SuperscriptBox["\"\<HartreeEnergy\>\"", "2"]}]}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8727801909759493`*^9, 3.8727802169934473`*^9}},
+ CellLabel->"In[151]:=",
+ CellID->61028195,ExpressionUUID->"f09c3be0-f7ff-4996-a8b1-f218b734753d"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"7", ",", 
+   RowBox[{"-", "1"}], ",", 
+   RowBox[{"-", "2"}], ",", "3", ",", "0", ",", "0", ",", "0"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.8727802172102747`*^9},
+ CellLabel->"Out[151]=",
+ CellID->149864582,ExpressionUUID->"c5901ce5-1c9e-463e-a75b-31d2c7f6d0dc"]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]]
 },
 ClosingSaveDialog->False,
-WindowSize->{1152., 585.6},
+WindowSize->{576., 585.6},
 WindowMargins->{{
   Automatic, -5.399999999999864}, {-5.399999999999977, Automatic}},
 TaggingRules->{
@@ -5811,16 +7602,16 @@ CellTagsIndex->{
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"Examples", 266050, 5769},
- {"Your Essay Title", 266236, 5773},
- {"AuthorName", 266416, 5777},
- {"Abstract", 266575, 5781},
- {"TemplateCell", 266756, 5785},
- {"SectionHeader", 266938, 5789},
- {"ExampleTopicSentence", 267114, 5793},
- {"ExampleCodeText", 267289, 5797},
- {"ExampleInput", 267459, 5801},
- {"ExampleOutput", 267625, 5805}
+ {"Examples", 328054, 7560},
+ {"Your Essay Title", 328240, 7564},
+ {"AuthorName", 328420, 7568},
+ {"Abstract", 328579, 7572},
+ {"TemplateCell", 328760, 7576},
+ {"SectionHeader", 328942, 7580},
+ {"ExampleTopicSentence", 329118, 7584},
+ {"ExampleCodeText", 329293, 7588},
+ {"ExampleInput", 329463, 7592},
+ {"ExampleOutput", 329629, 7596}
  }
 *)
 (*NotebookFileOutline
@@ -5913,12 +7704,12 @@ Cell[22831, 560, 443, 11, 48, "Input",ExpressionUUID->"95ee5430-b152-4e77-b142-6
 Cell[23277, 573, 10430, 237, 360, "Output",ExpressionUUID->"46f6edb7-bfc2-4e60-ad5f-f3787426b138",
  CellID->7361758]
 }, Open  ]],
-Cell[33722, 813, 5536, 124, 466, "Input",ExpressionUUID->"c7250c1c-e623-4957-86bc-8de760071463",
+Cell[33722, 813, 5536, 124, 942, "Input",ExpressionUUID->"c7250c1c-e623-4957-86bc-8de760071463",
  CellID->580198367],
 Cell[CellGroupData[{
-Cell[39283, 941, 429, 11, 28, "Input",ExpressionUUID->"f1730bf2-1d30-4b9e-9419-97842436c38e",
+Cell[39283, 941, 429, 11, 48, "Input",ExpressionUUID->"f1730bf2-1d30-4b9e-9419-97842436c38e",
  CellID->64583715],
-Cell[39715, 954, 10432, 237, 291, "Output",ExpressionUUID->"78100974-cee5-4f68-9410-13f5b18529b8",
+Cell[39715, 954, 10432, 237, 360, "Output",ExpressionUUID->"78100974-cee5-4f68-9410-13f5b18529b8",
  CellID->278244925]
 }, Open  ]],
 Cell[CellGroupData[{
@@ -5930,7 +7721,7 @@ Cell[50428, 1202, 234, 5, 32, "Output",ExpressionUUID->"1d2003c4-5750-46ce-9fb8-
 Cell[CellGroupData[{
 Cell[50699, 1212, 3718, 66, 46, "Input",ExpressionUUID->"ae9ae772-1aa6-45fc-81c9-d725db9c031c",
  CellID->15769106],
-Cell[54420, 1280, 1735, 43, 112, "Output",ExpressionUUID->"49431e93-a252-4694-8a3e-2754b84d4a6b",
+Cell[54420, 1280, 1735, 43, 133, "Output",ExpressionUUID->"49431e93-a252-4694-8a3e-2754b84d4a6b",
  CellID->308796139]
 }, Open  ]],
 Cell[CellGroupData[{
@@ -5942,7 +7733,7 @@ Cell[56441, 1334, 200, 4, 32, "Output",ExpressionUUID->"36993946-4bc1-454d-9127-
 Cell[CellGroupData[{
 Cell[56678, 1343, 227, 4, 28, "Input",ExpressionUUID->"25bdf133-3dcf-4847-969b-ce9cef47ea21",
  CellID->166993478],
-Cell[56908, 1349, 20016, 447, 621, "Output",ExpressionUUID->"91b0936b-007d-4ab8-b80c-8697e6489295",
+Cell[56908, 1349, 20016, 447, 983, "Output",ExpressionUUID->"91b0936b-007d-4ab8-b80c-8697e6489295",
  CellID->513219865]
 }, Open  ]],
 Cell[CellGroupData[{
@@ -5950,7 +7741,7 @@ Cell[76961, 1801, 3719, 66, 46, "Input",ExpressionUUID->"a396593f-354e-4317-854b
  CellID->167961069],
 Cell[80683, 1869, 424, 9, 28, "Message",ExpressionUUID->"4d3c18f7-5909-48d6-be46-4f5f9493d51b",
  CellID->251397380],
-Cell[81110, 1880, 546, 10, 28, "Message",ExpressionUUID->"ec1bae7f-0879-44ea-906d-165ad7195d4d",
+Cell[81110, 1880, 546, 10, 46, "Message",ExpressionUUID->"ec1bae7f-0879-44ea-906d-165ad7195d4d",
  CellID->747550648],
 Cell[81659, 1892, 428, 9, 28, "Message",ExpressionUUID->"0f3ce6d6-aef7-4c89-b114-599fb39bd121",
  CellID->79453286],
@@ -5976,7 +7767,7 @@ Cell[116614, 2630, 192, 2, 67, "Section",ExpressionUUID->"cde122e4-b062-4e0f-aac
 Cell[CellGroupData[{
 Cell[116831, 2636, 195, 3, 28, "Input",ExpressionUUID->"e67f487b-291a-44dc-8730-d4fb260081be",
  CellID->86384799],
-Cell[117029, 2641, 666, 18, 41, "Output",ExpressionUUID->"fa719e43-a933-435f-b0d8-5498b07437a6",
+Cell[117029, 2641, 666, 18, 68, "Output",ExpressionUUID->"fa719e43-a933-435f-b0d8-5498b07437a6",
  CellID->58031108]
 }, Open  ]],
 Cell[CellGroupData[{
@@ -5988,19 +7779,19 @@ Cell[117971, 2670, 193, 3, 32, "Output",ExpressionUUID->"f6712fad-a75b-4978-b36f
 Cell[CellGroupData[{
 Cell[118201, 2678, 279, 5, 28, "Input",ExpressionUUID->"a3be9a5d-d7f0-4ee3-9bbe-15ee477c07d1",
  CellID->33765429],
-Cell[118483, 2685, 645, 16, 41, "Output",ExpressionUUID->"81b826ed-26fc-45d8-b971-57d6ab61c573",
+Cell[118483, 2685, 645, 16, 68, "Output",ExpressionUUID->"81b826ed-26fc-45d8-b971-57d6ab61c573",
  CellID->374180]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[119165, 2706, 314, 6, 28, "Input",ExpressionUUID->"ecd02580-b2f2-47bc-b1ba-39c600100918",
  CellID->798968979],
-Cell[119482, 2714, 290, 7, 39, "Output",ExpressionUUID->"32adbcda-6bda-4cc3-9d83-feb55d184ffe",
+Cell[119482, 2714, 290, 7, 38, "Output",ExpressionUUID->"32adbcda-6bda-4cc3-9d83-feb55d184ffe",
  CellID->230147244]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[119809, 2726, 396, 9, 28, "Input",ExpressionUUID->"0f297198-8d57-4ba2-af6e-1e78ed6436a3",
+Cell[119809, 2726, 396, 9, 48, "Input",ExpressionUUID->"0f297198-8d57-4ba2-af6e-1e78ed6436a3",
  CellID->47855534],
-Cell[120208, 2737, 485, 13, 37, "Output",ExpressionUUID->"8471d9f1-1541-4ad0-9c97-2205b635c6fe",
+Cell[120208, 2737, 485, 13, 36, "Output",ExpressionUUID->"8471d9f1-1541-4ad0-9c97-2205b635c6fe",
  CellID->171620547]
 }, Open  ]],
 Cell[CellGroupData[{
@@ -6096,19 +7887,19 @@ Cell[CellGroupData[{
 Cell[140958, 3283, 182, 2, 67, "Section",ExpressionUUID->"c09f4df0-6c42-491b-a637-27c0bdec318a",
  CellID->683173334],
 Cell[CellGroupData[{
-Cell[141165, 3289, 721, 19, 48, "Input",ExpressionUUID->"18616427-03bb-4e13-a20e-65dc9be87ab0",
+Cell[141165, 3289, 721, 19, 86, "Input",ExpressionUUID->"18616427-03bb-4e13-a20e-65dc9be87ab0",
  CellID->85403664],
 Cell[141889, 3310, 984, 23, 61, "Output",ExpressionUUID->"3e0b247d-696a-48d7-a0d4-d694e8a03d87",
  CellID->390966402]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[142910, 3338, 767, 20, 48, "Input",ExpressionUUID->"fd4743a2-f083-4479-ae2b-dd4bafbb8302",
+Cell[142910, 3338, 767, 20, 105, "Input",ExpressionUUID->"fd4743a2-f083-4479-ae2b-dd4bafbb8302",
  CellID->416387529],
 Cell[143680, 3360, 176, 3, 32, "Output",ExpressionUUID->"e97d3ca3-34e3-4b2a-baa1-57364744b958",
  CellID->256618468]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[143893, 3368, 516, 13, 28, "Input",ExpressionUUID->"ecda91af-8c87-48af-945c-2cce65794830",
+Cell[143893, 3368, 516, 13, 48, "Input",ExpressionUUID->"ecda91af-8c87-48af-945c-2cce65794830",
  CellID->330008392],
 Cell[144412, 3383, 928, 25, 46, "Output",ExpressionUUID->"6b958378-8654-429e-b723-21e43f6ae298",
  CellID->254881279]
@@ -6120,7 +7911,7 @@ Cell[145842, 3427, 639, 17, 44, "Output",ExpressionUUID->"660a25b8-a2e0-4d7d-993
  CellID->167715915]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[146518, 3449, 511, 13, 31, "Input",ExpressionUUID->"0916cf94-4edc-4c78-aee4-7583e83c783b",
+Cell[146518, 3449, 511, 13, 53, "Input",ExpressionUUID->"0916cf94-4edc-4c78-aee4-7583e83c783b",
  CellID->455768611],
 Cell[147032, 3464, 929, 25, 46, "Output",ExpressionUUID->"8513626a-5bec-47fc-82d6-cb61cb54e959",
  CellID->50496295]
@@ -6129,16 +7920,292 @@ Cell[147032, 3464, 929, 25, 46, "Output",ExpressionUUID->"8513626a-5bec-47fc-82d
 Cell[CellGroupData[{
 Cell[148010, 3495, 180, 2, 67, "Section",ExpressionUUID->"0a628ec7-5906-4314-afd1-5b624e9ad8db",
  CellID->605986953],
-Cell[148193, 3499, 5067, 120, 409, "Input",ExpressionUUID->"9e655614-97bf-4d77-b177-c78a0b4d7761",
+Cell[148193, 3499, 7572, 175, 1151, "Input",ExpressionUUID->"9e655614-97bf-4d77-b177-c78a0b4d7761",
  CellID->80245706],
 Cell[CellGroupData[{
-Cell[153285, 3623, 288, 5, 28, "Input",ExpressionUUID->"c8176915-3081-482b-9ea3-08a0a9cef483",
+Cell[155790, 3678, 288, 5, 28, "Input",ExpressionUUID->"c8176915-3081-482b-9ea3-08a0a9cef483",
  CellID->217091945],
-Cell[153576, 3630, 714, 14, 32, "Output",ExpressionUUID->"fa0f25cf-b642-4f55-9179-11cb2029966a",
+Cell[156081, 3685, 714, 14, 71, "Output",ExpressionUUID->"fa0f25cf-b642-4f55-9179-11cb2029966a",
  CellID->57769203]
 }, Open  ]],
-Cell[154305, 3647, 167, 2, 28, "Input",ExpressionUUID->"202dd9ef-8686-4624-acc5-f2d44385e114",
- CellID->99628780]
+Cell[CellGroupData[{
+Cell[156832, 3704, 316, 6, 28, "Input",ExpressionUUID->"3a7a94f3-a66f-4105-a8cb-e0ae60e1f994",
+ CellID->293091475],
+Cell[157151, 3712, 302, 7, 32, "Output",ExpressionUUID->"1125f6c6-3360-4b04-84c7-c42547d7251a",
+ CellID->123123385]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[157490, 3724, 288, 5, 28, "Input",ExpressionUUID->"8c54e675-de71-4753-bee5-538b75e1bbaf",
+ CellID->410533359],
+Cell[157781, 3731, 287, 7, 32, "Output",ExpressionUUID->"b23bb7dc-0a06-4f70-8877-bc0ec298f338",
+ CellID->358273748]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[158105, 3743, 450, 10, 48, "Input",ExpressionUUID->"051ebfb6-6929-479b-bdab-e8f77c55bb8a",
+ CellID->591514068],
+Cell[158558, 3755, 175, 3, 32, "Output",ExpressionUUID->"bfeea1b3-3728-46b3-ab65-50577d709114",
+ CellID->274880215]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[158770, 3763, 447, 10, 48, "Input",ExpressionUUID->"d6b8b7bc-afa8-403f-851f-aaefd4d117d3",
+ CellID->75818308],
+Cell[159220, 3775, 170, 3, 32, "Output",ExpressionUUID->"03356012-29af-4d66-9bdc-d45be87b9a0c",
+ CellID->9420422]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[159427, 3783, 473, 11, 48, "Input",ExpressionUUID->"5a1f36b2-d631-4a01-874e-9a66123d2a14",
+ CellID->59523795],
+Cell[159903, 3796, 174, 3, 32, "Output",ExpressionUUID->"3a39ef4f-5644-4d61-923e-05b136d19b06",
+ CellID->618302799]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[160114, 3804, 220, 4, 28, "Input",ExpressionUUID->"a7164579-620d-4386-b6de-a0d569600d10",
+ CellID->184538369],
+Cell[160337, 3810, 617, 13, 59, "Output",ExpressionUUID->"faa89dac-6968-4007-a7db-7f33522592e1",
+ CellID->480767063]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[160991, 3828, 288, 5, 28, "Input",ExpressionUUID->"500304db-f26c-4279-b094-905001c557de",
+ CellID->498887866],
+Cell[161282, 3835, 422, 6, 90, "Output",ExpressionUUID->"bd79fd94-adaf-44b0-8301-18577394482c",
+ CellID->68718385]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[161741, 3846, 461, 10, 53, "Input",ExpressionUUID->"a0a8d573-a69c-46b8-b5d8-d56560050f64",
+ CellID->151881303],
+Cell[162205, 3858, 175, 3, 32, "Output",ExpressionUUID->"5ab0947f-9e40-4777-82f1-847b7d6a766e",
+ CellID->103070895]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[162417, 3866, 338, 8, 31, "Input",ExpressionUUID->"40194d5a-6cf5-489c-9cac-cf7c4e077481",
+ CellID->53628309],
+Cell[162758, 3876, 835, 20, 45, "Output",ExpressionUUID->"fb020c08-6c0d-47b5-a17d-47a22d21cb42",
+ CellID->762344710]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[163630, 3901, 435, 11, 51, "Input",ExpressionUUID->"b8d0d934-f530-428d-a3a2-0222f32517f5",
+ CellID->263845697],
+Cell[164068, 3914, 785, 18, 44, "Output",ExpressionUUID->"db1e8ad6-ad85-41f2-bbb3-a911fce56e67",
+ CellID->1603239]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[164890, 3937, 391, 9, 53, "Input",ExpressionUUID->"7b609c7a-d8ad-41bb-989e-f7949028205e",
+ CellID->206232064],
+Cell[165284, 3948, 253, 6, 32, "Output",ExpressionUUID->"8c916401-08a8-413a-8750-a2a63dd0aea2",
+ CellID->448407158]
+}, Open  ]],
+Cell[165552, 3957, 507, 12, 124, "Input",ExpressionUUID->"3501e563-f2db-481a-81ea-ffcf2bf68c17",
+ CellID->190465664],
+Cell[CellGroupData[{
+Cell[166084, 3973, 482, 10, 67, "Input",ExpressionUUID->"7de06576-ea88-42dd-a970-838e8cfdba9d",
+ CellID->73069635],
+Cell[166569, 3985, 1154, 29, 41, "Output",ExpressionUUID->"d3f09960-a885-45d9-9066-20b378a3aa49",
+ CellID->280221950]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[167760, 4019, 414, 10, 51, "Input",ExpressionUUID->"2ee43ec2-95f9-4863-993f-21d156fdcd69",
+ CellID->249242013],
+Cell[168177, 4031, 789, 18, 44, "Output",ExpressionUUID->"82c1d2c7-1cf7-4d00-8085-b54cf33a5a6b",
+ CellID->267895131]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[169003, 4054, 581, 14, 96, "Input",ExpressionUUID->"8b8d5b66-b5b5-4a8a-936b-65fd33cc6eed",
+ CellID->367940535],
+Cell[169587, 4070, 1441, 38, 41, "Output",ExpressionUUID->"ee94fc4b-b07a-497d-b66e-1c0b13bace29",
+ CellID->586145616]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[171065, 4113, 621, 15, 115, "Input",ExpressionUUID->"3c7ebd95-aa12-4f33-b649-46aaf89274ad",
+ CellID->94243023],
+Cell[171689, 4130, 1365, 37, 45, "Output",ExpressionUUID->"17182fcf-fd1f-44af-88a3-90a5e121e5da",
+ CellID->224167499]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[173091, 4172, 659, 16, 134, "Input",ExpressionUUID->"c5f1311e-f865-4d75-ac37-4c57c3f71846",
+ CellID->259985961],
+Cell[173753, 4190, 1197, 28, 45, "Output",ExpressionUUID->"3d0a8997-1e6b-4d82-9994-1789d2e970bc",
+ CellID->104185600]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[174987, 4223, 712, 17, 156, "Input",ExpressionUUID->"c09254ff-aff8-4061-a16c-21f66a369cbe",
+ CellID->214440803],
+Cell[175702, 4242, 548, 15, 52, "Output",ExpressionUUID->"faacae23-f4b1-422d-aff9-af818333c38a",
+ CellID->145351033]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[176287, 4262, 535, 13, 81, "Input",ExpressionUUID->"5397949b-d74b-4088-a92f-d6056b04fa73",
+ CellID->102577110],
+Cell[176825, 4277, 543, 15, 52, "Output",ExpressionUUID->"09273c65-0382-4852-a1ed-6584b9a30762",
+ CellID->1467971]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[177405, 4297, 391, 9, 53, "Input",ExpressionUUID->"ed302dc6-3106-4e74-be72-60ec5249cf1c",
+ CellID->479984577],
+Cell[177799, 4308, 973, 26, 71, "Output",ExpressionUUID->"a9177df5-7c60-4e39-a85e-84f326a99d69",
+ CellID->279092599]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[178809, 4339, 434, 10, 53, "Input",ExpressionUUID->"fff92c78-89f9-41a9-8aa2-849d01d9ed7e",
+ CellID->678168291],
+Cell[179246, 4351, 820, 21, 52, "Output",ExpressionUUID->"4aa82f3c-7eee-486a-b9c1-abb4a0fddd81",
+ CellID->73569648]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[180103, 4377, 455, 10, 53, "Input",ExpressionUUID->"71b6317a-277b-4a36-9e00-d23ffd58774e",
+ CellID->37794842],
+Cell[180561, 4389, 532, 14, 32, "Output",ExpressionUUID->"d907836e-6b83-49f4-8f63-d7b4d15af111",
+ CellID->141382000]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[181130, 4408, 456, 10, 53, "Input",ExpressionUUID->"467c5948-2e58-4f02-a448-0e4b002956a4",
+ CellID->122015226],
+Cell[181589, 4420, 545, 15, 52, "Output",ExpressionUUID->"f8b5bd7f-22c2-4d37-9bd4-d5c37305715a",
+ CellID->26126584]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[182171, 4440, 645, 16, 74, "Input",ExpressionUUID->"f49d423e-487b-466f-a62e-8daff69b4176",
+ CellID->4147331],
+Cell[182819, 4458, 254, 6, 32, "Output",ExpressionUUID->"577930db-9a68-4d3f-9b41-cbfe96323b06",
+ CellID->552446276]
+}, Open  ]],
+Cell[183088, 4467, 701, 17, 74, "Input",ExpressionUUID->"24e9d36b-3655-4bd0-a9b1-5ec5d7312f2b",
+ CellID->175262737],
+Cell[CellGroupData[{
+Cell[183814, 4488, 881, 24, 143, "Input",ExpressionUUID->"c9397c05-9777-4fff-8616-8c7483c90bd7",
+ CellID->19984625],
+Cell[184698, 4514, 532, 14, 32, "Output",ExpressionUUID->"c3bdd024-f85a-4c1a-9899-928f96ff605f",
+ CellID->379639956]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[185267, 4533, 700, 18, 94, "Input",ExpressionUUID->"c1b9cf35-0241-4a8e-b222-123d546932d4",
+ CellID->71180256],
+Cell[185970, 4553, 272, 7, 32, "Output",ExpressionUUID->"961ca9b7-c910-42b8-996e-b5764420f7e0",
+ CellID->12801477]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[186279, 4565, 731, 18, 96, "Input",ExpressionUUID->"15ba212c-4fba-4bb1-bfac-ccd57a2ef6ca",
+ CellID->244226095],
+Cell[187013, 4585, 1343, 35, 41, "Output",ExpressionUUID->"ae3b540e-ac1a-491f-87d9-176a6eba0b08",
+ CellID->786626590]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[188393, 4625, 786, 20, 96, "Input",ExpressionUUID->"656045b2-38c8-4c85-9207-4b8cb6373441",
+ CellID->437819798],
+Cell[189182, 4647, 1419, 38, 41, "Output",ExpressionUUID->"f36d680a-1f87-4f8a-9410-52c4357efc74",
+ CellID->38166636]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[190638, 4690, 839, 22, 115, "Input",ExpressionUUID->"84c3b47a-6ce6-43a1-8319-2b09447d607d",
+ CellID->657208737],
+Cell[191480, 4714, 1366, 37, 45, "Output",ExpressionUUID->"5b23def2-78ea-40bd-bca4-db47fd546800",
+ CellID->193520347]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[192883, 4756, 885, 23, 134, "Input",ExpressionUUID->"cb627313-b6d4-4a3a-a2e5-b79e14e8cb09",
+ CellID->610827879],
+Cell[193771, 4781, 1198, 28, 45, "Output",ExpressionUUID->"fab1183b-3e19-465d-b70e-be0a4c61c059",
+ CellID->266713867]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[195006, 4814, 942, 24, 156, "Input",ExpressionUUID->"c780265b-1202-4625-a497-7739bfad2cfd",
+ CellID->436016019],
+Cell[195951, 4840, 548, 15, 52, "Output",ExpressionUUID->"6ee1ebe6-f1c2-4eea-81a8-6b191ec8cd2b",
+ CellID->48713979]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[196536, 4860, 382, 11, 78, "Input",ExpressionUUID->"ff04e629-1796-44ec-9a02-06e0d6ce3f96",
+ CellID->388861335],
+Cell[196921, 4873, 189, 4, 32, "Output",ExpressionUUID->"b5230d7e-3334-43df-ad52-142f608c991c",
+ CellID->293203165]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[197147, 4882, 428, 12, 78, "Input",ExpressionUUID->"425b1c26-4187-46cb-ab9b-999b5371eae3",
+ CellID->742705636],
+Cell[197578, 4896, 803, 23, 96, "Output",ExpressionUUID->"a86b089b-0a63-4a03-89f9-3fcfc9363e16",
+ CellID->38275943]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[198418, 4924, 500, 14, 78, "Input",ExpressionUUID->"594d6ce2-6467-4c59-97ad-e7975c415689",
+ CellID->42242531],
+Cell[198921, 4940, 752, 21, 96, "Output",ExpressionUUID->"08577ff5-2e89-4d15-9e14-94aec1014a47",
+ CellID->163935801]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[199710, 4966, 965, 27, 78, "Input",ExpressionUUID->"72ce90cc-f227-44ff-87fd-b52ea24f5edd",
+ CellID->115438540],
+Cell[200678, 4995, 753, 21, 96, "Output",ExpressionUUID->"a02208eb-ae76-42db-a3a7-fa8b2621e17b",
+ CellID->155705369]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[201468, 5021, 510, 13, 67, "Input",ExpressionUUID->"d5216581-5eda-4a7d-a5b3-60fc9f875033",
+ CellID->361248811],
+Cell[201981, 5036, 547, 15, 52, "Output",ExpressionUUID->"b00c7afa-40ec-493f-b178-95c97355f755",
+ CellID->32585745]
+}, Open  ]],
+Cell[202543, 5054, 847, 22, 156, "Input",ExpressionUUID->"61b653d4-7d1c-4614-a636-3f2a10d0afbe",
+ CellID->132823364],
+Cell[CellGroupData[{
+Cell[203415, 5080, 433, 13, 78, "Input",ExpressionUUID->"f29e4a88-48d8-4436-8d42-5cc6fa9e8056",
+ CellID->453080379],
+Cell[203851, 5095, 752, 21, 96, "Output",ExpressionUUID->"62c25bd9-6c13-4b3c-b816-810f0453296d",
+ CellID->235743736]
+}, Open  ]],
+Cell[204618, 5119, 489, 11, 48, "Input",ExpressionUUID->"f80b261e-5ece-402e-8783-c82686db9ab0",
+ CellID->194964698],
+Cell[CellGroupData[{
+Cell[205132, 5134, 306, 6, 28, "Input",ExpressionUUID->"6372f826-9ac1-41a1-90e7-2ef7b3399e2a",
+ CellID->537054116],
+Cell[205441, 5142, 189, 4, 32, "Output",ExpressionUUID->"202bb1b0-5368-4f3a-9efb-4cc45348f82f",
+ CellID->524260040]
+}, Open  ]],
+Cell[205645, 5149, 278, 5, 28, "Input",ExpressionUUID->"ea0e0df2-5e5e-48f8-85f8-9fe77c2e4617",
+ CellID->39186509],
+Cell[CellGroupData[{
+Cell[205948, 5158, 595, 14, 39, "Input",ExpressionUUID->"f2e8ab3b-8ea6-4a40-9568-9d6c9fe874a7",
+ CellID->745452941],
+Cell[206546, 5174, 539, 11, 42, "Output",ExpressionUUID->"0854c707-7f91-4bd4-b9e6-eb321f5c4204",
+ CellID->109418241]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[207122, 5190, 245, 4, 28, "Input",ExpressionUUID->"c246ddd2-4148-4cce-9fee-13f5a44c0f42",
+ CellID->310209360],
+Cell[207370, 5196, 411, 10, 39, "Output",ExpressionUUID->"44509b0f-1931-4b93-81bd-2378785b77e7",
+ CellID->18576753]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[207818, 5211, 285, 5, 28, "Input",ExpressionUUID->"5a024e11-03f9-4776-b330-61e78d5aeb8c",
+ CellID->66657204],
+Cell[208106, 5218, 297, 7, 44, "Output",ExpressionUUID->"64e4d4f3-3f69-4592-8d61-5ee134b81b02",
+ CellID->76908986]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[208440, 5230, 392, 9, 53, "Input",ExpressionUUID->"e6501530-92d4-49f0-a230-907fe910ec21",
+ CellID->324823866],
+Cell[208835, 5241, 201, 3, 32, "Output",ExpressionUUID->"a475372b-ce2c-45f6-838d-2967509b00dd",
+ CellID->49906212]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[209073, 5249, 1395, 35, 200, "Input",ExpressionUUID->"861be21b-73c8-4b6c-ab9a-99c79934a8bc",
+ CellID->898154367],
+Cell[210471, 5286, 1033, 27, 41, "Output",ExpressionUUID->"d1a87ed1-9485-46f8-9f01-878d70092ed6",
+ CellID->294919338]
+}, Open  ]],
+Cell[211519, 5316, 1158, 26, 143, "Input",ExpressionUUID->"969638ba-ef9a-4498-989a-3a06e3f085ba",
+ CellID->287022700],
+Cell[212680, 5344, 1804, 39, 276, "Input",ExpressionUUID->"487b7ab3-d7bd-4dba-a45f-3c2d774e5db1",
+ CellID->502501939],
+Cell[CellGroupData[{
+Cell[214509, 5387, 458, 10, 53, "Input",ExpressionUUID->"2a170f83-9069-4bc3-a46c-c77dc7cd822d",
+ CellID->880751644],
+Cell[214970, 5399, 692, 15, 71, "Output",ExpressionUUID->"d5a76a3d-4d54-411b-b9ff-023c5dd96d4d",
+ CellID->37901429]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[215699, 5419, 455, 10, 53, "Input",ExpressionUUID->"f09c3be0-f7ff-4996-a8b1-f218b734753d",
+ CellID->61028195],
+Cell[216157, 5431, 308, 8, 32, "Output",ExpressionUUID->"c5901ce5-1c9e-463e-a75b-31d2c7f6d0dc",
+ CellID->149864582]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]]
 }
