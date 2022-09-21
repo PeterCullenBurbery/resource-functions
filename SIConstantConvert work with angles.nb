@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    236754,       4944]
-NotebookOptionsPosition[    116605,       2629]
-NotebookOutlinePosition[    230246,       4801]
-CellTagsIndexPosition[    229865,       4787]
+NotebookDataLength[    266543,       5719]
+NotebookOptionsPosition[    140949,       3282]
+NotebookOutlinePosition[    254592,       5454]
+CellTagsIndexPosition[    254211,       5440]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -2624,12 +2624,665 @@ Cell[BoxData[
  CellLabel->"Out[85]=",
  CellID->511875228,ExpressionUUID->"3623df41-9d6c-4508-91a8-56266cdb4e54"]
 }, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Support for QuantityDistribution", "Section",
+ CellChangeTimes->{{3.872760911937827*^9, 3.872760916061599*^9}},
+ CellID->539542176,ExpressionUUID->"cde122e4-b062-4e0f-aac1-1a2df8a02d51"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["dist"], "Input",
+ CellChangeTimes->{{3.872760919701728*^9, 3.872760920826486*^9}},
+ CellLabel->"In[126]:=",
+ CellID->86384799,ExpressionUUID->"e67f487b-291a-44dc-8730-d4fb260081be"],
+
+Cell[BoxData[
+ RowBox[{"QuantityDistribution", "[", 
+  RowBox[{
+   RowBox[{"PERTDistribution", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "6.263795783773791`"}], ",", "29.18003668737541`"}], 
+      "}"}], ",", "24.5795791474184`", ",", "7.061680703162525`"}], "]"}], 
+   ",", 
+   InterpretationBox[
+    TemplateBox[{
+      InterpretationBox["\[InvisibleSpace]", 1], "\"\[Degree]C\"", 
+      "degrees Celsius", "\"DegreesCelsius\""},
+     "Quantity"],
+    "DegreesCelsius"]}], "]"}]], "Output",
+ CellChangeTimes->{3.8727609211385612`*^9},
+ CellLabel->"Out[126]=",
+ CellID->58031108,ExpressionUUID->"fa719e43-a933-435f-b0d8-5498b07437a6"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"QuantityUnit", "[", "dist", "]"}]], "Input",
+ CellChangeTimes->{{3.872760924123846*^9, 3.8727609267962303`*^9}},
+ CellLabel->"In[127]:=",
+ CellID->249862824,ExpressionUUID->"9a04b72b-f9a6-47c7-86a2-bcbb0110ba20"],
+
+Cell[BoxData["\<\"DegreesCelsius\"\>"], "Output",
+ CellChangeTimes->{3.8727609270926857`*^9},
+ CellLabel->"Out[127]=",
+ CellID->750099097,ExpressionUUID->"f6712fad-a75b-4978-b36f-4fe54fc43123"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"UnitConvert", "[", 
+  RowBox[{"dist", ",", "\"\<DegreesFahrenheit\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.872760945949334*^9, 3.872760950781289*^9}},
+ CellLabel->"In[128]:=",
+ CellID->33765429,ExpressionUUID->"a3be9a5d-d7f0-4ee3-9bbe-15ee477c07d1"],
+
+Cell[BoxData[
+ RowBox[{"QuantityDistribution", "[", 
+  RowBox[{
+   RowBox[{"PERTDistribution", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"20.725167589207175`", ",", "84.52406603727573`"}], "}"}], ",", 
+     "76.24324246535312`", ",", "7.061680703162525`"}], "]"}], ",", 
+   InterpretationBox[
+    TemplateBox[{
+      InterpretationBox["\[InvisibleSpace]", 1], "\"\[Degree]F\"", 
+      "degrees Fahrenheit", "\"DegreesFahrenheit\""},
+     "Quantity"],
+    "DegreesFahrenheit"]}], "]"}]], "Output",
+ CellChangeTimes->{3.872760951046479*^9},
+ CellLabel->"Out[128]=",
+ CellID->374180,ExpressionUUID->"81b826ed-26fc-45d8-b971-57d6ab61c573"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Mean", "[", 
+  RowBox[{"UnitConvert", "[", 
+   RowBox[{"dist", ",", "\"\<DegreesFahrenheit\>\""}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.872760952236089*^9, 3.8727609529702787`*^9}},
+ CellLabel->"In[129]:=",
+ CellID->798968979,ExpressionUUID->"ecd02580-b2f2-47bc-b1ba-39c600100918"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "71.03038484527194`", "\"\[Degree]F\"", "degrees Fahrenheit", 
+   "\"DegreesFahrenheit\""},
+  "Quantity"]], "Output",
+ CellChangeTimes->{3.872760953282338*^9},
+ CellLabel->"Out[129]=",
+ CellID->230147244,ExpressionUUID->"32adbcda-6bda-4cc3-9d83-feb55d184ffe"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TransformedDistribution", "[", 
+  RowBox[{
+   RowBox[{"Quantity", "[", 
+    RowBox[{"x", ",", "\"\<Meters\>\""}], "]"}], ",", 
+   RowBox[{"x", "\[Distributed]", 
+    RowBox[{"LogNormalDistribution", "[", 
+     RowBox[{"\[Mu]", ",", "\[Sigma]"}], "]"}]}]}], "]"}]], "Input",
+ CellLabel->"In[131]:=",
+ CellID->47855534,ExpressionUUID->"0f297198-8d57-4ba2-af6e-1e78ed6436a3"],
+
+Cell[BoxData[
+ RowBox[{"QuantityDistribution", "[", 
+  RowBox[{
+   RowBox[{"LogNormalDistribution", "[", 
+    RowBox[{"\[Mu]", ",", "\[Sigma]"}], "]"}], ",", 
+   InterpretationBox[
+    TemplateBox[{
+      InterpretationBox["\[InvisibleSpace]", 1], "\"m\"", "meters", 
+      "\"Meters\""},
+     "Quantity"],
+    "Meters"]}], "]"}]], "Output",
+ CellChangeTimes->{3.8727609931151533`*^9},
+ CellLabel->"Out[131]=",
+ CellID->171620547,ExpressionUUID->"8471d9f1-1541-4ad0-9c97-2205b635c6fe"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TransformedDistribution", "[", 
+  RowBox[{
+   RowBox[{"Quantity", "[", 
+    RowBox[{"x", ",", "\"\<DegreesCelsius\>\""}], "]"}], ",", 
+   RowBox[{"x", "\[Distributed]", 
+    RowBox[{"LogNormalDistribution", "[", 
+     RowBox[{"\[Mu]", ",", "\[Sigma]"}], "]"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8727610065054812`*^9, 3.872761009098281*^9}},
+ CellLabel->"In[132]:=",
+ CellID->247616587,ExpressionUUID->"ce31e19b-20c0-447f-b3d4-b6f2e5c12442"],
+
+Cell[BoxData[
+ RowBox[{"QuantityDistribution", "[", 
+  RowBox[{
+   RowBox[{"LogNormalDistribution", "[", 
+    RowBox[{"\[Mu]", ",", "\[Sigma]"}], "]"}], ",", 
+   InterpretationBox[
+    TemplateBox[{
+      InterpretationBox["\[InvisibleSpace]", 1], "\"\[Degree]C\"", 
+      "degrees Celsius", "\"DegreesCelsius\""},
+     "Quantity"],
+    "DegreesCelsius"]}], "]"}]], "Output",
+ CellChangeTimes->{3.8727610093326006`*^9},
+ CellLabel->"Out[132]=",
+ CellID->122896898,ExpressionUUID->"dab6ebcb-6353-45be-ab49-17e7f98d40c9"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TransformedDistribution", "[", 
+  RowBox[{
+   RowBox[{"Quantity", "[", 
+    RowBox[{"x", ",", "\"\<DegreesFahrenheit\>\""}], "]"}], ",", 
+   RowBox[{"x", "\[Distributed]", "dist"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8727610065054812`*^9, 3.8727610242220993`*^9}},
+ CellLabel->"In[133]:=",
+ CellID->198286711,ExpressionUUID->"d5891147-fdde-49df-8e59-fac1bdc0d18a"],
+
+Cell[BoxData[
+ RowBox[{"QuantityDistribution", "[", 
+  RowBox[{
+   RowBox[{"PERTDistribution", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "3.479886546540995`"}], ",", "16.21113149298634`"}], 
+      "}"}], ",", "13.655321748565779`", ",", "7.061680703162525`"}], "]"}], 
+   ",", 
+   InterpretationBox[
+    TemplateBox[{
+      InterpretationBox["\[InvisibleSpace]", 1], 
+      RowBox[{
+        SuperscriptBox["\"\[Degree]C\"", "2"]}], "degrees Celsius squared", 
+      SuperscriptBox["\"DegreesCelsius\"", "2"]},
+     "Quantity"],
+    "DegreesCelsius"^2]}], "]"}]], "Output",
+ CellChangeTimes->{3.8727610245341835`*^9},
+ CellLabel->"Out[133]=",
+ CellID->304334949,ExpressionUUID->"ee892f0f-cfe4-4386-84c7-a0e784ac72c9"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SIConstantConvert", "[", 
+  RowBox[{"Quantity", "[", "\"\<DegreesCelsius\>\"", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.872761109734245*^9, 3.8727611235292253`*^9}},
+ CellLabel->"In[134]:=",
+ CellID->555105029,ExpressionUUID->"c5bf96b7-5d8e-430b-8619-b2a7adbb3ff0"],
+
+Cell[BoxData[
+ TemplateBox[{
+   FractionBox["75700984670000000000", "121822045942277331"], 
+   RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+     SubscriptBox[
+      TemplateBox[{"\"(\"", 
+        TemplateBox[{
+          
+          TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+           SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, "RowDefault"],
+       "\"hfs\""], "\[ThinSpace]", 
+     StyleBox["\"h\"", StripOnInput -> False, FontSlant -> Italic], 
+     "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+     StyleBox["\"k\"", StripOnInput -> False, FontSlant -> Italic]}], 
+   "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 atom \
+Planck constants per Boltzmann constant", 
+   FractionBox[
+    RowBox[{
+     "\"Cesium133HyperfineSplittingFrequency\"", " ", "\"PlanckConstant\""}], 
+    "\"BoltzmannConstant\""]},
+  "Quantity"]], "Output",
+ CellChangeTimes->{3.872761123763196*^9},
+ CellLabel->"Out[134]=",
+ CellID->68404970,ExpressionUUID->"8eb3ff5a-22c8-4171-90e8-5d7025d49a25"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"QuantityUnit", "[", 
+  RowBox[{"SIConstantConvert", "[", 
+   RowBox[{"Quantity", "[", "\"\<DegreesCelsius\>\"", "]"}], "]"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.8727611276060705`*^9, 3.8727611294653606`*^9}},
+ CellLabel->"In[135]:=",
+ CellID->363113626,ExpressionUUID->"78fa39c4-61e7-471f-b592-4ff44f00b96e"],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"\<\"Cesium133HyperfineSplittingFrequency\"\>", 
+   " ", "\<\"PlanckConstant\"\>"}], "\<\"BoltzmannConstant\"\>"]], "Output",
+ CellChangeTimes->{3.8727611298399296`*^9},
+ CellLabel->"Out[135]=",
+ CellID->345507155,ExpressionUUID->"1e8dee52-417c-4e08-85c3-3eb05e9746ec"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"UnitConvert", "[", 
+  RowBox[{"dist", ",", 
+   FractionBox[
+    RowBox[{
+    "\"\<Cesium133HyperfineSplittingFrequency\>\"", " ", 
+     "\"\<PlanckConstant\>\""}], "\"\<BoltzmannConstant\>\""]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.87276113295068*^9, 3.872761138826172*^9}},
+ CellLabel->"In[136]:=",
+ CellID->1066528,ExpressionUUID->"5bb48bd3-3235-4c56-88cc-d849bc659f0a"],
+
+Cell[BoxData[
+ RowBox[{"QuantityDistribution", "[", 
+  RowBox[{
+   RowBox[{"PERTDistribution", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"604.9416886981568`", ",", "685.2809926048515`"}], "}"}], ",", 
+     "674.8532952977587`", ",", "7.061680703162525`"}], "]"}], ",", 
+   InterpretationBox[
+    TemplateBox[{
+      InterpretationBox["\[InvisibleSpace]", 1], 
+      RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+        SubscriptBox[
+         TemplateBox[{"\"(\"", 
+           TemplateBox[{
+             
+             TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+              SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+          "RowDefault"], "\"hfs\""], "\[ThinSpace]", 
+        StyleBox["\"h\"", StripOnInput -> False, FontSlant -> Italic], 
+        "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+        StyleBox["\"k\"", StripOnInput -> False, FontSlant -> Italic]}], 
+      "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+atom Planck constants per Boltzmann constant", 
+      FractionBox[
+       RowBox[{
+        "\"Cesium133HyperfineSplittingFrequency\"", " ", 
+         "\"PlanckConstant\""}], "\"BoltzmannConstant\""]},
+     "Quantity"],
+    "BoltzmannConstant"^(-1) "Cesium133HyperfineSplittingFrequency" 
+    "PlanckConstant"]}], "]"}]], "Output",
+ CellChangeTimes->{3.8727611395135474`*^9},
+ CellLabel->"Out[136]=",
+ CellID->400276286,ExpressionUUID->"17a3daeb-8837-4e87-acd3-e82d9856e92d"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Mean", "[", 
+  RowBox[{"UnitConvert", "[", 
+   RowBox[{"dist", ",", 
+    FractionBox[
+     RowBox[{
+     "\"\<Cesium133HyperfineSplittingFrequency\>\"", " ", 
+      "\"\<PlanckConstant\>\""}], "\"\<BoltzmannConstant\>\""]}], "]"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.8727611420289526`*^9, 3.872761142763134*^9}},
+ CellLabel->"In[137]:=",
+ CellID->214456017,ExpressionUUID->"ba20e281-b14d-4978-81c2-f517bde2d84f"],
+
+Cell[BoxData[
+ TemplateBox[{"668.2889601328981`", 
+   RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+     SubscriptBox[
+      TemplateBox[{"\"(\"", 
+        TemplateBox[{
+          
+          TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+           SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, "RowDefault"],
+       "\"hfs\""], "\[ThinSpace]", 
+     StyleBox["\"h\"", StripOnInput -> False, FontSlant -> Italic], 
+     "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+     StyleBox["\"k\"", StripOnInput -> False, FontSlant -> Italic]}], 
+   "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 atom \
+Planck constants per Boltzmann constant", 
+   FractionBox[
+    RowBox[{
+     "\"Cesium133HyperfineSplittingFrequency\"", " ", "\"PlanckConstant\""}], 
+    "\"BoltzmannConstant\""]},
+  "Quantity"]], "Output",
+ CellChangeTimes->{3.8727611430596085`*^9},
+ CellLabel->"Out[137]=",
+ CellID->254564041,ExpressionUUID->"84104056-19fb-4c03-961d-9480c85c8ba9"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SIConstantConvert", "[", "dist", "]"}]], "Input",
+ CellChangeTimes->{{3.872761148903165*^9, 3.8727611520457363`*^9}},
+ CellLabel->"In[138]:=",
+ CellID->13571660,ExpressionUUID->"dd749592-ad1c-4b61-8d43-47605a5631ee"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "QuantityDistribution", "unkunit", 
+   "\"Unable to interpret unit specification \
+\\!\\(\\*TemplateBox[List[\\\"1\\\", \
+RowBox[List[RowBox[List[\\\"\\\\\\\"\\\\[CapitalDelta]\\\\[Nu]\\\\\\\"\\\", \
+SubscriptBox[TemplateBox[List[\\\"\\\\\\\"(\\\\\\\"\\\", \
+TemplateBox[List[TemplateBox[List[\\\"\\\\\\\"\\\\\\\"\\\", \\\"133\\\"], \
+\\\"Superscript\\\", Rule[SyntaxForm, SuperscriptBox]], \
+\\\"\\\\\\\"Cs\\\\\\\"\\\"], \\\"RowDefault\\\"], \\\"\\\\\\\")\\\\\\\"\\\"], \
+\\\"RowDefault\\\"], \\\"\\\\\\\"hfs\\\\\\\"\\\"]]], \\\"\\\\[ThinSpace]\\\", \
+StyleBox[\\\"\\\\\\\"h\\\\\\\"\\\", Italic, Rule[StripOnInput, False]], \
+\\\"\\\\[InvisibleSpace]\\\", \\\"\\\\\\\"/\\\\\\\"\\\", \
+\\\"\\\\[InvisibleSpace]\\\", StyleBox[\\\"\\\\\\\"k\\\\\\\"\\\", Italic, \
+Rule[StripOnInput, False]]]], \\\"ground state hyperfine splitting frequency \
+of the cesium\\\\[Hyphen]133 atom Planck constant per Boltzmann constant\\\", \
+FractionBox[RowBox[List[\\\"\\\\\\\"Cesium133HyperfineSplittingFrequency\\\\\\\
+\"\\\", \\\" \\\", \\\"\\\\\\\"PlanckConstant\\\\\\\"\\\"]], \
+\\\"\\\\\\\"BoltzmannConstant\\\\\\\"\\\"]], \\\"Quantity\\\", \
+Rule[SyntaxForm, Mod]]\\).\"", 2, 138, 28, 21570654450799608008, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.8727611523734455`*^9},
+ CellLabel->"During evaluation of In[138]:=",
+ CellID->241327822,ExpressionUUID->"32bd3128-f273-44d6-a131-4b0e61d5d604"],
+
+Cell[BoxData[
+ RowBox[{"UnitConvert", "[", 
+  RowBox[{
+   RowBox[{"QuantityDistribution", "[", 
+    RowBox[{
+     RowBox[{"PERTDistribution", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "6.263795783773791`"}], ",", "29.18003668737541`"}], 
+        "}"}], ",", "24.5795791474184`", ",", "7.061680703162525`"}], "]"}], 
+     ",", 
+     InterpretationBox[
+      TemplateBox[{
+        InterpretationBox["\[InvisibleSpace]", 1], "\"\[Degree]C\"", 
+        "degrees Celsius", "\"DegreesCelsius\""},
+       "Quantity"],
+      "DegreesCelsius"]}], "]"}], ",", 
+   TemplateBox[{"1", 
+     RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+       SubscriptBox[
+        TemplateBox[{"\"(\"", 
+          TemplateBox[{
+            
+            TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+             SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+         "RowDefault"], "\"hfs\""], "\[ThinSpace]", 
+       StyleBox["\"h\"", StripOnInput -> False, FontSlant -> Italic], 
+       "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+       StyleBox["\"k\"", StripOnInput -> False, FontSlant -> Italic]}], 
+     "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+atom Planck constant per Boltzmann constant", 
+     FractionBox[
+      RowBox[{
+       "\"Cesium133HyperfineSplittingFrequency\"", " ", 
+        "\"PlanckConstant\""}], "\"BoltzmannConstant\""]},
+    "Quantity"]}], "]"}]], "Output",
+ CellChangeTimes->{3.872761152529622*^9},
+ CellLabel->"Out[138]=",
+ CellID->30920880,ExpressionUUID->"a252ef8e-f2a8-4796-a3fe-07d311abd2ef"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Head", "[", "dist", "]"}]], "Input",
+ CellChangeTimes->{{3.872761161824395*^9, 3.8727611633260975`*^9}},
+ CellLabel->"In[139]:=",
+ CellID->93307901,ExpressionUUID->"b6cc4fe7-7492-4fc9-9b2f-e52723009deb"],
+
+Cell[BoxData["QuantityDistribution"], "Output",
+ CellChangeTimes->{3.8727611636537848`*^9},
+ CellLabel->"Out[139]=",
+ CellID->34105107,ExpressionUUID->"135368df-7a87-4026-afd3-75a85c759b62"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"QuantityDistributionSIConstantConvert", "[", "dist_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{"UnitConvert", "[", 
+    RowBox[{"dist", ",", 
+     RowBox[{"QuantityUnit", "[", 
+      RowBox[{"SIConstantConvert", "[", 
+       RowBox[{"Quantity", "[", 
+        RowBox[{"QuantityUnit", "[", "dist", "]"}], "]"}], "]"}], "]"}]}], 
+    "]"}], "/;", 
+   RowBox[{
+    RowBox[{"Head", "[", "dist", "]"}], "==", 
+    "QuantityDistribution"}]}]}]], "Input",
+ CellChangeTimes->{{3.8727611673572807`*^9, 3.8727612199167194`*^9}, {
+  3.872761254790989*^9, 3.8727612895183697`*^9}, {3.8727613731182756`*^9, 
+  3.872761377132968*^9}},
+ CellID->99333881,ExpressionUUID->"7656049e-c065-4269-85b9-d73b35ad544b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"QuantityDistributionSIConstantConvert", "[", "dist", "]"}]], "Input",
+ CellChangeTimes->{{3.872761221025839*^9, 3.872761226575904*^9}},
+ CellLabel->"In[146]:=",
+ CellID->356099650,ExpressionUUID->"822ce1c7-1cc4-4e0f-ac4c-e4ebadb2ab60"],
+
+Cell[BoxData[
+ RowBox[{"QuantityDistribution", "[", 
+  RowBox[{
+   RowBox[{"PERTDistribution", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"604.9416886981568`", ",", "685.2809926048515`"}], "}"}], ",", 
+     "674.8532952977587`", ",", "7.061680703162525`"}], "]"}], ",", 
+   InterpretationBox[
+    TemplateBox[{
+      InterpretationBox["\[InvisibleSpace]", 1], 
+      RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+        SubscriptBox[
+         TemplateBox[{"\"(\"", 
+           TemplateBox[{
+             
+             TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+              SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+          "RowDefault"], "\"hfs\""], "\[ThinSpace]", 
+        StyleBox["\"h\"", StripOnInput -> False, FontSlant -> Italic], 
+        "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+        StyleBox["\"k\"", StripOnInput -> False, FontSlant -> Italic]}], 
+      "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+atom Planck constants per Boltzmann constant", 
+      FractionBox[
+       RowBox[{
+        "\"Cesium133HyperfineSplittingFrequency\"", " ", 
+         "\"PlanckConstant\""}], "\"BoltzmannConstant\""]},
+     "Quantity"],
+    "BoltzmannConstant"^(-1) "Cesium133HyperfineSplittingFrequency" 
+    "PlanckConstant"]}], "]"}]], "Output",
+ CellChangeTimes->{
+  3.872761226950716*^9, {3.872761276252388*^9, 3.8727612920486965`*^9}},
+ CellLabel->"Out[146]=",
+ CellID->88845806,ExpressionUUID->"55aac51a-e3f0-4c65-8ca1-d62c5744cf28"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"StandardDeviation", "[", 
+  RowBox[{"QuantityDistributionSIConstantConvert", "[", "dist", "]"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.8727612937674026`*^9, 3.872761301299968*^9}},
+ CellLabel->"In[148]:=",
+ CellID->40569717,ExpressionUUID->"10c7c92a-281c-49ce-b567-703b3b1b8693"],
+
+Cell[BoxData[
+ TemplateBox[{"10.343115052134086`", 
+   RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+     SubscriptBox[
+      TemplateBox[{"\"(\"", 
+        TemplateBox[{
+          
+          TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+           SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, "RowDefault"],
+       "\"hfs\""], "\[ThinSpace]", 
+     StyleBox["\"h\"", StripOnInput -> False, FontSlant -> Italic], 
+     "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+     StyleBox["\"k\"", StripOnInput -> False, FontSlant -> Italic]}], 
+   "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 atom \
+Planck constants per Boltzmann constant", 
+   FractionBox[
+    RowBox[{
+     "\"Cesium133HyperfineSplittingFrequency\"", " ", "\"PlanckConstant\""}], 
+    "\"BoltzmannConstant\""]},
+  "Quantity"]], "Output",
+ CellChangeTimes->{{3.872761295922807*^9, 3.8727613015499263`*^9}},
+ CellLabel->"Out[148]=",
+ CellID->353693257,ExpressionUUID->"f8f105ff-bd13-44cc-9be1-dfd974248b17"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"QuantityDistributionSIConstantConvert", "[", 
+  RowBox[{"2", "sfd"}], "]"}]], "Input",
+ CellChangeTimes->{{3.872761221025839*^9, 3.872761231480956*^9}},
+ CellLabel->"In[142]:=",
+ CellID->517513503,ExpressionUUID->"25696711-3cdd-4520-9e4b-098dadf25ecb"],
+
+Cell[BoxData[
+ RowBox[{"QuantityDistributionSIConstantConvert", "[", 
+  RowBox[{"2", " ", "sfd"}], "]"}]], "Output",
+ CellChangeTimes->{3.872761231871495*^9},
+ CellLabel->"Out[142]=",
+ CellID->111163167,ExpressionUUID->"2ce66d5e-3d2d-47a9-bfcc-207e7ee3a9f6"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SIConstantConvert", "[", "dist", "]"}]], "Input",
+ CellChangeTimes->{{3.8727613568460016`*^9, 3.872761358973048*^9}},
+ CellLabel->"In[161]:=",
+ CellID->377269414,ExpressionUUID->"f2800a45-e544-4ae6-bb73-d5477e2141b8"],
+
+Cell[BoxData[
+ RowBox[{"QuantityDistribution", "[", 
+  RowBox[{
+   RowBox[{"PERTDistribution", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"604.9416886981568`", ",", "685.2809926048515`"}], "}"}], ",", 
+     "674.8532952977587`", ",", "7.061680703162525`"}], "]"}], ",", 
+   InterpretationBox[
+    TemplateBox[{
+      InterpretationBox["\[InvisibleSpace]", 1], 
+      RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+        SubscriptBox[
+         TemplateBox[{"\"(\"", 
+           TemplateBox[{
+             
+             TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+              SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
+          "RowDefault"], "\"hfs\""], "\[ThinSpace]", 
+        StyleBox["\"h\"", StripOnInput -> False, FontSlant -> Italic], 
+        "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+        StyleBox["\"k\"", StripOnInput -> False, FontSlant -> Italic]}], 
+      "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 \
+atom Planck constants per Boltzmann constant", 
+      FractionBox[
+       RowBox[{
+        "\"Cesium133HyperfineSplittingFrequency\"", " ", 
+         "\"PlanckConstant\""}], "\"BoltzmannConstant\""]},
+     "Quantity"],
+    "BoltzmannConstant"^(-1) "Cesium133HyperfineSplittingFrequency" 
+    "PlanckConstant"]}], "]"}]], "Output",
+ CellChangeTimes->{{3.872761359441369*^9, 3.8727613888557997`*^9}},
+ CellLabel->"Out[161]=",
+ CellID->202148675,ExpressionUUID->"ade892d8-7aa2-4e5a-91e9-7060fb3fb99a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Mean", "[", 
+  RowBox[{"SIConstantConvert", "[", "dist", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.872761390451578*^9, 3.8727613913420067`*^9}},
+ CellLabel->"In[162]:=",
+ CellID->315779413,ExpressionUUID->"436e8be8-2546-4fa5-9aa2-a324a87a38c0"],
+
+Cell[BoxData[
+ TemplateBox[{"668.2889601328981`", 
+   RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+     SubscriptBox[
+      TemplateBox[{"\"(\"", 
+        TemplateBox[{
+          
+          TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+           SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, "RowDefault"],
+       "\"hfs\""], "\[ThinSpace]", 
+     StyleBox["\"h\"", StripOnInput -> False, FontSlant -> Italic], 
+     "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+     StyleBox["\"k\"", StripOnInput -> False, FontSlant -> Italic]}], 
+   "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 atom \
+Planck constants per Boltzmann constant", 
+   FractionBox[
+    RowBox[{
+     "\"Cesium133HyperfineSplittingFrequency\"", " ", "\"PlanckConstant\""}], 
+    "\"BoltzmannConstant\""]},
+  "Quantity"]], "Output",
+ CellChangeTimes->{3.8727613916540737`*^9},
+ CellLabel->"Out[162]=",
+ CellID->50972,ExpressionUUID->"229b1d92-2101-4a35-a3b4-a58347b2c700"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"StandardDeviation", "[", 
+  RowBox[{"SIConstantConvert", "[", "dist", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8727613949821625`*^9, 3.8727613998560405`*^9}},
+ CellLabel->"In[163]:=",
+ CellID->44298654,ExpressionUUID->"f418966b-bd47-4096-9849-de6b9f99932b"],
+
+Cell[BoxData[
+ TemplateBox[{"10.343115052134086`", 
+   RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
+     SubscriptBox[
+      TemplateBox[{"\"(\"", 
+        TemplateBox[{
+          
+          TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
+           SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, "RowDefault"],
+       "\"hfs\""], "\[ThinSpace]", 
+     StyleBox["\"h\"", StripOnInput -> False, FontSlant -> Italic], 
+     "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+     StyleBox["\"k\"", StripOnInput -> False, FontSlant -> Italic]}], 
+   "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 atom \
+Planck constants per Boltzmann constant", 
+   FractionBox[
+    RowBox[{
+     "\"Cesium133HyperfineSplittingFrequency\"", " ", "\"PlanckConstant\""}], 
+    "\"BoltzmannConstant\""]},
+  "Quantity"]], "Output",
+ CellChangeTimes->{3.8727614001681223`*^9},
+ CellLabel->"Out[163]=",
+ CellID->454891964,ExpressionUUID->"21b494df-82f6-4569-a516-dd98ab666af3"]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]]
 },
 ClosingSaveDialog->False,
-WindowSize->{718.5, 729.75},
-WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+WindowSize->{718.5, 735.},
+WindowMargins->{{Automatic, -5.25}, {Automatic, 0}},
 TaggingRules->{
  "ResourceType" -> "ComputationalEssay", "ResourceCreateNotebook" -> True, 
   "TemplateVersion" -> <||>, "CreationTimestamp" -> 
@@ -4786,16 +5439,16 @@ CellTagsIndex->{
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"Examples", 228119, 4744},
- {"Your Essay Title", 228305, 4748},
- {"AuthorName", 228485, 4752},
- {"Abstract", 228644, 4756},
- {"TemplateCell", 228825, 4760},
- {"SectionHeader", 229007, 4764},
- {"ExampleTopicSentence", 229183, 4768},
- {"ExampleCodeText", 229358, 4772},
- {"ExampleInput", 229528, 4776},
- {"ExampleOutput", 229694, 4780}
+ {"Examples", 252465, 5397},
+ {"Your Essay Title", 252651, 5401},
+ {"AuthorName", 252831, 5405},
+ {"Abstract", 252990, 5409},
+ {"TemplateCell", 253171, 5413},
+ {"SectionHeader", 253353, 5417},
+ {"ExampleTopicSentence", 253529, 5421},
+ {"ExampleCodeText", 253704, 5425},
+ {"ExampleInput", 253874, 5429},
+ {"ExampleOutput", 254040, 5433}
  }
 *)
 (*NotebookFileOutline
@@ -4943,6 +5596,128 @@ Cell[116106, 2614, 246, 4, 28, "Input",ExpressionUUID->"4f3d6f8a-79f1-4e4f-960f-
  CellID->274747944],
 Cell[116355, 2620, 210, 4, 32, "Output",ExpressionUUID->"3623df41-9d6c-4508-91a8-56266cdb4e54",
  CellID->511875228]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[116614, 2630, 192, 2, 67, "Section",ExpressionUUID->"cde122e4-b062-4e0f-aac1-1a2df8a02d51",
+ CellID->539542176],
+Cell[CellGroupData[{
+Cell[116831, 2636, 195, 3, 28, "Input",ExpressionUUID->"e67f487b-291a-44dc-8730-d4fb260081be",
+ CellID->86384799],
+Cell[117029, 2641, 666, 18, 41, "Output",ExpressionUUID->"fa719e43-a933-435f-b0d8-5498b07437a6",
+ CellID->58031108]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[117732, 2664, 236, 4, 28, "Input",ExpressionUUID->"9a04b72b-f9a6-47c7-86a2-bcbb0110ba20",
+ CellID->249862824],
+Cell[117971, 2670, 193, 3, 32, "Output",ExpressionUUID->"f6712fad-a75b-4978-b36f-4fe54fc43123",
+ CellID->750099097]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[118201, 2678, 279, 5, 28, "Input",ExpressionUUID->"a3be9a5d-d7f0-4ee3-9bbe-15ee477c07d1",
+ CellID->33765429],
+Cell[118483, 2685, 645, 16, 41, "Output",ExpressionUUID->"81b826ed-26fc-45d8-b971-57d6ab61c573",
+ CellID->374180]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[119165, 2706, 314, 6, 28, "Input",ExpressionUUID->"ecd02580-b2f2-47bc-b1ba-39c600100918",
+ CellID->798968979],
+Cell[119482, 2714, 290, 7, 39, "Output",ExpressionUUID->"32adbcda-6bda-4cc3-9d83-feb55d184ffe",
+ CellID->230147244]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[119809, 2726, 396, 9, 28, "Input",ExpressionUUID->"0f297198-8d57-4ba2-af6e-1e78ed6436a3",
+ CellID->47855534],
+Cell[120208, 2737, 485, 13, 37, "Output",ExpressionUUID->"8471d9f1-1541-4ad0-9c97-2205b635c6fe",
+ CellID->171620547]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[120730, 2755, 473, 10, 48, "Input",ExpressionUUID->"ce31e19b-20c0-447f-b3d4-b6f2e5c12442",
+ CellID->247616587],
+Cell[121206, 2767, 519, 13, 41, "Output",ExpressionUUID->"dab6ebcb-6353-45be-ab49-17e7f98d40c9",
+ CellID->122896898]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[121762, 2785, 394, 8, 28, "Input",ExpressionUUID->"d5891147-fdde-49df-8e59-fac1bdc0d18a",
+ CellID->198286711],
+Cell[122159, 2795, 747, 20, 44, "Output",ExpressionUUID->"ee892f0f-cfe4-4386-84c7-a0e784ac72c9",
+ CellID->304334949]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[122943, 2820, 294, 5, 28, "Input",ExpressionUUID->"c5bf96b7-5d8e-430b-8619-b2a7adbb3ff0",
+ CellID->555105029],
+Cell[123240, 2827, 1022, 23, 60, "Output",ExpressionUUID->"8eb3ff5a-22c8-4171-90e8-5d7025d49a25",
+ CellID->68404970]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[124299, 2855, 339, 7, 28, "Input",ExpressionUUID->"78fa39c4-61e7-471f-b592-4ff44f00b96e",
+ CellID->363113626],
+Cell[124641, 2864, 307, 6, 48, "Output",ExpressionUUID->"1e8dee52-417c-4e08-85c3-3eb05e9746ec",
+ CellID->345507155]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[124985, 2875, 402, 10, 46, "Input",ExpressionUUID->"5bb48bd3-3235-4c56-88cc-d849bc659f0a",
+ CellID->1066528],
+Cell[125390, 2887, 1458, 33, 73, "Output",ExpressionUUID->"17a3daeb-8837-4e87-acd3-e82d9856e92d",
+ CellID->400276286]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[126885, 2925, 443, 11, 46, "Input",ExpressionUUID->"ba20e281-b14d-4978-81c2-f517bde2d84f",
+ CellID->214456017],
+Cell[127331, 2938, 984, 22, 45, "Output",ExpressionUUID->"84104056-19fb-4c03-961d-9480c85c8ba9",
+ CellID->254564041]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[128352, 2965, 240, 4, 28, "Input",ExpressionUUID->"dd749592-ad1c-4b61-8d43-47605a5631ee",
+ CellID->13571660],
+Cell[128595, 2971, 1440, 23, 36, "Message",ExpressionUUID->"32bd3128-f273-44d6-a131-4b0e61d5d604",
+ CellID->241327822],
+Cell[130038, 2996, 1587, 39, 73, "Output",ExpressionUUID->"a252ef8e-f2a8-4796-a3fe-07d311abd2ef",
+ CellID->30920880]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[131662, 3040, 227, 4, 28, "Input",ExpressionUUID->"b6cc4fe7-7492-4fc9-9b2f-e52723009deb",
+ CellID->93307901],
+Cell[131892, 3046, 190, 3, 32, "Output",ExpressionUUID->"135368df-7a87-4026-afd3-75a85c759b62",
+ CellID->34105107]
+}, Open  ]],
+Cell[132097, 3052, 723, 17, 86, "Input",ExpressionUUID->"7656049e-c065-4269-85b9-d73b35ad544b",
+ CellID->99333881],
+Cell[CellGroupData[{
+Cell[132845, 3073, 259, 4, 28, "Input",ExpressionUUID->"822ce1c7-1cc4-4e0f-ac4c-e4ebadb2ab60",
+ CellID->356099650],
+Cell[133107, 3079, 1506, 34, 73, "Output",ExpressionUUID->"55aac51a-e3f0-4c65-8ca1-d62c5744cf28",
+ CellID->88845806]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[134650, 3118, 307, 6, 28, "Input",ExpressionUUID->"10c7c92a-281c-49ce-b567-703b3b1b8693",
+ CellID->40569717],
+Cell[134960, 3126, 1009, 22, 45, "Output",ExpressionUUID->"f8f105ff-bd13-44cc-9be1-dfd974248b17",
+ CellID->353693257]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[136006, 3153, 276, 5, 28, "Input",ExpressionUUID->"25696711-3cdd-4520-9e4b-098dadf25ecb",
+ CellID->517513503],
+Cell[136285, 3160, 258, 5, 32, "Output",ExpressionUUID->"2ce66d5e-3d2d-47a9-bfcc-207e7ee3a9f6",
+ CellID->111163167]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[136580, 3170, 241, 4, 28, "Input",ExpressionUUID->"f2800a45-e544-4ae6-bb73-d5477e2141b8",
+ CellID->377269414],
+Cell[136824, 3176, 1482, 33, 73, "Output",ExpressionUUID->"ade892d8-7aa2-4e5a-91e9-7060fb3fb99a",
+ CellID->202148675]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[138343, 3214, 272, 5, 28, "Input",ExpressionUUID->"436e8be8-2546-4fa5-9aa2-a324a87a38c0",
+ CellID->315779413],
+Cell[138618, 3221, 980, 22, 45, "Output",ExpressionUUID->"229b1d92-2101-4a35-a3b4-a58347b2c700",
+ CellID->50972]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[139635, 3248, 286, 5, 28, "Input",ExpressionUUID->"f418966b-bd47-4096-9849-de6b9f99932b",
+ CellID->44298654],
+Cell[139924, 3255, 985, 22, 45, "Output",ExpressionUUID->"21b494df-82f6-4569-a516-dd98ab666af3",
+ CellID->454891964]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
