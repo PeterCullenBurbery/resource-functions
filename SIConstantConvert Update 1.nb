@@ -77,13 +77,17 @@ Cell[BoxData[{
       ",", "PLANCKCONSTANT", ",", "ELEMENTARYCHARGE", ",", 
       "BOLTZMANNCONSTANT", ",", "AVOGADROCONSTANT", ",", 
       "LUMINOUSEFFICACYMONOCHROMATICRADIATION", ",", "DEFININGCONSTANTS", ",",
-       "SIEXACTCONSTANTS", ",", "multipliers", ",", "angleextra"}], "}"}], 
-    ",", 
+       "SIEXACTCONSTANTS", ",", "angleprocessedunit"}], "}"}], ",", 
     RowBox[{
+     RowBox[{"angleprocessedunit", "=", 
+      RowBox[{"UnitSimplify", "[", 
+       RowBox[{"unit", ",", 
+        RowBox[{"UnityDimensions", "->", "Automatic"}]}], "]"}]}], ";", 
      RowBox[{"assoc", "=", 
       RowBox[{"Association", "[", 
        RowBox[{"Rule", "@@@", 
-        RowBox[{"UnitDimensions", "[", "unit", "]"}]}], "]"}]}], ";", 
+        RowBox[{"UnitDimensions", "[", "angleprocessedunit", "]"}]}], "]"}]}],
+      ";", 
      RowBox[{"canonicalassoc", "=", 
       RowBox[{"Append", "[", 
        RowBox[{
@@ -163,64 +167,29 @@ Cell[BoxData[{
         RowBox[{"Quantity", "[", "\"\<ElementaryCharge\>\"", "]"}], ",", 
         RowBox[{"Quantity", "[", "\"\<BoltzmannConstant\>\"", "]"}], ",", 
         RowBox[{"Quantity", "[", "\"\<AvogadroConstant\>\"", "]"}], ",", 
-        RowBox[{
-        "Quantity", "[", 
-         "\"\<MonochromaticRadiation540THzLuminousEfficacy\>\"", "]"}]}], 
-       "}"}]}], ";", "\[IndentingNewLine]", 
-     RowBox[{"multipliers", "=", 
-      RowBox[{"Power", "@@@", 
-       RowBox[{"Transpose", "[", 
-        RowBox[{"{", 
-         RowBox[{"SIEXACTCONSTANTS", ",", 
-          RowBox[{"LinearSolve", "[", 
-           RowBox[{
-            RowBox[{"Transpose", "[", "DEFININGCONSTANTS", "]"}], ",", 
-            "canonicalvector"}], "]"}]}], "}"}], "]"}]}]}], ";", 
-     "\[IndentingNewLine]", 
-     RowBox[{"angleextra", "=", 
-      RowBox[{
-       RowBox[{"(", 
-        RowBox[{"UnitDimensions", "[", 
-         RowBox[{"UnitSimplify", "[", 
+        RowBox[{"UnitSimplify", "[", 
+         RowBox[{
           RowBox[{
-           RowBox[{"unit", "/", 
-            RowBox[{
-            "Quantity", "[", 
-             "\"\<MonochromaticRadiation540THzLuminousEfficacy\>\"", "]"}]}], 
-           ",", 
-           RowBox[{"UnityDimensions", "->", 
-            RowBox[{"{", 
+          "Quantity", "[", 
+           "\"\<MonochromaticRadiation540THzLuminousEfficacy\>\"", "]"}], ",", 
+          RowBox[{"UnityDimensions", "->", "Automatic"}]}], "]"}]}], "}"}]}], 
+     ";", "\[IndentingNewLine]", 
+     RowBox[{"UnitConvert", "[", 
+      RowBox[{"angleprocessedunit", ",", 
+       RowBox[{"Times", "@@", 
+        RowBox[{"Power", "@@@", 
+         RowBox[{"Transpose", "[", 
+          RowBox[{"{", 
+           RowBox[{"SIEXACTCONSTANTS", ",", 
+            RowBox[{"LinearSolve", "[", 
              RowBox[{
-             "\"\<TimeUnit\>\"", ",", "\"\<LengthUnit\>\"", ",", 
-              "\"\<MassUnit\>\"", ",", "\"\<ElectricCurrentUnit\>\"", ",", 
-              "\"\<TemperatureUnit\>\"", ",", "\"\<AmountUnit\>\"", ",", 
-              "\"\<LuminousIntensityUnit\>\""}], "}"}]}]}], "]"}], "]"}], 
-        ")"}], "/.", 
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"{", 
-          RowBox[{"\"\<AngleUnit\>\"", ",", "x_"}], "}"}], ":>", 
-         RowBox[{"Quantity", "[", 
-          SuperscriptBox["\"\<Radians\>\"", "x"], "]"}]}], "}"}]}]}], ";", 
-     "\[IndentingNewLine]", "multipliers", ";", "\[IndentingNewLine]", 
-     "angleextra", ";", "\[IndentingNewLine]", 
-     RowBox[{"If", "[", 
-      RowBox[{
-       RowBox[{
-        RowBox[{"canonicalassoc", "[", "\"\<LuminousIntensityUnit\>\"", "]"}],
-         "!=", "0"}], ",", "\[IndentingNewLine]", 
-       RowBox[{"UnitConvert", "[", 
-        RowBox[{"unit", ",", 
-         RowBox[{"Times", "@@", 
-          RowBox[{"Join", "[", 
-           RowBox[{"multipliers", ",", "angleextra"}], "]"}]}]}], "]"}], ",", 
-       RowBox[{"UnitConvert", "[", 
-        RowBox[{"unit", ",", 
-         RowBox[{"Times", "@@", "multipliers"}]}], "]"}]}], "]"}]}]}], 
+              RowBox[{"Transpose", "[", "DEFININGCONSTANTS", "]"}], ",", 
+              "canonicalvector"}], "]"}]}], "}"}], "]"}]}]}]}], "]"}]}]}], 
    "]"}]}]}], "Input",
  TaggingRules->{},
  CellChangeTimes->{
-  3.8724346876512136`*^9, {3.872756673003869*^9, 3.8727566803646283`*^9}},
+  3.8724346876512136`*^9, {3.872756673003869*^9, 3.8727566803646283`*^9}, 
+   3.872757649907171*^9},
  CellTags->"DefaultContent",
  CellLabel->"In[5]:=",
  CellID->876320555,ExpressionUUID->"5a36142f-9e4d-47c5-a678-e4d534f23288"]
@@ -710,7 +679,7 @@ Cell[BoxData[
     "EntityProperty"], "]"}], "]"}]], "Input",
  CellChangeTimes->{{3.8727566080732794`*^9, 3.872756611181938*^9}, {
   3.8727566578032827`*^9, 3.872756658240342*^9}},
- CellLabel->"In[7]:=",
+ CellLabel->"In[49]:=",
  CellID->482342986,ExpressionUUID->"3992aaac-649e-4ec7-987f-ee5b27bf185f"],
 
 Cell[BoxData[
@@ -722,7 +691,6 @@ Cell[BoxData[
      SubscriptBox[
       TemplateBox[{"\"(\"", 
         TemplateBox[{
-          
           TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
            SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, "RowDefault"],
        "\"hfs\""]}], 
@@ -732,9 +700,10 @@ cesium\[Hyphen]133 atom",
    "\"SpeedOfLight\"", "\"Cesium133HyperfineSplittingFrequency\""]},
   "Quantity"]], "Output",
  CellChangeTimes->{
-  3.8727566173523397`*^9, {3.872756666380412*^9, 3.872756683613702*^9}},
- CellLabel->"Out[7]=",
- CellID->18344350,ExpressionUUID->"e769586d-cc5b-473c-b33a-f1ecc31e055c"]
+  3.8727566173523397`*^9, {3.872756666380412*^9, 3.872756683613702*^9}, 
+   3.872757661061734*^9},
+ CellLabel->"Out[49]=",
+ CellID->344628180,ExpressionUUID->"10696559-1dd3-4c1d-8332-3fbccd286053"]
 }, Open  ]],
 
 Cell["\<\
@@ -2671,6 +2640,7 @@ cesium\[Hyphen]133 atom Avogadro constant",
           SubscriptBox[
            TemplateBox[{"\"(\"", 
              TemplateBox[{
+               
                TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
                 SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
             "RowDefault"], "\"hfs\""], "\[ThinSpace]", 
@@ -3694,6 +3664,7 @@ atom squared Planck constants per elementary charge speed of light",
              SubscriptBox[
               TemplateBox[{"\"(\"", 
                 TemplateBox[{
+                  
                   TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
                    SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
                "RowDefault"], "\"hfs\""]}], "2"], "\[InvisibleSpace]", 
@@ -4215,234 +4186,6 @@ atom to the fourth per Avogadro constant speed of light cubed",
   3.8724367551687937`*^9},
  CellLabel->"Out[45]=",
  CellID->80977155,ExpressionUUID->"ed350131-4624-4536-9e60-814af7f7112e"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"UnitSimplify", "[", 
-  RowBox[{
-   TemplateBox[<|
-    "query" -> "1cd", "boxes" -> 
-     TemplateBox[{"1", "\"cd\"", "candela", "\"Candelas\""}, "Quantity", 
-       SyntaxForm -> Mod], 
-     "allassumptions" -> {{
-       "word" -> "", "template" -> 
-        "Assuming \"cd\" is a unit${separator}Use as ${desc} \
-instead${separator}Use \"1cd\" as ${desc}", "count" -> "3", "pulldown" -> 
-        "false", "type" -> "MultiClash", "default" -> 
-        "{\"MC\", \"1cd\"} -> {\"Unit\", \"dflt\"}", 
-        "Values" -> {{
-          "name" -> "Unit", "desc" -> "a unit", "input" -> 
-           "{\"MC\", \"1cd\"} -> {\"Unit\"}", "word" -> "cd"}, {
-          "name" -> "ConcatVariables", "desc" -> "concatenated variables", 
-           "input" -> "{\"MC\", \"1cd\"} -> {\"ConcatVariables\"}", "word" -> 
-           "cd"}, {"name" -> "Formula", "desc" -> "a formula", "input" -> 
-           "{\"MC\", \"1cd\"} -> {\"Formula\"}", "word" -> "1cd"}}}, {
-       "type" -> "Unit", "word" -> "cd", "template" -> 
-        "Assuming candelas for \"cd\"${separator}Use ${desc} or ${pulldown} \
-instead", "count" -> "4", "pulldown" -> "true", "pulldownlabel" -> "more >>", 
-        "pulldownlength" -> "2", "default" -> 
-        "\"UnitClash\" -> {\"cd\", {\"Candelas\", \"dflt\"}}", 
-        "Values" -> {{
-          "name" -> "Candelas", "desc" -> "candelas", "input" -> 
-           "\"UnitClash\" -> {\"cd\", {\"Candelas\"}}"}, {
-          "name" -> "CompactDiscs", "desc" -> 
-           "standard compact disc capacities", "input" -> 
-           "\"UnitClash\" -> {\"cd\", {\"CompactDiscs\"}}"}, {
-          "name" -> "Cords", "desc" -> "cords", "input" -> 
-           "\"UnitClash\" -> {\"cd\", {\"Cords\"}}"}, {
-          "name" -> "Centidays", "desc" -> "centidays", "input" -> 
-           "\"UnitClash\" -> {\"cd\", {\"Centidays\"}}"}}}}, 
-     "assumptions" -> {}, "open" -> {1, 2}, 
-     "querystate" -> {
-      "Online" -> True, "Allowed" -> True, "mparse.jsp" -> 
-       0.859204`7.385641283701878, "Messages" -> {}}, "contextinfo" -> 
-     Automatic, "version" -> 5|>,
-    "LinguisticAssistantTemplate"], ",", 
-   RowBox[{"UnityDimensions", "->", "Automatic"}]}], "]"}]], "Input",
- CellChangeTimes->{{3.872757097952442*^9, 3.8727571069977283`*^9}},
- CellLabel->"In[18]:=",
- CellID->254371325,ExpressionUUID->"05baa666-a945-41c1-a374-c241dd9c3cb8"],
-
-Cell[BoxData[
- TemplateBox[{"1", "\"cd\"", "candela", "\"Candelas\""},
-  "Quantity"]], "Output",
- CellChangeTimes->{3.8727571072320533`*^9},
- CellLabel->"Out[18]=",
- CellID->221660703,ExpressionUUID->"492ed0fa-6036-4a8a-b721-5aa5a5b7fd2a"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"UnitSimplify", "[", 
-  RowBox[{
-   TemplateBox[<|
-    "query" -> "1 lumen", "boxes" -> 
-     TemplateBox[{"1", "\"lm\"", "lumen", "\"Lumens\""}, "Quantity", 
-       SyntaxForm -> Mod], "allassumptions" -> {}, "assumptions" -> {}, 
-     "open" -> {1, 2}, 
-     "querystate" -> {
-      "Online" -> True, "Allowed" -> True, "mparse.jsp" -> 
-       0.3749151`7.025477925821002, "Messages" -> {}}, "contextinfo" -> 
-     Automatic, "version" -> 5|>,
-    "LinguisticAssistantTemplate"], ",", 
-   RowBox[{"UnityDimensions", "->", "Automatic"}]}], "]"}]], "Input",
- CellChangeTimes->{{3.872757097952442*^9, 3.8727571121852565`*^9}},
- CellLabel->"In[19]:=",
- CellID->71371457,ExpressionUUID->"49231c94-95ba-4c50-9c0c-57018e6f47c2"],
-
-Cell[BoxData[
- TemplateBox[{"1", "\"cd\"", "candela", "\"Candelas\""},
-  "Quantity"]], "Output",
- CellChangeTimes->{3.8727571159343834`*^9},
- CellLabel->"Out[19]=",
- CellID->132527055,ExpressionUUID->"2fe5af5a-c302-4afa-9452-2e0fcaa8cee3"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"SIConstantConvert", "[", 
-  TemplateBox[<|
-   "query" -> "1 cd", "boxes" -> 
-    TemplateBox[{"1", "\"cd\"", "candela", "\"Candelas\""}, "Quantity", 
-      SyntaxForm -> Mod], 
-    "allassumptions" -> {{
-      "word" -> "", "template" -> 
-       "Assuming \"cd\" is a unit${separator}Use as ${desc} \
-instead${separator}Use \"1 cd\" as ${desc}", "count" -> "3", "pulldown" -> 
-       "false", "type" -> "MultiClash", "default" -> 
-       "{\"MC\", \"1 cd\"} -> {\"Unit\", \"dflt\"}", 
-       "Values" -> {{
-         "name" -> "Unit", "desc" -> "a unit", "input" -> 
-          "{\"MC\", \"1 cd\"} -> {\"Unit\"}", "word" -> "cd"}, {
-         "name" -> "ConcatVariables", "desc" -> "concatenated variables", 
-          "input" -> "{\"MC\", \"1 cd\"} -> {\"ConcatVariables\"}", "word" -> 
-          "cd"}, {"name" -> "Formula", "desc" -> "a formula", "input" -> 
-          "{\"MC\", \"1 cd\"} -> {\"Formula\"}", "word" -> "1 cd"}}}, {
-      "type" -> "Unit", "word" -> "cd", "template" -> 
-       "Assuming candelas for \"cd\"${separator}Use ${desc} or ${pulldown} \
-instead", "count" -> "4", "pulldown" -> "true", "pulldownlabel" -> "more >>", 
-       "pulldownlength" -> "2", "default" -> 
-       "\"UnitClash\" -> {\"cd\", {\"Candelas\", \"dflt\"}}", 
-       "Values" -> {{
-         "name" -> "Candelas", "desc" -> "candelas", "input" -> 
-          "\"UnitClash\" -> {\"cd\", {\"Candelas\"}}"}, {
-         "name" -> "CompactDiscs", "desc" -> 
-          "standard compact disc capacities", "input" -> 
-          "\"UnitClash\" -> {\"cd\", {\"CompactDiscs\"}}"}, {
-         "name" -> "Cords", "desc" -> "cords", "input" -> 
-          "\"UnitClash\" -> {\"cd\", {\"Cords\"}}"}, {
-         "name" -> "Centidays", "desc" -> "centidays", "input" -> 
-          "\"UnitClash\" -> {\"cd\", {\"Centidays\"}}"}}}}, 
-    "assumptions" -> {}, "open" -> {1, 2}, 
-    "querystate" -> {
-     "Online" -> True, "Allowed" -> True, "mparse.jsp" -> 
-      0.4064967`7.060602017773887, "Messages" -> {}}, "contextinfo" -> 
-    Automatic, "version" -> 5|>,
-   "LinguisticAssistantTemplate"], "]"}]], "Input",
- CellChangeTimes->{{3.8727571237141848`*^9, 3.8727571258851614`*^9}},
- CellLabel->"In[20]:=",
- CellID->577808149,ExpressionUUID->"7f86b2bf-a4a0-4f48-834e-ce202d64e6b1"],
-
-Cell[BoxData[
- TemplateBox[{
-   FractionBox[
-   "2000000000000000000000000000000000000000", 
-    "76486793830390329632626020921"], 
-   RowBox[{
-     SuperscriptBox[
-      RowBox[{"\"\[CapitalDelta]\[Nu]\"", 
-        SubscriptBox[
-         TemplateBox[{"\"(\"", 
-           TemplateBox[{
-             
-             TemplateBox[{"\"\"", "133"}, "Superscript", SyntaxForm -> 
-              SuperscriptBox], "\"Cs\""}, "RowDefault"], "\")\""}, 
-          "RowDefault"], "\"hfs\""]}], "2"], "\[InvisibleSpace]", 
-     SubscriptBox[
-      StyleBox["\"K\"", Italic, StripOnInput -> False], "\"cd\""], 
-     "\[ThinSpace]", 
-     StyleBox["\"h\"", Italic, StripOnInput -> False], "\[InvisibleSpace]", 
-     "\"/\"", "\[InvisibleSpace]", 
-     SuperscriptBox["\"rad\"", "2"]}], 
-   "ground state hyperfine splitting frequency of the cesium\[Hyphen]133 atom \
-squared luminous efficacy of monochromatic radiation of frequency 540 THz \
-Planck constants per radian squared", 
-   FractionBox[
-    RowBox[{
-      SuperscriptBox["\"Cesium133HyperfineSplittingFrequency\"", "2"], " ", 
-      "\"MonochromaticRadiation540THzLuminousEfficacy\"", " ", 
-      "\"PlanckConstant\""}], 
-    SuperscriptBox["\"Radians\"", "2"]]},
-  "Quantity"]], "Output",
- CellChangeTimes->{3.87275712849396*^9},
- CellLabel->"Out[20]=",
- CellID->560735802,ExpressionUUID->"e54460e7-acc0-42cc-86a4-86f6bbe8d495"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"UnitSimplify", "[", 
-  RowBox[{
-   RowBox[{
-   "Quantity", "[", "\"\<MonochromaticRadiation540THzLuminousEfficacy\>\"", 
-    "]"}], ",", 
-   RowBox[{"UnityDimensions", "->", "Automatic"}]}], "]"}]], "Input",
- CellChangeTimes->{{3.8727571237141848`*^9, 3.8727571552927*^9}},
- CellLabel->"In[21]:=",
- CellID->29828533,ExpressionUUID->"38b35b97-e9ec-429a-924f-8d6b384882ab"],
-
-Cell[BoxData[
- TemplateBox[{"1", 
-   RowBox[{
-     SubscriptBox[
-      StyleBox["\"K\"", Italic, StripOnInput -> False], "\"cd\""], 
-     "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
-     SuperscriptBox["\"rad\"", "2"]}], 
-   "luminous efficacy of monochromatic radiation of frequency 540 THz per \
-radian squared", 
-   FractionBox["\"MonochromaticRadiation540THzLuminousEfficacy\"", 
-    SuperscriptBox["\"Radians\"", "2"]]},
-  "Quantity"]], "Output",
- CellChangeTimes->{3.8727571555426435`*^9},
- CellLabel->"Out[21]=",
- CellID->475068833,ExpressionUUID->"f59d01c6-f76d-439c-92e7-986b1dc91087"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"UnitDimensions", "[", 
-  RowBox[{"UnitSimplify", "[", 
-   RowBox[{
-    RowBox[{
-    "Quantity", "[", "\"\<MonochromaticRadiation540THzLuminousEfficacy\>\"", 
-     "]"}], ",", 
-    RowBox[{"UnityDimensions", "->", "Automatic"}]}], "]"}], "]"}]], "Input",
- CellChangeTimes->{{3.872757160041566*^9, 3.872757161932587*^9}},
- CellLabel->"In[22]:=",
- CellID->83321877,ExpressionUUID->"ff5df61e-7983-462d-9351-7f2374987f62"],
-
-Cell[BoxData[
- RowBox[{"{", 
-  RowBox[{
-   RowBox[{"{", 
-    RowBox[{"\<\"LengthUnit\"\>", ",", 
-     RowBox[{"-", "2"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"LuminousIntensityUnit\"\>", ",", "1"}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"MassUnit\"\>", ",", 
-     RowBox[{"-", "1"}]}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"\<\"TimeUnit\"\>", ",", "3"}], "}"}]}], "}"}]], "Output",
- CellChangeTimes->{3.8727571622290936`*^9},
- CellLabel->"Out[22]=",
- CellID->119657762,ExpressionUUID->"95ad3f8e-9bb0-4c96-b786-b6128f28c241"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
@@ -8403,7 +8146,8 @@ Cell[BoxData[
                     OpenerBox[
                     Dynamic[Typeset`var$$]]}}, 
                    GridBoxAlignment -> {"Columns" -> {{Left}}}, AutoDelete -> 
-                   False, GridBoxItemSize -> {
+                   False, 
+                   GridBoxItemSize -> {
                     "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
                    GridBoxSpacings -> {
                     "Columns" -> {{0.2}}, "Rows" -> {{0.5}}}, 
@@ -9810,8 +9554,7 @@ Cell[BoxData[
                     "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
                     "Column"], ImageMargins -> 0], "\[SpanFromLeft]"}}, 
                    GridBoxAlignment -> {"Columns" -> {{Left}}}, AutoDelete -> 
-                   False, 
-                   GridBoxItemSize -> {
+                   False, GridBoxItemSize -> {
                     "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
                    GridBoxSpacings -> {
                     "Columns" -> {{0.2}}, "Rows" -> {{0.5}}}, 
@@ -10760,7 +10503,6 @@ Cell[BoxData[
          StyleBox[
           TemplateBox[{
             CheckboxBox["WebEvaluation", {False, "WebEvaluation"}], "\" \"", 
-            
             TemplateBox[{
              "\"WebEvaluation\"", 
               "\"Cloud evaluation initiated by an HTTP request\""}, 
@@ -11023,8 +10765,8 @@ Cell["Additional information for the reviewer.", "Text",
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{1440., 741.75},
-WindowMargins->{{-6, Automatic}, {Automatic, -6}},
+WindowSize->{718.5, 735.},
+WindowMargins->{{-5.25, Automatic}, {Automatic, 0}},
 DockedCells->{
   Cell[
    BoxData[
