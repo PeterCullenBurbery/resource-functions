@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    320650,       7611]
-NotebookOptionsPosition[    174240,       4705]
-NotebookOutlinePosition[    287783,       6876]
-CellTagsIndexPosition[    287402,       6862]
+NotebookDataLength[    332418,       7915]
+NotebookOptionsPosition[    184402,       4973]
+NotebookOutlinePosition[    297945,       7144]
+CellTagsIndexPosition[    297564,       7130]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -4675,9 +4675,12 @@ Cell[BoxData[
   RowBox[{"{", 
    RowBox[{
     RowBox[{"Quantity", "[", "\"\<SpeedOfLight\>\"", "]"}], ",", 
-    RowBox[{"Quantity", "[", "\"\<ProtonMass\>\"", "]"}]}], "}"}]}]], "Input",
- CellChangeTimes->{{3.872874426816412*^9, 3.872874462352229*^9}},
- CellLabel->"In[255]:=",
+    RowBox[{"Quantity", "[", "\"\<ProtonMass\>\"", "]"}], ",", 
+    RowBox[{"Quantity", "[", "\"\<ReducedPlanckConstant\>\"", "]"}], ",", 
+    RowBox[{"Quantity", "[", "\"\<ElectricConstant\>\"", "]"}]}], 
+   "}"}]}]], "Input",
+ CellChangeTimes->{{3.872874426816412*^9, 3.872874484532441*^9}},
+ CellLabel->"In[256]:=",
  CellID->75603148,ExpressionUUID->"dbe317f2-bcdd-46f1-9a79-7365b5cd868a"],
 
 Cell[BoxData[
@@ -4694,10 +4697,275 @@ Cell[BoxData[
       StyleBox["\"m\"", Italic, StripOnInput -> False], 
       StyleBox["\"p\"", Italic, StripOnInput -> False]], "proton mass", 
      "\"ProtonMass\""},
+    "Quantity"], ",", 
+   TemplateBox[{
+     InterpretationBox["\[InvisibleSpace]", 1], "\"\[HBar]\"", 
+     "reduced Planck constant", "\"ReducedPlanckConstant\""},
+    "Quantity"], ",", 
+   TemplateBox[{
+     InterpretationBox["\[InvisibleSpace]", 1], 
+     SubscriptBox["\"\[CurlyEpsilon]\"", "0"], "electric constant", 
+     "\"ElectricConstant\""},
     "Quantity"]}], "}"}]], "Output",
- CellChangeTimes->{3.8728744627096205`*^9},
- CellLabel->"Out[255]=",
- CellID->78066848,ExpressionUUID->"8850fbeb-4cba-47d6-a819-ee344589933b"]
+ CellChangeTimes->{{3.8728744627096205`*^9, 3.872874485875139*^9}},
+ CellLabel->"Out[256]=",
+ CellID->216670519,ExpressionUUID->"b9f49a8e-a7bf-48f2-a010-677434f02c39"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DimensionTransform", "[", 
+  RowBox[{"RationalizedQCDDefiningConstants", ",", 
+   RowBox[{"Quantity", "[", 
+    RowBox[{"\"\<Joules\>\"", "\"\<Webers\>\""}], "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8728744888270893`*^9, 3.872874500714058*^9}},
+ CellLabel->"In[257]:=",
+ CellID->207364611,ExpressionUUID->"2d35543a-2f9a-4d83-8752-c3aeb85b0d81"],
+
+Cell[BoxData[
+ TemplateBox[{"3.3373937251544560206`9.121108295942419*^25", 
+   RowBox[{
+     SubscriptBox[
+      StyleBox["\"m\"", Italic, StripOnInput -> False], 
+      StyleBox["\"p\"", Italic, StripOnInput -> False]], "\[ThinSpace]", 
+     SqrtBox["\"\[HBar]\""], "\[InvisibleSpace]", 
+     SuperscriptBox[
+      StyleBox["\"c\"", Italic, StripOnInput -> False], 
+      RowBox[{"3", "/", "2"}]], "\[NegativeMediumSpace]", "\"/\"", 
+     "\[InvisibleSpace]", 
+     SqrtBox[
+      SubscriptBox["\"\[CurlyEpsilon]\"", "0"]]}], 
+   "proton mass square root reduced Planck constant speed of light to the 3/2 \
+per square root electric constant", 
+   FractionBox[
+    RowBox[{"\"ProtonMass\"", " ", 
+      SqrtBox["\"ReducedPlanckConstant\""], " ", 
+      SuperscriptBox["\"SpeedOfLight\"", 
+       RowBox[{"3", "/", "2"}]]}], 
+    SqrtBox["\"ElectricConstant\""]]},
+  "Quantity"]], "Output",
+ CellChangeTimes->{3.8728745010314164`*^9},
+ CellLabel->"Out[257]=",
+ CellID->273990654,ExpressionUUID->"fd161b71-8b7d-42a7-9da8-4673082b9b1c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NonrationalizedQCDDefiningConstants", "=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"Quantity", "[", "\"\<SpeedOfLight\>\"", "]"}], ",", 
+    RowBox[{"Quantity", "[", "\"\<ProtonMass\>\"", "]"}], ",", 
+    RowBox[{"Quantity", "[", "\"\<ReducedPlanckConstant\>\"", "]"}], ",", 
+    RowBox[{"Quantity", "[", 
+     RowBox[{
+      RowBox[{"4", "\[Pi]"}], ",", "\"\<ElectricConstant\>\""}], "]"}]}], 
+   "}"}]}]], "Input",
+ CellChangeTimes->{{3.8728745371228685`*^9, 3.872874547409312*^9}},
+ CellLabel->"In[261]:=",
+ CellID->283053106,ExpressionUUID->"1fa12635-4e8e-464a-a9f3-f63d0f5ff2c2"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TemplateBox[{
+     InterpretationBox["\[InvisibleSpace]", 1], 
+     StyleBox["\"c\"", Italic, StripOnInput -> False], "speed of light", 
+     "\"SpeedOfLight\""},
+    "Quantity"], ",", 
+   TemplateBox[{
+     InterpretationBox["\[InvisibleSpace]", 1], 
+     SubscriptBox[
+      StyleBox["\"m\"", Italic, StripOnInput -> False], 
+      StyleBox["\"p\"", Italic, StripOnInput -> False]], "proton mass", 
+     "\"ProtonMass\""},
+    "Quantity"], ",", 
+   TemplateBox[{
+     InterpretationBox["\[InvisibleSpace]", 1], "\"\[HBar]\"", 
+     "reduced Planck constant", "\"ReducedPlanckConstant\""},
+    "Quantity"], ",", 
+   TemplateBox[{
+     RowBox[{"4", " ", "\[Pi]"}], 
+     SubscriptBox["\"\[CurlyEpsilon]\"", "0"], "electric constants", 
+     "\"ElectricConstant\""},
+    "Quantity"]}], "}"}]], "Output",
+ CellChangeTimes->{3.872874547774518*^9},
+ CellLabel->"Out[261]=",
+ CellID->2923998,ExpressionUUID->"4e3993e4-b6ec-4184-a4c1-0b221d0ef4d7"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DimensionTransform", "[", 
+  RowBox[{"NonrationalizedQCDDefiningConstants", ",", 
+   RowBox[{"Quantity", "[", 
+    RowBox[{"\"\<Joules\>\"", "\"\<Webers\>\""}], "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8728745546695986`*^9, 3.8728745551197543`*^9}},
+ CellLabel->"In[262]:=",
+ CellID->870602159,ExpressionUUID->"0713491f-8941-402e-82dc-7bc2967ab851"],
+
+Cell[BoxData[
+ TemplateBox[{"3.3373937251544560206`9.121108295942419*^25", 
+   RowBox[{
+     SubscriptBox[
+      StyleBox["\"m\"", Italic, StripOnInput -> False], 
+      StyleBox["\"p\"", Italic, StripOnInput -> False]], "\[ThinSpace]", 
+     SqrtBox["\"\[HBar]\""], "\[InvisibleSpace]", 
+     SuperscriptBox[
+      StyleBox["\"c\"", Italic, StripOnInput -> False], 
+      RowBox[{"3", "/", "2"}]], "\[NegativeMediumSpace]", "\"/\"", 
+     "\[InvisibleSpace]", 
+     SqrtBox[
+      SubscriptBox["\"\[CurlyEpsilon]\"", "0"]]}], 
+   "proton mass square root reduced Planck constant speed of light to the 3/2 \
+per square root electric constant", 
+   FractionBox[
+    RowBox[{"\"ProtonMass\"", " ", 
+      SqrtBox["\"ReducedPlanckConstant\""], " ", 
+      SuperscriptBox["\"SpeedOfLight\"", 
+       RowBox[{"3", "/", "2"}]]}], 
+    SqrtBox["\"ElectricConstant\""]]},
+  "Quantity"]], "Output",
+ CellChangeTimes->{3.8728745554683623`*^9},
+ CellLabel->"Out[262]=",
+ CellID->146946852,ExpressionUUID->"ab3e9ec7-f594-4534-800a-6629a6ae02fa"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DimensionTransform", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{
+       InterpretationBox["\[InvisibleSpace]", 1], 
+       StyleBox["\"c\"", Italic, StripOnInput -> False], "speed of light", 
+       "\"SpeedOfLight\""},
+      "Quantity"], ",", 
+     TemplateBox[{
+       InterpretationBox["\[InvisibleSpace]", 1], 
+       SubscriptBox[
+        StyleBox["\"m\"", Italic, StripOnInput -> False], 
+        StyleBox["\"p\"", Italic, StripOnInput -> False]], "proton mass", 
+       "\"ProtonMass\""},
+      "Quantity"], ",", 
+     TemplateBox[{
+       InterpretationBox["\[InvisibleSpace]", 1], "\"\[HBar]\"", 
+       "reduced Planck constant", "\"ReducedPlanckConstant\""},
+      "Quantity"], ",", 
+     RowBox[{"Quantity", "[", "\"\<MagneticConstant\>\"", "]"}]}], "}"}], ",", 
+   RowBox[{"Quantity", "[", 
+    RowBox[{"\"\<Joules\>\"", "\"\<Webers\>\""}], "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8728745546695986`*^9, 3.8728745551197543`*^9}, {
+  3.872876300322613*^9, 3.8728763142552214`*^9}},
+ CellLabel->"In[263]:=",
+ CellID->408555119,ExpressionUUID->"b819fadb-6f00-42fc-904e-b3886b3967cf"],
+
+Cell[BoxData[
+ TemplateBox[{"3.3373937251545284834`9.118604950347963*^25", 
+   RowBox[{
+     SubscriptBox[
+      StyleBox["\"m\"", Italic, StripOnInput -> False], 
+      StyleBox["\"p\"", Italic, StripOnInput -> False]], "\[ThinSpace]", 
+     SqrtBox[
+      SubscriptBox["\"\[Mu]\"", "0"]], "\[InvisibleSpace]", 
+     SqrtBox["\"\[HBar]\""], "\[InvisibleSpace]", 
+     SuperscriptBox[
+      StyleBox["\"c\"", Italic, StripOnInput -> False], 
+      RowBox[{"5", "/", "2"}]]}], 
+   "proton mass square root magnetic constant square root reduced Planck \
+constant speed of light to the 5/2", 
+   RowBox[{
+     SqrtBox["\"MagneticConstant\""], " ", "\"ProtonMass\"", " ", 
+     SqrtBox["\"ReducedPlanckConstant\""], " ", 
+     SuperscriptBox["\"SpeedOfLight\"", 
+      RowBox[{"5", "/", "2"}]]}]},
+  "Quantity"]], "Output",
+ CellChangeTimes->{3.8728763145733805`*^9},
+ CellLabel->"Out[263]=",
+ CellID->693058712,ExpressionUUID->"5469cbf6-ded8-4477-aa9c-decd9135bb97"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DimensionTransform", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{
+       InterpretationBox["\[InvisibleSpace]", 1], 
+       StyleBox["\"c\"", Italic, StripOnInput -> False], "speed of light", 
+       "\"SpeedOfLight\""},
+      "Quantity"], ",", 
+     RowBox[{"Quantity", "[", "\"\<Watts\>\"", "]"}], ",", 
+     TemplateBox[{
+       InterpretationBox["\[InvisibleSpace]", 1], "\"\[HBar]\"", 
+       "reduced Planck constant", "\"ReducedPlanckConstant\""},
+      "Quantity"], ",", 
+     RowBox[{"Quantity", "[", "\"\<MagneticConstant\>\"", "]"}]}], "}"}], ",", 
+   RowBox[{"Quantity", "[", 
+    RowBox[{"\"\<Joules\>\"", "\"\<Webers\>\""}], "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8728745546695986`*^9, 3.8728745551197543`*^9}, {
+  3.872876300322613*^9, 3.8728763368868876`*^9}},
+ CellLabel->"In[264]:=",
+ CellID->3686740,ExpressionUUID->"5574cc8b-3fdc-42f1-8f97-2bed7685a28d"],
+
+Cell[BoxData[
+ TemplateBox[{"4.88549479959354660932704678`9.820456263305687*^32", 
+   RowBox[{
+     SqrtBox[
+      SubscriptBox["\"\[Mu]\"", "0"]], "\[InvisibleSpace]", "\"\[HBar]\"", 
+     "\[ThinSpace]", 
+     SqrtBox[
+      StyleBox["\"c\"", Italic, StripOnInput -> False]], "\[InvisibleSpace]", 
+     SqrtBox["\"W\""]}], 
+   "square root magnetic constant reduced Planck constant square root speed \
+of light square root watts", 
+   RowBox[{
+     SqrtBox["\"MagneticConstant\""], " ", "\"ReducedPlanckConstant\"", " ", 
+     SqrtBox["\"SpeedOfLight\""], " ", 
+     SqrtBox["\"Watts\""]}]},
+  "Quantity"]], "Output",
+ CellChangeTimes->{3.872876337215953*^9},
+ CellLabel->"Out[264]=",
+ CellID->212977157,ExpressionUUID->"c0b5b4ce-26fc-4269-bae5-c4e5d9385f35"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DimensionTransform", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{
+       InterpretationBox["\[InvisibleSpace]", 1], 
+       StyleBox["\"c\"", Italic, StripOnInput -> False], "speed of light", 
+       "\"SpeedOfLight\""},
+      "Quantity"], ",", 
+     RowBox[{"Quantity", "[", "\"\<Watts\>\"", "]"}], ",", 
+     TemplateBox[{
+       InterpretationBox["\[InvisibleSpace]", 1], "\"\[HBar]\"", 
+       "reduced Planck constant", "\"ReducedPlanckConstant\""},
+      "Quantity"], ",", 
+     RowBox[{"Quantity", "[", "\"\<Kelvins\>\"", "]"}]}], "}"}], ",", 
+   RowBox[{"Quantity", "[", 
+    RowBox[{"\"\<Joules\>\"", "\"\<Webers\>\""}], "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8728745546695986`*^9, 3.8728745551197543`*^9}, {
+  3.872876300322613*^9, 3.8728763368868876`*^9}, {3.872876375826868*^9, 
+  3.87287637906948*^9}},
+ CellLabel->"In[265]:=",
+ CellID->549732008,ExpressionUUID->"1f64edc0-3b06-49df-9d11-383480a339de"],
+
+Cell[BoxData["\<\"no dimensional combination exists.\"\>"], "Output",
+ CellChangeTimes->{3.8728763793063974`*^9},
+ CellLabel->"Out[265]=",
+ CellID->38685657,ExpressionUUID->"5c2a49f7-7d3d-452a-b905-d73ed16105e8"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
@@ -6861,16 +7129,16 @@ CellTagsIndex->{
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"Examples", 285656, 6819},
- {"Your Essay Title", 285842, 6823},
- {"AuthorName", 286022, 6827},
- {"Abstract", 286181, 6831},
- {"TemplateCell", 286362, 6835},
- {"SectionHeader", 286544, 6839},
- {"ExampleTopicSentence", 286720, 6843},
- {"ExampleCodeText", 286895, 6847},
- {"ExampleInput", 287065, 6851},
- {"ExampleOutput", 287231, 6855}
+ {"Examples", 295818, 7087},
+ {"Your Essay Title", 296004, 7091},
+ {"AuthorName", 296184, 7095},
+ {"Abstract", 296343, 7099},
+ {"TemplateCell", 296524, 7103},
+ {"SectionHeader", 296706, 7107},
+ {"ExampleTopicSentence", 296882, 7111},
+ {"ExampleCodeText", 297057, 7115},
+ {"ExampleInput", 297227, 7119},
+ {"ExampleOutput", 297393, 7123}
  }
 *)
 (*NotebookFileOutline
@@ -7605,10 +7873,46 @@ Cell[172025, 4643, 1074, 24, 45, "Output",ExpressionUUID->"180eca6b-9ea6-4ed2-90
  CellID->17783399]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[173136, 4672, 402, 8, 48, "Input",ExpressionUUID->"dbe317f2-bcdd-46f1-9a79-7365b5cd868a",
+Cell[173136, 4672, 551, 11, 86, "Input",ExpressionUUID->"dbe317f2-bcdd-46f1-9a79-7365b5cd868a",
  CellID->75603148],
-Cell[173541, 4682, 647, 17, 66, "Output",ExpressionUUID->"8850fbeb-4cba-47d6-a819-ee344589933b",
- CellID->78066848]
+Cell[173690, 4685, 1026, 26, 43, "Output",ExpressionUUID->"b9f49a8e-a7bf-48f2-a010-677434f02c39",
+ CellID->216670519]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[174753, 4716, 375, 7, 48, "Input",ExpressionUUID->"2d35543a-2f9a-4d83-8752-c3aeb85b0d81",
+ CellID->207364611],
+Cell[175131, 4725, 1033, 24, 46, "Output",ExpressionUUID->"fd161b71-8b7d-42a7-9da8-4673082b9b1c",
+ CellID->273990654]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[176201, 4754, 609, 13, 86, "Input",ExpressionUUID->"1fa12635-4e8e-464a-a9f3-f63d0f5ff2c2",
+ CellID->283053106],
+Cell[176813, 4769, 985, 26, 43, "Output",ExpressionUUID->"4e3993e4-b6ec-4184-a4c1-0b221d0ef4d7",
+ CellID->2923998]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[177835, 4800, 380, 7, 48, "Input",ExpressionUUID->"0713491f-8941-402e-82dc-7bc2967ab851",
+ CellID->870602159],
+Cell[178218, 4809, 1033, 24, 46, "Output",ExpressionUUID->"ab3e9ec7-f594-4534-800a-6629a6ae02fa",
+ CellID->146946852]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[179288, 4838, 1146, 27, 67, "Input",ExpressionUUID->"b819fadb-6f00-42fc-904e-b3886b3967cf",
+ CellID->408555119],
+Cell[180437, 4867, 963, 22, 46, "Output",ExpressionUUID->"5469cbf6-ded8-4477-aa9c-decd9135bb97",
+ CellID->693058712]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[181437, 4894, 928, 21, 92, "Input",ExpressionUUID->"5574cc8b-3fdc-42f1-8f97-2bed7685a28d",
+ CellID->3686740],
+Cell[182368, 4917, 761, 18, 45, "Output",ExpressionUUID->"c0b5b4ce-26fc-4269-bae5-c4e5d9385f35",
+ CellID->212977157]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[183166, 4940, 969, 22, 92, "Input",ExpressionUUID->"1f64edc0-3b06-49df-9d11-383480a339de",
+ CellID->549732008],
+Cell[184138, 4964, 212, 3, 32, "Output",ExpressionUUID->"5c2a49f7-7d3d-452a-b905-d73ed16105e8",
+ CellID->38685657]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
