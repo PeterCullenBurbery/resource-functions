@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    886051,      23758]
-NotebookOptionsPosition[    689683,      19765]
-NotebookOutlinePosition[    803344,      21937]
-CellTagsIndexPosition[    802953,      21923]
+NotebookDataLength[   1009268,      26401]
+NotebookOptionsPosition[    810886,      22364]
+NotebookOutlinePosition[    924547,      24536]
+CellTagsIndexPosition[    924156,      24522]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -19760,6 +19760,2605 @@ Cell[BoxData[
  CellLabel->"Out[15]=",
  CellID->175411639,ExpressionUUID->"eeb959fe-4be7-43a2-9352-62d97f0c1ffc"]
 }, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Modifications", "Section",
+ CellChangeTimes->{{3.8729486459304304`*^9, 3.872948647594636*^9}},
+ CellID->286600181,ExpressionUUID->"7ae241d2-8fdf-499b-a596-21724a6f9691"],
+
+Cell[BoxData[{
+ RowBox[{"ClearAll", "[", 
+  RowBox[{
+  "DimensionalTransform", ",", "DimensionalMatrix", ",", 
+   "DimensionalExponents"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DimensionalMatrix", "[", "units_", "]"}], ":=", 
+  RowBox[{"Transpose", "[", 
+   RowBox[{"DimensionalExponents", "/@", "units"}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DimensionalExponents", "[", "unit_", "]"}], ":=", 
+  RowBox[{"Block", "[", 
+   RowBox[{
+    RowBox[{"{", "SEVENDIMENSIONS", "}"}], ",", 
+    RowBox[{
+     RowBox[{"SEVENDIMENSIONS", "=", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<TimeUnit\>\"", ",", "\"\<LengthUnit\>\"", ",", "\"\<MassUnit\>\"",
+         ",", "\"\<ElectricCurrentUnit\>\"", ",", "\"\<TemperatureUnit\>\"", 
+        ",", "\"\<AmountUnit\>\"", ",", "\"\<LuminousIntensityUnit\>\""}], 
+       "}"}]}], ";", 
+     RowBox[{"Values", "[", 
+      RowBox[{"KeySortBy", "[", 
+       RowBox[{
+        RowBox[{"Append", "[", 
+         RowBox[{
+          RowBox[{"AssociationThread", "[", 
+           RowBox[{"SEVENDIMENSIONS", "\[Rule]", 
+            RowBox[{"ConstantArray", "[", 
+             RowBox[{"0", ",", "7"}], "]"}]}], "]"}], ",", 
+          RowBox[{"AssociationThread", "@@", 
+           RowBox[{"Transpose", "[", 
+            RowBox[{"UnitDimensions", "[", "unit", "]"}], "]"}]}]}], "]"}], 
+        ",", 
+        RowBox[{
+         RowBox[{"Position", "[", 
+          RowBox[{"SEVENDIMENSIONS", ",", "#1"}], "]"}], "&"}]}], "]"}], 
+      "]"}]}]}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"SolveForAllDimensionalCombinations", "[", 
+   RowBox[{"list_", ",", "unit_"}], "]"}], ":=", 
+  RowBox[{"Block", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+     "constants", ",", "coefficientMatrix", ",", "exponentialvector"}], "}"}],
+     ",", 
+    RowBox[{
+     RowBox[{"coefficientMatrix", "=", 
+      RowBox[{"DimensionalMatrix", "[", "list", "]"}]}], ";", 
+     RowBox[{"constants", "=", 
+      RowBox[{"C", "/@", 
+       RowBox[{"Range", "[", 
+        RowBox[{"Last", "[", 
+         RowBox[{"Dimensions", "[", "coefficientMatrix", "]"}], "]"}], 
+        "]"}]}]}], ";", 
+     RowBox[{"exponentialvector", "=", 
+      RowBox[{"DimensionalExponents", "[", "unit", "]"}]}], ";", 
+     RowBox[{"First", "[", 
+      RowBox[{"SolveValues", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"coefficientMatrix", ".", "constants"}], "\[Equal]", 
+         "exponentialvector"}], ",", "constants"}], "]"}], "]"}]}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DimensionalTransform", "[", 
+   RowBox[{"unit_", ",", "list_"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"Block", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "coefficientMatrix", ",", "augmentedMatrix", ",", 
+       "coefficientMatrixRank", ",", "augmentedMatrixRank"}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"coefficientMatrix", ",", "augmentedMatrix"}], "}"}], "=", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"DimensionalMatrix", "[", "list", "]"}], ",", 
+         RowBox[{"MapThread", "[", 
+          RowBox[{"Append", ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"DimensionalMatrix", "[", "list", "]"}], ",", 
+             RowBox[{"DimensionalExponents", "[", "unit", "]"}]}], "}"}]}], 
+          "]"}]}], "}"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"coefficientMatrixRank", "=", 
+       RowBox[{"MatrixRank", "[", "coefficientMatrix", "]"}]}], ";", 
+      RowBox[{"augmentedMatrixRank", "=", 
+       RowBox[{"MatrixRank", "[", "augmentedMatrix", "]"}]}], ";", 
+      RowBox[{"{", 
+       RowBox[{"coefficientMatrix", ",", "augmentedMatrix"}], "}"}], ";", 
+      "\[IndentingNewLine]", 
+      TagBox[GridBox[{
+         {"\[Piecewise]", GridBox[{
+            {"\"\<no dimensional combination exists\>\"", 
+             RowBox[{"coefficientMatrixRank", "<", "augmentedMatrixRank"}]},
+            {
+             RowBox[{"UnitConvert", "[", 
+              RowBox[{"unit", ",", 
+               RowBox[{"Times", "@@", 
+                RowBox[{"Power", "@@@", 
+                 RowBox[{"Transpose", "[", 
+                  RowBox[{"{", 
+                   RowBox[{"list", ",", 
+                    RowBox[{"LinearSolve", "[", 
+                    RowBox[{
+                    RowBox[{"Transpose", "[", 
+                    RowBox[{"DimensionalExponents", "/@", "list"}], "]"}], 
+                    ",", 
+                    RowBox[{"DimensionalExponents", "[", "unit", "]"}]}], 
+                    "]"}]}], "}"}], "]"}]}]}]}], "]"}], 
+             RowBox[{
+              RowBox[{"coefficientMatrixRank", "==", "augmentedMatrixRank"}], 
+              "\[And]", 
+              RowBox[{"SquareMatrixQ", "[", "coefficientMatrix", "]"}]}]},
+            {
+             RowBox[{"Times", "@@", 
+              RowBox[{"Power", "@@@", 
+               RowBox[{"Transpose", "[", 
+                RowBox[{"{", 
+                 RowBox[{"list", ",", 
+                  RowBox[{"SolveForAllDimensionalCombinations", "[", 
+                   RowBox[{"list", ",", "unit"}], "]"}]}], "}"}], "]"}]}]}], 
+             RowBox[{
+              RowBox[{"coefficientMatrixRank", ">", "augmentedMatrixRank"}], 
+              "\[Or]", 
+              RowBox[{"!", 
+               RowBox[{"SquareMatrixQ", "[", "coefficientMatrix", "]"}]}]}]}
+           },
+           AllowedDimensions->{2, Automatic},
+           Editable->True,
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+           
+           GridBoxItemSize->{
+            "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{1.}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.84]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.4]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}},
+           Selectable->True]}
+        },
+        GridBoxAlignment->{
+         "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}},
+           "RowsIndexed" -> {}},
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.27999999999999997`], {
+             Offset[0.35]}, 
+            Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+            Offset[0.2], {
+             Offset[0.4]}, 
+            Offset[0.2]}, "RowsIndexed" -> {}}],
+       "Piecewise",
+       DeleteWithContents->True,
+       Editable->False,
+       SelectWithContents->True,
+       Selectable->False,
+       StripWrapperBoxes->True]}]}], "]"}], "//", 
+   "Quiet"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"PlanckBasis", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Quantity", "[", "\"\<ReducedPlanckConstant\>\"", "]"}], ",", 
+     RowBox[{"Quantity", "[", "\"\<GravitationalConstant\>\"", "]"}], ",", 
+     RowBox[{"Quantity", "[", "\"\<SpeedOfLight\>\"", "]"}], ",", 
+     RowBox[{"Quantity", "[", "\"\<BoltzmannConstant\>\"", "]"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"HartreeBasis", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Quantity", "[", "\"\<ReducedPlanckConstant\>\"", "]"}], ",", 
+     RowBox[{"Quantity", "[", "\"\<BohrRadius\>\"", "]"}], ",", 
+     RowBox[{"Quantity", "[", "\"\<ElectronMass\>\"", "]"}], ",", 
+     RowBox[{"Quantity", "[", "\"\<ElementaryCharge\>\"", "]"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"QCDUnitBasis", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Quantity", "[", "\"\<SpeedOfLight\>\"", "]"}], ",", 
+     RowBox[{"Quantity", "[", "\"\<ProtonMass\>\"", "]"}], ",", 
+     RowBox[{"Quantity", "[", "\"\<ReducedPlanckConstant\>\"", "]"}], ",", 
+     RowBox[{"Quantity", "[", "\"\<ElectricConstant\>\"", "]"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"DimensionalTransform", "[", 
+    RowBox[{"unit_", ",", "\"\<Planck\>\""}], "]"}], ":=", 
+   RowBox[{"DimensionalTransform", "[", 
+    RowBox[{"unit", ",", "PlanckBasis"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"DimensionalTransform", "[", 
+    RowBox[{"unit_", ",", "\"\<Hartree\>\""}], "]"}], ":=", 
+   RowBox[{"DimensionalTransform", "[", 
+    RowBox[{"unit", ",", "HartreeBasis"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"DimensionalTransform", "[", 
+    RowBox[{"unit_", ",", "\"\<QCD\>\""}], "]"}], ":=", 
+   RowBox[{"DimensionalTransform", "[", 
+    RowBox[{"unit", ",", "QCDUnitBasis"}], "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.8729486560286264`*^9, 3.8729487389372635`*^9}, {
+  3.872948773236276*^9, 3.872948784745569*^9}, {3.8729488750826488`*^9, 
+  3.8729488857732716`*^9}},
+ CellLabel->"In[27]:=",
+ CellID->52398159,ExpressionUUID->"7950f357-5ee1-4cd0-9545-13c2650f4e38"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DimensionalTransform", "[", 
+  RowBox[{
+   RowBox[{"Quantity", "[", "\"\<Webers\>\"", "]"}], ",", "\"\<Planck\>\""}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.872948787791495*^9, 3.8729487965164423`*^9}},
+ CellLabel->"In[25]:=",
+ CellID->7184055,ExpressionUUID->"e5720a7a-8493-40e9-915e-ebc6aeae45a3"],
+
+Cell[BoxData["\<\"no dimensional combination exists\"\>"], "Output",
+ CellChangeTimes->{3.872948796823067*^9},
+ CellLabel->"Out[25]=",
+ CellID->197601893,ExpressionUUID->"694a8284-57d0-4fb8-915e-aab024aaff60"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DimensionalTransform", "[", 
+  RowBox[{
+   RowBox[{"Quantity", "[", "\"\<Webers\>\"", "]"}], ",", "\"\<Hartree\>\""}],
+   "]"}]], "Input",
+ CellChangeTimes->{{3.872948787791495*^9, 3.8729488016769905`*^9}},
+ CellLabel->"In[26]:=",
+ CellID->624648966,ExpressionUUID->"62a4177e-f7a4-4ba5-918d-d44b55f63514"],
+
+Cell[BoxData[
+ TemplateBox[{"1", 
+   RowBox[{"\"\[HBar]\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+     StyleBox["\"e\"", Italic, StripOnInput -> False]}], 
+   "reduced Planck constant per elementary charge", 
+   FractionBox["\"ReducedPlanckConstant\"", "\"ElementaryCharge\""]},
+  "Quantity"]], "Output",
+ CellChangeTimes->{3.8729488019966717`*^9},
+ CellLabel->"Out[26]=",
+ CellID->259954062,ExpressionUUID->"7b40445a-ee27-4298-91fa-aaf328e69e7b"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DimensionalTransform", "[", 
+  RowBox[{
+   RowBox[{"Quantity", "[", "\"\<Webers\>\"", "]"}], ",", "\"\<QCD\>\""}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.872948787791495*^9, 3.8729488051307435`*^9}, {
+  3.8729488887524376`*^9, 3.872948889383404*^9}},
+ CellLabel->"In[38]:=",
+ CellID->661929912,ExpressionUUID->"0fa21098-d0c0-4f74-91d6-9e08ad007f61"],
+
+Cell[BoxData[
+ TemplateBox[{"1", 
+   RowBox[{
+     SqrtBox["\"\[HBar]\""], "\[NegativeMediumSpace]", "\"/(\"", 
+     "\[InvisibleSpace]", 
+     SqrtBox[
+      SubscriptBox["\"\[CurlyEpsilon]\"", "0"]], "\[InvisibleSpace]", 
+     SqrtBox[
+      StyleBox["\"c\"", Italic, StripOnInput -> False]], "\[InvisibleSpace]", 
+     "\")\""}], 
+   "square root reduced Planck constant per square root electric constant \
+square root speed of light", 
+   FractionBox[
+    SqrtBox["\"ReducedPlanckConstant\""], 
+    RowBox[{
+      SqrtBox["\"ElectricConstant\""], " ", 
+      SqrtBox["\"SpeedOfLight\""]}]]},
+  "Quantity"]], "Output",
+ CellChangeTimes->{3.8729488896898546`*^9},
+ CellLabel->"Out[38]=",
+ CellID->583867819,ExpressionUUID->"068d2c70-2acf-4ff7-911b-3751e884449f"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SlideView", "[", 
+  InterpretationBox[
+   DynamicModuleBox[{Typeset`open = False}, 
+    TemplateBox[{"List", "ListIcon", 
+      GridBox[{{
+         RowBox[{
+           TagBox["\"Head: \"", "IconizedLabel"], "\[InvisibleSpace]", 
+           TagBox["List", "IconizedItem"]}]}, {
+         RowBox[{
+           TagBox["\"Length: \"", "IconizedLabel"], "\[InvisibleSpace]", 
+           TagBox["9", "IconizedItem"]}]}, {
+         RowBox[{
+           TagBox["\"Byte count: \"", "IconizedLabel"], "\[InvisibleSpace]", 
+           TagBox["37840", "IconizedItem"]}]}}, 
+       GridBoxAlignment -> {"Columns" -> {{Left}}}, DefaultBaseStyle -> 
+       "Column", 
+       GridBoxItemSize -> {
+        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+      Dynamic[Typeset`open]},
+     "IconizedObject"]],
+   {
+    Labeled[
+     Grid[{{"LengthUnit", 
+        Quantity[1, "ReducedPlanckConstant"/("ProtonMass" "SpeedOfLight")], 
+        Quantity[2.1030891033555918`*^-16, "Meters"]}, {"MassUnit", 
+        Quantity[1, "ProtonMass"], 
+        Quantity[1.67262192369*^-27, "Kilograms"]}, {"TimeUnit", 
+        Quantity[1, "ReducedPlanckConstant"/("ProtonMass" "SpeedOfLight"^2)], 
+        Quantity[7.015150138819009*^-25, "Seconds"]}, {"TemperatureUnit", 
+        Quantity[1, "ProtonMass" ("SpeedOfLight"^2/"BoltzmannConstant")], 
+        Quantity[1.0888195450003047`*^13, "Kelvins"]}, {"ElectricCurrentUnit", 
+        Quantity[
+        1, ("ElementaryCharge" "ProtonMass") ("SpeedOfLight"^2/(
+          Sqrt["FineStructureConstant"] "ReducedPlanckConstant"))], 
+        Quantity[2.673565070829108*^6, "Amperes"]}}, 
+      ItemSize -> {Automatic, Automatic}], 
+     "GaussianQuantumChromodynamicsUnits", Top, {}], 
+    Labeled[
+     Grid[{{"LengthUnit", 
+        Quantity[1, "ReducedPlanckConstant"/("ProtonMass" "SpeedOfLight")], 
+        Quantity[2.1030891033555918`*^-16, "Meters"]}, {"MassUnit", 
+        Quantity[1, "ProtonMass"], 
+        Quantity[1.67262192369*^-27, "Kilograms"]}, {"TimeUnit", 
+        Quantity[1, "ReducedPlanckConstant"/("ProtonMass" "SpeedOfLight"^2)], 
+        Quantity[7.015150138819009*^-25, "Seconds"]}, {"TemperatureUnit", 
+        Quantity[1, "ProtonMass" ("SpeedOfLight"^2/"BoltzmannConstant")], 
+        Quantity[1.0888195450003047`*^13, "Kelvins"]}, {"ElectricCurrentUnit", 
+        Quantity[
+        1/(2 Sqrt[Pi]), ("ElementaryCharge" "ProtonMass") ("SpeedOfLight"^2/(
+          Sqrt["FineStructureConstant"] "ReducedPlanckConstant"))], 
+        Quantity[754198.781949451, "Amperes"]}}, 
+      ItemSize -> {Automatic, Automatic}], 
+     "LorentzHeavisideQuantumChromodynamicsUnits", Top, {}], 
+    Labeled[
+     Grid[{{"LengthUnit", 
+        Quantity[1, "ReducedPlanckConstant" ("SpeedOfLight"/"Electronvolts")], 
+        Quantity[1.973269804593025*^-7, "Meters"]}, {"MassUnit", 
+        Quantity[1, "Electronvolts"/"SpeedOfLight"^2], 
+        Quantity[1.782661921627898*^-36, "Kilograms"]}, {"TimeUnit", 
+        Quantity[1, "ReducedPlanckConstant"/"Electronvolts"], 
+        Quantity[6.582119569509065*^-16, "Seconds"]}, {"TemperatureUnit", 
+        Quantity[1, "Electronvolts"/"BoltzmannConstant"], 
+        Quantity[11604.518121550083`, "Kelvins"]}, {"ElectricCurrentUnit", 
+        Quantity[
+        1, "Electronvolts" ("ElementaryCharge"/(Sqrt["FineStructureConstant"] 
+          "ReducedPlanckConstant"))], 
+        Quantity[0.0028494560421921, "Amperes"]}}, 
+      ItemSize -> {Automatic, Automatic}], "GaussianNaturalUnits", Top, {}], 
+    Labeled[
+     Grid[{{"LengthUnit", 
+        Quantity[1, "ReducedPlanckConstant" ("SpeedOfLight"/"Electronvolts")], 
+        Quantity[1.973269804593025*^-7, "Meters"]}, {"MassUnit", 
+        Quantity[1, "Electronvolts"/"SpeedOfLight"^2], 
+        Quantity[1.782661921627898*^-36, "Kilograms"]}, {"TimeUnit", 
+        Quantity[1, "ReducedPlanckConstant"/"Electronvolts"], 
+        Quantity[6.582119569509065*^-16, "Seconds"]}, {"TemperatureUnit", 
+        Quantity[1, "Electronvolts"/"BoltzmannConstant"], 
+        Quantity[11604.518121550083`, "Kelvins"]}, {"ElectricCurrentUnit", 
+        Quantity[
+        1/(2 Sqrt[Pi]), 
+         "Electronvolts" ("ElementaryCharge"/(Sqrt["FineStructureConstant"] 
+          "ReducedPlanckConstant"))], 
+        Quantity[0.0008038167088909993, "Amperes"]}}, 
+      ItemSize -> {Automatic, Automatic}], "LorentzHeavisideNaturalUnits", 
+     Top, {}], 
+    Labeled[
+     Grid[{{"LengthUnit", 
+        Quantity[1, 1/Sqrt["CosmologicalConstant"]], 
+        Quantity[9.510448211356669*^25, "Meters"]}, {"MassUnit", 
+        Quantity[
+        1, "SpeedOfLight"^2/(Sqrt["CosmologicalConstant"] 
+         "GravitationalConstant")], 
+        Quantity[1.280668322080984*^53, "Kilograms"]}, {"TimeUnit", 
+        Quantity[1, 1/(Sqrt["CosmologicalConstant"] "SpeedOfLight")], 
+        Quantity[3.172344052550071*^17, "Seconds"]}, {"TemperatureUnit", 
+        Quantity[
+        1, "SpeedOfLight"^4/(("BoltzmannConstant" 
+          Sqrt["CosmologicalConstant"]) "GravitationalConstant")], 
+        Quantity[8.33671184142005*^92, "Kelvins"]}, {"ElectricCurrentUnit", 
+        Quantity[
+        2 Sqrt[Pi], 
+         Sqrt["ElectricConstant"] ("SpeedOfLight"^3/Sqrt[
+          "GravitationalConstant"])], 
+        Quantity[3.478872753751307*^25, "Amperes"]}}, 
+      ItemSize -> {Automatic, Automatic}], "DeSitterUnits", Top, {}], 
+    Labeled[
+     Grid[{{"LengthUnit", 
+        Quantity[
+        1/(2 Sqrt[Pi]), 
+         "ElementaryCharge" (Sqrt["GravitationalConstant"]/(
+          Sqrt["ElectricConstant"] "SpeedOfLight"^2))], 
+        Quantity[1.3806784704588333`*^-36, "Meters"]}, {"MassUnit", 
+        Quantity[
+        1/(2 Sqrt[Pi]), "ElementaryCharge"/(Sqrt["ElectricConstant"] 
+         Sqrt["GravitationalConstant"])], 
+        Quantity[1.8592090938305215`*^-9, "Kilograms"]}, {"TimeUnit", 
+        Quantity[
+        1/(2 Sqrt[Pi]), 
+         "ElementaryCharge" (Sqrt["GravitationalConstant"]/(
+          Sqrt["ElectricConstant"] "SpeedOfLight"^3))], 
+        Quantity[4.6054476475816916`*^-45, "Seconds"]}, {"TemperatureUnit", 
+        Quantity[
+        1/(2 Sqrt[Pi]), 
+         "ElementaryCharge" (
+          "SpeedOfLight"^2/(("BoltzmannConstant" Sqrt["ElectricConstant"]) 
+          Sqrt["GravitationalConstant"]))], 
+        Quantity[1.210281397686716*^31, "Kelvins"]}, {"ElectricCurrentUnit", 
+        Quantity[
+        2 Sqrt[Pi], 
+         Sqrt["ElectricConstant"] ("SpeedOfLight"^3/Sqrt[
+          "GravitationalConstant"])], 
+        Quantity[3.478872753751307*^25, "Amperes"]}}, 
+      ItemSize -> {Automatic, Automatic}], "StonyUnits", Top, {}], 
+    Labeled[
+     Grid[{{"LengthUnit", 
+        Quantity[
+        1, Sqrt["GravitationalConstant"] (Sqrt["ReducedPlanckConstant"]/
+          "SpeedOfLight"^(3/2))], 
+        Quantity[1.6162550244237055`*^-35, "Meters"]}, {"MassUnit", 
+        Quantity[
+        1, Sqrt["ReducedPlanckConstant"] (Sqrt["SpeedOfLight"]/Sqrt[
+          "GravitationalConstant"])], 
+        Quantity[2.1764343427178967`*^-8, "Kilograms"]}, {"TimeUnit", 
+        Quantity[
+        1, Sqrt["GravitationalConstant"] (Sqrt["ReducedPlanckConstant"]/
+          "SpeedOfLight"^(5/2))], 
+        Quantity[5.391246448313604*^-44, "Seconds"]}, {"TemperatureUnit", 
+        Quantity[
+        1, Sqrt["ReducedPlanckConstant"] ("SpeedOfLight"^(5/2)/(
+          "BoltzmannConstant" Sqrt["GravitationalConstant"]))], 
+        Quantity[1.4167841621573426`*^32, "Kelvins"]}, {"ElectricCurrentUnit", 
+        Quantity[
+        2 Sqrt[Pi], 
+         Sqrt["ElectricConstant"] ("SpeedOfLight"^3/Sqrt[
+          "GravitationalConstant"])], 
+        Quantity[3.478872753751307*^25, "Amperes"]}}, 
+      ItemSize -> {Automatic, Automatic}], "PlanckUnits", Top, {}], 
+    Labeled[
+     Grid[{{"LengthUnit", 
+        Quantity[
+        Pi, "ElectricConstant" ("ReducedPlanckConstant"^2/("ElectronMass" 
+          "ElementaryCharge"^2))], 
+        Quantity[1.3229430272652133`*^-11, "Meters"]}, {"MassUnit", 
+        Quantity[2, "ElectronMass"], 
+        Quantity[1.8218767403*^-30, "Kilograms"]}, {"TimeUnit", 
+        Quantity[
+        2 Pi^2, "ElectricConstant"^2 ("ReducedPlanckConstant"^3/(
+          "ElectronMass" "ElementaryCharge"^4))], 
+        Quantity[3.0236054082561884`*^-18, "Seconds"]}, {"TemperatureUnit", 
+        Quantity[
+        1/(32 Pi^2), 
+         "ElectronMass" (
+          "ElementaryCharge"^4/(("BoltzmannConstant" "ElectricConstant"^2) 
+          "ReducedPlanckConstant"^2))], 
+        Quantity[157887.5124007781, "Kelvins"]}, {"ElectricCurrentUnit", 
+        Quantity[
+        1/((32 Sqrt[2]) Pi^2), 
+         "ElectronMass" ("ElementaryCharge"^5/("ElectricConstant"^2 
+          "ReducedPlanckConstant"^3))], 
+        Quantity[0.002341802685848447, "Amperes"]}}, 
+      ItemSize -> {Automatic, Automatic}], "RydbergAtomicUnits", Top, {}], 
+    Labeled[
+     Grid[{{"LengthUnit", 
+        Quantity[
+        4 Pi, "ElectricConstant" ("ReducedPlanckConstant"^2/("ElectronMass" 
+          "ElementaryCharge"^2))], 
+        Quantity[5.291772109060853*^-11, "Meters"]}, {"MassUnit", 
+        Quantity[1, "ElectronMass"], 
+        Quantity[9.1093837015*^-31, "Kilograms"]}, {"TimeUnit", 
+        Quantity[
+        16 Pi^2, 
+         "ElectricConstant"^2 ("ReducedPlanckConstant"^3/("ElectronMass" 
+          "ElementaryCharge"^4))], 
+        Quantity[2.4188843266049507`*^-17, "Seconds"]}, {"TemperatureUnit", 
+        Quantity[
+        1/(16 Pi^2), 
+         "ElectronMass" (
+          "ElementaryCharge"^4/(("BoltzmannConstant" "ElectricConstant"^2) 
+          "ReducedPlanckConstant"^2))], 
+        Quantity[315775.0248015562, "Kelvins"]}, {"ElectricCurrentUnit", 
+        Quantity[
+        1/(16 Pi^2), 
+         "ElectronMass" ("ElementaryCharge"^5/("ElectricConstant"^2 
+          "ReducedPlanckConstant"^3))], 
+        Quantity[0.00662361823745723, "Amperes"]}}, 
+      ItemSize -> {Automatic, Automatic}], "HartreeAtomicUnits", Top, {}]},
+   SelectWithContents->True,
+   Selectable->False], "]"}]], "Input",
+ CellLabel->"In[39]:=",
+ CellID->420505388,ExpressionUUID->"3cf87226-bb8d-4029-89bf-d2adeed8c605"],
+
+Cell[BoxData[
+ TagBox[
+  DynamicModuleBox[{Typeset`var$$ = 9}, 
+   InterpretationBox[
+    TagBox[
+     PanelBox[GridBox[{
+        {
+         ItemBox[GridBox[{
+            {GridBox[{
+               {
+                TagBox[
+                 TooltipBox[
+                  ButtonBox[
+                   StyleBox["\<\"\[FirstPage]\"\>",
+                    StripOnInput->False,
+                    FontSize->18],
+                   Appearance->"Palette",
+                   ButtonFunction:>If[Typeset`var$$ =!= 1, Typeset`var$$ = 1],
+                   ContentPadding->False,
+                   Enabled->Automatic,
+                   Evaluator->Automatic,
+                   ImageSize->Small,
+                   Method->"Preemptive"],
+                  DynamicBox[
+                   ToBoxes[
+                    FEPrivate`FrontEndResource[
+                    "SlideshowToolbarText", "TooltipFirstSlide"], 
+                    StandardForm]]],
+                 Annotation[#, 
+                  Dynamic[
+                   FEPrivate`FrontEndResource[
+                   "SlideshowToolbarText", "TooltipFirstSlide"]], 
+                  "Tooltip"]& ], 
+                TagBox[
+                 TooltipBox[
+                  ButtonBox[
+                   StyleBox["\<\"\[LeftPointer]\"\>",
+                    StripOnInput->False,
+                    FontSize->18],
+                   Appearance->"Palette",
+                   ButtonFunction:>If[Typeset`var$$ > 1, 
+                    PreDecrement[Typeset`var$$]],
+                   ContentPadding->False,
+                   Enabled->Automatic,
+                   Evaluator->Automatic,
+                   ImageSize->Small,
+                   Method->"Preemptive"],
+                  DynamicBox[
+                   ToBoxes[
+                    FEPrivate`FrontEndResource[
+                    "SlideshowToolbarText", "TooltipPreviousSlide"], 
+                    StandardForm]]],
+                 Annotation[#, 
+                  Dynamic[
+                   FEPrivate`FrontEndResource[
+                   "SlideshowToolbarText", "TooltipPreviousSlide"]], 
+                  "Tooltip"]& ], 
+                TagBox[
+                 TooltipBox[
+                  ButtonBox[
+                   StyleBox["\<\"\[RightPointer]\"\>",
+                    StripOnInput->False,
+                    FontSize->18],
+                   Appearance->"Palette",
+                   ButtonFunction:>If[Typeset`var$$ < 9, 
+                    PreIncrement[Typeset`var$$]],
+                   ContentPadding->False,
+                   Enabled->Automatic,
+                   Evaluator->Automatic,
+                   ImageSize->Small,
+                   Method->"Preemptive"],
+                  DynamicBox[
+                   ToBoxes[
+                    FEPrivate`FrontEndResource[
+                    "SlideshowToolbarText", "TooltipNextSlide"], 
+                    StandardForm]]],
+                 Annotation[#, 
+                  Dynamic[
+                   FEPrivate`FrontEndResource[
+                   "SlideshowToolbarText", "TooltipNextSlide"]], 
+                  "Tooltip"]& ], 
+                TagBox[
+                 TooltipBox[
+                  ButtonBox[
+                   StyleBox["\<\"\[LastPage]\"\>",
+                    StripOnInput->False,
+                    FontSize->18],
+                   Appearance->"Palette",
+                   ButtonFunction:>If[Typeset`var$$ =!= 9, Typeset`var$$ = 9],
+                   ContentPadding->False,
+                   Enabled->Automatic,
+                   Evaluator->Automatic,
+                   ImageSize->Small,
+                   Method->"Preemptive"],
+                  DynamicBox[
+                   ToBoxes[
+                    FEPrivate`FrontEndResource[
+                    "SlideshowToolbarText", "TooltipLastSlide"], 
+                    StandardForm]]],
+                 Annotation[#, 
+                  Dynamic[
+                   FEPrivate`FrontEndResource[
+                   "SlideshowToolbarText", "TooltipLastSlide"]], "Tooltip"]& ]}
+              },
+              AutoDelete->False,
+              
+              GridBoxItemSize->{
+               "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+              GridBoxSpacings->{"Columns" -> {
+                  Offset[0.27999999999999997`], {
+                   Offset[0.]}, 
+                  Offset[0.27999999999999997`]}, "Rows" -> {
+                  Offset[0.2], {
+                   Offset[0.4]}, 
+                  Offset[0.2]}}]}
+           },
+           AutoDelete->False,
+           GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+           
+           GridBoxItemSize->{
+            "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+          Alignment->Left,
+          StripOnInput->False]},
+        {
+         ItemBox[
+          StyleBox[
+           PaneSelectorBox[{1->
+            TemplateBox[{
+              TagBox[
+               GridBox[{{"\"LengthUnit\"", 
+                  TemplateBox[{"1", 
+                    
+                    RowBox[{
+                    "\"\[HBar]\"", "\[InvisibleSpace]", "\"/(\"", 
+                    "\[InvisibleSpace]", 
+                    SubscriptBox[
+                    StyleBox["\"m\"", Italic, StripOnInput -> False], 
+                    StyleBox["\"p\"", Italic, StripOnInput -> False]], 
+                    "\[ThinSpace]", 
+                    StyleBox["\"c\"", Italic, StripOnInput -> False], 
+                    "\[InvisibleSpace]", "\")\""}], 
+                    "reduced Planck constant per proton mass speed of light", 
+                    FractionBox["\"ReducedPlanckConstant\"", 
+                    RowBox[{"\"ProtonMass\"", " ", "\"SpeedOfLight\""}]]}, 
+                   "Quantity", SyntaxForm -> Mod], 
+                  
+                  TemplateBox[{
+                   "2.1030891033555918`*^-16", "\"m\"", "meters", 
+                    "\"Meters\""}, "Quantity", SyntaxForm -> Mod]}, {
+                 "\"MassUnit\"", 
+                  TemplateBox[{
+                    InterpretationBox["\[InvisibleSpace]", 1], 
+                    SubscriptBox[
+                    StyleBox["\"m\"", Italic, StripOnInput -> False], 
+                    StyleBox["\"p\"", Italic, StripOnInput -> False]], 
+                    "proton mass", "\"ProtonMass\""}, "Quantity", SyntaxForm -> 
+                   Mod], 
+                  
+                  TemplateBox[{
+                   "1.67262192369`*^-27", "\"kg\"", "kilograms", 
+                    "\"Kilograms\""}, "Quantity", SyntaxForm -> Mod]}, {
+                 "\"TimeUnit\"", 
+                  TemplateBox[{"1", 
+                    
+                    RowBox[{
+                    "\"\[HBar]\"", "\[InvisibleSpace]", "\"/(\"", 
+                    "\[InvisibleSpace]", 
+                    SubscriptBox[
+                    StyleBox["\"m\"", Italic, StripOnInput -> False], 
+                    StyleBox["\"p\"", Italic, StripOnInput -> False]], 
+                    "\[ThinSpace]", 
+                    SuperscriptBox[
+                    StyleBox["\"c\"", Italic, StripOnInput -> False], "2"], 
+                    "\[InvisibleSpace]", "\")\""}], 
+                    "reduced Planck constant per proton mass speed of light \
+squared", 
+                    FractionBox["\"ReducedPlanckConstant\"", 
+                    RowBox[{"\"ProtonMass\"", " ", 
+                    SuperscriptBox["\"SpeedOfLight\"", "2"]}]]}, "Quantity", 
+                   SyntaxForm -> Mod], 
+                  
+                  TemplateBox[{
+                   "7.015150138819009`*^-25", "\"s\"", "seconds", 
+                    "\"Seconds\""}, "Quantity", SyntaxForm -> Mod]}, {
+                 "\"TemperatureUnit\"", 
+                  TemplateBox[{"1", 
+                    RowBox[{
+                    SubscriptBox[
+                    StyleBox["\"m\"", Italic, StripOnInput -> False], 
+                    StyleBox["\"p\"", Italic, StripOnInput -> False]], 
+                    "\[ThinSpace]", 
+                    SuperscriptBox[
+                    StyleBox["\"c\"", Italic, StripOnInput -> False], "2"], 
+                    "\[NegativeMediumSpace]", "\"/\"", "\[InvisibleSpace]", 
+                    StyleBox["\"k\"", Italic, StripOnInput -> False]}], 
+                    "proton mass speed of light squared per Boltzmann \
+constant", 
+                    FractionBox[
+                    RowBox[{"\"ProtonMass\"", " ", 
+                    SuperscriptBox["\"SpeedOfLight\"", "2"]}], 
+                    "\"BoltzmannConstant\""]}, "Quantity", SyntaxForm -> Mod], 
+                  TemplateBox[{
+                   "1.0888195450003047`*^13", "\"K\"", "kelvins", 
+                    "\"Kelvins\""}, "Quantity", SyntaxForm -> Mod]}, {
+                 "\"ElectricCurrentUnit\"", 
+                  TemplateBox[{"1", 
+                    RowBox[{
+                    SubscriptBox[
+                    StyleBox["\"m\"", Italic, StripOnInput -> False], 
+                    StyleBox["\"p\"", Italic, StripOnInput -> False]], 
+                    "\[ThinSpace]", 
+                    StyleBox["\"e\"", Italic, StripOnInput -> False], 
+                    "\[ThinSpace]", 
+                    SuperscriptBox[
+                    StyleBox["\"c\"", Italic, StripOnInput -> False], "2"], 
+                    "\[NegativeMediumSpace]", "\"/(\"", "\[InvisibleSpace]", 
+                    SqrtBox["\"\[Alpha]\""], "\[InvisibleSpace]", 
+                    "\"\[HBar]\"", "\[InvisibleSpace]", "\")\""}], 
+                    "proton mass elementary charge speed of light squared per \
+square root fine structure constant reduced Planck constant", 
+                    FractionBox[
+                    
+                    RowBox[{
+                    "\"ElementaryCharge\"", " ", "\"ProtonMass\"", " ", 
+                    SuperscriptBox["\"SpeedOfLight\"", "2"]}], 
+                    RowBox[{
+                    SqrtBox["\"FineStructureConstant\""], " ", 
+                    "\"ReducedPlanckConstant\""}]]}, "Quantity", SyntaxForm -> 
+                   Mod], 
+                  
+                  TemplateBox[{
+                   "2.673565070829108`*^6", "\"A\"", "amperes", 
+                    "\"Amperes\""}, "Quantity", SyntaxForm -> Mod]}}, 
+                AutoDelete -> False, 
+                GridBoxItemSize -> {
+                 "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+               "Grid"], "\"GaussianQuantumChromodynamicsUnits\""},
+             "Labeled",
+             DisplayFunction->(GridBox[{{
+                 ItemBox[#2, DefaultBaseStyle -> "LabeledLabel"]}, {
+                 TagBox[
+                  ItemBox[
+                   PaneBox[
+                    TagBox[#, "SkipImageSizeLevel"], 
+                    Alignment -> {Center, Baseline}, BaselinePosition -> 
+                    Baseline], DefaultBaseStyle -> "Labeled"], 
+                  "SkipImageSizeLevel"]}}, 
+               GridBoxAlignment -> {
+                "Columns" -> {{Center}}, "Rows" -> {{Center}}}, AutoDelete -> 
+               False, GridBoxItemSize -> {
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+               BaselinePosition -> {2, 1}]& ),
+             InterpretationFunction->(RowBox[{"Labeled", "[", 
+                RowBox[{#, ",", #2, ",", "Top", ",", 
+                  RowBox[{"{", "}"}]}], "]"}]& )], 2->
+            TemplateBox[{
+              TagBox[
+               GridBox[{{"\"LengthUnit\"", 
+                  TemplateBox[{"1", 
+                    
+                    RowBox[{
+                    "\"\[HBar]\"", "\[InvisibleSpace]", "\"/(\"", 
+                    "\[InvisibleSpace]", 
+                    SubscriptBox[
+                    StyleBox["\"m\"", Italic, StripOnInput -> False], 
+                    StyleBox["\"p\"", Italic, StripOnInput -> False]], 
+                    "\[ThinSpace]", 
+                    StyleBox["\"c\"", Italic, StripOnInput -> False], 
+                    "\[InvisibleSpace]", "\")\""}], 
+                    "reduced Planck constant per proton mass speed of light", 
+                    FractionBox["\"ReducedPlanckConstant\"", 
+                    RowBox[{"\"ProtonMass\"", " ", "\"SpeedOfLight\""}]]}, 
+                   "Quantity", SyntaxForm -> Mod], 
+                  
+                  TemplateBox[{
+                   "2.1030891033555918`*^-16", "\"m\"", "meters", 
+                    "\"Meters\""}, "Quantity", SyntaxForm -> Mod]}, {
+                 "\"MassUnit\"", 
+                  TemplateBox[{
+                    InterpretationBox["\[InvisibleSpace]", 1], 
+                    SubscriptBox[
+                    StyleBox["\"m\"", Italic, StripOnInput -> False], 
+                    StyleBox["\"p\"", Italic, StripOnInput -> False]], 
+                    "proton mass", "\"ProtonMass\""}, "Quantity", SyntaxForm -> 
+                   Mod], 
+                  
+                  TemplateBox[{
+                   "1.67262192369`*^-27", "\"kg\"", "kilograms", 
+                    "\"Kilograms\""}, "Quantity", SyntaxForm -> Mod]}, {
+                 "\"TimeUnit\"", 
+                  TemplateBox[{"1", 
+                    
+                    RowBox[{
+                    "\"\[HBar]\"", "\[InvisibleSpace]", "\"/(\"", 
+                    "\[InvisibleSpace]", 
+                    SubscriptBox[
+                    StyleBox["\"m\"", Italic, StripOnInput -> False], 
+                    StyleBox["\"p\"", Italic, StripOnInput -> False]], 
+                    "\[ThinSpace]", 
+                    SuperscriptBox[
+                    StyleBox["\"c\"", Italic, StripOnInput -> False], "2"], 
+                    "\[InvisibleSpace]", "\")\""}], 
+                    "reduced Planck constant per proton mass speed of light \
+squared", 
+                    FractionBox["\"ReducedPlanckConstant\"", 
+                    RowBox[{"\"ProtonMass\"", " ", 
+                    SuperscriptBox["\"SpeedOfLight\"", "2"]}]]}, "Quantity", 
+                   SyntaxForm -> Mod], 
+                  
+                  TemplateBox[{
+                   "7.015150138819009`*^-25", "\"s\"", "seconds", 
+                    "\"Seconds\""}, "Quantity", SyntaxForm -> Mod]}, {
+                 "\"TemperatureUnit\"", 
+                  TemplateBox[{"1", 
+                    RowBox[{
+                    SubscriptBox[
+                    StyleBox["\"m\"", Italic, StripOnInput -> False], 
+                    StyleBox["\"p\"", Italic, StripOnInput -> False]], 
+                    "\[ThinSpace]", 
+                    SuperscriptBox[
+                    StyleBox["\"c\"", Italic, StripOnInput -> False], "2"], 
+                    "\[NegativeMediumSpace]", "\"/\"", "\[InvisibleSpace]", 
+                    StyleBox["\"k\"", Italic, StripOnInput -> False]}], 
+                    "proton mass speed of light squared per Boltzmann \
+constant", 
+                    FractionBox[
+                    RowBox[{"\"ProtonMass\"", " ", 
+                    SuperscriptBox["\"SpeedOfLight\"", "2"]}], 
+                    "\"BoltzmannConstant\""]}, "Quantity", SyntaxForm -> Mod], 
+                  
+                  TemplateBox[{
+                   "1.0888195450003047`*^13", "\"K\"", "kelvins", 
+                    "\"Kelvins\""}, "Quantity", SyntaxForm -> Mod]}, {
+                 "\"ElectricCurrentUnit\"", 
+                  TemplateBox[{
+                    FractionBox["1", 
+                    RowBox[{"2", " ", 
+                    SqrtBox["\[Pi]"]}]], 
+                    RowBox[{
+                    SubscriptBox[
+                    StyleBox["\"m\"", Italic, StripOnInput -> False], 
+                    StyleBox["\"p\"", Italic, StripOnInput -> False]], 
+                    "\[ThinSpace]", 
+                    StyleBox["\"e\"", Italic, StripOnInput -> False], 
+                    "\[ThinSpace]", 
+                    SuperscriptBox[
+                    StyleBox["\"c\"", Italic, StripOnInput -> False], "2"], 
+                    "\[NegativeMediumSpace]", "\"/(\"", "\[InvisibleSpace]", 
+                    SqrtBox["\"\[Alpha]\""], "\[InvisibleSpace]", 
+                    "\"\[HBar]\"", "\[InvisibleSpace]", "\")\""}], 
+                    "proton mass elementary charge speed of light squared per \
+square root fine structure constant reduced Planck constant", 
+                    FractionBox[
+                    
+                    RowBox[{
+                    "\"ElementaryCharge\"", " ", "\"ProtonMass\"", " ", 
+                    SuperscriptBox["\"SpeedOfLight\"", "2"]}], 
+                    RowBox[{
+                    SqrtBox["\"FineStructureConstant\""], " ", 
+                    "\"ReducedPlanckConstant\""}]]}, "Quantity", SyntaxForm -> 
+                   Mod], 
+                  
+                  TemplateBox[{
+                   "754198.781949451`", "\"A\"", "amperes", "\"Amperes\""}, 
+                   "Quantity", SyntaxForm -> Mod]}}, AutoDelete -> False, 
+                GridBoxItemSize -> {
+                 "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+               "Grid"], "\"LorentzHeavisideQuantumChromodynamicsUnits\""},
+             "Labeled",
+             DisplayFunction->(GridBox[{{
+                 ItemBox[#2, DefaultBaseStyle -> "LabeledLabel"]}, {
+                 TagBox[
+                  ItemBox[
+                   PaneBox[
+                    TagBox[#, "SkipImageSizeLevel"], 
+                    Alignment -> {Center, Baseline}, BaselinePosition -> 
+                    Baseline], DefaultBaseStyle -> "Labeled"], 
+                  "SkipImageSizeLevel"]}}, 
+               GridBoxAlignment -> {
+                "Columns" -> {{Center}}, "Rows" -> {{Center}}}, AutoDelete -> 
+               False, GridBoxItemSize -> {
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+               BaselinePosition -> {2, 1}]& ),
+             InterpretationFunction->(RowBox[{"Labeled", "[", 
+                RowBox[{#, ",", #2, ",", "Top", ",", 
+                  RowBox[{"{", "}"}]}], "]"}]& )], 3->
+            TemplateBox[{
+              TagBox[
+               GridBox[{{"\"LengthUnit\"", 
+                  TemplateBox[{"1", 
+                    RowBox[{"\"\[HBar]\"", "\[ThinSpace]", 
+                    StyleBox["\"c\"", Italic, StripOnInput -> False], 
+                    "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+                    "\"eV\""}], 
+                    "reduced Planck constant speed of light per electronvolt", 
+                    FractionBox[
+                    
+                    RowBox[{
+                    "\"ReducedPlanckConstant\"", " ", "\"SpeedOfLight\""}], 
+                    "\"Electronvolts\""]}, "Quantity", SyntaxForm -> Mod], 
+                  
+                  TemplateBox[{
+                   "1.973269804593025`*^-7", "\"m\"", "meters", "\"Meters\""},
+                    "Quantity", SyntaxForm -> Mod]}, {"\"MassUnit\"", 
+                  TemplateBox[{"1", 
+                    
+                    RowBox[{
+                    "\"eV\"", "\[InvisibleSpace]", "\"/\"", 
+                    "\[InvisibleSpace]", 
+                    SuperscriptBox[
+                    StyleBox["\"c\"", Italic, StripOnInput -> False], "2"]}], 
+                    "electronvolt per speed of light squared", 
+                    FractionBox["\"Electronvolts\"", 
+                    SuperscriptBox["\"SpeedOfLight\"", "2"]]}, "Quantity", 
+                   SyntaxForm -> Mod], 
+                  
+                  TemplateBox[{
+                   "1.782661921627898`*^-36", "\"kg\"", "kilograms", 
+                    "\"Kilograms\""}, "Quantity", SyntaxForm -> Mod]}, {
+                 "\"TimeUnit\"", 
+                  TemplateBox[{"1", 
+                    
+                    RowBox[{
+                    "\"\[HBar]\"", "\[InvisibleSpace]", "\"/\"", 
+                    "\[InvisibleSpace]", "\"eV\""}], 
+                    "reduced Planck constant per electronvolt", 
+                    FractionBox[
+                    "\"ReducedPlanckConstant\"", "\"Electronvolts\""]}, 
+                   "Quantity", SyntaxForm -> Mod], 
+                  
+                  TemplateBox[{
+                   "6.582119569509065`*^-16", "\"s\"", "seconds", 
+                    "\"Seconds\""}, "Quantity", SyntaxForm -> Mod]}, {
+                 "\"TemperatureUnit\"", 
+                  TemplateBox[{"1", 
+                    
+                    RowBox[{
+                    "\"eV\"", "\[InvisibleSpace]", "\"/\"", 
+                    "\[InvisibleSpace]", 
+                    StyleBox["\"k\"", Italic, StripOnInput -> False]}], 
+                    "electronvolt per Boltzmann constant", 
+                    FractionBox[
+                    "\"Electronvolts\"", "\"BoltzmannConstant\""]}, 
+                   "Quantity", SyntaxForm -> Mod], 
+                  
+                  TemplateBox[{
+                   "11604.518121550083`", "\"K\"", "kelvins", "\"Kelvins\""}, 
+                   "Quantity", SyntaxForm -> Mod]}, {
+                 "\"ElectricCurrentUnit\"", 
+                  TemplateBox[{"1", 
+                    RowBox[{"\"eV\"", "\[ThinSpace]", 
+                    StyleBox["\"e\"", Italic, StripOnInput -> False], 
+                    "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", 
+                    SqrtBox["\"\[Alpha]\""], "\[InvisibleSpace]", 
+                    "\"\[HBar]\"", "\[InvisibleSpace]", "\")\""}], 
+                    "electronvolt elementary charge per square root fine \
+structure constant reduced Planck constant", 
+                    FractionBox[
+                    
+                    RowBox[{
+                    "\"Electronvolts\"", " ", "\"ElementaryCharge\""}], 
+                    RowBox[{
+                    SqrtBox["\"FineStructureConstant\""], " ", 
+                    "\"ReducedPlanckConstant\""}]]}, "Quantity", SyntaxForm -> 
+                   Mod], 
+                  
+                  TemplateBox[{
+                   "0.0028494560421921`", "\"A\"", "amperes", "\"Amperes\""}, 
+                   "Quantity", SyntaxForm -> Mod]}}, AutoDelete -> False, 
+                GridBoxItemSize -> {
+                 "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+               "Grid"], "\"GaussianNaturalUnits\""},
+             "Labeled",
+             DisplayFunction->(GridBox[{{
+                 ItemBox[#2, DefaultBaseStyle -> "LabeledLabel"]}, {
+                 TagBox[
+                  ItemBox[
+                   PaneBox[
+                    TagBox[#, "SkipImageSizeLevel"], 
+                    Alignment -> {Center, Baseline}, BaselinePosition -> 
+                    Baseline], DefaultBaseStyle -> "Labeled"], 
+                  "SkipImageSizeLevel"]}}, 
+               GridBoxAlignment -> {
+                "Columns" -> {{Center}}, "Rows" -> {{Center}}}, AutoDelete -> 
+               False, GridBoxItemSize -> {
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+               BaselinePosition -> {2, 1}]& ),
+             InterpretationFunction->(RowBox[{"Labeled", "[", 
+                RowBox[{#, ",", #2, ",", "Top", ",", 
+                  RowBox[{"{", "}"}]}], "]"}]& )], 4->
+            TemplateBox[{
+              TagBox[
+               GridBox[{{"\"LengthUnit\"", 
+                  TemplateBox[{"1", 
+                    RowBox[{"\"\[HBar]\"", "\[ThinSpace]", 
+                    StyleBox["\"c\"", Italic, StripOnInput -> False], 
+                    "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+                    "\"eV\""}], 
+                    "reduced Planck constant speed of light per electronvolt", 
+                    FractionBox[
+                    
+                    RowBox[{
+                    "\"ReducedPlanckConstant\"", " ", "\"SpeedOfLight\""}], 
+                    "\"Electronvolts\""]}, "Quantity", SyntaxForm -> Mod], 
+                  
+                  TemplateBox[{
+                   "1.973269804593025`*^-7", "\"m\"", "meters", "\"Meters\""},
+                    "Quantity", SyntaxForm -> Mod]}, {"\"MassUnit\"", 
+                  TemplateBox[{"1", 
+                    
+                    RowBox[{
+                    "\"eV\"", "\[InvisibleSpace]", "\"/\"", 
+                    "\[InvisibleSpace]", 
+                    SuperscriptBox[
+                    StyleBox["\"c\"", Italic, StripOnInput -> False], "2"]}], 
+                    "electronvolt per speed of light squared", 
+                    FractionBox["\"Electronvolts\"", 
+                    SuperscriptBox["\"SpeedOfLight\"", "2"]]}, "Quantity", 
+                   SyntaxForm -> Mod], 
+                  
+                  TemplateBox[{
+                   "1.782661921627898`*^-36", "\"kg\"", "kilograms", 
+                    "\"Kilograms\""}, "Quantity", SyntaxForm -> Mod]}, {
+                 "\"TimeUnit\"", 
+                  TemplateBox[{"1", 
+                    
+                    RowBox[{
+                    "\"\[HBar]\"", "\[InvisibleSpace]", "\"/\"", 
+                    "\[InvisibleSpace]", "\"eV\""}], 
+                    "reduced Planck constant per electronvolt", 
+                    FractionBox[
+                    "\"ReducedPlanckConstant\"", "\"Electronvolts\""]}, 
+                   "Quantity", SyntaxForm -> Mod], 
+                  
+                  TemplateBox[{
+                   "6.582119569509065`*^-16", "\"s\"", "seconds", 
+                    "\"Seconds\""}, "Quantity", SyntaxForm -> Mod]}, {
+                 "\"TemperatureUnit\"", 
+                  TemplateBox[{"1", 
+                    
+                    RowBox[{
+                    "\"eV\"", "\[InvisibleSpace]", "\"/\"", 
+                    "\[InvisibleSpace]", 
+                    StyleBox["\"k\"", Italic, StripOnInput -> False]}], 
+                    "electronvolt per Boltzmann constant", 
+                    FractionBox[
+                    "\"Electronvolts\"", "\"BoltzmannConstant\""]}, 
+                   "Quantity", SyntaxForm -> Mod], 
+                  
+                  TemplateBox[{
+                   "11604.518121550083`", "\"K\"", "kelvins", "\"Kelvins\""}, 
+                   "Quantity", SyntaxForm -> Mod]}, {
+                 "\"ElectricCurrentUnit\"", 
+                  TemplateBox[{
+                    FractionBox["1", 
+                    RowBox[{"2", " ", 
+                    SqrtBox["\[Pi]"]}]], 
+                    RowBox[{"\"eV\"", "\[ThinSpace]", 
+                    StyleBox["\"e\"", Italic, StripOnInput -> False], 
+                    "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", 
+                    SqrtBox["\"\[Alpha]\""], "\[InvisibleSpace]", 
+                    "\"\[HBar]\"", "\[InvisibleSpace]", "\")\""}], 
+                    "electronvolt elementary charges per square root fine \
+structure constant reduced Planck constant", 
+                    FractionBox[
+                    
+                    RowBox[{
+                    "\"Electronvolts\"", " ", "\"ElementaryCharge\""}], 
+                    RowBox[{
+                    SqrtBox["\"FineStructureConstant\""], " ", 
+                    "\"ReducedPlanckConstant\""}]]}, "Quantity", SyntaxForm -> 
+                   Mod], 
+                  
+                  TemplateBox[{
+                   "0.0008038167088909993`", "\"A\"", "amperes", 
+                    "\"Amperes\""}, "Quantity", SyntaxForm -> Mod]}}, 
+                AutoDelete -> False, 
+                GridBoxItemSize -> {
+                 "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+               "Grid"], "\"LorentzHeavisideNaturalUnits\""},
+             "Labeled",
+             DisplayFunction->(GridBox[{{
+                 ItemBox[#2, DefaultBaseStyle -> "LabeledLabel"]}, {
+                 TagBox[
+                  ItemBox[
+                   PaneBox[
+                    TagBox[#, "SkipImageSizeLevel"], 
+                    Alignment -> {Center, Baseline}, BaselinePosition -> 
+                    Baseline], DefaultBaseStyle -> "Labeled"], 
+                  "SkipImageSizeLevel"]}}, 
+               GridBoxAlignment -> {
+                "Columns" -> {{Center}}, "Rows" -> {{Center}}}, AutoDelete -> 
+               False, GridBoxItemSize -> {
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+               BaselinePosition -> {2, 1}]& ),
+             InterpretationFunction->(RowBox[{"Labeled", "[", 
+                RowBox[{#, ",", #2, ",", "Top", ",", 
+                  RowBox[{"{", "}"}]}], "]"}]& )], 5->
+            TemplateBox[{
+              TagBox[
+               GridBox[{{"\"LengthUnit\"", 
+                  TemplateBox[{"1", 
+                    RowBox[{"\"/\"", "\[InvisibleSpace]", 
+                    SqrtBox["\"\[CapitalLambda]\""]}], 
+                    "per square root cosmological constant", 
+                    FractionBox["1", 
+                    SqrtBox["\"CosmologicalConstant\""]]}, "Quantity", 
+                   SyntaxForm -> Mod], 
+                  
+                  TemplateBox[{
+                   "9.510448211356669`*^25", "\"m\"", "meters", "\"Meters\""},
+                    "Quantity", SyntaxForm -> Mod]}, {"\"MassUnit\"", 
+                  TemplateBox[{"1", 
+                    RowBox[{
+                    SuperscriptBox[
+                    StyleBox["\"c\"", Italic, StripOnInput -> False], "2"], 
+                    "\[NegativeMediumSpace]", "\"/(\"", "\[InvisibleSpace]", 
+                    SqrtBox["\"\[CapitalLambda]\""], "\[InvisibleSpace]", 
+                    StyleBox["\"G\"", Italic, StripOnInput -> False], 
+                    "\[InvisibleSpace]", "\")\""}], 
+                    "speed of light squared per square root cosmological \
+constant Newtonian gravitational constant", 
+                    FractionBox[
+                    SuperscriptBox["\"SpeedOfLight\"", "2"], 
+                    RowBox[{
+                    SqrtBox["\"CosmologicalConstant\""], " ", 
+                    "\"GravitationalConstant\""}]]}, "Quantity", SyntaxForm -> 
+                   Mod], 
+                  
+                  TemplateBox[{
+                   "1.280668322080984`*^53", "\"kg\"", "kilograms", 
+                    "\"Kilograms\""}, "Quantity", SyntaxForm -> Mod]}, {
+                 "\"TimeUnit\"", 
+                  TemplateBox[{"1", 
+                    RowBox[{"\"/(\"", "\[InvisibleSpace]", 
+                    SqrtBox["\"\[CapitalLambda]\""], "\[InvisibleSpace]", 
+                    StyleBox["\"c\"", Italic, StripOnInput -> False], 
+                    "\[InvisibleSpace]", "\")\""}], 
+                    "per square root cosmological constant speed of light", 
+                    FractionBox["1", 
+                    RowBox[{
+                    SqrtBox["\"CosmologicalConstant\""], " ", 
+                    "\"SpeedOfLight\""}]]}, "Quantity", SyntaxForm -> Mod], 
+                  
+                  TemplateBox[{
+                   "3.172344052550071`*^17", "\"s\"", "seconds", 
+                    "\"Seconds\""}, "Quantity", SyntaxForm -> Mod]}, {
+                 "\"TemperatureUnit\"", 
+                  TemplateBox[{"1", 
+                    RowBox[{
+                    SuperscriptBox[
+                    StyleBox["\"c\"", Italic, StripOnInput -> False], "4"], 
+                    "\[NegativeMediumSpace]", "\"/(\"", "\[InvisibleSpace]", 
+                    SqrtBox["\"\[CapitalLambda]\""], "\[InvisibleSpace]", 
+                    StyleBox["\"k\"", Italic, StripOnInput -> False], 
+                    "\[ThinSpace]", 
+                    StyleBox["\"G\"", Italic, StripOnInput -> False], 
+                    "\[InvisibleSpace]", "\")\""}], 
+                    "speed of light to the fourth per square root \
+cosmological constant Boltzmann constant Newtonian gravitational constant", 
+                    FractionBox[
+                    SuperscriptBox["\"SpeedOfLight\"", "4"], 
+                    RowBox[{"\"BoltzmannConstant\"", " ", 
+                    SqrtBox["\"CosmologicalConstant\""], " ", 
+                    "\"GravitationalConstant\""}]]}, "Quantity", SyntaxForm -> 
+                   Mod], 
+                  
+                  TemplateBox[{
+                   "8.33671184142005`*^92", "\"K\"", "kelvins", 
+                    "\"Kelvins\""}, "Quantity", SyntaxForm -> Mod]}, {
+                 "\"ElectricCurrentUnit\"", 
+                  TemplateBox[{
+                    RowBox[{"2", " ", 
+                    SqrtBox["\[Pi]"]}], 
+                    RowBox[{
+                    SqrtBox[
+                    SubscriptBox["\"\[CurlyEpsilon]\"", "0"]], 
+                    "\[InvisibleSpace]", 
+                    SuperscriptBox[
+                    StyleBox["\"c\"", Italic, StripOnInput -> False], "3"], 
+                    "\[NegativeMediumSpace]", "\"/\"", "\[InvisibleSpace]", 
+                    SqrtBox[
+                    StyleBox["\"G\"", Italic, StripOnInput -> False]]}], 
+                    "square root electric constant speed of light cubed per \
+square root Newtonian gravitational constant", 
+                    FractionBox[
+                    RowBox[{
+                    SqrtBox["\"ElectricConstant\""], " ", 
+                    SuperscriptBox["\"SpeedOfLight\"", "3"]}], 
+                    SqrtBox["\"GravitationalConstant\""]]}, "Quantity", 
+                   SyntaxForm -> Mod], 
+                  
+                  TemplateBox[{
+                   "3.478872753751307`*^25", "\"A\"", "amperes", 
+                    "\"Amperes\""}, "Quantity", SyntaxForm -> Mod]}}, 
+                AutoDelete -> False, 
+                GridBoxItemSize -> {
+                 "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+               "Grid"], "\"DeSitterUnits\""},
+             "Labeled",
+             DisplayFunction->(GridBox[{{
+                 ItemBox[#2, DefaultBaseStyle -> "LabeledLabel"]}, {
+                 TagBox[
+                  ItemBox[
+                   PaneBox[
+                    TagBox[#, "SkipImageSizeLevel"], 
+                    Alignment -> {Center, Baseline}, BaselinePosition -> 
+                    Baseline], DefaultBaseStyle -> "Labeled"], 
+                  "SkipImageSizeLevel"]}}, 
+               GridBoxAlignment -> {
+                "Columns" -> {{Center}}, "Rows" -> {{Center}}}, AutoDelete -> 
+               False, GridBoxItemSize -> {
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+               BaselinePosition -> {2, 1}]& ),
+             InterpretationFunction->(RowBox[{"Labeled", "[", 
+                RowBox[{#, ",", #2, ",", "Top", ",", 
+                  RowBox[{"{", "}"}]}], "]"}]& )], 6->
+            TemplateBox[{
+              TagBox[
+               GridBox[{{"\"LengthUnit\"", 
+                  TemplateBox[{
+                    FractionBox["1", 
+                    RowBox[{"2", " ", 
+                    SqrtBox["\[Pi]"]}]], 
+                    RowBox[{
+                    StyleBox["\"e\"", Italic, StripOnInput -> False], 
+                    "\[ThinSpace]", 
+                    SqrtBox[
+                    StyleBox["\"G\"", Italic, StripOnInput -> False]], 
+                    "\[NegativeMediumSpace]", "\"/(\"", "\[InvisibleSpace]", 
+                    SqrtBox[
+                    SubscriptBox["\"\[CurlyEpsilon]\"", "0"]], 
+                    "\[InvisibleSpace]", 
+                    SuperscriptBox[
+                    StyleBox["\"c\"", Italic, StripOnInput -> False], "2"], 
+                    "\[InvisibleSpace]", "\")\""}], 
+                    "elementary charge square root Newtonian gravitational \
+constants per square root electric constant speed of light squared", 
+                    FractionBox[
+                    RowBox[{"\"ElementaryCharge\"", " ", 
+                    SqrtBox["\"GravitationalConstant\""]}], 
+                    RowBox[{
+                    SqrtBox["\"ElectricConstant\""], " ", 
+                    SuperscriptBox["\"SpeedOfLight\"", "2"]}]]}, "Quantity", 
+                   SyntaxForm -> Mod], 
+                  
+                  TemplateBox[{
+                   "1.3806784704588333`*^-36", "\"m\"", "meters", 
+                    "\"Meters\""}, "Quantity", SyntaxForm -> Mod]}, {
+                 "\"MassUnit\"", 
+                  TemplateBox[{
+                    FractionBox["1", 
+                    RowBox[{"2", " ", 
+                    SqrtBox["\[Pi]"]}]], 
+                    RowBox[{
+                    StyleBox["\"e\"", Italic, StripOnInput -> False], 
+                    "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", 
+                    SqrtBox[
+                    SubscriptBox["\"\[CurlyEpsilon]\"", "0"]], 
+                    "\[InvisibleSpace]", 
+                    SqrtBox[
+                    StyleBox["\"G\"", Italic, StripOnInput -> False]], 
+                    "\[InvisibleSpace]", "\")\""}], 
+                    
+                    "elementary charges per square root electric constant \
+square root Newtonian gravitational constant", 
+                    FractionBox["\"ElementaryCharge\"", 
+                    RowBox[{
+                    SqrtBox["\"ElectricConstant\""], " ", 
+                    SqrtBox["\"GravitationalConstant\""]}]]}, "Quantity", 
+                   SyntaxForm -> Mod], 
+                  
+                  TemplateBox[{
+                   "1.8592090938305215`*^-9", "\"kg\"", "kilograms", 
+                    "\"Kilograms\""}, "Quantity", SyntaxForm -> Mod]}, {
+                 "\"TimeUnit\"", 
+                  TemplateBox[{
+                    FractionBox["1", 
+                    RowBox[{"2", " ", 
+                    SqrtBox["\[Pi]"]}]], 
+                    RowBox[{
+                    StyleBox["\"e\"", Italic, StripOnInput -> False], 
+                    "\[ThinSpace]", 
+                    SqrtBox[
+                    StyleBox["\"G\"", Italic, StripOnInput -> False]], 
+                    "\[NegativeMediumSpace]", "\"/(\"", "\[InvisibleSpace]", 
+                    SqrtBox[
+                    SubscriptBox["\"\[CurlyEpsilon]\"", "0"]], 
+                    "\[InvisibleSpace]", 
+                    SuperscriptBox[
+                    StyleBox["\"c\"", Italic, StripOnInput -> False], "3"], 
+                    "\[InvisibleSpace]", "\")\""}], 
+                    "elementary charge square root Newtonian gravitational \
+constants per square root electric constant speed of light cubed", 
+                    FractionBox[
+                    RowBox[{"\"ElementaryCharge\"", " ", 
+                    SqrtBox["\"GravitationalConstant\""]}], 
+                    RowBox[{
+                    SqrtBox["\"ElectricConstant\""], " ", 
+                    SuperscriptBox["\"SpeedOfLight\"", "3"]}]]}, "Quantity", 
+                   SyntaxForm -> Mod], 
+                  
+                  TemplateBox[{
+                   "4.6054476475816916`*^-45", "\"s\"", "seconds", 
+                    "\"Seconds\""}, "Quantity", SyntaxForm -> Mod]}, {
+                 "\"TemperatureUnit\"", 
+                  TemplateBox[{
+                    FractionBox["1", 
+                    RowBox[{"2", " ", 
+                    SqrtBox["\[Pi]"]}]], 
+                    RowBox[{
+                    StyleBox["\"e\"", Italic, StripOnInput -> False], 
+                    "\[ThinSpace]", 
+                    SuperscriptBox[
+                    StyleBox["\"c\"", Italic, StripOnInput -> False], "2"], 
+                    "\[NegativeMediumSpace]", "\"/(\"", "\[InvisibleSpace]", 
+                    StyleBox["\"k\"", Italic, StripOnInput -> False], 
+                    "\[ThinSpace]", 
+                    SqrtBox[
+                    SubscriptBox["\"\[CurlyEpsilon]\"", "0"]], 
+                    "\[InvisibleSpace]", 
+                    SqrtBox[
+                    StyleBox["\"G\"", Italic, StripOnInput -> False]], 
+                    "\[InvisibleSpace]", "\")\""}], 
+                    "elementary charge speed of light squared per Boltzmann \
+constant square root electric constant square root Newtonian gravitational \
+constant", 
+                    FractionBox[
+                    RowBox[{"\"ElementaryCharge\"", " ", 
+                    SuperscriptBox["\"SpeedOfLight\"", "2"]}], 
+                    RowBox[{"\"BoltzmannConstant\"", " ", 
+                    SqrtBox["\"ElectricConstant\""], " ", 
+                    SqrtBox["\"GravitationalConstant\""]}]]}, "Quantity", 
+                   SyntaxForm -> Mod], 
+                  
+                  TemplateBox[{
+                   "1.210281397686716`*^31", "\"K\"", "kelvins", 
+                    "\"Kelvins\""}, "Quantity", SyntaxForm -> Mod]}, {
+                 "\"ElectricCurrentUnit\"", 
+                  TemplateBox[{
+                    RowBox[{"2", " ", 
+                    SqrtBox["\[Pi]"]}], 
+                    RowBox[{
+                    SqrtBox[
+                    SubscriptBox["\"\[CurlyEpsilon]\"", "0"]], 
+                    "\[InvisibleSpace]", 
+                    SuperscriptBox[
+                    StyleBox["\"c\"", Italic, StripOnInput -> False], "3"], 
+                    "\[NegativeMediumSpace]", "\"/\"", "\[InvisibleSpace]", 
+                    SqrtBox[
+                    StyleBox["\"G\"", Italic, StripOnInput -> False]]}], 
+                    "square root electric constant speed of light cubed per \
+square root Newtonian gravitational constant", 
+                    FractionBox[
+                    RowBox[{
+                    SqrtBox["\"ElectricConstant\""], " ", 
+                    SuperscriptBox["\"SpeedOfLight\"", "3"]}], 
+                    SqrtBox["\"GravitationalConstant\""]]}, "Quantity", 
+                   SyntaxForm -> Mod], 
+                  
+                  TemplateBox[{
+                   "3.478872753751307`*^25", "\"A\"", "amperes", 
+                    "\"Amperes\""}, "Quantity", SyntaxForm -> Mod]}}, 
+                AutoDelete -> False, 
+                GridBoxItemSize -> {
+                 "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+               "Grid"], "\"StonyUnits\""},
+             "Labeled",
+             DisplayFunction->(GridBox[{{
+                 ItemBox[#2, DefaultBaseStyle -> "LabeledLabel"]}, {
+                 TagBox[
+                  ItemBox[
+                   PaneBox[
+                    TagBox[#, "SkipImageSizeLevel"], 
+                    Alignment -> {Center, Baseline}, BaselinePosition -> 
+                    Baseline], DefaultBaseStyle -> "Labeled"], 
+                  "SkipImageSizeLevel"]}}, 
+               GridBoxAlignment -> {
+                "Columns" -> {{Center}}, "Rows" -> {{Center}}}, AutoDelete -> 
+               False, GridBoxItemSize -> {
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+               BaselinePosition -> {2, 1}]& ),
+             InterpretationFunction->(RowBox[{"Labeled", "[", 
+                RowBox[{#, ",", #2, ",", "Top", ",", 
+                  RowBox[{"{", "}"}]}], "]"}]& )], 7->
+            TemplateBox[{
+              TagBox[
+               GridBox[{{"\"LengthUnit\"", 
+                  TemplateBox[{"1", 
+                    RowBox[{
+                    SqrtBox[
+                    StyleBox["\"G\"", Italic, StripOnInput -> False]], 
+                    "\[InvisibleSpace]", 
+                    SqrtBox["\"\[HBar]\""], "\[NegativeMediumSpace]", "\"/\"",
+                     "\[InvisibleSpace]", 
+                    SuperscriptBox[
+                    StyleBox["\"c\"", Italic, StripOnInput -> False], 
+                    RowBox[{"3", "/", "2"}]]}], 
+                    "square root Newtonian gravitational constant square root \
+reduced Planck constant per speed of light to the 3/2", 
+                    FractionBox[
+                    RowBox[{
+                    SqrtBox["\"GravitationalConstant\""], " ", 
+                    SqrtBox["\"ReducedPlanckConstant\""]}], 
+                    SuperscriptBox["\"SpeedOfLight\"", 
+                    RowBox[{"3", "/", "2"}]]]}, "Quantity", SyntaxForm -> 
+                   Mod], 
+                  
+                  TemplateBox[{
+                   "1.6162550244237055`*^-35", "\"m\"", "meters", 
+                    "\"Meters\""}, "Quantity", SyntaxForm -> Mod]}, {
+                 "\"MassUnit\"", 
+                  TemplateBox[{"1", 
+                    RowBox[{
+                    SqrtBox["\"\[HBar]\""], "\[InvisibleSpace]", 
+                    SqrtBox[
+                    StyleBox["\"c\"", Italic, StripOnInput -> False]], 
+                    "\[NegativeMediumSpace]", "\"/\"", "\[InvisibleSpace]", 
+                    SqrtBox[
+                    StyleBox["\"G\"", Italic, StripOnInput -> False]]}], 
+                    "square root reduced Planck constant square root speed of \
+light per square root Newtonian gravitational constant", 
+                    FractionBox[
+                    RowBox[{
+                    SqrtBox["\"ReducedPlanckConstant\""], " ", 
+                    SqrtBox["\"SpeedOfLight\""]}], 
+                    SqrtBox["\"GravitationalConstant\""]]}, "Quantity", 
+                   SyntaxForm -> Mod], 
+                  
+                  TemplateBox[{
+                   "2.1764343427178967`*^-8", "\"kg\"", "kilograms", 
+                    "\"Kilograms\""}, "Quantity", SyntaxForm -> Mod]}, {
+                 "\"TimeUnit\"", 
+                  TemplateBox[{"1", 
+                    RowBox[{
+                    SqrtBox[
+                    StyleBox["\"G\"", Italic, StripOnInput -> False]], 
+                    "\[InvisibleSpace]", 
+                    SqrtBox["\"\[HBar]\""], "\[NegativeMediumSpace]", "\"/\"",
+                     "\[InvisibleSpace]", 
+                    SuperscriptBox[
+                    StyleBox["\"c\"", Italic, StripOnInput -> False], 
+                    RowBox[{"5", "/", "2"}]]}], 
+                    "square root Newtonian gravitational constant square root \
+reduced Planck constant per speed of light to the 5/2", 
+                    FractionBox[
+                    RowBox[{
+                    SqrtBox["\"GravitationalConstant\""], " ", 
+                    SqrtBox["\"ReducedPlanckConstant\""]}], 
+                    SuperscriptBox["\"SpeedOfLight\"", 
+                    RowBox[{"5", "/", "2"}]]]}, "Quantity", SyntaxForm -> 
+                   Mod], 
+                  
+                  TemplateBox[{
+                   "5.391246448313604`*^-44", "\"s\"", "seconds", 
+                    "\"Seconds\""}, "Quantity", SyntaxForm -> Mod]}, {
+                 "\"TemperatureUnit\"", 
+                  TemplateBox[{"1", 
+                    RowBox[{
+                    SqrtBox["\"\[HBar]\""], "\[InvisibleSpace]", 
+                    SuperscriptBox[
+                    StyleBox["\"c\"", Italic, StripOnInput -> False], 
+                    RowBox[{"5", "/", "2"}]], "\[NegativeMediumSpace]", 
+                    "\"/(\"", "\[InvisibleSpace]", 
+                    StyleBox["\"k\"", Italic, StripOnInput -> False], 
+                    "\[ThinSpace]", 
+                    SqrtBox[
+                    StyleBox["\"G\"", Italic, StripOnInput -> False]], 
+                    "\[InvisibleSpace]", "\")\""}], 
+                    "square root reduced Planck constant speed of light to \
+the 5/2 per Boltzmann constant square root Newtonian gravitational constant", 
+                    FractionBox[
+                    RowBox[{
+                    SqrtBox["\"ReducedPlanckConstant\""], " ", 
+                    SuperscriptBox["\"SpeedOfLight\"", 
+                    RowBox[{"5", "/", "2"}]]}], 
+                    RowBox[{"\"BoltzmannConstant\"", " ", 
+                    SqrtBox["\"GravitationalConstant\""]}]]}, "Quantity", 
+                   SyntaxForm -> Mod], 
+                  
+                  TemplateBox[{
+                   "1.4167841621573426`*^32", "\"K\"", "kelvins", 
+                    "\"Kelvins\""}, "Quantity", SyntaxForm -> Mod]}, {
+                 "\"ElectricCurrentUnit\"", 
+                  TemplateBox[{
+                    RowBox[{"2", " ", 
+                    SqrtBox["\[Pi]"]}], 
+                    RowBox[{
+                    SqrtBox[
+                    SubscriptBox["\"\[CurlyEpsilon]\"", "0"]], 
+                    "\[InvisibleSpace]", 
+                    SuperscriptBox[
+                    StyleBox["\"c\"", Italic, StripOnInput -> False], "3"], 
+                    "\[NegativeMediumSpace]", "\"/\"", "\[InvisibleSpace]", 
+                    SqrtBox[
+                    StyleBox["\"G\"", Italic, StripOnInput -> False]]}], 
+                    "square root electric constant speed of light cubed per \
+square root Newtonian gravitational constant", 
+                    FractionBox[
+                    RowBox[{
+                    SqrtBox["\"ElectricConstant\""], " ", 
+                    SuperscriptBox["\"SpeedOfLight\"", "3"]}], 
+                    SqrtBox["\"GravitationalConstant\""]]}, "Quantity", 
+                   SyntaxForm -> Mod], 
+                  
+                  TemplateBox[{
+                   "3.478872753751307`*^25", "\"A\"", "amperes", 
+                    "\"Amperes\""}, "Quantity", SyntaxForm -> Mod]}}, 
+                AutoDelete -> False, 
+                GridBoxItemSize -> {
+                 "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+               "Grid"], "\"PlanckUnits\""},
+             "Labeled",
+             DisplayFunction->(GridBox[{{
+                 ItemBox[#2, DefaultBaseStyle -> "LabeledLabel"]}, {
+                 TagBox[
+                  ItemBox[
+                   PaneBox[
+                    TagBox[#, "SkipImageSizeLevel"], 
+                    Alignment -> {Center, Baseline}, BaselinePosition -> 
+                    Baseline], DefaultBaseStyle -> "Labeled"], 
+                  "SkipImageSizeLevel"]}}, 
+               GridBoxAlignment -> {
+                "Columns" -> {{Center}}, "Rows" -> {{Center}}}, AutoDelete -> 
+               False, GridBoxItemSize -> {
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+               BaselinePosition -> {2, 1}]& ),
+             InterpretationFunction->(RowBox[{"Labeled", "[", 
+                RowBox[{#, ",", #2, ",", "Top", ",", 
+                  RowBox[{"{", "}"}]}], "]"}]& )], 8->
+            TemplateBox[{
+              TagBox[
+               GridBox[{{"\"LengthUnit\"", 
+                  TemplateBox[{"\[Pi]", 
+                    RowBox[{
+                    SubscriptBox["\"\[CurlyEpsilon]\"", "0"], "\[ThinSpace]", 
+                    SuperscriptBox["\"\[HBar]\"", "2"], 
+                    "\[NegativeMediumSpace]", "\"/(\"", "\[InvisibleSpace]", 
+                    SubscriptBox[
+                    StyleBox["\"m\"", Italic, StripOnInput -> False], 
+                    StyleBox["\"e\"", Italic, StripOnInput -> False]], 
+                    "\[ThinSpace]", 
+                    SuperscriptBox[
+                    StyleBox["\"e\"", Italic, StripOnInput -> False], "2"], 
+                    "\[InvisibleSpace]", "\")\""}], 
+                    "electric constant reduced Planck constants squared per \
+electron mass elementary charge squared", 
+                    FractionBox[
+                    RowBox[{"\"ElectricConstant\"", " ", 
+                    SuperscriptBox["\"ReducedPlanckConstant\"", "2"]}], 
+                    RowBox[{"\"ElectronMass\"", " ", 
+                    SuperscriptBox["\"ElementaryCharge\"", "2"]}]]}, 
+                   "Quantity", SyntaxForm -> Mod], 
+                  
+                  TemplateBox[{
+                   "1.3229430272652133`*^-11", "\"m\"", "meters", 
+                    "\"Meters\""}, "Quantity", SyntaxForm -> Mod]}, {
+                 "\"MassUnit\"", 
+                  TemplateBox[{"2", 
+                    SubscriptBox[
+                    StyleBox["\"m\"", Italic, StripOnInput -> False], 
+                    StyleBox["\"e\"", Italic, StripOnInput -> False]], 
+                    "electron masses", "\"ElectronMass\""}, "Quantity", 
+                   SyntaxForm -> Mod], 
+                  
+                  TemplateBox[{
+                   "1.8218767403`*^-30", "\"kg\"", "kilograms", 
+                    "\"Kilograms\""}, "Quantity", SyntaxForm -> Mod]}, {
+                 "\"TimeUnit\"", 
+                  TemplateBox[{
+                    RowBox[{"2", " ", 
+                    SuperscriptBox["\[Pi]", "2"]}], 
+                    RowBox[{
+                    SubsuperscriptBox["\"\[CurlyEpsilon]\"", "0", "2"], 
+                    "\[InvisibleSpace]", 
+                    SuperscriptBox["\"\[HBar]\"", "3"], 
+                    "\[NegativeMediumSpace]", "\"/(\"", "\[InvisibleSpace]", 
+                    SubscriptBox[
+                    StyleBox["\"m\"", Italic, StripOnInput -> False], 
+                    StyleBox["\"e\"", Italic, StripOnInput -> False]], 
+                    "\[ThinSpace]", 
+                    SuperscriptBox[
+                    StyleBox["\"e\"", Italic, StripOnInput -> False], "4"], 
+                    "\[InvisibleSpace]", "\")\""}], 
+                    "electric constant squared reduced Planck constants cubed \
+per electron mass elementary charge to the fourth", 
+                    FractionBox[
+                    RowBox[{
+                    SuperscriptBox["\"ElectricConstant\"", "2"], " ", 
+                    SuperscriptBox["\"ReducedPlanckConstant\"", "3"]}], 
+                    RowBox[{"\"ElectronMass\"", " ", 
+                    SuperscriptBox["\"ElementaryCharge\"", "4"]}]]}, 
+                   "Quantity", SyntaxForm -> Mod], 
+                  
+                  TemplateBox[{
+                   "3.0236054082561884`*^-18", "\"s\"", "seconds", 
+                    "\"Seconds\""}, "Quantity", SyntaxForm -> Mod]}, {
+                 "\"TemperatureUnit\"", 
+                  TemplateBox[{
+                    FractionBox["1", 
+                    RowBox[{"32", " ", 
+                    SuperscriptBox["\[Pi]", "2"]}]], 
+                    RowBox[{
+                    SubscriptBox[
+                    StyleBox["\"m\"", Italic, StripOnInput -> False], 
+                    StyleBox["\"e\"", Italic, StripOnInput -> False]], 
+                    "\[ThinSpace]", 
+                    SuperscriptBox[
+                    StyleBox["\"e\"", Italic, StripOnInput -> False], "4"], 
+                    "\[NegativeMediumSpace]", "\"/(\"", "\[InvisibleSpace]", 
+                    StyleBox["\"k\"", Italic, StripOnInput -> False], 
+                    "\[ThinSpace]", 
+                    SubsuperscriptBox["\"\[CurlyEpsilon]\"", "0", "2"], 
+                    "\[InvisibleSpace]", 
+                    SuperscriptBox["\"\[HBar]\"", "2"], "\[InvisibleSpace]", 
+                    "\")\""}], 
+                    "electron mass elementary charges to the fourth per \
+Boltzmann constant electric constant squared reduced Planck constant squared", 
+                    FractionBox[
+                    RowBox[{"\"ElectronMass\"", " ", 
+                    SuperscriptBox["\"ElementaryCharge\"", "4"]}], 
+                    RowBox[{"\"BoltzmannConstant\"", " ", 
+                    SuperscriptBox["\"ElectricConstant\"", "2"], " ", 
+                    SuperscriptBox["\"ReducedPlanckConstant\"", "2"]}]]}, 
+                   "Quantity", SyntaxForm -> Mod], 
+                  
+                  TemplateBox[{
+                   "157887.5124007781`", "\"K\"", "kelvins", "\"Kelvins\""}, 
+                   "Quantity", SyntaxForm -> Mod]}, {
+                 "\"ElectricCurrentUnit\"", 
+                  TemplateBox[{
+                    FractionBox["1", 
+                    RowBox[{"32", " ", 
+                    SqrtBox["2"], " ", 
+                    SuperscriptBox["\[Pi]", "2"]}]], 
+                    RowBox[{
+                    SubscriptBox[
+                    StyleBox["\"m\"", Italic, StripOnInput -> False], 
+                    StyleBox["\"e\"", Italic, StripOnInput -> False]], 
+                    "\[ThinSpace]", 
+                    SuperscriptBox[
+                    StyleBox["\"e\"", Italic, StripOnInput -> False], "5"], 
+                    "\[NegativeMediumSpace]", "\"/(\"", "\[InvisibleSpace]", 
+                    SubsuperscriptBox["\"\[CurlyEpsilon]\"", "0", "2"], 
+                    "\[InvisibleSpace]", 
+                    SuperscriptBox["\"\[HBar]\"", "3"], "\[InvisibleSpace]", 
+                    "\")\""}], 
+                    "electron mass elementary charges to the fifth per \
+electric constant squared reduced Planck constant cubed", 
+                    FractionBox[
+                    RowBox[{"\"ElectronMass\"", " ", 
+                    SuperscriptBox["\"ElementaryCharge\"", "5"]}], 
+                    RowBox[{
+                    SuperscriptBox["\"ElectricConstant\"", "2"], " ", 
+                    SuperscriptBox["\"ReducedPlanckConstant\"", "3"]}]]}, 
+                   "Quantity", SyntaxForm -> Mod], 
+                  
+                  TemplateBox[{
+                   "0.002341802685848447`", "\"A\"", "amperes", 
+                    "\"Amperes\""}, "Quantity", SyntaxForm -> Mod]}}, 
+                AutoDelete -> False, 
+                GridBoxItemSize -> {
+                 "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+               "Grid"], "\"RydbergAtomicUnits\""},
+             "Labeled",
+             DisplayFunction->(GridBox[{{
+                 ItemBox[#2, DefaultBaseStyle -> "LabeledLabel"]}, {
+                 TagBox[
+                  ItemBox[
+                   PaneBox[
+                    TagBox[#, "SkipImageSizeLevel"], 
+                    Alignment -> {Center, Baseline}, BaselinePosition -> 
+                    Baseline], DefaultBaseStyle -> "Labeled"], 
+                  "SkipImageSizeLevel"]}}, 
+               GridBoxAlignment -> {
+                "Columns" -> {{Center}}, "Rows" -> {{Center}}}, AutoDelete -> 
+               False, GridBoxItemSize -> {
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+               BaselinePosition -> {2, 1}]& ),
+             InterpretationFunction->(RowBox[{"Labeled", "[", 
+                RowBox[{#, ",", #2, ",", "Top", ",", 
+                  RowBox[{"{", "}"}]}], "]"}]& )], 9->
+            TemplateBox[{
+              TagBox[
+               GridBox[{{"\"LengthUnit\"", 
+                  TemplateBox[{
+                    RowBox[{"4", " ", "\[Pi]"}], 
+                    RowBox[{
+                    SubscriptBox["\"\[CurlyEpsilon]\"", "0"], "\[ThinSpace]", 
+                    SuperscriptBox["\"\[HBar]\"", "2"], 
+                    "\[NegativeMediumSpace]", "\"/(\"", "\[InvisibleSpace]", 
+                    SubscriptBox[
+                    StyleBox["\"m\"", Italic, StripOnInput -> False], 
+                    StyleBox["\"e\"", Italic, StripOnInput -> False]], 
+                    "\[ThinSpace]", 
+                    SuperscriptBox[
+                    StyleBox["\"e\"", Italic, StripOnInput -> False], "2"], 
+                    "\[InvisibleSpace]", "\")\""}], 
+                    "electric constant reduced Planck constants squared per \
+electron mass elementary charge squared", 
+                    FractionBox[
+                    RowBox[{"\"ElectricConstant\"", " ", 
+                    SuperscriptBox["\"ReducedPlanckConstant\"", "2"]}], 
+                    RowBox[{"\"ElectronMass\"", " ", 
+                    SuperscriptBox["\"ElementaryCharge\"", "2"]}]]}, 
+                   "Quantity", SyntaxForm -> Mod], 
+                  
+                  TemplateBox[{
+                   "5.291772109060853`*^-11", "\"m\"", "meters", 
+                    "\"Meters\""}, "Quantity", SyntaxForm -> Mod]}, {
+                 "\"MassUnit\"", 
+                  TemplateBox[{
+                    InterpretationBox["\[InvisibleSpace]", 1], 
+                    SubscriptBox[
+                    StyleBox["\"m\"", Italic, StripOnInput -> False], 
+                    StyleBox["\"e\"", Italic, StripOnInput -> False]], 
+                    "electron mass", "\"ElectronMass\""}, "Quantity", 
+                   SyntaxForm -> Mod], 
+                  
+                  TemplateBox[{
+                   "9.1093837015`*^-31", "\"kg\"", "kilograms", 
+                    "\"Kilograms\""}, "Quantity", SyntaxForm -> Mod]}, {
+                 "\"TimeUnit\"", 
+                  TemplateBox[{
+                    RowBox[{"16", " ", 
+                    SuperscriptBox["\[Pi]", "2"]}], 
+                    RowBox[{
+                    SubsuperscriptBox["\"\[CurlyEpsilon]\"", "0", "2"], 
+                    "\[InvisibleSpace]", 
+                    SuperscriptBox["\"\[HBar]\"", "3"], 
+                    "\[NegativeMediumSpace]", "\"/(\"", "\[InvisibleSpace]", 
+                    SubscriptBox[
+                    StyleBox["\"m\"", Italic, StripOnInput -> False], 
+                    StyleBox["\"e\"", Italic, StripOnInput -> False]], 
+                    "\[ThinSpace]", 
+                    SuperscriptBox[
+                    StyleBox["\"e\"", Italic, StripOnInput -> False], "4"], 
+                    "\[InvisibleSpace]", "\")\""}], 
+                    "electric constant squared reduced Planck constants cubed \
+per electron mass elementary charge to the fourth", 
+                    FractionBox[
+                    RowBox[{
+                    SuperscriptBox["\"ElectricConstant\"", "2"], " ", 
+                    SuperscriptBox["\"ReducedPlanckConstant\"", "3"]}], 
+                    RowBox[{"\"ElectronMass\"", " ", 
+                    SuperscriptBox["\"ElementaryCharge\"", "4"]}]]}, 
+                   "Quantity", SyntaxForm -> Mod], 
+                  
+                  TemplateBox[{
+                   "2.4188843266049507`*^-17", "\"s\"", "seconds", 
+                    "\"Seconds\""}, "Quantity", SyntaxForm -> Mod]}, {
+                 "\"TemperatureUnit\"", 
+                  TemplateBox[{
+                    FractionBox["1", 
+                    RowBox[{"16", " ", 
+                    SuperscriptBox["\[Pi]", "2"]}]], 
+                    RowBox[{
+                    SubscriptBox[
+                    StyleBox["\"m\"", Italic, StripOnInput -> False], 
+                    StyleBox["\"e\"", Italic, StripOnInput -> False]], 
+                    "\[ThinSpace]", 
+                    SuperscriptBox[
+                    StyleBox["\"e\"", Italic, StripOnInput -> False], "4"], 
+                    "\[NegativeMediumSpace]", "\"/(\"", "\[InvisibleSpace]", 
+                    StyleBox["\"k\"", Italic, StripOnInput -> False], 
+                    "\[ThinSpace]", 
+                    SubsuperscriptBox["\"\[CurlyEpsilon]\"", "0", "2"], 
+                    "\[InvisibleSpace]", 
+                    SuperscriptBox["\"\[HBar]\"", "2"], "\[InvisibleSpace]", 
+                    "\")\""}], 
+                    "electron mass elementary charges to the fourth per \
+Boltzmann constant electric constant squared reduced Planck constant squared", 
+                    FractionBox[
+                    RowBox[{"\"ElectronMass\"", " ", 
+                    SuperscriptBox["\"ElementaryCharge\"", "4"]}], 
+                    RowBox[{"\"BoltzmannConstant\"", " ", 
+                    SuperscriptBox["\"ElectricConstant\"", "2"], " ", 
+                    SuperscriptBox["\"ReducedPlanckConstant\"", "2"]}]]}, 
+                   "Quantity", SyntaxForm -> Mod], 
+                  
+                  TemplateBox[{
+                   "315775.0248015562`", "\"K\"", "kelvins", "\"Kelvins\""}, 
+                   "Quantity", SyntaxForm -> Mod]}, {
+                 "\"ElectricCurrentUnit\"", 
+                  TemplateBox[{
+                    FractionBox["1", 
+                    RowBox[{"16", " ", 
+                    SuperscriptBox["\[Pi]", "2"]}]], 
+                    RowBox[{
+                    SubscriptBox[
+                    StyleBox["\"m\"", Italic, StripOnInput -> False], 
+                    StyleBox["\"e\"", Italic, StripOnInput -> False]], 
+                    "\[ThinSpace]", 
+                    SuperscriptBox[
+                    StyleBox["\"e\"", Italic, StripOnInput -> False], "5"], 
+                    "\[NegativeMediumSpace]", "\"/(\"", "\[InvisibleSpace]", 
+                    SubsuperscriptBox["\"\[CurlyEpsilon]\"", "0", "2"], 
+                    "\[InvisibleSpace]", 
+                    SuperscriptBox["\"\[HBar]\"", "3"], "\[InvisibleSpace]", 
+                    "\")\""}], 
+                    "electron mass elementary charges to the fifth per \
+electric constant squared reduced Planck constant cubed", 
+                    FractionBox[
+                    RowBox[{"\"ElectronMass\"", " ", 
+                    SuperscriptBox["\"ElementaryCharge\"", "5"]}], 
+                    RowBox[{
+                    SuperscriptBox["\"ElectricConstant\"", "2"], " ", 
+                    SuperscriptBox["\"ReducedPlanckConstant\"", "3"]}]]}, 
+                   "Quantity", SyntaxForm -> Mod], 
+                  
+                  TemplateBox[{
+                   "0.00662361823745723`", "\"A\"", "amperes", "\"Amperes\""},
+                    "Quantity", SyntaxForm -> Mod]}}, AutoDelete -> False, 
+                GridBoxItemSize -> {
+                 "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+               "Grid"], "\"HartreeAtomicUnits\""},
+             "Labeled",
+             DisplayFunction->(GridBox[{{
+                 ItemBox[#2, DefaultBaseStyle -> "LabeledLabel"]}, {
+                 TagBox[
+                  ItemBox[
+                   PaneBox[
+                    TagBox[#, "SkipImageSizeLevel"], 
+                    Alignment -> {Center, Baseline}, BaselinePosition -> 
+                    Baseline], DefaultBaseStyle -> "Labeled"], 
+                  "SkipImageSizeLevel"]}}, 
+               GridBoxAlignment -> {
+                "Columns" -> {{Center}}, "Rows" -> {{Center}}}, AutoDelete -> 
+               False, GridBoxItemSize -> {
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+               BaselinePosition -> {2, 1}]& ),
+             InterpretationFunction->(RowBox[{"Labeled", "[", 
+                RowBox[{#, ",", #2, ",", "Top", ",", 
+                  RowBox[{"{", "}"}]}], "]"}]& )]}, Dynamic[Typeset`var$$],
+            Alignment->Automatic,
+            ImageSize->All,
+            TransitionDirection->Horizontal,
+            TransitionDuration->0.5,
+            TransitionEffect->Automatic],
+           Deployed->False,
+           StripOnInput->False],
+          Background->GrayLevel[1],
+          Frame->True,
+          FrameStyle->GrayLevel[0.8235294117647058],
+          StripOnInput->False]}
+       },
+       AutoDelete->False,
+       GridBoxAlignment->{"Columns" -> {{Left}}},
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+      BaseStyle->{},
+      BaselinePosition->Automatic,
+      DefaultBaseStyle->"SlideView",
+      FrameMargins->6,
+      ImageMargins->Automatic],
+     Deploy,
+     DefaultBaseStyle->"Deploy"],
+    SlideView[{
+      Labeled[
+       Grid[{{"LengthUnit", 
+          Quantity[
+          1, "ProtonMass"^(-1) "ReducedPlanckConstant"/"SpeedOfLight"], 
+          Quantity[2.1030891033555918`*^-16, "Meters"]}, {"MassUnit", 
+          Quantity[1, "ProtonMass"], 
+          Quantity[1.67262192369*^-27, "Kilograms"]}, {"TimeUnit", 
+          Quantity[
+          1, "ProtonMass"^(-1) "ReducedPlanckConstant" "SpeedOfLight"^(-2)], 
+          Quantity[7.015150138819009*^-25, "Seconds"]}, {"TemperatureUnit", 
+          Quantity[1, "BoltzmannConstant"^(-1) "ProtonMass" "SpeedOfLight"^2], 
+          Quantity[1.0888195450003047`*^13, "Kelvins"]}, {
+         "ElectricCurrentUnit", 
+          Quantity[
+          1, "ElementaryCharge" "FineStructureConstant"^Rational[-1, 2] 
+           "ProtonMass" "ReducedPlanckConstant"^(-1) "SpeedOfLight"^2], 
+          Quantity[2.673565070829108*^6, "Amperes"]}}, 
+        ItemSize -> {Automatic, Automatic}], 
+       "GaussianQuantumChromodynamicsUnits", Top, {}], 
+      Labeled[
+       Grid[{{"LengthUnit", 
+          Quantity[
+          1, "ProtonMass"^(-1) "ReducedPlanckConstant"/"SpeedOfLight"], 
+          Quantity[2.1030891033555918`*^-16, "Meters"]}, {"MassUnit", 
+          Quantity[1, "ProtonMass"], 
+          Quantity[1.67262192369*^-27, "Kilograms"]}, {"TimeUnit", 
+          Quantity[
+          1, "ProtonMass"^(-1) "ReducedPlanckConstant" "SpeedOfLight"^(-2)], 
+          Quantity[7.015150138819009*^-25, "Seconds"]}, {"TemperatureUnit", 
+          Quantity[1, "BoltzmannConstant"^(-1) "ProtonMass" "SpeedOfLight"^2], 
+          Quantity[1.0888195450003047`*^13, "Kelvins"]}, {
+         "ElectricCurrentUnit", 
+          Quantity[
+          Rational[1, 2] Pi^Rational[-1, 2], "ElementaryCharge" 
+           "FineStructureConstant"^Rational[-1, 2] "ProtonMass" 
+           "ReducedPlanckConstant"^(-1) "SpeedOfLight"^2], 
+          Quantity[754198.781949451, "Amperes"]}}, 
+        ItemSize -> {Automatic, Automatic}], 
+       "LorentzHeavisideQuantumChromodynamicsUnits", Top, {}], 
+      Labeled[
+       Grid[{{"LengthUnit", 
+          Quantity[
+          1, "Electronvolts"^(-1) "ReducedPlanckConstant" "SpeedOfLight"], 
+          Quantity[1.973269804593025*^-7, "Meters"]}, {"MassUnit", 
+          Quantity[1, "Electronvolts" "SpeedOfLight"^(-2)], 
+          Quantity[1.782661921627898*^-36, "Kilograms"]}, {"TimeUnit", 
+          Quantity[1, "Electronvolts"^(-1) "ReducedPlanckConstant"], 
+          Quantity[6.582119569509065*^-16, "Seconds"]}, {"TemperatureUnit", 
+          Quantity[1, "BoltzmannConstant"^(-1) "Electronvolts"], 
+          Quantity[11604.518121550083`, "Kelvins"]}, {"ElectricCurrentUnit", 
+          Quantity[
+          1, "Electronvolts" "ElementaryCharge" 
+           "FineStructureConstant"^Rational[-1, 2]/"ReducedPlanckConstant"], 
+          Quantity[0.0028494560421921, "Amperes"]}}, 
+        ItemSize -> {Automatic, Automatic}], "GaussianNaturalUnits", Top, {}], 
+      Labeled[
+       Grid[{{"LengthUnit", 
+          Quantity[
+          1, "Electronvolts"^(-1) "ReducedPlanckConstant" "SpeedOfLight"], 
+          Quantity[1.973269804593025*^-7, "Meters"]}, {"MassUnit", 
+          Quantity[1, "Electronvolts" "SpeedOfLight"^(-2)], 
+          Quantity[1.782661921627898*^-36, "Kilograms"]}, {"TimeUnit", 
+          Quantity[1, "Electronvolts"^(-1) "ReducedPlanckConstant"], 
+          Quantity[6.582119569509065*^-16, "Seconds"]}, {"TemperatureUnit", 
+          Quantity[1, "BoltzmannConstant"^(-1) "Electronvolts"], 
+          Quantity[11604.518121550083`, "Kelvins"]}, {"ElectricCurrentUnit", 
+          Quantity[
+          Rational[1, 2] Pi^Rational[-1, 2], "Electronvolts" 
+           "ElementaryCharge" "FineStructureConstant"^Rational[-1, 2]/
+           "ReducedPlanckConstant"], 
+          Quantity[0.0008038167088909993, "Amperes"]}}, 
+        ItemSize -> {Automatic, Automatic}], "LorentzHeavisideNaturalUnits", 
+       Top, {}], 
+      Labeled[
+       Grid[{{"LengthUnit", 
+          Quantity[1, "CosmologicalConstant"^Rational[-1, 2]], 
+          Quantity[9.510448211356669*^25, "Meters"]}, {"MassUnit", 
+          Quantity[
+          1, "CosmologicalConstant"^Rational[-1, 2] 
+           "GravitationalConstant"^(-1) "SpeedOfLight"^2], 
+          Quantity[1.280668322080984*^53, "Kilograms"]}, {"TimeUnit", 
+          Quantity[1, "CosmologicalConstant"^Rational[-1, 2]/"SpeedOfLight"], 
+          Quantity[3.172344052550071*^17, "Seconds"]}, {"TemperatureUnit", 
+          Quantity[
+          1, "BoltzmannConstant"^(-1) "CosmologicalConstant"^Rational[-1, 2] 
+           "GravitationalConstant"^(-1) "SpeedOfLight"^4], 
+          Quantity[8.33671184142005*^92, "Kelvins"]}, {"ElectricCurrentUnit", 
+          Quantity[
+          2 Pi^Rational[1, 2], "ElectricConstant"^Rational[1, 2] 
+           "GravitationalConstant"^Rational[-1, 2] "SpeedOfLight"^3], 
+          Quantity[3.478872753751307*^25, "Amperes"]}}, 
+        ItemSize -> {Automatic, Automatic}], "DeSitterUnits", Top, {}], 
+      Labeled[
+       Grid[{{"LengthUnit", 
+          Quantity[
+          Rational[1, 2] Pi^Rational[-1, 2], 
+           "ElectricConstant"^Rational[-1, 2] "ElementaryCharge" 
+           "GravitationalConstant"^Rational[1, 2] "SpeedOfLight"^(-2)], 
+          Quantity[1.3806784704588333`*^-36, "Meters"]}, {"MassUnit", 
+          Quantity[
+          Rational[1, 2] Pi^Rational[-1, 2], 
+           "ElectricConstant"^Rational[-1, 2] "ElementaryCharge" 
+           "GravitationalConstant"^Rational[-1, 2]], 
+          Quantity[1.8592090938305215`*^-9, "Kilograms"]}, {"TimeUnit", 
+          Quantity[
+          Rational[1, 2] Pi^Rational[-1, 2], 
+           "ElectricConstant"^Rational[-1, 2] "ElementaryCharge" 
+           "GravitationalConstant"^Rational[1, 2] "SpeedOfLight"^(-3)], 
+          Quantity[4.6054476475816916`*^-45, "Seconds"]}, {"TemperatureUnit", 
+          Quantity[
+          Rational[1, 2] Pi^Rational[-1, 2], "BoltzmannConstant"^(-1) 
+           "ElectricConstant"^Rational[-1, 2] "ElementaryCharge" 
+           "GravitationalConstant"^Rational[-1, 2] "SpeedOfLight"^2], 
+          Quantity[1.210281397686716*^31, "Kelvins"]}, {"ElectricCurrentUnit", 
+          Quantity[
+          2 Pi^Rational[1, 2], "ElectricConstant"^Rational[1, 2] 
+           "GravitationalConstant"^Rational[-1, 2] "SpeedOfLight"^3], 
+          Quantity[3.478872753751307*^25, "Amperes"]}}, 
+        ItemSize -> {Automatic, Automatic}], "StonyUnits", Top, {}], 
+      Labeled[
+       Grid[{{"LengthUnit", 
+          Quantity[
+          1, "GravitationalConstant"^Rational[1, 2] 
+           "ReducedPlanckConstant"^Rational[1, 2] 
+           "SpeedOfLight"^Rational[-3, 2]], 
+          Quantity[1.6162550244237055`*^-35, "Meters"]}, {"MassUnit", 
+          Quantity[
+          1, "GravitationalConstant"^Rational[-1, 2] 
+           "ReducedPlanckConstant"^Rational[1, 2] 
+           "SpeedOfLight"^Rational[1, 2]], 
+          Quantity[2.1764343427178967`*^-8, "Kilograms"]}, {"TimeUnit", 
+          Quantity[
+          1, "GravitationalConstant"^Rational[1, 2] 
+           "ReducedPlanckConstant"^Rational[1, 2] 
+           "SpeedOfLight"^Rational[-5, 2]], 
+          Quantity[5.391246448313604*^-44, "Seconds"]}, {"TemperatureUnit", 
+          Quantity[
+          1, "BoltzmannConstant"^(-1) "GravitationalConstant"^Rational[-1, 2] 
+           "ReducedPlanckConstant"^Rational[1, 2] 
+           "SpeedOfLight"^Rational[5, 2]], 
+          Quantity[1.4167841621573426`*^32, "Kelvins"]}, {
+         "ElectricCurrentUnit", 
+          Quantity[
+          2 Pi^Rational[1, 2], "ElectricConstant"^Rational[1, 2] 
+           "GravitationalConstant"^Rational[-1, 2] "SpeedOfLight"^3], 
+          Quantity[3.478872753751307*^25, "Amperes"]}}, 
+        ItemSize -> {Automatic, Automatic}], "PlanckUnits", Top, {}], 
+      Labeled[
+       Grid[{{"LengthUnit", 
+          Quantity[
+          Pi, "ElectricConstant" "ElectronMass"^(-1) "ElementaryCharge"^(-2) 
+           "ReducedPlanckConstant"^2], 
+          Quantity[1.3229430272652133`*^-11, "Meters"]}, {"MassUnit", 
+          Quantity[2, "ElectronMass"], 
+          Quantity[1.8218767403*^-30, "Kilograms"]}, {"TimeUnit", 
+          Quantity[
+          2 Pi^2, "ElectricConstant"^2 "ElectronMass"^(-1) 
+           "ElementaryCharge"^(-4) "ReducedPlanckConstant"^3], 
+          Quantity[3.0236054082561884`*^-18, "Seconds"]}, {"TemperatureUnit", 
+          Quantity[
+          Rational[1, 32] Pi^(-2), "BoltzmannConstant"^(-1) 
+           "ElectricConstant"^(-2) "ElectronMass" "ElementaryCharge"^4 
+           "ReducedPlanckConstant"^(-2)], 
+          Quantity[157887.5124007781, "Kelvins"]}, {"ElectricCurrentUnit", 
+          Quantity[
+          Rational[1, 32] 2^Rational[-1, 2] Pi^(-2), "ElectricConstant"^(-2) 
+           "ElectronMass" "ElementaryCharge"^5 "ReducedPlanckConstant"^(-3)], 
+          Quantity[0.002341802685848447, "Amperes"]}}, 
+        ItemSize -> {Automatic, Automatic}], "RydbergAtomicUnits", Top, {}], 
+      Labeled[
+       Grid[{{"LengthUnit", 
+          Quantity[
+          4 Pi, "ElectricConstant" "ElectronMass"^(-1) 
+           "ElementaryCharge"^(-2) "ReducedPlanckConstant"^2], 
+          Quantity[5.291772109060853*^-11, "Meters"]}, {"MassUnit", 
+          Quantity[1, "ElectronMass"], 
+          Quantity[9.1093837015*^-31, "Kilograms"]}, {"TimeUnit", 
+          Quantity[
+          16 Pi^2, "ElectricConstant"^2 "ElectronMass"^(-1) 
+           "ElementaryCharge"^(-4) "ReducedPlanckConstant"^3], 
+          Quantity[2.4188843266049507`*^-17, "Seconds"]}, {"TemperatureUnit", 
+          Quantity[
+          Rational[1, 16] Pi^(-2), "BoltzmannConstant"^(-1) 
+           "ElectricConstant"^(-2) "ElectronMass" "ElementaryCharge"^4 
+           "ReducedPlanckConstant"^(-2)], 
+          Quantity[315775.0248015562, "Kelvins"]}, {"ElectricCurrentUnit", 
+          Quantity[
+          Rational[1, 16] Pi^(-2), "ElectricConstant"^(-2) "ElectronMass" 
+           "ElementaryCharge"^5 "ReducedPlanckConstant"^(-3)], 
+          Quantity[0.00662361823745723, "Amperes"]}}, 
+        ItemSize -> {Automatic, Automatic}], "HartreeAtomicUnits", Top, {}]}]],
+   DynamicModuleValues:>{}],
+  Setting[#, {0}]& ]], "Output",
+ CellChangeTimes->{3.872948999267558*^9},
+ CellLabel->"Out[39]=",
+ CellID->179778921,ExpressionUUID->"11774e3c-417d-4b77-9893-73e9239673e5"]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{"ClearAll", "[", 
+  RowBox[{
+  "DimensionalTransform", ",", "DimensionalMatrix", ",", 
+   "DimensionalExponents", ",", "SolveForAllDimensionalCombinations", ",", 
+   "GaussianQuantumChromodynamicsUnitsBasis", ",", 
+   "LorentzHeavisideNaturalUnitsBasis", ",", "GaussianNaturalUnitsBasis", ",",
+    "LorentzHeavisideNaturalUnitsBasis", ",", "DeSitterUnitsBasis", ",", 
+   "StoneyUnitsBasis", ",", "PlanckUnitsBasis", ",", 
+   "RydbergAtomicUnitsBasis", ",", "HartreeAtomicUnitsBasis"}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"GaussianQuantumChromodynamicsUnitsBasis", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Quantity", "[", "\"\<ReducedPlanckConstant\>\"", "]"}], ",", 
+     RowBox[{"Quantity", "[", "\"\<ProtonMass\>\"", "]"}], ",", 
+     RowBox[{"Quantity", "[", "\"\<SpeedOfLight\>\"", "]"}], ",", 
+     RowBox[{"Quantity", "[", "\"\<BoltzmannConstant\>\"", "]"}], ",", 
+     RowBox[{"Quantity", "[", "\"\<ElementaryCharge\>\"", "]"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"LorentzHeavisideQuantumChromodynamicsUnitsBasis", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Quantity", "[", "\"\<ReducedPlanckConstant\>\"", "]"}], ",", 
+     RowBox[{"Quantity", "[", "\"\<ProtonMass\>\"", "]"}], ",", 
+     RowBox[{"Quantity", "[", "\"\<SpeedOfLight\>\"", "]"}], ",", 
+     RowBox[{"Quantity", "[", "\"\<BoltzmannConstant\>\"", "]"}], ",", 
+     RowBox[{"Quantity", "[", "\"\<ElementaryCharge\>\"", "]"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"GaussianNaturalUnitsBasis", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Quantity", "[", "\"\<ReducedPlanckConstant\>\"", "]"}], ",", 
+     RowBox[{"Quantity", "[", "\"\<Electronvolts\>\"", "]"}], ",", 
+     RowBox[{"Quantity", "[", "\"\<SpeedOfLight\>\"", "]"}], ",", 
+     RowBox[{"Quantity", "[", "\"\<BoltzmannConstant\>\"", "]"}], ",", 
+     RowBox[{"Quantity", "[", "\"\<ElementaryCharge\>\"", "]"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"LorentzHeavisideNaturalUnitsBasis", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Quantity", "[", "\"\<ReducedPlanckConstant\>\"", "]"}], ",", 
+     RowBox[{"Quantity", "[", "\"\<SpeedOfLight\>\"", "]"}], ",", 
+     RowBox[{"Quantity", "[", "\"\<Electronvolts\>\"", "]"}], ",", 
+     RowBox[{"Quantity", "[", "\"\<BoltzmannConstant\>\"", "]"}], ",", 
+     RowBox[{"Quantity", "[", "\"\<ElementaryCharge\>\"", "]"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DeSitterUnitsBasis", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Quantity", "[", "\"\<CosmologicalConstant\>\"", "]"}], ",", 
+     RowBox[{"Quantity", "[", "\"\<SpeedOfLight\>\"", "]"}], ",", 
+     RowBox[{"Quantity", "[", "\"\<GravitationalConstant\>\"", "]"}], ",", 
+     RowBox[{"Quantity", "[", "\"\<BoltzmannConstant\>\"", "]"}], ",", 
+     RowBox[{"Quantity", "[", "\"\<ElectricConstant\>\"", "]"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"StoneyUnitsBasis", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Quantity", "[", "\"\<ElementaryCharge\>\"", "]"}], ",", 
+     RowBox[{"Quantity", "[", "\"\<GravitationalConstant\>\"", "]"}], ",", 
+     RowBox[{"Quantity", "[", "\"\<ElectricConstant\>\"", "]"}], ",", 
+     RowBox[{"Quantity", "[", "\"\<SpeedOfLight\>\"", "]"}], ",", 
+     RowBox[{"Quantity", "[", "\"\<BoltzmannConstant\>\"", "]"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"PlanckUnitsBasis", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Quantity", "[", "\"\<GravitationalConstant\>\"", "]"}], ",", 
+     RowBox[{"Quantity", "[", "\"\<ReducedPlanckConstant\>\"", "]"}], ",", 
+     RowBox[{"Quantity", "[", "\"\<SpeedOfLight\>\"", "]"}], ",", 
+     RowBox[{"Quantity", "[", "\"\<BoltzmannConstant\>\"", "]"}], ",", 
+     RowBox[{"Quantity", "[", "\"\<ElectricConstant\>\"", "]"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"RydbergAtomicUnitsBasis", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Quantity", "[", "\"\<ElectricConstant\>\"", "]"}], ",", 
+     RowBox[{"Quantity", "[", "\"\<ReducedPlanckConstant\>\"", "]"}], ",", 
+     RowBox[{"Quantity", "[", "\"\<ElectronMass\>\"", "]"}], ",", 
+     RowBox[{"Quantity", "[", "\"\<ElementaryCharge\>\"", "]"}], ",", 
+     RowBox[{"Quantity", "[", "\"\<BoltzmannConstant\>\"", "]"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"HartreeAtomicUnitsBasis", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Quantity", "[", "\"\<ElectricConstant\>\"", "]"}], ",", 
+     RowBox[{"Quantity", "[", "\"\<ReducedPlanckConstant\>\"", "]"}], ",", 
+     RowBox[{"Quantity", "[", "\"\<ElectronMass\>\"", "]"}], ",", 
+     RowBox[{"Quantity", "[", "\"\<ElementaryCharge\>\"", "]"}], ",", 
+     RowBox[{"Quantity", "[", "\"\<BoltzmannConstant\>\"", "]"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DimensionalMatrix", "[", "units_", "]"}], ":=", 
+  RowBox[{"Transpose", "[", 
+   RowBox[{"DimensionalExponents", "/@", "units"}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DimensionalExponents", "[", "unit_", "]"}], ":=", 
+  RowBox[{"Block", "[", 
+   RowBox[{
+    RowBox[{"{", "SEVENDIMENSIONS", "}"}], ",", 
+    RowBox[{
+     RowBox[{"SEVENDIMENSIONS", "=", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<TimeUnit\>\"", ",", "\"\<LengthUnit\>\"", ",", "\"\<MassUnit\>\"",
+         ",", "\"\<ElectricCurrentUnit\>\"", ",", "\"\<TemperatureUnit\>\"", 
+        ",", "\"\<AmountUnit\>\"", ",", "\"\<LuminousIntensityUnit\>\""}], 
+       "}"}]}], ";", 
+     RowBox[{"Values", "[", 
+      RowBox[{"KeySortBy", "[", 
+       RowBox[{
+        RowBox[{"Append", "[", 
+         RowBox[{
+          RowBox[{"AssociationThread", "[", 
+           RowBox[{"SEVENDIMENSIONS", "\[Rule]", 
+            RowBox[{"ConstantArray", "[", 
+             RowBox[{"0", ",", "7"}], "]"}]}], "]"}], ",", 
+          RowBox[{"AssociationThread", "@@", 
+           RowBox[{"Transpose", "[", 
+            RowBox[{"UnitDimensions", "[", "unit", "]"}], "]"}]}]}], "]"}], 
+        ",", 
+        RowBox[{
+         RowBox[{"Position", "[", 
+          RowBox[{"SEVENDIMENSIONS", ",", "#1"}], "]"}], "&"}]}], "]"}], 
+      "]"}]}]}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"SolveForAllDimensionalCombinations", "[", 
+   RowBox[{"list_", ",", "unit_"}], "]"}], ":=", 
+  RowBox[{"Block", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+     "constants", ",", "coefficientMatrix", ",", "exponentialvector"}], "}"}],
+     ",", 
+    RowBox[{
+     RowBox[{"coefficientMatrix", "=", 
+      RowBox[{"DimensionalMatrix", "[", "list", "]"}]}], ";", 
+     RowBox[{"constants", "=", 
+      RowBox[{"C", "/@", 
+       RowBox[{"Range", "[", 
+        RowBox[{"Last", "[", 
+         RowBox[{"Dimensions", "[", "coefficientMatrix", "]"}], "]"}], 
+        "]"}]}]}], ";", 
+     RowBox[{"exponentialvector", "=", 
+      RowBox[{"DimensionalExponents", "[", "unit", "]"}]}], ";", 
+     RowBox[{"First", "[", 
+      RowBox[{"SolveValues", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"coefficientMatrix", ".", "constants"}], "\[Equal]", 
+         "exponentialvector"}], ",", "constants"}], "]"}], "]"}]}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DimensionalTransform", "[", 
+   RowBox[{"unit_", ",", "list_"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"Block", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "coefficientMatrix", ",", "augmentedMatrix", ",", 
+       "coefficientMatrixRank", ",", "augmentedMatrixRank"}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"coefficientMatrix", ",", "augmentedMatrix"}], "}"}], "=", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"DimensionalMatrix", "[", "list", "]"}], ",", 
+         RowBox[{"MapThread", "[", 
+          RowBox[{"Append", ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"DimensionalMatrix", "[", "list", "]"}], ",", 
+             RowBox[{"DimensionalExponents", "[", "unit", "]"}]}], "}"}]}], 
+          "]"}]}], "}"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"coefficientMatrixRank", "=", 
+       RowBox[{"MatrixRank", "[", "coefficientMatrix", "]"}]}], ";", 
+      RowBox[{"augmentedMatrixRank", "=", 
+       RowBox[{"MatrixRank", "[", "augmentedMatrix", "]"}]}], ";", 
+      RowBox[{"{", 
+       RowBox[{"coefficientMatrix", ",", "augmentedMatrix"}], "}"}], ";", 
+      "\[IndentingNewLine]", 
+      TagBox[GridBox[{
+         {"\[Piecewise]", GridBox[{
+            {"\"\<no dimensional combination exists\>\"", 
+             RowBox[{"coefficientMatrixRank", "<", "augmentedMatrixRank"}]},
+            {
+             RowBox[{"UnitConvert", "[", 
+              RowBox[{"unit", ",", 
+               RowBox[{"Times", "@@", 
+                RowBox[{"Power", "@@@", 
+                 RowBox[{"Transpose", "[", 
+                  RowBox[{"{", 
+                   RowBox[{"list", ",", 
+                    RowBox[{"LinearSolve", "[", 
+                    RowBox[{
+                    RowBox[{"Transpose", "[", 
+                    RowBox[{"DimensionalExponents", "/@", "list"}], "]"}], 
+                    ",", 
+                    RowBox[{"DimensionalExponents", "[", "unit", "]"}]}], 
+                    "]"}]}], "}"}], "]"}]}]}]}], "]"}], 
+             RowBox[{
+              RowBox[{"coefficientMatrixRank", "==", "augmentedMatrixRank"}], 
+              "\[And]", 
+              RowBox[{"SquareMatrixQ", "[", "coefficientMatrix", "]"}]}]},
+            {
+             RowBox[{"Times", "@@", 
+              RowBox[{"Power", "@@@", 
+               RowBox[{"Transpose", "[", 
+                RowBox[{"{", 
+                 RowBox[{"list", ",", 
+                  RowBox[{"SolveForAllDimensionalCombinations", "[", 
+                   RowBox[{"list", ",", "unit"}], "]"}]}], "}"}], "]"}]}]}], 
+             RowBox[{
+              RowBox[{"coefficientMatrixRank", ">", "augmentedMatrixRank"}], 
+              "\[Or]", 
+              RowBox[{"!", 
+               RowBox[{"SquareMatrixQ", "[", "coefficientMatrix", "]"}]}]}]}
+           },
+           AllowedDimensions->{2, Automatic},
+           Editable->True,
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+           
+           GridBoxItemSize->{
+            "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{1.}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.84]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.4]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}},
+           Selectable->True]}
+        },
+        GridBoxAlignment->{
+         "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}},
+           "RowsIndexed" -> {}},
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.27999999999999997`], {
+             Offset[0.35]}, 
+            Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+            Offset[0.2], {
+             Offset[0.4]}, 
+            Offset[0.2]}, "RowsIndexed" -> {}}],
+       "Piecewise",
+       DeleteWithContents->True,
+       Editable->False,
+       SelectWithContents->True,
+       Selectable->False,
+       StripWrapperBoxes->True]}]}], "]"}], "//", 
+   "Quiet"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"DimensionalTransform", "[", 
+    RowBox[{"unit_", ",", "\"\<GaussianQuantumChromodynamicsUnits\>\""}], 
+    "]"}], ":=", 
+   RowBox[{"DimensionalTransform", "[", 
+    RowBox[{"unit", ",", "GaussianQuantumChromodynamicsUnitsBasis"}], "]"}]}],
+   ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"DimensionalTransform", "[", 
+    RowBox[{
+    "unit_", ",", "\"\<LorentzHeavisideQuantumChromodynamicsUnits\>\""}], 
+    "]"}], ":=", 
+   RowBox[{"DimensionalTransform", "[", 
+    RowBox[{"unit", ",", "LorentzHeavisideQuantumChromodynamicsUnitsBasis"}], 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"DimensionalTransform", "[", 
+    RowBox[{"unit_", ",", "\"\<GaussianNaturalUnits\>\""}], "]"}], ":=", 
+   RowBox[{"DimensionalTransform", "[", 
+    RowBox[{"unit", ",", "GaussianNaturalUnitsBasis"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"DimensionalTransform", "[", 
+    RowBox[{"unit_", ",", "\"\<LorentzHeavisideNaturalUnits\>\""}], "]"}], ":=", 
+   RowBox[{"DimensionalTransform", "[", 
+    RowBox[{"unit", ",", "LorentzHeavisideNaturalUnitsBasis"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"DimensionalTransform", "[", 
+    RowBox[{"unit_", ",", "\"\<DeSitterUnits\>\""}], "]"}], ":=", 
+   RowBox[{"DimensionalTransform", "[", 
+    RowBox[{"unit", ",", "DeSitterUnitsBasis"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"DimensionalTransform", "[", 
+    RowBox[{"unit_", ",", "\"\<StoneyUnits\>\""}], "]"}], ":=", 
+   RowBox[{"DimensionalTransform", "[", 
+    RowBox[{"unit", ",", "StoneyUnitsBasis"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"DimensionalTransform", "[", 
+    RowBox[{"unit_", ",", "\"\<PlanckUnits\>\""}], "]"}], ":=", 
+   RowBox[{"DimensionalTransform", "[", 
+    RowBox[{"unit", ",", "PlanckUnitsBasis"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"DimensionalTransform", "[", 
+    RowBox[{"unit_", ",", "\"\<RydbergAtomicUnits\>\""}], "]"}], ":=", 
+   RowBox[{"DimensionalTransform", "[", 
+    RowBox[{"unit", ",", "RydbergAtomicUnitsBasis"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"DimensionalTransform", "[", 
+    RowBox[{"unit_", ",", "\"\<HartreeAtomicUnits\>\""}], "]"}], ":=", 
+   RowBox[{"DimensionalTransform", "[", 
+    RowBox[{"unit", ",", "HartreeAtomicUnitsBasis"}], "]"}]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.872949069640122*^9, 3.8729492842544827`*^9}, {
+  3.872949322417396*^9, 3.872949728975706*^9}, {3.872949765347657*^9, 
+  3.8729499310530787`*^9}, {3.87295006256425*^9, 3.872950102403322*^9}},
+ CellLabel->"In[206]:=",
+ CellID->40142330,ExpressionUUID->"849dfd9f-327c-4682-93f5-fe465b9498dc"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Quantity", "[", 
+  RowBox[{"\"\<Webers\>\"", "\"\<BoltzmannConstant\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.87294994686065*^9, 3.872949965214534*^9}},
+ CellLabel->"In[181]:=",
+ CellID->199802107,ExpressionUUID->"c59f5987-1a86-4c0e-b25c-f61a7d3f2c7e"],
+
+Cell[BoxData[
+ TemplateBox[{"1", 
+   RowBox[{
+     StyleBox["\"k\"", Italic, StripOnInput -> False], "\[ThinSpace]", 
+     "\"Wb\""}], "Boltzmann constant weber", 
+   RowBox[{"\"BoltzmannConstant\"", " ", "\"Webers\""}]},
+  "Quantity"]], "Output",
+ CellChangeTimes->{3.8729499654762344`*^9},
+ CellLabel->"Out[181]=",
+ CellID->524107125,ExpressionUUID->"df601e22-8b69-4c62-92ee-b5a157c00819"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"AssociationMap", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"DimensionalTransform", "[", 
+     RowBox[{
+      RowBox[{"Quantity", "[", 
+       RowBox[{"\"\<Webers\>\"", "\"\<BoltzmannConstant\>\""}], "]"}], ",", 
+      "#"}], "]"}], "&"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+    "\"\<GaussianQuantumChromodynamicsUnits\>\"", ",", 
+     "\"\<LorentzHeavisideQuantumChromodynamicsUnits\>\"", ",", 
+     "\"\<GaussianNaturalUnits\>\"", ",", 
+     "\"\<LorentzHeavisideNaturalUnits\>\"", ",", "\"\<DeSitterUnits\>\"", 
+     ",", "\"\<StoneyUnits\>\"", ",", "\"\<PlanckUnits\>\"", ",", 
+     "\"\<RydbergAtomicUnits\>\"", ",", "\"\<HartreeAtomicUnits\>\""}], 
+    "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.872949985121614*^9, 3.8729500595007005`*^9}, {
+  3.8729501078937016`*^9, 3.872950121091917*^9}},
+ CellLabel->"In[229]:=",
+ CellID->634929591,ExpressionUUID->"3173512d-5281-4aa8-a5ea-d523bc842f23"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"\<\"GaussianQuantumChromodynamicsUnits\"\>", "\[Rule]", 
+    TemplateBox[{"1", 
+      RowBox[{
+        StyleBox["\"k\"", Italic, StripOnInput -> False], "\[ThinSpace]", 
+        "\"\[HBar]\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+        StyleBox["\"e\"", Italic, StripOnInput -> False]}], 
+      "Boltzmann constant reduced Planck constant per elementary charge", 
+      FractionBox[
+       RowBox[{"\"BoltzmannConstant\"", " ", "\"ReducedPlanckConstant\""}], 
+       "\"ElementaryCharge\""]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"LorentzHeavisideQuantumChromodynamicsUnits\"\>", "\[Rule]", 
+    TemplateBox[{"1", 
+      RowBox[{
+        StyleBox["\"k\"", Italic, StripOnInput -> False], "\[ThinSpace]", 
+        "\"\[HBar]\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+        StyleBox["\"e\"", Italic, StripOnInput -> False]}], 
+      "Boltzmann constant reduced Planck constant per elementary charge", 
+      FractionBox[
+       RowBox[{"\"BoltzmannConstant\"", " ", "\"ReducedPlanckConstant\""}], 
+       "\"ElementaryCharge\""]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"GaussianNaturalUnits\"\>", "\[Rule]", 
+    TemplateBox[{"1", 
+      RowBox[{
+        StyleBox["\"k\"", Italic, StripOnInput -> False], "\[ThinSpace]", 
+        "\"\[HBar]\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+        StyleBox["\"e\"", Italic, StripOnInput -> False]}], 
+      "Boltzmann constant reduced Planck constant per elementary charge", 
+      FractionBox[
+       RowBox[{"\"BoltzmannConstant\"", " ", "\"ReducedPlanckConstant\""}], 
+       "\"ElementaryCharge\""]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"LorentzHeavisideNaturalUnits\"\>", "\[Rule]", 
+    TemplateBox[{"1", 
+      RowBox[{
+        StyleBox["\"k\"", Italic, StripOnInput -> False], "\[ThinSpace]", 
+        "\"\[HBar]\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+        StyleBox["\"e\"", Italic, StripOnInput -> False]}], 
+      "Boltzmann constant reduced Planck constant per elementary charge", 
+      FractionBox[
+       RowBox[{"\"BoltzmannConstant\"", " ", "\"ReducedPlanckConstant\""}], 
+       "\"ElementaryCharge\""]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"DeSitterUnits\"\>", "\[Rule]", 
+    TemplateBox[{"1", 
+      RowBox[{
+        StyleBox["\"k\"", Italic, StripOnInput -> False], "\[ThinSpace]", 
+        StyleBox["\"c\"", Italic, StripOnInput -> False], "\[InvisibleSpace]",
+         "\"/(\"", "\[InvisibleSpace]", 
+        SqrtBox["\"\[CapitalLambda]\""], "\[InvisibleSpace]", 
+        SqrtBox[
+         SubscriptBox["\"\[CurlyEpsilon]\"", "0"]], "\[InvisibleSpace]", 
+        SqrtBox[
+         StyleBox["\"G\"", Italic, StripOnInput -> False]], 
+        "\[InvisibleSpace]", "\")\""}], 
+      "Boltzmann constant speed of light per square root cosmological \
+constant square root electric constant square root Newtonian gravitational \
+constant", 
+      FractionBox[
+       RowBox[{"\"BoltzmannConstant\"", " ", "\"SpeedOfLight\""}], 
+       RowBox[{
+         SqrtBox["\"CosmologicalConstant\""], " ", 
+         SqrtBox["\"ElectricConstant\""], " ", 
+         SqrtBox["\"GravitationalConstant\""]}]]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"StoneyUnits\"\>", "\[Rule]", 
+    TemplateBox[{"1", 
+      RowBox[{
+        StyleBox["\"k\"", Italic, StripOnInput -> False], "\[ThinSpace]", 
+        StyleBox["\"e\"", Italic, StripOnInput -> False], "\[InvisibleSpace]",
+         "\"/(\"", "\[InvisibleSpace]", 
+        SubscriptBox["\"\[CurlyEpsilon]\"", "0"], "\[ThinSpace]", 
+        StyleBox["\"c\"", Italic, StripOnInput -> False], "\[InvisibleSpace]",
+         "\")\""}], 
+      "Boltzmann constant elementary charge per electric constant speed of \
+light", 
+      FractionBox[
+       RowBox[{"\"BoltzmannConstant\"", " ", "\"ElementaryCharge\""}], 
+       RowBox[{"\"ElectricConstant\"", " ", "\"SpeedOfLight\""}]]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"PlanckUnits\"\>", "\[Rule]", 
+    TemplateBox[{"1", 
+      RowBox[{
+        StyleBox["\"k\"", Italic, StripOnInput -> False], "\[ThinSpace]", 
+        SqrtBox["\"\[HBar]\""], "\[NegativeMediumSpace]", "\"/(\"", 
+        "\[InvisibleSpace]", 
+        SqrtBox[
+         SubscriptBox["\"\[CurlyEpsilon]\"", "0"]], "\[InvisibleSpace]", 
+        SqrtBox[
+         StyleBox["\"c\"", Italic, StripOnInput -> False]], 
+        "\[InvisibleSpace]", "\")\""}], 
+      "Boltzmann constant square root reduced Planck constant per square root \
+electric constant square root speed of light", 
+      FractionBox[
+       RowBox[{"\"BoltzmannConstant\"", " ", 
+         SqrtBox["\"ReducedPlanckConstant\""]}], 
+       RowBox[{
+         SqrtBox["\"ElectricConstant\""], " ", 
+         SqrtBox["\"SpeedOfLight\""]}]]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"RydbergAtomicUnits\"\>", "\[Rule]", 
+    TemplateBox[{"1", 
+      RowBox[{
+        StyleBox["\"k\"", Italic, StripOnInput -> False], "\[ThinSpace]", 
+        "\"\[HBar]\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+        StyleBox["\"e\"", Italic, StripOnInput -> False]}], 
+      "Boltzmann constant reduced Planck constant per elementary charge", 
+      FractionBox[
+       RowBox[{"\"BoltzmannConstant\"", " ", "\"ReducedPlanckConstant\""}], 
+       "\"ElementaryCharge\""]},
+     "Quantity"]}], ",", 
+   RowBox[{"\<\"HartreeAtomicUnits\"\>", "\[Rule]", 
+    TemplateBox[{"1", 
+      RowBox[{
+        StyleBox["\"k\"", Italic, StripOnInput -> False], "\[ThinSpace]", 
+        "\"\[HBar]\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+        StyleBox["\"e\"", Italic, StripOnInput -> False]}], 
+      "Boltzmann constant reduced Planck constant per elementary charge", 
+      FractionBox[
+       RowBox[{"\"BoltzmannConstant\"", " ", "\"ReducedPlanckConstant\""}], 
+       "\"ElementaryCharge\""]},
+     "Quantity"]}]}], "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{3.8729500157281494`*^9, 3.8729501213977737`*^9},
+ CellLabel->"Out[229]=",
+ CellID->5292818,ExpressionUUID->"8b6ee6cd-5e2e-461a-b95a-1917c2d5836d"]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]]
 },
@@ -21922,16 +24521,16 @@ CellTagsIndex->{
 *)
 (*CellTagsIndex
 CellTagsIndex->{
- {"Examples", 801207, 21880},
- {"Your Essay Title", 801393, 21884},
- {"AuthorName", 801573, 21888},
- {"Abstract", 801732, 21892},
- {"TemplateCell", 801913, 21896},
- {"SectionHeader", 802095, 21900},
- {"ExampleTopicSentence", 802271, 21904},
- {"ExampleCodeText", 802446, 21908},
- {"ExampleInput", 802616, 21912},
- {"ExampleOutput", 802782, 21916}
+ {"Examples", 922410, 24479},
+ {"Your Essay Title", 922596, 24483},
+ {"AuthorName", 922776, 24487},
+ {"Abstract", 922935, 24491},
+ {"TemplateCell", 923116, 24495},
+ {"SectionHeader", 923298, 24499},
+ {"ExampleTopicSentence", 923474, 24503},
+ {"ExampleCodeText", 923649, 24507},
+ {"ExampleInput", 923819, 24511},
+ {"ExampleOutput", 923985, 24515}
  }
 *)
 (*NotebookFileOutline
@@ -22650,7 +25249,7 @@ Cell[167278, 4516, 1110, 26, 47, "Output",ExpressionUUID->"b6d89579-81f0-4a8b-80
 Cell[CellGroupData[{
 Cell[168425, 4547, 709, 16, 53, "Input",ExpressionUUID->"2c1f6bf4-2275-4428-9bab-7536e178419d",
  CellID->271935397],
-Cell[169137, 4565, 1053, 28, 82, "Output",ExpressionUUID->"e2de6757-c1ea-43a6-a4c3-1456bc11c0ca",
+Cell[169137, 4565, 1053, 28, 59, "Output",ExpressionUUID->"e2de6757-c1ea-43a6-a4c3-1456bc11c0ca",
  CellID->188151904]
 }, Open  ]],
 Cell[CellGroupData[{
@@ -23721,7 +26320,7 @@ Cell[671685, 19273, 557, 12, 28, "Input",ExpressionUUID->"136fd53f-c6ff-4743-8d8
 Cell[CellGroupData[{
 Cell[672267, 19289, 534, 11, 28, "Input",ExpressionUUID->"1f97be66-4eb3-4496-90cc-ccccedcffb71",
  CellID->469653062],
-Cell[672804, 19302, 971, 24, 64, "Output",ExpressionUUID->"11c5f7fd-e7c3-49eb-a339-8c5a02227f08",
+Cell[672804, 19302, 971, 24, 41, "Output",ExpressionUUID->"11c5f7fd-e7c3-49eb-a339-8c5a02227f08",
  CellID->94979816]
 }, Open  ]],
 Cell[CellGroupData[{
@@ -23749,14 +26348,58 @@ Cell[683536, 19580, 585, 13, 39, "Output",ExpressionUUID->"1f624c03-b6fb-4f12-82
 Cell[CellGroupData[{
 Cell[684158, 19598, 1205, 28, 37, "Input",ExpressionUUID->"10625949-73d6-4593-80ba-e8fd70f5687a",
  CellID->289842865],
-Cell[685366, 19628, 1329, 42, 46, "Output",ExpressionUUID->"95dff81c-6d47-4a46-9d6d-9cda572f51df",
+Cell[685366, 19628, 1329, 42, 49, "Output",ExpressionUUID->"95dff81c-6d47-4a46-9d6d-9cda572f51df",
  CellID->587445961]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[686732, 19675, 1275, 29, 37, "Input",ExpressionUUID->"968a117c-2fa4-4394-b0e4-f8d0ef3fb2c1",
+Cell[686732, 19675, 1275, 29, 39, "Input",ExpressionUUID->"968a117c-2fa4-4394-b0e4-f8d0ef3fb2c1",
  CellID->79546188],
-Cell[688010, 19706, 1633, 54, 46, "Output",ExpressionUUID->"eeb959fe-4be7-43a2-9352-62d97f0c1ffc",
+Cell[688010, 19706, 1633, 54, 49, "Output",ExpressionUUID->"eeb959fe-4be7-43a2-9352-62d97f0c1ffc",
  CellID->175411639]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[689692, 19766, 175, 2, 67, "Section",ExpressionUUID->"7ae241d2-8fdf-499b-a596-21724a6f9691",
+ CellID->286600181],
+Cell[689870, 19770, 9133, 226, 432, "Input",ExpressionUUID->"7950f357-5ee1-4cd0-9545-13c2650f4e38",
+ CellID->52398159],
+Cell[CellGroupData[{
+Cell[699028, 20000, 326, 7, 37, "Input",ExpressionUUID->"e5720a7a-8493-40e9-915e-ebc6aeae45a3",
+ CellID->7184055],
+Cell[699357, 20009, 209, 3, 41, "Output",ExpressionUUID->"694a8284-57d0-4fb8-915e-aab024aaff60",
+ CellID->197601893]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[699603, 20017, 329, 7, 28, "Input",ExpressionUUID->"62a4177e-f7a4-4ba5-918d-d44b55f63514",
+ CellID->624648966],
+Cell[699935, 20026, 461, 9, 39, "Output",ExpressionUUID->"7b40445a-ee27-4298-91fa-aaf328e69e7b",
+ CellID->259954062]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[700433, 20040, 376, 8, 28, "Input",ExpressionUUID->"0fa21098-d0c0-4f74-91d6-9e08ad007f61",
+ CellID->661929912],
+Cell[700812, 20050, 764, 20, 44, "Output",ExpressionUUID->"068d2c70-2acf-4ff7-911b-3751e884449f",
+ CellID->583867819]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[701613, 20075, 10080, 210, 35, "Input",ExpressionUUID->"3cf87226-bb8d-4029-89bf-d2adeed8c605",
+ CellID->420505388],
+Cell[711696, 20287, 76924, 1552, 262, "Output",ExpressionUUID->"11774e3c-417d-4b77-9893-73e9239673e5",
+ CellID->179778921]
+}, Open  ]],
+Cell[788635, 21842, 14492, 341, 1154, "Input",ExpressionUUID->"849dfd9f-327c-4682-93f5-fe465b9498dc",
+ CellID->40142330],
+Cell[CellGroupData[{
+Cell[803152, 22187, 281, 5, 28, "Input",ExpressionUUID->"c59f5987-1a86-4c0e-b25c-f61a7d3f2c7e",
+ CellID->199802107],
+Cell[803436, 22194, 391, 9, 38, "Output",ExpressionUUID->"df601e22-8b69-4c62-92ee-b5a157c00819",
+ CellID->524107125]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[803864, 22208, 926, 21, 67, "Input",ExpressionUUID->"3173512d-5281-4aa8-a5ea-d523bc842f23",
+ CellID->634929591],
+Cell[804793, 22231, 6053, 128, 107, "Output",ExpressionUUID->"8b6ee6cd-5e2e-461a-b95a-1917c2d5836d",
+ CellID->5292818]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
