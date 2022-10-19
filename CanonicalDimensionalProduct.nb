@@ -13,8 +13,9 @@ Cell["CanonicalDimensionalProduct", "Title",
  CellTags->{"Name", "TemplateCell", "Title", "TabNext"},
  CellID->863144461,ExpressionUUID->"9e508ca0-7278-4c55-8458-e88b8d77feac"],
 
-Cell["One-line description explaining the function\[CloseCurlyQuote]s basic \
-purpose", "Text",
+Cell["\<\
+Gives the canonical dimensional product for a physical quantity or unit\
+\>", "Text",
  Deletable->False,
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
@@ -22,6 +23,7 @@ purpose", "Text",
        WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.8751938124249535`*^9, 3.875193833207443*^9}},
  CellTags->{"DefaultContent", "Description", "TabNext", "TemplateCell"},
  CellID->660820806,ExpressionUUID->"1785138d-e0f5-439d-a52a-8b4bc1b21ecb"],
 
@@ -189,16 +191,21 @@ documentation pages for examples."}], "MoreInfoText"], Background ->
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"MyFunction", "[", "arg", "]"}]], "UsageInputs",
+ RowBox[{"CanonicalDimensinoalProduct", "[", 
+  StyleBox["quantity", "TI"], "]"}]], "UsageInputs",
+ CellChangeTimes->{{3.875193869754675*^9, 3.8751938790258417`*^9}},
  FontFamily->"Source Sans Pro",
  CellTags->{"DefaultContent", "TabNext"},
  CellID->67839508,ExpressionUUID->"44f58fa8-3232-4dc9-9e70-df1981a17fd8"],
 
 Cell[TextData[{
- "explanation of what use of the argument ",
- StyleBox["arg", "TI"],
- " does."
+ "Gives the canonical dimensional product for a physical quantity or unit ",
+ Cell[BoxData[
+  StyleBox["quantity", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "c384ac54-c3b8-43d0-86b5-6be1f913de05"]
 }], "UsageDescription",
+ CellChangeTimes->{{3.8751938394408283`*^9, 3.8751938581467795`*^9}},
  CellTags->{"DefaultContent", "TabNext"},
  CellID->746063541,ExpressionUUID->"af728628-7aff-4a38-a3fb-1a4154f8303c"]
 }, Open  ]]
@@ -241,15 +248,27 @@ function, its development, and its usage.", "MoreInfoText"], Background ->
  CellTags->{"Details & Options", "Notes", "TemplateCellGroup"},
  CellID->447261062,ExpressionUUID->"4638b174-c5ad-4bf1-8a29-ff6d5e742124"],
 
-Cell["Additional information about usage and options.", "Notes",
- CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
-       SelectedNotebook[], After, Cell]; NotebookFind[
-       SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
-       WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
-       SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
-   PassEventsDown -> False, PassEventsUp -> False},
- CellTags->{"DefaultContent", "TabNext"},
- CellID->422531486,ExpressionUUID->"64f4adf1-fdda-4953-80d6-fe72d108d802"]
+Cell["\<\
+The function will not accept units such as \"MoneyUnit\" or \"InformationUnit\
+\".\
+\>", "Notes",
+ CellChangeTimes->{{3.875194822749525*^9, 3.8751948358507433`*^9}},
+ CellID->324271962,ExpressionUUID->"8f9d8fe0-e950-479c-a529-cd4ed592ef34"],
+
+Cell["\<\
+The function will not accept units with \"AngleUnit\", \"SolidAngleUnit\", or \
+\"TemperatureDifferenceUnit\".\
+\>", "Notes",
+ CellChangeTimes->{{3.8751947976177416`*^9, 3.875194815439502*^9}},
+ CellID->453870991,ExpressionUUID->"05a45123-cee1-4efd-acb0-b39f29eff000"],
+
+Cell["\<\
+The function will only accept units with the dimensions \"TimeUnit\", \
+\"LengthUnit\", \"MassUnit\", \"ElectricCurrentUnit\", \"TemperatureUnit\", \
+\"AmountUnit\", and \"LuminousIntensityUnit\".\
+\>", "Notes",
+ CellChangeTimes->{{3.875194705704601*^9, 3.875194788514575*^9}},
+ CellID->90137694,ExpressionUUID->"205f817b-4fb0-4532-b8d0-4acd1c06df10"]
 }, Open  ]]
 }, Open  ]],
 
@@ -416,24 +435,108 @@ Cell["Basic Examples", "Subsection",
  CellTags->"DefaultContent",
  CellID->619504543,ExpressionUUID->"a9ce6b41-d6b4-400a-9e9d-5086e2afcac6"],
 
-Cell["Text about the example:", "Text",
+Cell["Find the canonical dimensional product for the weber:", "Text",
+ CellChangeTimes->{{3.8751938841038704`*^9, 3.8751938950166717`*^9}},
  CellTags->"DefaultContent",
  CellID->586099280,ExpressionUUID->"22dfa68d-20c9-472b-89a7-d69809c6be7f"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"MyFunction", "[", 
-  RowBox[{"x", ",", "y"}], "]"}]], "Input",
+ RowBox[{"CanonicalDimensionalProduct", "[", 
+  TemplateBox[{
+    InterpretationBox["\[InvisibleSpace]", 1], "\"Wb\"", "webers", 
+    "\"Webers\""},
+   "Quantity"], "]"}]], "Input",
+ CellChangeTimes->{{3.8751938975038643`*^9, 3.875193900108252*^9}},
  CellTags->"DefaultContent",
- CellLabel->"In[1]:= ",
+ CellLabel->"In[48]:=",
  CellID->298664010,ExpressionUUID->"c7300696-f6b3-4d2b-a777-3d740a5ce502"],
 
 Cell[BoxData[
- RowBox[{"x", " ", "y"}]], "Output",
+ RowBox[{
+  TemplateBox[{"\"T\"", 
+    RowBox[{"-", "2"}]},
+   "Superscript"], "\[CenterDot]", 
+  TemplateBox[{"\"M\"", "1"},
+   "Superscript"], "\[CenterDot]", 
+  TemplateBox[{"\"L\"", "2"},
+   "Superscript"], "\[CenterDot]", 
+  TemplateBox[{"\"I\"", 
+    RowBox[{"-", "1"}]},
+   "Superscript"]}]], "Output",
+ CellChangeTimes->{{3.875193903219431*^9, 3.8751939071164*^9}},
  CellTags->"DefaultContent",
- CellLabel->"Out[1]= ",
- CellID->832981051,ExpressionUUID->"f4c9c1ac-8244-4110-8005-23a8fac45676"]
+ CellLabel->"Out[48]=",
+ CellID->266794742,ExpressionUUID->"b4354801-f5cb-41fc-9b9d-231515e0447e"]
+}, Open  ]],
+
+Cell[TextData[{
+ "The input form uses ",
+ Cell[BoxData[
+  TagBox[
+   ButtonBox[
+    StyleBox["Superscript", "SymbolsRefLink",
+     ShowStringCharacters->True,
+     FontFamily->"Source Sans Pro"],
+    BaseStyle->Dynamic[
+      FEPrivate`If[
+       CurrentValue["MouseOver"], {
+       "Link", FontColor -> RGBColor[0.8549, 0.39608, 0.1451]}, {"Link"}]],
+    ButtonData->"paclet:ref/Superscript",
+    ContentPadding->False],
+   MouseAppearanceTag["LinkHand"]]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "930223c6-25b6-4aa7-b38a-87daf2a9b1f6"],
+ ":"
+}], "Text",
+ CellChangeTimes->{{3.875193917895193*^9, 3.8751939362325497`*^9}},
+ CellID->372079302,ExpressionUUID->"e414af08-a541-4a46-a4bd-b80f6216f76c"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"CanonicalDimensionalProduct", "[", 
+   TemplateBox[{
+     InterpretationBox["\[InvisibleSpace]", 1], "\"Wb\"", "webers", 
+     "\"Webers\""},
+    "Quantity"], "]"}], "//", "InputForm"}]], "Input",
+ CellChangeTimes->{{3.875193908528978*^9, 3.875193913372875*^9}},
+ CellLabel->"In[49]:=",
+ CellID->58475544,ExpressionUUID->"896fd0af-c1fe-4a8e-b4a4-b6f4927a71d3"],
+
+Cell["\<\
+Superscript[\"T\", -2] \[CenterDot] Superscript[\"M\", 1] \[CenterDot] \
+Superscript[\"L\", 2] \[CenterDot] Superscript[\"I\", -1]\
+\>", "Output",
+ CellChangeTimes->{3.8751939135863657`*^9},
+ CellLabel->"Out[49]//InputForm=",
+ CellID->322375987,ExpressionUUID->"96716fad-e3fd-47ed-8bc3-5999199009e7"]
+}, Open  ]],
+
+Cell["Make a table of dimensional products:", "Text",
+ CellChangeTimes->{{3.8751939463399773`*^9, 3.8751939584821415`*^9}},
+ CellID->184665729,ExpressionUUID->"7ce4df25-4e8f-4828-8c52-a5b376542cbb"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CanonicalDimensionalProduct", "[", 
+  TemplateBox[{
+    InterpretationBox["\[InvisibleSpace]", 1], "\"cd\"", "candelas", 
+    "\"Candelas\""},
+   "Quantity"], "]"}]], "Input",
+ CellChangeTimes->{{3.875193984257205*^9, 3.875193986372435*^9}},
+ CellLabel->"In[51]:=",
+ CellID->9380061,ExpressionUUID->"30540dae-4d30-46fe-86d2-5168c0ac8dba"],
+
+Cell[BoxData[
+ TemplateBox[{"\"J\"", "1"},
+  "Superscript"]], "Output",
+ CellChangeTimes->{3.8751939895599337`*^9},
+ CellLabel->"Out[51]=",
+ CellID->9164110,ExpressionUUID->"8aeb0803-1268-449b-8fc1-82ef610fb33d"]
 }, Open  ]]
 }, Open  ]],
 
@@ -471,17 +574,2448 @@ Cell["Options", "Subsection",
  CellTags->"DefaultContent",
  CellID->879773335,ExpressionUUID->"7da32c6c-7ac7-44c0-96ea-c6c16f0fe852"],
 
+Cell[CellGroupData[{
+
 Cell["Applications", "Subsection",
  CellTags->"DefaultContent",
  CellID->542143288,ExpressionUUID->"1594e834-b746-4121-a3cd-445b361c4756"],
+
+Cell["Map the function over the seven base units of the SI:", "Text",
+ CellChangeTimes->{{3.875194429150964*^9, 3.875194438987673*^9}},
+ CellID->703497762,ExpressionUUID->"6423fe68-663f-465b-854c-a53906585a39"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SIBaseUnits", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"ResourceFunction", "[", "\"\<PhysicalQuantityData\>\"", "]"}], 
+     "[", 
+     RowBox[{"#", ",", "\"\<CanonicalUnit\>\""}], "]"}], "&"}], "/@", 
+   RowBox[{"EntityList", "[", 
+    RowBox[{"Last", "[", 
+     RowBox[{"EntityClassList", "[", "\"\<PhysicalQuantity\>\"", "]"}], "]"}],
+     "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.875194489380584*^9, 3.8751944983627205`*^9}},
+ CellLabel->"In[69]:=",
+ CellID->273271506,ExpressionUUID->"e7b40dac-dc6a-4fb7-ad06-0018193f2b29"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TemplateBox[{"1", "\"m\"", "meter", "\"Meters\""},
+    "Quantity"], ",", 
+   TemplateBox[{"1", "\"kg\"", "kilogram", "\"Kilograms\""},
+    "Quantity"], ",", 
+   TemplateBox[{"1", "\"s\"", "second", "\"Seconds\""},
+    "Quantity"], ",", 
+   TemplateBox[{"1", "\"A\"", "ampere", "\"Amperes\""},
+    "Quantity"], ",", 
+   TemplateBox[{"1", "\"K\"", "kelvin", "\"Kelvins\""},
+    "Quantity"], ",", 
+   TemplateBox[{"1", "\"mol\"", "mole", "\"Moles\""},
+    "Quantity"], ",", 
+   TemplateBox[{"1", "\"cd\"", "candela", "\"Candelas\""},
+    "Quantity"]}], "}"}]], "Output",
+ CellChangeTimes->{{3.8751944820434113`*^9, 3.8751945036839323`*^9}},
+ CellLabel->"Out[69]=",
+ CellID->392974243,ExpressionUUID->"a3930aac-49bf-4110-aa0c-17dcd145d13b"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CanonicalDimensionalProductsOfSIBaseUnits", "=", 
+  RowBox[{"AssociationMap", "[", 
+   RowBox[{"CanonicalDimensionalProduct", ",", "SIBaseUnits"}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.8751945106430063`*^9, 3.8751945293478174`*^9}},
+ CellLabel->"In[70]:=",
+ CellID->425038489,ExpressionUUID->"d72b18dc-5a86-47a9-bc92-65c3cee2f29f"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{
+    TemplateBox[{"1", "\"m\"", "meter", "\"Meters\""},
+     "Quantity"], "\[Rule]", 
+    TemplateBox[{"\"L\"", "1"},
+     "Superscript"]}], ",", 
+   RowBox[{
+    TemplateBox[{"1", "\"kg\"", "kilogram", "\"Kilograms\""},
+     "Quantity"], "\[Rule]", 
+    TemplateBox[{"\"M\"", "1"},
+     "Superscript"]}], ",", 
+   RowBox[{
+    TemplateBox[{"1", "\"s\"", "second", "\"Seconds\""},
+     "Quantity"], "\[Rule]", 
+    TemplateBox[{"\"T\"", "1"},
+     "Superscript"]}], ",", 
+   RowBox[{
+    TemplateBox[{"1", "\"A\"", "ampere", "\"Amperes\""},
+     "Quantity"], "\[Rule]", 
+    TemplateBox[{"\"I\"", "1"},
+     "Superscript"]}], ",", 
+   RowBox[{
+    TemplateBox[{"1", "\"K\"", "kelvin", "\"Kelvins\""},
+     "Quantity"], "\[Rule]", 
+    TemplateBox[{"\"\[CapitalTheta]\"", "1"},
+     "Superscript"]}], ",", 
+   RowBox[{
+    TemplateBox[{"1", "\"mol\"", "mole", "\"Moles\""},
+     "Quantity"], "\[Rule]", 
+    TemplateBox[{"\"N\"", "1"},
+     "Superscript"]}], ",", 
+   RowBox[{
+    TemplateBox[{"1", "\"cd\"", "candela", "\"Candelas\""},
+     "Quantity"], "\[Rule]", 
+    TemplateBox[{"\"J\"", "1"},
+     "Superscript"]}]}], "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{3.875194529572318*^9},
+ CellLabel->"Out[70]=",
+ CellID->93695836,ExpressionUUID->"ef5b2860-8c8e-42bd-8cb3-787006fa0939"]
+}, Open  ]],
+
+Cell["Make a dataset:", "Text",
+ CellChangeTimes->{{3.875194533045907*^9, 3.8751945361379924`*^9}},
+ CellID->711515,ExpressionUUID->"249956bd-eb09-429e-b304-992fcbeb1200"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Dataset", "[", "CanonicalDimensionalProductsOfSIBaseUnits", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.8751945371905794`*^9, 3.8751945433459764`*^9}},
+ CellLabel->"In[72]:=",
+ CellID->44905507,ExpressionUUID->"4290c8ef-f255-4c72-aee5-a53e409decce"],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[
+   DynamicModuleBox[{TypeSystem`NestedGrid`PackagePrivate`$state$$ = <|
+    "InitialData" -> <|
+      Quantity[1, "Meters"] -> Superscript["L", 1], Quantity[1, "Kilograms"] -> 
+       Superscript["M", 1], Quantity[1, "Seconds"] -> Superscript["T", 1], 
+       Quantity[1, "Amperes"] -> Superscript["I", 1], Quantity[1, "Kelvins"] -> 
+       Superscript["\[CapitalTheta]", 1], Quantity[1, "Moles"] -> 
+       Superscript["N", 1], Quantity[1, "Candelas"] -> Superscript["J", 1]|>, 
+     "AllowEmbedding" -> True, "InitialShape" -> 
+     TypeSystem`PackageScope`Limited[
+       TypeSystem`PackageScope`ColumnShape[
+        TypeSystem`PackageScope`KeyValueShape[
+         TypeSystem`PackageScope`UnknownShape[True], 
+         TypeSystem`PackageScope`UnknownShape[False]]], 7, 
+       DirectedInfinity[1], {}], "InitialType" -> 
+     TypeSystem`Assoc[TypeSystem`AnyType, TypeSystem`AnyType, 7], 
+     "Meta" -> <||>, "RowTarget" -> 20, "ColumnTarget" -> 10, "Shape" -> 
+     TypeSystem`PackageScope`Limited[
+       TypeSystem`PackageScope`ColumnShape[
+        TypeSystem`PackageScope`KeyValueShape[
+         TypeSystem`PackageScope`UnknownShape[True], 
+         TypeSystem`PackageScope`UnknownShape[False]]], 7, 
+       DirectedInfinity[1], {}], "Type" -> 
+     TypeSystem`Assoc[TypeSystem`AnyType, TypeSystem`AnyType, 7], 
+     "Path" -> {}, "DisplayedRowCount" -> 7, "DisplayedColumnCount" -> 1, 
+     "DataRowCount" -> 7, "DataColumnCount" -> 1, "SortPaths" -> {}, 
+     "SortDirections" -> {}, "HiddenItemsMap" -> Null, "UpdateType" -> 1|>, 
+    TypeSystem`NestedGrid`PackagePrivate`$outputID$$, 
+    TypeSystem`NestedGrid`PackagePrivate`$path$$ = {}, 
+    TypeSystem`NestedGrid`PackagePrivate`$vPos$$ = 1, 
+    TypeSystem`NestedGrid`PackagePrivate`$hPos$$ = 1, 
+    TypeSystem`NestedGrid`PackagePrivate`$grid$$ = 
+    DynamicModule[{TypeSystem`NestedGrid`PackagePrivate`renderedGrid = Deploy[
+        Style[
+         Grid[{{
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                RowBox[{"1", "\"m\""}]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                 Key[
+                  Quantity[1, "Meters"]]}, "Item", False], "Mouse"], 
+              ImageSize -> {{75, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                StyleBox[
+                 
+                 TemplateBox[{"\"L\"", "1"}, "Superscript", SyntaxForm -> 
+                  SuperscriptBox], FontFamily -> Dynamic[
+                   CurrentValue[{"StyleHints", "CodeFont"}]], 
+                 ShowStringCharacters -> True]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                 Key[
+                  Quantity[1, "Meters"]]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                RowBox[{"1", "\"kg\""}]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                 Key[
+                  Quantity[1, "Kilograms"]]}, "Item", False], "Mouse"], 
+              ImageSize -> {{75, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                StyleBox[
+                 
+                 TemplateBox[{"\"M\"", "1"}, "Superscript", SyntaxForm -> 
+                  SuperscriptBox], FontFamily -> Dynamic[
+                   CurrentValue[{"StyleHints", "CodeFont"}]], 
+                 ShowStringCharacters -> True]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                 Key[
+                  Quantity[1, "Kilograms"]]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                RowBox[{"1", "\"s\""}]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                 Key[
+                  Quantity[1, "Seconds"]]}, "Item", False], "Mouse"], 
+              ImageSize -> {{75, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                StyleBox[
+                 
+                 TemplateBox[{"\"T\"", "1"}, "Superscript", SyntaxForm -> 
+                  SuperscriptBox], FontFamily -> Dynamic[
+                   CurrentValue[{"StyleHints", "CodeFont"}]], 
+                 ShowStringCharacters -> True]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                 Key[
+                  Quantity[1, "Seconds"]]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                RowBox[{"1", "\"A\""}]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                 Key[
+                  Quantity[1, "Amperes"]]}, "Item", False], "Mouse"], 
+              ImageSize -> {{75, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                StyleBox[
+                 
+                 TemplateBox[{"\"I\"", "1"}, "Superscript", SyntaxForm -> 
+                  SuperscriptBox], FontFamily -> Dynamic[
+                   CurrentValue[{"StyleHints", "CodeFont"}]], 
+                 ShowStringCharacters -> True]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                 Key[
+                  Quantity[1, "Amperes"]]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                RowBox[{"1", "\"K\""}]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                 Key[
+                  Quantity[1, "Kelvins"]]}, "Item", False], "Mouse"], 
+              ImageSize -> {{75, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                StyleBox[
+                 
+                 TemplateBox[{"\"\[CapitalTheta]\"", "1"}, "Superscript", 
+                  SyntaxForm -> SuperscriptBox], FontFamily -> Dynamic[
+                   CurrentValue[{"StyleHints", "CodeFont"}]], 
+                 ShowStringCharacters -> True]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                 Key[
+                  Quantity[1, "Kelvins"]]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                RowBox[{"1", "\"mol\""}]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                 Key[
+                  Quantity[1, "Moles"]]}, "Item", False], "Mouse"], 
+              ImageSize -> {{75, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                StyleBox[
+                 
+                 TemplateBox[{"\"N\"", "1"}, "Superscript", SyntaxForm -> 
+                  SuperscriptBox], FontFamily -> Dynamic[
+                   CurrentValue[{"StyleHints", "CodeFont"}]], 
+                 ShowStringCharacters -> True]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                 Key[
+                  Quantity[1, "Moles"]]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                RowBox[{"1", "\"cd\""}]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                 Key[
+                  Quantity[1, "Candelas"]]}, "Item", False], "Mouse"], 
+              ImageSize -> {{75, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                StyleBox[
+                 
+                 TemplateBox[{"\"J\"", "1"}, "Superscript", SyntaxForm -> 
+                  SuperscriptBox], FontFamily -> Dynamic[
+                   CurrentValue[{"StyleHints", "CodeFont"}]], 
+                 ShowStringCharacters -> True]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                 Key[
+                  Quantity[1, "Candelas"]]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}}, 
+          BaseStyle -> {
+           ContextMenu -> 
+            Dynamic[TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger; 
+              Which[TypeSystem`NestedGrid`PackagePrivate`$lastOutputID =!= 
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                 TypeSystem`NestedGrid`PackagePrivate`$outputID$$], {}, 
+                TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger === 
+                TypeSystem`NestedGrid`PackagePrivate`$lastContextMenuTrigger, 
+                TypeSystem`NestedGrid`PackagePrivate`$lastContextMenu, True, 
+                TypeSystem`NestedGrid`PackagePrivate`$lastContextMenuTrigger = 
+                 TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger; 
+                TypeSystem`NestedGrid`PackagePrivate`$lastContextMenu = 
+                 Block[{TypeSystem`NestedGrid`PackagePrivate`$globalScrollPos = \
+{TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$}}, 
+                   
+                   With[{TypeSystem`NestedGrid`PackagePrivate`lastPath$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPathType, 
+                    TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`$\
+lastPathIsLeafHeader, TypeSystem`NestedGrid`PackagePrivate`headerHidden$ = And[
+                    MatchQ[TypeSystem`NestedGrid`PackagePrivate`$lastPathType, 
+                    Alternatives["RowHeader", "ColumnHeader"]], 
+                    TypeSystem`NestedGrid`PackagePrivate`headerHiddenQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$]], 
+                    TypeSystem`NestedGrid`PackagePrivate`allHidden$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`allHiddenQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`anyHidden$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`anyHiddenQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`sortDirection$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`columnSortDirection[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$[
+                    "SortPaths"], 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$[
+                    "SortDirections"]], 
+                    TypeSystem`NestedGrid`PackagePrivate`haveData$ = Not[
+                    FailureQ[
+                    TypeSystem`NestedGrid`PackagePrivate`datasetInitialData[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$]]], 
+                    TypeSystem`NestedGrid`PackagePrivate`isKeyDummy$ = Not[
+                    FreeQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, Keys]]}, 
+                    Join[{
+                    If[
+                    Or[
+                    Not[TypeSystem`NestedGrid`PackagePrivate`haveData$], 
+                    Not[TypeSystem`NestedGrid`PackagePrivate`anyHidden$], 
+                    TypeSystem`NestedGrid`PackagePrivate`isKeyDummy$], 
+                    Nothing, 
+                    MenuItem[
+                    "Show " <> 
+                    Which[TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "Item", "", 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "RowHeader", "Row", 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "ColumnHeader", "Column", True, ""], 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateHiddenItems[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, 
+                    "remove"]], MenuEvaluator -> Automatic]], 
+                    If[
+                    Or[
+                    Not[TypeSystem`NestedGrid`PackagePrivate`haveData$], 
+                    TypeSystem`NestedGrid`PackagePrivate`pathEmptyQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`isKeyDummy$, 
+                    And[
+                    TypeSystem`NestedGrid`PackagePrivate`allHidden$, 
+                    TypeSystem`NestedGrid`PackagePrivate`headerHidden$]], 
+                    Nothing, 
+                    MenuItem[
+                    "Hide " <> 
+                    Which[TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "Item", "", 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "RowHeader", "Row", 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "ColumnHeader", "Column", True, ""], 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateHiddenItems[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, "add"]], 
+                    MenuEvaluator -> Automatic]], Delimiter}, 
+                    If[
+                    And[TypeSystem`NestedGrid`PackagePrivate`haveData$, 
+                    MatchQ[TypeSystem`NestedGrid`PackagePrivate`lastPathType$, 
+                    Alternatives["ColumnHeader", "KeyDummy"]], 
+                    TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$, 
+                    Not[TypeSystem`NestedGrid`PackagePrivate`allHidden$]], {
+                    If[
+                    TypeSystem`NestedGrid`PackagePrivate`sortDirection$ =!= 
+                    "Ascending", 
+                    MenuItem["Sort", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateSort[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, 
+                    "Ascending"]], MenuEvaluator -> Automatic], Nothing], 
+                    If[
+                    TypeSystem`NestedGrid`PackagePrivate`sortDirection$ =!= 
+                    "Descending", 
+                    MenuItem["Reverse Sort", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateSort[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, 
+                    "Descending"]], MenuEvaluator -> Automatic], Nothing], 
+                    If[
+                    TypeSystem`NestedGrid`PackagePrivate`sortDirection$ =!= 
+                    None, 
+                    MenuItem["Unsort", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateSort[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, None]], 
+                    MenuEvaluator -> Automatic], Nothing], Delimiter}, {}], {
+                    MenuItem["Copy Position to Clipboard", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`toCurrentPosition[
+                    TypeSystem`NestedGrid`PackagePrivate`copyClip]], 
+                    MenuEvaluator -> Automatic], 
+                    If[TypeSystem`NestedGrid`PackagePrivate`haveData$, 
+                    MenuItem["Copy Data to Clipboard", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`toCurrentData[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`copyClip]], 
+                    MenuEvaluator -> Automatic], Nothing], Delimiter, 
+                    MenuItem["Paste Position in New Cell", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`toCurrentPosition[
+                    TypeSystem`NestedGrid`PackagePrivate`cellPaste]], 
+                    MenuEvaluator -> Automatic], 
+                    If[TypeSystem`NestedGrid`PackagePrivate`haveData$, 
+                    MenuItem["Paste Data in New Cell", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`toCurrentData[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`cellPaste]], 
+                    MenuEvaluator -> Automatic], Nothing]}]]]]], FontFamily -> 
+            "Source Sans Pro", FontSize -> 14, FontWeight -> Plain}, Dividers -> 
+          All, FrameStyle -> GrayLevel[0.7490196078431373], 
+          Spacings -> {0, 0}, Alignment -> Left, 
+          BaseStyle -> {
+           FontFamily -> "Source Sans Pro", FontSize -> 14, FontWeight -> 
+            Plain}], LineBreakWithin -> False, ContextMenu -> {}, NumberMarks -> 
+         False, ShowAutoStyles -> False]], 
+      TypeSystem`NestedGrid`PackagePrivate`initialQ = True}, 
+     Dynamic[
+      TypeSystem`NestedGrid`PackagePrivate`setupViewPath[
+      TypeSystem`NestedGrid`PackagePrivate`$path$$, If[
+         Not[TypeSystem`NestedGrid`PackagePrivate`initialQ], 
+         Module[{
+          TypeSystem`NestedGrid`PackagePrivate`tmpGrid$ = $Failed, 
+           TypeSystem`NestedGrid`PackagePrivate`tmpData$ = 
+           TypeSystem`NestedGrid`PackagePrivate`datasetData[
+            TypeSystem`NestedGrid`PackagePrivate`$state$$]}, 
+          TypeSystem`NestedGrid`PackagePrivate`tmpGrid$ = If[
+             FailureQ[TypeSystem`NestedGrid`PackagePrivate`tmpData$], 
+             TypeSystem`NestedGrid`PackagePrivate`renderedGrid, 
+             TypeSystem`NestedGrid`PackagePrivate`renderGrid[
+             TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+              TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+              TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+              TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+              TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+              TypeSystem`NestedGrid`PackagePrivate`localHold[
+              TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+             TypeSystem`NestedGrid`PackagePrivate`tmpData$]]; If[
+            Not[
+             FailureQ[TypeSystem`NestedGrid`PackagePrivate`tmpGrid$]], 
+            TypeSystem`NestedGrid`PackagePrivate`renderedGrid = 
+            TypeSystem`NestedGrid`PackagePrivate`tmpGrid$]; Null]]; 
+       TypeSystem`NestedGrid`PackagePrivate`initialQ = False; 
+       TypeSystem`NestedGrid`PackagePrivate`$vPos$$; 
+       TypeSystem`NestedGrid`PackagePrivate`$hPos$$; If[
+         FailureQ[TypeSystem`NestedGrid`PackagePrivate`renderedGrid], 
+         TypeSystem`SparseGrid[
+          TypeSystem`H["(data no longer present)"]], 
+         TypeSystem`NestedGrid`PackagePrivate`renderedGrid]], 
+      TrackedSymbols :> {
+       TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$hPos$$}], 
+     DynamicModuleValues :> {}], 
+    TypeSystem`NestedGrid`PackagePrivate`$topBar$$ = Dynamic[
+     TypeSystem`NestedGrid`PackagePrivate`makeFramedBar[
+      TypeSystem`PackageScope`SubViewPathbar[
+      TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+       TypeSystem`NestedGrid`PackagePrivate`updateState[
+       TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+        TypeSystem`NestedGrid`PackagePrivate`localHold[
+        TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]]], 
+     TrackedSymbols :> {TypeSystem`NestedGrid`PackagePrivate`$path$$}], 
+    TypeSystem`NestedGrid`PackagePrivate`$bottomBar$$ = Style[
+     Framed[
+      Dynamic[
+       Replace[
+       TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$, {
+        TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+           TypeSystem`NestedGrid`PackagePrivate`localHold[
+           TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][Null, 
+           Blank[]] -> "", TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+           TypeSystem`NestedGrid`PackagePrivate`localHold[
+           TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+           Pattern[TypeSystem`NestedGrid`PackagePrivate`path$, 
+            Blank[]], 
+           Pattern[TypeSystem`NestedGrid`PackagePrivate`pathType$, 
+            Blank[]], 
+           Pattern[TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$, 
+            Blank[]]] :> (
+          Increment[TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger]; 
+          TypeSystem`NestedGrid`PackagePrivate`$lastPath = 
+           TypeSystem`NestedGrid`PackagePrivate`path$; 
+          TypeSystem`NestedGrid`PackagePrivate`$lastPathType = 
+           TypeSystem`NestedGrid`PackagePrivate`pathType$; 
+          TypeSystem`NestedGrid`PackagePrivate`$lastPathIsLeafHeader = 
+           TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$; 
+          TypeSystem`NestedGrid`PackagePrivate`$lastOutputID = 
+           TypeSystem`NestedGrid`PackagePrivate`localHold[
+            TypeSystem`NestedGrid`PackagePrivate`$outputID$$]; 
+          TypeSystem`NestedGrid`PackagePrivate`makePathTrail[
+           TypeSystem`NestedGrid`PackagePrivate`path$, 
+            TypeSystem`NestedGrid`PackagePrivate`makePathElements]), Null :> 
+         Spacer[10], Blank[] :> Spacer[10]}], 
+       TrackedSymbols :> {
+        TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$}], FrameStyle -> 
+      None, ImageMargins -> 0, FrameMargins -> 0, Alignment -> Top, 
+      ImageSize -> {Automatic, 15}], FontSize -> 1], 
+    TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$ = Null}, 
+    DynamicWrapperBox[
+     DynamicBox[ToBoxes[
+       Dataset`DatasetContent[
+       2, "Path" -> Hold[TypeSystem`NestedGrid`PackagePrivate`$path$$], 
+        "Grid" -> Hold[TypeSystem`NestedGrid`PackagePrivate`$grid$$], "State" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$state$$], "VPos" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$vPos$$], "HPos" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$hPos$$], "TopBar" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$topBar$$], "BottomBar" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$bottomBar$$], "OutputID" -> 
+        Hold[
+          TypeSystem`NestedGrid`PackagePrivate`localHold[
+          TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]], StandardForm],
+      ImageSizeCache->{152., {100.13403309800196`, 105.86596690199804`}},
+      TrackedSymbols:>{
+       TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$grid$$}], 
+     TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$ = 
+     MouseAnnotation[],
+     ImageSizeCache->{152., {100.13403309800196`, 105.86596690199804`}}],
+    BaseStyle->{LineBreakWithin -> False},
+    DynamicModuleValues:>{},
+    Initialization:>(TypeSystem`NestedGrid`PackagePrivate`$outputID$$ = 
+     CreateUUID[]),
+    UnsavedVariables:>{TypeSystem`NestedGrid`PackagePrivate`$outputID$$}],
+   Deploy,
+   DefaultBaseStyle->"Deploy"],
+  Dataset`InterpretDataset[1],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ CellChangeTimes->{{3.875194538990546*^9, 3.875194543675131*^9}},
+ CellLabel->"Out[72]=",
+ CellID->21912724,ExpressionUUID->"ce55ed84-861c-4a6e-bafa-99f3ec2f6659"]
+}, Open  ]],
+
+Cell["\<\
+Map the function over the 22 SI derived units with special names while \
+excluding ones that contain angles:\
+\>", "Text",
+ CellChangeTimes->{{3.8751945479499483`*^9, 3.8751945961192493`*^9}},
+ CellID->606777071,ExpressionUUID->"99c13b1f-3718-4592-90e8-9fd544f6adeb"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"SIDerivedUnitsWithoutAngles", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{"1", "\"Hz\"", "hertz", "\"Hertz\""},
+      "Quantity"], ",", 
+     TemplateBox[{"1", "\"N\"", "newton", "\"Newtons\""},
+      "Quantity"], ",", 
+     TemplateBox[{"1", "\"Pa\"", "pascal", "\"Pascals\""},
+      "Quantity"], ",", 
+     TemplateBox[{"1", "\"J\"", "joule", "\"Joules\""},
+      "Quantity"], ",", 
+     TemplateBox[{"1", "\"W\"", "watt", "\"Watts\""},
+      "Quantity"], ",", 
+     TemplateBox[{"1", "\"C\"", "coulomb", "\"Coulombs\""},
+      "Quantity"], ",", 
+     TemplateBox[{"1", "\"V\"", "volt", "\"Volts\""},
+      "Quantity"], ",", 
+     TemplateBox[{"1", "\"F\"", "farad", "\"Farads\""},
+      "Quantity"], ",", 
+     TemplateBox[{"1", "\"\[CapitalOmega]\"", "ohm", "\"Ohms\""},
+      "Quantity"], ",", 
+     TemplateBox[{"1", "\"S\"", "siemens", "\"Siemens\""},
+      "Quantity"], ",", 
+     TemplateBox[{"1", "\"Wb\"", "weber", "\"Webers\""},
+      "Quantity"], ",", 
+     TemplateBox[{"1", "\"T\"", "tesla", "\"Teslas\""},
+      "Quantity"], ",", 
+     TemplateBox[{"1", "\"H\"", "henry", "\"Henries\""},
+      "Quantity"], ",", 
+     TemplateBox[{
+      "1", "\"\[Degree]C\"", "degree Celsius", "\"DegreesCelsius\""},
+      "Quantity"], ",", 
+     TemplateBox[{"1", "\"Bq\"", "becquerel", "\"Becquerels\""},
+      "Quantity"], ",", 
+     TemplateBox[{"1", "\"Gy\"", "gray", "\"Grays\""},
+      "Quantity"], ",", 
+     TemplateBox[{"1", "\"Sv\"", "sievert", "\"Sieverts\""},
+      "Quantity"], ",", 
+     TemplateBox[{"1", "\"kat\"", "katal", "\"Katals\""},
+      "Quantity"]}], "}"}]}], ";"}]], "Input",
+ CellLabel->"In[73]:=",
+ CellID->9251484,ExpressionUUID->"87bbe9d5-465f-4c76-80a1-45d0a5b2e5f1"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"AssociationMap", "[", 
+  RowBox[{"CanonicalDimensionalProduct", ",", "SIDerivedUnitsWithoutAngles"}],
+   "]"}]], "Input",
+ CellChangeTimes->{{3.875194600406184*^9, 3.8751946110135965`*^9}},
+ CellLabel->"In[74]:=",
+ CellID->5099771,ExpressionUUID->"667bce5a-324f-4d26-bdfd-ce037f02544b"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{
+    TemplateBox[{"1", "\"Hz\"", "hertz", "\"Hertz\""},
+     "Quantity"], "\[Rule]", 
+    TemplateBox[{"\"T\"", 
+      RowBox[{"-", "1"}]},
+     "Superscript"]}], ",", 
+   RowBox[{
+    TemplateBox[{"1", "\"N\"", "newton", "\"Newtons\""},
+     "Quantity"], "\[Rule]", 
+    RowBox[{
+     TemplateBox[{"\"T\"", 
+       RowBox[{"-", "2"}]},
+      "Superscript"], "\[CenterDot]", 
+     TemplateBox[{"\"M\"", "1"},
+      "Superscript"], "\[CenterDot]", 
+     TemplateBox[{"\"L\"", "1"},
+      "Superscript"]}]}], ",", 
+   RowBox[{
+    TemplateBox[{"1", "\"Pa\"", "pascal", "\"Pascals\""},
+     "Quantity"], "\[Rule]", 
+    RowBox[{
+     TemplateBox[{"\"T\"", 
+       RowBox[{"-", "2"}]},
+      "Superscript"], "\[CenterDot]", 
+     TemplateBox[{"\"M\"", "1"},
+      "Superscript"], "\[CenterDot]", 
+     TemplateBox[{"\"L\"", 
+       RowBox[{"-", "1"}]},
+      "Superscript"]}]}], ",", 
+   RowBox[{
+    TemplateBox[{"1", "\"J\"", "joule", "\"Joules\""},
+     "Quantity"], "\[Rule]", 
+    RowBox[{
+     TemplateBox[{"\"T\"", 
+       RowBox[{"-", "2"}]},
+      "Superscript"], "\[CenterDot]", 
+     TemplateBox[{"\"M\"", "1"},
+      "Superscript"], "\[CenterDot]", 
+     TemplateBox[{"\"L\"", "2"},
+      "Superscript"]}]}], ",", 
+   RowBox[{
+    TemplateBox[{"1", "\"W\"", "watt", "\"Watts\""},
+     "Quantity"], "\[Rule]", 
+    RowBox[{
+     TemplateBox[{"\"T\"", 
+       RowBox[{"-", "3"}]},
+      "Superscript"], "\[CenterDot]", 
+     TemplateBox[{"\"M\"", "1"},
+      "Superscript"], "\[CenterDot]", 
+     TemplateBox[{"\"L\"", "2"},
+      "Superscript"]}]}], ",", 
+   RowBox[{
+    TemplateBox[{"1", "\"C\"", "coulomb", "\"Coulombs\""},
+     "Quantity"], "\[Rule]", 
+    RowBox[{
+     TemplateBox[{"\"T\"", "1"},
+      "Superscript"], "\[CenterDot]", 
+     TemplateBox[{"\"I\"", "1"},
+      "Superscript"]}]}], ",", 
+   RowBox[{
+    TemplateBox[{"1", "\"V\"", "volt", "\"Volts\""},
+     "Quantity"], "\[Rule]", 
+    RowBox[{
+     TemplateBox[{"\"T\"", 
+       RowBox[{"-", "3"}]},
+      "Superscript"], "\[CenterDot]", 
+     TemplateBox[{"\"M\"", "1"},
+      "Superscript"], "\[CenterDot]", 
+     TemplateBox[{"\"L\"", "2"},
+      "Superscript"], "\[CenterDot]", 
+     TemplateBox[{"\"I\"", 
+       RowBox[{"-", "1"}]},
+      "Superscript"]}]}], ",", 
+   RowBox[{
+    TemplateBox[{"1", "\"F\"", "farad", "\"Farads\""},
+     "Quantity"], "\[Rule]", 
+    RowBox[{
+     TemplateBox[{"\"T\"", "4"},
+      "Superscript"], "\[CenterDot]", 
+     TemplateBox[{"\"M\"", 
+       RowBox[{"-", "1"}]},
+      "Superscript"], "\[CenterDot]", 
+     TemplateBox[{"\"L\"", 
+       RowBox[{"-", "2"}]},
+      "Superscript"], "\[CenterDot]", 
+     TemplateBox[{"\"I\"", "2"},
+      "Superscript"]}]}], ",", 
+   RowBox[{
+    TemplateBox[{"1", "\"\[CapitalOmega]\"", "ohm", "\"Ohms\""},
+     "Quantity"], "\[Rule]", 
+    RowBox[{
+     TemplateBox[{"\"T\"", 
+       RowBox[{"-", "3"}]},
+      "Superscript"], "\[CenterDot]", 
+     TemplateBox[{"\"M\"", "1"},
+      "Superscript"], "\[CenterDot]", 
+     TemplateBox[{"\"L\"", "2"},
+      "Superscript"], "\[CenterDot]", 
+     TemplateBox[{"\"I\"", 
+       RowBox[{"-", "2"}]},
+      "Superscript"]}]}], ",", 
+   RowBox[{
+    TemplateBox[{"1", "\"S\"", "siemens", "\"Siemens\""},
+     "Quantity"], "\[Rule]", 
+    RowBox[{
+     TemplateBox[{"\"T\"", "3"},
+      "Superscript"], "\[CenterDot]", 
+     TemplateBox[{"\"M\"", 
+       RowBox[{"-", "1"}]},
+      "Superscript"], "\[CenterDot]", 
+     TemplateBox[{"\"L\"", 
+       RowBox[{"-", "2"}]},
+      "Superscript"], "\[CenterDot]", 
+     TemplateBox[{"\"I\"", "2"},
+      "Superscript"]}]}], ",", 
+   RowBox[{
+    TemplateBox[{"1", "\"Wb\"", "weber", "\"Webers\""},
+     "Quantity"], "\[Rule]", 
+    RowBox[{
+     TemplateBox[{"\"T\"", 
+       RowBox[{"-", "2"}]},
+      "Superscript"], "\[CenterDot]", 
+     TemplateBox[{"\"M\"", "1"},
+      "Superscript"], "\[CenterDot]", 
+     TemplateBox[{"\"L\"", "2"},
+      "Superscript"], "\[CenterDot]", 
+     TemplateBox[{"\"I\"", 
+       RowBox[{"-", "1"}]},
+      "Superscript"]}]}], ",", 
+   RowBox[{
+    TemplateBox[{"1", "\"T\"", "tesla", "\"Teslas\""},
+     "Quantity"], "\[Rule]", 
+    RowBox[{
+     TemplateBox[{"\"T\"", 
+       RowBox[{"-", "2"}]},
+      "Superscript"], "\[CenterDot]", 
+     TemplateBox[{"\"M\"", "1"},
+      "Superscript"], "\[CenterDot]", 
+     TemplateBox[{"\"I\"", 
+       RowBox[{"-", "1"}]},
+      "Superscript"]}]}], ",", 
+   RowBox[{
+    TemplateBox[{"1", "\"H\"", "henry", "\"Henries\""},
+     "Quantity"], "\[Rule]", 
+    RowBox[{
+     TemplateBox[{"\"T\"", 
+       RowBox[{"-", "2"}]},
+      "Superscript"], "\[CenterDot]", 
+     TemplateBox[{"\"M\"", "1"},
+      "Superscript"], "\[CenterDot]", 
+     TemplateBox[{"\"L\"", "2"},
+      "Superscript"], "\[CenterDot]", 
+     TemplateBox[{"\"I\"", 
+       RowBox[{"-", "2"}]},
+      "Superscript"]}]}], ",", 
+   RowBox[{
+    TemplateBox[{
+     "1", "\"\[Degree]C\"", "degree Celsius", "\"DegreesCelsius\""},
+     "Quantity"], "\[Rule]", 
+    TemplateBox[{"\"\[CapitalTheta]\"", "1"},
+     "Superscript"]}], ",", 
+   RowBox[{
+    TemplateBox[{"1", "\"Bq\"", "becquerel", "\"Becquerels\""},
+     "Quantity"], "\[Rule]", 
+    TemplateBox[{"\"T\"", 
+      RowBox[{"-", "1"}]},
+     "Superscript"]}], ",", 
+   RowBox[{
+    TemplateBox[{"1", "\"Gy\"", "gray", "\"Grays\""},
+     "Quantity"], "\[Rule]", 
+    RowBox[{
+     TemplateBox[{"\"T\"", 
+       RowBox[{"-", "2"}]},
+      "Superscript"], "\[CenterDot]", 
+     TemplateBox[{"\"L\"", "2"},
+      "Superscript"]}]}], ",", 
+   RowBox[{
+    TemplateBox[{"1", "\"Sv\"", "sievert", "\"Sieverts\""},
+     "Quantity"], "\[Rule]", 
+    RowBox[{
+     TemplateBox[{"\"T\"", 
+       RowBox[{"-", "2"}]},
+      "Superscript"], "\[CenterDot]", 
+     TemplateBox[{"\"L\"", "2"},
+      "Superscript"]}]}], ",", 
+   RowBox[{
+    TemplateBox[{"1", "\"kat\"", "katal", "\"Katals\""},
+     "Quantity"], "\[Rule]", 
+    RowBox[{
+     TemplateBox[{"\"T\"", 
+       RowBox[{"-", "1"}]},
+      "Superscript"], "\[CenterDot]", 
+     TemplateBox[{"\"N\"", "1"},
+      "Superscript"]}]}]}], "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{3.875194611231481*^9},
+ CellLabel->"Out[74]=",
+ CellID->405433563,ExpressionUUID->"b2cc2095-b477-4c1d-8205-fe602f1db010"]
+}, Open  ]],
+
+Cell["Make a dataset:", "Text",
+ CellChangeTimes->{{3.8751946137428975`*^9, 3.875194615848274*^9}},
+ CellID->261916112,ExpressionUUID->"fb75ebfd-be6a-46a2-a054-3516e9cabd6f"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Dataset", "[", 
+  RowBox[{"AssociationMap", "[", 
+   RowBox[{
+   "CanonicalDimensionalProduct", ",", "SIDerivedUnitsWithoutAngles"}], "]"}],
+   "]"}]], "Input",
+ CellChangeTimes->{{3.8751946168881855`*^9, 3.875194622913458*^9}},
+ CellLabel->"In[75]:=",
+ CellID->648174498,ExpressionUUID->"b575a952-f0ec-4d52-97b9-111a39963793"],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[
+   DynamicModuleBox[{TypeSystem`NestedGrid`PackagePrivate`$state$$ = <|
+    "InitialData" -> <|
+      Quantity[1, "Hertz"] -> Superscript["T", -1], Quantity[1, "Newtons"] -> 
+       CenterDot[
+         Superscript["T", -2], 
+         Superscript["M", 1], 
+         Superscript["L", 1]], Quantity[1, "Pascals"] -> CenterDot[
+         Superscript["T", -2], 
+         Superscript["M", 1], 
+         Superscript["L", -1]], Quantity[1, "Joules"] -> CenterDot[
+         Superscript["T", -2], 
+         Superscript["M", 1], 
+         Superscript["L", 2]], Quantity[1, "Watts"] -> CenterDot[
+         Superscript["T", -3], 
+         Superscript["M", 1], 
+         Superscript["L", 2]], Quantity[1, "Coulombs"] -> CenterDot[
+         Superscript["T", 1], 
+         Superscript["I", 1]], Quantity[1, "Volts"] -> CenterDot[
+         Superscript["T", -3], 
+         Superscript["M", 1], 
+         Superscript["L", 2], 
+         Superscript["I", -1]], Quantity[1, "Farads"] -> CenterDot[
+         Superscript["T", 4], 
+         Superscript["M", -1], 
+         Superscript["L", -2], 
+         Superscript["I", 2]], Quantity[1, "Ohms"] -> CenterDot[
+         Superscript["T", -3], 
+         Superscript["M", 1], 
+         Superscript["L", 2], 
+         Superscript["I", -2]], Quantity[1, "Siemens"] -> CenterDot[
+         Superscript["T", 3], 
+         Superscript["M", -1], 
+         Superscript["L", -2], 
+         Superscript["I", 2]], Quantity[1, "Webers"] -> CenterDot[
+         Superscript["T", -2], 
+         Superscript["M", 1], 
+         Superscript["L", 2], 
+         Superscript["I", -1]], Quantity[1, "Teslas"] -> CenterDot[
+         Superscript["T", -2], 
+         Superscript["M", 1], 
+         Superscript["I", -1]], Quantity[1, "Henries"] -> CenterDot[
+         Superscript["T", -2], 
+         Superscript["M", 1], 
+         Superscript["L", 2], 
+         Superscript["I", -2]], Quantity[1, "DegreesCelsius"] -> 
+       Superscript["\[CapitalTheta]", 1], Quantity[1, "Becquerels"] -> 
+       Superscript["T", -1], Quantity[1, "Grays"] -> CenterDot[
+         Superscript["T", -2], 
+         Superscript["L", 2]], Quantity[1, "Sieverts"] -> CenterDot[
+         Superscript["T", -2], 
+         Superscript["L", 2]], Quantity[1, "Katals"] -> CenterDot[
+         Superscript["T", -1], 
+         Superscript["N", 1]]|>, "AllowEmbedding" -> True, "InitialShape" -> 
+     TypeSystem`PackageScope`Limited[
+       TypeSystem`PackageScope`ColumnShape[
+        TypeSystem`PackageScope`KeyValueShape[
+         TypeSystem`PackageScope`UnknownShape[True], 
+         TypeSystem`PackageScope`UnknownShape[False]]], 18, 
+       DirectedInfinity[1], {}], "InitialType" -> 
+     TypeSystem`Assoc[TypeSystem`AnyType, TypeSystem`AnyType, 18], 
+     "Meta" -> <||>, "RowTarget" -> 20, "ColumnTarget" -> 10, "Shape" -> 
+     TypeSystem`PackageScope`Limited[
+       TypeSystem`PackageScope`ColumnShape[
+        TypeSystem`PackageScope`KeyValueShape[
+         TypeSystem`PackageScope`UnknownShape[True], 
+         TypeSystem`PackageScope`UnknownShape[False]]], 18, 
+       DirectedInfinity[1], {}], "Type" -> 
+     TypeSystem`Assoc[TypeSystem`AnyType, TypeSystem`AnyType, 18], 
+     "Path" -> {}, "DisplayedRowCount" -> 18, "DisplayedColumnCount" -> 1, 
+     "DataRowCount" -> 18, "DataColumnCount" -> 1, "SortPaths" -> {}, 
+     "SortDirections" -> {}, "HiddenItemsMap" -> Null, "UpdateType" -> 1|>, 
+    TypeSystem`NestedGrid`PackagePrivate`$outputID$$, 
+    TypeSystem`NestedGrid`PackagePrivate`$path$$ = {}, 
+    TypeSystem`NestedGrid`PackagePrivate`$vPos$$ = 1, 
+    TypeSystem`NestedGrid`PackagePrivate`$hPos$$ = 1, 
+    TypeSystem`NestedGrid`PackagePrivate`$grid$$ = 
+    DynamicModule[{TypeSystem`NestedGrid`PackagePrivate`renderedGrid = Deploy[
+        Style[
+         Grid[{{
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                RowBox[{"1", "\"Hz\""}]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                 Key[
+                  Quantity[1, "Hertz"]]}, "Item", False], "Mouse"], 
+              ImageSize -> {{75, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                StyleBox[
+                 TemplateBox[{"\"T\"", 
+                   RowBox[{"-", "1"}]}, "Superscript", SyntaxForm -> 
+                  SuperscriptBox], FontFamily -> Dynamic[
+                   CurrentValue[{"StyleHints", "CodeFont"}]], 
+                 ShowStringCharacters -> True]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                 Key[
+                  Quantity[1, "Hertz"]]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                RowBox[{"1", "\"N\""}]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                 Key[
+                  Quantity[1, "Newtons"]]}, "Item", False], "Mouse"], 
+              ImageSize -> {{75, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                StyleBox[
+                 RowBox[{
+                   TemplateBox[{"\"T\"", 
+                    RowBox[{"-", "2"}]}, "Superscript", SyntaxForm -> 
+                    SuperscriptBox], "\[CenterDot]", 
+                   
+                   TemplateBox[{"\"M\"", "1"}, "Superscript", SyntaxForm -> 
+                    SuperscriptBox], "\[CenterDot]", 
+                   
+                   TemplateBox[{"\"L\"", "1"}, "Superscript", SyntaxForm -> 
+                    SuperscriptBox]}], FontFamily -> Dynamic[
+                   CurrentValue[{"StyleHints", "CodeFont"}]], 
+                 ShowStringCharacters -> True]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                 Key[
+                  Quantity[1, "Newtons"]]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                RowBox[{"1", "\"Pa\""}]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                 Key[
+                  Quantity[1, "Pascals"]]}, "Item", False], "Mouse"], 
+              ImageSize -> {{75, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                StyleBox[
+                 RowBox[{
+                   TemplateBox[{"\"T\"", 
+                    RowBox[{"-", "2"}]}, "Superscript", SyntaxForm -> 
+                    SuperscriptBox], "\[CenterDot]", 
+                   
+                   TemplateBox[{"\"M\"", "1"}, "Superscript", SyntaxForm -> 
+                    SuperscriptBox], "\[CenterDot]", 
+                   TemplateBox[{"\"L\"", 
+                    RowBox[{"-", "1"}]}, "Superscript", SyntaxForm -> 
+                    SuperscriptBox]}], FontFamily -> Dynamic[
+                   CurrentValue[{"StyleHints", "CodeFont"}]], 
+                 ShowStringCharacters -> True]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                 Key[
+                  Quantity[1, "Pascals"]]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                RowBox[{"1", "\"J\""}]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                 Key[
+                  Quantity[1, "Joules"]]}, "Item", False], "Mouse"], 
+              ImageSize -> {{75, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                StyleBox[
+                 RowBox[{
+                   TemplateBox[{"\"T\"", 
+                    RowBox[{"-", "2"}]}, "Superscript", SyntaxForm -> 
+                    SuperscriptBox], "\[CenterDot]", 
+                   
+                   TemplateBox[{"\"M\"", "1"}, "Superscript", SyntaxForm -> 
+                    SuperscriptBox], "\[CenterDot]", 
+                   
+                   TemplateBox[{"\"L\"", "2"}, "Superscript", SyntaxForm -> 
+                    SuperscriptBox]}], FontFamily -> Dynamic[
+                   CurrentValue[{"StyleHints", "CodeFont"}]], 
+                 ShowStringCharacters -> True]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                 Key[
+                  Quantity[1, "Joules"]]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                RowBox[{"1", "\"W\""}]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                 Key[
+                  Quantity[1, "Watts"]]}, "Item", False], "Mouse"], 
+              ImageSize -> {{75, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                StyleBox[
+                 RowBox[{
+                   TemplateBox[{"\"T\"", 
+                    RowBox[{"-", "3"}]}, "Superscript", SyntaxForm -> 
+                    SuperscriptBox], "\[CenterDot]", 
+                   
+                   TemplateBox[{"\"M\"", "1"}, "Superscript", SyntaxForm -> 
+                    SuperscriptBox], "\[CenterDot]", 
+                   
+                   TemplateBox[{"\"L\"", "2"}, "Superscript", SyntaxForm -> 
+                    SuperscriptBox]}], FontFamily -> Dynamic[
+                   CurrentValue[{"StyleHints", "CodeFont"}]], 
+                 ShowStringCharacters -> True]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                 Key[
+                  Quantity[1, "Watts"]]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                RowBox[{"1", "\"C\""}]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                 Key[
+                  Quantity[1, "Coulombs"]]}, "Item", False], "Mouse"], 
+              ImageSize -> {{75, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                StyleBox[
+                 RowBox[{
+                   
+                   TemplateBox[{"\"T\"", "1"}, "Superscript", SyntaxForm -> 
+                    SuperscriptBox], "\[CenterDot]", 
+                   
+                   TemplateBox[{"\"I\"", "1"}, "Superscript", SyntaxForm -> 
+                    SuperscriptBox]}], FontFamily -> Dynamic[
+                   CurrentValue[{"StyleHints", "CodeFont"}]], 
+                 ShowStringCharacters -> True]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                 Key[
+                  Quantity[1, "Coulombs"]]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                RowBox[{"1", "\"V\""}]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                 Key[
+                  Quantity[1, "Volts"]]}, "Item", False], "Mouse"], 
+              ImageSize -> {{75, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                StyleBox[
+                 RowBox[{
+                   TemplateBox[{"\"T\"", 
+                    RowBox[{"-", "3"}]}, "Superscript", SyntaxForm -> 
+                    SuperscriptBox], "\[CenterDot]", 
+                   
+                   TemplateBox[{"\"M\"", "1"}, "Superscript", SyntaxForm -> 
+                    SuperscriptBox], "\[CenterDot]", 
+                   
+                   TemplateBox[{"\"L\"", "2"}, "Superscript", SyntaxForm -> 
+                    SuperscriptBox], "\[CenterDot]", 
+                   TemplateBox[{"\"I\"", 
+                    RowBox[{"-", "1"}]}, "Superscript", SyntaxForm -> 
+                    SuperscriptBox]}], FontFamily -> Dynamic[
+                   CurrentValue[{"StyleHints", "CodeFont"}]], 
+                 ShowStringCharacters -> True]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                 Key[
+                  Quantity[1, "Volts"]]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                RowBox[{"1", "\"F\""}]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                 Key[
+                  Quantity[1, "Farads"]]}, "Item", False], "Mouse"], 
+              ImageSize -> {{75, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                StyleBox[
+                 RowBox[{
+                   
+                   TemplateBox[{"\"T\"", "4"}, "Superscript", SyntaxForm -> 
+                    SuperscriptBox], "\[CenterDot]", 
+                   TemplateBox[{"\"M\"", 
+                    RowBox[{"-", "1"}]}, "Superscript", SyntaxForm -> 
+                    SuperscriptBox], "\[CenterDot]", 
+                   TemplateBox[{"\"L\"", 
+                    RowBox[{"-", "2"}]}, "Superscript", SyntaxForm -> 
+                    SuperscriptBox], "\[CenterDot]", 
+                   
+                   TemplateBox[{"\"I\"", "2"}, "Superscript", SyntaxForm -> 
+                    SuperscriptBox]}], FontFamily -> Dynamic[
+                   CurrentValue[{"StyleHints", "CodeFont"}]], 
+                 ShowStringCharacters -> True]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                 Key[
+                  Quantity[1, "Farads"]]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                RowBox[{"1", "\"\[CapitalOmega]\""}]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                 Key[
+                  Quantity[1, "Ohms"]]}, "Item", False], "Mouse"], 
+              ImageSize -> {{75, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                StyleBox[
+                 RowBox[{
+                   TemplateBox[{"\"T\"", 
+                    RowBox[{"-", "3"}]}, "Superscript", SyntaxForm -> 
+                    SuperscriptBox], "\[CenterDot]", 
+                   
+                   TemplateBox[{"\"M\"", "1"}, "Superscript", SyntaxForm -> 
+                    SuperscriptBox], "\[CenterDot]", 
+                   
+                   TemplateBox[{"\"L\"", "2"}, "Superscript", SyntaxForm -> 
+                    SuperscriptBox], "\[CenterDot]", 
+                   TemplateBox[{"\"I\"", 
+                    RowBox[{"-", "2"}]}, "Superscript", SyntaxForm -> 
+                    SuperscriptBox]}], FontFamily -> Dynamic[
+                   CurrentValue[{"StyleHints", "CodeFont"}]], 
+                 ShowStringCharacters -> True]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                 Key[
+                  Quantity[1, "Ohms"]]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                RowBox[{"1", "\"S\""}]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                 Key[
+                  Quantity[1, "Siemens"]]}, "Item", False], "Mouse"], 
+              ImageSize -> {{75, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                StyleBox[
+                 RowBox[{
+                   
+                   TemplateBox[{"\"T\"", "3"}, "Superscript", SyntaxForm -> 
+                    SuperscriptBox], "\[CenterDot]", 
+                   TemplateBox[{"\"M\"", 
+                    RowBox[{"-", "1"}]}, "Superscript", SyntaxForm -> 
+                    SuperscriptBox], "\[CenterDot]", 
+                   TemplateBox[{"\"L\"", 
+                    RowBox[{"-", "2"}]}, "Superscript", SyntaxForm -> 
+                    SuperscriptBox], "\[CenterDot]", 
+                   
+                   TemplateBox[{"\"I\"", "2"}, "Superscript", SyntaxForm -> 
+                    SuperscriptBox]}], FontFamily -> Dynamic[
+                   CurrentValue[{"StyleHints", "CodeFont"}]], 
+                 ShowStringCharacters -> True]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                 Key[
+                  Quantity[1, "Siemens"]]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                RowBox[{"1", "\"Wb\""}]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                 Key[
+                  Quantity[1, "Webers"]]}, "Item", False], "Mouse"], 
+              ImageSize -> {{75, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                StyleBox[
+                 RowBox[{
+                   TemplateBox[{"\"T\"", 
+                    RowBox[{"-", "2"}]}, "Superscript", SyntaxForm -> 
+                    SuperscriptBox], "\[CenterDot]", 
+                   
+                   TemplateBox[{"\"M\"", "1"}, "Superscript", SyntaxForm -> 
+                    SuperscriptBox], "\[CenterDot]", 
+                   
+                   TemplateBox[{"\"L\"", "2"}, "Superscript", SyntaxForm -> 
+                    SuperscriptBox], "\[CenterDot]", 
+                   TemplateBox[{"\"I\"", 
+                    RowBox[{"-", "1"}]}, "Superscript", SyntaxForm -> 
+                    SuperscriptBox]}], FontFamily -> Dynamic[
+                   CurrentValue[{"StyleHints", "CodeFont"}]], 
+                 ShowStringCharacters -> True]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                 Key[
+                  Quantity[1, "Webers"]]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                RowBox[{"1", "\"T\""}]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                 Key[
+                  Quantity[1, "Teslas"]]}, "Item", False], "Mouse"], 
+              ImageSize -> {{75, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                StyleBox[
+                 RowBox[{
+                   TemplateBox[{"\"T\"", 
+                    RowBox[{"-", "2"}]}, "Superscript", SyntaxForm -> 
+                    SuperscriptBox], "\[CenterDot]", 
+                   
+                   TemplateBox[{"\"M\"", "1"}, "Superscript", SyntaxForm -> 
+                    SuperscriptBox], "\[CenterDot]", 
+                   TemplateBox[{"\"I\"", 
+                    RowBox[{"-", "1"}]}, "Superscript", SyntaxForm -> 
+                    SuperscriptBox]}], FontFamily -> Dynamic[
+                   CurrentValue[{"StyleHints", "CodeFont"}]], 
+                 ShowStringCharacters -> True]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                 Key[
+                  Quantity[1, "Teslas"]]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                RowBox[{"1", "\"H\""}]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                 Key[
+                  Quantity[1, "Henries"]]}, "Item", False], "Mouse"], 
+              ImageSize -> {{75, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                StyleBox[
+                 RowBox[{
+                   TemplateBox[{"\"T\"", 
+                    RowBox[{"-", "2"}]}, "Superscript", SyntaxForm -> 
+                    SuperscriptBox], "\[CenterDot]", 
+                   
+                   TemplateBox[{"\"M\"", "1"}, "Superscript", SyntaxForm -> 
+                    SuperscriptBox], "\[CenterDot]", 
+                   
+                   TemplateBox[{"\"L\"", "2"}, "Superscript", SyntaxForm -> 
+                    SuperscriptBox], "\[CenterDot]", 
+                   TemplateBox[{"\"I\"", 
+                    RowBox[{"-", "2"}]}, "Superscript", SyntaxForm -> 
+                    SuperscriptBox]}], FontFamily -> Dynamic[
+                   CurrentValue[{"StyleHints", "CodeFont"}]], 
+                 ShowStringCharacters -> True]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                 Key[
+                  Quantity[1, "Henries"]]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                RowBox[{"1", "\"\[Degree]C\""}]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                 Key[
+                  Quantity[1, "DegreesCelsius"]]}, "Item", False], "Mouse"], 
+              ImageSize -> {{75, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                StyleBox[
+                 
+                 TemplateBox[{"\"\[CapitalTheta]\"", "1"}, "Superscript", 
+                  SyntaxForm -> SuperscriptBox], FontFamily -> Dynamic[
+                   CurrentValue[{"StyleHints", "CodeFont"}]], 
+                 ShowStringCharacters -> True]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                 Key[
+                  Quantity[1, "DegreesCelsius"]]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                RowBox[{"1", "\"Bq\""}]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                 Key[
+                  Quantity[1, "Becquerels"]]}, "Item", False], "Mouse"], 
+              ImageSize -> {{75, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                StyleBox[
+                 TemplateBox[{"\"T\"", 
+                   RowBox[{"-", "1"}]}, "Superscript", SyntaxForm -> 
+                  SuperscriptBox], FontFamily -> Dynamic[
+                   CurrentValue[{"StyleHints", "CodeFont"}]], 
+                 ShowStringCharacters -> True]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                 Key[
+                  Quantity[1, "Becquerels"]]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                RowBox[{"1", "\"Gy\""}]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                 Key[
+                  Quantity[1, "Grays"]]}, "Item", False], "Mouse"], 
+              ImageSize -> {{75, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                StyleBox[
+                 RowBox[{
+                   TemplateBox[{"\"T\"", 
+                    RowBox[{"-", "2"}]}, "Superscript", SyntaxForm -> 
+                    SuperscriptBox], "\[CenterDot]", 
+                   
+                   TemplateBox[{"\"L\"", "2"}, "Superscript", SyntaxForm -> 
+                    SuperscriptBox]}], FontFamily -> Dynamic[
+                   CurrentValue[{"StyleHints", "CodeFont"}]], 
+                 ShowStringCharacters -> True]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                 Key[
+                  Quantity[1, "Grays"]]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                RowBox[{"1", "\"Sv\""}]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                 Key[
+                  Quantity[1, "Sieverts"]]}, "Item", False], "Mouse"], 
+              ImageSize -> {{75, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                StyleBox[
+                 RowBox[{
+                   TemplateBox[{"\"T\"", 
+                    RowBox[{"-", "2"}]}, "Superscript", SyntaxForm -> 
+                    SuperscriptBox], "\[CenterDot]", 
+                   
+                   TemplateBox[{"\"L\"", "2"}, "Superscript", SyntaxForm -> 
+                    SuperscriptBox]}], FontFamily -> Dynamic[
+                   CurrentValue[{"StyleHints", "CodeFont"}]], 
+                 ShowStringCharacters -> True]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                 Key[
+                  Quantity[1, "Sieverts"]]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}, {
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                RowBox[{"1", "\"kat\""}]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                 Key[
+                  Quantity[1, "Katals"]]}, "Item", False], "Mouse"], 
+              ImageSize -> {{75, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], Background -> 
+             GrayLevel[0.95], Alignment -> {Left, Baseline}], 
+            Item[
+             Pane[
+              Annotation[
+               RawBoxes[
+                StyleBox[
+                 RowBox[{
+                   TemplateBox[{"\"T\"", 
+                    RowBox[{"-", "1"}]}, "Superscript", SyntaxForm -> 
+                    SuperscriptBox], "\[CenterDot]", 
+                   
+                   TemplateBox[{"\"N\"", "1"}, "Superscript", SyntaxForm -> 
+                    SuperscriptBox]}], FontFamily -> Dynamic[
+                   CurrentValue[{"StyleHints", "CodeFont"}]], 
+                 ShowStringCharacters -> True]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{
+                 Key[
+                  Quantity[1, "Katals"]]}, "Item", False], "Mouse"], 
+              ImageSize -> {{60, Full}, Automatic}, 
+              ImageMargins -> {{5, 3}, {4, 5}}], 
+             ItemSize -> {Full, Automatic}]}}, 
+          BaseStyle -> {
+           ContextMenu -> 
+            Dynamic[TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger; 
+              Which[TypeSystem`NestedGrid`PackagePrivate`$lastOutputID =!= 
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                 TypeSystem`NestedGrid`PackagePrivate`$outputID$$], {}, 
+                TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger === 
+                TypeSystem`NestedGrid`PackagePrivate`$lastContextMenuTrigger, 
+                TypeSystem`NestedGrid`PackagePrivate`$lastContextMenu, True, 
+                TypeSystem`NestedGrid`PackagePrivate`$lastContextMenuTrigger = 
+                 TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger; 
+                TypeSystem`NestedGrid`PackagePrivate`$lastContextMenu = 
+                 Block[{TypeSystem`NestedGrid`PackagePrivate`$globalScrollPos = \
+{TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$}}, 
+                   
+                   With[{TypeSystem`NestedGrid`PackagePrivate`lastPath$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPathType, 
+                    TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`$\
+lastPathIsLeafHeader, TypeSystem`NestedGrid`PackagePrivate`headerHidden$ = And[
+                    MatchQ[TypeSystem`NestedGrid`PackagePrivate`$lastPathType, 
+                    Alternatives["RowHeader", "ColumnHeader"]], 
+                    TypeSystem`NestedGrid`PackagePrivate`headerHiddenQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$]], 
+                    TypeSystem`NestedGrid`PackagePrivate`allHidden$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`allHiddenQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`anyHidden$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`anyHiddenQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`sortDirection$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`columnSortDirection[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$[
+                    "SortPaths"], 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$[
+                    "SortDirections"]], 
+                    TypeSystem`NestedGrid`PackagePrivate`haveData$ = Not[
+                    FailureQ[
+                    TypeSystem`NestedGrid`PackagePrivate`datasetInitialData[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$]]], 
+                    TypeSystem`NestedGrid`PackagePrivate`isKeyDummy$ = Not[
+                    FreeQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, Keys]]}, 
+                    Join[{
+                    If[
+                    Or[
+                    Not[TypeSystem`NestedGrid`PackagePrivate`haveData$], 
+                    Not[TypeSystem`NestedGrid`PackagePrivate`anyHidden$], 
+                    TypeSystem`NestedGrid`PackagePrivate`isKeyDummy$], 
+                    Nothing, 
+                    MenuItem[
+                    "Show " <> 
+                    Which[TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "Item", "", 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "RowHeader", "Row", 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "ColumnHeader", "Column", True, ""], 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateHiddenItems[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, 
+                    "remove"]], MenuEvaluator -> Automatic]], 
+                    If[
+                    Or[
+                    Not[TypeSystem`NestedGrid`PackagePrivate`haveData$], 
+                    TypeSystem`NestedGrid`PackagePrivate`pathEmptyQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`isKeyDummy$, 
+                    And[TypeSystem`NestedGrid`PackagePrivate`allHidden$, 
+                    TypeSystem`NestedGrid`PackagePrivate`headerHidden$]], 
+                    Nothing, 
+                    MenuItem[
+                    "Hide " <> 
+                    Which[TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "Item", "", 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "RowHeader", "Row", 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "ColumnHeader", "Column", True, ""], 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateHiddenItems[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, "add"]], 
+                    MenuEvaluator -> Automatic]], Delimiter}, 
+                    If[
+                    And[TypeSystem`NestedGrid`PackagePrivate`haveData$, 
+                    MatchQ[TypeSystem`NestedGrid`PackagePrivate`lastPathType$, 
+                    Alternatives["ColumnHeader", "KeyDummy"]], 
+                    TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$, 
+                    Not[TypeSystem`NestedGrid`PackagePrivate`allHidden$]], {
+                    If[
+                    TypeSystem`NestedGrid`PackagePrivate`sortDirection$ =!= 
+                    "Ascending", 
+                    MenuItem["Sort", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateSort[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, 
+                    "Ascending"]], MenuEvaluator -> Automatic], Nothing], 
+                    If[
+                    TypeSystem`NestedGrid`PackagePrivate`sortDirection$ =!= 
+                    "Descending", 
+                    MenuItem["Reverse Sort", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateSort[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, 
+                    "Descending"]], MenuEvaluator -> Automatic], Nothing], 
+                    If[
+                    TypeSystem`NestedGrid`PackagePrivate`sortDirection$ =!= 
+                    None, 
+                    MenuItem["Unsort", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateSort[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, None]], 
+                    MenuEvaluator -> Automatic], Nothing], Delimiter}, {}], {
+                    MenuItem["Copy Position to Clipboard", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`toCurrentPosition[
+                    TypeSystem`NestedGrid`PackagePrivate`copyClip]], 
+                    MenuEvaluator -> Automatic], 
+                    If[TypeSystem`NestedGrid`PackagePrivate`haveData$, 
+                    MenuItem["Copy Data to Clipboard", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`toCurrentData[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`copyClip]], 
+                    MenuEvaluator -> Automatic], Nothing], Delimiter, 
+                    MenuItem["Paste Position in New Cell", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`toCurrentPosition[
+                    TypeSystem`NestedGrid`PackagePrivate`cellPaste]], 
+                    MenuEvaluator -> Automatic], 
+                    If[TypeSystem`NestedGrid`PackagePrivate`haveData$, 
+                    MenuItem["Paste Data in New Cell", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`toCurrentData[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`cellPaste]], 
+                    MenuEvaluator -> Automatic], Nothing]}]]]]], FontFamily -> 
+            "Source Sans Pro", FontSize -> 14, FontWeight -> Plain}, Dividers -> 
+          All, FrameStyle -> GrayLevel[0.7490196078431373], 
+          Spacings -> {0, 0}, Alignment -> Left, 
+          BaseStyle -> {
+           FontFamily -> "Source Sans Pro", FontSize -> 14, FontWeight -> 
+            Plain}], LineBreakWithin -> False, ContextMenu -> {}, NumberMarks -> 
+         False, ShowAutoStyles -> False]], 
+      TypeSystem`NestedGrid`PackagePrivate`initialQ = True}, 
+     Dynamic[
+      TypeSystem`NestedGrid`PackagePrivate`setupViewPath[
+      TypeSystem`NestedGrid`PackagePrivate`$path$$, If[
+         Not[TypeSystem`NestedGrid`PackagePrivate`initialQ], 
+         Module[{
+          TypeSystem`NestedGrid`PackagePrivate`tmpGrid$ = $Failed, 
+           TypeSystem`NestedGrid`PackagePrivate`tmpData$ = 
+           TypeSystem`NestedGrid`PackagePrivate`datasetData[
+            TypeSystem`NestedGrid`PackagePrivate`$state$$]}, 
+          TypeSystem`NestedGrid`PackagePrivate`tmpGrid$ = If[
+             FailureQ[TypeSystem`NestedGrid`PackagePrivate`tmpData$], 
+             TypeSystem`NestedGrid`PackagePrivate`renderedGrid, 
+             TypeSystem`NestedGrid`PackagePrivate`renderGrid[
+             TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+              TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+              TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+              TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+              TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+              TypeSystem`NestedGrid`PackagePrivate`localHold[
+              TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+             TypeSystem`NestedGrid`PackagePrivate`tmpData$]]; If[
+            Not[
+             FailureQ[TypeSystem`NestedGrid`PackagePrivate`tmpGrid$]], 
+            TypeSystem`NestedGrid`PackagePrivate`renderedGrid = 
+            TypeSystem`NestedGrid`PackagePrivate`tmpGrid$]; Null]]; 
+       TypeSystem`NestedGrid`PackagePrivate`initialQ = False; 
+       TypeSystem`NestedGrid`PackagePrivate`$vPos$$; 
+       TypeSystem`NestedGrid`PackagePrivate`$hPos$$; If[
+         FailureQ[TypeSystem`NestedGrid`PackagePrivate`renderedGrid], 
+         TypeSystem`SparseGrid[
+          TypeSystem`H["(data no longer present)"]], 
+         TypeSystem`NestedGrid`PackagePrivate`renderedGrid]], 
+      TrackedSymbols :> {
+       TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$hPos$$}], 
+     DynamicModuleValues :> {}], 
+    TypeSystem`NestedGrid`PackagePrivate`$topBar$$ = Dynamic[
+     TypeSystem`NestedGrid`PackagePrivate`makeFramedBar[
+      TypeSystem`PackageScope`SubViewPathbar[
+      TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+       TypeSystem`NestedGrid`PackagePrivate`updateState[
+       TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+        TypeSystem`NestedGrid`PackagePrivate`localHold[
+        TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]]], 
+     TrackedSymbols :> {TypeSystem`NestedGrid`PackagePrivate`$path$$}], 
+    TypeSystem`NestedGrid`PackagePrivate`$bottomBar$$ = Style[
+     Framed[
+      Dynamic[
+       Replace[
+       TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$, {
+        TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+           TypeSystem`NestedGrid`PackagePrivate`localHold[
+           TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][Null, 
+           Blank[]] -> "", TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+           TypeSystem`NestedGrid`PackagePrivate`localHold[
+           TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+           Pattern[TypeSystem`NestedGrid`PackagePrivate`path$, 
+            Blank[]], 
+           Pattern[TypeSystem`NestedGrid`PackagePrivate`pathType$, 
+            Blank[]], 
+           Pattern[TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$, 
+            Blank[]]] :> (
+          Increment[TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger]; 
+          TypeSystem`NestedGrid`PackagePrivate`$lastPath = 
+           TypeSystem`NestedGrid`PackagePrivate`path$; 
+          TypeSystem`NestedGrid`PackagePrivate`$lastPathType = 
+           TypeSystem`NestedGrid`PackagePrivate`pathType$; 
+          TypeSystem`NestedGrid`PackagePrivate`$lastPathIsLeafHeader = 
+           TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$; 
+          TypeSystem`NestedGrid`PackagePrivate`$lastOutputID = 
+           TypeSystem`NestedGrid`PackagePrivate`localHold[
+            TypeSystem`NestedGrid`PackagePrivate`$outputID$$]; 
+          TypeSystem`NestedGrid`PackagePrivate`makePathTrail[
+           TypeSystem`NestedGrid`PackagePrivate`path$, 
+            TypeSystem`NestedGrid`PackagePrivate`makePathElements]), Null :> 
+         Spacer[10], Blank[] :> Spacer[10]}], 
+       TrackedSymbols :> {
+        TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$}], FrameStyle -> 
+      None, ImageMargins -> 0, FrameMargins -> 0, Alignment -> Top, 
+      ImageSize -> {Automatic, 15}], FontSize -> 1], 
+    TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$ = Null}, 
+    DynamicWrapperBox[
+     DynamicBox[ToBoxes[
+       Dataset`DatasetContent[
+       2, "Path" -> Hold[TypeSystem`NestedGrid`PackagePrivate`$path$$], 
+        "Grid" -> Hold[TypeSystem`NestedGrid`PackagePrivate`$grid$$], "State" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$state$$], "VPos" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$vPos$$], "HPos" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$hPos$$], "TopBar" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$topBar$$], "BottomBar" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$bottomBar$$], "OutputID" -> 
+        Hold[
+          TypeSystem`NestedGrid`PackagePrivate`localHold[
+          TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]], StandardForm],
+      ImageSizeCache->{258., {248.63403309800196`, 254.36596690199804`}},
+      TrackedSymbols:>{
+       TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$grid$$}], 
+     TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$ = 
+     MouseAnnotation[],
+     ImageSizeCache->{258., {248.63403309800196`, 254.36596690199804`}}],
+    BaseStyle->{LineBreakWithin -> False},
+    DynamicModuleValues:>{},
+    Initialization:>(TypeSystem`NestedGrid`PackagePrivate`$outputID$$ = 
+     CreateUUID[]),
+    UnsavedVariables:>{TypeSystem`NestedGrid`PackagePrivate`$outputID$$}],
+   Deploy,
+   DefaultBaseStyle->"Deploy"],
+  Dataset`InterpretDataset[1],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ CellChangeTimes->{3.8751946233069553`*^9},
+ CellLabel->"Out[75]=",
+ CellID->921013583,ExpressionUUID->"3fdb5e04-ef20-44ba-bf46-72775c1a3079"]
+}, Open  ]]
+}, Open  ]],
 
 Cell["Properties and Relations", "Subsection",
  CellTags->"DefaultContent",
  CellID->727494039,ExpressionUUID->"64acc3ac-817d-4257-a598-3bb215b8796f"],
 
+Cell[CellGroupData[{
+
 Cell["Possible Issues", "Subsection",
  CellTags->"DefaultContent",
  CellID->471245215,ExpressionUUID->"737345d1-4fde-4505-ada1-76bdbb567ff4"],
+
+Cell["\<\
+The function will only accept units with the dimensions \"TimeUnit\", \
+\"LengthUnit\",\"MassUnit\",\"ElectricCurrentUnit\",\"TemperatureUnit\",\"\
+AmountUnit\", or\"LuminousIntensity\":\
+\>", "Text",
+ CellChangeTimes->{{3.8751943235488253`*^9, 3.875194382798585*^9}},
+ CellID->61597750,ExpressionUUID->"c040c537-fae5-4810-b74d-df01fa6a3346"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CanonicalDimensionalProduct", "[", 
+  TemplateBox[{
+    InterpretationBox["\[InvisibleSpace]", 1], "\"lx\"", "lux", "\"Lux\""},
+   "Quantity"], "]"}]], "Input",
+ CellChangeTimes->{{3.875193984257205*^9, 3.875194005535977*^9}},
+ CellLabel->"In[64]:=",
+ CellID->52271162,ExpressionUUID->"9500da84-3ccb-4047-9b10-a6197ecfb3ed"],
+
+Cell[BoxData[
+ RowBox[{"CanonicalDimensionalProduct", "[", 
+  TemplateBox[{"1", "\"lx\"", "lux", "\"Lux\""},
+   "Quantity"], "]"}]], "Output",
+ CellChangeTimes->{3.875194023672575*^9, 3.875194386347395*^9},
+ CellLabel->"Out[64]=",
+ CellID->135125816,ExpressionUUID->"b031502e-c904-4bec-8263-ec6240b57025"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"UnitDimensions", "[", 
+  TemplateBox[{
+    InterpretationBox["\[InvisibleSpace]", 1], "\"lx\"", "lux", "\"Lux\""},
+   "Quantity"], "]"}]], "Input",
+ CellChangeTimes->{{3.8751943909651856`*^9, 3.875194412361353*^9}},
+ CellLabel->"In[67]:=",
+ CellID->248453039,ExpressionUUID->"51999cf3-3d34-4323-8dc5-b35830c1639f"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\<\"AngleUnit\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"LengthUnit\"\>", ",", 
+     RowBox[{"-", "2"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"LuminousIntensityUnit\"\>", ",", "1"}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.8751944009558506`*^9, 3.8751944125798235`*^9}},
+ CellLabel->"Out[67]=",
+ CellID->48664784,ExpressionUUID->"d488f224-9ee0-47ee-93de-c08347836052"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CanonicalDimensionalProduct", "[", 
+  TemplateBox[{
+    InterpretationBox[
+     TagBox[
+      InterpretationBox[
+       StyleBox["\"500.00\"", ShowStringCharacters -> False], 500., 
+       AutoDelete -> True], 
+      NumberForm[#, {Infinity, 2}, DigitBlock -> 3, NumberSeparator -> 
+       "\[ThinSpace]"]& ], 500., Selectable -> False], 
+    RowBox[{
+      FormBox["\"\[Euro]\"", TraditionalForm], "\[VeryThinSpace]"}], "euros", 
+    "\"Euros\""},
+   "QuantityPrefix"], "]"}]], "Input",
+ CellChangeTimes->{{3.875194867573348*^9, 3.8751948759645696`*^9}},
+ CellLabel->"In[78]:=",
+ CellID->146719157,ExpressionUUID->"74d747df-f420-4726-b530-34be04e12584"],
+
+Cell[BoxData[
+ RowBox[{"CanonicalDimensionalProduct", "[", 
+  TemplateBox[{
+    InterpretationBox[
+     TagBox[
+      InterpretationBox[
+       StyleBox["\"500.00\"", ShowStringCharacters -> False], 500., 
+       AutoDelete -> True], 
+      NumberForm[#, {Infinity, 2}, DigitBlock -> 3, NumberSeparator -> 
+       "\[ThinSpace]"]& ], 500., Selectable -> False], 
+    RowBox[{
+      FormBox["\"\[Euro]\"", TraditionalForm], "\[VeryThinSpace]"}], "euros", 
+    "\"Euros\""},
+   "QuantityPrefix"], "]"}]], "Output",
+ CellChangeTimes->{3.8751948810672655`*^9},
+ CellLabel->"Out[78]=",
+ CellID->215712747,ExpressionUUID->"4389b618-0a60-4711-862d-3d9d138d6235"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"UnitDimensions", "[", 
+  TemplateBox[{
+    InterpretationBox[
+     TagBox[
+      InterpretationBox[
+       StyleBox["\"500.00\"", ShowStringCharacters -> False], 500., 
+       AutoDelete -> True], 
+      NumberForm[#, {Infinity, 2}, DigitBlock -> 3, NumberSeparator -> 
+       "\[ThinSpace]"]& ], 500., Selectable -> False], 
+    RowBox[{
+      FormBox["\"\[Euro]\"", TraditionalForm], "\[VeryThinSpace]"}], "euros", 
+    "\"Euros\""},
+   "QuantityPrefix"], "]"}]], "Input",
+ CellChangeTimes->{{3.875194881949427*^9, 3.87519488692227*^9}},
+ CellLabel->"In[79]:=",
+ CellID->132680931,ExpressionUUID->"36eb6026-be31-4110-946f-fbf378a222a5"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{"\<\"MoneyUnit\"\>", ",", "1"}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{3.875194887416997*^9},
+ CellLabel->"Out[79]=",
+ CellID->32627138,ExpressionUUID->"5ef89dfd-0f35-4011-a7b4-054bf321ba80"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CanonicalDimensionalProduct", "[", 
+  TemplateBox[{"64", "\"GB\"", "gigabytes", "\"Gigabytes\""},
+   "Quantity"], "]"}]], "Input",
+ CellChangeTimes->{{3.87519489071135*^9, 3.875194895401883*^9}},
+ CellLabel->"In[80]:=",
+ CellID->9909256,ExpressionUUID->"61323244-fd7d-48f8-8564-4c4e60aea5d9"],
+
+Cell[BoxData[
+ RowBox[{"CanonicalDimensionalProduct", "[", 
+  TemplateBox[{"64", "\"GB\"", "gigabytes", "\"Gigabytes\""},
+   "Quantity"], "]"}]], "Output",
+ CellChangeTimes->{3.875194910036753*^9},
+ CellLabel->"Out[80]=",
+ CellID->911793982,ExpressionUUID->"1fb4b6b3-d812-417f-a831-be3925736bb6"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"UnitDimensions", "[", 
+  TemplateBox[{"64", "\"GB\"", "gigabytes", "\"Gigabytes\""},
+   "Quantity"], "]"}]], "Input",
+ CellChangeTimes->{{3.87519491155949*^9, 3.875194916864483*^9}},
+ CellLabel->"In[81]:=",
+ CellID->341672327,ExpressionUUID->"5316db00-ba69-4383-8b67-4ae60cb75275"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{"\<\"InformationUnit\"\>", ",", "1"}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{3.875194917803164*^9},
+ CellLabel->"Out[81]=",
+ CellID->536258922,ExpressionUUID->"6c458a47-25a5-4ad5-9b4b-382069ec9f19"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CanonicalDimensionalProduct", "[", 
+  TemplateBox[{
+    InterpretationBox["\[InvisibleSpace]", 1], "\"K\"", "kelvins difference", 
+    "\"KelvinsDifference\""},
+   "Quantity"], "]"}]], "Input",
+ CellChangeTimes->{{3.87519491155949*^9, 3.875194926886051*^9}},
+ CellLabel->"In[82]:=",
+ CellID->828962849,ExpressionUUID->"fe725f5f-6f10-465f-b61a-0036ccbc31e4"],
+
+Cell[BoxData[
+ RowBox[{"CanonicalDimensionalProduct", "[", 
+  TemplateBox[{"1", "\"K\"", "kelvin difference", "\"KelvinsDifference\""},
+   "Quantity"], "]"}]], "Output",
+ CellChangeTimes->{3.8751949453185587`*^9},
+ CellLabel->"Out[82]=",
+ CellID->137619022,ExpressionUUID->"bdbf4854-a454-4e34-b5c0-3ffcb47c6b95"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"UnitDimensions", "[", 
+  TemplateBox[{
+    InterpretationBox["\[InvisibleSpace]", 1], "\"K\"", "kelvins difference", 
+    "\"KelvinsDifference\""},
+   "Quantity"], "]"}]], "Input",
+ CellChangeTimes->{{3.87519494653747*^9, 3.875194957074176*^9}},
+ CellLabel->"In[83]:=",
+ CellID->39016382,ExpressionUUID->"ba263017-2f35-4251-94ea-2daf02473387"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{"\<\"TemperatureDifferenceUnit\"\>", ",", "1"}], "}"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.875194958000372*^9},
+ CellLabel->"Out[83]=",
+ CellID->227452640,ExpressionUUID->"83b30e45-a9c9-4601-a308-68964d21aa1e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CanonicalDimensionalProduct", "[", 
+  RowBox[{
+   TemplateBox[{"\"New York City\"", 
+     RowBox[{"Entity", "[", 
+       RowBox[{"\"City\"", ",", 
+         RowBox[{"{", 
+           
+           RowBox[{"\"NewYork\"", ",", "\"NewYork\"", ",", 
+             "\"UnitedStates\""}], "}"}]}], "]"}], 
+     "\"Entity[\\\"City\\\", {\\\"NewYork\\\", \\\"NewYork\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+    "Entity"], "[", 
+   TemplateBox[{"\"population density\"", 
+     RowBox[{"EntityProperty", "[", 
+       RowBox[{"\"City\"", ",", "\"PopulationDensity\""}], "]"}], 
+     "\"EntityProperty[\\\"City\\\", \\\"PopulationDensity\\\"]\""},
+    "EntityProperty"], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8751949639719934`*^9, 3.875194967373911*^9}},
+ CellLabel->"In[86]:=",
+ CellID->103457607,ExpressionUUID->"e5b7bccc-6aff-427c-83c0-33faed38518b"],
+
+Cell[BoxData[
+ RowBox[{"CanonicalDimensionalProduct", "[", 
+  TemplateBox[{"11232.0920347448796111754`3.", 
+    RowBox[{"\"people\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+      SuperscriptBox["\"km\"", "2"]}], "people per kilometer squared", 
+    FractionBox["\"People\"", 
+     SuperscriptBox["\"Kilometers\"", "2"]]},
+   "Quantity"], "]"}]], "Output",
+ CellChangeTimes->{{3.8751949760393767`*^9, 3.8751949891517467`*^9}},
+ CellLabel->"Out[86]=",
+ CellID->86647544,ExpressionUUID->"4b913417-3b6c-4798-9942-5d0a4a4e5df2"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"UnitDimensions", "[", 
+  RowBox[{
+   TemplateBox[{"\"New York City\"", 
+     RowBox[{"Entity", "[", 
+       RowBox[{"\"City\"", ",", 
+         RowBox[{"{", 
+           
+           RowBox[{"\"NewYork\"", ",", "\"NewYork\"", ",", 
+             "\"UnitedStates\""}], "}"}]}], "]"}], 
+     "\"Entity[\\\"City\\\", {\\\"NewYork\\\", \\\"NewYork\\\", \
+\\\"UnitedStates\\\"}]\"", "\"city\""},
+    "Entity"], "[", 
+   TemplateBox[{"\"population density\"", 
+     RowBox[{"EntityProperty", "[", 
+       RowBox[{"\"City\"", ",", "\"PopulationDensity\""}], "]"}], 
+     "\"EntityProperty[\\\"City\\\", \\\"PopulationDensity\\\"]\""},
+    "EntityProperty"], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.875194991432415*^9, 3.8751949974095907`*^9}},
+ CellLabel->"In[87]:=",
+ CellID->90092557,ExpressionUUID->"626edcfd-83d7-4732-8b9b-80d957a04bbe"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\<\"LengthUnit\"\>", ",", 
+     RowBox[{"-", "2"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"PersonUnit\"\>", ",", "1"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.8751949982835274`*^9},
+ CellLabel->"Out[87]=",
+ CellID->407246495,ExpressionUUID->"029c859d-7796-43dd-ac8c-0c790fb3abf5"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CanonicalDimensionalProduct", "[", 
+  TemplateBox[{"4", "\"sr\"", "steradians", "\"Steradians\""},
+   "Quantity"], "]"}]], "Input",
+ CellChangeTimes->{{3.8751950167877083`*^9, 3.8751950376538067`*^9}},
+ CellLabel->"In[88]:=",
+ CellID->180075602,ExpressionUUID->"0b7f9227-3c71-4146-83e5-2bf097ba005a"],
+
+Cell[BoxData[
+ RowBox[{"CanonicalDimensionalProduct", "[", 
+  TemplateBox[{"4", "\"sr\"", "steradians", "\"Steradians\""},
+   "Quantity"], "]"}]], "Output",
+ CellChangeTimes->{3.875195043911126*^9},
+ CellLabel->"Out[88]=",
+ CellID->201600431,ExpressionUUID->"51eb9f93-2f5e-4630-bbf1-17ec2e9b8eb4"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"UnitDimensions", "[", 
+  TemplateBox[{"4", "\"sr\"", "steradians", "\"Steradians\""},
+   "Quantity"], "]"}]], "Input",
+ CellChangeTimes->{{3.8751950469084606`*^9, 3.8751950523402653`*^9}},
+ CellLabel->"In[89]:=",
+ CellID->129147344,ExpressionUUID->"13bc7cd3-29f6-4a2c-840d-55ee59c912c1"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{"\<\"AngleUnit\"\>", ",", "2"}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{3.8751950532092724`*^9},
+ CellLabel->"Out[89]=",
+ CellID->552458316,ExpressionUUID->"bd96fe76-1ad9-4ca2-85c4-743e62a2a5de"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Quantity", "[", "\"\<Lumens\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.875195071241624*^9, 3.875195100430606*^9}},
+ CellLabel->"In[93]:=",
+ CellID->153557329,ExpressionUUID->"708a8ea9-c10d-4966-942d-68fa985e31a0"],
+
+Cell[BoxData[
+ TemplateBox[{"1", "\"lm\"", "lumen", "\"Lumens\""},
+  "Quantity"]], "Output",
+ CellChangeTimes->{{3.8751950913504944`*^9, 3.8751951006283484`*^9}},
+ CellLabel->"Out[93]=",
+ CellID->371872674,ExpressionUUID->"1b778a63-ac62-4a41-a7c6-c73633cef810"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"UnitDimensions", "[", 
+  RowBox[{"Quantity", "[", 
+   RowBox[{"1", ",", "\"\<Lumens\>\""}], "]"}], "]"}]], "Input",
+ NumberMarks->False,
+ CellLabel->"In[95]:=",
+ CellID->344374738,ExpressionUUID->"d03c4b23-4825-479c-a735-08865b71fb0f"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\<\"AngleUnit\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"LuminousIntensityUnit\"\>", ",", "1"}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.875195120196561*^9},
+ CellLabel->"Out[95]=",
+ CellID->118765509,ExpressionUUID->"68643624-faec-4bb5-8901-4d53c05b08d4"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"UnitConvert", "[", 
+  RowBox[{
+   RowBox[{"Quantity", "[", "\"\<Lumens\>\"", "]"}], ",", 
+   RowBox[{
+    RowBox[{"Quantity", "[", "\"\<Steradians\>\"", "]"}], 
+    RowBox[{"Quantity", "[", "\"\<Candelas\>\"", "]"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8751951095512714`*^9, 3.875195155871766*^9}},
+ CellLabel->"In[96]:=",
+ CellID->908375814,ExpressionUUID->"7fe811c9-df42-48fb-85ae-8948de38b002"],
+
+Cell[BoxData[
+ TemplateBox[{"1", 
+   RowBox[{"\"cd\"", "\[ThinSpace]", "\"sr\""}], "candela steradian", 
+   RowBox[{"\"Candelas\"", " ", "\"Steradians\""}]},
+  "Quantity"]], "Output",
+ CellChangeTimes->{3.875195156121895*^9},
+ CellLabel->"Out[96]=",
+ CellID->77284897,ExpressionUUID->"653e3b07-f3c2-47e7-8679-df799c74958b"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"UnitDimensions", "[", 
+  RowBox[{"UnitConvert", "[", 
+   RowBox[{
+    RowBox[{"Quantity", "[", "\"\<Lumens\>\"", "]"}], ",", 
+    RowBox[{
+     RowBox[{"Quantity", "[", "\"\<Steradians\>\"", "]"}], 
+     RowBox[{"Quantity", "[", "\"\<Candelas\>\"", "]"}]}]}], "]"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.8751951726613626`*^9, 3.875195179695434*^9}},
+ CellLabel->"In[97]:=",
+ CellID->345204480,ExpressionUUID->"7ef52ed6-dcab-4dc2-a691-57475aeeb44e"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\<\"AngleUnit\"\>", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"LuminousIntensityUnit\"\>", ",", "1"}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.8751951800582576`*^9},
+ CellLabel->"Out[97]=",
+ CellID->469913489,ExpressionUUID->"acd7ba64-0f45-4c2e-bb5c-0b5d5abba9eb"]
+}, Open  ]]
+}, Open  ]],
 
 Cell["Neat Examples", "Subsection",
  CellTags->"DefaultContent",
@@ -1731,7 +4265,8 @@ WyabbVsUI30dbWyR5mC4Y6npzAQV7A7CHW8e0ORJGTUV01ufdzMGR2GbTwVmCj3d8A9cd0NNHoiRcl\
     "Contexts" -> {
      "FunctionResource`", "FunctionResource`DefinitionNotebook`"}, 
     "DefaultContentMethod" -> "Legacy"}, "ToolsOpen" -> True, "StatusMessage" -> 
-  "", "SubmissionReviewData" -> {"Review" -> False}},
+  "", "SubmissionReviewData" -> {"Review" -> False}, "AutoUpdate" -> True, 
+  "TryRealOnly" -> False},
 CreateCellID->True,
 FrontEndVersion->"13.1 for Microsoft Windows (64-bit) (June 16, 2022)",
 StyleDefinitions->Notebook[{
