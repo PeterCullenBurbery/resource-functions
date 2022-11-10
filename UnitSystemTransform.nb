@@ -3,6 +3,7 @@ Notebook[{
 Cell[CellGroupData[{
 Cell["UnitSystemTransform", "Title",
  Deletable->False,
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -10,11 +11,12 @@ Cell["UnitSystemTransform", "Title",
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
  CellChangeTimes->{{3.8770867176693583`*^9, 3.8770867213322105`*^9}},
- CellTags->{"Name", "TemplateCell", "Title", "TabNext"},
- CellID->863144461,ExpressionUUID->"2fa80c73-e804-4279-b28d-13f8342f8280"],
+ CellTags->{"Name", "TabNext", "TemplateCell", "Title"},
+ CellID->863144461,ExpressionUUID->"9bb46192-a885-44fc-95fa-24666f49d21d"],
 
-Cell["quickly transform a unit into a different unit system", "Text",
+Cell["Quickly transform a unit into a different unit system", "Text",
  Deletable->False,
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -23,7 +25,7 @@ Cell["quickly transform a unit into a different unit system", "Text",
    PassEventsDown -> False, PassEventsUp -> False},
  CellChangeTimes->{{3.877086724101144*^9, 3.8770867334283576`*^9}},
  CellTags->{"DefaultContent", "Description", "TabNext", "TemplateCell"},
- CellID->660820806,ExpressionUUID->"949e6e87-a459-4d60-b5b5-6ad341bc5560"],
+ CellID->660820806,ExpressionUUID->"cf4fa473-a24a-4e49-b6ec-6aa15466dd4b"],
 
 Cell[CellGroupData[{
 
@@ -50,20 +52,303 @@ evaluated before creating the Examples section below.", "MoreInfoText"],
     CurrentValue[
      EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
    ImageSize->Automatic]],ExpressionUUID->
-  "6874856b-3ba3-4833-b70c-a4bc059c1bf9"]
+  "23df3d35-7591-4275-a066-b45e8b5f588a"]
 }], "Section",
  Editable->False,
  Deletable->False,
  TaggingRules->{"TemplateGroupName" -> "Function"},
  DefaultNewCellStyle->"Input",
  CellTags->{"Definition", "Function", "TemplateCellGroup"},
- CellID->292731158,ExpressionUUID->"111c2bbb-65a7-43e5-9e66-9cd0c8334e55"],
+ CellID->292731158,ExpressionUUID->"30cab135-8d61-4811-9ccb-485984e2e0f2"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"ClearAll", "[", "UnitSystemTransform", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"UnitSystemTransform", "[", 
+    RowBox[{"targetquantity_", ",", "\"\<PlanckUnits\>\""}], "]"}], ":=", 
+   RowBox[{"Block", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "dimensionalCombinations", ",", "quantityVariables", ",", "mapping"}], 
+      "}"}], ",", 
+     RowBox[{
+      RowBox[{"quantityVariables", "=", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"QuantityVariable", "[", 
+           RowBox[{"UnitDimensions", "[", "#1", "]"}], "]"}], "&"}], ")"}], "/@", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"Quantity", "[", 
+           RowBox[{"1", ",", "\"\<PlanckTime\>\""}], "]"}], ",", 
+          RowBox[{"Quantity", "[", 
+           RowBox[{"1", ",", "\"\<PlanckLength\>\""}], "]"}], ",", 
+          RowBox[{"Quantity", "[", 
+           RowBox[{"1", ",", "\"\<PlanckMass\>\""}], "]"}], ",", 
+          RowBox[{"Quantity", "[", 
+           RowBox[{"1", ",", "\"\<PlanckTemperature\>\""}], "]"}]}], 
+         "}"}]}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"dimensionalCombinations", "=", 
+       RowBox[{"DimensionalCombinations", "[", 
+        RowBox[{"quantityVariables", ",", 
+         RowBox[{"QuantityVariable", "[", 
+          RowBox[{"UnitDimensions", "[", "targetquantity", "]"}], "]"}], ",", 
+         RowBox[{"GeneratedParameters", "->", "None"}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"mapping", "=", 
+       RowBox[{"MapThread", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"#1", "\[Rule]", "#2"}], "&"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"quantityVariables", ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"Quantity", "[", 
+              RowBox[{"1", ",", "\"\<PlanckTime\>\""}], "]"}], ",", 
+             RowBox[{"Quantity", "[", 
+              RowBox[{"1", ",", "\"\<PlanckLength\>\""}], "]"}], ",", 
+             RowBox[{"Quantity", "[", 
+              RowBox[{"1", ",", "\"\<PlanckMass\>\""}], "]"}], ",", 
+             RowBox[{"Quantity", "[", 
+              RowBox[{"1", ",", "\"\<PlanckTemperature\>\""}], "]"}]}], 
+            "}"}]}], "}"}]}], "]"}]}], ";", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"UnitConvert", "[", 
+          RowBox[{"targetquantity", ",", 
+           RowBox[{"#1", "/.", "mapping"}]}], "]"}], "&"}], ")"}], "/@", 
+       "dimensionalCombinations"}]}]}], "]"}]}], ";"}], "\[IndentingNewLine]",
+ GridBox[{
+   {
+    RowBox[{
+     RowBox[{
+      RowBox[{"UnitSystemTransform", "[", 
+       RowBox[{"targetquantity_", ",", "\"\<SIDefiningConstants\>\""}], "]"}],
+       ":=", 
+      RowBox[{"Block", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+         "dimensionalCombinations", ",", "quantityVariables", ",", 
+          "mapping"}], "}"}], ",", 
+        RowBox[{
+         RowBox[{"quantityVariables", "=", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"QuantityVariable", "[", 
+              RowBox[{"UnitDimensions", "[", "#1", "]"}], "]"}], "&"}], ")"}],
+            "/@", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"Quantity", "[", 
+              RowBox[{
+              "1", ",", "\"\<Cesium133HyperfineSplittingFrequency\>\""}], 
+              "]"}], ",", 
+             RowBox[{"Quantity", "[", 
+              RowBox[{"1", ",", "\"\<SpeedOfLight\>\""}], "]"}], ",", 
+             RowBox[{"Quantity", "[", 
+              RowBox[{"1", ",", "\"\<PlanckConstant\>\""}], "]"}], ",", 
+             RowBox[{"Quantity", "[", 
+              RowBox[{"1", ",", "\"\<ElementaryCharge\>\""}], "]"}], ",", 
+             RowBox[{"Quantity", "[", "\"\<BoltzmannConstant\>\"", "]"}], ",", 
+             RowBox[{"Quantity", "[", "\"\<AvogadroConstant\>\"", "]"}], ",", 
+             RowBox[{
+             "Quantity", "[", 
+              "\"\<MonochromaticRadiation540THzLuminousEfficacy\>\"", "]"}]}],
+             "}"}]}]}], ";", 
+         RowBox[{"dimensionalCombinations", "=", 
+          RowBox[{"dimensionalCombinations", "=", 
+           RowBox[{"DimensionalCombinations", "[", 
+            RowBox[{"quantityVariables", ",", 
+             RowBox[{"QuantityVariable", "[", 
+              RowBox[{"UnitDimensions", "[", "targetquantity", "]"}], "]"}], 
+             ",", 
+             RowBox[{"GeneratedParameters", "\[Rule]", "None"}]}], "]"}]}]}], 
+         ";", 
+         RowBox[{"mapping", "=", 
+          RowBox[{"MapThread", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"#1", "\[Rule]", "#2"}], "&"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"quantityVariables", ",", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"Quantity", "[", 
+                 RowBox[{
+                 "1", ",", "\"\<Cesium133HyperfineSplittingFrequency\>\""}], 
+                 "]"}], ",", 
+                RowBox[{"Quantity", "[", 
+                 RowBox[{"1", ",", "\"\<SpeedOfLight\>\""}], "]"}], ",", 
+                RowBox[{"Quantity", "[", 
+                 RowBox[{"1", ",", "\"\<PlanckConstant\>\""}], "]"}], ",", 
+                RowBox[{"Quantity", "[", 
+                 RowBox[{"1", ",", "\"\<ElementaryCharge\>\""}], "]"}], ",", 
+                RowBox[{"Quantity", "[", "\"\<BoltzmannConstant\>\"", "]"}], 
+                ",", 
+                RowBox[{"Quantity", "[", "\"\<AvogadroConstant\>\"", "]"}], 
+                ",", 
+                RowBox[{
+                "Quantity", "[", 
+                 "\"\<MonochromaticRadiation540THzLuminousEfficacy\>\"", 
+                 "]"}]}], "}"}]}], "}"}]}], "]"}]}], ";", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"UnitConvert", "[", 
+             RowBox[{"targetquantity", ",", 
+              RowBox[{"#1", "/.", "\[VeryThinSpace]", "mapping"}]}], "]"}], 
+            "&"}], ")"}], "/@", "dimensionalCombinations"}]}]}], "]"}]}], 
+     ";"}]},
+   {" "},
+   {
+    RowBox[{
+     RowBox[{
+      RowBox[{"UnitSystemTransform", "[", 
+       RowBox[{"targetquantity_", ",", "\"\<NaturalUnits\>\""}], "]"}], ":=", 
+      RowBox[{"Block", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+         "dimensionalCombinations", ",", "quantityVariables", ",", 
+          "mapping"}], "}"}], ",", 
+        RowBox[{
+         RowBox[{"quantityVariables", "=", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"QuantityVariable", "[", 
+              RowBox[{"UnitDimensions", "[", "#1", "]"}], "]"}], "&"}], ")"}],
+            "/@", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"Quantity", "[", 
+              RowBox[{"1", ",", "\"\<PlanckTime\>\""}], "]"}], ",", 
+             RowBox[{"Quantity", "[", 
+              RowBox[{"1", ",", "\"\<PlanckLength\>\""}], "]"}], ",", 
+             RowBox[{"Quantity", "[", 
+              RowBox[{"1", ",", "\"\<PlanckMass\>\""}], "]"}], ",", 
+             RowBox[{"Quantity", "[", 
+              RowBox[{"1", ",", "\"\<VonKlitzingConstant\>\""}], "]"}], ",", 
+             RowBox[{"Quantity", "[", 
+              RowBox[{"1", ",", "\"\<PlanckTemperature\>\""}], "]"}]}], 
+            "}"}]}]}], ";", 
+         RowBox[{"dimensionalCombinations", "=", 
+          RowBox[{"DimensionalCombinations", "[", 
+           RowBox[{"quantityVariables", ",", 
+            RowBox[{"QuantityVariable", "[", 
+             RowBox[{"UnitDimensions", "[", "targetquantity", "]"}], "]"}], 
+            ",", 
+            RowBox[{"GeneratedParameters", "\[Rule]", "None"}]}], "]"}]}], 
+         ";", 
+         RowBox[{"mapping", "=", 
+          RowBox[{"MapThread", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"#1", "\[Rule]", "#2"}], "&"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"quantityVariables", ",", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"Quantity", "[", 
+                 RowBox[{"1", ",", "\"\<PlanckTime\>\""}], "]"}], ",", 
+                RowBox[{"Quantity", "[", 
+                 RowBox[{"1", ",", "\"\<PlanckLength\>\""}], "]"}], ",", 
+                RowBox[{"Quantity", "[", 
+                 RowBox[{"1", ",", "\"\<PlanckMass\>\""}], "]"}], ",", 
+                RowBox[{"Quantity", "[", 
+                 RowBox[{"1", ",", "\"\<VonKlitzingConstant\>\""}], "]"}], 
+                ",", 
+                RowBox[{"Quantity", "[", 
+                 RowBox[{"1", ",", "\"\<PlanckTemperature\>\""}], "]"}]}], 
+               "}"}]}], "}"}]}], "]"}]}], ";", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"UnitConvert", "[", 
+             RowBox[{"targetquantity", ",", 
+              RowBox[{"#1", "/.", "\[VeryThinSpace]", "mapping"}]}], "]"}], 
+            "&"}], ")"}], "/@", "dimensionalCombinations"}]}]}], "]"}]}], 
+     ";"}]},
+   {" "},
+   {
+    RowBox[{
+     RowBox[{
+      RowBox[{"UnitSystemTransform", "[", 
+       RowBox[{"targetquantity_", ",", "basisquantities_"}], "]"}], ":=", 
+      RowBox[{"Block", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+         "dimensionalCombinations", ",", "quantityVariables", ",", 
+          "mapping"}], "}"}], ",", 
+        RowBox[{
+         RowBox[{"quantityVariables", "=", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"QuantityVariable", "[", 
+              RowBox[{"UnitDimensions", "[", "#1", "]"}], "]"}], "&"}], ")"}],
+            "/@", "basisquantities"}]}], ";", 
+         RowBox[{"dimensionalCombinations", "=", 
+          RowBox[{"DimensionalCombinations", "[", 
+           RowBox[{"quantityVariables", ",", 
+            RowBox[{"QuantityVariable", "[", 
+             RowBox[{"UnitDimensions", "[", "targetquantity", "]"}], "]"}], 
+            ",", 
+            RowBox[{"GeneratedParameters", "\[Rule]", "None"}]}], "]"}]}], 
+         ";", 
+         RowBox[{"mapping", "=", 
+          RowBox[{"MapThread", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"#1", "\[Rule]", "#2"}], "&"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"quantityVariables", ",", "basisquantities"}], "}"}]}], 
+           "]"}]}], ";", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"UnitConvert", "[", 
+             RowBox[{"targetquantity", ",", 
+              RowBox[{"#1", "/.", "\[VeryThinSpace]", "mapping"}]}], "]"}], 
+            "&"}], ")"}], "/@", "dimensionalCombinations"}]}]}], "]"}]}], 
+     ";"}]}
+  },
+  DefaultBaseStyle->"Column",
+  GridBoxAlignment->{"Columns" -> {{Left}}},
+  GridBoxItemSize->{
+   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]}], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.877086739221053*^9, 3.877086744021479*^9}, {
+  3.8770868048146486`*^9, 3.877086928407094*^9}, {3.8770869920871553`*^9, 
+  3.877087080042571*^9}},
+ CellTags->"DefaultContent",
+ CellLabel->"In[24]:=",
+ CellID->876320555,ExpressionUUID->"a26f9bcc-93dd-42c5-9482-e30b2d26eb4c"],
 
 Cell[BoxData[
- RowBox[{"ClearAll", "[", "Un", "]"}]], "Input",
- CellChangeTimes->{{3.877086739221053*^9, 3.877086744021479*^9}},
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", "Null", "}"}], ",", 
+   RowBox[{"{", "Null", "}"}], ",", 
+   RowBox[{"{", "Null", "}"}], ",", 
+   RowBox[{"{", "Null", "}"}], ",", 
+   RowBox[{"{", "Null", "}"}]}], "}"}]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{{3.877087044256564*^9, 3.87708708051239*^9}},
  CellTags->"DefaultContent",
- CellID->876320555,ExpressionUUID->"a49d5c85-31f3-4ada-89ac-769d0d2a549c"]
+ CellLabel->"Out[26]=",
+ CellID->426035319,ExpressionUUID->"749b5c0f-8249-4ab0-a013-183e2e528b9c"]
+}, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -73,7 +358,7 @@ Cell["Documentation", "Section",
  Deletable->False,
  TaggingRules->{"TemplateGroupName" -> "Documentation"},
  CellTags->{"Documentation", "TemplateSection"},
- CellID->337507785,ExpressionUUID->"2c40838b-2ade-4a42-94cc-a7eac4a41cdb"],
+ CellID->337507785,ExpressionUUID->"37d24b02-f924-44c1-b4fa-155b7c475559"],
 
 Cell[CellGroupData[{
 
@@ -121,30 +406,47 @@ documentation pages for examples."}], "MoreInfoText"], Background ->
     CurrentValue[
      EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
    ImageSize->Automatic]],ExpressionUUID->
-  "ee24ba63-535c-4d06-87f7-adc2487a7054"]
+  "ca66e0d6-f70c-4baa-a2a9-f4600a564ebb"]
 }], "Subsection",
  Editable->False,
  Deletable->False,
  TaggingRules->{"TemplateGroupName" -> "Usage"},
  DefaultNewCellStyle->{"UsageInputs", FontFamily -> "Source Sans Pro"},
  CellTags->{"TemplateCellGroup", "Usage"},
- CellID->38054786,ExpressionUUID->"517279b3-c6c2-471d-9358-1cbdc8671820"],
+ CellID->38054786,ExpressionUUID->"d3727387-af41-437f-b490-e8b98d8521b7"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"MyFunction", "[", "arg", "]"}]], "UsageInputs",
+ RowBox[{"UnitSystemTransform", "[", 
+  RowBox[{
+   StyleBox["quantity", "TI"], ",", 
+   StyleBox["unitsystem", "TI"]}], "]"}]], "UsageInputs",
+ TaggingRules->{},
+ CellChangeTimes->{{3.877087237584662*^9, 3.8770872458555903`*^9}, {
+  3.8770873038099394`*^9, 3.8770873069517946`*^9}},
  FontFamily->"Source Sans Pro",
  CellTags->{"DefaultContent", "TabNext"},
- CellID->67839508,ExpressionUUID->"ce1491e7-b24a-4038-9dd3-f24b0cb004ad"],
+ CellID->67839508,ExpressionUUID->"a261e689-5de9-4689-8553-16a779340e98"],
 
 Cell[TextData[{
- "explanation of what use of the argument ",
- StyleBox["arg", "TI"],
- " does."
+ "transforms ",
+ Cell[BoxData[
+  StyleBox["quantity", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "e3ef6956-de97-4c16-aa7f-729c2a5b28e5"],
+ " into a product of combinations of the basis quantities of ",
+ Cell[BoxData[
+  StyleBox["unitsystem", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "c3e76f9c-539d-4874-9bba-b7bbf341ddb2"],
+ "."
 }], "UsageDescription",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8770872496475673`*^9, 3.877087311501627*^9}, 
+   3.8770880989094267`*^9},
  CellTags->{"DefaultContent", "TabNext"},
- CellID->746063541,ExpressionUUID->"891162c4-7051-4562-9bcb-bbffc6288386"]
+ CellID->746063541,ExpressionUUID->"a376dd08-715b-403c-a4a2-934253a46b01"]
 }, Open  ]]
 }, Open  ]],
 
@@ -176,24 +478,45 @@ function, its development, and its usage.", "MoreInfoText"], Background ->
     CurrentValue[
      EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
    ImageSize->Automatic]],ExpressionUUID->
-  "6f251680-7e04-4ccc-8c3e-5c1f3907da6b"]
+  "809fc7aa-1dfc-4aeb-ae81-afdea21fe184"]
 }], "Subsection",
  Editable->False,
  Deletable->False,
  TaggingRules->{"TemplateGroupName" -> "Notes"},
  DefaultNewCellStyle->"Notes",
  CellTags->{"Details & Options", "Notes", "TemplateCellGroup"},
- CellID->447261062,ExpressionUUID->"9509a801-730e-499c-9645-3e057759ce75"],
+ CellID->447261062,ExpressionUUID->"ef566717-33b3-49e9-a921-255f8b996b75"],
 
-Cell["Additional information about usage and options.", "Notes",
+Cell["The following unitsystems are currently supported", "Notes",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
        WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.877087314319831*^9, 3.8770873222715683`*^9}},
  CellTags->{"DefaultContent", "TabNext"},
- CellID->422531486,ExpressionUUID->"af7b265b-ecf6-44fb-955b-69a6eb36f968"]
+ CellID->422531486,ExpressionUUID->"6ded35cd-0aa0-4f17-8acb-e6e95882731f"],
+
+Cell[BoxData[GridBox[{
+   {Cell["PlanckUnits", "TableText",ExpressionUUID->
+     "a82381d8-55fc-4bf1-b860-af105b4aa3b5"], Cell[
+    "the Planck system without electrical units", "TableText",ExpressionUUID->
+     "e9a2625b-8ea1-4009-8dc8-ddd52c52b35d"]},
+   {Cell["NaturalUnits", "TableText",ExpressionUUID->
+     "361d24a8-1a77-4ae5-8c5f-4dfea339ad7b"], Cell["\<\
+an extension to the Planck system that spans electrical units with the Von \
+Klitzing constant\
+\>", "TableText",ExpressionUUID->"8946069e-b577-41e8-ba4e-044d4e1e4a70"]},
+   {Cell["SIDefiningConstants", "TableText",ExpressionUUID->
+     "f1d7c5da-1d40-4955-90c4-a9be5a32877c"], Cell[
+    "the seven defining constants of the SI", "TableText",ExpressionUUID->
+     "442b65dc-8a35-4484-a0d0-fafb957ea208"]}
+  }]], "TableNotes",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8770873277793217`*^9, 3.877087394978625*^9}},
+ CellID->54860651,ExpressionUUID->"364470e3-b008-4882-b8c1-f3c0a78aef59"]
 }, Open  ]]
 }, Open  ]],
 
@@ -219,7 +542,7 @@ breaks between them (either using ",
               TemplateBox[{
                 StyleBox[
                 "\"[Right-click]\"", FontFamily -> "Source Sans Pro", 
-                 FontWeight -> "SemiBold", FontColor -> GrayLevel[0.286275], 
+                 FontWeight -> "SemiBold", FontColor -> GrayLevel[0.28627], 
                  FontSize -> 14, StripOnInput -> False], 
                 StyleBox[
                 "\" \[FilledRightTriangle] \"", FontFamily -> 
@@ -227,7 +550,7 @@ breaks between them (either using ",
                  GrayLevel[0.5], StripOnInput -> False], 
                 StyleBox[
                 "\"Insert Page Break\"", FontFamily -> "Source Sans Pro", 
-                 FontWeight -> "SemiBold", FontColor -> GrayLevel[0.286275], 
+                 FontWeight -> "SemiBold", FontColor -> GrayLevel[0.28627], 
                  FontSize -> 14, StripOnInput -> False]}, "RowDefault"], 
               ShowStringCharacters -> False]]], 
            " between cells or through the menu using ", 
@@ -237,17 +560,17 @@ breaks between them (either using ",
               TemplateBox[{
                 StyleBox[
                 "\"Insert\"", FontFamily -> "Source Sans Pro", FontWeight -> 
-                 "SemiBold", FontColor -> GrayLevel[0.286275], FontSize -> 14,
-                  StripOnInput -> False], 
+                 "SemiBold", FontColor -> GrayLevel[0.28627], FontSize -> 14, 
+                 StripOnInput -> False], 
                 StyleBox[
                 "\" \[FilledRightTriangle] \"", FontFamily -> 
                  "Source Sans Pro", FontSize -> 13.86, FontColor -> 
                  GrayLevel[0.5], StripOnInput -> False], 
                 StyleBox[
                 "\"Page Break\"", FontFamily -> "Source Sans Pro", FontWeight -> 
-                 "SemiBold", FontColor -> GrayLevel[0.286275], FontSize -> 14,
-                  StripOnInput -> False]}, "RowDefault"], 
-              ShowStringCharacters -> False]]], 
+                 "SemiBold", FontColor -> GrayLevel[0.28627], FontSize -> 14, 
+                 StripOnInput -> False]}, "RowDefault"], ShowStringCharacters -> 
+              False]]], 
            ").\n\nExamples should be grouped into Subsection and \
 Subsubsection cells similarly to existing documentation pages. Here are some \
 typical Subsection names and the types of examples they normally contain:\n  \
@@ -346,90 +669,501 @@ usage"}], "MoreInfoText"], Background -> GrayLevel[0.95], FrameMargins -> 20,
     CurrentValue[
      EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
    ImageSize->Automatic]],ExpressionUUID->
-  "eea44ec1-7cc3-4bad-9c3c-6330d03411f6"]
+  "45a1dd34-c5cc-40c2-804c-00f5ef763f56"]
 }], "Section",
  Editable->False,
  Deletable->False,
  TaggingRules->{"TemplateGroupName" -> "Examples"},
  CellTags->{"Examples", "TemplateCellGroup"},
- CellID->671320372,ExpressionUUID->"7a0d5fc1-fc56-4599-bea2-7dd2c9edc17f"],
+ CellID->671320372,ExpressionUUID->"39aa71bf-2af2-4163-93b4-5b1103c29d17"],
 
 Cell[CellGroupData[{
 
 Cell["Basic Examples", "Subsection",
+ TaggingRules->{},
  CellTags->"DefaultContent",
- CellID->619504543,ExpressionUUID->"ad56de8a-01e5-43fc-9b5d-f96e3b3ef797"],
+ CellID->619504543,ExpressionUUID->"c7da45bf-0017-417a-94bd-bab7cfa6a630"],
 
-Cell["Text about the example:", "Text",
+Cell["Convert to the Planck unit system:", "Text",
+ TaggingRules->{},
+ CellChangeTimes->{{3.87708697237334*^9, 3.8770869769660482`*^9}},
  CellTags->"DefaultContent",
- CellID->586099280,ExpressionUUID->"b7ac6093-9087-41fc-a3cf-a26e4a2ca54f"],
+ CellID->586099280,ExpressionUUID->"d92ddc01-f83e-405e-8eb6-482cdb4f4033"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"MyFunction", "[", 
-  RowBox[{"x", ",", "y"}], "]"}]], "Input",
+ RowBox[{"UnitSystemTransform", "[", 
+  RowBox[{
+   TemplateBox[{
+     InterpretationBox["\[InvisibleSpace]", 1], "\"J\"", "joules", 
+     "\"Joules\""},
+    "Quantity"], ",", "\"\<PlanckUnits\>\""}], "]"}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8770869357023993`*^9, 3.8770869489987855`*^9}},
  CellTags->"DefaultContent",
- CellLabel->"In[1]:= ",
- CellID->298664010,ExpressionUUID->"e7e8d6ff-a4ad-429b-8efb-0145bc3e64a4"],
+ CellLabel->"In[10]:=",
+ CellID->298664010,ExpressionUUID->"a5e9f75f-5ba8-4474-b73c-3942bfda2a67"],
 
 Cell[BoxData[
- RowBox[{"x", " ", "y"}]], "Output",
+ RowBox[{"{", 
+  TemplateBox[{"5.1122630752681745090977756667`3.954213812101825*^-10", 
+    RowBox[{
+      SubscriptBox[
+       StyleBox["\"m\"", Italic, StripOnInput -> False], 
+       StyleBox["\"P\"", Italic, StripOnInput -> False]], "\[ThinSpace]", 
+      SubsuperscriptBox[
+       StyleBox["\"l\"", Italic, StripOnInput -> False], 
+       StyleBox["\"P\"", Italic, StripOnInput -> False], "2"], 
+      "\[NegativeMediumSpace]", "\"/\"", "\[InvisibleSpace]", 
+      SubsuperscriptBox[
+       StyleBox["\"t\"", Italic, StripOnInput -> False], 
+       StyleBox["\"P\"", Italic, StripOnInput -> False], "2"]}], 
+    "Planck mass Planck lengths squared per Planck time squared", 
+    FractionBox[
+     RowBox[{
+       SuperscriptBox["\"PlanckLength\"", "2"], " ", "\"PlanckMass\""}], 
+     SuperscriptBox["\"PlanckTime\"", "2"]]},
+   "Quantity"], "}"}]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8770869556390724`*^9, 3.8770869787312813`*^9}},
  CellTags->"DefaultContent",
- CellLabel->"Out[1]= ",
- CellID->832981051,ExpressionUUID->"63134cea-64e2-4ca5-9fa9-d2390be724b9"]
-}, Open  ]]
+ CellLabel->"Out[10]=",
+ CellID->216544,ExpressionUUID->"be15c171-3075-44e7-b105-52725e128195"]
 }, Open  ]],
 
 Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"UnitSystemTransform", "[", 
+  RowBox[{
+   TemplateBox[{"5", "\"J\"", "joules", "\"Joules\""},
+    "Quantity"], ",", "\"\<PlanckUnits\>\""}], "]"}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8770869357023993`*^9, 3.8770869622411194`*^9}},
+ CellTags->"DefaultContent",
+ CellLabel->"In[11]:=",
+ CellID->19477333,ExpressionUUID->"41521c78-eb22-4495-8ec6-9d5d59160b67"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  TemplateBox[{"2.55613153763408725454888783333`3.954213812101825*^-9", 
+    RowBox[{
+      SubscriptBox[
+       StyleBox["\"m\"", Italic, StripOnInput -> False], 
+       StyleBox["\"P\"", Italic, StripOnInput -> False]], "\[ThinSpace]", 
+      SubsuperscriptBox[
+       StyleBox["\"l\"", Italic, StripOnInput -> False], 
+       StyleBox["\"P\"", Italic, StripOnInput -> False], "2"], 
+      "\[NegativeMediumSpace]", "\"/\"", "\[InvisibleSpace]", 
+      SubsuperscriptBox[
+       StyleBox["\"t\"", Italic, StripOnInput -> False], 
+       StyleBox["\"P\"", Italic, StripOnInput -> False], "2"]}], 
+    "Planck mass Planck lengths squared per Planck time squared", 
+    FractionBox[
+     RowBox[{
+       SuperscriptBox["\"PlanckLength\"", "2"], " ", "\"PlanckMass\""}], 
+     SuperscriptBox["\"PlanckTime\"", "2"]]},
+   "Quantity"], "}"}]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8770869646097283`*^9, 3.877086980460204*^9}},
+ CellTags->"DefaultContent",
+ CellLabel->"Out[11]=",
+ CellID->110439116,ExpressionUUID->"ff156ea8-69fb-46de-b14e-c882ad97f87b"]
+}, Open  ]],
+
+Cell["Convert to a set of natural units:", "Text",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8770871002867937`*^9, 3.877087108046238*^9}},
+ CellID->314267061,ExpressionUUID->"cafb7afb-3ad7-49a5-9423-cbf665877243"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"UnitSystemTransform", "[", 
+  RowBox[{
+   TemplateBox[{"7", "\"Wb\"", "webers", "\"Webers\""},
+    "Quantity"], ",", "\"\<NaturalUnits\>\""}], "]"}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.877087109473363*^9, 3.877087116854864*^9}},
+ CellLabel->"In[28]:=",
+ CellID->298151629,ExpressionUUID->"f5efb589-c07b-48d0-80eb-fe9c013f1ea9"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  TemplateBox[{"4.242700756609014`4.352322943480385*^15", 
+    RowBox[{
+      SqrtBox[
+       SubscriptBox[
+        StyleBox["\"m\"", Italic, StripOnInput -> False], 
+        StyleBox["\"P\"", Italic, StripOnInput -> False]]], 
+      "\[InvisibleSpace]", 
+      SubscriptBox[
+       StyleBox["\"l\"", Italic, StripOnInput -> False], 
+       StyleBox["\"P\"", Italic, StripOnInput -> False]], "\[ThinSpace]", 
+      SqrtBox[
+       SubscriptBox[
+        StyleBox["\"R\"", Italic, StripOnInput -> False], "\"K\""]], 
+      "\[NegativeMediumSpace]", "\"/\"", "\[InvisibleSpace]", 
+      SqrtBox[
+       SubscriptBox[
+        StyleBox["\"t\"", Italic, StripOnInput -> False], 
+        StyleBox["\"P\"", Italic, StripOnInput -> False]]]}], 
+    "square root Planck mass Planck length square root von Klitzing constants \
+per square root Planck time", 
+    FractionBox[
+     RowBox[{"\"PlanckLength\"", " ", 
+       SqrtBox["\"PlanckMass\""], " ", 
+       SqrtBox["\"VonKlitzingConstant\""]}], 
+     SqrtBox["\"PlanckTime\""]]},
+   "Quantity"], "}"}]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{{3.877087117182089*^9, 3.8770871205904455`*^9}},
+ CellLabel->"Out[28]=",
+ CellID->389547248,ExpressionUUID->"1082ef85-0cf1-471c-adee-f49b2de2437a"]
+}, Open  ]],
+
+Cell["Convert to the SI defining constants:", "Text",
+ TaggingRules->{},
+ CellChangeTimes->{{3.877087122246044*^9, 3.8770871278225756`*^9}},
+ CellID->38817110,ExpressionUUID->"2114c491-b123-464a-8121-6acbfd54856d"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"UnitSystemTransform", "[", 
+  RowBox[{
+   TemplateBox[{"7", "\"Wb\"", "webers", "\"Webers\""},
+    "Quantity"], ",", "\"\<SIDefiningConstants\>\""}], "]"}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.877087109473363*^9, 3.877087140199418*^9}},
+ CellLabel->"In[29]:=",
+ CellID->6047126,ExpressionUUID->"a962b4b7-b881-4003-ad8d-de3d449e973e"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  TemplateBox[{
+    FractionBox["10681177560000000000000", "6310543"], 
+    RowBox[{
+      StyleBox["\"h\"", Italic, StripOnInput -> False], "\[InvisibleSpace]", 
+      "\"/\"", "\[InvisibleSpace]", 
+      StyleBox["\"e\"", Italic, StripOnInput -> False]}], 
+    "Planck constants per elementary charge", 
+    FractionBox["\"PlanckConstant\"", "\"ElementaryCharge\""]},
+   "Quantity"], "}"}]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{3.8770871407353334`*^9},
+ CellLabel->"Out[29]=",
+ CellID->94664627,ExpressionUUID->"6093b157-cdd6-4b70-9c5e-979d0d306825"]
+}, Open  ]],
+
+Cell["Convert to a custom combination of quantities:", "Text",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8770871449424086`*^9, 3.8770871518307877`*^9}},
+ CellID->347598778,ExpressionUUID->"6ad9606c-83a8-44be-82c0-988a493f58d7"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"UnitSystemTransform", "[", 
+  RowBox[{
+   TemplateBox[{"7", "\"Wb\"", "webers", "\"Webers\""},
+    "Quantity"], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{
+       InterpretationBox["\[InvisibleSpace]", 1], 
+       StyleBox["\"G\"", Italic, StripOnInput -> False], 
+       "Newtonian gravitational constants", "\"GravitationalConstant\""},
+      "Quantity"], ",", 
+     TemplateBox[{
+       InterpretationBox["\[InvisibleSpace]", 1], "\"\[HBar]\"", 
+       "reduced Planck constants", "\"ReducedPlanckConstant\""},
+      "Quantity"], ",", 
+     TemplateBox[{
+       InterpretationBox["\[InvisibleSpace]", 1], 
+       SubscriptBox[
+        StyleBox["\"R\"", Italic, StripOnInput -> False], "\"K\""], 
+       "von Klitzing constants", "\"VonKlitzingConstant\""},
+      "Quantity"], ",", 
+     TemplateBox[{
+       InterpretationBox["\[InvisibleSpace]", 1], 
+       StyleBox["\"c\"", Italic, StripOnInput -> False], "speed of light", 
+       "\"SpeedOfLight\""},
+      "Quantity"], ",", 
+     TemplateBox[{
+       InterpretationBox["\[InvisibleSpace]", 1], 
+       StyleBox["\"k\"", Italic, StripOnInput -> False], 
+       "Boltzmann constants", "\"BoltzmannConstant\""},
+      "Quantity"]}], "}"}]}], "]"}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.877087109473363*^9, 3.8770871810487385`*^9}},
+ CellLabel->"In[31]:=",
+ CellID->244956119,ExpressionUUID->"8dcb82ce-96c2-45e7-a536-6fd50ecdbfaa"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  TemplateBox[{
+    FractionBox[
+     RowBox[{"10681177560000000000000", " ", 
+       SqrtBox[
+        RowBox[{"2", " ", "\[Pi]"}]]}], "6310543"], 
+    RowBox[{
+      SqrtBox["\"\[HBar]\""], "\[InvisibleSpace]", 
+      SqrtBox[
+       SubscriptBox[
+        StyleBox["\"R\"", Italic, StripOnInput -> False], "\"K\""]]}], 
+    "square root reduced Planck constant square root von Klitzing constants", 
+    RowBox[{
+      SqrtBox["\"ReducedPlanckConstant\""], " ", 
+      SqrtBox["\"VonKlitzingConstant\""]}]},
+   "Quantity"], "}"}]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8770871879816337`*^9, 3.8770871917052107`*^9}},
+ CellLabel->"Out[31]=",
+ CellID->66697077,ExpressionUUID->"cef67211-8345-430d-8bc7-cf7b289edc9a"]
+}, Open  ]],
+
+Cell["Find multiple equivalent forms:", "Text",
+ TaggingRules->{},
+ CellChangeTimes->{{3.877087198886945*^9, 3.877087203726974*^9}},
+ CellID->37115577,ExpressionUUID->"d0728743-96f0-4e6e-96ab-2e587811b5ce"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"UnitSystemTransform", "[", 
+  RowBox[{
+   TemplateBox[{"7", "\"Wb\"", "webers", "\"Webers\""},
+    "Quantity"], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{
+       InterpretationBox["\[InvisibleSpace]", 1], 
+       StyleBox["\"G\"", Italic, StripOnInput -> False], 
+       "Newtonian gravitational constants", "\"GravitationalConstant\""},
+      "Quantity"], ",", 
+     TemplateBox[{
+       InterpretationBox["\[InvisibleSpace]", 1], "\"\[HBar]\"", 
+       "reduced Planck constants", "\"ReducedPlanckConstant\""},
+      "Quantity"], ",", 
+     TemplateBox[{
+       InterpretationBox["\[InvisibleSpace]", 1], 
+       SubscriptBox[
+        StyleBox["\"R\"", Italic, StripOnInput -> False], "\"K\""], 
+       "von Klitzing constants", "\"VonKlitzingConstant\""},
+      "Quantity"], ",", 
+     TemplateBox[{
+       InterpretationBox["\[InvisibleSpace]", 1], 
+       StyleBox["\"c\"", Italic, StripOnInput -> False], "speed of light", 
+       "\"SpeedOfLight\""},
+      "Quantity"], ",", 
+     TemplateBox[{
+       InterpretationBox["\[InvisibleSpace]", 1], 
+       StyleBox["\"k\"", Italic, StripOnInput -> False], 
+       "Boltzmann constants", "\"BoltzmannConstant\""},
+      "Quantity"], ",", 
+     TemplateBox[{
+       InterpretationBox["\[InvisibleSpace]", 1], 
+       SubscriptBox[
+        StyleBox["\"K\"", Italic, StripOnInput -> False], "\"J\""], 
+       "Josephson constants", "\"JosephsonConstant\""},
+      "Quantity"], ",", 
+     TemplateBox[{
+       InterpretationBox["\[InvisibleSpace]", 1], 
+       SubscriptBox[
+        StyleBox["\"R\"", Italic, StripOnInput -> False], "\[Infinity]"], 
+       "Rydberg constants", "\"RydbergConstant\""},
+      "Quantity"]}], "}"}]}], "]"}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.877087109473363*^9, 3.877087212456975*^9}},
+ CellLabel->"In[33]:=",
+ CellID->15961060,ExpressionUUID->"5bd3c8f0-6fca-4266-8c84-71b44ba95ab3"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TemplateBox[{
+     FractionBox["21362355120000000000000", "6310543"], 
+     RowBox[{"\"/\"", "\[InvisibleSpace]", 
+       SubscriptBox[
+        StyleBox["\"K\"", Italic, StripOnInput -> False], "\"J\""]}], 
+     "reciprocal Josephson constants", 
+     FractionBox["1", "\"JosephsonConstant\""]},
+    "Quantity"], ",", 
+   TemplateBox[{
+     FractionBox[
+      RowBox[{"10681177560000000000000", " ", 
+        SqrtBox[
+         RowBox[{"2", " ", "\[Pi]"}]]}], "6310543"], 
+     RowBox[{
+       SqrtBox["\"\[HBar]\""], "\[InvisibleSpace]", 
+       SqrtBox[
+        SubscriptBox[
+         StyleBox["\"R\"", Italic, StripOnInput -> False], "\"K\""]]}], 
+     "square root reduced Planck constant square root von Klitzing constants", 
+     RowBox[{
+       SqrtBox["\"ReducedPlanckConstant\""], " ", 
+       SqrtBox["\"VonKlitzingConstant\""]}]},
+    "Quantity"], ",", 
+   TemplateBox[{
+     FractionBox[
+      RowBox[{"10681177560000000000000", " ", "\[Pi]"}], "6310543"], 
+     RowBox[{
+       SubscriptBox[
+        StyleBox["\"K\"", Italic, StripOnInput -> False], "\"J\""], 
+       "\[ThinSpace]", "\"\[HBar]\"", "\[ThinSpace]", 
+       SubscriptBox[
+        StyleBox["\"R\"", Italic, StripOnInput -> False], "\"K\""]}], 
+     "Josephson constant reduced Planck constant von Klitzing constants", 
+     RowBox[{
+      "\"JosephsonConstant\"", " ", "\"ReducedPlanckConstant\"", " ", 
+       "\"VonKlitzingConstant\""}]},
+    "Quantity"], ",", 
+   TemplateBox[{"7.5250009492138558458716788`4.657577244163299*^-13", 
+     RowBox[{
+       SuperscriptBox[
+        StyleBox["\"c\"", Italic, StripOnInput -> False], 
+        RowBox[{"3", "/", "2"}]], "\[InvisibleSpace]", 
+       SqrtBox[
+        SubscriptBox[
+         StyleBox["\"R\"", Italic, StripOnInput -> False], "\"K\""]], 
+       "\[NegativeMediumSpace]", "\"/(\"", "\[InvisibleSpace]", 
+       SubscriptBox[
+        StyleBox["\"R\"", Italic, StripOnInput -> False], "\[Infinity]"], 
+       "\[ThinSpace]", 
+       SqrtBox[
+        StyleBox["\"G\"", Italic, StripOnInput -> False]], 
+       "\[InvisibleSpace]", "\")\""}], 
+     "speed of light to the 3/2 square root von Klitzing constants per \
+Rydberg constant square root Newtonian gravitational constant", 
+     FractionBox[
+      RowBox[{
+        SuperscriptBox["\"SpeedOfLight\"", 
+         RowBox[{"3", "/", "2"}]], " ", 
+        SqrtBox["\"VonKlitzingConstant\""]}], 
+      RowBox[{
+        SqrtBox["\"GravitationalConstant\""], " ", "\"RydbergConstant\""}]]},
+    "Quantity"], ",", 
+   TemplateBox[{"2.392093318141060610711371`4.657577244163299*^43", 
+     RowBox[{
+       SubscriptBox[
+        StyleBox["\"R\"", Italic, StripOnInput -> False], "\[Infinity]"], 
+       "\[ThinSpace]", 
+       SqrtBox[
+        StyleBox["\"G\"", Italic, StripOnInput -> False]], 
+       "\[InvisibleSpace]", "\"\[HBar]\"", "\[ThinSpace]", 
+       SqrtBox[
+        SubscriptBox[
+         StyleBox["\"R\"", Italic, StripOnInput -> False], "\"K\""]], 
+       "\[NegativeMediumSpace]", "\"/\"", "\[InvisibleSpace]", 
+       SuperscriptBox[
+        StyleBox["\"c\"", Italic, StripOnInput -> False], 
+        RowBox[{"3", "/", "2"}]]}], 
+     "Rydberg constant square root Newtonian gravitational constant reduced \
+Planck constant square root von Klitzing constants per speed of light to the \
+3/2", 
+     FractionBox[
+      RowBox[{
+        SqrtBox["\"GravitationalConstant\""], " ", 
+        "\"ReducedPlanckConstant\"", " ", "\"RydbergConstant\"", " ", 
+        SqrtBox["\"VonKlitzingConstant\""]}], 
+      SuperscriptBox["\"SpeedOfLight\"", 
+       RowBox[{"3", "/", "2"}]]]},
+    "Quantity"], ",", 
+   TemplateBox[{"1.908614326544449016487048`4.657577244163299*^43", 
+     RowBox[{
+       SubscriptBox[
+        StyleBox["\"R\"", Italic, StripOnInput -> False], "\[Infinity]"], 
+       "\[ThinSpace]", 
+       SqrtBox[
+        StyleBox["\"G\"", Italic, StripOnInput -> False]], 
+       "\[InvisibleSpace]", 
+       SqrtBox["\"\[HBar]\""], "\[NegativeMediumSpace]", "\"/(\"", 
+       "\[InvisibleSpace]", 
+       SubscriptBox[
+        StyleBox["\"K\"", Italic, StripOnInput -> False], "\"J\""], 
+       "\[ThinSpace]", 
+       SuperscriptBox[
+        StyleBox["\"c\"", Italic, StripOnInput -> False], 
+        RowBox[{"3", "/", "2"}]], "\[InvisibleSpace]", "\")\""}], 
+     "Rydberg constant square root Newtonian gravitational constant square \
+root reduced Planck constants per Josephson constant speed of light to the \
+3/2", 
+     FractionBox[
+      RowBox[{
+        SqrtBox["\"GravitationalConstant\""], " ", 
+        SqrtBox["\"ReducedPlanckConstant\""], " ", "\"RydbergConstant\""}], 
+      RowBox[{"\"JosephsonConstant\"", " ", 
+        SuperscriptBox["\"SpeedOfLight\"", 
+         RowBox[{"3", "/", "2"}]]}]]},
+    "Quantity"], ",", 
+   TemplateBox[{"1.522853903676974344468727`4.657577244163299*^43", 
+     RowBox[{
+       SubscriptBox[
+        StyleBox["\"R\"", Italic, StripOnInput -> False], "\[Infinity]"], 
+       "\[ThinSpace]", 
+       SqrtBox[
+        StyleBox["\"G\"", Italic, StripOnInput -> False]], 
+       "\[NegativeMediumSpace]", "\"/(\"", "\[InvisibleSpace]", 
+       SubsuperscriptBox[
+        StyleBox["\"K\"", Italic, StripOnInput -> False], "\"J\"", "2"], 
+       "\[InvisibleSpace]", 
+       SuperscriptBox[
+        StyleBox["\"c\"", Italic, StripOnInput -> False], 
+        RowBox[{"3", "/", "2"}]], "\[InvisibleSpace]", 
+       SqrtBox[
+        SubscriptBox[
+         StyleBox["\"R\"", Italic, StripOnInput -> False], "\"K\""]], 
+       "\[InvisibleSpace]", "\")\""}], 
+     "Rydberg constant square root Newtonian gravitational constants per \
+Josephson constant squared speed of light to the 3/2 square root von Klitzing \
+constant", 
+     FractionBox[
+      RowBox[{
+        SqrtBox["\"GravitationalConstant\""], " ", "\"RydbergConstant\""}], 
+      RowBox[{
+        SuperscriptBox["\"JosephsonConstant\"", "2"], " ", 
+        SuperscriptBox["\"SpeedOfLight\"", 
+         RowBox[{"3", "/", "2"}]], " ", 
+        SqrtBox["\"VonKlitzingConstant\""]}]]},
+    "Quantity"]}], "}"}]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8770872271095004`*^9, 3.877087231392982*^9}},
+ CellLabel->"Out[33]=",
+ CellID->61640581,ExpressionUUID->"cd7cbe41-1899-4ede-8cc3-82a2bcc8740a"]
+}, Open  ]]
+}, Open  ]],
 
 Cell["Scope", "Subsection",
+ TaggingRules->{},
  CellTags->"DefaultContent",
- CellID->313242344,ExpressionUUID->"98f3d387-804b-495f-b58e-854ebca4f085"],
-
-Cell["\<\
-Text about additional examples expanding scope (and see other sections for \
-options, applications, etc):\
-\>", "Text",
- CellTags->"DefaultContent",
- CellID->291939446,ExpressionUUID->"c0d0c9d2-4940-45f9-b6e6-2166f50330f0"],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"MyFunction", "[", 
-  RowBox[{"x", ",", "y", ",", "z"}], "]"}]], "Input",
- CellTags->"DefaultContent",
- CellLabel->"In[2]:= ",
- CellID->448965068,ExpressionUUID->"6827937b-dee2-4ee0-8326-ddf05ce0e999"],
-
-Cell[BoxData[
- RowBox[{"x", " ", "y", " ", "z"}]], "Output",
- CellTags->"DefaultContent",
- CellLabel->"Out[2]= ",
- CellID->494498970,ExpressionUUID->"c392adc8-aa58-413b-b438-e043d12e958d"]
-}, Open  ]]
-}, Open  ]],
+ CellID->313242344,ExpressionUUID->"b6f6653e-a3f5-4712-8d38-6dc07ae58d22"],
 
 Cell["Options", "Subsection",
+ TaggingRules->{},
  CellTags->"DefaultContent",
- CellID->879773335,ExpressionUUID->"586c0c31-0483-4867-8e93-1c79e9784bc9"],
+ CellID->879773335,ExpressionUUID->"bbb8bad2-cd48-43f7-b374-bbf6c09b746a"],
 
 Cell["Applications", "Subsection",
+ TaggingRules->{},
  CellTags->"DefaultContent",
- CellID->542143288,ExpressionUUID->"152f3c1a-9782-4a54-a683-70301dfdff2b"],
+ CellID->542143288,ExpressionUUID->"5bb52948-57b6-4584-821e-d84d75cc7550"],
 
 Cell["Properties and Relations", "Subsection",
+ TaggingRules->{},
  CellTags->"DefaultContent",
- CellID->727494039,ExpressionUUID->"0d38b33f-b7db-425f-ba4b-a0300505fbf5"],
+ CellID->727494039,ExpressionUUID->"51411a84-1fab-47e8-ad14-1d282e50d744"],
 
 Cell["Possible Issues", "Subsection",
+ TaggingRules->{},
  CellTags->"DefaultContent",
- CellID->471245215,ExpressionUUID->"0e8d6940-2a76-4c20-9064-4726021472ec"],
+ CellID->471245215,ExpressionUUID->"f19f213c-c395-4bf1-a69a-b127496fa1ea"],
 
 Cell["Neat Examples", "Subsection",
+ TaggingRules->{},
  CellTags->"DefaultContent",
- CellID->303071976,ExpressionUUID->"2a0c97b3-457d-4507-b077-1b7605f4a7b6"]
+ CellID->303071976,ExpressionUUID->"ba017cb6-b00c-499f-b248-f6330f3a1194"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -439,7 +1173,7 @@ Cell["Source & Additional Information", "Section",
  Deletable->False,
  TaggingRules->{"TemplateGroupName" -> "Source & Additional Information"},
  CellTags->{"Source & Additional Information", "TemplateSection"},
- CellID->871630328,ExpressionUUID->"56bde975-1d8d-40de-ba7e-ce4547ba8835"],
+ CellID->871630328,ExpressionUUID->"b7f4be12-5945-424f-ab6d-b583f8f64bd0"],
 
 Cell[CellGroupData[{
 
@@ -463,24 +1197,26 @@ publicly credited with contributing this function.", "MoreInfoText"],
     CurrentValue[
      EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
    ImageSize->Automatic]],ExpressionUUID->
-  "1057aca4-f13c-45bf-a1c6-adc36d1b7895"]
+  "9c1faa63-e2fb-4760-8bf0-acbb73889d42"]
 }], "Subsection",
  Editable->False,
  Deletable->False,
  TaggingRules->{"TemplateGroupName" -> "Contributed By"},
  DefaultNewCellStyle->"Text",
  CellTags->{"Contributed By", "ContributorInformation", "TemplateCellGroup"},
- CellID->771147648,ExpressionUUID->"81af336a-ff20-4c08-8993-200ea7f2a69c"],
+ CellID->771147648,ExpressionUUID->"c5dfd342-38f9-434e-9622-383aef8ef7ca"],
 
-Cell["Author Name", "Text",
+Cell["Peter Cullen Burbery", "Text",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
        WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.8770874078793936`*^9, 3.8770874108961697`*^9}},
  CellTags->{"DefaultContent", "TabNext"},
- CellID->855757352,ExpressionUUID->"967e2da0-fd84-4e3a-b7d0-0403ab5ee73a"]
+ CellID->855757352,ExpressionUUID->"11eb9436-f796-4c00-b46b-fc61ee1d1fc2"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -505,24 +1241,48 @@ concepts) that should be used to include the function in search results.",
     CurrentValue[
      EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
    ImageSize->Automatic]],ExpressionUUID->
-  "53a56ee5-03ed-4f3e-a402-a62cebbdaaa9"]
+  "c86241f3-9649-4a22-9c63-1c8f4b3e027c"]
 }], "Subsection",
  Editable->False,
  Deletable->False,
  TaggingRules->{"TemplateGroupName" -> "Keywords"},
  DefaultNewCellStyle->"Item",
  CellTags->{"Keywords", "TemplateCellGroup"},
- CellID->854882061,ExpressionUUID->"f290b23e-4ac7-44ed-a6b2-23b76821f20a"],
+ CellID->854882061,ExpressionUUID->"6e5e342f-b8d4-4b03-9bc5-fcfae345a656"],
 
-Cell["keyword 1", "Item",
+Cell["Dimensional analysis", "Item",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
        WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.877087413479813*^9, 3.8770874161696353`*^9}},
  CellTags->{"DefaultContent", "TabNext"},
- CellID->560424104,ExpressionUUID->"8ba05c3a-5066-416b-b6b4-383c9d85bb0c"]
+ CellID->560424104,ExpressionUUID->"5519ba00-e8bc-4a90-9643-fbe367828808"],
+
+Cell["Metrology", "Item",
+ TaggingRules->{},
+ CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
+       SelectedNotebook[], After, Cell]; NotebookFind[
+       SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
+       WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
+       SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
+   PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.877087413479813*^9, 3.8770874194727488`*^9}},
+ CellID->220575497,ExpressionUUID->"3d968977-6d3b-4a73-adab-a68b51e42be6"],
+
+Cell["Physics", "Item",
+ TaggingRules->{},
+ CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
+       SelectedNotebook[], After, Cell]; NotebookFind[
+       SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
+       WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
+       SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
+   PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.877087413479813*^9, 3.877087421224433*^9}},
+ CellID->567639842,ExpressionUUID->"4b2c0b13-ff6d-4738-a25b-af2d3ac48e3d"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -533,216 +1293,244 @@ Cell["Categories", "Subsection",
  TaggingRules->{"TemplateGroupName" -> "Categories"},
  DefaultNewCellStyle->"Item",
  CellTags->{"Categories", "TemplateCellGroup"},
- CellID->193940140,ExpressionUUID->"4eaa08e6-e2e0-4eb9-99fd-2c84b555bc1a"],
+ CellID->193940140,ExpressionUUID->"b7b21f76-6804-46ab-88b1-fed886b4d4d8"],
 
 Cell[BoxData[
  TagBox[GridBox[{
     {
-     StyleBox[
-      TemplateBox[{
-        CheckboxBox[False, {False, "Cloud & Deployment"}], "\" \"", 
-        "\"Cloud & Deployment\""},
-       "RowDefault"],
-      StripOnInput->False,
-      FontSize->12], 
-     StyleBox[
-      TemplateBox[{
-        CheckboxBox[False, {False, "Core Language & Structure"}], "\" \"", 
-        "\"Core Language & Structure\""},
-       "RowDefault"],
-      StripOnInput->False,
-      FontSize->12]},
-    {
-     StyleBox[
-      TemplateBox[{
-        CheckboxBox[False, {False, "Data Manipulation & Analysis"}], "\" \"", 
-        "\"Data Manipulation & Analysis\""},
-       "RowDefault"],
-      StripOnInput->False,
-      FontSize->12], 
-     StyleBox[
-      TemplateBox[{
-        CheckboxBox[False, {False, "Engineering Data & Computation"}], 
-        "\" \"", "\"Engineering Data & Computation\""},
-       "RowDefault"],
-      StripOnInput->False,
-      FontSize->12]},
-    {
-     StyleBox[
-      TemplateBox[{
-        CheckboxBox[False, {False, "External Interfaces & Connections"}], 
-        "\" \"", "\"External Interfaces & Connections\""},
-       "RowDefault"],
-      StripOnInput->False,
-      FontSize->12], 
-     StyleBox[
-      TemplateBox[{
-        CheckboxBox[False, {False, "Financial Data & Computation"}], "\" \"", 
-        "\"Financial Data & Computation\""},
-       "RowDefault"],
-      StripOnInput->False,
-      FontSize->12]},
-    {
-     StyleBox[
-      TemplateBox[{
-        CheckboxBox[False, {False, "Geographic Data & Computation"}], "\" \"",
-         "\"Geographic Data & Computation\""},
-       "RowDefault"],
-      StripOnInput->False,
-      FontSize->12], 
-     StyleBox[
-      TemplateBox[{
-        CheckboxBox[False, {False, "Geometry"}], "\" \"", "\"Geometry\""},
-       "RowDefault"],
-      StripOnInput->False,
-      FontSize->12]},
-    {
-     StyleBox[
-      TemplateBox[{
-        CheckboxBox[False, {False, "Graphs & Networks"}], "\" \"", 
-        "\"Graphs & Networks\""},
-       "RowDefault"],
-      StripOnInput->False,
-      FontSize->12], 
-     StyleBox[
-      TemplateBox[{
-        CheckboxBox[False, {False, "Higher Mathematical Computation"}], 
-        "\" \"", "\"Higher Mathematical Computation\""},
-       "RowDefault"],
-      StripOnInput->False,
-      FontSize->12]},
-    {
-     StyleBox[
-      TemplateBox[{
-        CheckboxBox[False, {False, "Images"}], "\" \"", "\"Images\""},
-       "RowDefault"],
-      StripOnInput->False,
-      FontSize->12], 
-     StyleBox[
-      TemplateBox[{
-        CheckboxBox[False, {False, "Just For Fun"}], "\" \"", 
-        "\"Just For Fun\""},
-       "RowDefault"],
-      StripOnInput->False,
-      FontSize->12]},
-    {
-     StyleBox[
-      TemplateBox[{
-        CheckboxBox[
-        False, {False, "Knowledge Representation & Natural Language"}], 
-        "\" \"", "\"Knowledge Representation & Natural Language\""},
-       "RowDefault"],
-      StripOnInput->False,
-      FontSize->12], 
-     StyleBox[
-      TemplateBox[{
-        CheckboxBox[False, {False, "Machine Learning"}], "\" \"", 
-        "\"Machine Learning\""},
-       "RowDefault"],
-      StripOnInput->False,
-      FontSize->12]},
-    {
-     StyleBox[
-      TemplateBox[{
-        CheckboxBox[False, {False, "Notebook Documents & Presentation"}], 
-        "\" \"", "\"Notebook Documents & Presentation\""},
-       "RowDefault"],
-      StripOnInput->False,
-      FontSize->12], 
-     StyleBox[
-      TemplateBox[{
-        CheckboxBox[False, {False, "Programming Utilities"}], "\" \"", 
-        "\"Programming Utilities\""},
-       "RowDefault"],
-      StripOnInput->False,
-      FontSize->12]},
-    {
-     StyleBox[
-      TemplateBox[{
-        CheckboxBox[False, {False, "Repository Tools"}], "\" \"", 
-        "\"Repository Tools\""},
-       "RowDefault"],
-      StripOnInput->False,
-      FontSize->12], 
-     StyleBox[
-      TemplateBox[{
-        CheckboxBox[
-        False, {False, "Scientific and Medical Data & Computation"}], "\" \"",
-         "\"Scientific and Medical Data & Computation\""},
-       "RowDefault"],
-      StripOnInput->False,
-      FontSize->12]},
-    {
-     StyleBox[
-      TemplateBox[{
-        CheckboxBox[False, {False, "Social, Cultural & Linguistic Data"}], 
-        "\" \"", "\"Social, Cultural & Linguistic Data\""},
-       "RowDefault"],
-      StripOnInput->False,
-      FontSize->12], 
-     StyleBox[
-      TemplateBox[{
-        CheckboxBox[False, {False, "Sound"}], "\" \"", "\"Sound\""},
-       "RowDefault"],
-      StripOnInput->False,
-      FontSize->12]},
-    {
-     StyleBox[
-      TemplateBox[{
-        CheckboxBox[False, {False, "Strings & Text"}], "\" \"", 
-        "\"Strings & Text\""},
-       "RowDefault"],
-      StripOnInput->False,
-      FontSize->12], 
-     StyleBox[
-      TemplateBox[{
-        CheckboxBox[False, {False, "Symbolic & Numeric Computation"}], 
-        "\" \"", "\"Symbolic & Numeric Computation\""},
-       "RowDefault"],
-      StripOnInput->False,
-      FontSize->12]},
-    {
-     StyleBox[
-      TemplateBox[{
-        CheckboxBox[False, {False, "System Operation & Setup"}], "\" \"", 
-        "\"System Operation & Setup\""},
-       "RowDefault"],
-      StripOnInput->False,
-      FontSize->12], 
-     StyleBox[
-      TemplateBox[{
-        CheckboxBox[False, {False, "Time-Related Computation"}], "\" \"", 
-        "\"Time-Related Computation\""},
-       "RowDefault"],
-      StripOnInput->False,
-      FontSize->12]},
-    {
-     StyleBox[
-      TemplateBox[{
-        CheckboxBox[False, {False, "User Interface Construction"}], "\" \"", 
-        "\"User Interface Construction\""},
-       "RowDefault"],
-      StripOnInput->False,
-      FontSize->12], 
-     StyleBox[
-      TemplateBox[{
-        CheckboxBox[False, {False, "Visualization & Graphics"}], "\" \"", 
-        "\"Visualization & Graphics\""},
-       "RowDefault"],
-      StripOnInput->False,
-      FontSize->12]},
-    {
-     StyleBox[
-      TemplateBox[{
-        CheckboxBox[False, {False, "Wolfram Physics Project"}], "\" \"", 
-        "\"Wolfram Physics Project\""},
-       "RowDefault"],
-      StripOnInput->False,
-      FontSize->12], "\<\"\"\>"}
+     TagBox[GridBox[{
+        {
+         StyleBox[
+          TemplateBox[{
+            CheckboxBox[False, {False, "Cloud & Deployment"}], "\" \"", 
+            "\"Cloud & Deployment\""},
+           "RowDefault"],
+          StripOnInput->False,
+          FontSize->12]},
+        {
+         StyleBox[
+          TemplateBox[{
+            CheckboxBox[False, {False, "Data Manipulation & Analysis"}], 
+            "\" \"", "\"Data Manipulation & Analysis\""},
+           "RowDefault"],
+          StripOnInput->False,
+          FontSize->12]},
+        {
+         StyleBox[
+          TemplateBox[{
+            CheckboxBox[False, {False, "External Interfaces & Connections"}], 
+            "\" \"", "\"External Interfaces & Connections\""},
+           "RowDefault"],
+          StripOnInput->False,
+          FontSize->12]},
+        {
+         StyleBox[
+          TemplateBox[{
+            CheckboxBox[False, {False, "Geographic Data & Computation"}], 
+            "\" \"", "\"Geographic Data & Computation\""},
+           "RowDefault"],
+          StripOnInput->False,
+          FontSize->12]},
+        {
+         StyleBox[
+          TemplateBox[{
+            CheckboxBox[False, {False, "Graphs & Networks"}], "\" \"", 
+            "\"Graphs & Networks\""},
+           "RowDefault"],
+          StripOnInput->False,
+          FontSize->12]},
+        {
+         StyleBox[
+          TemplateBox[{
+            CheckboxBox[False, {False, "Images"}], "\" \"", "\"Images\""},
+           "RowDefault"],
+          StripOnInput->False,
+          FontSize->12]},
+        {
+         StyleBox[
+          TemplateBox[{
+            CheckboxBox[
+            False, {False, "Knowledge Representation & Natural Language"}], 
+            "\" \"", "\"Knowledge Representation & Natural Language\""},
+           "RowDefault"],
+          StripOnInput->False,
+          FontSize->12]},
+        {
+         StyleBox[
+          TemplateBox[{
+            CheckboxBox[False, {False, "Notebook Documents & Presentation"}], 
+            "\" \"", "\"Notebook Documents & Presentation\""},
+           "RowDefault"],
+          StripOnInput->False,
+          FontSize->12]},
+        {
+         StyleBox[
+          TemplateBox[{
+            CheckboxBox[False, {False, "Repository Tools"}], "\" \"", 
+            "\"Repository Tools\""},
+           "RowDefault"],
+          StripOnInput->False,
+          FontSize->12]},
+        {
+         StyleBox[
+          TemplateBox[{
+            CheckboxBox[False, {False, "Social, Cultural & Linguistic Data"}],
+             "\" \"", "\"Social, Cultural & Linguistic Data\""},
+           "RowDefault"],
+          StripOnInput->False,
+          FontSize->12]},
+        {
+         StyleBox[
+          TemplateBox[{
+            CheckboxBox[False, {False, "Strings & Text"}], "\" \"", 
+            "\"Strings & Text\""},
+           "RowDefault"],
+          StripOnInput->False,
+          FontSize->12]},
+        {
+         StyleBox[
+          TemplateBox[{
+            CheckboxBox[False, {False, "System Operation & Setup"}], "\" \"", 
+            "\"System Operation & Setup\""},
+           "RowDefault"],
+          StripOnInput->False,
+          FontSize->12]},
+        {
+         StyleBox[
+          TemplateBox[{
+            CheckboxBox[False, {False, "User Interface Construction"}], 
+            "\" \"", "\"User Interface Construction\""},
+           "RowDefault"],
+          StripOnInput->False,
+          FontSize->12]},
+        {
+         StyleBox[
+          TemplateBox[{
+            CheckboxBox[False, {False, "Wolfram Physics Project"}], "\" \"", 
+            "\"Wolfram Physics Project\""},
+           "RowDefault"],
+          StripOnInput->False,
+          FontSize->12]}
+       },
+       DefaultBaseStyle->"Column",
+       GridBoxAlignment->{"Columns" -> {{Left}}},
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+      "Column"], 
+     TagBox[GridBox[{
+        {
+         StyleBox[
+          TemplateBox[{
+            CheckboxBox[False, {False, "Core Language & Structure"}], "\" \"",
+             "\"Core Language & Structure\""},
+           "RowDefault"],
+          StripOnInput->False,
+          FontSize->12]},
+        {
+         StyleBox[
+          TemplateBox[{
+            CheckboxBox[False, {False, "Engineering Data & Computation"}], 
+            "\" \"", "\"Engineering Data & Computation\""},
+           "RowDefault"],
+          StripOnInput->False,
+          FontSize->12]},
+        {
+         StyleBox[
+          TemplateBox[{
+            CheckboxBox[False, {False, "Financial Data & Computation"}], 
+            "\" \"", "\"Financial Data & Computation\""},
+           "RowDefault"],
+          StripOnInput->False,
+          FontSize->12]},
+        {
+         StyleBox[
+          TemplateBox[{
+            CheckboxBox[False, {False, "Geometry"}], "\" \"", "\"Geometry\""},
+           "RowDefault"],
+          StripOnInput->False,
+          FontSize->12]},
+        {
+         StyleBox[
+          TemplateBox[{
+            CheckboxBox[False, {False, "Higher Mathematical Computation"}], 
+            "\" \"", "\"Higher Mathematical Computation\""},
+           "RowDefault"],
+          StripOnInput->False,
+          FontSize->12]},
+        {
+         StyleBox[
+          TemplateBox[{
+            CheckboxBox[False, {False, "Just For Fun"}], "\" \"", 
+            "\"Just For Fun\""},
+           "RowDefault"],
+          StripOnInput->False,
+          FontSize->12]},
+        {
+         StyleBox[
+          TemplateBox[{
+            CheckboxBox[False, {False, "Machine Learning"}], "\" \"", 
+            "\"Machine Learning\""},
+           "RowDefault"],
+          StripOnInput->False,
+          FontSize->12]},
+        {
+         StyleBox[
+          TemplateBox[{
+            CheckboxBox[False, {False, "Programming Utilities"}], "\" \"", 
+            "\"Programming Utilities\""},
+           "RowDefault"],
+          StripOnInput->False,
+          FontSize->12]},
+        {
+         StyleBox[
+          TemplateBox[{
+            CheckboxBox[
+            False, {False, "Scientific and Medical Data & Computation"}], 
+            "\" \"", "\"Scientific and Medical Data & Computation\""},
+           "RowDefault"],
+          StripOnInput->False,
+          FontSize->12]},
+        {
+         StyleBox[
+          TemplateBox[{
+            CheckboxBox[False, {False, "Sound & Video"}], "\" \"", 
+            "\"Sound & Video\""},
+           "RowDefault"],
+          StripOnInput->False,
+          FontSize->12]},
+        {
+         StyleBox[
+          TemplateBox[{
+            CheckboxBox[False, {False, "Symbolic & Numeric Computation"}], 
+            "\" \"", "\"Symbolic & Numeric Computation\""},
+           "RowDefault"],
+          StripOnInput->False,
+          FontSize->12]},
+        {
+         StyleBox[
+          TemplateBox[{
+            CheckboxBox[False, {False, "Time-Related Computation"}], "\" \"", 
+            "\"Time-Related Computation\""},
+           "RowDefault"],
+          StripOnInput->False,
+          FontSize->12]},
+        {
+         StyleBox[
+          TemplateBox[{
+            CheckboxBox[False, {False, "Visualization & Graphics"}], "\" \"", 
+            "\"Visualization & Graphics\""},
+           "RowDefault"],
+          StripOnInput->False,
+          FontSize->12]},
+        {"\<\"\"\>"}
+       },
+       DefaultBaseStyle->"Column",
+       GridBoxAlignment->{"Columns" -> {{Left}}},
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+      "Column"]}
    },
    AutoDelete->False,
    BaseStyle->{"ControlStyle"},
-   GridBoxAlignment->{"Columns" -> {{Left}}},
+   GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Top}}},
    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
    GridBoxSpacings->{"Columns" -> {{2}}}],
   "Grid"]], "Output",
@@ -755,7 +1543,7 @@ WuYdc+Ub5wvq9oc1GUlKJnXIiqJrBdBCtZQ3n11qHnCPtWMD6sV0ipOzhW1tB9/elmHINGKs+\
 zYjElVnRCE36N6oQaf518wOqwmP/BY28YvfMpmxegakyEMBGmf4cRyQYv8RYdQtkFI3PmDU1ZTKI=\
 "},
  CellTags->{"Categories", "Categories-Checkboxes", "CheckboxCell"},
- CellID->384866247,ExpressionUUID->"d70b175a-f10e-4b95-8357-2aafcecf7825"]
+ CellID->331002352,ExpressionUUID->"028ff6b2-4456-47d3-84b0-02bb6d76db77"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -780,24 +1568,48 @@ related to the function.", "MoreInfoText"], Background -> GrayLevel[0.95],
     CurrentValue[
      EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
    ImageSize->Automatic]],ExpressionUUID->
-  "b6ac833d-27b8-4107-91ff-80bda457cf90"]
+  "29ddeb81-8efd-419e-9a5a-c0ca98cf4113"]
 }], "Subsection",
  Editable->False,
  Deletable->False,
  TaggingRules->{"TemplateGroupName" -> "Related Symbols"},
  DefaultNewCellStyle->"Item",
  CellTags->{"Related Symbols", "TemplateCellGroup"},
- CellID->525877127,ExpressionUUID->"4e1f6c47-a9fd-478c-aee4-ada4f59eba4c"],
+ CellID->525877127,ExpressionUUID->"286b1a6f-0977-49ef-af35-ab4bb5363528"],
 
-Cell["SymbolName (documented Wolfram Language symbol)", "Item",
+Cell["DimensionalCombinations", "Item",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
        WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.877087435696819*^9, 3.87708743818522*^9}},
  CellTags->{"DefaultContent", "TabNext"},
- CellID->195255409,ExpressionUUID->"e103e66d-aadc-4da9-b001-3d3f27a2c594"]
+ CellID->195255409,ExpressionUUID->"6a8ca035-5172-4162-871b-be064a23390d"],
+
+Cell["NondimensionalizationTransform", "Item",
+ TaggingRules->{},
+ CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
+       SelectedNotebook[], After, Cell]; NotebookFind[
+       SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
+       WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
+       SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
+   PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.877087435696819*^9, 3.8770874444085884`*^9}},
+ CellID->44587383,ExpressionUUID->"aaba74d3-0db0-4536-b935-f57db9dbad72"],
+
+Cell["UnitDimensions", "Item",
+ TaggingRules->{},
+ CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
+       SelectedNotebook[], After, Cell]; NotebookFind[
+       SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
+       WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
+       SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
+   PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.877087435696819*^9, 3.8770874468560395`*^9}},
+ CellID->29731080,ExpressionUUID->"3e50fd1a-8e5e-48c4-b6f4-717ec30ddef2"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -822,16 +1634,17 @@ repository that are related to this function.", "MoreInfoText"], Background ->
     CurrentValue[
      EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
    ImageSize->Automatic]],ExpressionUUID->
-  "0eb40719-a1d2-4f74-966c-9f15f8041d0d"]
+  "f261645e-ec75-4656-9b5d-18d5e9426803"]
 }], "Subsection",
  Editable->False,
  Deletable->False,
  TaggingRules->{"TemplateGroupName" -> "Related Resource Objects"},
  DefaultNewCellStyle->"Item",
  CellTags->{"Related Resource Objects", "TemplateCellGroup"},
- CellID->869341850,ExpressionUUID->"1395bce3-ecf0-4ee4-be32-e9ad34c7edec"],
+ CellID->869341850,ExpressionUUID->"9d9c8c57-a480-4bb4-b055-51978e260168"],
 
 Cell["Resource Name (resources from any Wolfram repository)", "Item",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -839,7 +1652,7 @@ Cell["Resource Name (resources from any Wolfram repository)", "Item",
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
  CellTags->{"DefaultContent", "TabNext"},
- CellID->694609509,ExpressionUUID->"9f762d5c-c2d4-440a-b86e-40c810d19092"]
+ CellID->694609509,ExpressionUUID->"e67b7938-72c4-4f6a-92ff-1731b68cccf6"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -864,16 +1677,17 @@ repository).", "MoreInfoText"], Background -> GrayLevel[0.95], FrameMargins ->
     CurrentValue[
      EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
    ImageSize->Automatic]],ExpressionUUID->
-  "15e51d88-69f4-4ab8-bcd3-8b98736a09e3"]
+  "eabe282a-bd38-4362-91fd-7724a5bbba44"]
 }], "Subsection",
  Editable->False,
  Deletable->False,
  TaggingRules->{"TemplateGroupName" -> "Source/Reference Citation"},
  DefaultNewCellStyle->"Text",
  CellTags->{"Source/Reference Citation", "TemplateCellGroup"},
- CellID->788767010,ExpressionUUID->"871c203c-cc9e-4985-ae13-101d92510e43"],
+ CellID->788767010,ExpressionUUID->"d2441522-9822-4679-a792-0b44cf29f30f"],
 
 Cell["Source, reference or citation information", "Text",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -881,7 +1695,7 @@ Cell["Source, reference or citation information", "Text",
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
  CellTags->{"DefaultContent", "TabNext"},
- CellID->512303561,ExpressionUUID->"401a5e64-2b7f-42c5-b976-85091bf1ab8f"]
+ CellID->512303561,ExpressionUUID->"942a4f58-5cbd-46b7-85cf-f959d38e6b03"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -906,16 +1720,17 @@ to the function.", "MoreInfoText"], Background -> GrayLevel[0.95],
     CurrentValue[
      EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
    ImageSize->Automatic]],ExpressionUUID->
-  "a179d758-d52b-4176-9a71-bd3b9521dc0f"]
+  "d88b667a-65e9-44bf-b494-c1b075ec95af"]
 }], "Subsection",
  Editable->False,
  Deletable->False,
  TaggingRules->{"TemplateGroupName" -> "Links"},
  DefaultNewCellStyle->"Item",
  CellTags->{"Links", "TemplateCellGroup"},
- CellID->341958311,ExpressionUUID->"989628de-f460-4966-8a04-7190a6f98cc8"],
+ CellID->341958311,ExpressionUUID->"aa918e4f-b38c-4e78-9957-cc9ef3d54648"],
 
 Cell["Link to other related material", "Item",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -923,7 +1738,7 @@ Cell["Link to other related material", "Item",
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
  CellTags->{"DefaultContent", "TabNext"},
- CellID->938599834,ExpressionUUID->"79f9c142-bae6-4fe7-8c3e-441d77dd82b1"]
+ CellID->938599834,ExpressionUUID->"9a82a2ce-017f-4530-b99b-02cbf2acbf70"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -966,29 +1781,31 @@ Input/Output cell pairs or as symbolic ",
     CurrentValue[
      EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
    ImageSize->Automatic]],ExpressionUUID->
-  "140f2195-0818-44d6-8c4e-1f26cc8727cc"]
+  "a4010dda-8176-4889-975d-6d369336898f"]
 }], "Subsection",
  Editable->False,
  Deletable->False,
  TaggingRules->{"TemplateGroupName" -> "VerificationTests"},
  DefaultNewCellStyle->"Input",
  CellTags->{"TemplateCellGroup", "Tests", "VerificationTests"},
- CellID->187055128,ExpressionUUID->"33593953-e2a5-4543-8b59-7b3a1eec6296"],
+ CellID->187055128,ExpressionUUID->"c3572ea7-12a5-4811-9b94-56bf0c72d402"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"MyFunction", "[", 
   RowBox[{"x", ",", "y"}], "]"}]], "Input",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellLabel->"In[3]:=",
- CellID->770806,ExpressionUUID->"00ea5105-79bd-411e-8600-ff7726c2e771"],
+ CellID->770806,ExpressionUUID->"1fcda706-62bc-4dfa-a5d2-61b81c264512"],
 
 Cell[BoxData[
  RowBox[{"x", " ", "y"}]], "Output",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellLabel->"Out[3]=",
- CellID->759771806,ExpressionUUID->"8681698f-829c-4ad3-b2a5-fdc414997167"]
+ CellID->759771806,ExpressionUUID->"af9d4057-f98c-4173-abc3-fbc18933dd94"]
 }, Open  ]]
 }, Open  ]],
 
@@ -1003,7 +1820,7 @@ Cell[TextData[{
       BoxData[
        FrameBox[
         Cell[
-        "Specify any known compatibilities for your resource to ensure it is \
+        "Specify any known compatibilities for your function to ensure it is \
 discoverable on the correct platforms.", "MoreInfoText"], Background -> 
         GrayLevel[0.95], FrameMargins -> 20, FrameStyle -> GrayLevel[0.9], 
         RoundingRadius -> 5, ImageSize -> {
@@ -1014,13 +1831,13 @@ discoverable on the correct platforms.", "MoreInfoText"], Background ->
     CurrentValue[
      EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
    ImageSize->Automatic]],ExpressionUUID->
-  "f3399f13-10a3-44d0-86a5-f323012bef2a"]
+  "83691a36-78c3-45d5-91e2-47a0ccfc0e24"]
 }], "Subsection",
  Editable->False,
  Deletable->False,
  TaggingRules->{"TemplateGroupName" -> "Compatibility"},
  CellTags->{"Compatibility", "TemplateCellGroup"},
- CellID->787186911,ExpressionUUID->"29382916-1ea5-4476-9d05-82db4be90bae"],
+ CellID->465977791,ExpressionUUID->"8249ef9f-9155-45cc-abe5-8e9ae254c7ca"],
 
 Cell[CellGroupData[{
 
@@ -1044,7 +1861,7 @@ Cell[TextData[{
     CurrentValue[
      EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
    ImageSize->Automatic]],ExpressionUUID->
-  "9552afa5-618d-4599-b855-d8427e44b31d"]
+  "32b6a504-27c5-4564-b5d9-6d5575ed0894"]
 }], "Subsubsection",
  Editable->False,
  Deletable->False,
@@ -1056,11 +1873,13 @@ Cell[TextData[{
  CellTags->{
   "CompatibilityWolframLanguageVersionRequired", "TemplateCellGroup", 
    "Wolfram Language Version"},
- CellID->267876551,ExpressionUUID->"824ae888-d844-4160-a8ed-0f3c3a47b53c"],
+ CellID->267876551,ExpressionUUID->"4e168fcd-04a3-45c3-b9d4-f99b121cf80b"],
 
-Cell["12.3+", "Text",
+Cell["13.1+", "Text",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8770874828807273`*^9, 3.877087484264135*^9}},
  CellTags->{"DefaultContent", "ScrapeDefault"},
- CellID->913148768,ExpressionUUID->"db921d93-c6f1-434a-9c59-d50f51303eec"]
+ CellID->913148768,ExpressionUUID->"4da00f8e-7f5b-42b2-a905-e4368c61a8b6"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1074,7 +1893,7 @@ Cell[TextData[{
       BoxData[
        FrameBox[
         Cell[
-        "Select all operating systems where your resource is expected to \
+        "Select all operating systems where your function is expected to \
 function properly.", "MoreInfoText"], Background -> GrayLevel[0.95], 
         FrameMargins -> 20, FrameStyle -> GrayLevel[0.9], RoundingRadius -> 5,
          ImageSize -> {
@@ -1085,7 +1904,7 @@ function properly.", "MoreInfoText"], Background -> GrayLevel[0.95],
     CurrentValue[
      EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
    ImageSize->Automatic]],ExpressionUUID->
-  "7b53fda1-9ac2-4869-978a-33d0f9b0c93d"]
+  "ecc37a71-9b09-4903-a90c-cb95bad4bdc5"]
 }], "Subsubsection",
  Editable->False,
  Deletable->False,
@@ -1095,33 +1914,55 @@ function properly.", "MoreInfoText"], Background -> GrayLevel[0.95],
  FontSize->16,
  CellTags->{
   "CompatibilityOperatingSystem", "Operating System", "TemplateCellGroup"},
- CellID->641233002,ExpressionUUID->"c5528c89-c6f0-40e2-bdd7-e324168510ac"],
+ CellID->752514832,ExpressionUUID->"eb9a3f61-20be-415c-9dee-a2306b3d8eeb"],
 
 Cell[BoxData[
  TagBox[GridBox[{
     {
-     StyleBox[
-      TemplateBox[{
-        CheckboxBox["Windows", {False, "Windows"}], "\" \"", "\"Windows\""},
-       "RowDefault"],
-      StripOnInput->False,
-      FontSize->12], 
-     StyleBox[
-      TemplateBox[{
-        CheckboxBox["MacOSX", {False, "MacOSX"}], "\" \"", "\"Mac\""},
-       "RowDefault"],
-      StripOnInput->False,
-      FontSize->12], 
-     StyleBox[
-      TemplateBox[{
-        CheckboxBox["Unix", {False, "Unix"}], "\" \"", "\"Unix\""},
-       "RowDefault"],
-      StripOnInput->False,
-      FontSize->12]}
+     TagBox[GridBox[{
+        {
+         StyleBox[
+          TemplateBox[{
+            CheckboxBox["Windows", {False, "Windows"}], "\" \"", 
+            "\"Windows\""},
+           "RowDefault"],
+          StripOnInput->False,
+          FontSize->12]}
+       },
+       DefaultBaseStyle->"Column",
+       GridBoxAlignment->{"Columns" -> {{Left}}},
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+      "Column"], 
+     TagBox[GridBox[{
+        {
+         StyleBox[
+          TemplateBox[{
+            CheckboxBox["MacOSX", {False, "MacOSX"}], "\" \"", "\"Mac\""},
+           "RowDefault"],
+          StripOnInput->False,
+          FontSize->12]}
+       },
+       DefaultBaseStyle->"Column",
+       GridBoxAlignment->{"Columns" -> {{Left}}},
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+      "Column"], 
+     TagBox[GridBox[{
+        {
+         StyleBox[
+          TemplateBox[{
+            CheckboxBox["Unix", {False, "Unix"}], "\" \"", "\"Unix\""},
+           "RowDefault"],
+          StripOnInput->False,
+          FontSize->12]}
+       },
+       DefaultBaseStyle->"Column",
+       GridBoxAlignment->{"Columns" -> {{Left}}},
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+      "Column"]}
    },
    AutoDelete->False,
    BaseStyle->{"ControlStyle"},
-   GridBoxAlignment->{"Columns" -> {{Left}}},
+   GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Top}}},
    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
    GridBoxSpacings->{"Columns" -> {{2}}}],
   "Grid"]], "Output",
@@ -1137,7 +1978,7 @@ V8VKrw2CoSkr4PBhG77xYRjCsNiZCaAnlIx8nJBt8hz/RIRT7YLrR8wRtF2wJ"},
  CellTags->{
   "CheckboxCell", "CompatibilityOperatingSystem", 
    "CompatibilityOperatingSystem-Checkboxes"},
- CellID->357234100,ExpressionUUID->"530717e2-5539-4a8a-aae5-c916729d6c78"]
+ CellID->250514331,ExpressionUUID->"e06a0051-fa96-40cc-bc9b-a27066590456"]
 }, Closed]],
 
 Cell[CellGroupData[{
@@ -1157,7 +1998,7 @@ Cell[TextData[{
              StyleBox[
               StyleBox["required", "TI"], ShowStringCharacters -> True, 
               FontFamily -> "Source Sans Pro"]]], 
-           " in order to use your resource."}], "MoreInfoText"], Background -> 
+           " in order to use your function."}], "MoreInfoText"], Background -> 
         GrayLevel[0.95], FrameMargins -> 20, FrameStyle -> GrayLevel[0.9], 
         RoundingRadius -> 5, ImageSize -> {
           Scaled[0.65], Automatic}]], "MoreInfoText", Deletable -> True, 
@@ -1167,7 +2008,7 @@ Cell[TextData[{
     CurrentValue[
      EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
    ImageSize->Automatic]],ExpressionUUID->
-  "91d0b244-be2f-4931-8c94-14cce55706f9"]
+  "95a9b658-7d15-448e-ab1f-9130abef391b"]
 }], "Subsubsection",
  Editable->False,
  Deletable->False,
@@ -1176,35 +2017,57 @@ Cell[TextData[{
  DefaultNewCellStyle->"Item",
  FontSize->16,
  CellTags->{"CompatibilityFeatures", "Required Features", "TemplateCellGroup"},
- CellID->154956349,ExpressionUUID->"7058855a-5906-4e90-99d0-d8253046d99d"],
+ CellID->789112653,ExpressionUUID->"2bd9fb58-740d-4939-ad6d-465af757b139"],
 
 Cell[BoxData[
  TagBox[GridBox[{
     {
-     StyleBox[
-      TemplateBox[{
-        CheckboxBox[False, {False, "Notebooks"}], "\" \"", "\"Notebooks\""},
-       "RowDefault"],
-      StripOnInput->False,
-      FontSize->12], 
-     StyleBox[
-      TemplateBox[{
-        CheckboxBox[False, {False, "Parallel Kernels"}], "\" \"", 
-        "\"Parallel Kernels\""},
-       "RowDefault"],
-      StripOnInput->False,
-      FontSize->12], 
-     StyleBox[
-      TemplateBox[{
-        CheckboxBox[False, {False, "Cloud Access"}], "\" \"", 
-        "\"Cloud Access\""},
-       "RowDefault"],
-      StripOnInput->False,
-      FontSize->12]}
+     TagBox[GridBox[{
+        {
+         StyleBox[
+          TemplateBox[{
+            CheckboxBox[False, {False, "Notebooks"}], "\" \"", 
+            "\"Notebooks\""},
+           "RowDefault"],
+          StripOnInput->False,
+          FontSize->12]}
+       },
+       DefaultBaseStyle->"Column",
+       GridBoxAlignment->{"Columns" -> {{Left}}},
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+      "Column"], 
+     TagBox[GridBox[{
+        {
+         StyleBox[
+          TemplateBox[{
+            CheckboxBox[False, {False, "Parallel Kernels"}], "\" \"", 
+            "\"Parallel Kernels\""},
+           "RowDefault"],
+          StripOnInput->False,
+          FontSize->12]}
+       },
+       DefaultBaseStyle->"Column",
+       GridBoxAlignment->{"Columns" -> {{Left}}},
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+      "Column"], 
+     TagBox[GridBox[{
+        {
+         StyleBox[
+          TemplateBox[{
+            CheckboxBox[False, {False, "Cloud Access"}], "\" \"", 
+            "\"Cloud Access\""},
+           "RowDefault"],
+          StripOnInput->False,
+          FontSize->12]}
+       },
+       DefaultBaseStyle->"Column",
+       GridBoxAlignment->{"Columns" -> {{Left}}},
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+      "Column"]}
    },
    AutoDelete->False,
    BaseStyle->{"ControlStyle"},
-   GridBoxAlignment->{"Columns" -> {{Left}}},
+   GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Top}}},
    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
    GridBoxSpacings->{"Columns" -> {{2}}}],
   "Grid"]], "Output",
@@ -1219,7 +2082,7 @@ xP33pDLt8GI6rPqOgUMS5G9YqEa2c+21GcLLebGg4nKxh8yJG5GKrGJog9Y37G/\
 obsYtD4mTxC2UWr58w3NfBx2Q=="},
  CellTags->{
   "CheckboxCell", "CompatibilityFeatures", "CompatibilityFeatures-Checkboxes"},
- CellID->764390503,ExpressionUUID->"9ce974ad-32d4-43b9-8be9-ae0beded33f8"]
+ CellID->66979261,ExpressionUUID->"0af642bb-dd46-4f37-bb29-89f9f5f7b4b6"]
 }, Closed]],
 
 Cell[CellGroupData[{
@@ -1234,7 +2097,7 @@ Cell[TextData[{
        FrameBox[
         Cell[
          TextData[{
-          "Select all evaluation environments where your resource is expected \
+          "Select all evaluation environments where your function is expected \
 to be compatible. See ", 
            Cell[
             BoxData[
@@ -1261,7 +2124,7 @@ to be compatible. See ",
     CurrentValue[
      EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
    ImageSize->Automatic]],ExpressionUUID->
-  "61015d3c-fa2c-4c41-88e2-a1e64a1ba293"]
+  "00824825-ffb2-4d79-a3ac-6ba16cff7084"]
 }], "Subsubsection",
  Editable->False,
  Deletable->False,
@@ -1271,75 +2134,109 @@ to be compatible. See ",
  FontSize->16,
  CellTags->{
   "CompatibilityEvaluationEnvironment", "Environments", "TemplateCellGroup"},
- CellID->929178938,ExpressionUUID->"afee5d71-9efc-47c7-b7d9-5c4f0d9365fa"],
+ CellID->939592672,ExpressionUUID->"75082bc7-8e96-4fdd-bf62-eea9a95e9309"],
 
 Cell[BoxData[
  TagBox[GridBox[{
     {
-     StyleBox[
-      TemplateBox[{
-        CheckboxBox["Session", {False, "Session"}], "\" \"", 
-        TemplateBox[{"\"Session\"", "\"Local or cloud interactive session\""},
-          "PrettyTooltipTemplate"]},
-       "RowDefault"],
-      StripOnInput->False,
-      FontSize->12], 
-     StyleBox[
-      TemplateBox[{
-        CheckboxBox["Script", {False, "Script"}], "\" \"", 
-        TemplateBox[{"\"Script\"", "\"Script run in batch mode\""}, 
-         "PrettyTooltipTemplate"]},
-       "RowDefault"],
-      StripOnInput->False,
-      FontSize->12], 
-     StyleBox[
-      TemplateBox[{
-        CheckboxBox["Subkernel", {False, "Subkernel"}], "\" \"", 
-        TemplateBox[{"\"Subkernel\"", "\"Parallel or grid subkernel\""}, 
-         "PrettyTooltipTemplate"]},
-       "RowDefault"],
-      StripOnInput->False,
-      FontSize->12]},
-    {
-     StyleBox[
-      TemplateBox[{
-        CheckboxBox["WebEvaluation", {False, "WebEvaluation"}], "\" \"", 
-        TemplateBox[{
-         "\"WebEvaluation\"", 
-          "\"Cloud evaluation initiated by an HTTP request\""}, 
-         "PrettyTooltipTemplate"]},
-       "RowDefault"],
-      StripOnInput->False,
-      FontSize->12], 
-     StyleBox[
-      TemplateBox[{
-        CheckboxBox["WebAPI", {False, "WebAPI"}], "\" \"", 
-        TemplateBox[{"\"WebAPI\"", "\"API called through an HTTP request\""}, 
-         "PrettyTooltipTemplate"]},
-       "RowDefault"],
-      StripOnInput->False,
-      FontSize->12], 
-     StyleBox[
-      TemplateBox[{
-        CheckboxBox["Scheduled", {False, "Scheduled"}], "\" \"", 
-        TemplateBox[{"\"Scheduled\"", "\"Scheduled task\""}, 
-         "PrettyTooltipTemplate"]},
-       "RowDefault"],
-      StripOnInput->False,
-      FontSize->12]},
-    {
-     StyleBox[
-      TemplateBox[{
-        CheckboxBox["BatchJob", {False, "BatchJob"}], "\" \"", 
-        TemplateBox[{"\"BatchJob\"", "\"Remote batch job\""}, 
-         "PrettyTooltipTemplate"]},
-       "RowDefault"],
-      StripOnInput->False,
-      FontSize->12], "\<\"\"\>", "\<\"\"\>"}
+     TagBox[GridBox[{
+        {
+         StyleBox[
+          TemplateBox[{
+            CheckboxBox["Session", {False, "Session"}], "\" \"", 
+            
+            TemplateBox[{
+             "\"Session\"", "\"Local or cloud interactive session\""}, 
+             "PrettyTooltipTemplate"]},
+           "RowDefault"],
+          StripOnInput->False,
+          FontSize->12]},
+        {
+         StyleBox[
+          TemplateBox[{
+            CheckboxBox["WebEvaluation", {False, "WebEvaluation"}], "\" \"", 
+            
+            TemplateBox[{
+             "\"WebEvaluation\"", 
+              "\"Cloud evaluation initiated by an HTTP request\""}, 
+             "PrettyTooltipTemplate"]},
+           "RowDefault"],
+          StripOnInput->False,
+          FontSize->12]},
+        {
+         StyleBox[
+          TemplateBox[{
+            CheckboxBox["BatchJob", {False, "BatchJob"}], "\" \"", 
+            
+            TemplateBox[{"\"BatchJob\"", "\"Remote batch job\""}, 
+             "PrettyTooltipTemplate"]},
+           "RowDefault"],
+          StripOnInput->False,
+          FontSize->12]}
+       },
+       DefaultBaseStyle->"Column",
+       GridBoxAlignment->{"Columns" -> {{Left}}},
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+      "Column"], 
+     TagBox[GridBox[{
+        {
+         StyleBox[
+          TemplateBox[{
+            CheckboxBox["Script", {False, "Script"}], "\" \"", 
+            
+            TemplateBox[{"\"Script\"", "\"Script run in batch mode\""}, 
+             "PrettyTooltipTemplate"]},
+           "RowDefault"],
+          StripOnInput->False,
+          FontSize->12]},
+        {
+         StyleBox[
+          TemplateBox[{
+            CheckboxBox["WebAPI", {False, "WebAPI"}], "\" \"", 
+            
+            TemplateBox[{
+             "\"WebAPI\"", "\"API called through an HTTP request\""}, 
+             "PrettyTooltipTemplate"]},
+           "RowDefault"],
+          StripOnInput->False,
+          FontSize->12]},
+        {"\<\"\"\>"}
+       },
+       DefaultBaseStyle->"Column",
+       GridBoxAlignment->{"Columns" -> {{Left}}},
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+      "Column"], 
+     TagBox[GridBox[{
+        {
+         StyleBox[
+          TemplateBox[{
+            CheckboxBox["Subkernel", {False, "Subkernel"}], "\" \"", 
+            
+            TemplateBox[{"\"Subkernel\"", "\"Parallel or grid subkernel\""}, 
+             "PrettyTooltipTemplate"]},
+           "RowDefault"],
+          StripOnInput->False,
+          FontSize->12]},
+        {
+         StyleBox[
+          TemplateBox[{
+            CheckboxBox["Scheduled", {False, "Scheduled"}], "\" \"", 
+            
+            TemplateBox[{"\"Scheduled\"", "\"Scheduled task\""}, 
+             "PrettyTooltipTemplate"]},
+           "RowDefault"],
+          StripOnInput->False,
+          FontSize->12]},
+        {"\<\"\"\>"}
+       },
+       DefaultBaseStyle->"Column",
+       GridBoxAlignment->{"Columns" -> {{Left}}},
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+      "Column"]}
    },
    AutoDelete->False,
    BaseStyle->{"ControlStyle"},
-   GridBoxAlignment->{"Columns" -> {{Left}}},
+   GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Top}}},
    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
    GridBoxSpacings->{"Columns" -> {{2}}}],
   "Grid"]], "Output",
@@ -1356,7 +2253,7 @@ CtT3WijAC2QEVrpHxl4zyvabiOYe3SjM66wLlsXG210M4C2Ewe7kgGe8Efg82xD96LUbOL+VQrkA=\
  CellTags->{
   "CheckboxCell", "CompatibilityEvaluationEnvironment", 
    "CompatibilityEvaluationEnvironment-Checkboxes"},
- CellID->931610151,ExpressionUUID->"0e879799-5137-46fa-a209-98ecb715b3dc"]
+ CellID->308932975,ExpressionUUID->"114a8cdc-03de-44d9-a3be-a5d00a09065d"]
 }, Closed]],
 
 Cell[CellGroupData[{
@@ -1370,7 +2267,7 @@ Cell[TextData[{
       BoxData[
        FrameBox[
         Cell[
-        "Specify whether your resource is expected to work in the public \
+        "Specify whether your function is expected to work in the public \
 cloud.", "MoreInfoText"], Background -> GrayLevel[0.95], FrameMargins -> 20, 
         FrameStyle -> GrayLevel[0.9], RoundingRadius -> 5, ImageSize -> {
           Scaled[0.65], Automatic}]], "MoreInfoText", Deletable -> True, 
@@ -1380,7 +2277,7 @@ cloud.", "MoreInfoText"], Background -> GrayLevel[0.95], FrameMargins -> 20,
     CurrentValue[
      EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
    ImageSize->Automatic]],ExpressionUUID->
-  "761a99f4-8d17-460c-8d88-afd48de25022"]
+  "73b37e9f-93d1-47d1-8296-1744f8e78515"]
 }], "Subsubsection",
  Editable->False,
  Deletable->False,
@@ -1389,21 +2286,29 @@ cloud.", "MoreInfoText"], Background -> GrayLevel[0.95], FrameMargins -> 20,
  DefaultNewCellStyle->"Text",
  FontSize->16,
  CellTags->{"Cloud Support", "CompatibilityCloudSupport", "TemplateCellGroup"},
- CellID->584200270,ExpressionUUID->"d66637dc-d41a-494f-bffd-afdc643796e4"],
+ CellID->624931977,ExpressionUUID->"21cad46b-2333-4851-bff3-d359283cfd86"],
 
 Cell[BoxData[
  TagBox[GridBox[{
     {
-     StyleBox[
-      TemplateBox[{
-        CheckboxBox[True, {False, True}], "\" \"", "\"Supported in cloud\""},
-       "RowDefault"],
-      StripOnInput->False,
-      FontSize->12]}
+     TagBox[GridBox[{
+        {
+         StyleBox[
+          TemplateBox[{
+            CheckboxBox[True, {False, True}], "\" \"", 
+            "\"Supported in cloud\""},
+           "RowDefault"],
+          StripOnInput->False,
+          FontSize->12]}
+       },
+       DefaultBaseStyle->"Column",
+       GridBoxAlignment->{"Columns" -> {{Left}}},
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+      "Column"]}
    },
    AutoDelete->False,
    BaseStyle->{"ControlStyle"},
-   GridBoxAlignment->{"Columns" -> {{Left}}},
+   GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Top}}},
    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
    GridBoxSpacings->{"Columns" -> {{2}}}],
   "Grid"]], "Output",
@@ -1419,7 +2324,7 @@ JAZLFxBaxuyKShxfvoEfKzujYRb6FXWpA="},
  CellTags->{
   "CheckboxCell", "CompatibilityCloudSupport", 
    "CompatibilityCloudSupport-Checkboxes"},
- CellID->605080198,ExpressionUUID->"3e192cb1-3e91-4395-b51a-1ce8a79dd120"]
+ CellID->682034004,ExpressionUUID->"0e1b3c38-1827-469b-a758-1ae894836afd"]
 }, Closed]]
 }, Open  ]]
 }, Closed]],
@@ -1448,16 +2353,17 @@ that are otherwise beyond the scope of the function documentation.",
     CurrentValue[
      EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
    ImageSize->Automatic]],ExpressionUUID->
-  "13a7da75-a859-403f-8b76-78e3a9b2d456"]
+  "6dde7b39-8412-4211-a490-26b6fdf80215"]
 }], "Section",
  Editable->False,
  Deletable->False,
  TaggingRules->{"TemplateGroupName" -> "Author Notes"},
  DefaultNewCellStyle->"Text",
  CellTags->{"Author Notes", "TemplateCellGroup"},
- CellID->897529167,ExpressionUUID->"bcba2670-d2cd-449a-b353-4373038fd441"],
+ CellID->897529167,ExpressionUUID->"3e4082b1-0760-4169-9863-cb5af1297903"],
 
 Cell["Additional information about limitations, issues, etc.", "Text",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -1465,7 +2371,7 @@ Cell["Additional information about limitations, issues, etc.", "Text",
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
  CellTags->{"DefaultContent", "TabNext"},
- CellID->908162033,ExpressionUUID->"560f7ed5-1cc0-43d1-a974-831552989306"]
+ CellID->908162033,ExpressionUUID->"732816b6-79f4-4fec-bcea-1341b19d76b9"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1490,36 +2396,482 @@ resource.", "MoreInfoText"], Background -> GrayLevel[0.95], FrameMargins ->
     CurrentValue[
      EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
    ImageSize->Automatic]],ExpressionUUID->
-  "b21135c5-e25c-4fc6-a44a-be0206eeb7d8"]
+  "e9b795c4-19de-4f3b-9d7f-a59500779c12"]
 }], "Section",
  Editable->False,
  Deletable->False,
  TaggingRules->{"TemplateGroupName" -> "Submission Notes"},
  DefaultNewCellStyle->"Text",
  CellTags->{"Submission Notes", "TemplateCellGroup"},
- CellID->321610809,ExpressionUUID->"baa01f5c-3874-4dcd-b66d-5df20a7d53cf"],
+ CellID->321610809,ExpressionUUID->"08f73091-58f6-48c9-a078-76bd89d8bd8d"],
 
-Cell["Additional information for the reviewer.", "Text",
+Cell["\<\
+I based this on my function at \
+https://resources.wolframcloud.com/PacletRepository/resources/PeterBurbery/\
+DimensionalAnalysis/ref/UnitSystemTransform.html\
+\>", "Text",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
        WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.877087489481081*^9, 3.8770875189064174`*^9}},
  CellTags->{"DefaultContent", "TabNext"},
- CellID->711457694,ExpressionUUID->"3e58a6f1-4998-478e-9ec8-b2871e2364b4"]
+ CellID->711457694,ExpressionUUID->"53e122c9-6292-4ba0-8868-6c9554311b13"]
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{718.5, Automatic},
-WindowMargins->{{Automatic, -5.25}, {Automatic, 0}},
-Visible->True,
-TaggingRules->{
- "ResourceType" -> "Function", "ResourceCreateNotebook" -> True, 
-  "TemplateVersion" -> "1.6.3", "CreationTimestamp" -> 
-  3.8770867113701096`17.341080503308365*^9, "UpdatedTimestamp" -> 
-  3.8770867113701096`17.341080503308365*^9, "CompatibilityTest" -> 
-  HoldComplete[
+WindowSize->{1440, Automatic},
+WindowMargins->{{-6, Automatic}, {Automatic, -6}},
+DockedCells->{
+  Cell[
+   BoxData[
+    TemplateBox[{}, "MainGridTemplate"]], "DockedCell", 
+   CellMargins -> {{-10, -10}, {-8, -8}}, CellFrame -> 0, Background -> 
+   RGBColor[0.92157, 0.34118, 0.10588], CellTags -> {"MainDockedCell"}, 
+   CacheGraphics -> False], 
+  Cell[
+   BoxData[
+    TemplateBox[{}, "ToolsGridTemplate"]], "DockedCell", 
+   TaggingRules -> {"Tools" -> True}, CellTags -> {"ToolbarDockedCell"}, 
+   CellFrameMargins -> {{0, 0}, {2, 2}}, CellFrame -> {{0, 0}, {1, 0}}, 
+   CacheGraphics -> False, CellOpen -> Dynamic[
+     CurrentValue[
+      EvaluationNotebook[], {TaggingRules, "ToolsOpen"}, True]]], 
+  Cell[
+   BoxData[
+    StyleBox[
+     TagBox[
+      GridBox[{{
+         ItemBox[
+          TagBox[
+           GridBox[{{
+              OverlayBox[{
+                StyleBox[
+                 TagBox[
+                  DynamicModuleBox[{Typeset`var$$ = False}, 
+                   InterpretationBox[
+                    StyleBox[
+                    PaneSelectorBox[{False -> GridBox[{{
+                    OpenerBox[
+                    Dynamic[Typeset`var$$], Appearance -> Automatic, Enabled -> 
+                    Automatic, AutoAction -> False, ContinuousAction -> 
+                    False], 
+                    StyleBox[
+                    DynamicBox[
+                    ToBoxes[
+                    DateString[
+                    TimeZoneConvert[
+                    DateObject[
+                    3.8770879537048928`17.34108064246931*^9, TimeZone -> 
+                    0]], {"MonthName", " ", "DayShort", ", ", "Year", " ", 
+                    "Hour12Short", ":", "Minute", " ", "AMPMLowerCase"}], 
+                    StandardForm], SingleEvaluation -> True, Evaluator -> 
+                    "System"], FontSlant -> Italic, FontColor -> 
+                    GrayLevel[0.5], FontSize -> 0.9 Inherited, StripOnInput -> 
+                    False]}}, GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                    AutoDelete -> False, 
+                    GridBoxBackground -> {"Columns" -> {{Automatic}}}, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{0.2}}, "Rows" -> {{0.5}}}, 
+                    BaselinePosition -> {1, 1}], True -> GridBox[{{
+                    OpenerBox[
+                    Dynamic[Typeset`var$$], Appearance -> Automatic, Enabled -> 
+                    Automatic, AutoAction -> False, ContinuousAction -> 
+                    False], 
+                    StyleBox[
+                    DynamicBox[
+                    ToBoxes[
+                    DateString[
+                    TimeZoneConvert[
+                    DateObject[
+                    3.8770879537048928`17.34108064246931*^9, TimeZone -> 
+                    0]], {"MonthName", " ", "DayShort", ", ", "Year", " ", 
+                    "Hour12Short", ":", "Minute", " ", "AMPMLowerCase"}], 
+                    StandardForm], SingleEvaluation -> True, Evaluator -> 
+                    "System"], FontSlant -> Italic, FontColor -> 
+                    GrayLevel[0.5], FontSize -> 0.9 Inherited, StripOnInput -> 
+                    False]}, {"", 
+                    PaneBox["\"\"", ImageMargins -> 0]}}, 
+                    GridBoxAlignment -> {"Columns" -> {{Left}}}, AutoDelete -> 
+                    False, GridBoxBackground -> {"Columns" -> {{Automatic}}}, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{0.2}}, "Rows" -> {{0.5}}}, 
+                    BaselinePosition -> {1, 1}]}, 
+                    Dynamic[Typeset`var$$], Alignment -> Automatic, ImageSize -> 
+                    Automatic, ImageMargins -> 0, BaseStyle -> {}, 
+                    DefaultBaseStyle -> "OpenerView", BaselinePosition -> 
+                    Baseline], Deployed -> False, StripOnInput -> False], 
+                    OpenerView[{
+                    Style[
+                    Dynamic[
+                    DateString[
+                    TimeZoneConvert[
+                    DateObject[
+                    3.8770879537048928`17.34108064246931*^9, TimeZone -> 
+                    0]], {"MonthName", " ", "DayShort", ", ", "Year", " ", 
+                    "Hour12Short", ":", "Minute", " ", "AMPMLowerCase"}], 
+                    SingleEvaluation -> True, Evaluator -> "System"], 
+                    FontSlant -> Italic, FontColor -> GrayLevel[0.5], 
+                    FontSize -> 0.9 Inherited], ""}, False]], 
+                   DynamicModuleValues -> Automatic], Setting[#, {0}]& ], 
+                 ShowContents -> False, StripOnInput -> False], 
+                StyleBox[
+                 DynamicBox[
+                  ToBoxes[
+                   DateString[
+                    TimeZoneConvert[
+                    DateObject[
+                    3.8770879537048928`17.34108064246931*^9, TimeZone -> 
+                    0]], {"MonthName", " ", "DayShort", ", ", "Year", " ", 
+                    "Hour12Short", ":", "Minute", " ", "AMPMLowerCase"}], 
+                   StandardForm], SingleEvaluation -> True, Evaluator -> 
+                  "System"], FontSlant -> Italic, FontColor -> GrayLevel[0.5],
+                  FontSize -> 0.9 Inherited, StripOnInput -> False]}, 
+               Alignment -> {Right, Baseline}], "\"   \"", 
+              ItemBox[
+              "\"Notebook converted to template version 1.6.4\"", ItemSize -> 
+               Scaled[0.75], StripOnInput -> False]}}, 
+            GridBoxAlignment -> {
+             "Columns" -> {{Left}}, "Rows" -> {{Baseline}}}, AutoDelete -> 
+            False, GridBoxItemSize -> {
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], "Grid"], 
+          ItemSize -> Fit, StripOnInput -> False], 
+         ItemBox["\"\"", ItemSize -> All, StripOnInput -> False], 
+         ItemBox[
+          TagBox[
+           ButtonBox[
+            TagBox[
+             PaneSelectorBox[{False -> GraphicsBox[{
+                  GrayLevel[
+                   NCache[
+                    Rational[64, 85], 0.7529411764705882]], 
+                  
+                  PolygonBox[{{-0.282842712474619, -0.42426406871192845`}, \
+{-0.42426406871192845`, -0.282842712474619}, {0.282842712474619, 
+                   0.42426406871192845`}, {0.42426406871192845`, 
+                   0.282842712474619}}], 
+                  
+                  PolygonBox[{{0.42426406871192845`, -0.282842712474619}, {
+                   0.282842712474619, -0.42426406871192845`}, \
+{-0.42426406871192845`, 0.282842712474619}, {-0.282842712474619, 
+                   0.42426406871192845`}}]}, ImageSize -> 18, 
+                 PlotRangePadding -> 0, PlotRange -> 0.7, Background -> None],
+                True -> GraphicsBox[{
+                  GrayLevel[
+                   NCache[
+                    Rational[128, 255], 0.5019607843137255]], 
+                  
+                  PolygonBox[{{-0.282842712474619, -0.42426406871192845`}, \
+{-0.42426406871192845`, -0.282842712474619}, {0.282842712474619, 
+                   0.42426406871192845`}, {0.42426406871192845`, 
+                   0.282842712474619}}], 
+                  
+                  PolygonBox[{{0.42426406871192845`, -0.282842712474619}, {
+                   0.282842712474619, -0.42426406871192845`}, \
+{-0.42426406871192845`, 0.282842712474619}, {-0.282842712474619, 
+                   0.42426406871192845`}}]}, ImageSize -> 18, 
+                 PlotRangePadding -> 0, PlotRange -> 0.7, Background -> 
+                 None]}, 
+              Dynamic[
+               CurrentValue["MouseOver"]], ImageSize -> Automatic, 
+              FrameMargins -> 0], 
+             MouseAppearanceTag["LinkHand"]], ButtonFunction :> 
+            With[{DefinitionNotebookClient`Stripes`PackagePrivate`nbo$ = 
+               EvaluationNotebook[]}, 
+              CurrentValue[
+               DefinitionNotebookClient`Stripes`PackagePrivate`nbo$, 
+                DockedCells] = If[
+                TrueQ[
+                 MemberQ[
+                  CurrentValue["ModifierKeys"], "Control"]], 
+                DeleteCases[
+                 Flatten[{
+                   CurrentValue[
+                   DefinitionNotebookClient`Stripes`PackagePrivate`nbo$, 
+                    DockedCells]}], 
+                 Cell[
+                  Blank[], "StripeCell", 
+                  BlankNullSequence[]]], 
+                DeleteCases[
+                 Flatten[{
+                   CurrentValue[
+                   DefinitionNotebookClient`Stripes`PackagePrivate`nbo$, 
+                    DockedCells]}], 
+                 Condition[
+                  Pattern[DefinitionNotebookClient`Stripes`PackagePrivate`c$, 
+                   Blank[Cell]], 
+                  Not[
+                   FreeQ[
+                   DefinitionNotebookClient`Stripes`PackagePrivate`c$, 
+                    "a31423d6-bb96-4b98-bc7c-4cdd7d257ea0"]]]]]], Appearance -> 
+            None, BoxID -> "a31423d6-bb96-4b98-bc7c-4cdd7d257ea0", Evaluator -> 
+            Automatic, Method -> "Preemptive"], 
+           MouseAppearanceTag["LinkHand"]], ItemSize -> All, StripOnInput -> 
+          False]}}, 
+       GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Baseline}}}, 
+       AutoDelete -> False, 
+       GridBoxItemSize -> {
+        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], "Grid"], 
+     "Text", FontSize -> 12, FontColor -> GrayLevel[0.25], StripOnInput -> 
+     False]], "StripeCell", CellFrameMargins -> {{20, 5}, {2, 2}}, 
+   CellFrame -> {{0, 0}, {1, 0}}, CellFrameColor -> GrayLevel[0.75]], 
+  Cell[
+   BoxData[
+    StyleBox[
+     TagBox[
+      GridBox[{{
+         ItemBox[
+          TagBox[
+           GridBox[{{
+              OverlayBox[{
+                StyleBox[
+                 TagBox[
+                  DynamicModuleBox[{Typeset`var$$ = False}, 
+                   InterpretationBox[
+                    StyleBox[
+                    PaneSelectorBox[{False -> GridBox[{{
+                    OpenerBox[
+                    Dynamic[Typeset`var$$], Appearance -> Automatic, Enabled -> 
+                    Automatic, AutoAction -> False, ContinuousAction -> 
+                    False], 
+                    StyleBox[
+                    DynamicBox[
+                    ToBoxes[
+                    DateString[
+                    TimeZoneConvert[
+                    DateObject[
+                    3.8770879671509606`17.34108064397548*^9, TimeZone -> 
+                    0]], {"MonthName", " ", "DayShort", ", ", "Year", " ", 
+                    "Hour12Short", ":", "Minute", " ", "AMPMLowerCase"}], 
+                    StandardForm], SingleEvaluation -> True, Evaluator -> 
+                    "System"], FontSlant -> Italic, FontColor -> 
+                    GrayLevel[0.5], FontSize -> 0.9 Inherited, StripOnInput -> 
+                    False]}}, GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                    AutoDelete -> False, 
+                    GridBoxBackground -> {"Columns" -> {{Automatic}}}, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{0.2}}, "Rows" -> {{0.5}}}, 
+                    BaselinePosition -> {1, 1}], True -> GridBox[{{
+                    OpenerBox[
+                    Dynamic[Typeset`var$$], Appearance -> Automatic, Enabled -> 
+                    Automatic, AutoAction -> False, ContinuousAction -> 
+                    False], 
+                    StyleBox[
+                    DynamicBox[
+                    ToBoxes[
+                    DateString[
+                    TimeZoneConvert[
+                    DateObject[
+                    3.8770879671509606`17.34108064397548*^9, TimeZone -> 
+                    0]], {"MonthName", " ", "DayShort", ", ", "Year", " ", 
+                    "Hour12Short", ":", "Minute", " ", "AMPMLowerCase"}], 
+                    StandardForm], SingleEvaluation -> True, Evaluator -> 
+                    "System"], FontSlant -> Italic, FontColor -> 
+                    GrayLevel[0.5], FontSize -> 0.9 Inherited, StripOnInput -> 
+                    False]}, {"", 
+                    PaneBox["\"\"", ImageMargins -> 0]}}, 
+                    GridBoxAlignment -> {"Columns" -> {{Left}}}, AutoDelete -> 
+                    False, GridBoxBackground -> {"Columns" -> {{Automatic}}}, 
+                    GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {
+                    "Columns" -> {{0.2}}, "Rows" -> {{0.5}}}, 
+                    BaselinePosition -> {1, 1}]}, 
+                    Dynamic[Typeset`var$$], Alignment -> Automatic, ImageSize -> 
+                    Automatic, ImageMargins -> 0, BaseStyle -> {}, 
+                    DefaultBaseStyle -> "OpenerView", BaselinePosition -> 
+                    Baseline], Deployed -> False, StripOnInput -> False], 
+                    OpenerView[{
+                    Style[
+                    Dynamic[
+                    DateString[
+                    TimeZoneConvert[
+                    DateObject[
+                    3.8770879671509606`17.34108064397548*^9, TimeZone -> 
+                    0]], {"MonthName", " ", "DayShort", ", ", "Year", " ", 
+                    "Hour12Short", ":", "Minute", " ", "AMPMLowerCase"}], 
+                    SingleEvaluation -> True, Evaluator -> "System"], 
+                    FontSlant -> Italic, FontColor -> GrayLevel[0.5], 
+                    FontSize -> 0.9 Inherited], ""}, False]], 
+                   DynamicModuleValues -> Automatic], Setting[#, {0}]& ], 
+                 ShowContents -> False, StripOnInput -> False], 
+                StyleBox[
+                 DynamicBox[
+                  ToBoxes[
+                   DateString[
+                    TimeZoneConvert[
+                    DateObject[
+                    3.8770879671509606`17.34108064397548*^9, TimeZone -> 
+                    0]], {"MonthName", " ", "DayShort", ", ", "Year", " ", 
+                    "Hour12Short", ":", "Minute", " ", "AMPMLowerCase"}], 
+                   StandardForm], SingleEvaluation -> True, Evaluator -> 
+                  "System"], FontSlant -> Italic, FontColor -> GrayLevel[0.5],
+                  FontSize -> 0.9 Inherited, StripOnInput -> False]}, 
+               Alignment -> {Right, Baseline}], "\"   \"", 
+              ItemBox[
+              "\"Found 2 suggestions\"", ItemSize -> Scaled[0.75], 
+               StripOnInput -> False]}}, 
+            GridBoxAlignment -> {
+             "Columns" -> {{Left}}, "Rows" -> {{Baseline}}}, AutoDelete -> 
+            False, GridBoxItemSize -> {
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], "Grid"], 
+          ItemSize -> Fit, StripOnInput -> False], 
+         ItemBox[
+          StyleBox[
+           ActionMenuBox[
+            TagBox[
+             TagBox[
+              GridBox[{{
+                 TemplateBox[{
+                   TagBox[
+                    GridBox[{{
+                    TemplateBox[{
+                    RGBColor[
+                    0.49019607843137253`, 0.49019607843137253`, 
+                    0.49019607843137253`], 
+                    RGBColor[1., 1., 1.], 10, {{0, 18}, {-2, 17}}}, 
+                    "SuggestionIconTemplate"], 
+                    StyleBox[
+                    "2", FontColor -> GrayLevel[0.5], FontSize -> 9, 
+                    StripOnInput -> False]}}, 
+                    GridBoxAlignment -> {
+                    "Columns" -> {{Left}}, "Rows" -> {{Center}}}, AutoDelete -> 
+                    False, GridBoxItemSize -> {
+                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+                    GridBoxSpacings -> {"Columns" -> {{0.25}}}], "Grid"], 
+                   "\"Suggestions found\""}, "PrettyTooltipTemplate"], 
+                 "\"   \""}}, AutoDelete -> False, 
+               GridBoxItemSize -> {
+                "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+              "Grid"], 
+             MouseAppearanceTag["LinkHand"]], {TemplateBox[{
+                TemplateBox[{
+                  RGBColor[
+                  0.49019607843137253`, 0.49019607843137253`, 
+                   0.49019607843137253`], 
+                  RGBColor[1., 1., 1.], 10, {{0, 18}, {-2, 17}}}, 
+                 "SuggestionIconTemplate"], "\" \"", 
+                "\"The description should usually start with a capital letter\
+\""}, "RowDefault"] :> DefinitionNotebookClient`WithCurrentNotebook[
+               EvaluationNotebook[], 
+               DefinitionNotebookClient`LoadDefinitionNotebook[
+                "Function", DefinitionNotebookClient`$CurrentNotebook]; 
+               DefinitionNotebookClient`PackageScope`setHint[
+                "Suggestion", "Function", 
+                 DefinitionNotebookClient`$CurrentNotebook, 
+                 "0e30f90a-051c-4100-a2be-c30be858aa36", 660820806, 
+                 "DescriptionNotCapitalized", {
+                 "quickly transform a unit into a different unit system"}]; 
+               DefinitionNotebookClient`PackageScope`seekAfter[660820806]; 
+               Null], TemplateBox[{
+                TemplateBox[{
+                  RGBColor[
+                  0.49019607843137253`, 0.49019607843137253`, 
+                   0.49019607843137253`], 
+                  RGBColor[1., 1., 1.], 10, {{0, 18}, {-2, 17}}}, 
+                 "SuggestionIconTemplate"], "\" \"", 
+                "\"Usage descriptions should end in a period (.)\""}, 
+               "RowDefault"] :> DefinitionNotebookClient`WithCurrentNotebook[
+               EvaluationNotebook[], 
+               DefinitionNotebookClient`LoadDefinitionNotebook[
+                "Function", DefinitionNotebookClient`$CurrentNotebook]; 
+               DefinitionNotebookClient`PackageScope`setHint[
+                "Suggestion", "Function", 
+                 DefinitionNotebookClient`$CurrentNotebook, 
+                 "a04e5c91-adde-4b36-aaac-e2ffdd5e100a", 746063541, 
+                 "UsageDescriptionNeedsPeriod", {}]; 
+               DefinitionNotebookClient`PackageScope`seekAfter[746063541]; 
+               Null]}, Appearance -> None, Method -> "Queued"], "BoxID" -> 
+           "WarningCountButton", StripOnInput -> False], ItemSize -> All, 
+          StripOnInput -> False], 
+         ItemBox[
+          TagBox[
+           ButtonBox[
+            TagBox[
+             PaneSelectorBox[{False -> GraphicsBox[{
+                  GrayLevel[
+                   NCache[
+                    Rational[64, 85], 0.7529411764705882]], 
+                  
+                  PolygonBox[{{-0.282842712474619, -0.42426406871192845`}, \
+{-0.42426406871192845`, -0.282842712474619}, {0.282842712474619, 
+                   0.42426406871192845`}, {0.42426406871192845`, 
+                   0.282842712474619}}], 
+                  
+                  PolygonBox[{{0.42426406871192845`, -0.282842712474619}, {
+                   0.282842712474619, -0.42426406871192845`}, \
+{-0.42426406871192845`, 0.282842712474619}, {-0.282842712474619, 
+                   0.42426406871192845`}}]}, ImageSize -> 18, 
+                 PlotRangePadding -> 0, PlotRange -> 0.7, Background -> None],
+                True -> GraphicsBox[{
+                  GrayLevel[
+                   NCache[
+                    Rational[128, 255], 0.5019607843137255]], 
+                  
+                  PolygonBox[{{-0.282842712474619, -0.42426406871192845`}, \
+{-0.42426406871192845`, -0.282842712474619}, {0.282842712474619, 
+                   0.42426406871192845`}, {0.42426406871192845`, 
+                   0.282842712474619}}], 
+                  
+                  PolygonBox[{{0.42426406871192845`, -0.282842712474619}, {
+                   0.282842712474619, -0.42426406871192845`}, \
+{-0.42426406871192845`, 0.282842712474619}, {-0.282842712474619, 
+                   0.42426406871192845`}}]}, ImageSize -> 18, 
+                 PlotRangePadding -> 0, PlotRange -> 0.7, Background -> 
+                 None]}, 
+              Dynamic[
+               CurrentValue["MouseOver"]], ImageSize -> Automatic, 
+              FrameMargins -> 0], 
+             MouseAppearanceTag["LinkHand"]], ButtonFunction :> 
+            With[{DefinitionNotebookClient`Stripes`PackagePrivate`nbo$ = 
+               EvaluationNotebook[]}, 
+              CurrentValue[
+               DefinitionNotebookClient`Stripes`PackagePrivate`nbo$, 
+                DockedCells] = If[
+                TrueQ[
+                 MemberQ[
+                  CurrentValue["ModifierKeys"], "Control"]], 
+                DeleteCases[
+                 Flatten[{
+                   CurrentValue[
+                   DefinitionNotebookClient`Stripes`PackagePrivate`nbo$, 
+                    DockedCells]}], 
+                 Cell[
+                  Blank[], "StripeCell", 
+                  BlankNullSequence[]]], 
+                DeleteCases[
+                 Flatten[{
+                   CurrentValue[
+                   DefinitionNotebookClient`Stripes`PackagePrivate`nbo$, 
+                    DockedCells]}], 
+                 Condition[
+                  Pattern[DefinitionNotebookClient`Stripes`PackagePrivate`c$, 
+                   Blank[Cell]], 
+                  Not[
+                   FreeQ[
+                   DefinitionNotebookClient`Stripes`PackagePrivate`c$, 
+                    "70f5b130-0d98-4332-a5d0-4a4cc2cf94f8"]]]]]], Appearance -> 
+            None, BoxID -> "70f5b130-0d98-4332-a5d0-4a4cc2cf94f8", Evaluator -> 
+            Automatic, Method -> "Preemptive"], 
+           MouseAppearanceTag["LinkHand"]], ItemSize -> All, StripOnInput -> 
+          False]}}, 
+       GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Baseline}}}, 
+       AutoDelete -> False, 
+       GridBoxItemSize -> {
+        "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], "Grid"], 
+     "Text", FontSize -> 12, FontColor -> GrayLevel[0.25], StripOnInput -> 
+     False]], "StripeCell", CellFrameMargins -> {{20, 5}, {2, 2}}, 
+   CellFrame -> {{0, 0}, {1, 0}}, CellFrameColor -> GrayLevel[0.75]]},
+TaggingRules->{"CompatibilityTest" -> HoldComplete[
     BinaryDeserialize[
      BaseDecode[
      "OEM6eJzVWVtT20YUrjEQBhxaMulMkyc98EAyadJpO9NL2iauDcQdIMCa9JW1dGQ0rHeV3RWg\
@@ -1554,27 +2906,31 @@ F2wHvptIUTi8i5DtSFgdYydmikxQAPizZgseMKjrgaw8/RYwrhboqrgxC39hhk0t/cTg/\
 xY6tG9AO9zDs2EcDuvRetMalxpasHaEJNB0BOvNVRIPeoKRp8nbn0PKEUyeJ9+Snkce5811pZ/+\
 KouXDOV2vNqeXMp9D7QyIujZnSeKiMG4/\
 WyabbVsUI30dbWyR5mC4Y6npzAQV7A7CHW8e0ORJGTUV01ufdzMGR2GbTwVmCj3d8A9cd0NNHoiRcl\
-98fkvn3IKDA=="]]], "DefinitionNotebookFramework" -> 
-  "DefinitionNotebookClient", 
+98fkvn3IKDA=="]]], "CreationTimestamp" -> 
+  3.8770867113701096`17.341080503308365*^9, "DefinitionNotebookFramework" -> 
+  "DefinitionNotebookClient", "ResourceCreateNotebook" -> True, 
+  "ResourceType" -> "Function", 
   "RuntimeConfiguration" -> {
    "LoadingMethod" -> "Paclet", "PacletName" -> "FunctionResource", 
     "Contexts" -> {
      "FunctionResource`", "FunctionResource`DefinitionNotebook`"}, 
-    "DefaultContentMethod" -> "Legacy"}, "ToolsOpen" -> True, "StatusMessage" -> 
-  "", "SubmissionReviewData" -> {"Review" -> False}},
+    "DefaultContentMethod" -> "Legacy"}, 
+  "SubmissionReviewData" -> {"Review" -> False}, "ToolsOpen" -> False, 
+  "UpdatedTimestamp" -> 3.877087951251099`17.34108064219445*^9, 
+  "TemplateVersion" -> "1.6.4", "StatusMessage" -> ""},
 CreateCellID->True,
 FrontEndVersion->"13.1 for Microsoft Windows (64-bit) (June 16, 2022)",
 StyleDefinitions->Notebook[{
    Cell[
     StyleData[StyleDefinitions -> "Default.nb"]], 
    Cell[
-    StyleData[All, "Working"], DockedCells -> {
+    StyleData[All, "Working"], WindowToolbars -> {}, DockedCells -> {
       Cell[
        BoxData[
         TemplateBox[{}, "MainGridTemplate"]], "DockedCell", 
        CellMargins -> {{-10, -10}, {-8, -8}}, CellFrame -> 0, Background -> 
-       RGBColor[0.921569, 0.341176, 0.105882], CellTags -> {"MainDockedCell"},
-        CacheGraphics -> False], 
+       RGBColor[0.92157, 0.34118, 0.10588], CellTags -> {"MainDockedCell"}, 
+       CacheGraphics -> False], 
       Cell[
        BoxData[
         TemplateBox[{}, "ToolsGridTemplate"]], "DockedCell", 
@@ -1606,21 +2962,20 @@ StyleDefinitions->Notebook[{
     StyleData["MoreInfoOpenerIconTemplate"], 
     TemplateBoxOptions -> {
      DisplayFunction -> (PaneSelectorBox[{False -> GraphicsBox[{
-            Thickness[0.09090909090909091], 
+            Thickness[0.090909], 
             StyleBox[{
               
               JoinedCurveBox[{{{1, 4, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}, {1,
                 3, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}}}, CompressedData["
-1:eJxTTMoPSmVmYGBgBGJJIGYC4vinF5RuVyo58OlumvteXcIBxj//Pfjx0tky
-Dh8v+SYJzFB0kGAJ49MtUnBYIKV/V4UNRis5GHKskYl6IuPwCaxO2eEcWJ+E
-QwLYHBUHfrC5InD+7CMKG4oy+OH81TJRKdb32eD6+w991YjpZ4CbD1L2s+6L
-Pcz+R1Ui69wfvrKHuQ/Gh7kfxvdLEoiw3CIM178BbA8f3PwJYJoDbn9JxsS3
-NfZMcPcV2HJdX1zw1x7mfhgf5j8YH+Z/mH5Y+MDMh4UfzH5Y+MLchx7+ANUf
-raY=
+1:eJxTTMoPSmVmYGBgBGJJIGYC4oSnF5RuVyo58OlumvteXcIBxj//Pfjx0tky
+Dp8u+SYJzFB0kGQJ49MtUnBYIKV/V4UNRis5GHKskYl6AlOnDNUHM0cFaq4I
+nD/niMKGogx+OB+oO8X6Phtcf/+hrxox/Qxw80HKftZ9sYfZ/7BKZJ37w1f2
+MPfB+DD3w/h+SQIRlluE4foh9vDBzYfQHHD7izMmvq2xZ4K7r9CW6/rigr/2
+MPfD+DD/wfgw/8P0w8IHZj4s/GD2w8IX5j708AcA2Xetpg==
                "], CurveClosed -> {1}]}, {
               JoinForm[{"Miter", 3.25}], 
-              Thickness[0.04581818181818182], 
-              RGBColor[0.627441, 0.627441, 0.627441, 1.]}, StripOnInput -> 
+              Thickness[0.045818], 
+              RGBColor[0.62744, 0.62744, 0.62744, 1.]}, StripOnInput -> 
              False], 
             StyleBox[{
               
@@ -1630,51 +2985,49 @@ raY=
                  3, 3}, {1, 3, 3}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
                 0}, {0, 1, 0}, {0, 1, 0}, {1, 3, 3}, {1, 3, 3}, {0, 1, 
                 0}}}, {CompressedData["
-1:eJxTTMoPSmViYGCQBGIQLTQ3t12zRcShJLdco9dU3mHepS6LtrvCcP4+Xv/m
-N77CDovcOdKu58g7FPjtSo+5KuTw57fmw+zb8g5K/ao+Z2KEHHRuqOoxqCo4
-1OhH27UoCDnsSqhWX5aN4K+ZPvXO8oMI/txz6yeuFFeE67fRSpTaE6sIN79j
-1cqy+5MV4fZf1fp0iemUItx9v7PEGkWeKjrA3A/jf+Fa9FHHQBTOX+1ud9n/
-oChcv3mwk84kczG4+Yfi3FqvrBWD29+RcmLj1xdicPfB+DD3w/gw/8H0w/wP
-Mx8WPjD7YeEHcx8sfNHDHwBu/qSR
+1:eJxTTMoPSmViYGCQBGIQ3b48/JRRi4jD3qBpin2m8g5n6j32194VhvNZnvdo
+vPUVdoh2sntxM0feQfiT4/m0q0IOQNnSwtvyDmxCIvbHYoQcMhnyG1lUFRyk
+eR/oTlAAym/iKVyTjeAf2aiXt/gggt+odqhtubgiXP+k00CLYxXh5mdrf5t+
+d7Ii3P5LDPeYOE8pwt33vfTBHMGnig4w98P4j5fOPqJgIArn539oPRlyUBSu
+/9OGgOxZ5mJw88sKgS5aKwa3XzOm/9DXF2Jw98H4MPfD+DD/wfTD/A8zHxY+
+MPth4QdzHyx80cMfAIsMpwk=
                 "], CompressedData["
-1:eJxTTMoPSmViYGCQB2IQvf+bus9hGwmHDp1Dj7Lq+R1g/C8aMf2HvvI4TGr/
-8PXaHQEMPkz934jyRxrThRx4jt4OchAXgPMDH16pmH8JwZ97RmCl6XRBOP9D
-W/9jplQhOF+/1m7LFGNhOJ/l29N9k18i+AUfW5kZ2kXg/Ple3+bO/C4K5+fN
-DQ4+fUAMzt9xf9q57xnicH6N4AF++Q8IvqPzywC3cgk4PyFkivMkFkk4/4bL
-wedMMyQdDs1vE5FYJOBwYaHqp4u3EPzQT5dO7vwk5SCxtot3p4WYw73/Kfef
-X5RxYLv4XzxkhpjDona/Xv0OBH+hx9ZwiywJOB/mHxgf5l8Y30/526VcIyR+
-5Tb7vkQhON/3fNmadRME4fxHts2x9mcF4HxYfKDHLwCFIt67
+1:eJxTTMoPSmViYGCQB2IQXTFnkfJOGwmHsNp125Lq+R1g/G8aMf2HvvI4KP39
+VvrgjgAGH6b+c19wicp0IQeBKrPVduICcL6EWjDr4ksCqPLTBeH8211/U7+n
+CMH5S+7v45tjLAznX773gHvySwS/qdhtyrc2ETj/04aA7FnfReH8RxHi2y8e
+EIPzNUHOzRCH8x8vnX1E4QOCP+/98mPe5RJw/o9goAoWSTj/6vMs7W/TJR0O
+X9ZOlVwk4PB2no3OlVsI/jKgcRs+STlonhY4vstCzCFoh1zr64syDkBXssXP
+EHO4WvFSzbADwa9JNAo1yJKA82H+gfFh/oXxA29JA7Ug+GY2e4OmJQrB+f83
+VX/aMEEQzrerjFhhelYAzofFB3r8AgApYdcE
                 "]}]}, {
               FaceForm[
-               RGBColor[0.627441, 0.627441, 0.627441, 1.]]}, StripOnInput -> 
+               RGBColor[0.62744, 0.62744, 0.62744, 1.]]}, StripOnInput -> 
              False]}, ImageSize -> {11., 11.}, 
            PlotRange -> {{0., 11.}, {0., 11.}}, AspectRatio -> Automatic], 
          True -> GraphicsBox[{
-            Thickness[0.09090909090909091], 
+            Thickness[0.090909], 
             StyleBox[{
               
               JoinedCurveBox[{{{1, 4, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}, {1,
                 3, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}}}, CompressedData["
-1:eJxTTMoPSmVmYGBgBGJJIGYC4vinF5RuVyo58OlumvteXcIBxj//Pfjx0tky
-Dh8v+SYJzFB0kGAJ49MtUnBYIKV/V4UNRis5GHKskYl6IuPwCaxO2eEcWJ+E
-QwLYHBUHfrC5InD+7CMKG4oy+OH81TJRKdb32eD6+w991YjpZ4CbD1L2s+6L
-Pcz+R1Ui69wfvrKHuQ/Gh7kfxvdLEoiw3CIM178BbA8f3PwJYJoDbn9JxsS3
-NfZMcPcV2HJdX1zw1x7mfhgf5j8YH+Z/mH5Y+MDMh4UfzH5Y+MLchx7+ANUf
-raY=
+1:eJxTTMoPSmVmYGBgBGJJIGYC4oSnF5RuVyo58OlumvteXcIBxj//Pfjx0tky
+Dp8u+SYJzFB0kGQJ49MtUnBYIKV/V4UNRis5GHKskYl6AlOnDNUHM0cFaq4I
+nD/niMKGogx+OB+oO8X6Phtcf/+hrxox/Qxw80HKftZ9sYfZ/7BKZJ37w1f2
+MPfB+DD3w/h+SQIRlluE4foh9vDBzYfQHHD7izMmvq2xZ4K7r9CW6/rigr/2
+MPfD+DD/wfgw/8P0w8IHZj4s/GD2w8IX5j708AcA2Xetpg==
                "], CurveClosed -> {1}]}, {
               JoinForm[{"Miter", 3.25}], 
-              Thickness[0.04581818181818182], 
+              Thickness[0.045818], 
               RGBColor[0.5, 0.5, 0.5, 1.]}, StripOnInput -> False], 
             StyleBox[{
               
               FilledCurveBox[{{{1, 4, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}, {1,
                 3, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}}}, CompressedData["
-1:eJxTTMoPSmVmYGBgBGJJIGYC4vinF5RuVyo58OlumvteXcIBxj//Pfjx0tky
-Dh8v+SYJzFB0kGAJ49MtUnBYIKV/V4UNRis5GHKskYl6IuPwCaxO2eEcWJ+E
-QwLYHBUHfrC5InD+7CMKG4oy+OH81TJRKdb32eD6+w991YjpZ4CbD1L2s+6L
-Pcz+R1Ui69wfvrKHuQ/Gh7kfxvdLEoiw3CIM178BbA8f3PwJYJoDbn9JxsS3
-NfZMcPcV2HJdX1zw1x7mfhgf5j8YH+Z/mH5Y+MDMh4UfzH5Y+MLchx7+ANUf
-raY=
+1:eJxTTMoPSmVmYGBgBGJJIGYC4oSnF5RuVyo58OlumvteXcIBxj//Pfjx0tky
+Dp8u+SYJzFB0kGQJ49MtUnBYIKV/V4UNRis5GHKskYl6AlOnDNUHM0cFaq4I
+nD/niMKGogx+OB+oO8X6Phtcf/+hrxox/Qxw80HKftZ9sYfZ/7BKZJ37w1f2
+MPfB+DD3w/h+SQIRlluE4foh9vDBzYfQHHD7izMmvq2xZ4K7r9CW6/rigr/2
+MPfD+DD/wfgw/8P0w8IHZj4s/GD2w8IX5j708AcA2Xetpg==
                "]]}, {
               FaceForm[
                RGBColor[0.5, 0.5, 0.5, 1.]]}, StripOnInput -> False], 
@@ -1686,23 +3039,23 @@ raY=
                  3, 3}, {1, 3, 3}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
                 0}, {0, 1, 0}, {0, 1, 0}, {1, 3, 3}, {1, 3, 3}, {0, 1, 
                 0}}}, {CompressedData["
-1:eJxTTMoPSmViYGCQBGIQLTQ3t12zRcShJLdco9dU3mHepS6LtrvCcP4+Xv/m
-N77CDovcOdKu58g7FPjtSo+5KuTw57fmw+zb8g5K/ao+Z2KEHHRuqOoxqCo4
-1OhH27UoCDnsSqhWX5aN4K+ZPvXO8oMI/txz6yeuFFeE67fRSpTaE6sIN79j
-1cqy+5MV4fZf1fp0iemUItx9v7PEGkWeKjrA3A/jf+Fa9FHHQBTOX+1ud9n/
-oChcv3mwk84kczG4+Yfi3FqvrBWD29+RcmLj1xdicPfB+DD3w/gw/8H0w/wP
-Mx8WPjD7YeEHcx8sfNHDHwBu/qSR
+1:eJxTTMoPSmViYGCQBGIQ3b48/JRRi4jD3qBpin2m8g5n6j32194VhvNZnvdo
+vPUVdoh2sntxM0feQfiT4/m0q0IOQNnSwtvyDmxCIvbHYoQcMhnyG1lUFRyk
+eR/oTlAAym/iKVyTjeAf2aiXt/gggt+odqhtubgiXP+k00CLYxXh5mdrf5t+
+d7Ii3P5LDPeYOE8pwt33vfTBHMGnig4w98P4j5fOPqJgIArn539oPRlyUBSu
+/9OGgOxZ5mJw88sKgS5aKwa3XzOm/9DXF2Jw98H4MPfD+DD/wfTD/A8zHxY+
+MPth4QdzHyx80cMfAIsMpwk=
                 "], CompressedData["
-1:eJxTTMoPSmViYGCQB2IQvf+bus9hGwmHDp1Dj7Lq+R1g/C8aMf2HvvI4TGr/
-8PXaHQEMPkz934jyRxrThRx4jt4OchAXgPMDH16pmH8JwZ97RmCl6XRBOP9D
-W/9jplQhOF+/1m7LFGNhOJ/l29N9k18i+AUfW5kZ2kXg/Ple3+bO/C4K5+fN
-DQ4+fUAMzt9xf9q57xnicH6N4AF++Q8IvqPzywC3cgk4PyFkivMkFkk4/4bL
-wedMMyQdDs1vE5FYJOBwYaHqp4u3EPzQT5dO7vwk5SCxtot3p4WYw73/Kfef
-X5RxYLv4XzxkhpjDona/Xv0OBH+hx9ZwiywJOB/mHxgf5l8Y30/526VcIyR+
-5Tb7vkQhON/3fNmadRME4fxHts2x9mcF4HxYfKDHLwCFIt67
+1:eJxTTMoPSmViYGCQB2IQXTFnkfJOGwmHsNp125Lq+R1g/G8aMf2HvvI4KP39
+VvrgjgAGH6b+c19wicp0IQeBKrPVduICcL6EWjDr4ksCqPLTBeH8211/U7+n
+CMH5S+7v45tjLAznX773gHvySwS/qdhtyrc2ETj/04aA7FnfReH8RxHi2y8e
+EIPzNUHOzRCH8x8vnX1E4QOCP+/98mPe5RJw/o9goAoWSTj/6vMs7W/TJR0O
+X9ZOlVwk4PB2no3OlVsI/jKgcRs+STlonhY4vstCzCFoh1zr64syDkBXssXP
+EHO4WvFSzbADwa9JNAo1yJKA82H+gfFh/oXxA29JA7Ug+GY2e4OmJQrB+f83
+VX/aMEEQzrerjFhhelYAzofFB3r8AgApYdcE
                 "]}]}, {
               FaceForm[
-               RGBColor[0.999985, 0.999985, 0.999985, 1.]]}, StripOnInput -> 
+               RGBColor[0.99998, 0.99998, 0.99998, 1.]]}, StripOnInput -> 
              False]}, ImageSize -> {11., 11.}, 
            PlotRange -> {{0., 11.}, {0., 11.}}, AspectRatio -> Automatic]}, 
         Dynamic[
@@ -1833,7 +3186,7 @@ X5RxYLv4XzxkhpjDona/Xv0OBH+hx9ZwiywJOB/mHxgf5l8Y30/526VcIyR+
                GraphicsBox[{
                  GrayLevel[0.85], 
                  Thickness[
-                  NCache[2/45, 0.044444444444444446`]], 
+                  NCache[2/45, 0.044444]], 
                  
                  FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
                    0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}}, {{0, 2, 0}, {0, 1, 
@@ -1877,7 +3230,7 @@ X5RxYLv4XzxkhpjDona/Xv0OBH+hx9ZwiywJOB/mHxgf5l8Y30/526VcIyR+
                     PaneSelectorBox[{False -> GraphicsBox[{
                     GrayLevel[0.65], 
                     Thickness[
-                    NCache[2/45, 0.044444444444444446`]], 
+                    NCache[2/45, 0.044444]], 
                     
                     FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
                     0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}}, {{0, 2, 0}, {0, 1, 
@@ -1899,9 +3252,9 @@ X5RxYLv4XzxkhpjDona/Xv0OBH+hx9ZwiywJOB/mHxgf5l8Y30/526VcIyR+
                     11.25}}, {{8.25, 9.75}, {14.25, 9.75}, {14.25, 9.}, {8.25,
                      9.}}, {{8.25, 7.5}, {14.25, 7.5}, {14.25, 6.75}, {8.25, 
                     6.75}}}]}, ImageSize -> 12], True -> GraphicsBox[{
-                    RGBColor[0.988235, 0.419608, 0.203922], 
+                    RGBColor[0.98824, 0.41961, 0.20392], 
                     Thickness[
-                    NCache[2/45, 0.044444444444444446`]], 
+                    NCache[2/45, 0.044444]], 
                     
                     FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
                     0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}}, {{0, 2, 0}, {0, 1, 
@@ -1931,9 +3284,9 @@ X5RxYLv4XzxkhpjDona/Xv0OBH+hx9ZwiywJOB/mHxgf5l8Y30/526VcIyR+
                     TemplateBox[{
                     GraphicsBox[{
                     RGBColor[0, 
-                    NCache[2/3, 0.6666666666666666], 0], 
+                    NCache[2/3, 0.66667], 0], 
                     Thickness[
-                    NCache[2/45, 0.044444444444444446`]], 
+                    NCache[2/45, 0.044444]], 
                     
                     FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
                     0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}}, {{0, 2, 0}, {0, 1, 
@@ -1982,19 +3335,19 @@ X5RxYLv4XzxkhpjDona/Xv0OBH+hx9ZwiywJOB/mHxgf5l8Y30/526VcIyR+
          FrameBox[
           
           StyleBox[#2, "Text", FontColor -> 
-           RGBColor[0.537255, 0.537255, 0.537255], FontSize -> 12, FontWeight -> 
+           RGBColor[0.53725, 0.53725, 0.53725], FontSize -> 12, FontWeight -> 
            "Plain", FontTracking -> "Plain", StripOnInput -> False], 
-          Background -> RGBColor[0.960784, 0.960784, 0.960784], FrameStyle -> 
-          RGBColor[0.898039, 0.898039, 0.898039], FrameMargins -> 8, 
+          Background -> RGBColor[0.96078, 0.96078, 0.96078], FrameStyle -> 
+          RGBColor[0.89804, 0.89804, 0.89804], FrameMargins -> 8, 
           StripOnInput -> False], TooltipDelay -> 0.1, 
          TooltipStyle -> {Background -> None, CellFrame -> 0}], Annotation[#, 
          Framed[
           Style[
           RSNB`$$tooltip, "Text", FontColor -> 
-           RGBColor[0.537255, 0.537255, 0.537255], FontSize -> 12, FontWeight -> 
+           RGBColor[0.53725, 0.53725, 0.53725], FontSize -> 12, FontWeight -> 
            "Plain", FontTracking -> "Plain"], Background -> 
-          RGBColor[0.960784, 0.960784, 0.960784], FrameStyle -> 
-          RGBColor[0.898039, 0.898039, 0.898039], FrameMargins -> 8], 
+          RGBColor[0.96078, 0.96078, 0.96078], FrameStyle -> 
+          RGBColor[0.89804, 0.89804, 0.89804], FrameMargins -> 8], 
          "Tooltip"]& ]& )}], 
    Cell[
     StyleData["ToolsGridTemplate"], 
@@ -2043,35 +3396,36 @@ AsyncronousResourceInformationUpdates = False,
                   CurrentValue["MouseOver"], {
                   FontColor -> GrayLevel[1], 
                    TaggingRules -> {"ButtonHovering" -> True}}, {
-                  FontColor -> 
-                   RGBColor[0.8274509803921568, 0.20784313725490197`, 0.], 
+                  FontColor -> RGBColor[0.82745, 0.20784, 0.], 
                    TaggingRules -> {"ButtonHovering" -> False}}], {
-                 FontColor -> 
-                  RGBColor[0.9568627450980391, 0.8019607843137255, 0.75], 
+                 FontColor -> RGBColor[0.95686, 0.80196, 0.75], 
                   TaggingRules -> {"ButtonHovering" -> False}}], Evaluator -> 
                 "System"], Appearance -> {"Default" -> Image[CompressedData["
 1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
-UFAcikHs/4QAMWqA4CllgA6GPL5w6v66uRAEZJNqyN3J1VfdxC6bMiAjoAhQ
-nBhDHh3dfT3JGqLrhpfUgwJvCAKyIYJAWaAaPIYAZSEqbwapfjq8GS38gSJA
-cYgCZHPQDIG44XaU3r9fP7HGI1AcKAtxD1ZDgP6FuAGXCXBzIO6Bhw+yIZCQ
-xPQFJgCqgYQzRCMkNUJiExKSBE2AAEg4Q+KdAQwoN4QqLvlPvTChVuxQJZ1Q
-K8VSJe/AAYW5GBlQWJ6QBKhoCH5ATGkPANqBKWU=
+UFAcikHs/4QAMWqA4BllAJchjw5tvzu19maOx1UPSQgCsoEiQHGiDHl4/3Zz
+6mVTBlwIKAtUg8eQR8f3XQtUAaq8as/zYkrFxwPrf718DEFANlAEKA6UBaoB
+qsRuyMP7EBPuZTj8fHYfa+gBxYGyEHPg7kE2BOILoBqCEQExB+QvVEOAIQbx
+BS43oLkH4i9IOMMNAYY8UBDoa4ImQABQJVA9UBeyIcAYBAoCQ49IQ4AqgeqB
+uoB6IakRyACmBKAgMBaINASoEuR9D0mIIUBAuSFUccl/6oUJVWKHKumEKimW
+WnmHOrmYSuUJwkkUlmykA4IR8Z+40h4AAyMnLQ==
                   "], "Byte", ColorSpace -> "RGB", ImageResolution -> 144, 
                   Interleaving -> True], "Hover" -> Image[CompressedData["
 1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
-UFAcikHs/4QAMWqA4CllgA6G3Dt/+uKq+RAEZJNqyIn+urW20su12ZARUAQo
-Towhtw7v2RZtD9G1wYjrgK0wBAHZEEGgLFANHkOAshCVW0x5H0eo/8k2QUZA
-EaA4RAGyOWiGQNyw3ZzvV6YxmgkQBBQHykLcg9UQoH8hbsBlAtwciHvg4YNs
-CCQkMX2BiYBqIOEM0QhJjZDYhIQkQRMgCBLOkHhnAAPKDaGKS6gYJtSKHaqk
-E2qlWKrkHTigMBcjAwrLE5IAFQ3BD4gp7QGdXXDI
+UFAcikHs/4QAMWqA4BllAJchNw/sODmxYXeazzp7OQgCsoEiQHFiDHny4P7h
+2ozl2my4EFAWqAaPIbeP7t/ooQlUuVqP87yn9MMwtU8p+hAEZANFgOJAWaAa
+oEqshgDNh5iwx1rwY7Len2wTTAQUB8pCzIG7B9kQiC+AarBqR0YQc4Dq0QwB
+hhjEF7jcgOYeiL8g4Qw3BBjyQEGgrwmaAEFAlUD1QF3IhgBjECgIDD0iDQGq
+BKoH6gLqhaRGIAOYEoCCwFgg0hCgSqB6oC6IIUBAuSFUcQkVw4QqsUOVdEKV
+FEutvEOVXEyt8gQOKCzZyADEFOPElPYAYDEc1A==
                   "], "Byte", ColorSpace -> "RGB", ImageResolution -> 144, 
                   Interleaving -> True], "Pressed" -> Image[CompressedData["
 1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
-UFAcikHs/4QAMWqA4CllgA6GvHjx4i0MANmkGvLx48c/f/6g+RooAhQnxpBX
-r179+PEDIv771dNPR7ZAEJANEQTKAtXgMQQoCxH5+ejWg0Kfy6YMyAgoAhSH
-KEA2B80QiBu+3754xYoNzQQIAooDZSHuwWoI0L8QN+AyAW4OxD3w8EE2BBKS
-mL7AREA1kHCGaISkRkhsQkKSoAkQBAlnSLwzgAHlhlDFJVQME2rFDlXSCbVS
-LFXyDhxQmIuRAYXlCUmAiobgB8SU9gD80e8B
+UFAcikHs/4QAMWqA4BllAJchr1+//vjx4/fv3//AAJANFAGKE2PI8+fPv3z5
+gsfZQFmgGjyGvHr16vfv30CRv9++vFrQ/rAk4Ia3DAQB2UARoDhQFqgGqBKr
+IUDzISZ8ObP/pp/CZVMGTAQUB8pCzIG7B9kQiC+AarBqR0YQc4Dq0QwBhhjE
+F7jcgOYeiL8g4Qw3BBjyQAbQ1wRNgCCgSqB6oC5kQ4AxCGQAQ49IQ4AqgeqB
+uoB6IakRyACmBCADGAtEGgJUCVQP1AUxBAgoN4QqLqFimFAldqiSTqiSYqmV
+d6iSi6lVnsABhSUbGQCPs+GAmNIeAMvulj0=
                   "], "Byte", ColorSpace -> "RGB", ImageResolution -> 144, 
                   Interleaving -> True]}, Background -> GrayLevel[0.9], 
               Method -> "Queued", ImageSize -> {All, 20}, Evaluator -> 
@@ -2120,35 +3474,36 @@ AsyncronousResourceInformationUpdates = False,
                   CurrentValue["MouseOver"], {
                   FontColor -> GrayLevel[1], 
                    TaggingRules -> {"ButtonHovering" -> True}}, {
-                  FontColor -> 
-                   RGBColor[0.8274509803921568, 0.20784313725490197`, 0.], 
+                  FontColor -> RGBColor[0.82745, 0.20784, 0.], 
                    TaggingRules -> {"ButtonHovering" -> False}}], {
-                 FontColor -> 
-                  RGBColor[0.9568627450980391, 0.8019607843137255, 0.75], 
+                 FontColor -> RGBColor[0.95686, 0.80196, 0.75], 
                   TaggingRules -> {"ButtonHovering" -> False}}], Evaluator -> 
                 "System"], Appearance -> {"Default" -> Image[CompressedData["
 1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
-UFAcikHs/4QAMWqA4CllgA6GPL5w6v66uRAEZJNqyN3J1VfdxC6bMiAjoAhQ
-nBhDHh3dfT3JGqLrhpfUgwJvCAKyIYJAWaAaPIYAZSEqbwapfjq8GS38gSJA
-cYgCZHPQDIG44XaU3r9fP7HGI1AcKAtxD1ZDgP6FuAGXCXBzIO6Bhw+yIZCQ
-xPQFJgCqgYQzRCMkNUJiExKSBE2AAEg4Q+KdAQwoN4QqLvlPvTChVuxQJZ1Q
-K8VSJe/AAYW5GBlQWJ6QBKhoCH5ATGkPANqBKWU=
+UFAcikHs/4QAMWqA4BllAJchjw5tvzu19maOx1UPSQgCsoEiQHGiDHl4/3Zz
+6mVTBlwIKAtUg8eQR8f3XQtUAaq8as/zYkrFxwPrf718DEFANlAEKA6UBaoB
+qsRuyMP7EBPuZTj8fHYfa+gBxYGyEHPg7kE2BOILoBqCEQExB+QvVEOAIQbx
+BS43oLkH4i9IOMMNAYY8UBDoa4ImQABQJVA9UBeyIcAYBAoCQ49IQ4AqgeqB
+uoB6IakRyACmBKAgMBaINASoEuR9D0mIIUBAuSFUccl/6oUJVWKHKumEKimW
+WnmHOrmYSuUJwkkUlmykA4IR8Z+40h4AAyMnLQ==
                   "], "Byte", ColorSpace -> "RGB", ImageResolution -> 144, 
                   Interleaving -> True], "Hover" -> Image[CompressedData["
 1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
-UFAcikHs/4QAMWqA4CllgA6G3Dt/+uKq+RAEZJNqyIn+urW20su12ZARUAQo
-Towhtw7v2RZtD9G1wYjrgK0wBAHZEEGgLFANHkOAshCVW0x5H0eo/8k2QUZA
-EaA4RAGyOWiGQNyw3ZzvV6YxmgkQBBQHykLcg9UQoH8hbsBlAtwciHvg4YNs
-CCQkMX2BiYBqIOEM0QhJjZDYhIQkQRMgCBLOkHhnAAPKDaGKS6gYJtSKHaqk
-E2qlWKrkHTigMBcjAwrLE5IAFQ3BD4gp7QGdXXDI
+UFAcikHs/4QAMWqA4BllAJchNw/sODmxYXeazzp7OQgCsoEiQHFiDHny4P7h
+2ozl2my4EFAWqAaPIbeP7t/ooQlUuVqP87yn9MMwtU8p+hAEZANFgOJAWaAa
+oEqshgDNh5iwx1rwY7Len2wTTAQUB8pCzIG7B9kQiC+AarBqR0YQc4Dq0QwB
+hhjEF7jcgOYeiL8g4Qw3BBjyQEGgrwmaAEFAlUD1QF3IhgBjECgIDD0iDQGq
+BKoH6gLqhaRGIAOYEoCCwFgg0hCgSqB6oC6IIUBAuSFUcQkVw4QqsUOVdEKV
+FEutvEOVXEyt8gQOKCzZyADEFOPElPYAYDEc1A==
                   "], "Byte", ColorSpace -> "RGB", ImageResolution -> 144, 
                   Interleaving -> True], "Pressed" -> Image[CompressedData["
 1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
-UFAcikHs/4QAMWqA4CllgA6GvHjx4i0MANmkGvLx48c/f/6g+RooAhQnxpBX
-r179+PEDIv771dNPR7ZAEJANEQTKAtXgMQQoCxH5+ejWg0Kfy6YMyAgoAhSH
-KEA2B80QiBu+3754xYoNzQQIAooDZSHuwWoI0L8QN+AyAW4OxD3w8EE2BBKS
-mL7AREA1kHCGaISkRkhsQkKSoAkQBAlnSLwzgAHlhlDFJVQME2rFDlXSCbVS
-LFXyDhxQmIuRAYXlCUmAiobgB8SU9gD80e8B
+UFAcikHs/4QAMWqA4BllAJchr1+//vjx4/fv3//AAJANFAGKE2PI8+fPv3z5
+gsfZQFmgGjyGvHr16vfv30CRv9++vFrQ/rAk4Ia3DAQB2UARoDhQFqgGqBKr
+IUDzISZ8ObP/pp/CZVMGTAQUB8pCzIG7B9kQiC+AarBqR0YQc4Dq0QwBhhjE
+F7jcgOYeiL8g4Qw3BBjyQAbQ1wRNgCCgSqB6oC5kQ4AxCGQAQ49IQ4AqgeqB
+uoB6IakRyACmBCADGAtEGgJUCVQP1AUxBAgoN4QqLqFimFAldqiSTqiSYqmV
+d6iSi6lVnsABhSUbGQCPs+GAmNIeAMvulj0=
                   "], "Byte", ColorSpace -> "RGB", ImageResolution -> 144, 
                   Interleaving -> True]}, Background -> GrayLevel[0.9], 
               Method -> "Queued", ImageSize -> {All, 20}, Evaluator -> 
@@ -2198,35 +3553,36 @@ AsyncronousResourceInformationUpdates = False,
                   CurrentValue["MouseOver"], {
                   FontColor -> GrayLevel[1], 
                    TaggingRules -> {"ButtonHovering" -> True}}, {
-                  FontColor -> 
-                   RGBColor[0.8274509803921568, 0.20784313725490197`, 0.], 
+                  FontColor -> RGBColor[0.82745, 0.20784, 0.], 
                    TaggingRules -> {"ButtonHovering" -> False}}], {
-                 FontColor -> 
-                  RGBColor[0.9568627450980391, 0.8019607843137255, 0.75], 
+                 FontColor -> RGBColor[0.95686, 0.80196, 0.75], 
                   TaggingRules -> {"ButtonHovering" -> False}}], Evaluator -> 
                 "System"], Appearance -> {"Default" -> Image[CompressedData["
 1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
-UFAcikHs/4QAMWqA4CllgA6GPL5w6v66uRAEZJNqyN3J1VfdxC6bMiAjoAhQ
-nBhDHh3dfT3JGqLrhpfUgwJvCAKyIYJAWaAaPIYAZSEqbwapfjq8GS38gSJA
-cYgCZHPQDIG44XaU3r9fP7HGI1AcKAtxD1ZDgP6FuAGXCXBzIO6Bhw+yIZCQ
-xPQFJgCqgYQzRCMkNUJiExKSBE2AAEg4Q+KdAQwoN4QqLvlPvTChVuxQJZ1Q
-K8VSJe/AAYW5GBlQWJ6QBKhoCH5ATGkPANqBKWU=
+UFAcikHs/4QAMWqA4BllAJchjw5tvzu19maOx1UPSQgCsoEiQHGiDHl4/3Zz
+6mVTBlwIKAtUg8eQR8f3XQtUAaq8as/zYkrFxwPrf718DEFANlAEKA6UBaoB
+qsRuyMP7EBPuZTj8fHYfa+gBxYGyEHPg7kE2BOILoBqCEQExB+QvVEOAIQbx
+BS43oLkH4i9IOMMNAYY8UBDoa4ImQABQJVA9UBeyIcAYBAoCQ49IQ4AqgeqB
+uoB6IakRyACmBKAgMBaINASoEuR9D0mIIUBAuSFUccl/6oUJVWKHKumEKimW
+WnmHOrmYSuUJwkkUlmykA4IR8Z+40h4AAyMnLQ==
                   "], "Byte", ColorSpace -> "RGB", ImageResolution -> 144, 
                   Interleaving -> True], "Hover" -> Image[CompressedData["
 1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
-UFAcikHs/4QAMWqA4CllgA6G3Dt/+uKq+RAEZJNqyIn+urW20su12ZARUAQo
-Towhtw7v2RZtD9G1wYjrgK0wBAHZEEGgLFANHkOAshCVW0x5H0eo/8k2QUZA
-EaA4RAGyOWiGQNyw3ZzvV6YxmgkQBBQHykLcg9UQoH8hbsBlAtwciHvg4YNs
-CCQkMX2BiYBqIOEM0QhJjZDYhIQkQRMgCBLOkHhnAAPKDaGKS6gYJtSKHaqk
-E2qlWKrkHTigMBcjAwrLE5IAFQ3BD4gp7QGdXXDI
+UFAcikHs/4QAMWqA4BllAJchNw/sODmxYXeazzp7OQgCsoEiQHFiDHny4P7h
+2ozl2my4EFAWqAaPIbeP7t/ooQlUuVqP87yn9MMwtU8p+hAEZANFgOJAWaAa
+oEqshgDNh5iwx1rwY7Len2wTTAQUB8pCzIG7B9kQiC+AarBqR0YQc4Dq0QwB
+hhjEF7jcgOYeiL8g4Qw3BBjyQEGgrwmaAEFAlUD1QF3IhgBjECgIDD0iDQGq
+BKoH6gLqhaRGIAOYEoCCwFgg0hCgSqB6oC6IIUBAuSFUcQkVw4QqsUOVdEKV
+FEutvEOVXEyt8gQOKCzZyADEFOPElPYAYDEc1A==
                   "], "Byte", ColorSpace -> "RGB", ImageResolution -> 144, 
                   Interleaving -> True], "Pressed" -> Image[CompressedData["
 1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
-UFAcikHs/4QAMWqA4CllgA6GvHjx4i0MANmkGvLx48c/f/6g+RooAhQnxpBX
-r179+PEDIv771dNPR7ZAEJANEQTKAtXgMQQoCxH5+ejWg0Kfy6YMyAgoAhSH
-KEA2B80QiBu+3754xYoNzQQIAooDZSHuwWoI0L8QN+AyAW4OxD3w8EE2BBKS
-mL7AREA1kHCGaISkRkhsQkKSoAkQBAlnSLwzgAHlhlDFJVQME2rFDlXSCbVS
-LFXyDhxQmIuRAYXlCUmAiobgB8SU9gD80e8B
+UFAcikHs/4QAMWqA4BllAJchr1+//vjx4/fv3//AAJANFAGKE2PI8+fPv3z5
+gsfZQFmgGjyGvHr16vfv30CRv9++vFrQ/rAk4Ia3DAQB2UARoDhQFqgGqBKr
+IUDzISZ8ObP/pp/CZVMGTAQUB8pCzIG7B9kQiC+AarBqR0YQc4Dq0QwBhhjE
+F7jcgOYeiL8g4Qw3BBjyQAbQ1wRNgCCgSqB6oC5kQ4AxCGQAQ49IQ4AqgeqB
+uoB6IakRyACmBCADGAtEGgJUCVQP1AUxBAgoN4QqLqFimFAldqiSTqiSYqmV
+d6iSi6lVnsABhSUbGQCPs+GAmNIeAMvulj0=
                   "], "Byte", ColorSpace -> "RGB", ImageResolution -> 144, 
                   Interleaving -> True]}, Background -> GrayLevel[0.9], 
               Method -> "Queued", ImageSize -> {All, 20}, Evaluator -> 
@@ -2276,35 +3632,36 @@ AsyncronousResourceInformationUpdates = False,
                   CurrentValue["MouseOver"], {
                   FontColor -> GrayLevel[1], 
                    TaggingRules -> {"ButtonHovering" -> True}}, {
-                  FontColor -> 
-                   RGBColor[0.8274509803921568, 0.20784313725490197`, 0.], 
+                  FontColor -> RGBColor[0.82745, 0.20784, 0.], 
                    TaggingRules -> {"ButtonHovering" -> False}}], {
-                 FontColor -> 
-                  RGBColor[0.9568627450980391, 0.8019607843137255, 0.75], 
+                 FontColor -> RGBColor[0.95686, 0.80196, 0.75], 
                   TaggingRules -> {"ButtonHovering" -> False}}], Evaluator -> 
                 "System"], Appearance -> {"Default" -> Image[CompressedData["
 1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
-UFAcikHs/4QAMWqA4CllgA6GPL5w6v66uRAEZJNqyN3J1VfdxC6bMiAjoAhQ
-nBhDHh3dfT3JGqLrhpfUgwJvCAKyIYJAWaAaPIYAZSEqbwapfjq8GS38gSJA
-cYgCZHPQDIG44XaU3r9fP7HGI1AcKAtxD1ZDgP6FuAGXCXBzIO6Bhw+yIZCQ
-xPQFJgCqgYQzRCMkNUJiExKSBE2AAEg4Q+KdAQwoN4QqLvlPvTChVuxQJZ1Q
-K8VSJe/AAYW5GBlQWJ6QBKhoCH5ATGkPANqBKWU=
+UFAcikHs/4QAMWqA4BllAJchjw5tvzu19maOx1UPSQgCsoEiQHGiDHl4/3Zz
+6mVTBlwIKAtUg8eQR8f3XQtUAaq8as/zYkrFxwPrf718DEFANlAEKA6UBaoB
+qsRuyMP7EBPuZTj8fHYfa+gBxYGyEHPg7kE2BOILoBqCEQExB+QvVEOAIQbx
+BS43oLkH4i9IOMMNAYY8UBDoa4ImQABQJVA9UBeyIcAYBAoCQ49IQ4AqgeqB
+uoB6IakRyACmBKAgMBaINASoEuR9D0mIIUBAuSFUccl/6oUJVWKHKumEKimW
+WnmHOrmYSuUJwkkUlmykA4IR8Z+40h4AAyMnLQ==
                   "], "Byte", ColorSpace -> "RGB", ImageResolution -> 144, 
                   Interleaving -> True], "Hover" -> Image[CompressedData["
 1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
-UFAcikHs/4QAMWqA4CllgA6G3Dt/+uKq+RAEZJNqyIn+urW20su12ZARUAQo
-Towhtw7v2RZtD9G1wYjrgK0wBAHZEEGgLFANHkOAshCVW0x5H0eo/8k2QUZA
-EaA4RAGyOWiGQNyw3ZzvV6YxmgkQBBQHykLcg9UQoH8hbsBlAtwciHvg4YNs
-CCQkMX2BiYBqIOEM0QhJjZDYhIQkQRMgCBLOkHhnAAPKDaGKS6gYJtSKHaqk
-E2qlWKrkHTigMBcjAwrLE5IAFQ3BD4gp7QGdXXDI
+UFAcikHs/4QAMWqA4BllAJchNw/sODmxYXeazzp7OQgCsoEiQHFiDHny4P7h
+2ozl2my4EFAWqAaPIbeP7t/ooQlUuVqP87yn9MMwtU8p+hAEZANFgOJAWaAa
+oEqshgDNh5iwx1rwY7Len2wTTAQUB8pCzIG7B9kQiC+AarBqR0YQc4Dq0QwB
+hhjEF7jcgOYeiL8g4Qw3BBjyQEGgrwmaAEFAlUD1QF3IhgBjECgIDD0iDQGq
+BKoH6gLqhaRGIAOYEoCCwFgg0hCgSqB6oC6IIUBAuSFUcQkVw4QqsUOVdEKV
+FEutvEOVXEyt8gQOKCzZyADEFOPElPYAYDEc1A==
                   "], "Byte", ColorSpace -> "RGB", ImageResolution -> 144, 
                   Interleaving -> True], "Pressed" -> Image[CompressedData["
 1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
-UFAcikHs/4QAMWqA4CllgA6GvHjx4i0MANmkGvLx48c/f/6g+RooAhQnxpBX
-r179+PEDIv771dNPR7ZAEJANEQTKAtXgMQQoCxH5+ejWg0Kfy6YMyAgoAhSH
-KEA2B80QiBu+3754xYoNzQQIAooDZSHuwWoI0L8QN+AyAW4OxD3w8EE2BBKS
-mL7AREA1kHCGaISkRkhsQkKSoAkQBAlnSLwzgAHlhlDFJVQME2rFDlXSCbVS
-LFXyDhxQmIuRAYXlCUmAiobgB8SU9gD80e8B
+UFAcikHs/4QAMWqA4BllAJchr1+//vjx4/fv3//AAJANFAGKE2PI8+fPv3z5
+gsfZQFmgGjyGvHr16vfv30CRv9++vFrQ/rAk4Ia3DAQB2UARoDhQFqgGqBKr
+IUDzISZ8ObP/pp/CZVMGTAQUB8pCzIG7B9kQiC+AarBqR0YQc4Dq0QwBhhjE
+F7jcgOYeiL8g4Qw3BBjyQAbQ1wRNgCCgSqB6oC5kQ4AxCGQAQ49IQ4AqgeqB
+uoB6IakRyACmBCADGAtEGgJUCVQP1AUxBAgoN4QqLqFimFAldqiSTqiSYqmV
+d6iSi6lVnsABhSUbGQCPs+GAmNIeAMvulj0=
                   "], "Byte", ColorSpace -> "RGB", ImageResolution -> 144, 
                   Interleaving -> True]}, Background -> GrayLevel[0.9], 
               Method -> "Queued", ImageSize -> {All, 20}, Evaluator -> 
@@ -2355,35 +3712,36 @@ AsyncronousResourceInformationUpdates = False,
                    CurrentValue["MouseOver"], {
                    FontColor -> GrayLevel[1], 
                     TaggingRules -> {"ButtonHovering" -> True}}, {
-                   FontColor -> 
-                    RGBColor[0.8274509803921568, 0.20784313725490197`, 0.], 
+                   FontColor -> RGBColor[0.82745, 0.20784, 0.], 
                     TaggingRules -> {"ButtonHovering" -> False}}], {
-                  FontColor -> 
-                   RGBColor[0.9568627450980391, 0.8019607843137255, 0.75], 
+                  FontColor -> RGBColor[0.95686, 0.80196, 0.75], 
                    TaggingRules -> {"ButtonHovering" -> False}}], Evaluator -> 
                  "System"], Appearance -> {"Default" -> Image[CompressedData["
 1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
-UFAcikHs/4QAMWqA4CllgA6GPL5w6v66uRAEZJNqyN3J1VfdxC6bMiAjoAhQ
-nBhDHh3dfT3JGqLrhpfUgwJvCAKyIYJAWaAaPIYAZSEqbwapfjq8GS38gSJA
-cYgCZHPQDIG44XaU3r9fP7HGI1AcKAtxD1ZDgP6FuAGXCXBzIO6Bhw+yIZCQ
-xPQFJgCqgYQzRCMkNUJiExKSBE2AAEg4Q+KdAQwoN4QqLvlPvTChVuxQJZ1Q
-K8VSJe/AAYW5GBlQWJ6QBKhoCH5ATGkPANqBKWU=
+UFAcikHs/4QAMWqA4BllAJchjw5tvzu19maOx1UPSQgCsoEiQHGiDHl4/3Zz
+6mVTBlwIKAtUg8eQR8f3XQtUAaq8as/zYkrFxwPrf718DEFANlAEKA6UBaoB
+qsRuyMP7EBPuZTj8fHYfa+gBxYGyEHPg7kE2BOILoBqCEQExB+QvVEOAIQbx
+BS43oLkH4i9IOMMNAYY8UBDoa4ImQABQJVA9UBeyIcAYBAoCQ49IQ4AqgeqB
+uoB6IakRyACmBKAgMBaINASoEuR9D0mIIUBAuSFUccl/6oUJVWKHKumEKimW
+WnmHOrmYSuUJwkkUlmykA4IR8Z+40h4AAyMnLQ==
                    "], "Byte", ColorSpace -> "RGB", ImageResolution -> 144, 
                    Interleaving -> True], "Hover" -> Image[CompressedData["
 1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
-UFAcikHs/4QAMWqA4CllgA6G3Dt/+uKq+RAEZJNqyIn+urW20su12ZARUAQo
-Towhtw7v2RZtD9G1wYjrgK0wBAHZEEGgLFANHkOAshCVW0x5H0eo/8k2QUZA
-EaA4RAGyOWiGQNyw3ZzvV6YxmgkQBBQHykLcg9UQoH8hbsBlAtwciHvg4YNs
-CCQkMX2BiYBqIOEM0QhJjZDYhIQkQRMgCBLOkHhnAAPKDaGKS6gYJtSKHaqk
-E2qlWKrkHTigMBcjAwrLE5IAFQ3BD4gp7QGdXXDI
+UFAcikHs/4QAMWqA4BllAJchNw/sODmxYXeazzp7OQgCsoEiQHFiDHny4P7h
+2ozl2my4EFAWqAaPIbeP7t/ooQlUuVqP87yn9MMwtU8p+hAEZANFgOJAWaAa
+oEqshgDNh5iwx1rwY7Len2wTTAQUB8pCzIG7B9kQiC+AarBqR0YQc4Dq0QwB
+hhjEF7jcgOYeiL8g4Qw3BBjyQEGgrwmaAEFAlUD1QF3IhgBjECgIDD0iDQGq
+BKoH6gLqhaRGIAOYEoCCwFgg0hCgSqB6oC6IIUBAuSFUcQkVw4QqsUOVdEKV
+FEutvEOVXEyt8gQOKCzZyADEFOPElPYAYDEc1A==
                    "], "Byte", ColorSpace -> "RGB", ImageResolution -> 144, 
                    Interleaving -> True], "Pressed" -> Image[CompressedData["
 1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
-UFAcikHs/4QAMWqA4CllgA6GvHjx4i0MANmkGvLx48c/f/6g+RooAhQnxpBX
-r179+PEDIv771dNPR7ZAEJANEQTKAtXgMQQoCxH5+ejWg0Kfy6YMyAgoAhSH
-KEA2B80QiBu+3754xYoNzQQIAooDZSHuwWoI0L8QN+AyAW4OxD3w8EE2BBKS
-mL7AREA1kHCGaISkRkhsQkKSoAkQBAlnSLwzgAHlhlDFJVQME2rFDlXSCbVS
-LFXyDhxQmIuRAYXlCUmAiobgB8SU9gD80e8B
+UFAcikHs/4QAMWqA4BllAJchr1+//vjx4/fv3//AAJANFAGKE2PI8+fPv3z5
+gsfZQFmgGjyGvHr16vfv30CRv9++vFrQ/rAk4Ia3DAQB2UARoDhQFqgGqBKr
+IUDzISZ8ObP/pp/CZVMGTAQUB8pCzIG7B9kQiC+AarBqR0YQc4Dq0QwBhhjE
+F7jcgOYeiL8g4Qw3BBjyQAbQ1wRNgCCgSqB6oC5kQ4AxCGQAQ49IQ4AqgeqB
+uoB6IakRyACmBCADGAtEGgJUCVQP1AUxBAgoN4QqLqFimFAldqiSTqiSYqmV
+d6iSi6lVnsABhSUbGQCPs+GAmNIeAMvulj0=
                    "], "Byte", ColorSpace -> "RGB", ImageResolution -> 144, 
                    Interleaving -> True]}, Background -> GrayLevel[0.9], 
                Method -> "Queued", ImageSize -> {All, 20}, Evaluator -> 
@@ -2572,35 +3930,36 @@ AsyncronousResourceInformationUpdates = False,
                    CurrentValue["MouseOver"], {
                    FontColor -> GrayLevel[1], 
                     TaggingRules -> {"ButtonHovering" -> True}}, {
-                   FontColor -> 
-                    RGBColor[0.8274509803921568, 0.20784313725490197`, 0.], 
+                   FontColor -> RGBColor[0.82745, 0.20784, 0.], 
                     TaggingRules -> {"ButtonHovering" -> False}}], {
-                  FontColor -> 
-                   RGBColor[0.9568627450980391, 0.8019607843137255, 0.75], 
+                  FontColor -> RGBColor[0.95686, 0.80196, 0.75], 
                    TaggingRules -> {"ButtonHovering" -> False}}], Evaluator -> 
                  "System"], Appearance -> {"Default" -> Image[CompressedData["
 1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
-UFAcikHs/4QAMWqA4CllgA6GPL5w6v66uRAEZJNqyN3J1VfdxC6bMiAjoAhQ
-nBhDHh3dfT3JGqLrhpfUgwJvCAKyIYJAWaAaPIYAZSEqbwapfjq8GS38gSJA
-cYgCZHPQDIG44XaU3r9fP7HGI1AcKAtxD1ZDgP6FuAGXCXBzIO6Bhw+yIZCQ
-xPQFJgCqgYQzRCMkNUJiExKSBE2AAEg4Q+KdAQwoN4QqLvlPvTChVuxQJZ1Q
-K8VSJe/AAYW5GBlQWJ6QBKhoCH5ATGkPANqBKWU=
+UFAcikHs/4QAMWqA4BllAJchjw5tvzu19maOx1UPSQgCsoEiQHGiDHl4/3Zz
+6mVTBlwIKAtUg8eQR8f3XQtUAaq8as/zYkrFxwPrf718DEFANlAEKA6UBaoB
+qsRuyMP7EBPuZTj8fHYfa+gBxYGyEHPg7kE2BOILoBqCEQExB+QvVEOAIQbx
+BS43oLkH4i9IOMMNAYY8UBDoa4ImQABQJVA9UBeyIcAYBAoCQ49IQ4AqgeqB
+uoB6IakRyACmBKAgMBaINASoEuR9D0mIIUBAuSFUccl/6oUJVWKHKumEKimW
+WnmHOrmYSuUJwkkUlmykA4IR8Z+40h4AAyMnLQ==
                    "], "Byte", ColorSpace -> "RGB", ImageResolution -> 144, 
                    Interleaving -> True], "Hover" -> Image[CompressedData["
 1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
-UFAcikHs/4QAMWqA4CllgA6G3Dt/+uKq+RAEZJNqyIn+urW20su12ZARUAQo
-Towhtw7v2RZtD9G1wYjrgK0wBAHZEEGgLFANHkOAshCVW0x5H0eo/8k2QUZA
-EaA4RAGyOWiGQNyw3ZzvV6YxmgkQBBQHykLcg9UQoH8hbsBlAtwciHvg4YNs
-CCQkMX2BiYBqIOEM0QhJjZDYhIQkQRMgCBLOkHhnAAPKDaGKS6gYJtSKHaqk
-E2qlWKrkHTigMBcjAwrLE5IAFQ3BD4gp7QGdXXDI
+UFAcikHs/4QAMWqA4BllAJchNw/sODmxYXeazzp7OQgCsoEiQHFiDHny4P7h
+2ozl2my4EFAWqAaPIbeP7t/ooQlUuVqP87yn9MMwtU8p+hAEZANFgOJAWaAa
+oEqshgDNh5iwx1rwY7Len2wTTAQUB8pCzIG7B9kQiC+AarBqR0YQc4Dq0QwB
+hhjEF7jcgOYeiL8g4Qw3BBjyQEGgrwmaAEFAlUD1QF3IhgBjECgIDD0iDQGq
+BKoH6gLqhaRGIAOYEoCCwFgg0hCgSqB6oC6IIUBAuSFUcQkVw4QqsUOVdEKV
+FEutvEOVXEyt8gQOKCzZyADEFOPElPYAYDEc1A==
                    "], "Byte", ColorSpace -> "RGB", ImageResolution -> 144, 
                    Interleaving -> True], "Pressed" -> Image[CompressedData["
 1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
-UFAcikHs/4QAMWqA4CllgA6GvHjx4i0MANmkGvLx48c/f/6g+RooAhQnxpBX
-r179+PEDIv771dNPR7ZAEJANEQTKAtXgMQQoCxH5+ejWg0Kfy6YMyAgoAhSH
-KEA2B80QiBu+3754xYoNzQQIAooDZSHuwWoI0L8QN+AyAW4OxD3w8EE2BBKS
-mL7AREA1kHCGaISkRkhsQkKSoAkQBAlnSLwzgAHlhlDFJVQME2rFDlXSCbVS
-LFXyDhxQmIuRAYXlCUmAiobgB8SU9gD80e8B
+UFAcikHs/4QAMWqA4BllAJchr1+//vjx4/fv3//AAJANFAGKE2PI8+fPv3z5
+gsfZQFmgGjyGvHr16vfv30CRv9++vFrQ/rAk4Ia3DAQB2UARoDhQFqgGqBKr
+IUDzISZ8ObP/pp/CZVMGTAQUB8pCzIG7B9kQiC+AarBqR0YQc4Dq0QwBhhjE
+F7jcgOYeiL8g4Qw3BBjyQAbQ1wRNgCCgSqB6oC5kQ4AxCGQAQ49IQ4AqgeqB
+uoB6IakRyACmBCADGAtEGgJUCVQP1AUxBAgoN4QqLqFimFAldqiSTqiSYqmV
+d6iSi6lVnsABhSUbGQCPs+GAmNIeAMvulj0=
                    "], "Byte", ColorSpace -> "RGB", ImageResolution -> 144, 
                    Interleaving -> True]}, Background -> GrayLevel[0.9], 
                Method -> "Queued", ImageSize -> {All, 20}, Evaluator -> 
@@ -2613,7 +3972,6 @@ LFXyDhxQmIuRAYXlCUmAiobgB8SU9gD80e8B
                 Quiet[
                  
                  Block[{$ContextPath = RSNB`$cp$, 
-                   
                    ResourceSystemClient`$\
 AsyncronousResourceInformationUpdates = False, 
                    DefinitionNotebookClient`$ButtonCodeID = None}, 
@@ -2717,17 +4075,16 @@ AsyncronousResourceInformationUpdates = False,
             TagBox[
              GridBox[{{
                 GraphicsBox[{
-                  Thickness[0.022222222222222223`], {
+                  Thickness[0.022222], {
                    FaceForm[{
-                    RGBColor[0.87451, 0.278431, 0.03137260000000001], 
+                    RGBColor[0.87451, 0.27843, 0.031373], 
                     Opacity[1.]}], 
                    
                    FilledCurveBox[{{{1, 4, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 
-                    3}}}, {{{45., 22.5}, {45., 10.073999999999998`}, {34.926, 
-                    0.}, {22.5, 0.}, {10.074, 0.}, {0., 
-                    10.073999999999998`}, {0., 22.5}, {0., 34.926}, {10.074, 
-                    45.}, {22.5, 45.}, {34.926, 45.}, {45., 34.926}, {45., 
-                    22.5}}}]}, {
+                    3}}}, {{{45., 22.5}, {45., 10.074}, {34.926, 0.}, {22.5, 
+                    0.}, {10.074, 0.}, {0., 10.074}, {0., 22.5}, {0., 
+                    34.926}, {10.074, 45.}, {22.5, 45.}, {34.926, 45.}, {45., 
+                    34.926}, {45., 22.5}}}]}, {
                    FaceForm[{
                     RGBColor[1., 1., 1.], 
                     Opacity[1.]}], 
@@ -2742,41 +4099,36 @@ AsyncronousResourceInformationUpdates = False,
                     3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 
                     0}, {1, 3, 3}}, {{0, 2, 0}, {1, 3, 3}, {0, 1, 0}, {1, 3, 
                     3}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}}}, {CompressedData["
-1:eJxTTMoPSmViYGAwAWIQLcESxqe7SdlhqnN3zvPblg4w/omyffOl/K0cEp9e
-ULq9U9lhT8lkCZZrVg6VL9UMOd4oO1SLrHN/GGXtcKUCKOCh4sDDpN0udtPa
-4fnvlR8v8ao6ZIE12ELMrVZzmAIymNfOAWj43PfpGg45YIV2Dguk9O+qsGlB
-9M+0h9gjpgOxh8fBYePc98uPees5MICAggNE/TF9B6Bl574rO0DcMcsAwmd2
-cNCM6T/0VcPQAeQsjh6oeWWGEPt97R3UDTnWyMwyhKh7Yefw5S/QB22GEHe1
-2zlIg5yTaAh3by7InUKGDmBnLrR1cOkGudzAYZHrts9/Q2wdHi+dfUShwMBh
-Q1HGxLcytg5BO+RaXwsaQN1r6/BdA2jRVn1oeNk6aIEcWq4HcccvWwfTuF2e
-PEy6UPPtHIC+CH68VBvOP70QaNFeLTg/T6j5wKlELYdPl3yTBCLsIOGkowVx
-71tbhycg93zQdAjonZ4ndNgGzgern2ENVw90TZVInhUkfqy1IO65ZQl3L4wP
-iW99B/NOx4SnEyzh4Q+W32XhcBUc0PoQd7dawM1D568H2cdnCOd/A9nzVc/h
-I9hdWg4ZoIg6oueQD/Kfoh40nSD4fkDfWpboQOw7oYDBh6mHxIcy3DxYek4A
-peOfCD7MPTA+zL0yUSnW9/sV4Hxw/DgpQOL7igUkfi8qwsMHAHSDTZ8=
-                    "], {{19.051000000000002`, 14.242}, {19.051000000000002`, 
-                    27.594}, {23.828, 27.594}, {23.828, 26.543}, {21.426, 
-                    26.308999999999997`}, {21.375, 26.258000000000003`}, {
-                    21.375, 24.219}, {21.375, 17.535000000000004`}, {21.375, 
-                    15.602}, {21.426, 15.547}, {23.828, 
-                    15.315999999999999`}, {23.828, 14.242}}, {{24.578, 
-                    18.75}, {24.578, 23.078000000000003`}, {24.578, 23.539}, {
-                    24.953, 23.914}, {25.418, 23.91}, {29.746, 23.91}, {
-                    30.203, 23.91}, {30.578, 23.539}, {30.578, 
-                    23.078000000000003`}, {30.578, 18.75}, {
-                    30.581999999999997`, 18.288999999999998`}, {30.207, 
+1:eJxTTMoPSmViYGAwAWIQLckSxqe7SdlhmnN3zvPblg4w/smyffOl/K0cEp5e
+ULq9U9lhT8lkCZZrVg6VL9UMOd4oO1SLrHN/GGXtcLUCKOCh4sDDpN0udtPa
+4fnvlR8v8ao6ZIE12ELMrVZzAHLC+HjtHICGz32fruGQC1Zo57BASv+uCpsW
+RP9Me4g9YjoQe3gcHICqlx/z1nNgAAEFB4j6Y/oOQMvOfVd2gLhjlgGEz+zg
+oBnTf+irhiFEfw/UvDJDiP2+9g7qhhxrZGYZQtS9sHP48vdKxcs2Q4i72u0c
+pEHOSTSEuxfsTiFDiPhCWwcXoHd+rzRwWOS67fPfEFuHx0tnH1EoMHDYUJQx
+8a2MrUPQDrnW14IGUPfaOnzTAFq0VR8aXrYOoFA6V64HcccvWwfTuF2ePEy6
+UPPtHIC+CH68VBvOP70QaNFeLTg/X6j5wKlELYdPl3yTBCLsIP7U0YK49y3U
+PR80HQJ6p+cJHbaB88HqZ1jD1QNdUyWSZwWJH2stiHtuWcLdC+ND4lvfwbzT
+MeHpBEt4+IPld1lA4p9DH+LuVgu4eeh8sH18hnA+2J6velB3aUHSyxE9iP8U
+9aDpBMH3A/rWskQHYt8JBQw+TD0kPpTh5sHSMzgd/0TwYe6B8WHulY1Ksb7f
+rwDng+PHSQES31csIPF7UREePgCOg02w
+                    "], {{19.051, 14.242}, {19.051, 27.594}, {23.828, 
+                    27.594}, {23.828, 26.543}, {21.426, 26.309}, {21.375, 
+                    26.258}, {21.375, 24.219}, {21.375, 17.535}, {21.375, 
+                    15.602}, {21.426, 15.547}, {23.828, 15.316}, {23.828, 
+                    14.242}}, {{24.578, 18.75}, {24.578, 23.078}, {24.578, 
+                    23.539}, {24.953, 23.914}, {25.418, 23.91}, {29.746, 
+                    23.91}, {30.203, 23.91}, {30.578, 23.539}, {30.578, 
+                    23.078}, {30.578, 18.75}, {30.582, 18.289}, {30.207, 
                     17.91}, {29.746, 17.91}, {25.418, 17.91}, {24.953, 
                     17.906}, {24.574, 18.285}, {24.578, 18.75}}, {{31.328, 
-                    14.242}, {31.328, 15.315999999999999`}, {33.684, 
-                    15.539000000000001`}, {33.789, 15.602}, {33.789, 
-                    17.641}, {33.789, 24.188}, {33.789, 26.227}, {33.684, 
-                    26.281}, {31.328, 26.512000000000004`}, {31.328, 
-                    27.586}, {36.113, 27.586}, {36.113, 
-                    14.234000000000002`}}}]}}, {
+                    14.242}, {31.328, 15.316}, {33.684, 15.539}, {33.789, 
+                    15.602}, {33.789, 17.641}, {33.789, 24.188}, {33.789, 
+                    26.227}, {33.684, 26.281}, {31.328, 26.512}, {31.328, 
+                    27.586}, {36.113, 27.586}, {36.113, 14.234}}}]}}, {
                  ImageSize -> {Automatic, 32}, 
                   ImagePadding -> {{5, 0}, {0, 0}}, BaselinePosition -> 
                   Scaled[0.25], AspectRatio -> Automatic, Background -> 
-                  RGBColor[0.988235, 0.419608, 0.203922], 
+                  RGBColor[0.98824, 0.41961, 0.20392], 
                   ImageSize -> {45., 45.}, 
                   PlotRange -> {{0., 45.}, {0., 45.}}}], 
                 StyleBox[
@@ -2822,10 +4174,10 @@ peOfCD7MPTA+zL0yUSnW9/sV4Hxw/DgpQOL7igUkfi8qwsMHAHSDTZ8=
                "\"Open Sample\"", 
                 "\"View a completed sample definition notebook\""}, 
                "PrettyTooltipTemplate"], Annotation[
-              DefinitionNotebookClient`$ButtonCodeID = 4393071033038384034; 
-               DefinitionNotebookClient`$ClickedButton = "Open Sample"; 
-               DefinitionNotebookClient`ViewExampleNotebook[
-                 ButtonNotebook[]], 
+              DefinitionNotebookClient`$ButtonCodeID = 4393071033038384034; (
+                DefinitionNotebookClient`$ClickedButton = "Open Sample"; 
+                DefinitionNotebookClient`ViewExampleNotebook[
+                  ButtonNotebook[]]), 
                DefinitionNotebookClient`ButtonCodeID[4393071033038384034]]& , 
               "\"View a completed sample definition notebook\"", False}, 
              "OrangeButtonTemplate"], 
@@ -2835,10 +4187,10 @@ peOfCD7MPTA+zL0yUSnW9/sV4Hxw/DgpQOL7igUkfi8qwsMHAHSDTZ8=
                "\"Style Guidelines\"", 
                 "\"View general guidelines for authoring resource \
 functions\""}, "PrettyTooltipTemplate"], Annotation[
-              DefinitionNotebookClient`$ButtonCodeID = 5906117565281445171; 
-               DefinitionNotebookClient`$ClickedButton = "Style Guidelines"; 
-               DefinitionNotebookClient`ViewStyleGuidelines[
-                 ButtonNotebook[]], 
+              DefinitionNotebookClient`$ButtonCodeID = 5906117565281445171; (
+                DefinitionNotebookClient`$ClickedButton = "Style Guidelines"; 
+                DefinitionNotebookClient`ViewStyleGuidelines[
+                  ButtonNotebook[]]), 
                DefinitionNotebookClient`ButtonCodeID[5906117565281445171]]& , 
               "\"View general guidelines for authoring resource functions\"", 
               False}, "OrangeButtonTemplate"], 
@@ -2870,10 +4222,10 @@ functions\""}, "PrettyTooltipTemplate"], Annotation[
                   GridBoxSpacings -> {"Columns" -> {{0.35}}}], "Grid"], 
                 "\"Toggle documentation toolbar\""}, "PrettyTooltipTemplate"],
                Annotation[
-              DefinitionNotebookClient`$ButtonCodeID = 5074018684552945401; 
-               DefinitionNotebookClient`$ClickedButton = "Tools"; 
-               DefinitionNotebookClient`ToggleToolbar[
-                 ButtonNotebook[]], 
+              DefinitionNotebookClient`$ButtonCodeID = 5074018684552945401; (
+                DefinitionNotebookClient`$ClickedButton = "Tools"; 
+                DefinitionNotebookClient`ToggleToolbar[
+                  ButtonNotebook[]]), 
                DefinitionNotebookClient`ButtonCodeID[5074018684552945401]]& , 
               "\"Toggle documentation toolbar\"", False}, 
              "OrangeButtonTemplate"], 
@@ -2887,16 +4239,16 @@ functions\""}, "PrettyTooltipTemplate"], Annotation[
               GridBoxItemSize -> {
                "Columns" -> {{Automatic}}, "Rows" -> {{2}}}, 
               GridBoxSpacings -> {"Columns" -> {{0.5}}}, FrameStyle -> 
-              RGBColor[0.994118, 0.709804, 0.601961]], "Grid"], 
+              RGBColor[0.99412, 0.7098, 0.60196]], "Grid"], 
             TemplateBox[{
               
               TemplateBox[{
                "\"Check\"", "\"Check notebook for potential errors\""}, 
                "PrettyTooltipTemplate"], Annotation[
-              DefinitionNotebookClient`$ButtonCodeID = 7891204313296928191; 
-               DefinitionNotebookClient`$ClickedButton = "Check"; 
-               DefinitionNotebookClient`CheckDefinitionNotebook[
-                 ButtonNotebook[]], 
+              DefinitionNotebookClient`$ButtonCodeID = 7891204313296928191; (
+                DefinitionNotebookClient`$ClickedButton = "Check"; 
+                DefinitionNotebookClient`CheckDefinitionNotebook[
+                  ButtonNotebook[]]), 
                DefinitionNotebookClient`ButtonCodeID[7891204313296928191]]& , 
               "\"Check notebook for potential errors\"", False}, 
              "OrangeButtonTemplate"], 
@@ -2904,10 +4256,10 @@ functions\""}, "PrettyTooltipTemplate"], Annotation[
               
               TemplateBox[{"\"Preview\"", "\"Generate a preview notebook\""}, 
                "PrettyTooltipTemplate"], Annotation[
-              DefinitionNotebookClient`$ButtonCodeID = 4299709568580201021; 
-               DefinitionNotebookClient`$ClickedButton = "Preview"; 
-               DefinitionNotebookClient`PreviewResource[
-                 ButtonNotebook[], "Notebook"], 
+              DefinitionNotebookClient`$ButtonCodeID = 4299709568580201021; (
+                DefinitionNotebookClient`$ClickedButton = "Preview"; 
+                DefinitionNotebookClient`PreviewResource[
+                  ButtonNotebook[], "Notebook"]), 
                DefinitionNotebookClient`ButtonCodeID[4299709568580201021]]& , 
               "\"Generate a preview notebook\"", True}, 
              "OrangeButtonTemplate"], 
@@ -3132,18 +4484,18 @@ eU8aPfbS9kxawAvxnrSCx3c3XzbS6JX4RFrAS34B53ckaw==
                     GridBoxSpacings -> {
                     "Columns" -> {{0}}, "ColumnsIndexed" -> {2 -> 0.5}, 
                     "Rows" -> {{0}}}], "Grid"], 
-                    "\"Submit changes to update your resource submission\""}, 
+                    "\"Submit changes to update your function submission\""}, 
                    "PrettyTooltipTemplate"], Annotation[
                   DefinitionNotebookClient`$ButtonCodeID = 
-                    3196298050911436087; 
-                   DefinitionNotebookClient`$ClickedButton = "SubmitUpdate"; 
-                   With[{RSNB`nb = ButtonNotebook[]}, 
+                    3196298050911436087; (
+                    DefinitionNotebookClient`$ClickedButton = "SubmitUpdate"; 
+                    With[{RSNB`nb = ButtonNotebook[]}, 
                     DefinitionNotebookClient`DisplayStripe[RSNB`nb, 
                     DefinitionNotebookClient`SubmitRepositoryUpdate[RSNB`nb], 
-                    "ShowProgress" -> True]], 
+                    "ShowProgress" -> True]]), 
                    DefinitionNotebookClient`ButtonCodeID[
                    3196298050911436087]]& , 
-                  "\"Submit changes to update your resource submission\"", 
+                  "\"Submit changes to update your function submission\"", 
                   True}, "OrangeButtonTemplate"]], 
                RawBoxes[
                 TemplateBox[{
@@ -3201,12 +4553,12 @@ eU8aPfbS9kxawAvxnrSCx3c3XzbS6JX4RFrAS34B53ckaw==
                     "\"Submit your function to the Wolfram Function \
 Repository\""}, "PrettyTooltipTemplate"], Annotation[
                   DefinitionNotebookClient`$ButtonCodeID = 
-                    3704832848557640569; 
-                   DefinitionNotebookClient`$ClickedButton = "Submit"; 
-                   With[{RSNB`nb = ButtonNotebook[]}, 
+                    3704832848557640569; (
+                    DefinitionNotebookClient`$ClickedButton = "Submit"; 
+                    With[{RSNB`nb = ButtonNotebook[]}, 
                     DefinitionNotebookClient`DisplayStripe[RSNB`nb, 
                     DefinitionNotebookClient`SubmitRepository[RSNB`nb], 
-                    "ShowProgress" -> True]], 
+                    "ShowProgress" -> True]]), 
                    DefinitionNotebookClient`ButtonCodeID[
                    3704832848557640569]]& , 
                   "\"Submit your function to the Wolfram Function \
@@ -3216,19 +4568,19 @@ Repository\"", True}, "OrangeButtonTemplate"]]], StandardForm], Evaluator ->
            "Columns" -> {{Left}}, "ColumnsIndexed" -> {-1 -> Right}, 
             "Rows" -> {{Center}}}, AutoDelete -> False, 
           GridBoxBackground -> {"Columns" -> {{None}}, "Rows" -> {
-              RGBColor[0.988235, 0.419608, 0.203922], 
-              RGBColor[0.921569, 0.341176, 0.105882]}}, 
+              RGBColor[0.98824, 0.41961, 0.20392], 
+              RGBColor[0.92157, 0.34118, 0.10588]}}, 
           GridBoxFrame -> {
            "Columns" -> False, 
             "RowsIndexed" -> {
-             1 -> RGBColor[0.988235, 0.419608, 0.203922], 2 -> 
-              RGBColor[0.921569, 0.341176, 0.105882]}}, 
+             1 -> RGBColor[0.98824, 0.41961, 0.20392], 2 -> 
+              RGBColor[0.92157, 0.34118, 0.10588]}}, 
           GridBoxItemSize -> {
            "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
           GridBoxSpacings -> {
            "Columns" -> {5, {0.9}, 5}, 
             "RowsIndexed" -> {1 -> 1.1, 2 -> 1.3, 3 -> 0.25}}, FrameStyle -> 
-          RGBColor[0.988235, 0.419608, 0.203922]], "Grid"], 
+          RGBColor[0.98824, 0.41961, 0.20392]], "Grid"], 
         ButtonBoxOptions -> {Enabled -> Dynamic[
             Not[
              TrueQ[DefinitionNotebookClient`$ButtonsDisabled]], 
@@ -3240,16 +4592,16 @@ Repository\"", True}, "OrangeButtonTemplate"]]], StandardForm], Evaluator ->
         GridBox[{{#, 
            TemplateBox[{
              GraphicsBox[{
-               Thickness[0.022222222222222223`], {
+               Thickness[0.022222], {
                 FaceForm[{
-                  RGBColor[0.87451, 0.278431, 0.03137260000000001], 
+                  RGBColor[0.87451, 0.27843, 0.031373], 
                   Opacity[1.]}], 
                 
                 FilledCurveBox[{{{1, 4, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 
-                 3}}}, {{{45., 22.5}, {45., 10.073999999999998`}, {34.926, 
-                 0.}, {22.5, 0.}, {10.074, 0.}, {0., 10.073999999999998`}, {
-                 0., 22.5}, {0., 34.926}, {10.074, 45.}, {22.5, 45.}, {34.926,
-                  45.}, {45., 34.926}, {45., 22.5}}}]}, {
+                 3}}}, {{{45., 22.5}, {45., 10.074}, {34.926, 0.}, {22.5, 
+                 0.}, {10.074, 0.}, {0., 10.074}, {0., 22.5}, {0., 34.926}, {
+                 10.074, 45.}, {22.5, 45.}, {34.926, 45.}, {45., 34.926}, {
+                 45., 22.5}}}]}, {
                 FaceForm[{
                   RGBColor[1., 1., 1.], 
                   Opacity[1.]}], 
@@ -3264,35 +4616,32 @@ Repository\"", True}, "OrangeButtonTemplate"]]], StandardForm], Evaluator ->
                   3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}, {1, 3, 3}}, {{0, 2, 
                   0}, {1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}, {0, 1, 0}, {
                   0, 1, 0}}}, {CompressedData["
-1:eJxTTMoPSmViYGAwAWIQLcESxqe7SdlhqnN3zvPblg4w/omyffOl/K0cEp9e
-ULq9U9lhT8lkCZZrVg6VL9UMOd4oO1SLrHN/GGXtcKUCKOCh4sDDpN0udtPa
-4fnvlR8v8ao6ZIE12ELMrVZzmAIymNfOAWj43PfpGg45YIV2Dguk9O+qsGlB
-9M+0h9gjpgOxh8fBYePc98uPees5MICAggNE/TF9B6Bl574rO0DcMcsAwmd2
-cNCM6T/0VcPQAeQsjh6oeWWGEPt97R3UDTnWyMwyhKh7Yefw5S/QB22GEHe1
-2zlIg5yTaAh3by7InUKGDmBnLrR1cOkGudzAYZHrts9/Q2wdHi+dfUShwMBh
-Q1HGxLcytg5BO+RaXwsaQN1r6/BdA2jRVn1oeNk6aIEcWq4HcccvWwfTuF2e
-PEy6UPPtHIC+CH68VBvOP70QaNFeLTg/T6j5wKlELYdPl3yTBCLsIOGkowVx
-71tbhycg93zQdAjonZ4ndNgGzgern2ENVw90TZVInhUkfqy1IO65ZQl3L4wP
-iW99B/NOx4SnEyzh4Q+W32XhcBUc0PoQd7dawM1D568H2cdnCOd/A9nzVc/h
-I9hdWg4ZoIg6oueQD/Kfoh40nSD4fkDfWpboQOw7oYDBh6mHxIcy3DxYek4A
-peOfCD7MPTA+zL0yUSnW9/sV4Hxw/DgpQOL7igUkfi8qwsMHAHSDTZ8=
-                  "], {{19.051000000000002`, 14.242}, {19.051000000000002`, 
-                  27.594}, {23.828, 27.594}, {23.828, 26.543}, {21.426, 
-                  26.308999999999997`}, {21.375, 26.258000000000003`}, {
-                  21.375, 24.219}, {21.375, 17.535000000000004`}, {21.375, 
-                  15.602}, {21.426, 15.547}, {23.828, 15.315999999999999`}, {
-                  23.828, 14.242}}, {{24.578, 18.75}, {24.578, 
-                  23.078000000000003`}, {24.578, 23.539}, {24.953, 23.914}, {
-                  25.418, 23.91}, {29.746, 23.91}, {30.203, 23.91}, {30.578, 
-                  23.539}, {30.578, 23.078000000000003`}, {30.578, 18.75}, {
-                  30.581999999999997`, 18.288999999999998`}, {30.207, 
-                  17.91}, {29.746, 17.91}, {25.418, 17.91}, {24.953, 
-                  17.906}, {24.574, 18.285}, {24.578, 18.75}}, {{31.328, 
-                  14.242}, {31.328, 15.315999999999999`}, {33.684, 
-                  15.539000000000001`}, {33.789, 15.602}, {33.789, 17.641}, {
-                  33.789, 24.188}, {33.789, 26.227}, {33.684, 26.281}, {
-                  31.328, 26.512000000000004`}, {31.328, 27.586}, {36.113, 
-                  27.586}, {36.113, 14.234000000000002`}}}]}}, {
+1:eJxTTMoPSmViYGAwAWIQLckSxqe7SdlhmnN3zvPblg4w/smyffOl/K0cEp5e
+ULq9U9lhT8lkCZZrVg6VL9UMOd4oO1SLrHN/GGXtcLUCKOCh4sDDpN0udtPa
+4fnvlR8v8ao6ZIE12ELMrVZzAHLC+HjtHICGz32fruGQC1Zo57BASv+uCpsW
+RP9Me4g9YjoQe3gcHICqlx/z1nNgAAEFB4j6Y/oOQMvOfVd2gLhjlgGEz+zg
+oBnTf+irhiFEfw/UvDJDiP2+9g7qhhxrZGYZQtS9sHP48vdKxcs2Q4i72u0c
+pEHOSTSEuxfsTiFDiPhCWwcXoHd+rzRwWOS67fPfEFuHx0tnH1EoMHDYUJQx
+8a2MrUPQDrnW14IGUPfaOnzTAFq0VR8aXrYOoFA6V64HcccvWwfTuF2ePEy6
+UPPtHIC+CH68VBvOP70QaNFeLTg/X6j5wKlELYdPl3yTBCLsIP7U0YK49y3U
+PR80HQJ6p+cJHbaB88HqZ1jD1QNdUyWSZwWJH2stiHtuWcLdC+ND4lvfwbzT
+MeHpBEt4+IPld1lA4p9DH+LuVgu4eeh8sH18hnA+2J6velB3aUHSyxE9iP8U
+9aDpBMH3A/rWskQHYt8JBQw+TD0kPpTh5sHSMzgd/0TwYe6B8WHulY1Ksb7f
+rwDng+PHSQES31csIPF7UREePgCOg02w
+                  "], {{19.051, 14.242}, {19.051, 27.594}, {23.828, 27.594}, {
+                  23.828, 26.543}, {21.426, 26.309}, {21.375, 26.258}, {
+                  21.375, 24.219}, {21.375, 17.535}, {21.375, 15.602}, {
+                  21.426, 15.547}, {23.828, 15.316}, {23.828, 14.242}}, {{
+                  24.578, 18.75}, {24.578, 23.078}, {24.578, 23.539}, {24.953,
+                   23.914}, {25.418, 23.91}, {29.746, 23.91}, {30.203, 
+                  23.91}, {30.578, 23.539}, {30.578, 23.078}, {30.578, 
+                  18.75}, {30.582, 18.289}, {30.207, 17.91}, {29.746, 
+                  17.91}, {25.418, 17.91}, {24.953, 17.906}, {24.574, 
+                  18.285}, {24.578, 18.75}}, {{31.328, 14.242}, {31.328, 
+                  15.316}, {33.684, 15.539}, {33.789, 15.602}, {33.789, 
+                  17.641}, {33.789, 24.188}, {33.789, 26.227}, {33.684, 
+                  26.281}, {31.328, 26.512}, {31.328, 27.586}, {36.113, 
+                  27.586}, {36.113, 14.234}}}]}}, {
               ImageSize -> 12, AspectRatio -> Automatic, Background -> None, 
                ImageSize -> {45., 45.}, PlotRange -> {{0., 45.}, {0., 45.}}}],
               "Wolfram Function Repository Reviewer"}, 
@@ -3332,8 +4681,8 @@ peOfCD7MPTA+zL0yUSnW9/sV4Hxw/DgpQOL7igUkfi8qwsMHAHSDTZ8=
             FEPrivate`If[
              CurrentValue[Enabled], 
              GrayLevel[1], 
-             RGBColor[0.9568627450980391, 0.8019607843137255, 0.75]], 
-            Evaluator -> "System"], StripOnInput -> False], ButtonFunction :> 
+             RGBColor[0.95686, 0.80196, 0.75]], Evaluator -> "System"], 
+          StripOnInput -> False], ButtonFunction :> 
          With[{RSNB`nb$ = ButtonNotebook[]}, 
            If[#4, CurrentValue[RSNB`nb$, {TaggingRules, "StatusMessage"}] = 
              ProgressIndicator[Appearance -> "Necklace"]]; 
@@ -3362,31 +4711,34 @@ peOfCD7MPTA+zL0yUSnW9/sV4Hxw/DgpQOL7igUkfi8qwsMHAHSDTZ8=
            Null], FrameMargins -> {{5, 5}, {0, 0}}, 
          Appearance -> {"Default" -> Image[CompressedData["
 1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
-UFAcikHs/4QAMWqA4HW4NCWIDoa8CJZ47CsMQUA2qYY8cOe/Zsl82ZQBGQFF
-gOLEGPI8UOymHTtE1xUkE+BsoCxQDR5DgLJotuNCyOagGQJ3A0EEVInVEKB/
-iTQBguDhg2wIZkjiR0D1EI2Q1AiJTbSQxI8gKiHxzgAGlBtCFZdQMUyoFTtU
-SSfUSrFUyTvUysVULE9IQlQ0BD8gprQHAOYEDp4=
+UFAcikHs/4QAMWqA4HW4NCUIlyHPAkQfuPPftue4ZskMQUA2UAQoTpQhYVJ3
+XXgumzLgQkBZoBo8hjwLFLtuzQJSbIbDELA4UA1QJXZDwqSgJhCBgCrh7kE2
+BL8vsPsL1RBgiOHzBQ5/QcIZbggw5ElyBgQBdSEbAoxBMgwB6gLqhaRGIAOY
+EsgwBKgLYggQUG4IVVxCxTChSuxQJZ1QJcVSK+9QJxdTqTyhWslGbhmLHxBT
+2gMAMUz3Hw==
              "], "Byte", ColorSpace -> "RGB", ImageResolution -> 144, 
              Interleaving -> True], "Hover" -> Image[CompressedData["
 1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
-UFAcikHs/4QAMWqA4HW4NCWIDoY8DpK86ikKQUA2qYacdhZaZ8CxXJsNGQFF
-gOLEGHLfX3yHOTeadmQElAWqwWMIUBaPdmSEbA6aIRA3rMCrfQXMPVgNAfqX
-SGdAEDx8kA3BDEn8CKgeohGSGiGxSZIJEASJdwYwoNwQqriEimFCrdihSjqh
-VoqlSt6hVi6mYnlCEqKiIfgBMaU9AAiH5q8=
+UFAcikHs/4QAMWqA4HW4NCUIlyF3/cTOOAvtteRZb8ABQUA2UAQoTowhL0Ol
+jtrxL9dmw4WAskA1eAy57y++yYgTjwkQBFQDVInVEKD5xJgANwfuHmRD8PsC
+q7/QDAGGGEkmQBAknOGGAEOeDEOAupANAcYgGYYAdQH1QlIjkAFMCWQYAtQF
+MQQIKDeEKi6hYphQJXaokk6okmKplXeokoupVZ5Qq2Qju4zFD4gp7QFpR8IT
+
              "], "Byte", ColorSpace -> "RGB", ImageResolution -> 144, 
              Interleaving -> True], "Pressed" -> Image[CompressedData["
 1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
-UFAcikHs/4QAMWqA4HW4NCWIDoa8zTb72JMMQUA2qYZ8Wdr69/1LNF8DRYDi
-xBjyvsz115UjEPFvL589PbgNgoBsiCBQFqgGjyFAWYjIpwe3D2YFLNdmQ0ZA
-EaA4RAGyOWiGQNzw/ubllQY8aCZAEFAcKAtxD1ZDgP6FuAGXCXBzIO6Bhw+y
-IZCQxPQFJgKqgYQzRCMkNUJiExKSBE2AIEg4Q+KdAQwoN4QqLqFimFArdqiS
-TqiVYqmSd6iVi6lYnpCEqGgIfkBMaQ8AIISqgg==
+UFAcikHs/4QAMWqA4HW4NCUIlyHvKz2/LG7+eWr737fPIAjIBooAxYkx5E2M
+0rets/E4GygLVIPHkHclTn+e3gaK/P76+drsrsN5IRudFCEIyAaKAMWBskA1
+QJVYDQGaDzHh5amDm9xUl2uzYSKgOFAWYg7cPciGQHwBVINVOzKCmANUj2YI
+MMQgvsDlBjT3QPwFCWe4IcCQBzKAviZoAgQBVQLVA3UhGwKMQSADGHpEGgJU
+CVQP1AXUC0mNQAYwJQAZwFgg0hCgSqB6oC6IIUBAuSFUcQkVw4QqsUOVdEKV
+FEutvEOVXEyt8oRaJRvZZSx+QExpDwAxBaHa
              "], "Byte", ColorSpace -> "RGB", ImageResolution -> 144, 
              Interleaving -> True]}, Background -> 
-         RGBColor[0.921569, 0.341176, 0.105882], Method -> "Queued", 
+         RGBColor[0.92157, 0.34118, 0.10588], Method -> "Queued", 
          ImageSize -> {All, 23}, Evaluator -> Automatic], FrameStyle -> 
         Directive[
-          RGBColor[0.921569, 0.341176, 0.105882], 
+          RGBColor[0.92157, 0.34118, 0.10588], 
           AbsoluteThickness[2]], FrameMargins -> -1, ContentPadding -> False, 
         StripOnInput -> False]& )}], 
    Cell[
@@ -3455,32 +4807,30 @@ TqiVYqmSd6iVi6lYnpCEqGgIfkBMaQ8AIISqgg==
    Cell[
     StyleData["SuggestionIconTemplate"], 
     TemplateBoxOptions -> {DisplayFunction -> (GraphicsBox[{
-         Thickness[0.05555555555555555], 
+         Thickness[0.055556], 
          StyleBox[{
            
            FilledCurveBox[{{{1, 4, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3,
              3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}}}, CompressedData["
-1:eJxTTMoPSmVmYGBgBGJJIGZigIIGAwcIQ8kBxk94ekHp9k9Vh4qXaoYcOfoO
-m+a+X37stKZDbP+hrxpzdOA0TBymDqYPl7n2pnG7PHlk4PzZRxQ2FGWIwPWD
+1:eJxTTMoPSmVmYGBgBGJJIGZigIIGAwcIQ8kBxk94ekHp9k9Vh8qXaoYcOfoO
+m+a+X37stKZDTP+hrxpzdOA0TBymDqYPl7n2pnG7PHlk4Pw5RxQ2FGWIwPWD
 jI3p54WbLxuVYn3fnwluD8S8H/Yo9gD5KPYA+TB7YPph9sDMh9EwcZg6FPdh
-MRfdXpi7YPph7oaZD/MXzB5c4QCzBwA8nn+Z
+MRfdXpi7YPph7oaZD/MXzB5c4QCzBwA/Dn+d
             "]]}, 
           FaceForm[#]], 
          StyleBox[{
            
            FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1,
               0}, {0, 1, 0}}, {{1, 4, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}, {1,
-              3, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}}}, {{{8.175292500000001, 
-             7.416875}, {7.796855000000001, 11.3084375}, {7.796855000000001, 
-             13.38}, {10.11998, 13.38}, {10.11998, 11.3084375}, {
-             9.741542500000001, 7.416875}, {8.175292500000001, 
-             7.416875}}, CompressedData["
-1:eJxTTMoPSmViYGCQBGIQ/cTvZcLf/4oOD6tE1rk/5HNQjDzAkqeL4FsusdsW
-1KjgwAAGAg7hCSdehX2Xd5BvfR24Q07QwaZCOJPjjZyDHdf1xQW2Qg56LJYa
-iWlyDv2HvmrEzBeG80GmVbmIwvkvtjT6Sb8Qg+t/BLLPUwJuPti6DEm4/WD7
-2qTg7gMZJyIm7QBzP4y/zEVob88lJTi/7+dk7hV1ynD9c3LzfPxZVODmr3ro
-0futUwVu/0bpbbqnzqjA3Qfjw9wP48P8B9MP8z/MfFj4wOyHhR/MfbDwRQ9/
-ACBxmlc=
+              3, 3}, {1, 3, 3}, {1, 3, 3}, {1, 3, 3}}}, {{{8.1753, 7.4169}, {
+             7.7969, 11.308}, {7.7969, 13.38}, {10.12, 13.38}, {10.12, 
+             11.308}, {9.7415, 7.4169}, {8.1753, 7.4169}}, CompressedData["
+1:eJxTTMoPSmViYGCQBGIQDQFKDg+rRNa5P+RzKPOXE8vSVYTz8z+0ngxpVHCA
+qBNwmPd++THv7/IO8q2vA3fICTpUvlQz5Hgj52DLdX1xga2QQxoYyDmcYLed
+HTpfGM6/k8GQ3+giCue7M1dwq7wQg+vnmbyyKdBTAm6+tsTUK5wZknD7Pec2
+qB1qk4K772Y8iCXtAHM/jP/bquBcxyUEfyJ/ldnqOmW4/qw9JZMlWFTg5tfa
+m8bt6lSB23/2DAiowN0H48PcD+PD/AfTD/M/zHxY+MDsh4UfzH2w8EUPfwD5
+N5G6
              "]}]}, 
           FaceForm[#2]]}, ImageSize -> #3, PlotRange -> #4, AspectRatio -> 
         Automatic, BaselinePosition -> Scaled[0.1]]& )}], 
@@ -3530,7 +4880,7 @@ N3kqZvY=
                  "], {{0, 50.}, {50., 0}}, {0, 255}, ColorFunction -> 
                  GrayLevel], 
                 BoxForm`ImageTag[
-                "Byte", ColorSpace -> "Grayscale", Interleaving -> False], 
+                "Byte", ColorSpace -> "Grayscale", Interleaving -> True], 
                 Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
                ImageSizeRaw -> {50., 50.}, PlotRange -> {{0, 50.}, {0, 50.}}],
               True -> GraphicsBox[
@@ -3573,7 +4923,7 @@ DcvuuIyle//vxt/PCE6d
                  "], {{0, 50.}, {50., 0}}, {0, 255}, ColorFunction -> 
                  GrayLevel], 
                 BoxForm`ImageTag[
-                "Byte", ColorSpace -> "Grayscale", Interleaving -> False], 
+                "Byte", ColorSpace -> "Grayscale", Interleaving -> True], 
                 Selectable -> False], DefaultBaseStyle -> "ImageGraphics", 
                ImageSizeRaw -> {50., 50.}, 
                PlotRange -> {{0, 50.}, {0, 50.}}]}, 
@@ -3724,7 +5074,7 @@ resource except for the definition notebook\""}, "PrettyTooltipTemplate"]],
       "Message" -> {"Message", "MSG", "Comment"}, 
       "Output" -> {"Output", "Comment"}, "Print" -> {"Print", "Comment"}, 
       "PrintTemporary" -> {"PrintTemporary", "Comment"}}, CellFrameColor -> 
-    RGBColor[0.880722, 0.611041, 0.142051], 
+    RGBColor[0.88072, 0.61104, 0.14205], 
     CellFrameLabelMargins -> {{0, 10}, {0, 0}}, FontColor -> GrayLevel[0.25], 
     Background -> RGBColor[0.982, 0.942, 0.871]], 
    Cell[
@@ -3735,7 +5085,7 @@ resource except for the definition notebook\""}, "PrettyTooltipTemplate"]],
       "Output" -> {"Output", "AuthorComment"}, 
       "Print" -> {"Print", "AuthorComment"}, 
       "PrintTemporary" -> {"PrintTemporary", "AuthorComment"}}, 
-    CellFrameColor -> RGBColor[0.368417, 0.506779, 0.709798], Background -> 
+    CellFrameColor -> RGBColor[0.36842, 0.50678, 0.7098], Background -> 
     RGBColor[0.905, 0.926, 0.956]], 
    Cell[
     StyleData["ReviewerComment", StyleDefinitions -> StyleData["Comment"]], 
@@ -3745,7 +5095,7 @@ resource except for the definition notebook\""}, "PrettyTooltipTemplate"]],
       "Output" -> {"Output", "ReviewerComment"}, 
       "Print" -> {"Print", "ReviewerComment"}, 
       "PrintTemporary" -> {"PrintTemporary", "ReviewerComment"}}, 
-    CellFrameColor -> RGBColor[0.560181, 0.691569, 0.194885], Background -> 
+    CellFrameColor -> RGBColor[0.56018, 0.69157, 0.19488], Background -> 
     RGBColor[0.934, 0.954, 0.879]], 
    Cell[
     StyleData["CommentLabel", StyleDefinitions -> StyleData["Text"]], 
@@ -3763,15 +5113,32 @@ resource except for the definition notebook\""}, "PrettyTooltipTemplate"]],
          "\"Choose\"", FrameMargins -> {{5, 5}, {0, 0}}, 
           BaseStyle -> {"Panel", FontSize -> 12}, Evaluator -> Automatic, 
           Method -> "Queued", ButtonFunction :> 
-          With[{RSNB`file = SystemDialogInput["FileOpen"], RSNB`cell = 
-             ParentCell[
-               EvaluationCell[]]}, 
-            If[
-            RSNB`file =!= $Canceled, 
-             SelectionMove[RSNB`cell, All, CellContents]; NotebookWrite[
-               Notebooks[RSNB`cell], 
-               RowBox[{"File", "[", 
-                 ToBoxes[RSNB`file], "]"}]]]], Appearance :> 
+          With[{RSNB`nb$ = ButtonNotebook[], RSNB`$cp$ = $ContextPath}, 
+            Quiet[
+             
+             Block[{$ContextPath = RSNB`$cp$, 
+               ResourceSystemClient`$AsyncronousResourceInformationUpdates = 
+               False, DefinitionNotebookClient`$ButtonCodeID = None}, 
+              Internal`WithLocalSettings[
+               DefinitionNotebookClient`$ButtonsDisabled = True; Once[
+                  ReleaseHold[
+                   CurrentValue[
+                   RSNB`nb$, {TaggingRules, "CompatibilityTest"}]], 
+                  "KernelSession"]; Needs["DefinitionNotebookClient`"], 
+                Annotation[
+                DefinitionNotebookClient`$ButtonCodeID = 1053094956087266899; 
+                 DefinitionNotebookClient`CheckForUpdates[RSNB`nb$, 
+                   ReleaseHold[DefinitionNotebookClient`$ButtonCode = HoldForm[
+                    If[$VersionNumber >= 13., 
+                    DefinitionNotebookClient`LocalFileInputDialog["Function", 
+                    ParentCell[
+                    EvaluationCell[]], "Type" -> "FileOpen"], 
+                    MessageDialog[
+                    "This feature requires Wolfram Language version 13 or \
+later."]]]]], 
+                 DefinitionNotebookClient`ButtonCodeID[1053094956087266899]], 
+                DefinitionNotebookClient`$ButtonsDisabled = False; Null]; 
+              Null]]], Appearance :> 
           FEPrivate`FrontEndResource[
            "FEExpressions", "GrayButtonNinePatchAppearance"]]]]}, {
       None, None}}], 
@@ -3784,15 +5151,32 @@ resource except for the definition notebook\""}, "PrettyTooltipTemplate"]],
          "\"Choose\"", FrameMargins -> {{5, 5}, {0, 0}}, 
           BaseStyle -> {"Panel", FontSize -> 12}, Evaluator -> Automatic, 
           Method -> "Queued", ButtonFunction :> 
-          With[{RSNB`file = SystemDialogInput["Directory"], RSNB`cell = 
-             ParentCell[
-               EvaluationCell[]]}, 
-            If[
-            RSNB`file =!= $Canceled, 
-             SelectionMove[RSNB`cell, All, CellContents]; NotebookWrite[
-               Notebooks[RSNB`cell], 
-               RowBox[{"File", "[", 
-                 ToBoxes[RSNB`file], "]"}]]]], Appearance :> 
+          With[{RSNB`nb$ = ButtonNotebook[], RSNB`$cp$ = $ContextPath}, 
+            Quiet[
+             
+             Block[{$ContextPath = RSNB`$cp$, 
+               ResourceSystemClient`$AsyncronousResourceInformationUpdates = 
+               False, DefinitionNotebookClient`$ButtonCodeID = None}, 
+              Internal`WithLocalSettings[
+               DefinitionNotebookClient`$ButtonsDisabled = True; Once[
+                  ReleaseHold[
+                   CurrentValue[
+                   RSNB`nb$, {TaggingRules, "CompatibilityTest"}]], 
+                  "KernelSession"]; Needs["DefinitionNotebookClient`"], 
+                Annotation[
+                DefinitionNotebookClient`$ButtonCodeID = 4898876371082581810; 
+                 DefinitionNotebookClient`CheckForUpdates[RSNB`nb$, 
+                   ReleaseHold[DefinitionNotebookClient`$ButtonCode = HoldForm[
+                    If[$VersionNumber >= 13., 
+                    DefinitionNotebookClient`LocalFileInputDialog["Function", 
+                    ParentCell[
+                    EvaluationCell[]], "Type" -> "Directory"], 
+                    MessageDialog[
+                    "This feature requires Wolfram Language version 13 or \
+later."]]]]], 
+                 DefinitionNotebookClient`ButtonCodeID[4898876371082581810]], 
+                DefinitionNotebookClient`$ButtonsDisabled = False; Null]; 
+              Null]]], Appearance :> 
           FEPrivate`FrontEndResource[
            "FEExpressions", "GrayButtonNinePatchAppearance"]]]]}, {
       None, None}}], 
