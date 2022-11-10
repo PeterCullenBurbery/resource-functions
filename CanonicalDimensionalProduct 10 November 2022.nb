@@ -141,8 +141,10 @@ Cell[BoxData[{
               "\"\<SolidAngleUnit\>\"", "\[Rule]", "\"\<\[CapitalPhi]\>\""}], 
               ",", 
               RowBox[{
-              "\"\<TemperatureDifferenceUnit\>\"", "\[Rule]", "\"\<D\>\""}]}],
-              "}"}], "]"}]}], ")"}]}], "]"}]}]}], "]"}], "/;", 
+              "\"\<TemperatureDifferenceUnit\>\"", "\[Rule]", "\"\<D\>\""}], 
+              ",", 
+              RowBox[{"\"\<PhotonUnit\>\"", "->", "\"\<H\>\""}]}], "}"}], 
+            "]"}]}], ")"}]}], "]"}]}]}], "]"}], "/;", 
     RowBox[{"ContainsAll", "[", 
      RowBox[{
       RowBox[{"{", 
@@ -184,7 +186,8 @@ Cell[BoxData[{
         RowBox[{"CanonicalDimensionalProduct", "[", 
          RowBox[{"entity", "[", "\"\<Value\>\"", "]"}], "]"}]}], "]"}]}], 
      "]"}]}], "]"}]}]}], "Input",
- CellChangeTimes->{{3.877088190442401*^9, 3.8770883517360773`*^9}},
+ CellChangeTimes->{{3.877088190442401*^9, 3.8770883517360773`*^9}, {
+  3.877088642954691*^9, 3.877088648415411*^9}},
  CellTags->"DefaultContent",
  CellLabel->"In[7]:=",
  CellID->876320555,ExpressionUUID->"2e857e50-e0f9-46df-9a75-1379f06edf76"]
@@ -360,36 +363,84 @@ The following symbols are used:
 
 Cell[BoxData[GridBox[{
    {Cell["Symbol", "TableText",ExpressionUUID->
-     "8570c2cc-71d6-40ed-91ca-4dba1b3dbd83"], Cell[
+     "48e87018-2c24-44b6-85e4-2b6b1a9b65f2"], Cell[
     "Dimension", "TableText",ExpressionUUID->
-     "e1184383-b62c-4cc7-a404-f0841149f96f"]},
+     "49c28067-9df1-4497-8c13-ea00370c96ed"]},
    {Cell["T", "TableText",ExpressionUUID->
-     "5adf12a4-4b55-4514-92a0-e550dc2aa981"], Cell[
+     "c8fde37a-a8c4-47aa-9911-ea91a44b6f3a"], Cell[
     "Time", "TableText",ExpressionUUID->
-     "78b16a28-e2c9-4f2b-825e-e2c3a92a5913"]},
-   {Cell["\[Placeholder]", "TableText",ExpressionUUID->
-     "0f2b1198-1c5d-44aa-8427-0cd9d3a36e68"], Cell[
-    "\[Placeholder]", "TableText",ExpressionUUID->
-     "acb72400-f411-4bcd-9f42-e4dde70cd5b3"]},
-   {Cell["\[Placeholder]", "TableText",ExpressionUUID->
-     "647a9501-4def-491a-a05b-ac06b019a01f"], Cell[
-    "\[Placeholder]", "TableText",ExpressionUUID->
-     "1d1f9179-8379-4132-a4e1-6f9811b33df5"]},
-   {Cell["\[Placeholder]", "TableText",ExpressionUUID->
-     "174ce429-a1a0-48a4-97ae-573311b2998c"], Cell[
-    "\[Placeholder]", "TableText",ExpressionUUID->
-     "11bd3508-2b17-4a6a-a324-d289a23b17d0"]},
-   {Cell["\[Placeholder]", "TableText",ExpressionUUID->
-     "85c325e3-1cbf-4bb6-a7a6-fe65edde17c0"], Cell[
-    "\[Placeholder]", "TableText",ExpressionUUID->
-     "8fbd7031-d6b2-4540-878b-c57d57ea3b93"]},
-   {Cell["\[Placeholder]", "TableText",ExpressionUUID->
-     "4581e8ba-c29a-49a0-a393-d4c4f331b57f"], Cell[
-    "\[Placeholder]", "TableText",ExpressionUUID->
-     "add2b557-c0c6-4525-be79-4174f2360bf0"]}
+     "16139e80-2ae1-4420-843d-57373d9b0e08"]},
+   {Cell["L", "TableText",ExpressionUUID->
+     "c394f404-d93d-4d8f-ae85-8d0ee28b0e51"], Cell[
+    "Length", "TableText",ExpressionUUID->
+     "5def30a8-e104-4d9b-9a2c-b7c141c9ac16"]},
+   {Cell["M", "TableText",ExpressionUUID->
+     "baab1d81-6eb6-447c-8184-dcfc0aa8bd3a"], Cell[
+    "Mass", "TableText",ExpressionUUID->
+     "5df8c4c4-bd17-44ad-b1bd-f626bf6023dc"]},
+   {Cell["I", "TableText",ExpressionUUID->
+     "7999306f-edbf-4a59-822f-5b99b467ae94"], Cell[
+    "Electric Current", "TableText",ExpressionUUID->
+     "ebd211f7-c6b1-4bdb-a56a-1464e744a649"]},
+   {Cell["\[CapitalTheta]", "TableText",ExpressionUUID->
+     "b195b410-3ea2-4aba-bac4-8314e080e736"], Cell[
+    "Thermodynamic Temperature", "TableText",ExpressionUUID->
+     "518dbd08-4385-458e-8818-ad99f2188c1e"]},
+   {Cell["N", "TableText",ExpressionUUID->
+     "edebc498-1059-4aa5-af80-5b5918ef0081"], Cell[
+    "Amount of Substance", "TableText",ExpressionUUID->
+     "6265713f-1d75-4f73-a2e0-aaa1aae122b7"]},
+   {Cell["J", "TableText",ExpressionUUID->
+     "3c580871-7e70-42ef-a6c4-cb681dfd490f"], Cell[
+    "Luminous Intensity", "TableText",ExpressionUUID->
+     "ea3b5ec0-404a-4bc1-8e75-04db296d2eb1"]}
   }]], "TableNotes",
- CellChangeTimes->{{3.8770884647819543`*^9, 3.877088481187721*^9}},
- CellID->249076898,ExpressionUUID->"a620f976-8d10-457b-b74e-a03448b54d5e"]
+ CellChangeTimes->{{3.8770884647819543`*^9, 3.877088534536438*^9}},
+ CellID->249076898,ExpressionUUID->"a620f976-8d10-457b-b74e-a03448b54d5e"],
+
+Cell["\<\
+The function also uses the following symbols:
+\
+\>", "Notes",
+ CellChangeTimes->{{3.877088543834425*^9, 3.8770885577757807`*^9}},
+ CellID->30147253,ExpressionUUID->"d6109315-709d-4509-8883-2172421cfd97"],
+
+Cell[BoxData[GridBox[{
+   {Cell["Symbol", "TableText",ExpressionUUID->
+     "e6caeed3-e940-4478-b85a-cfc84d3eb0f7"], Cell[
+    "Dimension", "TableText",ExpressionUUID->
+     "0f762536-f80b-4f18-8c1f-c52bdbd9ac4a"]},
+   {Cell["A", "TableText",ExpressionUUID->
+     "6d66c703-fe1c-45f6-a408-574a5d1ac1f2"], Cell[
+    "planar angle", "TableText",ExpressionUUID->
+     "fafaff6d-a34f-4e9d-8ef1-b3c2fcf1df91"]},
+   {Cell["F", "TableText",ExpressionUUID->
+     "b3318ebf-0c79-4831-a939-be120d9adb34"], Cell[
+    "information", "TableText",ExpressionUUID->
+     "757fa355-d05e-48c0-b5ae-c929407e9d7b"]},
+   {Cell["C", "TableText",ExpressionUUID->
+     "11575888-3e12-40d8-8a46-1516525a175c"], Cell[
+    "money", "TableText",ExpressionUUID->
+     "8931f589-3340-4dfc-80d5-0d8aeec970f0"]},
+   {Cell["P", "TableText",ExpressionUUID->
+     "aab105fe-ff82-491c-9c0a-d1e7cc9f5161"], Cell[
+    "persons, people", "TableText",ExpressionUUID->
+     "726df438-1114-4f4c-9bf9-0735dd6dce5b"]},
+   {Cell["\[CapitalPhi]", "TableText",ExpressionUUID->
+     "a54796f6-05eb-4339-8efe-4582464a6ec5"], Cell[
+    "solid angle", "TableText",ExpressionUUID->
+     "97758c60-5578-49a0-a57c-5c95f9e36cd0"]},
+   {Cell["D", "TableText",ExpressionUUID->
+     "b2e60d57-ffe5-49cc-84fd-5e320829465e"], Cell[
+    "temperature difference", "TableText",ExpressionUUID->
+     "a9032999-7605-4513-94cb-cec3398878cd"]},
+   {Cell["H", "TableText",ExpressionUUID->
+     "8f3ef8ec-71de-4e50-91f9-de5015de87a1"], Cell[
+    "photon", "TableText",ExpressionUUID->
+     "d752f9fa-9c6b-4095-8446-38db96f64648"]}
+  }]], "TableNotes",
+ CellChangeTimes->{{3.877088561082385*^9, 3.8770886594479623`*^9}},
+ CellID->10944222,ExpressionUUID->"769148dc-880b-46fc-b446-cd485a6b7829"]
 }, Open  ]]
 }, Open  ]],
 
@@ -556,15 +607,16 @@ Cell["Basic Examples", "Subsection",
  CellTags->"DefaultContent",
  CellID->619504543,ExpressionUUID->"384662ef-2aa1-415c-8ff4-07fa357964e1"],
 
-Cell["Text about the example:", "Text",
+Cell["Write the canonical dimensional product for a quantity:", "Text",
+ CellChangeTimes->{{3.8770886661256657`*^9, 3.8770886796691303`*^9}},
  CellTags->"DefaultContent",
  CellID->586099280,ExpressionUUID->"a352c93e-a875-4ca3-a4f5-697991c1e0b3"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"MyFunction", "[", 
-  RowBox[{"x", ",", "y"}], "]"}]], "Input",
+ RowBox[{"CanonicalDimensionalProduct", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.877088681293768*^9, 3.8770886826946716`*^9}},
  CellTags->"DefaultContent",
  CellLabel->"In[1]:= ",
  CellID->298664010,ExpressionUUID->"d88deaa0-6847-41bb-b50d-ca77c4393271"],
@@ -1560,6 +1612,7 @@ Cell[BoxData[
          StyleBox[
           TemplateBox[{
             CheckboxBox["WebEvaluation", {False, "WebEvaluation"}], "\" \"", 
+            
             TemplateBox[{
              "\"WebEvaluation\"", 
               "\"Cloud evaluation initiated by an HTTP request\""}, 
