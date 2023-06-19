@@ -1,0 +1,2562 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    127617,       2554]
+NotebookOptionsPosition[    123563,       2467]
+NotebookOutlinePosition[    126774,       2548]
+CellTagsIndexPosition[    126731,       2545]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ DynamicModuleBox[{QuestionFramework`Private`input$$ = 1, 
+  QuestionFramework`Private`interpreter$$ = Identity, 
+  QuestionFramework`Private`result$$ = 
+  AssessmentResultObject[<|
+   "Score" -> 1, "MaxScore" -> 1, "MinScore" -> 0, "AnswerCorrect" -> True, 
+    "GivenAnswer" -> 1, "Explanation" -> None, "Timestamp" -> 
+    DateObject[{2023, 6, 19, 16, 37, 31.7417316`9.254205519647037}, "Instant",
+       "Gregorian", -4.], "AssessmentOptions" -> {}, "AnswerComparisonMethod" -> 
+    "Item", "SubmissionCount" -> 1|>], 
+  QuestionFramework`Private`buttonenabled$$ = True, 
+  QuestionFramework`Private`submissionCount$$ = 1, 
+  QuestionFramework`Private`submittedvalue$$ = 1, 
+  QuestionFramework`Private`questionnotebookflag$$ = False, 
+  QuestionFramework`Private`qmflag$$ = False, 
+  QuestionFramework`Private`fieldtype$$ = Expression}, 
+  DynamicBox[ToBoxes[
+    Framed[
+     Grid[{{
+        Style["What is the next step?", {FontSize -> 15}], SpanFromLeft}, {
+        InputField[
+         Dynamic[QuestionFramework`Private`input$$], 
+         QuestionFramework`Private`fieldtype$$, 
+         Apply[Sequence, 
+          
+          Lookup[<|"FieldType" -> Expression, "MinAnswers" -> 1, "Prompt" -> 
+            "What is the next step?", "Range" -> {1, 900}|>, 
+           "FieldOptions", {}]], ImageSize -> 
+         If[QuestionFramework`Private`qmflag$$, 
+           Scaled[0.5], Automatic]], 
+        QuestionFramework`Private`generalquestionTest[
+        QuestionFramework`Private`result$$, QuestionFramework`Private`input$$,
+          QuestionFramework`Private`submittedvalue$$, 
+         AssessmentFunction[{
+          1 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+           Except[1] -> <|
+            "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+             "The correct answer was 1"|>}, <|"ComparisonMethod" -> "Item"|>, 
+          "Validated" -> True], QuestionFramework`Private`interpreter$$]}, {
+        If[
+         TrueQ[
+          Function[{QuestionFramework`Private`af}, 
+           Or[QuestionFramework`Private`af === None, CurrentValue[
+              EvaluationNotebook[], {
+              TaggingRules, "FormNotebook", "SubmissionOptions", 
+               "GroupSubmissionFlag"}] === True]][
+           
+           AssessmentFunction[{
+            1 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+             Except[1] -> <|
+              "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+               "The correct answer was 1"|>}, <|
+            "ComparisonMethod" -> "Item"|>, "Validated" -> True]]], "", 
+         Function[{
+          QuestionFramework`Private`func, 
+           QuestionFramework`Private`buttonenabled}, 
+          Button[
+           Framed[
+            Style["Submit", 12, FontColor -> White, FontWeight -> Plain], 
+            FrameStyle -> None, ImageMargins -> 0, RoundingRadius -> 2, 
+            ImageSize -> {Automatic, 21}, BaselinePosition -> Baseline, 
+            Background -> If[QuestionFramework`Private`buttonenabled, 
+              RGBColor[
+              0.043137254901960784`, 0.3803921568627451, 0.6352941176470588], 
+              RGBColor[
+              0.7686274509803922, 0.9019607843137255, 0.9725490196078431], 
+              RGBColor[
+              0.043137254901960784`, 0.3803921568627451, 
+               0.6352941176470588]]], QuestionFramework`Private`func, 
+           Evaluator -> Automatic, ImageSize -> {Automatic, 21}, Appearance -> 
+           None, BaselinePosition -> Baseline, Enabled -> 
+           Dynamic[QuestionFramework`Private`buttonenabled], Method -> 
+           "Preemptive"], {HoldFirst}][
+         QuestionFramework`Private`result$$ = 
+           QuestionFramework`Private`postProcessAssessment[
+             
+             AssessmentFunction[{
+              1 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+               Except[1] -> <|
+                "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+                 "The correct answer was 1"|>}, <|
+              "ComparisonMethod" -> "Item"|>, "Validated" -> True][
+              Interpreter[QuestionFramework`Private`interpreter$$][
+              QuestionFramework`Private`input$$], "SubmissionCount" -> 
+              QuestionFramework`Private`submissionCount$$], <|
+             "FieldType" -> Expression, "MinAnswers" -> 1, "Prompt" -> 
+              "What is the next step?", "Range" -> {1, 900}|>]; 
+          QuestionFramework`Private`submittedvalue$$ = 
+           QuestionFramework`Private`input$$; 
+          QuestionFramework`Private`submissionCount$$ = 
+           QuestionFramework`Private`getSubmissionCount[
+            QuestionFramework`Private`result$$]; 
+          QuestionFramework`Private`buttonenabled$$ = If[
+             QuestionFramework`Private`reachedMaxSubmissionsQ[
+             QuestionFramework`Private`result$$, 
+              QuestionFramework`Private`submissionCount$$], False, True, 
+             True], QuestionFramework`Private`buttonenabled$$]], 
+        If[
+        Head[QuestionFramework`Private`result$$] === AssessmentResultObject, 
+         Row[{
+           If[Head[
+              QuestionFramework`Private`result$$["Explanation"]] === String, 
+            QuestionFramework`Private`result$$["Explanation"], ""]}, 
+          Spacer[5]], ""]}}, 
+      Sequence[
+      Alignment -> Left, Spacings -> {1, 1}, 
+       Dividers -> {False, {2 -> RGBColor[
+            Rational[229, 255], 
+            Rational[229, 255], 
+            Rational[229, 255]]}}]], ImageSize -> 
+     Which[QuestionFramework`Private`questionnotebookflag$$, {
+       Full, Automatic}, QuestionFramework`Private`qmflag$$, {
+        Scaled[1.], Automatic}, True, Automatic], 
+     Sequence[
+     Background -> GrayLevel[1], FrameStyle -> 
+      RGBColor[0.7490196078431373, 0.7490196078431373, 0.7490196078431373], 
+      RoundingRadius -> 5, FrameMargins -> 10, 
+      BaseStyle -> {"Panel", FontSize -> 14}]], StandardForm],
+   ImageSizeCache->{
+    313.13281243741517`, {53.208496160991494`, 59.924316276423625`}},
+   TrackedSymbols:>{
+    QuestionFramework`Private`result$$, QuestionFramework`Private`input$$, 
+     QuestionFramework`Private`submittedvalue$$}],
+  DynamicModuleValues:>{}]], "FormElementCode",
+ TaggingRules->{
+  "FormNotebook" -> {
+    "Type" -> "Default", "Mode" -> "CODE", "FormExpr" -> InterpretationBox[
+       DynamicModuleBox[{
+        QuestionFramework`Private`input$$ = Null, 
+         QuestionFramework`Private`interpreter$$ = Identity, 
+         QuestionFramework`Private`result$$ = "", 
+         QuestionFramework`Private`buttonenabled$$ = True, 
+         QuestionFramework`Private`submissionCount$$ = 0, 
+         QuestionFramework`Private`submittedvalue$$ = "", 
+         QuestionFramework`Private`questionnotebookflag$$ = False, 
+         QuestionFramework`Private`qmflag$$ = False, 
+         QuestionFramework`Private`fieldtype$$ = Expression}, 
+        DynamicBox[
+         ToBoxes[
+          Framed[
+           Grid[{{
+              Style["What is the next step?", {FontSize -> 15}], 
+              SpanFromLeft}, {
+              InputField[
+               Dynamic[QuestionFramework`Private`input$$], 
+               QuestionFramework`Private`fieldtype$$, 
+               Apply[Sequence, 
+                
+                Lookup[<|
+                 "FieldType" -> Expression, "MinAnswers" -> 1, "Prompt" -> 
+                  "What is the next step?", "Range" -> {1, 900}|>, 
+                 "FieldOptions", {}]], ImageSize -> 
+               If[QuestionFramework`Private`qmflag$$, 
+                 Scaled[0.5], Automatic]], 
+              QuestionFramework`Private`generalquestionTest[
+              QuestionFramework`Private`result$$, 
+               QuestionFramework`Private`input$$, 
+               QuestionFramework`Private`submittedvalue$$, 
+               
+               AssessmentFunction[{
+                1 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+                 Except[1] -> <|
+                  "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+                   "The correct answer was 1"|>}, <|
+                "ComparisonMethod" -> "Item"|>, "Validated" -> True], 
+               QuestionFramework`Private`interpreter$$]}, {
+              If[
+               TrueQ[
+                Function[{QuestionFramework`Private`af}, 
+                 Or[QuestionFramework`Private`af === None, CurrentValue[
+                    EvaluationNotebook[], {
+                    TaggingRules, "FormNotebook", "SubmissionOptions", 
+                    "GroupSubmissionFlag"}] === True]][
+                 
+                 AssessmentFunction[{
+                  1 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+                   Except[1] -> <|
+                    "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+                    "The correct answer was 1"|>}, <|
+                  "ComparisonMethod" -> "Item"|>, "Validated" -> True]]], "", 
+               
+               Function[{
+                QuestionFramework`Private`func, 
+                 QuestionFramework`Private`buttonenabled}, 
+                Button[
+                 Framed[
+                  Style[
+                  "Submit", 12, FontColor -> White, FontWeight -> Plain], 
+                  FrameStyle -> None, ImageMargins -> 0, RoundingRadius -> 2, 
+                  ImageSize -> {Automatic, 21}, BaselinePosition -> Baseline, 
+                  Background -> If[QuestionFramework`Private`buttonenabled, 
+                    RGBColor[
+                    0.043137254901960784`, 0.3803921568627451, 
+                    0.6352941176470588], 
+                    RGBColor[
+                    0.7686274509803922, 0.9019607843137255, 
+                    0.9725490196078431], 
+                    RGBColor[
+                    0.043137254901960784`, 0.3803921568627451, 
+                    0.6352941176470588]]], QuestionFramework`Private`func, 
+                 Evaluator -> Automatic, ImageSize -> {Automatic, 21}, 
+                 Appearance -> None, BaselinePosition -> Baseline, Enabled -> 
+                 Dynamic[QuestionFramework`Private`buttonenabled], Method -> 
+                 "Preemptive"], {HoldFirst}][
+               QuestionFramework`Private`result$$ = 
+                 QuestionFramework`Private`postProcessAssessment[
+                   
+                   AssessmentFunction[{
+                    1 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+                    Except[1] -> <|
+                    "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+                    "The correct answer was 1"|>}, <|
+                    "ComparisonMethod" -> "Item"|>, "Validated" -> True][
+                    Interpreter[QuestionFramework`Private`interpreter$$][
+                    QuestionFramework`Private`input$$], "SubmissionCount" -> 
+                    QuestionFramework`Private`submissionCount$$], <|
+                   "FieldType" -> Expression, "MinAnswers" -> 1, "Prompt" -> 
+                    "What is the next step?", "Range" -> {1, 900}|>]; 
+                QuestionFramework`Private`submittedvalue$$ = 
+                 QuestionFramework`Private`input$$; 
+                QuestionFramework`Private`submissionCount$$ = 
+                 QuestionFramework`Private`getSubmissionCount[
+                  QuestionFramework`Private`result$$]; 
+                QuestionFramework`Private`buttonenabled$$ = If[
+                   QuestionFramework`Private`reachedMaxSubmissionsQ[
+                   QuestionFramework`Private`result$$, 
+                    QuestionFramework`Private`submissionCount$$], False, True,
+                    True], QuestionFramework`Private`buttonenabled$$]], 
+              If[
+              Head[QuestionFramework`Private`result$$] === 
+               AssessmentResultObject, 
+               Row[{
+                 If[Head[
+                    QuestionFramework`Private`result$$["Explanation"]] === 
+                  String, 
+                  QuestionFramework`Private`result$$["Explanation"], ""]}, 
+                Spacer[5]], ""]}}, 
+            Sequence[
+            Alignment -> Left, Spacings -> {1, 1}, 
+             Dividers -> {False, {2 -> RGBColor[
+                  Rational[229, 255], 
+                  Rational[229, 255], 
+                  Rational[229, 255]]}}]], ImageSize -> 
+           Which[QuestionFramework`Private`questionnotebookflag$$, {
+             Full, Automatic}, QuestionFramework`Private`qmflag$$, {
+              Scaled[1.], Automatic}, True, Automatic], 
+           Sequence[
+           Background -> GrayLevel[1], FrameStyle -> 
+            RGBColor[
+             0.7490196078431373, 0.7490196078431373, 0.7490196078431373], 
+            RoundingRadius -> 5, FrameMargins -> 10, 
+            BaseStyle -> {"Panel", FontSize -> 14}]], StandardForm], 
+         TrackedSymbols :> {
+          QuestionFramework`Private`result$$, 
+           QuestionFramework`Private`input$$, 
+           QuestionFramework`Private`submittedvalue$$}], 
+        DynamicModuleValues :> {}], 
+       QuestionObject[
+        QuestionInterface[
+        "ShortAnswer", <|
+         "Prompt" -> "What is the next step?", "Range" -> {1, 900}|>], 
+        AssessmentFunction[{
+         1 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+          Except[1] -> <|
+           "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+            "The correct answer was 1"|>}, <|"ComparisonMethod" -> "Item"|>, 
+         "Validated" -> True]]], "Key" -> 
+     Inherited}},ExpressionUUID->"ceb9ff53-9399-41b1-b3ed-337ce27e6c48"],
+
+Cell[BoxData[
+ DynamicModuleBox[{QuestionFramework`Private`input$$ = 2, 
+  QuestionFramework`Private`interpreter$$ = Identity, 
+  QuestionFramework`Private`result$$ = 
+  AssessmentResultObject[<|
+   "Score" -> 1, "MaxScore" -> 1, "MinScore" -> 0, "AnswerCorrect" -> True, 
+    "GivenAnswer" -> 2, "Explanation" -> None, "Timestamp" -> 
+    DateObject[{2023, 6, 19, 16, 37, 33.4667649`9.277188632005714}, "Instant",
+       "Gregorian", -4.], "AssessmentOptions" -> {}, "AnswerComparisonMethod" -> 
+    "Item", "SubmissionCount" -> 1|>], 
+  QuestionFramework`Private`buttonenabled$$ = True, 
+  QuestionFramework`Private`submissionCount$$ = 1, 
+  QuestionFramework`Private`submittedvalue$$ = 2, 
+  QuestionFramework`Private`questionnotebookflag$$ = False, 
+  QuestionFramework`Private`qmflag$$ = False, 
+  QuestionFramework`Private`fieldtype$$ = Expression}, 
+  DynamicBox[ToBoxes[
+    Framed[
+     Grid[{{
+        Style["What is the next step?", {FontSize -> 15}], SpanFromLeft}, {
+        InputField[
+         Dynamic[QuestionFramework`Private`input$$], 
+         QuestionFramework`Private`fieldtype$$, 
+         Apply[Sequence, 
+          
+          Lookup[<|"FieldType" -> Expression, "MinAnswers" -> 1, "Prompt" -> 
+            "What is the next step?", "Range" -> {1, 900}|>, 
+           "FieldOptions", {}]], ImageSize -> 
+         If[QuestionFramework`Private`qmflag$$, 
+           Scaled[0.5], Automatic]], 
+        QuestionFramework`Private`generalquestionTest[
+        QuestionFramework`Private`result$$, QuestionFramework`Private`input$$,
+          QuestionFramework`Private`submittedvalue$$, 
+         AssessmentFunction[{
+          2 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+           Except[2] -> <|
+            "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+             "The correct answer was 2"|>}, <|"ComparisonMethod" -> "Item"|>, 
+          "Validated" -> True], QuestionFramework`Private`interpreter$$]}, {
+        If[
+         TrueQ[
+          Function[{QuestionFramework`Private`af}, 
+           Or[QuestionFramework`Private`af === None, CurrentValue[
+              EvaluationNotebook[], {
+              TaggingRules, "FormNotebook", "SubmissionOptions", 
+               "GroupSubmissionFlag"}] === True]][
+           
+           AssessmentFunction[{
+            2 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+             Except[2] -> <|
+              "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+               "The correct answer was 2"|>}, <|
+            "ComparisonMethod" -> "Item"|>, "Validated" -> True]]], "", 
+         Function[{
+          QuestionFramework`Private`func, 
+           QuestionFramework`Private`buttonenabled}, 
+          Button[
+           Framed[
+            Style["Submit", 12, FontColor -> White, FontWeight -> Plain], 
+            FrameStyle -> None, ImageMargins -> 0, RoundingRadius -> 2, 
+            ImageSize -> {Automatic, 21}, BaselinePosition -> Baseline, 
+            Background -> If[QuestionFramework`Private`buttonenabled, 
+              RGBColor[
+              0.043137254901960784`, 0.3803921568627451, 0.6352941176470588], 
+              RGBColor[
+              0.7686274509803922, 0.9019607843137255, 0.9725490196078431], 
+              RGBColor[
+              0.043137254901960784`, 0.3803921568627451, 
+               0.6352941176470588]]], QuestionFramework`Private`func, 
+           Evaluator -> Automatic, ImageSize -> {Automatic, 21}, Appearance -> 
+           None, BaselinePosition -> Baseline, Enabled -> 
+           Dynamic[QuestionFramework`Private`buttonenabled], Method -> 
+           "Preemptive"], {HoldFirst}][
+         QuestionFramework`Private`result$$ = 
+           QuestionFramework`Private`postProcessAssessment[
+             
+             AssessmentFunction[{
+              2 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+               Except[2] -> <|
+                "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+                 "The correct answer was 2"|>}, <|
+              "ComparisonMethod" -> "Item"|>, "Validated" -> True][
+              Interpreter[QuestionFramework`Private`interpreter$$][
+              QuestionFramework`Private`input$$], "SubmissionCount" -> 
+              QuestionFramework`Private`submissionCount$$], <|
+             "FieldType" -> Expression, "MinAnswers" -> 1, "Prompt" -> 
+              "What is the next step?", "Range" -> {1, 900}|>]; 
+          QuestionFramework`Private`submittedvalue$$ = 
+           QuestionFramework`Private`input$$; 
+          QuestionFramework`Private`submissionCount$$ = 
+           QuestionFramework`Private`getSubmissionCount[
+            QuestionFramework`Private`result$$]; 
+          QuestionFramework`Private`buttonenabled$$ = If[
+             QuestionFramework`Private`reachedMaxSubmissionsQ[
+             QuestionFramework`Private`result$$, 
+              QuestionFramework`Private`submissionCount$$], False, True, 
+             True], QuestionFramework`Private`buttonenabled$$]], 
+        If[
+        Head[QuestionFramework`Private`result$$] === AssessmentResultObject, 
+         Row[{
+           If[Head[
+              QuestionFramework`Private`result$$["Explanation"]] === String, 
+            QuestionFramework`Private`result$$["Explanation"], ""]}, 
+          Spacer[5]], ""]}}, 
+      Sequence[
+      Alignment -> Left, Spacings -> {1, 1}, 
+       Dividers -> {False, {2 -> RGBColor[
+            Rational[229, 255], 
+            Rational[229, 255], 
+            Rational[229, 255]]}}]], ImageSize -> 
+     Which[QuestionFramework`Private`questionnotebookflag$$, {
+       Full, Automatic}, QuestionFramework`Private`qmflag$$, {
+        Scaled[1.], Automatic}, True, Automatic], 
+     Sequence[
+     Background -> GrayLevel[1], FrameStyle -> 
+      RGBColor[0.7490196078431373, 0.7490196078431373, 0.7490196078431373], 
+      RoundingRadius -> 5, FrameMargins -> 10, 
+      BaseStyle -> {"Panel", FontSize -> 14}]], StandardForm],
+   ImageSizeCache->{
+    313.13281243741517`, {53.208496160991494`, 59.924316276423625`}},
+   TrackedSymbols:>{
+    QuestionFramework`Private`result$$, QuestionFramework`Private`input$$, 
+     QuestionFramework`Private`submittedvalue$$}],
+  DynamicModuleValues:>{}]], "FormElementCode",
+ TaggingRules->{
+  "FormNotebook" -> {
+    "Type" -> "Default", "Mode" -> "CODE", "FormExpr" -> InterpretationBox[
+       DynamicModuleBox[{
+        QuestionFramework`Private`input$$ = Null, 
+         QuestionFramework`Private`interpreter$$ = Identity, 
+         QuestionFramework`Private`result$$ = "", 
+         QuestionFramework`Private`buttonenabled$$ = True, 
+         QuestionFramework`Private`submissionCount$$ = 0, 
+         QuestionFramework`Private`submittedvalue$$ = "", 
+         QuestionFramework`Private`questionnotebookflag$$ = False, 
+         QuestionFramework`Private`qmflag$$ = False, 
+         QuestionFramework`Private`fieldtype$$ = Expression}, 
+        DynamicBox[
+         ToBoxes[
+          Framed[
+           Grid[{{
+              Style["What is the next step?", {FontSize -> 15}], 
+              SpanFromLeft}, {
+              InputField[
+               Dynamic[QuestionFramework`Private`input$$], 
+               QuestionFramework`Private`fieldtype$$, 
+               Apply[Sequence, 
+                
+                Lookup[<|
+                 "FieldType" -> Expression, "MinAnswers" -> 1, "Prompt" -> 
+                  "What is the next step?", "Range" -> {1, 900}|>, 
+                 "FieldOptions", {}]], ImageSize -> 
+               If[QuestionFramework`Private`qmflag$$, 
+                 Scaled[0.5], Automatic]], 
+              QuestionFramework`Private`generalquestionTest[
+              QuestionFramework`Private`result$$, 
+               QuestionFramework`Private`input$$, 
+               QuestionFramework`Private`submittedvalue$$, 
+               
+               AssessmentFunction[{
+                2 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+                 Except[2] -> <|
+                  "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+                   "The correct answer was 2"|>}, <|
+                "ComparisonMethod" -> "Item"|>, "Validated" -> True], 
+               QuestionFramework`Private`interpreter$$]}, {
+              If[
+               TrueQ[
+                Function[{QuestionFramework`Private`af}, 
+                 Or[QuestionFramework`Private`af === None, CurrentValue[
+                    EvaluationNotebook[], {
+                    TaggingRules, "FormNotebook", "SubmissionOptions", 
+                    "GroupSubmissionFlag"}] === True]][
+                 
+                 AssessmentFunction[{
+                  2 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+                   Except[2] -> <|
+                    "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+                    "The correct answer was 2"|>}, <|
+                  "ComparisonMethod" -> "Item"|>, "Validated" -> True]]], "", 
+               
+               Function[{
+                QuestionFramework`Private`func, 
+                 QuestionFramework`Private`buttonenabled}, 
+                Button[
+                 Framed[
+                  Style[
+                  "Submit", 12, FontColor -> White, FontWeight -> Plain], 
+                  FrameStyle -> None, ImageMargins -> 0, RoundingRadius -> 2, 
+                  ImageSize -> {Automatic, 21}, BaselinePosition -> Baseline, 
+                  Background -> If[QuestionFramework`Private`buttonenabled, 
+                    RGBColor[
+                    0.043137254901960784`, 0.3803921568627451, 
+                    0.6352941176470588], 
+                    RGBColor[
+                    0.7686274509803922, 0.9019607843137255, 
+                    0.9725490196078431], 
+                    RGBColor[
+                    0.043137254901960784`, 0.3803921568627451, 
+                    0.6352941176470588]]], QuestionFramework`Private`func, 
+                 Evaluator -> Automatic, ImageSize -> {Automatic, 21}, 
+                 Appearance -> None, BaselinePosition -> Baseline, Enabled -> 
+                 Dynamic[QuestionFramework`Private`buttonenabled], Method -> 
+                 "Preemptive"], {HoldFirst}][
+               QuestionFramework`Private`result$$ = 
+                 QuestionFramework`Private`postProcessAssessment[
+                   
+                   AssessmentFunction[{
+                    2 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+                    Except[2] -> <|
+                    "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+                    "The correct answer was 2"|>}, <|
+                    "ComparisonMethod" -> "Item"|>, "Validated" -> True][
+                    Interpreter[QuestionFramework`Private`interpreter$$][
+                    QuestionFramework`Private`input$$], "SubmissionCount" -> 
+                    QuestionFramework`Private`submissionCount$$], <|
+                   "FieldType" -> Expression, "MinAnswers" -> 1, "Prompt" -> 
+                    "What is the next step?", "Range" -> {1, 900}|>]; 
+                QuestionFramework`Private`submittedvalue$$ = 
+                 QuestionFramework`Private`input$$; 
+                QuestionFramework`Private`submissionCount$$ = 
+                 QuestionFramework`Private`getSubmissionCount[
+                  QuestionFramework`Private`result$$]; 
+                QuestionFramework`Private`buttonenabled$$ = If[
+                   QuestionFramework`Private`reachedMaxSubmissionsQ[
+                   QuestionFramework`Private`result$$, 
+                    QuestionFramework`Private`submissionCount$$], False, True,
+                    True], QuestionFramework`Private`buttonenabled$$]], 
+              If[
+              Head[QuestionFramework`Private`result$$] === 
+               AssessmentResultObject, 
+               Row[{
+                 If[Head[
+                    QuestionFramework`Private`result$$["Explanation"]] === 
+                  String, 
+                  QuestionFramework`Private`result$$["Explanation"], ""]}, 
+                Spacer[5]], ""]}}, 
+            Sequence[
+            Alignment -> Left, Spacings -> {1, 1}, 
+             Dividers -> {False, {2 -> RGBColor[
+                  Rational[229, 255], 
+                  Rational[229, 255], 
+                  Rational[229, 255]]}}]], ImageSize -> 
+           Which[QuestionFramework`Private`questionnotebookflag$$, {
+             Full, Automatic}, QuestionFramework`Private`qmflag$$, {
+              Scaled[1.], Automatic}, True, Automatic], 
+           Sequence[
+           Background -> GrayLevel[1], FrameStyle -> 
+            RGBColor[
+             0.7490196078431373, 0.7490196078431373, 0.7490196078431373], 
+            RoundingRadius -> 5, FrameMargins -> 10, 
+            BaseStyle -> {"Panel", FontSize -> 14}]], StandardForm], 
+         TrackedSymbols :> {
+          QuestionFramework`Private`result$$, 
+           QuestionFramework`Private`input$$, 
+           QuestionFramework`Private`submittedvalue$$}], 
+        DynamicModuleValues :> {}], 
+       QuestionObject[
+        QuestionInterface[
+        "ShortAnswer", <|
+         "Prompt" -> "What is the next step?", "Range" -> {1, 900}|>], 
+        AssessmentFunction[{
+         2 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+          Except[2] -> <|
+           "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+            "The correct answer was 2"|>}, <|"ComparisonMethod" -> "Item"|>, 
+         "Validated" -> True]]], "Key" -> 
+     Inherited}},ExpressionUUID->"f3d033d6-e514-4b9f-ae61-e60fe93fb79c"],
+
+Cell[BoxData[
+ DynamicModuleBox[{QuestionFramework`Private`input$$ = 3, 
+  QuestionFramework`Private`interpreter$$ = Identity, 
+  QuestionFramework`Private`result$$ = 
+  AssessmentResultObject[<|
+   "Score" -> 1, "MaxScore" -> 1, "MinScore" -> 0, "AnswerCorrect" -> True, 
+    "GivenAnswer" -> 3, "Explanation" -> None, "Timestamp" -> 
+    DateObject[{2023, 6, 19, 16, 37, 39.7962828`9.352417391170514}, "Instant",
+       "Gregorian", -4.], "AssessmentOptions" -> {}, "AnswerComparisonMethod" -> 
+    "Item", "SubmissionCount" -> 1|>], 
+  QuestionFramework`Private`buttonenabled$$ = True, 
+  QuestionFramework`Private`submissionCount$$ = 1, 
+  QuestionFramework`Private`submittedvalue$$ = 3, 
+  QuestionFramework`Private`questionnotebookflag$$ = False, 
+  QuestionFramework`Private`qmflag$$ = False, 
+  QuestionFramework`Private`fieldtype$$ = Expression}, 
+  DynamicBox[ToBoxes[
+    Framed[
+     Grid[{{
+        Style["What is the next step?", {FontSize -> 15}], SpanFromLeft}, {
+        InputField[
+         Dynamic[QuestionFramework`Private`input$$], 
+         QuestionFramework`Private`fieldtype$$, 
+         Apply[Sequence, 
+          
+          Lookup[<|"FieldType" -> Expression, "MinAnswers" -> 1, "Prompt" -> 
+            "What is the next step?", "Range" -> {1, 900}|>, 
+           "FieldOptions", {}]], ImageSize -> 
+         If[QuestionFramework`Private`qmflag$$, 
+           Scaled[0.5], Automatic]], 
+        QuestionFramework`Private`generalquestionTest[
+        QuestionFramework`Private`result$$, QuestionFramework`Private`input$$,
+          QuestionFramework`Private`submittedvalue$$, 
+         AssessmentFunction[{
+          3 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+           Except[3] -> <|
+            "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+             "The correct answer was 3"|>}, <|"ComparisonMethod" -> "Item"|>, 
+          "Validated" -> True], QuestionFramework`Private`interpreter$$]}, {
+        If[
+         TrueQ[
+          Function[{QuestionFramework`Private`af}, 
+           Or[QuestionFramework`Private`af === None, CurrentValue[
+              EvaluationNotebook[], {
+              TaggingRules, "FormNotebook", "SubmissionOptions", 
+               "GroupSubmissionFlag"}] === True]][
+           
+           AssessmentFunction[{
+            3 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+             Except[3] -> <|
+              "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+               "The correct answer was 3"|>}, <|
+            "ComparisonMethod" -> "Item"|>, "Validated" -> True]]], "", 
+         Function[{
+          QuestionFramework`Private`func, 
+           QuestionFramework`Private`buttonenabled}, 
+          Button[
+           Framed[
+            Style["Submit", 12, FontColor -> White, FontWeight -> Plain], 
+            FrameStyle -> None, ImageMargins -> 0, RoundingRadius -> 2, 
+            ImageSize -> {Automatic, 21}, BaselinePosition -> Baseline, 
+            Background -> If[QuestionFramework`Private`buttonenabled, 
+              RGBColor[
+              0.043137254901960784`, 0.3803921568627451, 0.6352941176470588], 
+              RGBColor[
+              0.7686274509803922, 0.9019607843137255, 0.9725490196078431], 
+              RGBColor[
+              0.043137254901960784`, 0.3803921568627451, 
+               0.6352941176470588]]], QuestionFramework`Private`func, 
+           Evaluator -> Automatic, ImageSize -> {Automatic, 21}, Appearance -> 
+           None, BaselinePosition -> Baseline, Enabled -> 
+           Dynamic[QuestionFramework`Private`buttonenabled], Method -> 
+           "Preemptive"], {HoldFirst}][
+         QuestionFramework`Private`result$$ = 
+           QuestionFramework`Private`postProcessAssessment[
+             
+             AssessmentFunction[{
+              3 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+               Except[3] -> <|
+                "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+                 "The correct answer was 3"|>}, <|
+              "ComparisonMethod" -> "Item"|>, "Validated" -> True][
+              Interpreter[QuestionFramework`Private`interpreter$$][
+              QuestionFramework`Private`input$$], "SubmissionCount" -> 
+              QuestionFramework`Private`submissionCount$$], <|
+             "FieldType" -> Expression, "MinAnswers" -> 1, "Prompt" -> 
+              "What is the next step?", "Range" -> {1, 900}|>]; 
+          QuestionFramework`Private`submittedvalue$$ = 
+           QuestionFramework`Private`input$$; 
+          QuestionFramework`Private`submissionCount$$ = 
+           QuestionFramework`Private`getSubmissionCount[
+            QuestionFramework`Private`result$$]; 
+          QuestionFramework`Private`buttonenabled$$ = If[
+             QuestionFramework`Private`reachedMaxSubmissionsQ[
+             QuestionFramework`Private`result$$, 
+              QuestionFramework`Private`submissionCount$$], False, True, 
+             True], QuestionFramework`Private`buttonenabled$$]], 
+        If[
+        Head[QuestionFramework`Private`result$$] === AssessmentResultObject, 
+         Row[{
+           If[Head[
+              QuestionFramework`Private`result$$["Explanation"]] === String, 
+            QuestionFramework`Private`result$$["Explanation"], ""]}, 
+          Spacer[5]], ""]}}, 
+      Sequence[
+      Alignment -> Left, Spacings -> {1, 1}, 
+       Dividers -> {False, {2 -> RGBColor[
+            Rational[229, 255], 
+            Rational[229, 255], 
+            Rational[229, 255]]}}]], ImageSize -> 
+     Which[QuestionFramework`Private`questionnotebookflag$$, {
+       Full, Automatic}, QuestionFramework`Private`qmflag$$, {
+        Scaled[1.], Automatic}, True, Automatic], 
+     Sequence[
+     Background -> GrayLevel[1], FrameStyle -> 
+      RGBColor[0.7490196078431373, 0.7490196078431373, 0.7490196078431373], 
+      RoundingRadius -> 5, FrameMargins -> 10, 
+      BaseStyle -> {"Panel", FontSize -> 14}]], StandardForm],
+   ImageSizeCache->{
+    313.13281243741517`, {53.208496160991494`, 59.924316276423625`}},
+   TrackedSymbols:>{
+    QuestionFramework`Private`result$$, QuestionFramework`Private`input$$, 
+     QuestionFramework`Private`submittedvalue$$}],
+  DynamicModuleValues:>{}]], "FormElementCode",
+ TaggingRules->{
+  "FormNotebook" -> {
+    "Type" -> "Default", "Mode" -> "CODE", "FormExpr" -> InterpretationBox[
+       DynamicModuleBox[{
+        QuestionFramework`Private`input$$ = Null, 
+         QuestionFramework`Private`interpreter$$ = Identity, 
+         QuestionFramework`Private`result$$ = "", 
+         QuestionFramework`Private`buttonenabled$$ = True, 
+         QuestionFramework`Private`submissionCount$$ = 0, 
+         QuestionFramework`Private`submittedvalue$$ = "", 
+         QuestionFramework`Private`questionnotebookflag$$ = False, 
+         QuestionFramework`Private`qmflag$$ = False, 
+         QuestionFramework`Private`fieldtype$$ = Expression}, 
+        DynamicBox[
+         ToBoxes[
+          Framed[
+           Grid[{{
+              Style["What is the next step?", {FontSize -> 15}], 
+              SpanFromLeft}, {
+              InputField[
+               Dynamic[QuestionFramework`Private`input$$], 
+               QuestionFramework`Private`fieldtype$$, 
+               Apply[Sequence, 
+                
+                Lookup[<|
+                 "FieldType" -> Expression, "MinAnswers" -> 1, "Prompt" -> 
+                  "What is the next step?", "Range" -> {1, 900}|>, 
+                 "FieldOptions", {}]], ImageSize -> 
+               If[QuestionFramework`Private`qmflag$$, 
+                 Scaled[0.5], Automatic]], 
+              QuestionFramework`Private`generalquestionTest[
+              QuestionFramework`Private`result$$, 
+               QuestionFramework`Private`input$$, 
+               QuestionFramework`Private`submittedvalue$$, 
+               
+               AssessmentFunction[{
+                3 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+                 Except[3] -> <|
+                  "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+                   "The correct answer was 3"|>}, <|
+                "ComparisonMethod" -> "Item"|>, "Validated" -> True], 
+               QuestionFramework`Private`interpreter$$]}, {
+              If[
+               TrueQ[
+                Function[{QuestionFramework`Private`af}, 
+                 Or[QuestionFramework`Private`af === None, CurrentValue[
+                    EvaluationNotebook[], {
+                    TaggingRules, "FormNotebook", "SubmissionOptions", 
+                    "GroupSubmissionFlag"}] === True]][
+                 
+                 AssessmentFunction[{
+                  3 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+                   Except[3] -> <|
+                    "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+                    "The correct answer was 3"|>}, <|
+                  "ComparisonMethod" -> "Item"|>, "Validated" -> True]]], "", 
+               
+               Function[{
+                QuestionFramework`Private`func, 
+                 QuestionFramework`Private`buttonenabled}, 
+                Button[
+                 Framed[
+                  Style[
+                  "Submit", 12, FontColor -> White, FontWeight -> Plain], 
+                  FrameStyle -> None, ImageMargins -> 0, RoundingRadius -> 2, 
+                  ImageSize -> {Automatic, 21}, BaselinePosition -> Baseline, 
+                  Background -> If[QuestionFramework`Private`buttonenabled, 
+                    RGBColor[
+                    0.043137254901960784`, 0.3803921568627451, 
+                    0.6352941176470588], 
+                    RGBColor[
+                    0.7686274509803922, 0.9019607843137255, 
+                    0.9725490196078431], 
+                    RGBColor[
+                    0.043137254901960784`, 0.3803921568627451, 
+                    0.6352941176470588]]], QuestionFramework`Private`func, 
+                 Evaluator -> Automatic, ImageSize -> {Automatic, 21}, 
+                 Appearance -> None, BaselinePosition -> Baseline, Enabled -> 
+                 Dynamic[QuestionFramework`Private`buttonenabled], Method -> 
+                 "Preemptive"], {HoldFirst}][
+               QuestionFramework`Private`result$$ = 
+                 QuestionFramework`Private`postProcessAssessment[
+                   
+                   AssessmentFunction[{
+                    3 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+                    Except[3] -> <|
+                    "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+                    "The correct answer was 3"|>}, <|
+                    "ComparisonMethod" -> "Item"|>, "Validated" -> True][
+                    Interpreter[QuestionFramework`Private`interpreter$$][
+                    QuestionFramework`Private`input$$], "SubmissionCount" -> 
+                    QuestionFramework`Private`submissionCount$$], <|
+                   "FieldType" -> Expression, "MinAnswers" -> 1, "Prompt" -> 
+                    "What is the next step?", "Range" -> {1, 900}|>]; 
+                QuestionFramework`Private`submittedvalue$$ = 
+                 QuestionFramework`Private`input$$; 
+                QuestionFramework`Private`submissionCount$$ = 
+                 QuestionFramework`Private`getSubmissionCount[
+                  QuestionFramework`Private`result$$]; 
+                QuestionFramework`Private`buttonenabled$$ = If[
+                   QuestionFramework`Private`reachedMaxSubmissionsQ[
+                   QuestionFramework`Private`result$$, 
+                    QuestionFramework`Private`submissionCount$$], False, True,
+                    True], QuestionFramework`Private`buttonenabled$$]], 
+              If[
+              Head[QuestionFramework`Private`result$$] === 
+               AssessmentResultObject, 
+               Row[{
+                 If[Head[
+                    QuestionFramework`Private`result$$["Explanation"]] === 
+                  String, 
+                  QuestionFramework`Private`result$$["Explanation"], ""]}, 
+                Spacer[5]], ""]}}, 
+            Sequence[
+            Alignment -> Left, Spacings -> {1, 1}, 
+             Dividers -> {False, {2 -> RGBColor[
+                  Rational[229, 255], 
+                  Rational[229, 255], 
+                  Rational[229, 255]]}}]], ImageSize -> 
+           Which[QuestionFramework`Private`questionnotebookflag$$, {
+             Full, Automatic}, QuestionFramework`Private`qmflag$$, {
+              Scaled[1.], Automatic}, True, Automatic], 
+           Sequence[
+           Background -> GrayLevel[1], FrameStyle -> 
+            RGBColor[
+             0.7490196078431373, 0.7490196078431373, 0.7490196078431373], 
+            RoundingRadius -> 5, FrameMargins -> 10, 
+            BaseStyle -> {"Panel", FontSize -> 14}]], StandardForm], 
+         TrackedSymbols :> {
+          QuestionFramework`Private`result$$, 
+           QuestionFramework`Private`input$$, 
+           QuestionFramework`Private`submittedvalue$$}], 
+        DynamicModuleValues :> {}], 
+       QuestionObject[
+        QuestionInterface[
+        "ShortAnswer", <|
+         "Prompt" -> "What is the next step?", "Range" -> {1, 900}|>], 
+        AssessmentFunction[{
+         3 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+          Except[3] -> <|
+           "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+            "The correct answer was 3"|>}, <|"ComparisonMethod" -> "Item"|>, 
+         "Validated" -> True]]], "Key" -> 
+     Inherited}},ExpressionUUID->"dc4fa0dc-5e28-444a-9efa-afa8a203b387"],
+
+Cell[BoxData[
+ DynamicModuleBox[{QuestionFramework`Private`input$$ = 4, 
+  QuestionFramework`Private`interpreter$$ = Identity, 
+  QuestionFramework`Private`result$$ = 
+  AssessmentResultObject[<|
+   "Score" -> 1, "MaxScore" -> 1, "MinScore" -> 0, "AnswerCorrect" -> True, 
+    "GivenAnswer" -> 4, "Explanation" -> None, "Timestamp" -> 
+    DateObject[{2023, 6, 19, 16, 37, 42.7673326`9.383687038743474}, "Instant",
+       "Gregorian", -4.], "AssessmentOptions" -> {}, "AnswerComparisonMethod" -> 
+    "Item", "SubmissionCount" -> 1|>], 
+  QuestionFramework`Private`buttonenabled$$ = True, 
+  QuestionFramework`Private`submissionCount$$ = 1, 
+  QuestionFramework`Private`submittedvalue$$ = 4, 
+  QuestionFramework`Private`questionnotebookflag$$ = False, 
+  QuestionFramework`Private`qmflag$$ = False, 
+  QuestionFramework`Private`fieldtype$$ = Expression}, 
+  DynamicBox[ToBoxes[
+    Framed[
+     Grid[{{
+        Style["What is the next step?", {FontSize -> 15}], SpanFromLeft}, {
+        InputField[
+         Dynamic[QuestionFramework`Private`input$$], 
+         QuestionFramework`Private`fieldtype$$, 
+         Apply[Sequence, 
+          
+          Lookup[<|"FieldType" -> Expression, "MinAnswers" -> 1, "Prompt" -> 
+            "What is the next step?", "Range" -> {1, 900}|>, 
+           "FieldOptions", {}]], ImageSize -> 
+         If[QuestionFramework`Private`qmflag$$, 
+           Scaled[0.5], Automatic]], 
+        QuestionFramework`Private`generalquestionTest[
+        QuestionFramework`Private`result$$, QuestionFramework`Private`input$$,
+          QuestionFramework`Private`submittedvalue$$, 
+         AssessmentFunction[{
+          4 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+           Except[4] -> <|
+            "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+             "The correct answer was 4"|>}, <|"ComparisonMethod" -> "Item"|>, 
+          "Validated" -> True], QuestionFramework`Private`interpreter$$]}, {
+        If[
+         TrueQ[
+          Function[{QuestionFramework`Private`af}, 
+           Or[QuestionFramework`Private`af === None, CurrentValue[
+              EvaluationNotebook[], {
+              TaggingRules, "FormNotebook", "SubmissionOptions", 
+               "GroupSubmissionFlag"}] === True]][
+           
+           AssessmentFunction[{
+            4 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+             Except[4] -> <|
+              "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+               "The correct answer was 4"|>}, <|
+            "ComparisonMethod" -> "Item"|>, "Validated" -> True]]], "", 
+         Function[{
+          QuestionFramework`Private`func, 
+           QuestionFramework`Private`buttonenabled}, 
+          Button[
+           Framed[
+            Style["Submit", 12, FontColor -> White, FontWeight -> Plain], 
+            FrameStyle -> None, ImageMargins -> 0, RoundingRadius -> 2, 
+            ImageSize -> {Automatic, 21}, BaselinePosition -> Baseline, 
+            Background -> If[QuestionFramework`Private`buttonenabled, 
+              RGBColor[
+              0.043137254901960784`, 0.3803921568627451, 0.6352941176470588], 
+              RGBColor[
+              0.7686274509803922, 0.9019607843137255, 0.9725490196078431], 
+              RGBColor[
+              0.043137254901960784`, 0.3803921568627451, 
+               0.6352941176470588]]], QuestionFramework`Private`func, 
+           Evaluator -> Automatic, ImageSize -> {Automatic, 21}, Appearance -> 
+           None, BaselinePosition -> Baseline, Enabled -> 
+           Dynamic[QuestionFramework`Private`buttonenabled], Method -> 
+           "Preemptive"], {HoldFirst}][
+         QuestionFramework`Private`result$$ = 
+           QuestionFramework`Private`postProcessAssessment[
+             
+             AssessmentFunction[{
+              4 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+               Except[4] -> <|
+                "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+                 "The correct answer was 4"|>}, <|
+              "ComparisonMethod" -> "Item"|>, "Validated" -> True][
+              Interpreter[QuestionFramework`Private`interpreter$$][
+              QuestionFramework`Private`input$$], "SubmissionCount" -> 
+              QuestionFramework`Private`submissionCount$$], <|
+             "FieldType" -> Expression, "MinAnswers" -> 1, "Prompt" -> 
+              "What is the next step?", "Range" -> {1, 900}|>]; 
+          QuestionFramework`Private`submittedvalue$$ = 
+           QuestionFramework`Private`input$$; 
+          QuestionFramework`Private`submissionCount$$ = 
+           QuestionFramework`Private`getSubmissionCount[
+            QuestionFramework`Private`result$$]; 
+          QuestionFramework`Private`buttonenabled$$ = If[
+             QuestionFramework`Private`reachedMaxSubmissionsQ[
+             QuestionFramework`Private`result$$, 
+              QuestionFramework`Private`submissionCount$$], False, True, 
+             True], QuestionFramework`Private`buttonenabled$$]], 
+        If[
+        Head[QuestionFramework`Private`result$$] === AssessmentResultObject, 
+         Row[{
+           If[Head[
+              QuestionFramework`Private`result$$["Explanation"]] === String, 
+            QuestionFramework`Private`result$$["Explanation"], ""]}, 
+          Spacer[5]], ""]}}, 
+      Sequence[
+      Alignment -> Left, Spacings -> {1, 1}, 
+       Dividers -> {False, {2 -> RGBColor[
+            Rational[229, 255], 
+            Rational[229, 255], 
+            Rational[229, 255]]}}]], ImageSize -> 
+     Which[QuestionFramework`Private`questionnotebookflag$$, {
+       Full, Automatic}, QuestionFramework`Private`qmflag$$, {
+        Scaled[1.], Automatic}, True, Automatic], 
+     Sequence[
+     Background -> GrayLevel[1], FrameStyle -> 
+      RGBColor[0.7490196078431373, 0.7490196078431373, 0.7490196078431373], 
+      RoundingRadius -> 5, FrameMargins -> 10, 
+      BaseStyle -> {"Panel", FontSize -> 14}]], StandardForm],
+   ImageSizeCache->{
+    313.13281243741517`, {53.208496160991494`, 59.924316276423625`}},
+   TrackedSymbols:>{
+    QuestionFramework`Private`result$$, QuestionFramework`Private`input$$, 
+     QuestionFramework`Private`submittedvalue$$}],
+  DynamicModuleValues:>{}]], "FormElementCode",
+ TaggingRules->{
+  "FormNotebook" -> {
+    "Type" -> "Default", "Mode" -> "CODE", "FormExpr" -> InterpretationBox[
+       DynamicModuleBox[{
+        QuestionFramework`Private`input$$ = Null, 
+         QuestionFramework`Private`interpreter$$ = Identity, 
+         QuestionFramework`Private`result$$ = "", 
+         QuestionFramework`Private`buttonenabled$$ = True, 
+         QuestionFramework`Private`submissionCount$$ = 0, 
+         QuestionFramework`Private`submittedvalue$$ = "", 
+         QuestionFramework`Private`questionnotebookflag$$ = False, 
+         QuestionFramework`Private`qmflag$$ = False, 
+         QuestionFramework`Private`fieldtype$$ = Expression}, 
+        DynamicBox[
+         ToBoxes[
+          Framed[
+           Grid[{{
+              Style["What is the next step?", {FontSize -> 15}], 
+              SpanFromLeft}, {
+              InputField[
+               Dynamic[QuestionFramework`Private`input$$], 
+               QuestionFramework`Private`fieldtype$$, 
+               Apply[Sequence, 
+                
+                Lookup[<|
+                 "FieldType" -> Expression, "MinAnswers" -> 1, "Prompt" -> 
+                  "What is the next step?", "Range" -> {1, 900}|>, 
+                 "FieldOptions", {}]], ImageSize -> 
+               If[QuestionFramework`Private`qmflag$$, 
+                 Scaled[0.5], Automatic]], 
+              QuestionFramework`Private`generalquestionTest[
+              QuestionFramework`Private`result$$, 
+               QuestionFramework`Private`input$$, 
+               QuestionFramework`Private`submittedvalue$$, 
+               
+               AssessmentFunction[{
+                4 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+                 Except[4] -> <|
+                  "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+                   "The correct answer was 4"|>}, <|
+                "ComparisonMethod" -> "Item"|>, "Validated" -> True], 
+               QuestionFramework`Private`interpreter$$]}, {
+              If[
+               TrueQ[
+                Function[{QuestionFramework`Private`af}, 
+                 Or[QuestionFramework`Private`af === None, CurrentValue[
+                    EvaluationNotebook[], {
+                    TaggingRules, "FormNotebook", "SubmissionOptions", 
+                    "GroupSubmissionFlag"}] === True]][
+                 
+                 AssessmentFunction[{
+                  4 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+                   Except[4] -> <|
+                    "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+                    "The correct answer was 4"|>}, <|
+                  "ComparisonMethod" -> "Item"|>, "Validated" -> True]]], "", 
+               
+               Function[{
+                QuestionFramework`Private`func, 
+                 QuestionFramework`Private`buttonenabled}, 
+                Button[
+                 Framed[
+                  Style[
+                  "Submit", 12, FontColor -> White, FontWeight -> Plain], 
+                  FrameStyle -> None, ImageMargins -> 0, RoundingRadius -> 2, 
+                  ImageSize -> {Automatic, 21}, BaselinePosition -> Baseline, 
+                  Background -> If[QuestionFramework`Private`buttonenabled, 
+                    RGBColor[
+                    0.043137254901960784`, 0.3803921568627451, 
+                    0.6352941176470588], 
+                    RGBColor[
+                    0.7686274509803922, 0.9019607843137255, 
+                    0.9725490196078431], 
+                    RGBColor[
+                    0.043137254901960784`, 0.3803921568627451, 
+                    0.6352941176470588]]], QuestionFramework`Private`func, 
+                 Evaluator -> Automatic, ImageSize -> {Automatic, 21}, 
+                 Appearance -> None, BaselinePosition -> Baseline, Enabled -> 
+                 Dynamic[QuestionFramework`Private`buttonenabled], Method -> 
+                 "Preemptive"], {HoldFirst}][
+               QuestionFramework`Private`result$$ = 
+                 QuestionFramework`Private`postProcessAssessment[
+                   
+                   AssessmentFunction[{
+                    4 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+                    Except[4] -> <|
+                    "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+                    "The correct answer was 4"|>}, <|
+                    "ComparisonMethod" -> "Item"|>, "Validated" -> True][
+                    Interpreter[QuestionFramework`Private`interpreter$$][
+                    QuestionFramework`Private`input$$], "SubmissionCount" -> 
+                    QuestionFramework`Private`submissionCount$$], <|
+                   "FieldType" -> Expression, "MinAnswers" -> 1, "Prompt" -> 
+                    "What is the next step?", "Range" -> {1, 900}|>]; 
+                QuestionFramework`Private`submittedvalue$$ = 
+                 QuestionFramework`Private`input$$; 
+                QuestionFramework`Private`submissionCount$$ = 
+                 QuestionFramework`Private`getSubmissionCount[
+                  QuestionFramework`Private`result$$]; 
+                QuestionFramework`Private`buttonenabled$$ = If[
+                   QuestionFramework`Private`reachedMaxSubmissionsQ[
+                   QuestionFramework`Private`result$$, 
+                    QuestionFramework`Private`submissionCount$$], False, True,
+                    True], QuestionFramework`Private`buttonenabled$$]], 
+              If[
+              Head[QuestionFramework`Private`result$$] === 
+               AssessmentResultObject, 
+               Row[{
+                 If[Head[
+                    QuestionFramework`Private`result$$["Explanation"]] === 
+                  String, 
+                  QuestionFramework`Private`result$$["Explanation"], ""]}, 
+                Spacer[5]], ""]}}, 
+            Sequence[
+            Alignment -> Left, Spacings -> {1, 1}, 
+             Dividers -> {False, {2 -> RGBColor[
+                  Rational[229, 255], 
+                  Rational[229, 255], 
+                  Rational[229, 255]]}}]], ImageSize -> 
+           Which[QuestionFramework`Private`questionnotebookflag$$, {
+             Full, Automatic}, QuestionFramework`Private`qmflag$$, {
+              Scaled[1.], Automatic}, True, Automatic], 
+           Sequence[
+           Background -> GrayLevel[1], FrameStyle -> 
+            RGBColor[
+             0.7490196078431373, 0.7490196078431373, 0.7490196078431373], 
+            RoundingRadius -> 5, FrameMargins -> 10, 
+            BaseStyle -> {"Panel", FontSize -> 14}]], StandardForm], 
+         TrackedSymbols :> {
+          QuestionFramework`Private`result$$, 
+           QuestionFramework`Private`input$$, 
+           QuestionFramework`Private`submittedvalue$$}], 
+        DynamicModuleValues :> {}], 
+       QuestionObject[
+        QuestionInterface[
+        "ShortAnswer", <|
+         "Prompt" -> "What is the next step?", "Range" -> {1, 900}|>], 
+        AssessmentFunction[{
+         4 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+          Except[4] -> <|
+           "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+            "The correct answer was 4"|>}, <|"ComparisonMethod" -> "Item"|>, 
+         "Validated" -> True]]], "Key" -> 
+     Inherited}},ExpressionUUID->"1455ef74-a77e-49c1-af2c-826714dc9ad6"],
+
+Cell[BoxData[
+ DynamicModuleBox[{QuestionFramework`Private`input$$ = 5, 
+  QuestionFramework`Private`interpreter$$ = Identity, 
+  QuestionFramework`Private`result$$ = 
+  AssessmentResultObject[<|
+   "Score" -> 1, "MaxScore" -> 1, "MinScore" -> 0, "AnswerCorrect" -> True, 
+    "GivenAnswer" -> 5, "Explanation" -> None, "Timestamp" -> 
+    DateObject[{2023, 6, 19, 16, 37, 45.7896489`9.413342179934032}, "Instant",
+       "Gregorian", -4.], "AssessmentOptions" -> {}, "AnswerComparisonMethod" -> 
+    "Item", "SubmissionCount" -> 1|>], 
+  QuestionFramework`Private`buttonenabled$$ = True, 
+  QuestionFramework`Private`submissionCount$$ = 1, 
+  QuestionFramework`Private`submittedvalue$$ = 5, 
+  QuestionFramework`Private`questionnotebookflag$$ = False, 
+  QuestionFramework`Private`qmflag$$ = False, 
+  QuestionFramework`Private`fieldtype$$ = Expression}, 
+  DynamicBox[ToBoxes[
+    Framed[
+     Grid[{{
+        Style["What is the next step?", {FontSize -> 15}], SpanFromLeft}, {
+        InputField[
+         Dynamic[QuestionFramework`Private`input$$], 
+         QuestionFramework`Private`fieldtype$$, 
+         Apply[Sequence, 
+          
+          Lookup[<|"FieldType" -> Expression, "MinAnswers" -> 1, "Prompt" -> 
+            "What is the next step?", "Range" -> {1, 900}|>, 
+           "FieldOptions", {}]], ImageSize -> 
+         If[QuestionFramework`Private`qmflag$$, 
+           Scaled[0.5], Automatic]], 
+        QuestionFramework`Private`generalquestionTest[
+        QuestionFramework`Private`result$$, QuestionFramework`Private`input$$,
+          QuestionFramework`Private`submittedvalue$$, 
+         AssessmentFunction[{
+          5 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+           Except[5] -> <|
+            "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+             "The correct answer was 5"|>}, <|"ComparisonMethod" -> "Item"|>, 
+          "Validated" -> True], QuestionFramework`Private`interpreter$$]}, {
+        If[
+         TrueQ[
+          Function[{QuestionFramework`Private`af}, 
+           Or[QuestionFramework`Private`af === None, CurrentValue[
+              EvaluationNotebook[], {
+              TaggingRules, "FormNotebook", "SubmissionOptions", 
+               "GroupSubmissionFlag"}] === True]][
+           
+           AssessmentFunction[{
+            5 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+             Except[5] -> <|
+              "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+               "The correct answer was 5"|>}, <|
+            "ComparisonMethod" -> "Item"|>, "Validated" -> True]]], "", 
+         Function[{
+          QuestionFramework`Private`func, 
+           QuestionFramework`Private`buttonenabled}, 
+          Button[
+           Framed[
+            Style["Submit", 12, FontColor -> White, FontWeight -> Plain], 
+            FrameStyle -> None, ImageMargins -> 0, RoundingRadius -> 2, 
+            ImageSize -> {Automatic, 21}, BaselinePosition -> Baseline, 
+            Background -> If[QuestionFramework`Private`buttonenabled, 
+              RGBColor[
+              0.043137254901960784`, 0.3803921568627451, 0.6352941176470588], 
+              RGBColor[
+              0.7686274509803922, 0.9019607843137255, 0.9725490196078431], 
+              RGBColor[
+              0.043137254901960784`, 0.3803921568627451, 
+               0.6352941176470588]]], QuestionFramework`Private`func, 
+           Evaluator -> Automatic, ImageSize -> {Automatic, 21}, Appearance -> 
+           None, BaselinePosition -> Baseline, Enabled -> 
+           Dynamic[QuestionFramework`Private`buttonenabled], Method -> 
+           "Preemptive"], {HoldFirst}][
+         QuestionFramework`Private`result$$ = 
+           QuestionFramework`Private`postProcessAssessment[
+             
+             AssessmentFunction[{
+              5 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+               Except[5] -> <|
+                "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+                 "The correct answer was 5"|>}, <|
+              "ComparisonMethod" -> "Item"|>, "Validated" -> True][
+              Interpreter[QuestionFramework`Private`interpreter$$][
+              QuestionFramework`Private`input$$], "SubmissionCount" -> 
+              QuestionFramework`Private`submissionCount$$], <|
+             "FieldType" -> Expression, "MinAnswers" -> 1, "Prompt" -> 
+              "What is the next step?", "Range" -> {1, 900}|>]; 
+          QuestionFramework`Private`submittedvalue$$ = 
+           QuestionFramework`Private`input$$; 
+          QuestionFramework`Private`submissionCount$$ = 
+           QuestionFramework`Private`getSubmissionCount[
+            QuestionFramework`Private`result$$]; 
+          QuestionFramework`Private`buttonenabled$$ = If[
+             QuestionFramework`Private`reachedMaxSubmissionsQ[
+             QuestionFramework`Private`result$$, 
+              QuestionFramework`Private`submissionCount$$], False, True, 
+             True], QuestionFramework`Private`buttonenabled$$]], 
+        If[
+        Head[QuestionFramework`Private`result$$] === AssessmentResultObject, 
+         Row[{
+           If[Head[
+              QuestionFramework`Private`result$$["Explanation"]] === String, 
+            QuestionFramework`Private`result$$["Explanation"], ""]}, 
+          Spacer[5]], ""]}}, 
+      Sequence[
+      Alignment -> Left, Spacings -> {1, 1}, 
+       Dividers -> {False, {2 -> RGBColor[
+            Rational[229, 255], 
+            Rational[229, 255], 
+            Rational[229, 255]]}}]], ImageSize -> 
+     Which[QuestionFramework`Private`questionnotebookflag$$, {
+       Full, Automatic}, QuestionFramework`Private`qmflag$$, {
+        Scaled[1.], Automatic}, True, Automatic], 
+     Sequence[
+     Background -> GrayLevel[1], FrameStyle -> 
+      RGBColor[0.7490196078431373, 0.7490196078431373, 0.7490196078431373], 
+      RoundingRadius -> 5, FrameMargins -> 10, 
+      BaseStyle -> {"Panel", FontSize -> 14}]], StandardForm],
+   ImageSizeCache->{
+    313.13281243741517`, {53.208496160991494`, 59.924316276423625`}},
+   TrackedSymbols:>{
+    QuestionFramework`Private`result$$, QuestionFramework`Private`input$$, 
+     QuestionFramework`Private`submittedvalue$$}],
+  DynamicModuleValues:>{}]], "FormElementCode",
+ TaggingRules->{
+  "FormNotebook" -> {
+    "Type" -> "Default", "Mode" -> "CODE", "FormExpr" -> InterpretationBox[
+       DynamicModuleBox[{
+        QuestionFramework`Private`input$$ = Null, 
+         QuestionFramework`Private`interpreter$$ = Identity, 
+         QuestionFramework`Private`result$$ = "", 
+         QuestionFramework`Private`buttonenabled$$ = True, 
+         QuestionFramework`Private`submissionCount$$ = 0, 
+         QuestionFramework`Private`submittedvalue$$ = "", 
+         QuestionFramework`Private`questionnotebookflag$$ = False, 
+         QuestionFramework`Private`qmflag$$ = False, 
+         QuestionFramework`Private`fieldtype$$ = Expression}, 
+        DynamicBox[
+         ToBoxes[
+          Framed[
+           Grid[{{
+              Style["What is the next step?", {FontSize -> 15}], 
+              SpanFromLeft}, {
+              InputField[
+               Dynamic[QuestionFramework`Private`input$$], 
+               QuestionFramework`Private`fieldtype$$, 
+               Apply[Sequence, 
+                
+                Lookup[<|
+                 "FieldType" -> Expression, "MinAnswers" -> 1, "Prompt" -> 
+                  "What is the next step?", "Range" -> {1, 900}|>, 
+                 "FieldOptions", {}]], ImageSize -> 
+               If[QuestionFramework`Private`qmflag$$, 
+                 Scaled[0.5], Automatic]], 
+              QuestionFramework`Private`generalquestionTest[
+              QuestionFramework`Private`result$$, 
+               QuestionFramework`Private`input$$, 
+               QuestionFramework`Private`submittedvalue$$, 
+               
+               AssessmentFunction[{
+                5 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+                 Except[5] -> <|
+                  "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+                   "The correct answer was 5"|>}, <|
+                "ComparisonMethod" -> "Item"|>, "Validated" -> True], 
+               QuestionFramework`Private`interpreter$$]}, {
+              If[
+               TrueQ[
+                Function[{QuestionFramework`Private`af}, 
+                 Or[QuestionFramework`Private`af === None, CurrentValue[
+                    EvaluationNotebook[], {
+                    TaggingRules, "FormNotebook", "SubmissionOptions", 
+                    "GroupSubmissionFlag"}] === True]][
+                 
+                 AssessmentFunction[{
+                  5 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+                   Except[5] -> <|
+                    "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+                    "The correct answer was 5"|>}, <|
+                  "ComparisonMethod" -> "Item"|>, "Validated" -> True]]], "", 
+               
+               Function[{
+                QuestionFramework`Private`func, 
+                 QuestionFramework`Private`buttonenabled}, 
+                Button[
+                 Framed[
+                  Style[
+                  "Submit", 12, FontColor -> White, FontWeight -> Plain], 
+                  FrameStyle -> None, ImageMargins -> 0, RoundingRadius -> 2, 
+                  ImageSize -> {Automatic, 21}, BaselinePosition -> Baseline, 
+                  Background -> If[QuestionFramework`Private`buttonenabled, 
+                    RGBColor[
+                    0.043137254901960784`, 0.3803921568627451, 
+                    0.6352941176470588], 
+                    RGBColor[
+                    0.7686274509803922, 0.9019607843137255, 
+                    0.9725490196078431], 
+                    RGBColor[
+                    0.043137254901960784`, 0.3803921568627451, 
+                    0.6352941176470588]]], QuestionFramework`Private`func, 
+                 Evaluator -> Automatic, ImageSize -> {Automatic, 21}, 
+                 Appearance -> None, BaselinePosition -> Baseline, Enabled -> 
+                 Dynamic[QuestionFramework`Private`buttonenabled], Method -> 
+                 "Preemptive"], {HoldFirst}][
+               QuestionFramework`Private`result$$ = 
+                 QuestionFramework`Private`postProcessAssessment[
+                   
+                   AssessmentFunction[{
+                    5 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+                    Except[5] -> <|
+                    "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+                    "The correct answer was 5"|>}, <|
+                    "ComparisonMethod" -> "Item"|>, "Validated" -> True][
+                    Interpreter[QuestionFramework`Private`interpreter$$][
+                    QuestionFramework`Private`input$$], "SubmissionCount" -> 
+                    QuestionFramework`Private`submissionCount$$], <|
+                   "FieldType" -> Expression, "MinAnswers" -> 1, "Prompt" -> 
+                    "What is the next step?", "Range" -> {1, 900}|>]; 
+                QuestionFramework`Private`submittedvalue$$ = 
+                 QuestionFramework`Private`input$$; 
+                QuestionFramework`Private`submissionCount$$ = 
+                 QuestionFramework`Private`getSubmissionCount[
+                  QuestionFramework`Private`result$$]; 
+                QuestionFramework`Private`buttonenabled$$ = If[
+                   QuestionFramework`Private`reachedMaxSubmissionsQ[
+                   QuestionFramework`Private`result$$, 
+                    QuestionFramework`Private`submissionCount$$], False, True,
+                    True], QuestionFramework`Private`buttonenabled$$]], 
+              If[
+              Head[QuestionFramework`Private`result$$] === 
+               AssessmentResultObject, 
+               Row[{
+                 If[Head[
+                    QuestionFramework`Private`result$$["Explanation"]] === 
+                  String, 
+                  QuestionFramework`Private`result$$["Explanation"], ""]}, 
+                Spacer[5]], ""]}}, 
+            Sequence[
+            Alignment -> Left, Spacings -> {1, 1}, 
+             Dividers -> {False, {2 -> RGBColor[
+                  Rational[229, 255], 
+                  Rational[229, 255], 
+                  Rational[229, 255]]}}]], ImageSize -> 
+           Which[QuestionFramework`Private`questionnotebookflag$$, {
+             Full, Automatic}, QuestionFramework`Private`qmflag$$, {
+              Scaled[1.], Automatic}, True, Automatic], 
+           Sequence[
+           Background -> GrayLevel[1], FrameStyle -> 
+            RGBColor[
+             0.7490196078431373, 0.7490196078431373, 0.7490196078431373], 
+            RoundingRadius -> 5, FrameMargins -> 10, 
+            BaseStyle -> {"Panel", FontSize -> 14}]], StandardForm], 
+         TrackedSymbols :> {
+          QuestionFramework`Private`result$$, 
+           QuestionFramework`Private`input$$, 
+           QuestionFramework`Private`submittedvalue$$}], 
+        DynamicModuleValues :> {}], 
+       QuestionObject[
+        QuestionInterface[
+        "ShortAnswer", <|
+         "Prompt" -> "What is the next step?", "Range" -> {1, 900}|>], 
+        AssessmentFunction[{
+         5 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+          Except[5] -> <|
+           "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+            "The correct answer was 5"|>}, <|"ComparisonMethod" -> "Item"|>, 
+         "Validated" -> True]]], "Key" -> 
+     Inherited}},ExpressionUUID->"943487ab-fe25-4ddb-be77-2a7c47f9e973"],
+
+Cell[BoxData[
+ DynamicModuleBox[{QuestionFramework`Private`input$$ = 10, 
+  QuestionFramework`Private`interpreter$$ = Identity, 
+  QuestionFramework`Private`result$$ = 
+  AssessmentResultObject[<|
+   "Score" -> 1, "MaxScore" -> 1, "MinScore" -> 0, "AnswerCorrect" -> True, 
+    "GivenAnswer" -> 10, "Explanation" -> None, "Timestamp" -> 
+    DateObject[{2023, 6, 19, 16, 37, 48.646284`9.43962452915468}, "Instant", 
+      "Gregorian", -4.], "AssessmentOptions" -> {}, "AnswerComparisonMethod" -> 
+    "Item", "SubmissionCount" -> 1|>], 
+  QuestionFramework`Private`buttonenabled$$ = True, 
+  QuestionFramework`Private`submissionCount$$ = 1, 
+  QuestionFramework`Private`submittedvalue$$ = 10, 
+  QuestionFramework`Private`questionnotebookflag$$ = False, 
+  QuestionFramework`Private`qmflag$$ = False, 
+  QuestionFramework`Private`fieldtype$$ = Expression}, 
+  DynamicBox[ToBoxes[
+    Framed[
+     Grid[{{
+        Style["What is the next step?", {FontSize -> 15}], SpanFromLeft}, {
+        InputField[
+         Dynamic[QuestionFramework`Private`input$$], 
+         QuestionFramework`Private`fieldtype$$, 
+         Apply[Sequence, 
+          
+          Lookup[<|"FieldType" -> Expression, "MinAnswers" -> 1, "Prompt" -> 
+            "What is the next step?", "Range" -> {1, 900}|>, 
+           "FieldOptions", {}]], ImageSize -> 
+         If[QuestionFramework`Private`qmflag$$, 
+           Scaled[0.5], Automatic]], 
+        QuestionFramework`Private`generalquestionTest[
+        QuestionFramework`Private`result$$, QuestionFramework`Private`input$$,
+          QuestionFramework`Private`submittedvalue$$, 
+         AssessmentFunction[{
+          10 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+           Except[10] -> <|
+            "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+             "The correct answer was 10"|>}, <|"ComparisonMethod" -> "Item"|>,
+           "Validated" -> True], QuestionFramework`Private`interpreter$$]}, {
+        If[
+         TrueQ[
+          Function[{QuestionFramework`Private`af}, 
+           Or[QuestionFramework`Private`af === None, CurrentValue[
+              EvaluationNotebook[], {
+              TaggingRules, "FormNotebook", "SubmissionOptions", 
+               "GroupSubmissionFlag"}] === True]][
+           
+           AssessmentFunction[{
+            10 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+             Except[10] -> <|
+              "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+               "The correct answer was 10"|>}, <|
+            "ComparisonMethod" -> "Item"|>, "Validated" -> True]]], "", 
+         Function[{
+          QuestionFramework`Private`func, 
+           QuestionFramework`Private`buttonenabled}, 
+          Button[
+           Framed[
+            Style["Submit", 12, FontColor -> White, FontWeight -> Plain], 
+            FrameStyle -> None, ImageMargins -> 0, RoundingRadius -> 2, 
+            ImageSize -> {Automatic, 21}, BaselinePosition -> Baseline, 
+            Background -> If[QuestionFramework`Private`buttonenabled, 
+              RGBColor[
+              0.043137254901960784`, 0.3803921568627451, 0.6352941176470588], 
+              RGBColor[
+              0.7686274509803922, 0.9019607843137255, 0.9725490196078431], 
+              RGBColor[
+              0.043137254901960784`, 0.3803921568627451, 
+               0.6352941176470588]]], QuestionFramework`Private`func, 
+           Evaluator -> Automatic, ImageSize -> {Automatic, 21}, Appearance -> 
+           None, BaselinePosition -> Baseline, Enabled -> 
+           Dynamic[QuestionFramework`Private`buttonenabled], Method -> 
+           "Preemptive"], {HoldFirst}][
+         QuestionFramework`Private`result$$ = 
+           QuestionFramework`Private`postProcessAssessment[
+             
+             AssessmentFunction[{
+              10 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+               Except[10] -> <|
+                "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+                 "The correct answer was 10"|>}, <|
+              "ComparisonMethod" -> "Item"|>, "Validated" -> True][
+              Interpreter[QuestionFramework`Private`interpreter$$][
+              QuestionFramework`Private`input$$], "SubmissionCount" -> 
+              QuestionFramework`Private`submissionCount$$], <|
+             "FieldType" -> Expression, "MinAnswers" -> 1, "Prompt" -> 
+              "What is the next step?", "Range" -> {1, 900}|>]; 
+          QuestionFramework`Private`submittedvalue$$ = 
+           QuestionFramework`Private`input$$; 
+          QuestionFramework`Private`submissionCount$$ = 
+           QuestionFramework`Private`getSubmissionCount[
+            QuestionFramework`Private`result$$]; 
+          QuestionFramework`Private`buttonenabled$$ = If[
+             QuestionFramework`Private`reachedMaxSubmissionsQ[
+             QuestionFramework`Private`result$$, 
+              QuestionFramework`Private`submissionCount$$], False, True, 
+             True], QuestionFramework`Private`buttonenabled$$]], 
+        If[
+        Head[QuestionFramework`Private`result$$] === AssessmentResultObject, 
+         Row[{
+           If[Head[
+              QuestionFramework`Private`result$$["Explanation"]] === String, 
+            QuestionFramework`Private`result$$["Explanation"], ""]}, 
+          Spacer[5]], ""]}}, 
+      Sequence[
+      Alignment -> Left, Spacings -> {1, 1}, 
+       Dividers -> {False, {2 -> RGBColor[
+            Rational[229, 255], 
+            Rational[229, 255], 
+            Rational[229, 255]]}}]], ImageSize -> 
+     Which[QuestionFramework`Private`questionnotebookflag$$, {
+       Full, Automatic}, QuestionFramework`Private`qmflag$$, {
+        Scaled[1.], Automatic}, True, Automatic], 
+     Sequence[
+     Background -> GrayLevel[1], FrameStyle -> 
+      RGBColor[0.7490196078431373, 0.7490196078431373, 0.7490196078431373], 
+      RoundingRadius -> 5, FrameMargins -> 10, 
+      BaseStyle -> {"Panel", FontSize -> 14}]], StandardForm],
+   ImageSizeCache->{
+    313.13281243741517`, {53.208496160991494`, 59.924316276423625`}},
+   TrackedSymbols:>{
+    QuestionFramework`Private`result$$, QuestionFramework`Private`input$$, 
+     QuestionFramework`Private`submittedvalue$$}],
+  DynamicModuleValues:>{}]], "FormElementCode",
+ TaggingRules->{
+  "FormNotebook" -> {
+    "Type" -> "Default", "Mode" -> "CODE", "FormExpr" -> InterpretationBox[
+       DynamicModuleBox[{
+        QuestionFramework`Private`input$$ = Null, 
+         QuestionFramework`Private`interpreter$$ = Identity, 
+         QuestionFramework`Private`result$$ = "", 
+         QuestionFramework`Private`buttonenabled$$ = True, 
+         QuestionFramework`Private`submissionCount$$ = 0, 
+         QuestionFramework`Private`submittedvalue$$ = "", 
+         QuestionFramework`Private`questionnotebookflag$$ = False, 
+         QuestionFramework`Private`qmflag$$ = False, 
+         QuestionFramework`Private`fieldtype$$ = Expression}, 
+        DynamicBox[
+         ToBoxes[
+          Framed[
+           Grid[{{
+              Style["What is the next step?", {FontSize -> 15}], 
+              SpanFromLeft}, {
+              InputField[
+               Dynamic[QuestionFramework`Private`input$$], 
+               QuestionFramework`Private`fieldtype$$, 
+               Apply[Sequence, 
+                
+                Lookup[<|
+                 "FieldType" -> Expression, "MinAnswers" -> 1, "Prompt" -> 
+                  "What is the next step?", "Range" -> {1, 900}|>, 
+                 "FieldOptions", {}]], ImageSize -> 
+               If[QuestionFramework`Private`qmflag$$, 
+                 Scaled[0.5], Automatic]], 
+              QuestionFramework`Private`generalquestionTest[
+              QuestionFramework`Private`result$$, 
+               QuestionFramework`Private`input$$, 
+               QuestionFramework`Private`submittedvalue$$, 
+               
+               AssessmentFunction[{
+                10 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+                 Except[10] -> <|
+                  "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+                   "The correct answer was 10"|>}, <|
+                "ComparisonMethod" -> "Item"|>, "Validated" -> True], 
+               QuestionFramework`Private`interpreter$$]}, {
+              If[
+               TrueQ[
+                Function[{QuestionFramework`Private`af}, 
+                 Or[QuestionFramework`Private`af === None, CurrentValue[
+                    EvaluationNotebook[], {
+                    TaggingRules, "FormNotebook", "SubmissionOptions", 
+                    "GroupSubmissionFlag"}] === True]][
+                 
+                 AssessmentFunction[{
+                  10 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+                   Except[10] -> <|
+                    "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+                    "The correct answer was 10"|>}, <|
+                  "ComparisonMethod" -> "Item"|>, "Validated" -> True]]], "", 
+               
+               Function[{
+                QuestionFramework`Private`func, 
+                 QuestionFramework`Private`buttonenabled}, 
+                Button[
+                 Framed[
+                  Style[
+                  "Submit", 12, FontColor -> White, FontWeight -> Plain], 
+                  FrameStyle -> None, ImageMargins -> 0, RoundingRadius -> 2, 
+                  ImageSize -> {Automatic, 21}, BaselinePosition -> Baseline, 
+                  Background -> If[QuestionFramework`Private`buttonenabled, 
+                    RGBColor[
+                    0.043137254901960784`, 0.3803921568627451, 
+                    0.6352941176470588], 
+                    RGBColor[
+                    0.7686274509803922, 0.9019607843137255, 
+                    0.9725490196078431], 
+                    RGBColor[
+                    0.043137254901960784`, 0.3803921568627451, 
+                    0.6352941176470588]]], QuestionFramework`Private`func, 
+                 Evaluator -> Automatic, ImageSize -> {Automatic, 21}, 
+                 Appearance -> None, BaselinePosition -> Baseline, Enabled -> 
+                 Dynamic[QuestionFramework`Private`buttonenabled], Method -> 
+                 "Preemptive"], {HoldFirst}][
+               QuestionFramework`Private`result$$ = 
+                 QuestionFramework`Private`postProcessAssessment[
+                   
+                   AssessmentFunction[{
+                    10 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+                    Except[10] -> <|
+                    "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+                    "The correct answer was 10"|>}, <|
+                    "ComparisonMethod" -> "Item"|>, "Validated" -> True][
+                    Interpreter[QuestionFramework`Private`interpreter$$][
+                    QuestionFramework`Private`input$$], "SubmissionCount" -> 
+                    QuestionFramework`Private`submissionCount$$], <|
+                   "FieldType" -> Expression, "MinAnswers" -> 1, "Prompt" -> 
+                    "What is the next step?", "Range" -> {1, 900}|>]; 
+                QuestionFramework`Private`submittedvalue$$ = 
+                 QuestionFramework`Private`input$$; 
+                QuestionFramework`Private`submissionCount$$ = 
+                 QuestionFramework`Private`getSubmissionCount[
+                  QuestionFramework`Private`result$$]; 
+                QuestionFramework`Private`buttonenabled$$ = If[
+                   QuestionFramework`Private`reachedMaxSubmissionsQ[
+                   QuestionFramework`Private`result$$, 
+                    QuestionFramework`Private`submissionCount$$], False, True,
+                    True], QuestionFramework`Private`buttonenabled$$]], 
+              If[
+              Head[QuestionFramework`Private`result$$] === 
+               AssessmentResultObject, 
+               Row[{
+                 If[Head[
+                    QuestionFramework`Private`result$$["Explanation"]] === 
+                  String, 
+                  QuestionFramework`Private`result$$["Explanation"], ""]}, 
+                Spacer[5]], ""]}}, 
+            Sequence[
+            Alignment -> Left, Spacings -> {1, 1}, 
+             Dividers -> {False, {2 -> RGBColor[
+                  Rational[229, 255], 
+                  Rational[229, 255], 
+                  Rational[229, 255]]}}]], ImageSize -> 
+           Which[QuestionFramework`Private`questionnotebookflag$$, {
+             Full, Automatic}, QuestionFramework`Private`qmflag$$, {
+              Scaled[1.], Automatic}, True, Automatic], 
+           Sequence[
+           Background -> GrayLevel[1], FrameStyle -> 
+            RGBColor[
+             0.7490196078431373, 0.7490196078431373, 0.7490196078431373], 
+            RoundingRadius -> 5, FrameMargins -> 10, 
+            BaseStyle -> {"Panel", FontSize -> 14}]], StandardForm], 
+         TrackedSymbols :> {
+          QuestionFramework`Private`result$$, 
+           QuestionFramework`Private`input$$, 
+           QuestionFramework`Private`submittedvalue$$}], 
+        DynamicModuleValues :> {}], 
+       QuestionObject[
+        QuestionInterface[
+        "ShortAnswer", <|
+         "Prompt" -> "What is the next step?", "Range" -> {1, 900}|>], 
+        AssessmentFunction[{
+         10 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+          Except[10] -> <|
+           "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+            "The correct answer was 10"|>}, <|"ComparisonMethod" -> "Item"|>, 
+         "Validated" -> True]]], "Key" -> 
+     Inherited}},ExpressionUUID->"0ef622f5-100d-47c4-b394-5868d2edacef"],
+
+Cell[BoxData[
+ FrameBox[
+  InterpretationBox[
+   DynamicModuleBox[{QuestionFramework`Private`input$$ = 15, 
+    QuestionFramework`Private`interpreter$$ = Identity, 
+    QuestionFramework`Private`result$$ = 
+    AssessmentResultObject[<|
+     "Score" -> 1, "MaxScore" -> 1, "MinScore" -> 0, "AnswerCorrect" -> True, 
+      "GivenAnswer" -> 15, "Explanation" -> None, "Timestamp" -> 
+      DateObject[{2023, 6, 19, 16, 37, 58.0653182`9.516491641293545}, 
+        "Instant", "Gregorian", -4.], "AssessmentOptions" -> {}, 
+      "AnswerComparisonMethod" -> "Item", "SubmissionCount" -> 1|>], 
+    QuestionFramework`Private`buttonenabled$$ = True, 
+    QuestionFramework`Private`submissionCount$$ = 1, 
+    QuestionFramework`Private`submittedvalue$$ = 15, 
+    QuestionFramework`Private`questionnotebookflag$$ = False, 
+    QuestionFramework`Private`qmflag$$ = False, 
+    QuestionFramework`Private`fieldtype$$ = Expression}, 
+    DynamicBox[ToBoxes[
+      Framed[
+       Grid[{{
+          Style["What is the next step?", {FontSize -> 15}], SpanFromLeft}, {
+          InputField[
+           Dynamic[QuestionFramework`Private`input$$], 
+           QuestionFramework`Private`fieldtype$$, 
+           Apply[Sequence, 
+            
+            Lookup[<|"FieldType" -> Expression, "MinAnswers" -> 1, "Prompt" -> 
+              "What is the next step?", "Range" -> {1, 900}|>, 
+             "FieldOptions", {}]], ImageSize -> 
+           If[QuestionFramework`Private`qmflag$$, 
+             Scaled[0.5], Automatic]], 
+          QuestionFramework`Private`generalquestionTest[
+          QuestionFramework`Private`result$$, 
+           QuestionFramework`Private`input$$, 
+           QuestionFramework`Private`submittedvalue$$, 
+           
+           AssessmentFunction[{
+            15 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+             Except[15] -> <|
+              "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+               "The correct answer was 15"|>}, <|
+            "ComparisonMethod" -> "Item"|>, "Validated" -> True], 
+           QuestionFramework`Private`interpreter$$]}, {
+          If[
+           TrueQ[
+            Function[{QuestionFramework`Private`af}, 
+             Or[QuestionFramework`Private`af === None, CurrentValue[
+                EvaluationNotebook[], {
+                TaggingRules, "FormNotebook", "SubmissionOptions", 
+                 "GroupSubmissionFlag"}] === True]][
+             
+             AssessmentFunction[{
+              15 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+               Except[15] -> <|
+                "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+                 "The correct answer was 15"|>}, <|
+              "ComparisonMethod" -> "Item"|>, "Validated" -> True]]], "", 
+           
+           Function[{
+            QuestionFramework`Private`func, 
+             QuestionFramework`Private`buttonenabled}, 
+            Button[
+             Framed[
+              Style["Submit", 12, FontColor -> White, FontWeight -> Plain], 
+              FrameStyle -> None, ImageMargins -> 0, RoundingRadius -> 2, 
+              ImageSize -> {Automatic, 21}, BaselinePosition -> Baseline, 
+              Background -> If[QuestionFramework`Private`buttonenabled, 
+                RGBColor[
+                0.043137254901960784`, 0.3803921568627451, 
+                 0.6352941176470588], 
+                RGBColor[
+                0.7686274509803922, 0.9019607843137255, 0.9725490196078431], 
+                RGBColor[
+                0.043137254901960784`, 0.3803921568627451, 
+                 0.6352941176470588]]], QuestionFramework`Private`func, 
+             Evaluator -> Automatic, ImageSize -> {Automatic, 21}, Appearance -> 
+             None, BaselinePosition -> Baseline, Enabled -> 
+             Dynamic[QuestionFramework`Private`buttonenabled], Method -> 
+             "Preemptive"], {HoldFirst}][
+           QuestionFramework`Private`result$$ = 
+             QuestionFramework`Private`postProcessAssessment[
+               
+               AssessmentFunction[{
+                15 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+                 Except[15] -> <|
+                  "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+                   "The correct answer was 15"|>}, <|
+                "ComparisonMethod" -> "Item"|>, "Validated" -> True][
+                Interpreter[QuestionFramework`Private`interpreter$$][
+                QuestionFramework`Private`input$$], "SubmissionCount" -> 
+                QuestionFramework`Private`submissionCount$$], <|
+               "FieldType" -> Expression, "MinAnswers" -> 1, "Prompt" -> 
+                "What is the next step?", "Range" -> {1, 900}|>]; 
+            QuestionFramework`Private`submittedvalue$$ = 
+             QuestionFramework`Private`input$$; 
+            QuestionFramework`Private`submissionCount$$ = 
+             QuestionFramework`Private`getSubmissionCount[
+              QuestionFramework`Private`result$$]; 
+            QuestionFramework`Private`buttonenabled$$ = If[
+               QuestionFramework`Private`reachedMaxSubmissionsQ[
+               QuestionFramework`Private`result$$, 
+                QuestionFramework`Private`submissionCount$$], False, True, 
+               True], QuestionFramework`Private`buttonenabled$$]], 
+          If[
+          Head[QuestionFramework`Private`result$$] === AssessmentResultObject, 
+           Row[{
+             If[Head[
+                QuestionFramework`Private`result$$["Explanation"]] === String, 
+              QuestionFramework`Private`result$$["Explanation"], ""]}, 
+            Spacer[5]], ""]}}, 
+        Sequence[
+        Alignment -> Left, Spacings -> {1, 1}, 
+         Dividers -> {False, {2 -> RGBColor[
+              Rational[229, 255], 
+              Rational[229, 255], 
+              Rational[229, 255]]}}]], ImageSize -> 
+       Which[QuestionFramework`Private`questionnotebookflag$$, {
+         Full, Automatic}, QuestionFramework`Private`qmflag$$, {
+          Scaled[1.], Automatic}, True, Automatic], 
+       Sequence[
+       Background -> GrayLevel[1], FrameStyle -> 
+        RGBColor[0.7490196078431373, 0.7490196078431373, 0.7490196078431373], 
+        RoundingRadius -> 5, FrameMargins -> 10, 
+        BaseStyle -> {"Panel", FontSize -> 14}]], StandardForm],
+     ImageSizeCache->{
+      313.13281243741517`, {53.208496160991494`, 59.924316276423625`}},
+     TrackedSymbols:>{
+      QuestionFramework`Private`result$$, QuestionFramework`Private`input$$, 
+       QuestionFramework`Private`submittedvalue$$}],
+    DynamicModuleValues:>{}],
+   QuestionObject[
+    QuestionInterface[
+    "ShortAnswer", <|
+     "Prompt" -> "What is the next step?", "Range" -> {1, 900}|>], 
+    AssessmentFunction[{
+     15 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+      Except[15] -> <|
+       "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+        "The correct answer was 15"|>}, <|"ComparisonMethod" -> "Item"|>, 
+     "Validated" -> True]]],
+  Alignment->{Left, Top},
+  BaselinePosition->Baseline,
+  FrameStyle->RGBColor[
+   0.7490196078431373, 0.7490196078431373, 0.7490196078431373],
+  ImageSize->{
+    Scaled[1], {80, 800}},
+  RoundingRadius->5,
+  StripOnInput->False]], "FormElementCode",
+ TaggingRules->{
+  "FormNotebook" -> {
+    "Type" -> "Default", "Mode" -> "CODE", "FormExpr" -> InterpretationBox[
+       DynamicModuleBox[{
+        QuestionFramework`Private`input$$ = Null, 
+         QuestionFramework`Private`interpreter$$ = Identity, 
+         QuestionFramework`Private`result$$ = "", 
+         QuestionFramework`Private`buttonenabled$$ = True, 
+         QuestionFramework`Private`submissionCount$$ = 0, 
+         QuestionFramework`Private`submittedvalue$$ = "", 
+         QuestionFramework`Private`questionnotebookflag$$ = False, 
+         QuestionFramework`Private`qmflag$$ = False, 
+         QuestionFramework`Private`fieldtype$$ = Expression}, 
+        DynamicBox[
+         ToBoxes[
+          Framed[
+           Grid[{{
+              Style["What is the next step?", {FontSize -> 15}], 
+              SpanFromLeft}, {
+              InputField[
+               Dynamic[QuestionFramework`Private`input$$], 
+               QuestionFramework`Private`fieldtype$$, 
+               Apply[Sequence, 
+                
+                Lookup[<|
+                 "FieldType" -> Expression, "MinAnswers" -> 1, "Prompt" -> 
+                  "What is the next step?", "Range" -> {1, 900}|>, 
+                 "FieldOptions", {}]], ImageSize -> 
+               If[QuestionFramework`Private`qmflag$$, 
+                 Scaled[0.5], Automatic]], 
+              QuestionFramework`Private`generalquestionTest[
+              QuestionFramework`Private`result$$, 
+               QuestionFramework`Private`input$$, 
+               QuestionFramework`Private`submittedvalue$$, 
+               
+               AssessmentFunction[{
+                15 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+                 Except[15] -> <|
+                  "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+                   "The correct answer was 15"|>}, <|
+                "ComparisonMethod" -> "Item"|>, "Validated" -> True], 
+               QuestionFramework`Private`interpreter$$]}, {
+              If[
+               TrueQ[
+                Function[{QuestionFramework`Private`af}, 
+                 Or[QuestionFramework`Private`af === None, CurrentValue[
+                    EvaluationNotebook[], {
+                    TaggingRules, "FormNotebook", "SubmissionOptions", 
+                    "GroupSubmissionFlag"}] === True]][
+                 
+                 AssessmentFunction[{
+                  15 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+                   Except[15] -> <|
+                    "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+                    "The correct answer was 15"|>}, <|
+                  "ComparisonMethod" -> "Item"|>, "Validated" -> True]]], "", 
+               
+               Function[{
+                QuestionFramework`Private`func, 
+                 QuestionFramework`Private`buttonenabled}, 
+                Button[
+                 Framed[
+                  Style[
+                  "Submit", 12, FontColor -> White, FontWeight -> Plain], 
+                  FrameStyle -> None, ImageMargins -> 0, RoundingRadius -> 2, 
+                  ImageSize -> {Automatic, 21}, BaselinePosition -> Baseline, 
+                  Background -> If[QuestionFramework`Private`buttonenabled, 
+                    RGBColor[
+                    0.043137254901960784`, 0.3803921568627451, 
+                    0.6352941176470588], 
+                    RGBColor[
+                    0.7686274509803922, 0.9019607843137255, 
+                    0.9725490196078431], 
+                    RGBColor[
+                    0.043137254901960784`, 0.3803921568627451, 
+                    0.6352941176470588]]], QuestionFramework`Private`func, 
+                 Evaluator -> Automatic, ImageSize -> {Automatic, 21}, 
+                 Appearance -> None, BaselinePosition -> Baseline, Enabled -> 
+                 Dynamic[QuestionFramework`Private`buttonenabled], Method -> 
+                 "Preemptive"], {HoldFirst}][
+               QuestionFramework`Private`result$$ = 
+                 QuestionFramework`Private`postProcessAssessment[
+                   
+                   AssessmentFunction[{
+                    15 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+                    Except[15] -> <|
+                    "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+                    "The correct answer was 15"|>}, <|
+                    "ComparisonMethod" -> "Item"|>, "Validated" -> True][
+                    Interpreter[QuestionFramework`Private`interpreter$$][
+                    QuestionFramework`Private`input$$], "SubmissionCount" -> 
+                    QuestionFramework`Private`submissionCount$$], <|
+                   "FieldType" -> Expression, "MinAnswers" -> 1, "Prompt" -> 
+                    "What is the next step?", "Range" -> {1, 900}|>]; 
+                QuestionFramework`Private`submittedvalue$$ = 
+                 QuestionFramework`Private`input$$; 
+                QuestionFramework`Private`submissionCount$$ = 
+                 QuestionFramework`Private`getSubmissionCount[
+                  QuestionFramework`Private`result$$]; 
+                QuestionFramework`Private`buttonenabled$$ = If[
+                   QuestionFramework`Private`reachedMaxSubmissionsQ[
+                   QuestionFramework`Private`result$$, 
+                    QuestionFramework`Private`submissionCount$$], False, True,
+                    True], QuestionFramework`Private`buttonenabled$$]], 
+              If[
+              Head[QuestionFramework`Private`result$$] === 
+               AssessmentResultObject, 
+               Row[{
+                 If[Head[
+                    QuestionFramework`Private`result$$["Explanation"]] === 
+                  String, 
+                  QuestionFramework`Private`result$$["Explanation"], ""]}, 
+                Spacer[5]], ""]}}, 
+            Sequence[
+            Alignment -> Left, Spacings -> {1, 1}, 
+             Dividers -> {False, {2 -> RGBColor[
+                  Rational[229, 255], 
+                  Rational[229, 255], 
+                  Rational[229, 255]]}}]], ImageSize -> 
+           Which[QuestionFramework`Private`questionnotebookflag$$, {
+             Full, Automatic}, QuestionFramework`Private`qmflag$$, {
+              Scaled[1.], Automatic}, True, Automatic], 
+           Sequence[
+           Background -> GrayLevel[1], FrameStyle -> 
+            RGBColor[
+             0.7490196078431373, 0.7490196078431373, 0.7490196078431373], 
+            RoundingRadius -> 5, FrameMargins -> 10, 
+            BaseStyle -> {"Panel", FontSize -> 14}]], StandardForm], 
+         TrackedSymbols :> {
+          QuestionFramework`Private`result$$, 
+           QuestionFramework`Private`input$$, 
+           QuestionFramework`Private`submittedvalue$$}], 
+        DynamicModuleValues :> {}], 
+       QuestionObject[
+        QuestionInterface[
+        "ShortAnswer", <|
+         "Prompt" -> "What is the next step?", "Range" -> {1, 900}|>], 
+        AssessmentFunction[{
+         15 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+          Except[15] -> <|
+           "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+            "The correct answer was 15"|>}, <|"ComparisonMethod" -> "Item"|>, 
+         "Validated" -> True]]], "Key" -> 
+     Inherited}},ExpressionUUID->"9d099dd6-8047-46ad-bdbd-8cb8f31f0dd5"],
+
+Cell[BoxData[
+ DynamicModuleBox[{QuestionFramework`Private`input$$ = 20, 
+  QuestionFramework`Private`interpreter$$ = Identity, 
+  QuestionFramework`Private`result$$ = 
+  AssessmentResultObject[<|
+   "Score" -> 1, "MaxScore" -> 1, "MinScore" -> 0, "AnswerCorrect" -> True, 
+    "GivenAnswer" -> 20, "Explanation" -> None, "Timestamp" -> 
+    DateObject[{2023, 6, 19, 16, 38, 4.1703708`8.372749649346988}, "Instant", 
+      "Gregorian", -4.], "AssessmentOptions" -> {}, "AnswerComparisonMethod" -> 
+    "Item", "SubmissionCount" -> 1|>], 
+  QuestionFramework`Private`buttonenabled$$ = True, 
+  QuestionFramework`Private`submissionCount$$ = 1, 
+  QuestionFramework`Private`submittedvalue$$ = 20, 
+  QuestionFramework`Private`questionnotebookflag$$ = False, 
+  QuestionFramework`Private`qmflag$$ = False, 
+  QuestionFramework`Private`fieldtype$$ = Expression}, 
+  DynamicBox[ToBoxes[
+    Framed[
+     Grid[{{
+        Style["What is the next step?", {FontSize -> 15}], SpanFromLeft}, {
+        InputField[
+         Dynamic[QuestionFramework`Private`input$$], 
+         QuestionFramework`Private`fieldtype$$, 
+         Apply[Sequence, 
+          
+          Lookup[<|"FieldType" -> Expression, "MinAnswers" -> 1, "Prompt" -> 
+            "What is the next step?", "Range" -> {1, 900}|>, 
+           "FieldOptions", {}]], ImageSize -> 
+         If[QuestionFramework`Private`qmflag$$, 
+           Scaled[0.5], Automatic]], 
+        QuestionFramework`Private`generalquestionTest[
+        QuestionFramework`Private`result$$, QuestionFramework`Private`input$$,
+          QuestionFramework`Private`submittedvalue$$, 
+         AssessmentFunction[{
+          20 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+           Except[20] -> <|
+            "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+             "The correct answer was 20"|>}, <|"ComparisonMethod" -> "Item"|>,
+           "Validated" -> True], QuestionFramework`Private`interpreter$$]}, {
+        If[
+         TrueQ[
+          Function[{QuestionFramework`Private`af}, 
+           Or[QuestionFramework`Private`af === None, CurrentValue[
+              EvaluationNotebook[], {
+              TaggingRules, "FormNotebook", "SubmissionOptions", 
+               "GroupSubmissionFlag"}] === True]][
+           
+           AssessmentFunction[{
+            20 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+             Except[20] -> <|
+              "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+               "The correct answer was 20"|>}, <|
+            "ComparisonMethod" -> "Item"|>, "Validated" -> True]]], "", 
+         Function[{
+          QuestionFramework`Private`func, 
+           QuestionFramework`Private`buttonenabled}, 
+          Button[
+           Framed[
+            Style["Submit", 12, FontColor -> White, FontWeight -> Plain], 
+            FrameStyle -> None, ImageMargins -> 0, RoundingRadius -> 2, 
+            ImageSize -> {Automatic, 21}, BaselinePosition -> Baseline, 
+            Background -> If[QuestionFramework`Private`buttonenabled, 
+              RGBColor[
+              0.043137254901960784`, 0.3803921568627451, 0.6352941176470588], 
+              RGBColor[
+              0.7686274509803922, 0.9019607843137255, 0.9725490196078431], 
+              RGBColor[
+              0.043137254901960784`, 0.3803921568627451, 
+               0.6352941176470588]]], QuestionFramework`Private`func, 
+           Evaluator -> Automatic, ImageSize -> {Automatic, 21}, Appearance -> 
+           None, BaselinePosition -> Baseline, Enabled -> 
+           Dynamic[QuestionFramework`Private`buttonenabled], Method -> 
+           "Preemptive"], {HoldFirst}][
+         QuestionFramework`Private`result$$ = 
+           QuestionFramework`Private`postProcessAssessment[
+             
+             AssessmentFunction[{
+              20 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+               Except[20] -> <|
+                "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+                 "The correct answer was 20"|>}, <|
+              "ComparisonMethod" -> "Item"|>, "Validated" -> True][
+              Interpreter[QuestionFramework`Private`interpreter$$][
+              QuestionFramework`Private`input$$], "SubmissionCount" -> 
+              QuestionFramework`Private`submissionCount$$], <|
+             "FieldType" -> Expression, "MinAnswers" -> 1, "Prompt" -> 
+              "What is the next step?", "Range" -> {1, 900}|>]; 
+          QuestionFramework`Private`submittedvalue$$ = 
+           QuestionFramework`Private`input$$; 
+          QuestionFramework`Private`submissionCount$$ = 
+           QuestionFramework`Private`getSubmissionCount[
+            QuestionFramework`Private`result$$]; 
+          QuestionFramework`Private`buttonenabled$$ = If[
+             QuestionFramework`Private`reachedMaxSubmissionsQ[
+             QuestionFramework`Private`result$$, 
+              QuestionFramework`Private`submissionCount$$], False, True, 
+             True], QuestionFramework`Private`buttonenabled$$]], 
+        If[
+        Head[QuestionFramework`Private`result$$] === AssessmentResultObject, 
+         Row[{
+           If[Head[
+              QuestionFramework`Private`result$$["Explanation"]] === String, 
+            QuestionFramework`Private`result$$["Explanation"], ""]}, 
+          Spacer[5]], ""]}}, 
+      Sequence[
+      Alignment -> Left, Spacings -> {1, 1}, 
+       Dividers -> {False, {2 -> RGBColor[
+            Rational[229, 255], 
+            Rational[229, 255], 
+            Rational[229, 255]]}}]], ImageSize -> 
+     Which[QuestionFramework`Private`questionnotebookflag$$, {
+       Full, Automatic}, QuestionFramework`Private`qmflag$$, {
+        Scaled[1.], Automatic}, True, Automatic], 
+     Sequence[
+     Background -> GrayLevel[1], FrameStyle -> 
+      RGBColor[0.7490196078431373, 0.7490196078431373, 0.7490196078431373], 
+      RoundingRadius -> 5, FrameMargins -> 10, 
+      BaseStyle -> {"Panel", FontSize -> 14}]], StandardForm],
+   ImageSizeCache->{
+    313.13281243741517`, {53.208496160991494`, 59.924316276423625`}},
+   TrackedSymbols:>{
+    QuestionFramework`Private`result$$, QuestionFramework`Private`input$$, 
+     QuestionFramework`Private`submittedvalue$$}],
+  DynamicModuleValues:>{}]], "FormElementCode",
+ TaggingRules->{
+  "FormNotebook" -> {
+    "Type" -> "Default", "Mode" -> "CODE", "FormExpr" -> InterpretationBox[
+       DynamicModuleBox[{
+        QuestionFramework`Private`input$$ = Null, 
+         QuestionFramework`Private`interpreter$$ = Identity, 
+         QuestionFramework`Private`result$$ = "", 
+         QuestionFramework`Private`buttonenabled$$ = True, 
+         QuestionFramework`Private`submissionCount$$ = 0, 
+         QuestionFramework`Private`submittedvalue$$ = "", 
+         QuestionFramework`Private`questionnotebookflag$$ = False, 
+         QuestionFramework`Private`qmflag$$ = False, 
+         QuestionFramework`Private`fieldtype$$ = Expression}, 
+        DynamicBox[
+         ToBoxes[
+          Framed[
+           Grid[{{
+              Style["What is the next step?", {FontSize -> 15}], 
+              SpanFromLeft}, {
+              InputField[
+               Dynamic[QuestionFramework`Private`input$$], 
+               QuestionFramework`Private`fieldtype$$, 
+               Apply[Sequence, 
+                
+                Lookup[<|
+                 "FieldType" -> Expression, "MinAnswers" -> 1, "Prompt" -> 
+                  "What is the next step?", "Range" -> {1, 900}|>, 
+                 "FieldOptions", {}]], ImageSize -> 
+               If[QuestionFramework`Private`qmflag$$, 
+                 Scaled[0.5], Automatic]], 
+              QuestionFramework`Private`generalquestionTest[
+              QuestionFramework`Private`result$$, 
+               QuestionFramework`Private`input$$, 
+               QuestionFramework`Private`submittedvalue$$, 
+               
+               AssessmentFunction[{
+                20 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+                 Except[20] -> <|
+                  "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+                   "The correct answer was 20"|>}, <|
+                "ComparisonMethod" -> "Item"|>, "Validated" -> True], 
+               QuestionFramework`Private`interpreter$$]}, {
+              If[
+               TrueQ[
+                Function[{QuestionFramework`Private`af}, 
+                 Or[QuestionFramework`Private`af === None, CurrentValue[
+                    EvaluationNotebook[], {
+                    TaggingRules, "FormNotebook", "SubmissionOptions", 
+                    "GroupSubmissionFlag"}] === True]][
+                 
+                 AssessmentFunction[{
+                  20 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+                   Except[20] -> <|
+                    "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+                    "The correct answer was 20"|>}, <|
+                  "ComparisonMethod" -> "Item"|>, "Validated" -> True]]], "", 
+               
+               Function[{
+                QuestionFramework`Private`func, 
+                 QuestionFramework`Private`buttonenabled}, 
+                Button[
+                 Framed[
+                  Style[
+                  "Submit", 12, FontColor -> White, FontWeight -> Plain], 
+                  FrameStyle -> None, ImageMargins -> 0, RoundingRadius -> 2, 
+                  ImageSize -> {Automatic, 21}, BaselinePosition -> Baseline, 
+                  Background -> If[QuestionFramework`Private`buttonenabled, 
+                    RGBColor[
+                    0.043137254901960784`, 0.3803921568627451, 
+                    0.6352941176470588], 
+                    RGBColor[
+                    0.7686274509803922, 0.9019607843137255, 
+                    0.9725490196078431], 
+                    RGBColor[
+                    0.043137254901960784`, 0.3803921568627451, 
+                    0.6352941176470588]]], QuestionFramework`Private`func, 
+                 Evaluator -> Automatic, ImageSize -> {Automatic, 21}, 
+                 Appearance -> None, BaselinePosition -> Baseline, Enabled -> 
+                 Dynamic[QuestionFramework`Private`buttonenabled], Method -> 
+                 "Preemptive"], {HoldFirst}][
+               QuestionFramework`Private`result$$ = 
+                 QuestionFramework`Private`postProcessAssessment[
+                   
+                   AssessmentFunction[{
+                    20 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+                    Except[20] -> <|
+                    "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+                    "The correct answer was 20"|>}, <|
+                    "ComparisonMethod" -> "Item"|>, "Validated" -> True][
+                    Interpreter[QuestionFramework`Private`interpreter$$][
+                    QuestionFramework`Private`input$$], "SubmissionCount" -> 
+                    QuestionFramework`Private`submissionCount$$], <|
+                   "FieldType" -> Expression, "MinAnswers" -> 1, "Prompt" -> 
+                    "What is the next step?", "Range" -> {1, 900}|>]; 
+                QuestionFramework`Private`submittedvalue$$ = 
+                 QuestionFramework`Private`input$$; 
+                QuestionFramework`Private`submissionCount$$ = 
+                 QuestionFramework`Private`getSubmissionCount[
+                  QuestionFramework`Private`result$$]; 
+                QuestionFramework`Private`buttonenabled$$ = If[
+                   QuestionFramework`Private`reachedMaxSubmissionsQ[
+                   QuestionFramework`Private`result$$, 
+                    QuestionFramework`Private`submissionCount$$], False, True,
+                    True], QuestionFramework`Private`buttonenabled$$]], 
+              If[
+              Head[QuestionFramework`Private`result$$] === 
+               AssessmentResultObject, 
+               Row[{
+                 If[Head[
+                    QuestionFramework`Private`result$$["Explanation"]] === 
+                  String, 
+                  QuestionFramework`Private`result$$["Explanation"], ""]}, 
+                Spacer[5]], ""]}}, 
+            Sequence[
+            Alignment -> Left, Spacings -> {1, 1}, 
+             Dividers -> {False, {2 -> RGBColor[
+                  Rational[229, 255], 
+                  Rational[229, 255], 
+                  Rational[229, 255]]}}]], ImageSize -> 
+           Which[QuestionFramework`Private`questionnotebookflag$$, {
+             Full, Automatic}, QuestionFramework`Private`qmflag$$, {
+              Scaled[1.], Automatic}, True, Automatic], 
+           Sequence[
+           Background -> GrayLevel[1], FrameStyle -> 
+            RGBColor[
+             0.7490196078431373, 0.7490196078431373, 0.7490196078431373], 
+            RoundingRadius -> 5, FrameMargins -> 10, 
+            BaseStyle -> {"Panel", FontSize -> 14}]], StandardForm], 
+         TrackedSymbols :> {
+          QuestionFramework`Private`result$$, 
+           QuestionFramework`Private`input$$, 
+           QuestionFramework`Private`submittedvalue$$}], 
+        DynamicModuleValues :> {}], 
+       QuestionObject[
+        QuestionInterface[
+        "ShortAnswer", <|
+         "Prompt" -> "What is the next step?", "Range" -> {1, 900}|>], 
+        AssessmentFunction[{
+         20 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+          Except[20] -> <|
+           "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+            "The correct answer was 20"|>}, <|"ComparisonMethod" -> "Item"|>, 
+         "Validated" -> True]]], "Key" -> 
+     Inherited}},ExpressionUUID->"235089e9-dbae-4af7-a2e3-19829182ac9f"],
+
+Cell[BoxData[
+ DynamicModuleBox[{QuestionFramework`Private`input$$ = 24, 
+  QuestionFramework`Private`interpreter$$ = Identity, 
+  QuestionFramework`Private`result$$ = 
+  AssessmentResultObject[<|
+   "Score" -> 0, "MaxScore" -> 1, "MinScore" -> 0, "AnswerCorrect" -> False, 
+    "GivenAnswer" -> 24, "Explanation" -> "The correct answer was 25", 
+    "Timestamp" -> 
+    DateObject[{2023, 6, 19, 16, 38, 32.7833944`9.268228820389531}, "Instant",
+       "Gregorian", -4.], "AssessmentOptions" -> {}, "AnswerComparisonMethod" -> 
+    "Item", "SubmissionCount" -> 2|>], 
+  QuestionFramework`Private`buttonenabled$$ = True, 
+  QuestionFramework`Private`submissionCount$$ = 2, 
+  QuestionFramework`Private`submittedvalue$$ = 24, 
+  QuestionFramework`Private`questionnotebookflag$$ = False, 
+  QuestionFramework`Private`qmflag$$ = False, 
+  QuestionFramework`Private`fieldtype$$ = Expression}, 
+  DynamicBox[ToBoxes[
+    Framed[
+     Grid[{{
+        Style["What is the next step?", {FontSize -> 15}], SpanFromLeft}, {
+        InputField[
+         Dynamic[QuestionFramework`Private`input$$], 
+         QuestionFramework`Private`fieldtype$$, 
+         Apply[Sequence, 
+          
+          Lookup[<|"FieldType" -> Expression, "MinAnswers" -> 1, "Prompt" -> 
+            "What is the next step?", "Range" -> {1, 900}|>, 
+           "FieldOptions", {}]], ImageSize -> 
+         If[QuestionFramework`Private`qmflag$$, 
+           Scaled[0.5], Automatic]], 
+        QuestionFramework`Private`generalquestionTest[
+        QuestionFramework`Private`result$$, QuestionFramework`Private`input$$,
+          QuestionFramework`Private`submittedvalue$$, 
+         AssessmentFunction[{
+          25 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+           Except[25] -> <|
+            "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+             "The correct answer was 25"|>}, <|"ComparisonMethod" -> "Item"|>,
+           "Validated" -> True], QuestionFramework`Private`interpreter$$]}, {
+        If[
+         TrueQ[
+          Function[{QuestionFramework`Private`af}, 
+           Or[QuestionFramework`Private`af === None, CurrentValue[
+              EvaluationNotebook[], {
+              TaggingRules, "FormNotebook", "SubmissionOptions", 
+               "GroupSubmissionFlag"}] === True]][
+           
+           AssessmentFunction[{
+            25 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+             Except[25] -> <|
+              "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+               "The correct answer was 25"|>}, <|
+            "ComparisonMethod" -> "Item"|>, "Validated" -> True]]], "", 
+         Function[{
+          QuestionFramework`Private`func, 
+           QuestionFramework`Private`buttonenabled}, 
+          Button[
+           Framed[
+            Style["Submit", 12, FontColor -> White, FontWeight -> Plain], 
+            FrameStyle -> None, ImageMargins -> 0, RoundingRadius -> 2, 
+            ImageSize -> {Automatic, 21}, BaselinePosition -> Baseline, 
+            Background -> If[QuestionFramework`Private`buttonenabled, 
+              RGBColor[
+              0.043137254901960784`, 0.3803921568627451, 0.6352941176470588], 
+              RGBColor[
+              0.7686274509803922, 0.9019607843137255, 0.9725490196078431], 
+              RGBColor[
+              0.043137254901960784`, 0.3803921568627451, 
+               0.6352941176470588]]], QuestionFramework`Private`func, 
+           Evaluator -> Automatic, ImageSize -> {Automatic, 21}, Appearance -> 
+           None, BaselinePosition -> Baseline, Enabled -> 
+           Dynamic[QuestionFramework`Private`buttonenabled], Method -> 
+           "Preemptive"], {HoldFirst}][
+         QuestionFramework`Private`result$$ = 
+           QuestionFramework`Private`postProcessAssessment[
+             
+             AssessmentFunction[{
+              25 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+               Except[25] -> <|
+                "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+                 "The correct answer was 25"|>}, <|
+              "ComparisonMethod" -> "Item"|>, "Validated" -> True][
+              Interpreter[QuestionFramework`Private`interpreter$$][
+              QuestionFramework`Private`input$$], "SubmissionCount" -> 
+              QuestionFramework`Private`submissionCount$$], <|
+             "FieldType" -> Expression, "MinAnswers" -> 1, "Prompt" -> 
+              "What is the next step?", "Range" -> {1, 900}|>]; 
+          QuestionFramework`Private`submittedvalue$$ = 
+           QuestionFramework`Private`input$$; 
+          QuestionFramework`Private`submissionCount$$ = 
+           QuestionFramework`Private`getSubmissionCount[
+            QuestionFramework`Private`result$$]; 
+          QuestionFramework`Private`buttonenabled$$ = If[
+             QuestionFramework`Private`reachedMaxSubmissionsQ[
+             QuestionFramework`Private`result$$, 
+              QuestionFramework`Private`submissionCount$$], False, True, 
+             True], QuestionFramework`Private`buttonenabled$$]], 
+        If[
+        Head[QuestionFramework`Private`result$$] === AssessmentResultObject, 
+         Row[{
+           If[Head[
+              QuestionFramework`Private`result$$["Explanation"]] === String, 
+            QuestionFramework`Private`result$$["Explanation"], ""]}, 
+          Spacer[5]], ""]}}, 
+      Sequence[
+      Alignment -> Left, Spacings -> {1, 1}, 
+       Dividers -> {False, {2 -> RGBColor[
+            Rational[229, 255], 
+            Rational[229, 255], 
+            Rational[229, 255]]}}]], ImageSize -> 
+     Which[QuestionFramework`Private`questionnotebookflag$$, {
+       Full, Automatic}, QuestionFramework`Private`qmflag$$, {
+        Scaled[1.], Automatic}, True, Automatic], 
+     Sequence[
+     Background -> GrayLevel[1], FrameStyle -> 
+      RGBColor[0.7490196078431373, 0.7490196078431373, 0.7490196078431373], 
+      RoundingRadius -> 5, FrameMargins -> 10, 
+      BaseStyle -> {"Panel", FontSize -> 14}]], StandardForm],
+   ImageSizeCache->{
+    450.13281243741517`, {63.708496160991494`, 70.42431627642362}},
+   TrackedSymbols:>{
+    QuestionFramework`Private`result$$, QuestionFramework`Private`input$$, 
+     QuestionFramework`Private`submittedvalue$$}],
+  DynamicModuleValues:>{}]], "FormElementCode",
+ TaggingRules->{
+  "FormNotebook" -> {
+    "Type" -> "Default", "Mode" -> "CODE", "FormExpr" -> InterpretationBox[
+       DynamicModuleBox[{
+        QuestionFramework`Private`input$$ = Null, 
+         QuestionFramework`Private`interpreter$$ = Identity, 
+         QuestionFramework`Private`result$$ = "", 
+         QuestionFramework`Private`buttonenabled$$ = True, 
+         QuestionFramework`Private`submissionCount$$ = 0, 
+         QuestionFramework`Private`submittedvalue$$ = "", 
+         QuestionFramework`Private`questionnotebookflag$$ = False, 
+         QuestionFramework`Private`qmflag$$ = False, 
+         QuestionFramework`Private`fieldtype$$ = Expression}, 
+        DynamicBox[
+         ToBoxes[
+          Framed[
+           Grid[{{
+              Style["What is the next step?", {FontSize -> 15}], 
+              SpanFromLeft}, {
+              InputField[
+               Dynamic[QuestionFramework`Private`input$$], 
+               QuestionFramework`Private`fieldtype$$, 
+               Apply[Sequence, 
+                
+                Lookup[<|
+                 "FieldType" -> Expression, "MinAnswers" -> 1, "Prompt" -> 
+                  "What is the next step?", "Range" -> {1, 900}|>, 
+                 "FieldOptions", {}]], ImageSize -> 
+               If[QuestionFramework`Private`qmflag$$, 
+                 Scaled[0.5], Automatic]], 
+              QuestionFramework`Private`generalquestionTest[
+              QuestionFramework`Private`result$$, 
+               QuestionFramework`Private`input$$, 
+               QuestionFramework`Private`submittedvalue$$, 
+               
+               AssessmentFunction[{
+                25 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+                 Except[25] -> <|
+                  "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+                   "The correct answer was 25"|>}, <|
+                "ComparisonMethod" -> "Item"|>, "Validated" -> True], 
+               QuestionFramework`Private`interpreter$$]}, {
+              If[
+               TrueQ[
+                Function[{QuestionFramework`Private`af}, 
+                 Or[QuestionFramework`Private`af === None, CurrentValue[
+                    EvaluationNotebook[], {
+                    TaggingRules, "FormNotebook", "SubmissionOptions", 
+                    "GroupSubmissionFlag"}] === True]][
+                 
+                 AssessmentFunction[{
+                  25 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+                   Except[25] -> <|
+                    "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+                    "The correct answer was 25"|>}, <|
+                  "ComparisonMethod" -> "Item"|>, "Validated" -> True]]], "", 
+               
+               Function[{
+                QuestionFramework`Private`func, 
+                 QuestionFramework`Private`buttonenabled}, 
+                Button[
+                 Framed[
+                  Style[
+                  "Submit", 12, FontColor -> White, FontWeight -> Plain], 
+                  FrameStyle -> None, ImageMargins -> 0, RoundingRadius -> 2, 
+                  ImageSize -> {Automatic, 21}, BaselinePosition -> Baseline, 
+                  Background -> If[QuestionFramework`Private`buttonenabled, 
+                    RGBColor[
+                    0.043137254901960784`, 0.3803921568627451, 
+                    0.6352941176470588], 
+                    RGBColor[
+                    0.7686274509803922, 0.9019607843137255, 
+                    0.9725490196078431], 
+                    RGBColor[
+                    0.043137254901960784`, 0.3803921568627451, 
+                    0.6352941176470588]]], QuestionFramework`Private`func, 
+                 Evaluator -> Automatic, ImageSize -> {Automatic, 21}, 
+                 Appearance -> None, BaselinePosition -> Baseline, Enabled -> 
+                 Dynamic[QuestionFramework`Private`buttonenabled], Method -> 
+                 "Preemptive"], {HoldFirst}][
+               QuestionFramework`Private`result$$ = 
+                 QuestionFramework`Private`postProcessAssessment[
+                   
+                   AssessmentFunction[{
+                    25 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+                    Except[25] -> <|
+                    "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+                    "The correct answer was 25"|>}, <|
+                    "ComparisonMethod" -> "Item"|>, "Validated" -> True][
+                    Interpreter[QuestionFramework`Private`interpreter$$][
+                    QuestionFramework`Private`input$$], "SubmissionCount" -> 
+                    QuestionFramework`Private`submissionCount$$], <|
+                   "FieldType" -> Expression, "MinAnswers" -> 1, "Prompt" -> 
+                    "What is the next step?", "Range" -> {1, 900}|>]; 
+                QuestionFramework`Private`submittedvalue$$ = 
+                 QuestionFramework`Private`input$$; 
+                QuestionFramework`Private`submissionCount$$ = 
+                 QuestionFramework`Private`getSubmissionCount[
+                  QuestionFramework`Private`result$$]; 
+                QuestionFramework`Private`buttonenabled$$ = If[
+                   QuestionFramework`Private`reachedMaxSubmissionsQ[
+                   QuestionFramework`Private`result$$, 
+                    QuestionFramework`Private`submissionCount$$], False, True,
+                    True], QuestionFramework`Private`buttonenabled$$]], 
+              If[
+              Head[QuestionFramework`Private`result$$] === 
+               AssessmentResultObject, 
+               Row[{
+                 If[Head[
+                    QuestionFramework`Private`result$$["Explanation"]] === 
+                  String, 
+                  QuestionFramework`Private`result$$["Explanation"], ""]}, 
+                Spacer[5]], ""]}}, 
+            Sequence[
+            Alignment -> Left, Spacings -> {1, 1}, 
+             Dividers -> {False, {2 -> RGBColor[
+                  Rational[229, 255], 
+                  Rational[229, 255], 
+                  Rational[229, 255]]}}]], ImageSize -> 
+           Which[QuestionFramework`Private`questionnotebookflag$$, {
+             Full, Automatic}, QuestionFramework`Private`qmflag$$, {
+              Scaled[1.], Automatic}, True, Automatic], 
+           Sequence[
+           Background -> GrayLevel[1], FrameStyle -> 
+            RGBColor[
+             0.7490196078431373, 0.7490196078431373, 0.7490196078431373], 
+            RoundingRadius -> 5, FrameMargins -> 10, 
+            BaseStyle -> {"Panel", FontSize -> 14}]], StandardForm], 
+         TrackedSymbols :> {
+          QuestionFramework`Private`result$$, 
+           QuestionFramework`Private`input$$, 
+           QuestionFramework`Private`submittedvalue$$}], 
+        DynamicModuleValues :> {}], 
+       QuestionObject[
+        QuestionInterface[
+        "ShortAnswer", <|
+         "Prompt" -> "What is the next step?", "Range" -> {1, 900}|>], 
+        AssessmentFunction[{
+         25 -> <|"Score" -> 1, "AnswerCorrect" -> True|>, 
+          Except[25] -> <|
+           "Score" -> 0, "AnswerCorrect" -> False, "Explanation" -> 
+            "The correct answer was 25"|>}, <|"ComparisonMethod" -> "Item"|>, 
+         "Validated" -> True]]], "Key" -> 
+     Inherited}},ExpressionUUID->"03e78047-6555-4684-9c6d-50c77a90e79f"]
+},
+NotebookEventActions->{{"WindowClose" :> (CurrentValue[
+      CellObject[
+      "ff1b06a0-8a70-46a4-852d-df5d90211d98", 
+       "d57611dc-0cb7-4060-a094-865eb2a2cfce"], {
+      TaggingRules, "FormNotebook", "Activated"}] = False), 
+   "WindowClose" :> (CurrentValue[
+      CellObject[
+      "9c55f396-1e07-4c25-8c92-71e31703eb0c", 
+       "760fc698-6b67-41dd-ad55-44cfbd78e060"], {
+      TaggingRules, "FormNotebook", "Activated"}] = False), 
+   "WindowClose" :> (CurrentValue[
+      CellObject[
+      "0b4f3030-e584-4676-aa71-e14691616a3f", 
+       "c543d76d-3a2e-441e-9e43-26d74fdfb82c"], {
+      TaggingRules, "FormNotebook", "Activated"}] = False), 
+   "WindowClose" :> (CurrentValue[
+      CellObject[
+      "500a296c-8f1c-449b-924d-9c9e58b3b11d", 
+       "0a22e823-8af9-4ace-bb2d-72770d6fe643"], {
+      TaggingRules, "FormNotebook", "Activated"}] = False), 
+   "WindowClose" :> (CurrentValue[
+      CellObject[
+      "73908727-6b28-4d11-8450-07fead719028", 
+       "891f52d7-caed-4eb3-92b8-a26bb7dc4cad"], {
+      TaggingRules, "FormNotebook", "Activated"}] = False), 
+   "WindowClose" :> (CurrentValue[
+      CellObject[
+      "a7da84be-2d8a-41b7-b74c-efc28b9521ab", 
+       "d8c63e51-2176-4e3e-afb6-143f24da0476"], {
+      TaggingRules, "FormNotebook", "Activated"}] = False), 
+   "WindowClose" :> (CurrentValue[
+      CellObject[
+      "fd83deb7-f987-4157-9751-ebb2fc0dc9dd", 
+       "9e06fc90-a345-4361-a210-97d2b0725788"], {
+      TaggingRules, "FormNotebook", "Activated"}] = False), 
+   "WindowClose" :> (CurrentValue[
+      CellObject[
+      "eb143059-ae18-4124-9d9e-1075b7152f80", 
+       "cfc6b7a9-aabb-4290-8bed-302d8d1fe954"], {
+      TaggingRules, "FormNotebook", "Activated"}] = False), 
+   "WindowClose" :> (CurrentValue[
+      CellObject[
+      "1221c6f3-a4ec-4a3e-a0ae-2c6eec4b2f03", 
+       "b0be1f8e-48c3-4fac-a69f-076ef7e5e84f"], {
+      TaggingRules, "FormNotebook", "Activated"}] = False)}},
+WindowSize->{574.8, 574.8},
+WindowMargins->{{18, Automatic}, {Automatic, 0}},
+DockedCells->Cell[
+  BoxData[
+   TagBox[
+    GridBox[{{
+       ItemBox[
+        StyleBox[
+        "\"Generated Form\"", FontFamily -> "Source Sans Pro", FontWeight -> 
+         "SemiBold", FontSize -> 18, FontColor -> GrayLevel[0.2], 
+         StripOnInput -> False], Alignment -> Bottom, StripOnInput -> False], 
+       ItemBox["\"\"", ItemSize -> Fit, StripOnInput -> False], 
+       ItemBox["\"\"", StripOnInput -> False]}}, AutoDelete -> False, 
+     GridBoxItemSize -> {"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+      GridBoxSpacings -> {"Columns" -> {{1}}}], "Grid"]], Background -> 
+  GrayLevel[0.96], CellFrameMargins -> {{10, 4}, {5, 0}}, CellTags -> 
+  "DockedCell"],
+TaggingRules->{
+ "FormNotebook" -> {
+   "SubmissionOptions" -> {
+     "GroupSubmissionFlag" -> False, "AssessmentMethod" -> "Local"}, 
+    "InputAssoc" -> <||>, "AssessResult" -> ""}},
+FrontEndVersion->"13.3 for Microsoft Windows (64-bit) (May 18, 2023)",
+StyleDefinitions->"Wolfram/QAFormNotebook.nb",
+ExpressionUUID->"0022d324-9055-4bc6-aa04-e60932355fe9"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 13542, 267, 128, "FormElementCode",ExpressionUUID->"ceb9ff53-9399-41b1-b3ed-337ce27e6c48"],
+Cell[14103, 289, 13542, 267, 128, "FormElementCode",ExpressionUUID->"f3d033d6-e514-4b9f-ae61-e60fe93fb79c"],
+Cell[27648, 558, 13542, 267, 128, "FormElementCode",ExpressionUUID->"dc4fa0dc-5e28-444a-9efa-afa8a203b387"],
+Cell[41193, 827, 13542, 267, 128, "FormElementCode",ExpressionUUID->"1455ef74-a77e-49c1-af2c-826714dc9ad6"],
+Cell[54738, 1096, 13542, 267, 128, "FormElementCode",ExpressionUUID->"943487ab-fe25-4ddb-be77-2a7c47f9e973"],
+Cell[68283, 1365, 13564, 267, 128, "FormElementCode",ExpressionUUID->"0ef622f5-100d-47c4-b394-5868d2edacef"],
+Cell[81850, 1634, 14545, 292, 139, "FormElementCode",ExpressionUUID->"9d099dd6-8047-46ad-bdbd-8cb8f31f0dd5"],
+Cell[96398, 1928, 13565, 267, 128, "FormElementCode",ExpressionUUID->"235089e9-dbae-4af7-a2e3-19829182ac9f"],
+Cell[109966, 2197, 13593, 268, 149, "FormElementCode",ExpressionUUID->"03e78047-6555-4684-9c6d-50c77a90e79f"]
+}
+]
+*)
+
