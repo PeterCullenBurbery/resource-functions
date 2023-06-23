@@ -1,7 +1,7 @@
 Notebook[{
 
 Cell[CellGroupData[{
-Cell["MyFunction", "Title",
+Cell["LengthUntil", "Title",
  Deletable->False,
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
@@ -9,11 +9,11 @@ Cell["MyFunction", "Title",
        WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.8965470980601206`*^9, 3.8965470999025593`*^9}},
  CellTags->{"Name", "TemplateCell", "Title", "TabNext"},
  CellID->863144461,ExpressionUUID->"e40966a8-6e20-46bb-94b6-c38f19e6fef9"],
 
-Cell["One-line description explaining the function\[CloseCurlyQuote]s basic \
-purpose", "Text",
+Cell["the length until a condition is satisfied", "Text",
  Deletable->False,
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
@@ -21,6 +21,7 @@ purpose", "Text",
        WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.8965471198113017`*^9, 3.8965471227003183`*^9}},
  CellTags->{"DefaultContent", "Description", "TabNext", "TemplateCell"},
  CellID->660820806,ExpressionUUID->"076f5a10-c2ae-488a-a06b-63293205a572"],
 
@@ -58,11 +59,68 @@ evaluated before creating the Examples section below.", "MoreInfoText"],
  CellTags->{"Definition", "Function", "TemplateCellGroup"},
  CellID->292731158,ExpressionUUID->"e7ad3882-c93d-45a7-a73f-cb334ed962f2"],
 
+Cell[BoxData[{
+ RowBox[{"ClearAll", "[", "LengthUntil", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ResourceFunction", "[", "\"\<FormatAsResourceFunction\>\"", "]"}], 
+  "[", "TakeUntil", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"LengthUntil", "[", 
+   RowBox[{"list_", ",", "test_"}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"i", "=", "1"}], "}"}], ",", 
+    RowBox[{
+     RowBox[{"While", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"i", "<=", 
+         RowBox[{"Length", "[", "list", "]"}]}], "&&", 
+        RowBox[{"!", 
+         RowBox[{"test", "[", 
+          RowBox[{"list", "[", 
+           RowBox[{"[", "i", "]"}], "]"}], "]"}]}]}], ",", 
+       RowBox[{"i", "++"}]}], "]"}], ";", "i"}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"LengthUntil", "[", "test_", "]"}], "[", "list_", "]"}], ":=", 
+  RowBox[{"LengthUntil", "[", "test", "]"}]}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.8965471755246797`*^9, 3.8965471850513444`*^9}, {
+  3.89654748609966*^9, 3.896547506162063*^9}, {3.8965480979671526`*^9, 
+  3.896548109329991*^9}},
+ CellTags->"DefaultContent",
+ CellLabel->"In[1]:=",
+ CellID->876320555,ExpressionUUID->"4d727651-7c54-4ae8-aa87-5fceaa1059e1"],
+
 Cell[BoxData[
  RowBox[{
-  RowBox[{"MyFunction", "[", "]"}], ":=", "xxxx"}]], "Input",
- CellTags->"DefaultContent",
- CellID->876320555,ExpressionUUID->"4d727651-7c54-4ae8-aa87-5fceaa1059e1"]
+  RowBox[{
+   RowBox[{"LengthUntil", "::", "usage"}], "=", 
+   "\"\<LengthUntil[\!\(\*StyleBox[\"list\", \
+\"TI\"]\),\!\(\*StyleBox[\"crit\", \"TI\"]\)] gives the number of contiguous \
+elements \!\(\*SubscriptBox[StyleBox[\"e\", \"TI\"], StyleBox[\"i\", \"TI\"]]\
+\) you have to take from \!\(\*StyleBox[\"list\", \"TI\"]\) to make \
+\!\(\*StyleBox[\"crit\", \"TI\"]\)[\!\(\*SubscriptBox[StyleBox[\"e\", \
+\"TI\"], StyleBox[\"i\", \"TI\"]]\)] \
+\!\(\*TagBox[ButtonBox[StyleBox[\"True\", \
+\"SymbolsRefLink\",ShowStringCharacters->True,FontFamily->\"Source Sans \
+Pro\"],BaseStyle->Dynamic[
+FEPrivate`If[
+CurrentValue[\"MouseOver\"], {\"Link\", FontColor -> RGBColor[0.8549, \
+0.39608, 0.1451]}, \
+{\"Link\"}]],ButtonData->\"paclet:ref/True\",ContentPadding->False],\
+MouseAppearanceTag[\"LinkHand\"]]\). LengthUntil[\!\(\*StyleBox[\"crit\", \
+\"TI\"]\)] represents an operator form of LengthUntil that can be applied to \
+an expression.\>\""}], ";"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.8965472791992025`*^9, 3.896547318972052*^9}, {
+  3.8965473520842223`*^9, 3.8965474513166313`*^9}, {3.8965475258076563`*^9, 
+  3.896547565122342*^9}},
+ CellLabel->"In[5]:=",
+ CellID->76489534,ExpressionUUID->"742aebfc-dc9c-4f6b-b055-dda9576da56a"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -127,23 +185,77 @@ documentation pages for examples."}], "MoreInfoText"], Background ->
  TaggingRules->{"TemplateGroupName" -> "Usage"},
  DefaultNewCellStyle->{"UsageInputs", FontFamily -> "Source Sans Pro"},
  CellTags->{"TemplateCellGroup", "Usage"},
+ CellLabel->"In[23]:=",
  CellID->38054786,ExpressionUUID->"2a047b10-0ebb-453d-8feb-5210318fe507"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"MyFunction", "[", "arg", "]"}]], "UsageInputs",
+ RowBox[{"LengthUntil", "[", 
+  RowBox[{
+   StyleBox["list", "TI"], ",", 
+   StyleBox["crit", "TI"]}], "]"}]], "UsageInputs",
+ CellChangeTimes->{3.8965474454299297`*^9},
  FontFamily->"Source Sans Pro",
  CellTags->{"DefaultContent", "TabNext"},
  CellID->67839508,ExpressionUUID->"d0c39b97-35ab-42f5-9b7c-9360b50436d5"],
 
-Cell[TextData[{
- "explanation of what use of the argument ",
- StyleBox["arg", "TI"],
- " does."
-}], "UsageDescription",
+Cell[TextData[Cell[BoxData[
+ RowBox[{
+  RowBox[{"LengthUntil", "[", 
+   RowBox[{
+    StyleBox["list", "TI"], ",", 
+    StyleBox["crit", "TI"]}], "]"}], " ", "gives", " ", "the", " ", "number", 
+  " ", "of", " ", "contiguous", " ", "elements", " ", 
+  SubscriptBox[
+   StyleBox["e", "TI"], 
+   StyleBox["i", "TI"]], " ", "you", " ", "have", " ", "to", " ", "take", " ",
+   "from", " ", 
+  StyleBox["list", "TI"], " ", "to", " ", "make", " ", 
+  RowBox[{
+   StyleBox["crit", "TI"], "[", 
+   SubscriptBox[
+    StyleBox["e", "TI"], 
+    StyleBox["i", "TI"]], "]"}], " ", 
+  TagBox[
+   ButtonBox[
+    StyleBox["True", "SymbolsRefLink",
+     ShowStringCharacters->True,
+     FontFamily->"Source Sans Pro"],
+    BaseStyle->Dynamic[
+      FEPrivate`If[
+       CurrentValue["MouseOver"], {
+       "Link", FontColor -> RGBColor[0.8549, 0.39608, 0.1451]}, {"Link"}]],
+    ButtonData->"paclet:ref/True",
+    ContentPadding->False],
+   MouseAppearanceTag["LinkHand"]], "."}]], "Input",
+ CellChangeTimes->{{3.8965472791992025`*^9, 3.896547318972052*^9}, {
+  3.8965473520842223`*^9, 3.8965474513166313`*^9}, {3.8965475258076563`*^9, 
+  3.896547565122342*^9}},ExpressionUUID->"950f4bcb-02c7-4a57-8934-\
+4bbc6233e1f0"]], "UsageDescription",
+ CellChangeTimes->{
+  3.896547438983128*^9, {3.8965476044306297`*^9, 3.8965476058556256`*^9}},
  CellTags->{"DefaultContent", "TabNext"},
  CellID->746063541,ExpressionUUID->"a76946b4-ee45-4a63-87de-33b4256d54ba"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"LengthUntil", "[", 
+  StyleBox["crit", "TI"], "]"}]], "UsageInputs",
+ CellChangeTimes->{3.8965475962163677`*^9},
+ FontFamily->"Source Sans Pro",
+ CellTags->{"DefaultContent", "TabNext"},
+ CellID->149667933,ExpressionUUID->"77e7bb1f-ffb6-47e0-a04b-79b6cb783bd4"],
+
+Cell["\<\
+represents an operator form of LengthUntil that can be applied to an \
+expression .\
+\>", "UsageDescription",
+ CellChangeTimes->{3.8965475898941946`*^9},
+ CellTags->{"DefaultContent", "TabNext"},
+ CellID->119016112,ExpressionUUID->"e54b6b73-314d-4f0b-bd60-2baf58aac4d8"]
 }, Open  ]]
 }, Open  ]],
 
@@ -182,15 +294,28 @@ function, its development, and its usage.", "MoreInfoText"], Background ->
  TaggingRules->{"TemplateGroupName" -> "Notes"},
  DefaultNewCellStyle->"Notes",
  CellTags->{"Details & Options", "Notes", "TemplateCellGroup"},
+ CellLabel->"In[1]:=",
  CellID->447261062,ExpressionUUID->"930ad11b-23cc-46ae-bdac-6f5255ffe968"],
 
-Cell["Additional information about usage and options.", "Notes",
+Cell[TextData[{
+ "LengthUntil can be used on an object with any head, not necessarily ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["List"]], "paclet:ref/List"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "cd511da3-20a1-4a28-bc2b-81cee9f63487"],
+ ". "
+}], "Notes",
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
        WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.8965471319566298`*^9, 3.8965471397083683`*^9}},
  CellTags->{"DefaultContent", "TabNext"},
  CellID->422531486,ExpressionUUID->"3bdf57ee-695b-4297-86a6-69fbbfc97cf8"]
 }, Open  ]]
@@ -274,6 +399,7 @@ typical Subsection names and the types of examples they normally contain:\n  \
                 "\"Scope: \"", FontFamily -> "Source Sans Pro", FontWeight -> 
                  "SemiBold", FontSize -> 14, StripOnInput -> False]}, 
                "RowDefault"], ShowStringCharacters -> False]]], 
+           
            "input and display conventions, standard computational attributes \
 (e.g. threading over lists)\n  ", 
            Cell[
@@ -357,26 +483,33 @@ Cell[CellGroupData[{
 
 Cell["Basic Examples", "Subsection",
  CellTags->"DefaultContent",
+ CellLabel->"In[1]:=",
  CellID->619504543,ExpressionUUID->"69b8ca14-418d-4372-a98f-d4a359169dc6"],
 
-Cell["Text about the example:", "Text",
+Cell["Find the length of the run of elements below 10:", "Text",
+ CellChangeTimes->{3.896548749495338*^9},
  CellTags->"DefaultContent",
  CellID->586099280,ExpressionUUID->"938c6068-17be-4d12-a369-e4fb7dd076ba"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"MyFunction", "[", 
-  RowBox[{"x", ",", "y"}], "]"}]], "Input",
- CellTags->"DefaultContent",
- CellLabel->"In[1]:= ",
- CellID->298664010,ExpressionUUID->"cbc33d53-8305-4029-b5c1-54dc5fd0a974"],
+ RowBox[{"LengthUntil", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+    "1", ",", "1", ",", "2", ",", "3", ",", "5", ",", "8", ",", "13", ",", 
+     "21"}], "}"}], ",", 
+   RowBox[{
+    RowBox[{"#", ">", "10"}], "&"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.89654876485012*^9, 3.896548773850336*^9}},
+ CellLabel->"In[7]:=",
+ CellID->136917389,ExpressionUUID->"1fa2bf9a-88d7-4027-b0d9-6afe3ee7c267"],
 
-Cell[BoxData[
- RowBox[{"x", " ", "y"}]], "Output",
- CellTags->"DefaultContent",
- CellLabel->"Out[1]= ",
- CellID->832981051,ExpressionUUID->"cdbb329d-98e0-4a23-b219-62f346659bed"]
+Cell[BoxData["7"], "Output",
+ CellChangeTimes->{{3.896548768210707*^9, 3.8965487741256404`*^9}},
+ CellLabel->"Out[7]=",
+ CellID->267263632,ExpressionUUID->"6dde9421-c935-434d-98b7-df52bcf5f75c"]
 }, Open  ]]
 }, Open  ]],
 
@@ -384,50 +517,390 @@ Cell[CellGroupData[{
 
 Cell["Scope", "Subsection",
  CellTags->"DefaultContent",
+ CellLabel->"In[4]:=",
  CellID->313242344,ExpressionUUID->"42a40dd1-3f21-4b80-94a0-a6e082c3f8ed"],
 
-Cell["\<\
-Text about additional examples expanding scope (and see other sections for \
-options, applications, etc):\
-\>", "Text",
+Cell["Elements of the list can be any expression:", "Text",
+ CellChangeTimes->{3.8965487996485577`*^9},
  CellTags->"DefaultContent",
  CellID->291939446,ExpressionUUID->"59e93fc6-77d4-4b8a-849e-112d34725350"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"MyFunction", "[", 
-  RowBox[{"x", ",", "y", ",", "z"}], "]"}]], "Input",
+ RowBox[{"LengthUntil", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"a", ",", "Pi", ",", "3", ",", "2", ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "2", ",", "3"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"a", ",", "b"}], "}"}], ",", "10"}], "}"}], ",", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Head", "[", "#", "]"}], "===", "List"}], "&"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.8965488034547825`*^9, 3.8965488140419827`*^9}},
  CellTags->"DefaultContent",
- CellLabel->"In[2]:= ",
+ CellLabel->"In[9]:=",
  CellID->448965068,ExpressionUUID->"87972779-1bb0-47bc-a6e5-26e64e8829f7"],
 
-Cell[BoxData[
- RowBox[{"x", " ", "y", " ", "z"}]], "Output",
+Cell[BoxData["5"], "Output",
+ CellChangeTimes->{
+  3.8965476386470857`*^9, {3.8965488088890657`*^9, 3.8965488143374066`*^9}},
  CellTags->"DefaultContent",
- CellLabel->"Out[2]= ",
- CellID->494498970,ExpressionUUID->"3df989f4-1e85-4a3d-9fe1-c14a9885ef92"]
+ CellLabel->"Out[9]=",
+ CellID->1561345,ExpressionUUID->"c6090ff0-22aa-4025-ae64-378a289fd376"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Generalizations & Extensions", "Subsection",
+ CellChangeTimes->{{3.896548853085791*^9, 3.896548858532464*^9}},
+ CellID->130085283,ExpressionUUID->"62f45033-c269-47e0-ac24-92313969f900"],
+
+Cell[TextData[{
+ "Use on an expression with head ",
+ Cell[BoxData[
+  StyleBox["f", "MR"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "f4a21e15-1b18-473f-8b99-0e625df4231e"],
+ ":"
+}], "ExampleText",
+ CellID->233179922,ExpressionUUID->"13e6e6d6-5b42-47ed-979a-48d8de7219e2"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"LengthUntil", "[", 
+  RowBox[{
+   RowBox[{"f", "[", 
+    RowBox[{
+    "1", ",", "1", ",", "2", ",", "3", ",", "a", ",", "8", ",", "13", ",", 
+     "21"}], "]"}], ",", 
+   RowBox[{
+    RowBox[{"!", 
+     RowBox[{"IntegerQ", "[", "#", "]"}]}], "&"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8965488645555887`*^9, 3.8965488735352764`*^9}},
+ CellLabel->"In[11]:=",
+ CellID->259120636,ExpressionUUID->"602e7e3c-88d8-4657-84c6-18f070a8d9ad"],
+
+Cell[BoxData["5"], "Output",
+ CellChangeTimes->{{3.896548869933564*^9, 3.896548873916283*^9}},
+ CellLabel->"Out[11]=",
+ CellID->52263904,ExpressionUUID->"b61542f8-f0ae-4bcc-a747-66d1ebe50045"]
+}, Open  ]],
+
+Cell["The result is the same as for a list of the values:", "ExampleText",
+ CellID->553897049,ExpressionUUID->"d1cdcb58-f8ef-4c98-a295-dde190f275de"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"LengthUntil", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+    "1", ",", "1", ",", "2", ",", "3", ",", "a", ",", "8", ",", "13", ",", 
+     "21"}], "}"}], ",", 
+   RowBox[{
+    RowBox[{"!", 
+     RowBox[{"IntegerQ", "[", "#", "]"}]}], "&"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.896548882779204*^9, 3.8965488898341713`*^9}},
+ CellLabel->"In[12]:=",
+ CellID->149146528,ExpressionUUID->"19ed202c-fd4a-48d5-a77f-26cc9ece745a"],
+
+Cell[BoxData["5"], "Output",
+ CellChangeTimes->{3.8965488902154455`*^9},
+ CellLabel->"Out[12]=",
+ CellID->573797959,ExpressionUUID->"d1252104-ca70-4c45-af01-d4b6a47ea00d"]
 }, Open  ]]
 }, Open  ]],
 
 Cell["Options", "Subsection",
  CellTags->"DefaultContent",
+ CellLabel->"In[2]:=",
  CellID->879773335,ExpressionUUID->"6c718a4c-91b7-47b3-84bc-8a9edd449495"],
+
+Cell[CellGroupData[{
 
 Cell["Applications", "Subsection",
  CellTags->"DefaultContent",
+ CellLabel->"In[1]:=",
  CellID->542143288,ExpressionUUID->"c2442818-33dc-4c8a-84e4-34d259eed652"],
+
+Cell[TextData[{
+ "Find the length of the run of digits in ",
+ Cell[BoxData[
+  StyleBox["\[Pi]", "TR"]], "InlineMath",ExpressionUUID->
+  "b2555e46-f76f-4705-a7c6-05aed1f98ca2"],
+ " until a 7 occurs, including the 7:"
+}], "Text",
+ CellChangeTimes->{{3.8965489003808393`*^9, 3.8965489250426655`*^9}},
+ CellID->372751192,ExpressionUUID->"449d4a89-cac1-4ba1-ab16-6b41fa9fa7e1"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"LengthUntil", "[", 
+  RowBox[{
+   RowBox[{"First", "[", 
+    RowBox[{"RealDigits", "[", 
+     RowBox[{"Pi", ",", "10", ",", "100"}], "]"}], "]"}], ",", 
+   RowBox[{
+    RowBox[{"#", "==", "7"}], "&"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8965489099577475`*^9, 3.89654891358002*^9}},
+ CellLabel->"In[13]:=",
+ CellID->78764517,ExpressionUUID->"ccb7c61c-4737-4d67-96a5-878333c61e06"],
+
+Cell[BoxData["14"], "Output",
+ CellChangeTimes->{3.8965489144332776`*^9},
+ CellLabel->"Out[13]=",
+ CellID->9942626,ExpressionUUID->"72f7b27c-1f9b-48b1-8ee1-ff2b611c051c"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
 
 Cell["Properties and Relations", "Subsection",
  CellTags->"DefaultContent",
+ CellLabel->"In[1]:=",
  CellID->727494039,ExpressionUUID->"c084b58e-8cb0-47d8-9777-6b87a9a8b162"],
+
+Cell[TextData[{
+ "LengthUntil gives the length of the result from ",
+ ButtonBox["TakeUntil",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://www.wolframcloud.com/obj/burbery1/DeployedResources/Function/\
+TakeUntil/"], None},
+  ButtonNote->
+   "https://www.wolframcloud.com/obj/burbery1/DeployedResources/Function/\
+TakeUntil/"],
+ ":"
+}], "ExampleText",
+ CellChangeTimes->{{3.8965490066143985`*^9, 3.8965490336408596`*^9}},
+ CellID->12995697,ExpressionUUID->"f176a7c0-75e7-4e22-8a7e-db9064b29fcb"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  InterpretationBox[
+   TagBox[
+    FrameBox[
+     PaneBox[GridBox[{
+        {
+         StyleBox[
+          StyleBox[
+           AdjustmentBox["\<\"[\[FilledSmallSquare]]\"\>",
+            BoxBaselineShift->-0.25,
+            BoxMargins->{{0, 0}, {-1, -1}}], "ResourceFunctionIcon",
+           FontColor->GrayLevel[0.45]],
+          ShowStringCharacters->False,
+          FontFamily->"Source Sans Pro Black",
+          FontSize->0.65 Inherited,
+          FontWeight->"Heavy",
+          PrivateFontOptions->{"OperatorSubstitution"->False}], 
+         StyleBox[
+          RowBox[{
+           StyleBox["\<\"TakeUntil\"\>", "ResourceFunctionLabel"], " "}],
+          ShowAutoStyles->False,
+          ShowStringCharacters->False,
+          FontSize->0.9 Inherited,
+          FontColor->GrayLevel[0.1]]}
+       },
+       GridBoxSpacings->{"Columns" -> {{0.25}}}],
+      Alignment->Left,
+      BaseStyle->{LineSpacing -> {0, 0}, LineBreakWithin -> False},
+      BaselinePosition->Baseline,
+      FrameMargins->{{3, 0}, {0, 0}}],
+     Background->RGBColor[0.968627, 0.976471, 0.984314],
+     BaselinePosition->Baseline,
+     DefaultBaseStyle->{},
+     FrameMargins->{{0, 0}, {1, 1}},
+     FrameStyle->RGBColor[0.831373, 0.847059, 0.85098],
+     RoundingRadius->4],
+    {"FunctionResourceBox", 
+     GrayLevel[0.45], "\"TakeUntil\""},
+    TagBoxNote->"FunctionResourceBox"],
+   ResourceFunction[
+    ResourceObject[<|
+     "DocumentationLink" -> 
+      URL["https://www.wolframcloud.com/obj/burbery1/DeployedResources/\
+Function/TakeUntil"], "ResourceLocations" -> {
+        CloudObject[
+        "https://www.wolframcloud.com/obj/burbery1/Resources/4f4/4f479b94-\
+e866-4683-8aff-c0cf223a2241"]}, "Name" -> "TakeUntil", "UUID" -> 
+      "4f479b94-e866-4683-8aff-c0cf223a2241", "ResourceType" -> "Function", 
+      "Description" -> "Take from a list until a condition is satisfied", 
+      "Version" -> None, 
+      "Keywords" -> {
+       "Loops", "Procedural Programming", "Functional Iteration", 
+        "Conditionals", "Elements of Lists", "Functional Programming"}, 
+      "Categories" -> {
+       "Core Language & Structure", "Programming Utilities", 
+        "Symbolic & Numeric Computation"}, 
+      "Compatibility" -> <|
+       "WolframLanguageVersionRequired" -> "13.0+", 
+        "OperatingSystem" -> {"Windows", "MacOSX", "Unix"}, "Features" -> {}, 
+        "EvaluationEnvironment" -> {
+         "Session", "WebEvaluation", "BatchJob", "Script", "WebAPI", 
+          "Subkernel", "Scheduled"}, "CloudSupport" -> True|>, 
+      "ContributorInformation" -> <|
+       "ContributedBy" -> "Peter Cullen Burbery"|>, "DefinitionNotebook" -> 
+      CloudObject[
+       "https://www.wolframcloud.com/obj/burbery1/DeployedResources/Function/\
+TakeUntil/TakeUntil-DefinitionNotebook.nb"], "ExampleNotebook" -> 
+      CloudObject[
+       "https://www.wolframcloud.com/obj/burbery1/DeployedResources/Function/\
+TakeUntil/TakeUntil-ExampleNotebook.nb"], "ExampleNotebookData" -> Automatic, 
+      "FunctionLocation" -> 
+      CloudObject[
+       "https://www.wolframcloud.com/obj/burbery1/Resources/4f4/4f479b94-e866-\
+4683-8aff-c0cf223a2241/download/DefinitionData"], 
+      "RelatedSymbols" -> {"Until", "While", "TakeWhile", "LengthWhile"}, 
+      "SeeAlso" -> {"Until", "NestWhileGraph", "DropWhile"}, "ShortName" -> 
+      "TakeUntil", "SymbolName" -> 
+      "FunctionRepository`$4f479b94e86646838affc0cf223a2241`TakeUntil", 
+      "PageHeaderClickToCopy" -> 
+      "ResourceObject[CloudObject[\"https://www.wolframcloud.com/obj/burbery1/\
+DeployedResources/Function/TakeUntil\"]]"|>]],
+   Selectable->False], "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+    "1", ",", "1", ",", "2", ",", "3", ",", "5", ",", "8", ",", "13", ",", 
+     "21"}], "}"}], ",", 
+   RowBox[{
+    RowBox[{"#", ">", "10"}], "&"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.896548962836615*^9, 3.8965489782180133`*^9}},
+ CellLabel->"In[17]:=",
+ CellID->929400656,ExpressionUUID->"10f9a328-a0ba-4e81-ad3b-aaa1607abaef"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", "1", ",", "2", ",", "3", ",", "5", ",", "8", ",", "13"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.8965489750180874`*^9, 3.896548978473444*^9}},
+ CellLabel->"Out[17]=",
+ CellID->88116130,ExpressionUUID->"421f37cc-4a55-421f-8230-cb6a10f23ac0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"LengthUntil", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+    "1", ",", "1", ",", "2", ",", "3", ",", "5", ",", "8", ",", "13", ",", 
+     "21"}], "}"}], ",", 
+   RowBox[{
+    RowBox[{"#", ">", "10"}], "&"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.896548982256439*^9, 3.8965489905039067`*^9}},
+ CellLabel->"In[19]:=",
+ CellID->580366616,ExpressionUUID->"2c335a7b-fe63-4823-be4c-317b9b74d6ff"],
+
+Cell[BoxData["7"], "Output",
+ CellChangeTimes->{{3.8965489825485816`*^9, 3.896548990806229*^9}},
+ CellLabel->"Out[19]=",
+ CellID->943386934,ExpressionUUID->"ba7b9dce-7fc8-4d40-a19e-346b3e634915"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "\t", "ExampleDelimiter",ExpressionUUID->
+   "31c696b6-95f6-42b7-9161-2993d2485c36"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->438254890,ExpressionUUID->"bdeabea7-9276-4889-b90d-a3d9250aae46"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["LengthWhile"]], "paclet:ref/LengthWhile"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "6cf7366f-f4c3-4175-bd4d-9f417d27c9da"],
+ " is equal to ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["Length"]], "paclet:ref/Length"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "8f1fe3b3-1090-4722-a03e-8182650a2c7f"],
+ " if ",
+ Cell[BoxData[
+  RowBox[{
+   StyleBox["crit", "TI"], "[", 
+   SubscriptBox[
+    StyleBox["e", "TI"], 
+    StyleBox["i", "TI"]], "]"}]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "2fbadc90-aca2-470d-937c-9a8ed585c6f6"],
+ " is ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["True"]], "paclet:ref/True"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "8adc191a-f011-401f-8de2-c2da0cf04356"],
+ " for all elements:"
+}], "ExampleText",
+ CellID->47453321,ExpressionUUID->"cfa926f2-c484-45d6-8fcb-ef21da96a9db"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"LengthWhile", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+    "1", ",", "1", ",", "2", ",", "3", ",", "5", ",", "8", ",", "13", ",", 
+     "21"}], "}"}], ",", "NumberQ"}], "]"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->166616232,ExpressionUUID->"eabb82c8-0560-4d89-ab2d-9b76561af3b5"],
+
+Cell[BoxData["8"], "Output",
+ CellLabel->"Out[1]=",
+ CellID->309506077,ExpressionUUID->"e49c15ca-d2a8-48bb-8e97-a93e35a8f5b0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Length", "[", 
+  RowBox[{"{", 
+   RowBox[{
+   "1", ",", "1", ",", "2", ",", "3", ",", "5", ",", "8", ",", "13", ",", 
+    "21"}], "}"}], "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->741196323,ExpressionUUID->"9bd6aa53-7dcf-4884-9740-d72ecce6547e"],
+
+Cell[BoxData["8"], "Output",
+ CellLabel->"Out[2]=",
+ CellID->699558107,ExpressionUUID->"f1362c2f-afb5-4339-bc31-b30d098f4a2b"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
 
 Cell["Possible Issues", "Subsection",
  CellTags->"DefaultContent",
+ CellLabel->"In[1]:=",
  CellID->471245215,ExpressionUUID->"7d40edf2-0304-45e4-b17f-1428f7d1b84d"],
 
 Cell["Neat Examples", "Subsection",
  CellTags->"DefaultContent",
+ CellLabel->"In[1]:=",
  CellID->303071976,ExpressionUUID->"5dd2f9eb-5c79-4a0d-807f-7d357d0b6764"]
 }, Open  ]],
 
@@ -469,15 +942,17 @@ publicly credited with contributing this function.", "MoreInfoText"],
  TaggingRules->{"TemplateGroupName" -> "Contributed By"},
  DefaultNewCellStyle->"Text",
  CellTags->{"Contributed By", "ContributorInformation", "TemplateCellGroup"},
+ CellLabel->"In[1]:=",
  CellID->771147648,ExpressionUUID->"820d57b1-1d1e-4fdb-9bc9-a9dfc7a897a7"],
 
-Cell["Author Name", "Text",
+Cell["Peter Cullen Burbery", "Text",
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
        WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.8965487289761076`*^9, 3.8965487327384367`*^9}},
  CellTags->{"DefaultContent", "TabNext"},
  CellID->855757352,ExpressionUUID->"1beeffc2-dedd-4dfe-a034-0e4f1de341c1"]
 }, Open  ]],
@@ -511,6 +986,7 @@ concepts) that should be used to include the function in search results.",
  TaggingRules->{"TemplateGroupName" -> "Keywords"},
  DefaultNewCellStyle->"Item",
  CellTags->{"Keywords", "TemplateCellGroup"},
+ CellLabel->"In[1]:=",
  CellID->854882061,ExpressionUUID->"39c317cc-4fe9-48ed-b1bb-e9f6ae1e1c7f"],
 
 Cell["keyword 1", "Item",
@@ -532,6 +1008,7 @@ Cell["Categories", "Subsection",
  TaggingRules->{"TemplateGroupName" -> "Categories"},
  DefaultNewCellStyle->"Item",
  CellTags->{"Categories", "TemplateCellGroup"},
+ CellLabel->"In[1]:=",
  CellID->193940140,ExpressionUUID->"b7c63df3-bc9f-4a6d-addb-0a45eaccf829"],
 
 Cell[BoxData[
@@ -814,6 +1291,7 @@ related to the function.", "MoreInfoText"], Background -> GrayLevel[0.95],
  TaggingRules->{"TemplateGroupName" -> "Related Symbols"},
  DefaultNewCellStyle->"Item",
  CellTags->{"Related Symbols", "TemplateCellGroup"},
+ CellLabel->"In[1]:=",
  CellID->525877127,ExpressionUUID->"44050e2c-b3f5-4dd2-9079-b6f1d34a2f17"],
 
 Cell["SymbolName (documented Wolfram Language symbol)", "Item",
@@ -856,6 +1334,7 @@ repository that are related to this function.", "MoreInfoText"], Background ->
  TaggingRules->{"TemplateGroupName" -> "Related Resource Objects"},
  DefaultNewCellStyle->"Item",
  CellTags->{"Related Resource Objects", "TemplateCellGroup"},
+ CellLabel->"In[1]:=",
  CellID->869341850,ExpressionUUID->"8f5c1877-6fd0-4abb-a57b-67e272fdf2a9"],
 
 Cell["Resource Name (resources from any Wolfram repository)", "Item",
@@ -898,6 +1377,7 @@ repository).", "MoreInfoText"], Background -> GrayLevel[0.95], FrameMargins ->
  TaggingRules->{"TemplateGroupName" -> "Source/Reference Citation"},
  DefaultNewCellStyle->"Text",
  CellTags->{"Source/Reference Citation", "TemplateCellGroup"},
+ CellLabel->"In[1]:=",
  CellID->788767010,ExpressionUUID->"4ccbf682-c4e8-4e47-9175-60eca78ca946"],
 
 Cell["Source, reference or citation information", "Text",
@@ -940,6 +1420,7 @@ to the function.", "MoreInfoText"], Background -> GrayLevel[0.95],
  TaggingRules->{"TemplateGroupName" -> "Links"},
  DefaultNewCellStyle->"Item",
  CellTags->{"Links", "TemplateCellGroup"},
+ CellLabel->"In[1]:=",
  CellID->341958311,ExpressionUUID->"86e3adb4-884d-4ad9-bf6e-52106869369f"],
 
 Cell["Link to other related material", "Item",
@@ -1000,23 +1481,1007 @@ Input/Output cell pairs or as symbolic ",
  TaggingRules->{"TemplateGroupName" -> "VerificationTests"},
  DefaultNewCellStyle->"Input",
  CellTags->{"TemplateCellGroup", "Tests", "VerificationTests"},
+ CellLabel->"In[1]:=",
  CellID->187055128,ExpressionUUID->"75d2bff0-6514-4722-b430-b2693804f10e"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"MyFunction", "[", 
-  RowBox[{"x", ",", "y"}], "]"}]], "Input",
+ RowBox[{"?", "LengthUntil"}]], "Input",
+ CellChangeTimes->{{3.8965474613499813`*^9, 3.896547464483511*^9}},
  CellTags->"DefaultContent",
- CellLabel->"In[3]:=",
+ CellLabel->"In[1]:=",
  CellID->770806,ExpressionUUID->"11340100-8949-4961-9afb-3592a4d55eaa"],
 
 Cell[BoxData[
- RowBox[{"x", " ", "y"}]], "Output",
+ InterpretationBox[
+  StyleBox[
+   FrameBox[
+    DynamicModuleBox[{System`InformationDump`open$$ = False, 
+     System`InformationDump`mouseOver$$ = False}, 
+     PaneSelectorBox[{True->
+      TagBox[GridBox[{
+         {
+          ItemBox[
+           PaneBox[
+            StyleBox["\<\" Symbol\"\>", "InformationTitleText",
+             StripOnInput->False,
+             BaseStyle -> None],
+            FrameMargins->{{4, 0}, {-1, 1}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           PaneBox[
+            
+            StyleBox["\<\"LengthUntil[\\!\\(\\*StyleBox[\\\"list\\\", \
+\\\"TI\\\"]\\),\\!\\(\\*StyleBox[\\\"crit\\\", \\\"TI\\\"]\\)] gives the \
+number of contiguous elements \\!\\(\\*SubscriptBox[StyleBox[\\\"e\\\", \
+\\\"TI\\\"], StyleBox[\\\"i\\\", \\\"TI\\\"]]\\) you have to take from \\!\\(\
+\\*StyleBox[\\\"list\\\", \\\"TI\\\"]\\) to make \\!\\(\\*StyleBox[\\\"crit\\\
+\", \\\"TI\\\"]\\)[\\!\\(\\*SubscriptBox[StyleBox[\\\"e\\\", \\\"TI\\\"], \
+StyleBox[\\\"i\\\", \\\"TI\\\"]]\\)] \
+\\!\\(\\*TagBox[ButtonBox[StyleBox[\\\"True\\\", \
+\\\"SymbolsRefLink\\\",ShowStringCharacters->True,FontFamily->\\\"Source Sans \
+Pro\\\"],BaseStyle->Dynamic[FEPrivate`If[CurrentValue[\\\"MouseOver\\\"], {\\\
+\"Link\\\", FontColor -> RGBColor[0.8549, 0.39608, 0.1451]}, \
+{\\\"Link\\\"}]],ButtonData->\\\"paclet:ref/True\\\",ContentPadding->False],\
+MouseAppearanceTag[\\\"LinkHand\\\"]]\\). \
+LengthUntil[\\!\\(\\*StyleBox[\\\"crit\\\", \\\"TI\\\"]\\)] represents an \
+operator form of LengthUntil that can be applied to an expression.\"\>", 
+             "InformationUsageText",
+             StripOnInput->False,
+             LineSpacing->{1.5, 1.5, 3.}],
+            FrameMargins->{{10, 10}, {8, 10}}],
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False]},
+         {
+          PaneBox[
+           TagBox[GridBox[{
+              {
+               StyleBox[
+                TagBox[
+                 TooltipBox[
+                  StyleBox["\<\" Definitions\"\>", "InformationRowLabel",
+                   StripOnInput->False],
+                  "\"Definitions\"",
+                  TooltipStyle->"TextStyling"],
+                 Annotation[#, "Definitions", "Tooltip"]& ], "DialogStyle",
+                StripOnInput->False]},
+              {
+               TemplateBox[{"\"\[ThinSpace]\"", 
+                 GridBox[{{
+                    RowBox[{
+                    RowBox[{"LengthUntil", "[", 
+                    RowBox[{"list_", ",", "test_"}], "]"}], ":=", 
+                    RowBox[{"Module", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"i", "=", "1"}], "}"}], ",", 
+                    RowBox[{
+                    RowBox[{"While", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"i", "\[LessEqual]", 
+                    RowBox[{"Length", "[", "list", "]"}]}], "&&", 
+                    RowBox[{"!", 
+                    RowBox[{"test", "[", 
+                    
+                    RowBox[{"list", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "]"}]}]}], ",", 
+                    RowBox[{"i", "++"}]}], "]"}], ";", "i"}]}], "]"}]}]}, {
+                   " "}, {
+                    RowBox[{
+                    RowBox[{"LengthUntil", "[", "test_", "]"}], ":=", 
+                    RowBox[{
+                    RowBox[{"OperatorApplied", "[", "LengthUntil", "]"}], "[",
+                     "test", "]"}]}]}, {" "}}, 
+                  GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                  DefaultBaseStyle -> "Column", 
+                  GridBoxItemSize -> {
+                   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]},
+                "RowDefault"]}
+             },
+             DefaultBaseStyle->"Column",
+             GridBoxAlignment->{"Columns" -> {{Left}}},
+             
+             GridBoxItemSize->{
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+            "Column"],
+           FrameMargins->{{6, 0}, {3, 6}}], "\<\"\"\>"},
+         {
+          PaneBox[GridBox[{
+             {
+              
+              DynamicModuleBox[{System`InformationDump`open$$ = {
+               False, False, False, False, False, False}}, 
+               StyleBox[GridBox[{
+                  {
+                   TagBox[
+                    TooltipBox[
+                    StyleBox["\<\" Full Name\"\>", "InformationRowLabel",
+                    StripOnInput->False],
+                    "\"FullName\"",
+                    TooltipStyle->"TextStyling"],
+                    
+                    Annotation[#, "FullName", 
+                    "Tooltip"]& ], "\<\"Global`LengthUntil\"\>"}
+                 },
+                 AutoDelete->False,
+                 GridBoxAlignment->{"Columns" -> {Right, Left}},
+                 GridBoxDividers->None,
+                 GridBoxItemSize->{"Columns" -> {Automatic, Automatic}},
+                 GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.5599999999999999]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.8]}, 
+                    Offset[0.2]}}], "DialogStyle",
+                StripOnInput->False],
+               DynamicModuleValues:>{}]}
+            },
+            DefaultBaseStyle->"Column",
+            GridBoxAlignment->{"Columns" -> {{Left}}},
+            GridBoxDividers->{"Columns" -> {{False}}, "Rows" -> {{False}}},
+            
+            GridBoxItemSize->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+            GridBoxSpacings->{"Columns" -> {
+                Offset[0.27999999999999997`], {
+                 Offset[0.5599999999999999]}, 
+                Offset[0.27999999999999997`]}, "Rows" -> {
+                Offset[0.2], {
+                 Offset[3.6]}, 
+                Offset[0.2]}}],
+           FrameMargins->{{6, 6}, {6, 3}}], ""},
+         {
+          ItemBox[
+           TagBox[
+            ButtonBox[
+             PaneSelectorBox[{False->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "UpPointerOpener"]], True->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "UpPointerOpenerHot"]]}, Dynamic[
+              System`InformationDump`mouseOver$$]],
+             Alignment->Left,
+             Appearance->{"Default" -> None},
+             
+             ButtonFunction:>FEPrivate`Set[
+              System`InformationDump`open$$, False],
+             Evaluator->Automatic,
+             FrameMargins->{{9, 0}, {0, 0}},
+             ImageMargins->0,
+             ImageSize->Full,
+             Method->"Preemptive"],
+            
+            EventHandlerTag[{
+             "MouseEntered" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
+              "MouseExited" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
+              Method -> "Preemptive", PassEventsDown -> Automatic, 
+              PassEventsUp -> True}]],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], "\[SpanFromLeft]"}
+        },
+        AutoDelete->False,
+        FrameStyle->Directive[
+          GrayLevel[0.8], 
+          Thickness[Tiny]],
+        GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
+        GridBoxDividers->{
+         "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"], False->
+      TagBox[GridBox[{
+         {
+          ItemBox[
+           PaneBox[
+            StyleBox["\<\" Symbol\"\>", "InformationTitleText",
+             StripOnInput->False],
+            FrameMargins->{{4, 0}, {-1, 1}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           PaneBox[
+            
+            StyleBox["\<\"LengthUntil[\\!\\(\\*StyleBox[\\\"list\\\", \
+\\\"TI\\\"]\\),\\!\\(\\*StyleBox[\\\"crit\\\", \\\"TI\\\"]\\)] gives the \
+number of contiguous elements \\!\\(\\*SubscriptBox[StyleBox[\\\"e\\\", \
+\\\"TI\\\"], StyleBox[\\\"i\\\", \\\"TI\\\"]]\\) you have to take from \\!\\(\
+\\*StyleBox[\\\"list\\\", \\\"TI\\\"]\\) to make \\!\\(\\*StyleBox[\\\"crit\\\
+\", \\\"TI\\\"]\\)[\\!\\(\\*SubscriptBox[StyleBox[\\\"e\\\", \\\"TI\\\"], \
+StyleBox[\\\"i\\\", \\\"TI\\\"]]\\)] \
+\\!\\(\\*TagBox[ButtonBox[StyleBox[\\\"True\\\", \
+\\\"SymbolsRefLink\\\",ShowStringCharacters->True,FontFamily->\\\"Source Sans \
+Pro\\\"],BaseStyle->Dynamic[FEPrivate`If[CurrentValue[\\\"MouseOver\\\"], {\\\
+\"Link\\\", FontColor -> RGBColor[0.8549, 0.39608, 0.1451]}, \
+{\\\"Link\\\"}]],ButtonData->\\\"paclet:ref/True\\\",ContentPadding->False],\
+MouseAppearanceTag[\\\"LinkHand\\\"]]\\). \
+LengthUntil[\\!\\(\\*StyleBox[\\\"crit\\\", \\\"TI\\\"]\\)] represents an \
+operator form of LengthUntil that can be applied to an expression.\"\>", 
+             "InformationUsageText",
+             StripOnInput->False,
+             LineSpacing->{1.5, 1.5, 3.}],
+            FrameMargins->{{10, 10}, {8, 10}}],
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           TagBox[
+            ButtonBox[
+             PaneSelectorBox[{False->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpener"],
+               ImageSizeCache->{10., {3., 7.}}], True->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpenerHot"],
+               ImageSizeCache->{10., {3., 7.}}]}, Dynamic[
+              System`InformationDump`mouseOver$$]],
+             Alignment->Left,
+             Appearance->{"Default" -> None},
+             
+             ButtonFunction:>FEPrivate`Set[
+              System`InformationDump`open$$, True],
+             Evaluator->Automatic,
+             FrameMargins->{{9, 0}, {0, 0}},
+             ImageMargins->0,
+             ImageSize->Full,
+             Method->"Preemptive"],
+            
+            EventHandlerTag[{
+             "MouseEntered" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
+              "MouseExited" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
+              Method -> "Preemptive", PassEventsDown -> Automatic, 
+              PassEventsUp -> True}]],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], "\[SpanFromLeft]"}
+        },
+        AutoDelete->False,
+        FrameStyle->Directive[
+          GrayLevel[0.8], 
+          Thickness[Tiny]],
+        GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
+        GridBoxDividers->{
+         "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"]}, Dynamic[System`InformationDump`open$$],
+      BaselinePosition->Baseline,
+      FrameMargins->0,
+      ImageSize->Automatic],
+     DynamicModuleValues:>{}],
+    BaseStyle->"InformationGridFrame",
+    StripOnInput->False], "InformationGridPlain",
+   StripOnInput->False],
+  InformationData[<|
+   "ObjectType" -> "Symbol", "Usage" -> 
+    "LengthUntil[\!\(\*StyleBox[\"list\", \"TI\"]\),\!\(\*StyleBox[\"crit\", \
+\"TI\"]\)] gives the number of contiguous elements \
+\!\(\*SubscriptBox[StyleBox[\"e\", \"TI\"], StyleBox[\"i\", \"TI\"]]\) you \
+have to take from \!\(\*StyleBox[\"list\", \"TI\"]\) to make \
+\!\(\*StyleBox[\"crit\", \"TI\"]\)[\!\(\*SubscriptBox[StyleBox[\"e\", \
+\"TI\"], StyleBox[\"i\", \"TI\"]]\)] \
+\!\(\*TagBox[ButtonBox[StyleBox[\"True\", \
+\"SymbolsRefLink\",ShowStringCharacters->True,FontFamily->\"Source Sans \
+Pro\"],BaseStyle->Dynamic[FEPrivate`If[CurrentValue[\"MouseOver\"], \
+{\"Link\", FontColor -> RGBColor[0.8549, 0.39608, 0.1451]}, \
+{\"Link\"}]],ButtonData->\"paclet:ref/True\",ContentPadding->False],\
+MouseAppearanceTag[\"LinkHand\"]]\). LengthUntil[\!\(\*StyleBox[\"crit\", \
+\"TI\"]\)] represents an operator form of LengthUntil that can be applied to \
+an expression.", "Documentation" -> None, "OwnValues" -> None, "UpValues" -> 
+    None, "DownValues" -> 
+    Information`InformationValueForm[
+     DownValues, $CellContext`LengthUntil, {$CellContext`LengthUntil[
+         Pattern[$CellContext`list, 
+          Blank[]], 
+         Pattern[$CellContext`test, 
+          Blank[]]] :> Module[{$CellContext`i = 1}, While[
+           And[$CellContext`i <= Length[$CellContext`list], 
+            Not[
+             $CellContext`test[
+              Part[$CellContext`list, $CellContext`i]]]], 
+           
+           Increment[$CellContext`i]]; $CellContext`i], \
+$CellContext`LengthUntil[
+         Pattern[$CellContext`test, 
+          Blank[]]] :> 
+       OperatorApplied[$CellContext`LengthUntil][$CellContext`test]}], 
+    "SubValues" -> None, "DefaultValues" -> None, "NValues" -> None, 
+    "FormatValues" -> None, "Options" -> None, "Attributes" -> {}, "FullName" -> 
+    "Global`LengthUntil"|>, False]]], "Output",
+ CellChangeTimes->{3.8965474647908*^9, 3.8965476389321413`*^9},
  CellTags->"DefaultContent",
+ CellLabel->"Out[1]=",
+ CellID->29018597,ExpressionUUID->"f70923c3-93de-462a-97d3-cc6d8ab682ab"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"??", "LengthUntil"}]], "Input",
+ CellChangeTimes->{{3.8965474652505674`*^9, 3.896547473724247*^9}},
+ CellLabel->"In[2]:=",
+ CellID->685091513,ExpressionUUID->"5c7464e0-2250-4883-875a-2ced947c5ad1"],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   FrameBox[
+    DynamicModuleBox[{System`InformationDump`open$$ = True, 
+     System`InformationDump`mouseOver$$ = False}, 
+     PaneSelectorBox[{True->
+      TagBox[GridBox[{
+         {
+          ItemBox[
+           PaneBox[
+            StyleBox["\<\" Symbol\"\>", "InformationTitleText",
+             StripOnInput->False,
+             BaseStyle -> None],
+            FrameMargins->{{4, 0}, {-1, 1}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           PaneBox[
+            
+            StyleBox["\<\"LengthUntil[\\!\\(\\*StyleBox[\\\"list\\\", \
+\\\"TI\\\"]\\),\\!\\(\\*StyleBox[\\\"crit\\\", \\\"TI\\\"]\\)] gives the \
+number of contiguous elements \\!\\(\\*SubscriptBox[StyleBox[\\\"e\\\", \
+\\\"TI\\\"], StyleBox[\\\"i\\\", \\\"TI\\\"]]\\) you have to take from \\!\\(\
+\\*StyleBox[\\\"list\\\", \\\"TI\\\"]\\) to make \\!\\(\\*StyleBox[\\\"crit\\\
+\", \\\"TI\\\"]\\)[\\!\\(\\*SubscriptBox[StyleBox[\\\"e\\\", \\\"TI\\\"], \
+StyleBox[\\\"i\\\", \\\"TI\\\"]]\\)] \
+\\!\\(\\*TagBox[ButtonBox[StyleBox[\\\"True\\\", \
+\\\"SymbolsRefLink\\\",ShowStringCharacters->True,FontFamily->\\\"Source Sans \
+Pro\\\"],BaseStyle->Dynamic[FEPrivate`If[CurrentValue[\\\"MouseOver\\\"], {\\\
+\"Link\\\", FontColor -> RGBColor[0.8549, 0.39608, 0.1451]}, \
+{\\\"Link\\\"}]],ButtonData->\\\"paclet:ref/True\\\",ContentPadding->False],\
+MouseAppearanceTag[\\\"LinkHand\\\"]]\\). \
+LengthUntil[\\!\\(\\*StyleBox[\\\"crit\\\", \\\"TI\\\"]\\)] represents an \
+operator form of LengthUntil that can be applied to an expression.\"\>", 
+             "InformationUsageText",
+             StripOnInput->False,
+             LineSpacing->{1.5, 1.5, 3.}],
+            FrameMargins->{{10, 10}, {8, 10}}],
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False]},
+         {
+          PaneBox[
+           TagBox[GridBox[{
+              {
+               StyleBox[
+                TagBox[
+                 TooltipBox[
+                  StyleBox["\<\" Definitions\"\>", "InformationRowLabel",
+                   StripOnInput->False],
+                  "\"Definitions\"",
+                  TooltipStyle->"TextStyling"],
+                 Annotation[#, "Definitions", "Tooltip"]& ], "DialogStyle",
+                StripOnInput->False]},
+              {
+               TemplateBox[{"\"\[ThinSpace]\"", 
+                 GridBox[{{
+                    RowBox[{
+                    RowBox[{"LengthUntil", "[", 
+                    RowBox[{"list_", ",", "test_"}], "]"}], ":=", 
+                    RowBox[{"Module", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"i", "=", "1"}], "}"}], ",", 
+                    RowBox[{
+                    RowBox[{"While", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"i", "\[LessEqual]", 
+                    RowBox[{"Length", "[", "list", "]"}]}], "&&", 
+                    RowBox[{"!", 
+                    RowBox[{"test", "[", 
+                    
+                    RowBox[{"list", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "]"}]}]}], ",", 
+                    RowBox[{"i", "++"}]}], "]"}], ";", "i"}]}], "]"}]}]}, {
+                   " "}, {
+                    RowBox[{
+                    RowBox[{"LengthUntil", "[", "test_", "]"}], ":=", 
+                    RowBox[{
+                    RowBox[{"OperatorApplied", "[", "LengthUntil", "]"}], "[",
+                     "test", "]"}]}]}, {" "}}, 
+                  GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                  DefaultBaseStyle -> "Column", 
+                  GridBoxItemSize -> {
+                   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]},
+                "RowDefault"]}
+             },
+             DefaultBaseStyle->"Column",
+             GridBoxAlignment->{"Columns" -> {{Left}}},
+             
+             GridBoxItemSize->{
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+            "Column"],
+           FrameMargins->{{6, 0}, {3, 6}}], "\<\"\"\>"},
+         {
+          PaneBox[GridBox[{
+             {
+              
+              DynamicModuleBox[{System`InformationDump`open$$ = {
+               False, False, False, False, False, False}}, 
+               StyleBox[GridBox[{
+                  {
+                   TagBox[
+                    TooltipBox[
+                    StyleBox["\<\" Full Name\"\>", "InformationRowLabel",
+                    StripOnInput->False],
+                    "\"FullName\"",
+                    TooltipStyle->"TextStyling"],
+                    
+                    Annotation[#, "FullName", 
+                    "Tooltip"]& ], "\<\"Global`LengthUntil\"\>"}
+                 },
+                 AutoDelete->False,
+                 GridBoxAlignment->{"Columns" -> {Right, Left}},
+                 GridBoxDividers->None,
+                 GridBoxItemSize->{"Columns" -> {Automatic, Automatic}},
+                 GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.5599999999999999]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.8]}, 
+                    Offset[0.2]}}], "DialogStyle",
+                StripOnInput->False],
+               DynamicModuleValues:>{}]}
+            },
+            DefaultBaseStyle->"Column",
+            GridBoxAlignment->{"Columns" -> {{Left}}},
+            GridBoxDividers->{"Columns" -> {{False}}, "Rows" -> {{False}}},
+            
+            GridBoxItemSize->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+            GridBoxSpacings->{"Columns" -> {
+                Offset[0.27999999999999997`], {
+                 Offset[0.5599999999999999]}, 
+                Offset[0.27999999999999997`]}, "Rows" -> {
+                Offset[0.2], {
+                 Offset[3.6]}, 
+                Offset[0.2]}}],
+           FrameMargins->{{6, 6}, {6, 3}}], ""},
+         {
+          ItemBox[
+           TagBox[
+            ButtonBox[
+             PaneSelectorBox[{False->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "UpPointerOpener"],
+               ImageSizeCache->{10., {3., 7.}}], True->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "UpPointerOpenerHot"],
+               ImageSizeCache->{10., {3., 7.}}]}, Dynamic[
+              System`InformationDump`mouseOver$$]],
+             Alignment->Left,
+             Appearance->{"Default" -> None},
+             
+             ButtonFunction:>FEPrivate`Set[
+              System`InformationDump`open$$, False],
+             Evaluator->Automatic,
+             FrameMargins->{{9, 0}, {0, 0}},
+             ImageMargins->0,
+             ImageSize->Full,
+             Method->"Preemptive"],
+            
+            EventHandlerTag[{
+             "MouseEntered" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
+              "MouseExited" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
+              Method -> "Preemptive", PassEventsDown -> Automatic, 
+              PassEventsUp -> True}]],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], "\[SpanFromLeft]"}
+        },
+        AutoDelete->False,
+        FrameStyle->Directive[
+          GrayLevel[0.8], 
+          Thickness[Tiny]],
+        GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
+        GridBoxDividers->{
+         "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"], False->
+      TagBox[GridBox[{
+         {
+          ItemBox[
+           PaneBox[
+            StyleBox["\<\" Symbol\"\>", "InformationTitleText",
+             StripOnInput->False],
+            FrameMargins->{{4, 0}, {-1, 1}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           PaneBox[
+            
+            StyleBox["\<\"LengthUntil[\\!\\(\\*StyleBox[\\\"list\\\", \
+\\\"TI\\\"]\\),\\!\\(\\*StyleBox[\\\"crit\\\", \\\"TI\\\"]\\)] gives the \
+number of contiguous elements \\!\\(\\*SubscriptBox[StyleBox[\\\"e\\\", \
+\\\"TI\\\"], StyleBox[\\\"i\\\", \\\"TI\\\"]]\\) you have to take from \\!\\(\
+\\*StyleBox[\\\"list\\\", \\\"TI\\\"]\\) to make \\!\\(\\*StyleBox[\\\"crit\\\
+\", \\\"TI\\\"]\\)[\\!\\(\\*SubscriptBox[StyleBox[\\\"e\\\", \\\"TI\\\"], \
+StyleBox[\\\"i\\\", \\\"TI\\\"]]\\)] \
+\\!\\(\\*TagBox[ButtonBox[StyleBox[\\\"True\\\", \
+\\\"SymbolsRefLink\\\",ShowStringCharacters->True,FontFamily->\\\"Source Sans \
+Pro\\\"],BaseStyle->Dynamic[FEPrivate`If[CurrentValue[\\\"MouseOver\\\"], {\\\
+\"Link\\\", FontColor -> RGBColor[0.8549, 0.39608, 0.1451]}, \
+{\\\"Link\\\"}]],ButtonData->\\\"paclet:ref/True\\\",ContentPadding->False],\
+MouseAppearanceTag[\\\"LinkHand\\\"]]\\). \
+LengthUntil[\\!\\(\\*StyleBox[\\\"crit\\\", \\\"TI\\\"]\\)] represents an \
+operator form of LengthUntil that can be applied to an expression.\"\>", 
+             "InformationUsageText",
+             StripOnInput->False,
+             LineSpacing->{1.5, 1.5, 3.}],
+            FrameMargins->{{10, 10}, {8, 10}}],
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           TagBox[
+            ButtonBox[
+             PaneSelectorBox[{False->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpener"]], True->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpenerHot"]]}, Dynamic[
+              System`InformationDump`mouseOver$$]],
+             Alignment->Left,
+             Appearance->{"Default" -> None},
+             
+             ButtonFunction:>FEPrivate`Set[
+              System`InformationDump`open$$, True],
+             Evaluator->Automatic,
+             FrameMargins->{{9, 0}, {0, 0}},
+             ImageMargins->0,
+             ImageSize->Full,
+             Method->"Preemptive"],
+            
+            EventHandlerTag[{
+             "MouseEntered" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
+              "MouseExited" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
+              Method -> "Preemptive", PassEventsDown -> Automatic, 
+              PassEventsUp -> True}]],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], "\[SpanFromLeft]"}
+        },
+        AutoDelete->False,
+        FrameStyle->Directive[
+          GrayLevel[0.8], 
+          Thickness[Tiny]],
+        GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
+        GridBoxDividers->{
+         "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"]}, Dynamic[System`InformationDump`open$$],
+      BaselinePosition->Baseline,
+      FrameMargins->0,
+      ImageSize->Automatic],
+     DynamicModuleValues:>{}],
+    BaseStyle->"InformationGridFrame",
+    StripOnInput->False], "InformationGridPlain",
+   StripOnInput->False],
+  InformationData[<|
+   "ObjectType" -> "Symbol", "Usage" -> 
+    "LengthUntil[\!\(\*StyleBox[\"list\", \"TI\"]\),\!\(\*StyleBox[\"crit\", \
+\"TI\"]\)] gives the number of contiguous elements \
+\!\(\*SubscriptBox[StyleBox[\"e\", \"TI\"], StyleBox[\"i\", \"TI\"]]\) you \
+have to take from \!\(\*StyleBox[\"list\", \"TI\"]\) to make \
+\!\(\*StyleBox[\"crit\", \"TI\"]\)[\!\(\*SubscriptBox[StyleBox[\"e\", \
+\"TI\"], StyleBox[\"i\", \"TI\"]]\)] \
+\!\(\*TagBox[ButtonBox[StyleBox[\"True\", \
+\"SymbolsRefLink\",ShowStringCharacters->True,FontFamily->\"Source Sans \
+Pro\"],BaseStyle->Dynamic[FEPrivate`If[CurrentValue[\"MouseOver\"], \
+{\"Link\", FontColor -> RGBColor[0.8549, 0.39608, 0.1451]}, \
+{\"Link\"}]],ButtonData->\"paclet:ref/True\",ContentPadding->False],\
+MouseAppearanceTag[\"LinkHand\"]]\). LengthUntil[\!\(\*StyleBox[\"crit\", \
+\"TI\"]\)] represents an operator form of LengthUntil that can be applied to \
+an expression.", "Documentation" -> None, "OwnValues" -> None, "UpValues" -> 
+    None, "DownValues" -> 
+    Information`InformationValueForm[
+     DownValues, $CellContext`LengthUntil, {$CellContext`LengthUntil[
+         Pattern[$CellContext`list, 
+          Blank[]], 
+         Pattern[$CellContext`test, 
+          Blank[]]] :> Module[{$CellContext`i = 1}, While[
+           And[$CellContext`i <= Length[$CellContext`list], 
+            Not[
+             $CellContext`test[
+              Part[$CellContext`list, $CellContext`i]]]], 
+           
+           Increment[$CellContext`i]]; $CellContext`i], \
+$CellContext`LengthUntil[
+         Pattern[$CellContext`test, 
+          Blank[]]] :> 
+       OperatorApplied[$CellContext`LengthUntil][$CellContext`test]}], 
+    "SubValues" -> None, "DefaultValues" -> None, "NValues" -> None, 
+    "FormatValues" -> None, "Options" -> None, "Attributes" -> {}, "FullName" -> 
+    "Global`LengthUntil"|>, True]]], "Output",
+ CellChangeTimes->{{3.8965474697460976`*^9, 3.8965474741048937`*^9}, 
+   3.8965476391323705`*^9},
+ CellLabel->"Out[2]=",
+ CellID->821566722,ExpressionUUID->"b03e799a-cab0-43ed-918f-6af9bd256651"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Information", "[", "LengthUntil", "]"}]], "Input",
+ CellChangeTimes->{{3.896547474526333*^9, 3.896547477965455*^9}},
+ CellLabel->"In[3]:=",
+ CellID->163882403,ExpressionUUID->"cbc8e641-4ff3-48e9-9d60-d8c196fda9a0"],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   FrameBox[
+    DynamicModuleBox[{System`InformationDump`open$$ = True, 
+     System`InformationDump`mouseOver$$ = False}, 
+     PaneSelectorBox[{True->
+      TagBox[GridBox[{
+         {
+          ItemBox[
+           PaneBox[
+            StyleBox["\<\" Symbol\"\>", "InformationTitleText",
+             StripOnInput->False,
+             BaseStyle -> None],
+            FrameMargins->{{4, 0}, {-1, 1}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           PaneBox[
+            
+            StyleBox["\<\"LengthUntil[\\!\\(\\*StyleBox[\\\"list\\\", \
+\\\"TI\\\"]\\),\\!\\(\\*StyleBox[\\\"crit\\\", \\\"TI\\\"]\\)] gives the \
+number of contiguous elements \\!\\(\\*SubscriptBox[StyleBox[\\\"e\\\", \
+\\\"TI\\\"], StyleBox[\\\"i\\\", \\\"TI\\\"]]\\) you have to take from \\!\\(\
+\\*StyleBox[\\\"list\\\", \\\"TI\\\"]\\) to make \\!\\(\\*StyleBox[\\\"crit\\\
+\", \\\"TI\\\"]\\)[\\!\\(\\*SubscriptBox[StyleBox[\\\"e\\\", \\\"TI\\\"], \
+StyleBox[\\\"i\\\", \\\"TI\\\"]]\\)] \
+\\!\\(\\*TagBox[ButtonBox[StyleBox[\\\"True\\\", \
+\\\"SymbolsRefLink\\\",ShowStringCharacters->True,FontFamily->\\\"Source Sans \
+Pro\\\"],BaseStyle->Dynamic[FEPrivate`If[CurrentValue[\\\"MouseOver\\\"], {\\\
+\"Link\\\", FontColor -> RGBColor[0.8549, 0.39608, 0.1451]}, \
+{\\\"Link\\\"}]],ButtonData->\\\"paclet:ref/True\\\",ContentPadding->False],\
+MouseAppearanceTag[\\\"LinkHand\\\"]]\\). \
+LengthUntil[\\!\\(\\*StyleBox[\\\"crit\\\", \\\"TI\\\"]\\)] represents an \
+operator form of LengthUntil that can be applied to an expression.\"\>", 
+             "InformationUsageText",
+             StripOnInput->False,
+             LineSpacing->{1.5, 1.5, 3.}],
+            FrameMargins->{{10, 10}, {8, 10}}],
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False]},
+         {
+          PaneBox[
+           TagBox[GridBox[{
+              {
+               StyleBox[
+                TagBox[
+                 TooltipBox[
+                  StyleBox["\<\" Definitions\"\>", "InformationRowLabel",
+                   StripOnInput->False],
+                  "\"Definitions\"",
+                  TooltipStyle->"TextStyling"],
+                 Annotation[#, "Definitions", "Tooltip"]& ], "DialogStyle",
+                StripOnInput->False]},
+              {
+               TemplateBox[{"\"\[ThinSpace]\"", 
+                 GridBox[{{
+                    RowBox[{
+                    RowBox[{"LengthUntil", "[", 
+                    RowBox[{"list_", ",", "test_"}], "]"}], ":=", 
+                    RowBox[{"Module", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"i", "=", "1"}], "}"}], ",", 
+                    RowBox[{
+                    RowBox[{"While", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"i", "\[LessEqual]", 
+                    RowBox[{"Length", "[", "list", "]"}]}], "&&", 
+                    RowBox[{"!", 
+                    RowBox[{"test", "[", 
+                    
+                    RowBox[{"list", "\[LeftDoubleBracket]", "i", 
+                    "\[RightDoubleBracket]"}], "]"}]}]}], ",", 
+                    RowBox[{"i", "++"}]}], "]"}], ";", "i"}]}], "]"}]}]}, {
+                   " "}, {
+                    RowBox[{
+                    RowBox[{"LengthUntil", "[", "test_", "]"}], ":=", 
+                    RowBox[{
+                    RowBox[{"OperatorApplied", "[", "LengthUntil", "]"}], "[",
+                     "test", "]"}]}]}, {" "}}, 
+                  GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                  DefaultBaseStyle -> "Column", 
+                  GridBoxItemSize -> {
+                   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]},
+                "RowDefault"]}
+             },
+             DefaultBaseStyle->"Column",
+             GridBoxAlignment->{"Columns" -> {{Left}}},
+             
+             GridBoxItemSize->{
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+            "Column"],
+           FrameMargins->{{6, 0}, {3, 6}}], "\<\"\"\>"},
+         {
+          PaneBox[GridBox[{
+             {
+              
+              DynamicModuleBox[{System`InformationDump`open$$ = {
+               False, False, False, False, False, False}}, 
+               StyleBox[GridBox[{
+                  {
+                   TagBox[
+                    TooltipBox[
+                    StyleBox["\<\" Full Name\"\>", "InformationRowLabel",
+                    StripOnInput->False],
+                    "\"FullName\"",
+                    TooltipStyle->"TextStyling"],
+                    
+                    Annotation[#, "FullName", 
+                    "Tooltip"]& ], "\<\"Global`LengthUntil\"\>"}
+                 },
+                 AutoDelete->False,
+                 GridBoxAlignment->{"Columns" -> {Right, Left}},
+                 GridBoxDividers->None,
+                 GridBoxItemSize->{"Columns" -> {Automatic, Automatic}},
+                 GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.5599999999999999]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.8]}, 
+                    Offset[0.2]}}], "DialogStyle",
+                StripOnInput->False],
+               DynamicModuleValues:>{}]}
+            },
+            DefaultBaseStyle->"Column",
+            GridBoxAlignment->{"Columns" -> {{Left}}},
+            GridBoxDividers->{"Columns" -> {{False}}, "Rows" -> {{False}}},
+            
+            GridBoxItemSize->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+            GridBoxSpacings->{"Columns" -> {
+                Offset[0.27999999999999997`], {
+                 Offset[0.5599999999999999]}, 
+                Offset[0.27999999999999997`]}, "Rows" -> {
+                Offset[0.2], {
+                 Offset[3.6]}, 
+                Offset[0.2]}}],
+           FrameMargins->{{6, 6}, {6, 3}}], ""},
+         {
+          ItemBox[
+           TagBox[
+            ButtonBox[
+             PaneSelectorBox[{False->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "UpPointerOpener"],
+               ImageSizeCache->{10., {3., 7.}}], True->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "UpPointerOpenerHot"],
+               ImageSizeCache->{10., {3., 7.}}]}, Dynamic[
+              System`InformationDump`mouseOver$$]],
+             Alignment->Left,
+             Appearance->{"Default" -> None},
+             
+             ButtonFunction:>FEPrivate`Set[
+              System`InformationDump`open$$, False],
+             Evaluator->Automatic,
+             FrameMargins->{{9, 0}, {0, 0}},
+             ImageMargins->0,
+             ImageSize->Full,
+             Method->"Preemptive"],
+            
+            EventHandlerTag[{
+             "MouseEntered" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
+              "MouseExited" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
+              Method -> "Preemptive", PassEventsDown -> Automatic, 
+              PassEventsUp -> True}]],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], "\[SpanFromLeft]"}
+        },
+        AutoDelete->False,
+        FrameStyle->Directive[
+          GrayLevel[0.8], 
+          Thickness[Tiny]],
+        GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
+        GridBoxDividers->{
+         "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"], False->
+      TagBox[GridBox[{
+         {
+          ItemBox[
+           PaneBox[
+            StyleBox["\<\" Symbol\"\>", "InformationTitleText",
+             StripOnInput->False],
+            FrameMargins->{{4, 0}, {-1, 1}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           PaneBox[
+            
+            StyleBox["\<\"LengthUntil[\\!\\(\\*StyleBox[\\\"list\\\", \
+\\\"TI\\\"]\\),\\!\\(\\*StyleBox[\\\"crit\\\", \\\"TI\\\"]\\)] gives the \
+number of contiguous elements \\!\\(\\*SubscriptBox[StyleBox[\\\"e\\\", \
+\\\"TI\\\"], StyleBox[\\\"i\\\", \\\"TI\\\"]]\\) you have to take from \\!\\(\
+\\*StyleBox[\\\"list\\\", \\\"TI\\\"]\\) to make \\!\\(\\*StyleBox[\\\"crit\\\
+\", \\\"TI\\\"]\\)[\\!\\(\\*SubscriptBox[StyleBox[\\\"e\\\", \\\"TI\\\"], \
+StyleBox[\\\"i\\\", \\\"TI\\\"]]\\)] \
+\\!\\(\\*TagBox[ButtonBox[StyleBox[\\\"True\\\", \
+\\\"SymbolsRefLink\\\",ShowStringCharacters->True,FontFamily->\\\"Source Sans \
+Pro\\\"],BaseStyle->Dynamic[FEPrivate`If[CurrentValue[\\\"MouseOver\\\"], {\\\
+\"Link\\\", FontColor -> RGBColor[0.8549, 0.39608, 0.1451]}, \
+{\\\"Link\\\"}]],ButtonData->\\\"paclet:ref/True\\\",ContentPadding->False],\
+MouseAppearanceTag[\\\"LinkHand\\\"]]\\). \
+LengthUntil[\\!\\(\\*StyleBox[\\\"crit\\\", \\\"TI\\\"]\\)] represents an \
+operator form of LengthUntil that can be applied to an expression.\"\>", 
+             "InformationUsageText",
+             StripOnInput->False,
+             LineSpacing->{1.5, 1.5, 3.}],
+            FrameMargins->{{10, 10}, {8, 10}}],
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           TagBox[
+            ButtonBox[
+             PaneSelectorBox[{False->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpener"]], True->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpenerHot"]]}, Dynamic[
+              System`InformationDump`mouseOver$$]],
+             Alignment->Left,
+             Appearance->{"Default" -> None},
+             
+             ButtonFunction:>FEPrivate`Set[
+              System`InformationDump`open$$, True],
+             Evaluator->Automatic,
+             FrameMargins->{{9, 0}, {0, 0}},
+             ImageMargins->0,
+             ImageSize->Full,
+             Method->"Preemptive"],
+            
+            EventHandlerTag[{
+             "MouseEntered" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
+              "MouseExited" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
+              Method -> "Preemptive", PassEventsDown -> Automatic, 
+              PassEventsUp -> True}]],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], "\[SpanFromLeft]"}
+        },
+        AutoDelete->False,
+        FrameStyle->Directive[
+          GrayLevel[0.8], 
+          Thickness[Tiny]],
+        GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
+        GridBoxDividers->{
+         "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"]}, Dynamic[System`InformationDump`open$$],
+      BaselinePosition->Baseline,
+      FrameMargins->0,
+      ImageSize->Automatic],
+     DynamicModuleValues:>{}],
+    BaseStyle->"InformationGridFrame",
+    StripOnInput->False], "InformationGridPlain",
+   StripOnInput->False],
+  InformationData[<|
+   "ObjectType" -> "Symbol", "Usage" -> 
+    "LengthUntil[\!\(\*StyleBox[\"list\", \"TI\"]\),\!\(\*StyleBox[\"crit\", \
+\"TI\"]\)] gives the number of contiguous elements \
+\!\(\*SubscriptBox[StyleBox[\"e\", \"TI\"], StyleBox[\"i\", \"TI\"]]\) you \
+have to take from \!\(\*StyleBox[\"list\", \"TI\"]\) to make \
+\!\(\*StyleBox[\"crit\", \"TI\"]\)[\!\(\*SubscriptBox[StyleBox[\"e\", \
+\"TI\"], StyleBox[\"i\", \"TI\"]]\)] \
+\!\(\*TagBox[ButtonBox[StyleBox[\"True\", \
+\"SymbolsRefLink\",ShowStringCharacters->True,FontFamily->\"Source Sans \
+Pro\"],BaseStyle->Dynamic[FEPrivate`If[CurrentValue[\"MouseOver\"], \
+{\"Link\", FontColor -> RGBColor[0.8549, 0.39608, 0.1451]}, \
+{\"Link\"}]],ButtonData->\"paclet:ref/True\",ContentPadding->False],\
+MouseAppearanceTag[\"LinkHand\"]]\). LengthUntil[\!\(\*StyleBox[\"crit\", \
+\"TI\"]\)] represents an operator form of LengthUntil that can be applied to \
+an expression.", "Documentation" -> None, "OwnValues" -> None, "UpValues" -> 
+    None, "DownValues" -> 
+    Information`InformationValueForm[
+     DownValues, $CellContext`LengthUntil, {$CellContext`LengthUntil[
+         Pattern[$CellContext`list, 
+          Blank[]], 
+         Pattern[$CellContext`test, 
+          Blank[]]] :> Module[{$CellContext`i = 1}, While[
+           And[$CellContext`i <= Length[$CellContext`list], 
+            Not[
+             $CellContext`test[
+              Part[$CellContext`list, $CellContext`i]]]], 
+           
+           Increment[$CellContext`i]]; $CellContext`i], \
+$CellContext`LengthUntil[
+         Pattern[$CellContext`test, 
+          Blank[]]] :> 
+       OperatorApplied[$CellContext`LengthUntil][$CellContext`test]}], 
+    "SubValues" -> None, "DefaultValues" -> None, "NValues" -> None, 
+    "FormatValues" -> None, "Options" -> None, "Attributes" -> {}, "FullName" -> 
+    "Global`LengthUntil"|>, True]]], "Output",
+ CellChangeTimes->{3.8965474783193316`*^9, 3.8965476393720274`*^9},
  CellLabel->"Out[3]=",
- CellID->759771806,ExpressionUUID->"9083a930-34b8-4d35-af21-9274d91fd296"]
-}, Open  ]]
+ CellID->79125219,ExpressionUUID->"6d513170-e6bc-4362-ad54-5a266c5d225a"]
+}, Closed]]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1047,6 +2512,7 @@ discoverable on the correct platforms.", "MoreInfoText"], Background ->
  Deletable->False,
  TaggingRules->{"TemplateGroupName" -> "Compatibility"},
  CellTags->{"Compatibility", "TemplateCellGroup"},
+ CellLabel->"In[5]:=",
  CellID->465977791,ExpressionUUID->"0a422737-3817-4825-be92-3ec0cdff63ac"],
 
 Cell[CellGroupData[{
@@ -1083,6 +2549,7 @@ Cell[TextData[{
  CellTags->{
   "CompatibilityWolframLanguageVersionRequired", "TemplateCellGroup", 
    "Wolfram Language Version"},
+ CellLabel->"In[1]:=",
  CellID->267876551,ExpressionUUID->"a4f8d8de-0602-4651-a137-e5e0a47ca3cd"],
 
 Cell["13.0+", "Text",
@@ -1122,6 +2589,7 @@ function properly.", "MoreInfoText"], Background -> GrayLevel[0.95],
  FontSize->16,
  CellTags->{
   "CompatibilityOperatingSystem", "Operating System", "TemplateCellGroup"},
+ CellLabel->"In[1]:=",
  CellID->752514832,ExpressionUUID->"61d7bed9-5d41-421f-965b-298857e0c082"],
 
 Cell[BoxData[
@@ -1225,6 +2693,7 @@ Cell[TextData[{
  DefaultNewCellStyle->"Item",
  FontSize->16,
  CellTags->{"CompatibilityFeatures", "Required Features", "TemplateCellGroup"},
+ CellLabel->"In[1]:=",
  CellID->789112653,ExpressionUUID->"f772bfb7-a45c-4c7b-96e0-5f8532c945d7"],
 
 Cell[BoxData[
@@ -1342,6 +2811,7 @@ to be compatible. See ",
  FontSize->16,
  CellTags->{
   "CompatibilityEvaluationEnvironment", "Environments", "TemplateCellGroup"},
+ CellLabel->"In[1]:=",
  CellID->939592672,ExpressionUUID->"690c839e-44d1-4e77-b130-7eb3c012a859"],
 
 Cell[BoxData[
@@ -1494,6 +2964,7 @@ cloud.", "MoreInfoText"], Background -> GrayLevel[0.95], FrameMargins -> 20,
  DefaultNewCellStyle->"Text",
  FontSize->16,
  CellTags->{"Cloud Support", "CompatibilityCloudSupport", "TemplateCellGroup"},
+ CellLabel->"In[1]:=",
  CellID->624931977,ExpressionUUID->"44dc0436-ca7b-4eb4-a5f1-0016823e32ac"],
 
 Cell[BoxData[
@@ -1535,7 +3006,7 @@ JAZLFxBaxuyKShxfvoEfKzujYRb6FXWpA="},
  CellID->818043737,ExpressionUUID->"6ca0bb23-6490-4814-96f5-fcc65fa8b2ef"]
 }, Closed]]
 }, Open  ]]
-}, Closed]],
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -1624,7 +3095,7 @@ Cell["Additional information for the reviewer.", "Text",
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{1152, Automatic},
+WindowSize->{576, Automatic},
 WindowMargins->{{
   Automatic, -5.399999999999864}, {-5.399999999999977, Automatic}},
 TaggingRules->{
@@ -1673,7 +3144,7 @@ WyabbVsUI30dbWyR5mC4Y6npzAQV7A7CHW8e0ORJGTUV01ufdzMGR2GbTwVmCj3d8A9cd0NNHoiRcl\
     "Contexts" -> {
      "FunctionResource`", "FunctionResource`DefinitionNotebook`"}, 
     "DefaultContentMethod" -> "Legacy"}, "ToolsOpen" -> True, "StatusMessage" -> 
-  "", "SubmissionReviewData" -> {"Review" -> False}},
+  "", "SubmissionReviewData" -> {"Review" -> False}, "AutoUpdate" -> True},
 CreateCellID->True,
 FrontEndVersion->"13.3 for Microsoft Windows (64-bit) (May 18, 2023)",
 StyleDefinitions->Notebook[{
