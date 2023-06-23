@@ -1,0 +1,85 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      2301,         75]
+NotebookOptionsPosition[      1912,         60]
+NotebookOutlinePosition[      2348,         77]
+CellTagsIndexPosition[      2305,         74]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"permcount", "[", "v_", "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"m", "=", "1"}], ",", 
+       RowBox[{"s", "=", "0"}], ",", 
+       RowBox[{"k", "=", "0"}], ",", "t"}], "}"}], ",", 
+     RowBox[{
+      RowBox[{"For", "[", 
+       RowBox[{
+        RowBox[{"i", "=", "1"}], ",", 
+        RowBox[{"i", "<=", 
+         RowBox[{"Length", "[", "v", "]"}]}], ",", 
+        RowBox[{"i", "++"}], ",", 
+        RowBox[{
+         RowBox[{"t", "=", 
+          RowBox[{"v", "[", 
+           RowBox[{"[", "i", "]"}], "]"}]}], ";", 
+         RowBox[{"k", "=", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"i", ">", "1"}], "&&", 
+             RowBox[{"t", "==", 
+              RowBox[{"v", "[", 
+               RowBox[{"[", 
+                RowBox[{"i", "-", "1"}], "]"}], "]"}]}]}], ",", 
+            RowBox[{"k", "+", "1"}], ",", "1"}], "]"}]}], ";", 
+         RowBox[{"m", "*=", 
+          RowBox[{"t", "*", "k"}]}], ";", 
+         RowBox[{"s", "+=", "t"}]}]}], "]"}], ";", 
+      RowBox[{
+       RowBox[{"s", "!"}], "/", "m"}]}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.8965507184967384`*^9, 3.8965507184989734`*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"7f8199ce-eb59-4c12-84e0-656be1f9f9c4"]
+},
+WindowSize->{571.8, 509.4},
+WindowMargins->{{Automatic, 17.40000000000009}, {
+  30.600000000000023`, Automatic}},
+FrontEndVersion->"13.3 for Microsoft Windows (64-bit) (May 18, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"6cfc7932-0c58-47c1-91e8-2d1a0af4de0d"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1350, 38, 154, "Input",ExpressionUUID->"7f8199ce-eb59-4c12-84e0-656be1f9f9c4"]
+}
+]
+*)
+
+(* End of internal cache information *)
+
