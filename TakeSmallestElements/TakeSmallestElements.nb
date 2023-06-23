@@ -1,29 +1,34 @@
 Notebook[{
 
 Cell[CellGroupData[{
-Cell["TakeUntil", "Title",
+Cell["TakeSmallestElements", "Title",
  Deletable->False,
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
        WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
- CellChangeTimes->{3.8965458466102858`*^9},
- CellTags->{"Name", "TemplateCell", "Title", "TabNext"},
- CellID->863144461,ExpressionUUID->"a38ce42e-beaa-42f0-a29d-d0aa9b932eb0"],
+ CellChangeTimes->{{3.8950896411240606`*^9, 3.8950896444938803`*^9}, {
+  3.8950899913885193`*^9, 3.895089991933745*^9}, {3.895092130489852*^9, 
+  3.895092131859394*^9}},
+ CellTags->{"Name", "TabNext", "TemplateCell", "Title"},
+ CellID->863144461,ExpressionUUID->"f7210bb0-f4e7-4516-8cbc-e873e3ba981d"],
 
-Cell["One-line description explaining the function\[CloseCurlyQuote]s basic \
-purpose", "Text",
+Cell["Get all smallest elements in a list", "Text",
  Deletable->False,
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
        WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.8950896730768995`*^9, 3.8950896776978607`*^9}, {
+  3.89509213409207*^9, 3.89509213493145*^9}},
  CellTags->{"DefaultContent", "Description", "TabNext", "TemplateCell"},
- CellID->660820806,ExpressionUUID->"8078ef89-04fc-41a6-addd-ef983250d9e9"],
+ CellID->660820806,ExpressionUUID->"efc79a95-8170-40df-98af-f1081c219eeb"],
 
 Cell[CellGroupData[{
 
@@ -50,125 +55,90 @@ evaluated before creating the Examples section below.", "MoreInfoText"],
     CurrentValue[
      EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
    ImageSize->Automatic]],ExpressionUUID->
-  "48e09dc5-c781-4842-abaf-f8bf0d2a6100"]
+  "4d18c3bf-a546-44c8-8b92-87debd67d369"]
 }], "Section",
  Editable->False,
  Deletable->False,
  TaggingRules->{"TemplateGroupName" -> "Function"},
  DefaultNewCellStyle->"Input",
  CellTags->{"Definition", "Function", "TemplateCellGroup"},
- CellID->292731158,ExpressionUUID->"b3085549-7ff8-4e43-b0fe-71b1dfd9c73a"],
+ CellID->292731158,ExpressionUUID->"06df9ddf-1d0b-456c-bb71-a6abbccfdb56"],
 
 Cell[BoxData[{
+ RowBox[{"ClearAll", "[", "TakeSmallestElements", 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"ClearAll", "[", "PositiveIntegerQ", "]"}], "\n", 
  RowBox[{
-  RowBox[{
-   RowBox[{"TakeUntil", "[", 
-    RowBox[{"list_", ",", "test_"}], "]"}], ":=", 
-   RowBox[{"Take", "[", 
-    RowBox[{"list", ",", 
-     RowBox[{"LengthUntil", "[", 
-      RowBox[{"list", ",", "test"}], "]"}]}], "]"}]}], 
-  "\[IndentingNewLine]"}], "\n", 
- RowBox[{
-  RowBox[{
-   RowBox[{"LengthUntil", "[", 
-    RowBox[{"list_", ",", "test_"}], "]"}], ":=", 
-   RowBox[{"Module", "[", 
+  RowBox[{"PositiveIntegerQ", "[", "n_", "]"}], ":=", 
+  RowBox[{"And", "@@", 
+   RowBox[{"{", 
     RowBox[{
-     RowBox[{"{", 
-      RowBox[{"i", "=", "1"}], "}"}], ",", 
-     RowBox[{
-      RowBox[{"While", "[", 
-       RowBox[{
-        RowBox[{
-         RowBox[{"i", "<=", 
-          RowBox[{"Length", "[", "list", "]"}]}], "&&", 
-         RowBox[{"!", 
-          RowBox[{"test", "[", 
-           RowBox[{"list", "[", 
-            RowBox[{"[", "i", "]"}], "]"}], "]"}]}]}], ",", 
-        RowBox[{"i", "++"}]}], "]"}], ";", "i"}]}], "]"}]}], 
-  "\[IndentingNewLine]"}], "\n", 
+     RowBox[{"IntegerQ", "[", "n", "]"}], ",", 
+     RowBox[{"TrueQ", "[", 
+      RowBox[{"n", "\[Element]", "PositiveIntegers"}], "]"}]}], 
+    "}"}]}]}], "\n", 
  RowBox[{
   RowBox[{
-   RowBox[{"DropUntil", "[", 
-    RowBox[{"list_", ",", "test_"}], "]"}], ":=", 
-   RowBox[{"Drop", "[", 
-    RowBox[{"list", ",", 
-     RowBox[{
-      RowBox[{"LengthUntil", "[", 
-       RowBox[{"list", ",", "test"}], "]"}], "-", "1"}]}], "]"}]}], 
-  "\[IndentingNewLine]"}], "\n", 
+   RowBox[{"PositiveIntegerQ", "::", "usage"}], "=", 
+   "\"\<PositiveIntegerQ[\!\(\*StyleBox[\\\"n\\\", \\\"TI\\\"]\)] yields True \
+when n is a strictly positive integer. PositiveInteger[0] returns \
+False.\>\""}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{
-   RowBox[{"FoldUntil", "[", 
-    RowBox[{"f_", ",", "x_", ",", "list_", ",", "test_"}], "]"}], ":=", 
-   RowBox[{"Module", "[", 
+  RowBox[{"TakeSmallestElements", "[", 
+   RowBox[{"list_", "?", "ListQ"}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "positionSmallest", "}"}], ",", 
     RowBox[{
-     RowBox[{"{", 
-      RowBox[{
-       RowBox[{"val", "=", "x"}], ",", 
-       RowBox[{"i", "=", "1"}]}], "}"}], ",", 
-     RowBox[{
-      RowBox[{"While", "[", 
-       RowBox[{
-        RowBox[{
-         RowBox[{"i", "<=", 
-          RowBox[{"Length", "[", "list", "]"}]}], "&&", 
-         RowBox[{"!", 
-          RowBox[{"test", "[", "val", "]"}]}]}], ",", 
-        RowBox[{
-         RowBox[{"val", "=", 
-          RowBox[{"f", "[", 
-           RowBox[{"val", ",", 
-            RowBox[{"list", "[", 
-             RowBox[{"[", "i", "]"}], "]"}]}], "]"}]}], ";", 
-         RowBox[{"i", "++"}]}]}], "]"}], ";", "val"}]}], "]"}]}], 
-  "\n"}], "\[IndentingNewLine]", 
+     RowBox[{"positionSmallest", "=", 
+      RowBox[{"PositionSmallest", "[", "list", "]"}]}], ";", 
+     RowBox[{"Extract", "[", 
+      RowBox[{"list", ",", 
+       RowBox[{"List", "/@", "positionSmallest"}]}], "]"}]}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{
-   RowBox[{"FoldUntilList", "[", 
-    RowBox[{"f_", ",", "x_", ",", "list_", ",", "test_"}], "]"}], ":=", 
-   RowBox[{"Module", "[", 
+  RowBox[{"TakeSmallestElements", "[", 
+   RowBox[{
+    RowBox[{"list_", "?", "ListQ"}], ",", 
+    RowBox[{"n_", "?", "PositiveIntegerQ"}]}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "positionSmallest", "}"}], ",", 
     RowBox[{
-     RowBox[{"{", 
-      RowBox[{
-       RowBox[{"val", "=", "x"}], ",", 
-       RowBox[{"i", "=", "1"}], ",", 
-       RowBox[{"resList", "=", 
-        RowBox[{"{", "x", "}"}]}]}], "}"}], ",", 
-     RowBox[{
-      RowBox[{"val", "=", 
-       RowBox[{"f", "[", 
-        RowBox[{"val", ",", 
-         RowBox[{"list", "[", 
-          RowBox[{"[", "i", "]"}], "]"}]}], "]"}]}], ";", 
-      RowBox[{"While", "[", 
-       RowBox[{
-        RowBox[{
-         RowBox[{"i", "<=", 
-          RowBox[{"Length", "[", "list", "]"}]}], "&&", 
-         RowBox[{"!", 
-          RowBox[{"test", "[", "val", "]"}]}]}], ",", 
-        RowBox[{
-         RowBox[{"AppendTo", "[", 
-          RowBox[{"resList", ",", "val"}], "]"}], ";", 
-         RowBox[{"i", "++"}], ";", 
-         RowBox[{"val", "=", 
-          RowBox[{"f", "[", 
-           RowBox[{"val", ",", 
-            RowBox[{"list", "[", 
-             RowBox[{"[", "i", "]"}], "]"}]}], "]"}]}], ";"}]}], "]"}], ";", 
-      RowBox[{"Append", "[", 
-       RowBox[{"resList", ",", "val"}], "]"}]}]}], "]"}]}], "\n", 
-  "\n"}], "\n"}], "Input",
+     RowBox[{"positionSmallest", "=", 
+      RowBox[{"PositionLargest", "[", 
+       RowBox[{"list", ",", "n"}], "]"}]}], ";", 
+     RowBox[{"Extract", "[", 
+      RowBox[{"list", ",", 
+       RowBox[{"List", "/@", "positionSmallest"}]}], "]"}]}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"TakeSmallestElements", "[", 
+   RowBox[{
+    RowBox[{"list_", "?", "ListQ"}], ",", 
+    RowBox[{"n_", "?", "PositiveIntegerQ"}], ",", "orderfun_"}], "]"}], ":=", 
+  
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "positionSmallest", "}"}], ",", 
+    RowBox[{
+     RowBox[{"positionSmallest", "=", 
+      RowBox[{"PositionSmallest", "[", 
+       RowBox[{"list", ",", "n", ",", "orderfun"}], "]"}]}], ";", 
+     RowBox[{"Extract", "[", 
+      RowBox[{"list", ",", 
+       RowBox[{"List", "/@", "positionSmallest"}]}], "]"}]}]}], 
+   "]"}]}], "\[IndentingNewLine]"}], "Input",
+ TaggingRules->{},
  InitializationCell->True,
- CellChangeTimes->{{3.8964541601046515`*^9, 3.896454162708583*^9}, {
-   3.8964545317026834`*^9, 3.896454556994856*^9}, 3.8964546655796022`*^9, 
-   3.8964547355372877`*^9},
+ CellChangeTimes->{{3.8950900188190775`*^9, 3.895090264239362*^9}, 
+   3.8950903078830185`*^9, {3.8950903391455336`*^9, 3.8950903439953814`*^9}, {
+   3.8950904150017815`*^9, 3.895090424712134*^9}, {3.895091150385061*^9, 
+   3.8950911507019663`*^9}, {3.8950921718216667`*^9, 3.895092175698262*^9}, {
+   3.8950922124919243`*^9, 3.8950922914156857`*^9}, 3.8964736314082375`*^9},
  CellTags->"DefaultContent",
- CellLabel->"In[318]:=",
- CellID->876320555,ExpressionUUID->"389faca7-da20-416d-8abc-370180c7e659"]
+ CellLabel->"In[90]:=",
+ CellID->876320555,ExpressionUUID->"0d15fae0-52ed-498e-a65c-7a3e0d2e393b"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -178,7 +148,7 @@ Cell["Documentation", "Section",
  Deletable->False,
  TaggingRules->{"TemplateGroupName" -> "Documentation"},
  CellTags->{"Documentation", "TemplateSection"},
- CellID->337507785,ExpressionUUID->"4800ca9b-e890-4f8a-8dd8-fdf2fc793a4d"],
+ CellID->337507785,ExpressionUUID->"9240119b-e5aa-4287-81cf-da63aef05fad"],
 
 Cell[CellGroupData[{
 
@@ -226,31 +196,142 @@ documentation pages for examples."}], "MoreInfoText"], Background ->
     CurrentValue[
      EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
    ImageSize->Automatic]],ExpressionUUID->
-  "c0e9184f-77b2-445a-b7be-edbee258023c"]
+  "a9f2c065-d7c1-46c3-87bf-b9da8d5cde1f"]
 }], "Subsection",
  Editable->False,
  Deletable->False,
  TaggingRules->{"TemplateGroupName" -> "Usage"},
  DefaultNewCellStyle->{"UsageInputs", FontFamily -> "Source Sans Pro"},
  CellTags->{"TemplateCellGroup", "Usage"},
- CellID->38054786,ExpressionUUID->"96ec8218-c771-4f60-b7fb-408cea666843"],
+ CellID->38054786,ExpressionUUID->"c341bc35-60e7-4911-86ee-3b1b94b516b7"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"MyFunction", "[", "arg", "]"}]], "UsageInputs",
+ RowBox[{"TakeSmallestElements", "[", 
+  StyleBox["list", "TI"], "]"}]], "UsageInputs",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8950908462923527`*^9, 3.8950908671228275`*^9}, 
+   3.895092186812992*^9},
  FontFamily->"Source Sans Pro",
  CellTags->{"DefaultContent", "TabNext"},
- CellID->67839508,ExpressionUUID->"a83f2516-584b-43ce-9fca-8bd543d92a0c"],
+ CellID->67839508,ExpressionUUID->"e83d3d34-82b1-4055-9c91-155d1ceeaa69"],
 
 Cell[TextData[{
- "explanation of what use of the argument ",
- StyleBox["arg", "TI"],
- " does."
+ "gives the smallest values in ",
+ Cell[BoxData[
+  StyleBox["list", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "e588cdb1-d382-485c-97b3-cc40739568e9"],
+ "."
 }], "UsageDescription",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8950908741521945`*^9, 3.8950909064098577`*^9}, 
+   3.8950923129627123`*^9},
  CellTags->{"DefaultContent", "TabNext"},
- CellID->746063541,ExpressionUUID->"b3e086a4-cab7-4c6f-a088-73258759afb3"]
-}, Open  ]]
+ CellID->746063541,ExpressionUUID->"72e236e7-2ee2-4763-8195-973a647eb810"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TakeSmallestElements", "[", 
+  RowBox[{
+   StyleBox["list", "TI"], ",", 
+   StyleBox["n", "TI"]}], "]"}]], "UsageInputs",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8950908462923527`*^9, 3.8950908671228275`*^9}, {
+   3.8950909148661795`*^9, 3.895090935844167*^9}, 3.895092188155639*^9},
+ FontFamily->"Source Sans Pro",
+ CellTags->{"DefaultContent", "TabNext"},
+ CellID->142704564,ExpressionUUID->"7dd397f7-1023-4251-9332-420d61b44099"],
+
+Cell[TextData[{
+ "gives the ",
+ Cell[BoxData[
+  StyleBox["n", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "f4054f41-d7fc-4f1b-bb2a-66466c715f97"],
+ " smallest values in ",
+ Cell[BoxData[
+  StyleBox["list", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "a4b97bcf-1ff4-4d0a-aa20-2621f4990d87"],
+ "."
+}], "UsageDescription",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8950908741521945`*^9, 3.895090927602556*^9}, 
+   3.8950923146309433`*^9},
+ CellTags->{"DefaultContent", "TabNext"},
+ CellID->723657650,ExpressionUUID->"f10a559f-3fa0-4666-80e3-6eded7af4a46"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TakeSmallestElements", "[", 
+  RowBox[{
+   StyleBox["list", "TI"], ",", 
+   StyleBox["n", "TI"], ",", 
+   StyleBox["orderfun", "TI"]}], "]"}]], "UsageInputs",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8950908462923527`*^9, 3.8950908671228275`*^9}, {
+   3.8950909148661795`*^9, 3.8950909602401314`*^9}, {3.895091917458619*^9, 
+   3.8950919472956944`*^9}, 3.8950921892800636`*^9},
+ FontFamily->"Source Sans Pro",
+ CellTags->{"DefaultContent", "TabNext"},
+ CellID->157877897,ExpressionUUID->"ab9858be-c098-4337-a56f-ab8edd2456b0"],
+
+Cell[TextData[{
+ "gives the ",
+ Cell[BoxData[
+  StyleBox["n", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "0ce5977b-1b75-4f47-888b-fe5fd4f8eecb"],
+ " smallest values in ",
+ Cell[BoxData[
+  StyleBox["list", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "3fe2208f-c72f-4818-8331-906e2b15abad"],
+ " as determined by ",
+ Cell[BoxData[
+  StyleBox["orderfun", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "8a926627-0b0b-442a-ad47-4176ddb2a93d"],
+ "."
+}], "UsageDescription",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8950908741521945`*^9, 3.8950909550384283`*^9}, 
+   3.8950923160675406`*^9},
+ CellTags->{"DefaultContent", "TabNext"},
+ CellID->457062090,ExpressionUUID->"93bc36b0-1398-4557-9097-d85545394a1d"]
+}, Open  ]],
+
+Cell["\<\
+See the comment on TakeLargestElements regarding adding comparisons to all \
+similar built in functions.\
+\>", "ReviewerComment",
+ Editable->False,
+ Deletable->False,
+ TaggingRules->{
+  "Signature" -> 
+   "OEM6eJxLYywWcMlMzyxJzAnOTM9LLCktSnVk1w1mCaksSA3mdc3JySwoyUx2Li0qS9UN5gTTfo\
+m5qcGcxanJBUamZtmGusG8cK1gXQJ++XkuqSWpRbmZeZnFQN1AFR6JxRmZeem+qSUZ+\
+SnBbMEejkC9usGMQU4KBxNi3+VfYF57/uMcgYX2qxyvbIjc+8+\
+af4X2btep7FE2R4Gqgp0UzNZ4HfWYdVVxYajbDMXk+FtLgvf93bWfa2Lq9h0nxNd/\
+2awbLBiUmpxfllpUGZBYBHQh0H5nBgCHDlaO"},
+ CellFrameLabels->{{None, 
+    Cell[
+     BoxData[
+      TemplateBox[{
+        StyleBox[
+         TemplateBox[{"\"WFR Team B\""}, "ReviewerCommentLabelTemplate"], 
+         ShowStringCharacters -> False, StripOnInput -> False], 
+        3.895939825564335`16.343187229556683*^9}, 
+       "CommentCellLabelTemplate"]], Background -> None]}, {None, None}},
+ CellChangeTimes->{{3.895939826358667*^9, 3.895939851508698*^9}},
+ CellTags->{"CommentCell", "ReviewerComment"},
+ CellID->548396815,ExpressionUUID->"dcef2d42-86b8-4ac8-b171-5dfb975181c9"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -281,24 +362,81 @@ function, its development, and its usage.", "MoreInfoText"], Background ->
     CurrentValue[
      EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
    ImageSize->Automatic]],ExpressionUUID->
-  "d540ad07-0a5d-4e68-9bc6-efc9c9efa59c"]
+  "baaaf8a7-f82c-4adc-a43c-34e7642640b7"]
 }], "Subsection",
  Editable->False,
  Deletable->False,
  TaggingRules->{"TemplateGroupName" -> "Notes"},
  DefaultNewCellStyle->"Notes",
  CellTags->{"Details & Options", "Notes", "TemplateCellGroup"},
- CellID->447261062,ExpressionUUID->"2b464a08-1a19-4a63-9384-5c385112acf0"],
+ CellID->447261062,ExpressionUUID->"1a0a9eeb-858e-420d-aa70-85aff358136a"],
 
-Cell["Additional information about usage and options.", "Notes",
+Cell[TextData[{
+ "TakeSmallestElements by default compares values by numerical magnitude, \
+returning the list of positions of the smallest value or ",
+ Cell[BoxData[
+  StyleBox["n", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "30c18f66-cebe-43cd-b187-77e4ddc0df83"],
+ " smallest values."
+}], "Notes",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
        WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.895090967906732*^9, 3.8950909755479674`*^9}, 
+   3.8950921908677144`*^9, {3.895092318012914*^9, 3.8950923202796535`*^9}},
  CellTags->{"DefaultContent", "TabNext"},
- CellID->422531486,ExpressionUUID->"6954bf7f-f5be-421e-802f-9a36e4a6f40b"]
+ CellID->422531486,ExpressionUUID->"cb6536b4-5616-4475-b13d-221c42c79b67"],
+
+Cell["\<\
+TakeSmallestElements gives a single list for the smallest value.\
+\>", "Notes",
+ TaggingRules->{},
+ CellChangeTimes->{3.895090983400156*^9, 3.8950921921837435`*^9, 
+  3.8950923220901175`*^9},
+ CellID->53358172,ExpressionUUID->"ec13ba98-5fe0-42a5-ae6c-2f87c0bd8656"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  RowBox[{"TakeSmallestElements", "[", 
+   RowBox[{
+    StyleBox["list", "TI"], ",", 
+    StyleBox["n", "TI"]}], "]"}]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "2bba5f74-1b7e-4004-b12a-499e0793d83d"],
+ " gives a list of ",
+ Cell[BoxData[
+  StyleBox["n", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "f2ece588-ca32-48e6-8998-8ad1431ee943"],
+ " sublists for the ",
+ Cell[BoxData[
+  StyleBox["n", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "73958c19-2fd9-4577-b3a0-1bfe643d584e"],
+ " smallest values, or as many as are available if fewer than ",
+ Cell[BoxData[
+  StyleBox["n", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "c171181a-981b-47ae-a13c-21de9f90df21"],
+ "."
+}], "Notes",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8950910615146*^9, 3.8950910704016514`*^9}, {
+   3.8950921934830036`*^9, 3.8950921934830036`*^9}, 3.8950923240782223`*^9},
+ CellID->199326481,ExpressionUUID->"780ae581-a2e4-49a5-8d4a-bd153a0a6577"],
+
+Cell["\<\
+TakeSmallestElements expects all objects to be comparable with one another, \
+based on the ordering function.\
+\>", "Notes",
+ TaggingRules->{},
+ CellChangeTimes->{3.895091063539571*^9, 3.895092195251112*^9},
+ CellID->21172998,ExpressionUUID->"a808ab32-fe17-4a37-945b-0924b7cfef8e"]
 }, Open  ]]
 }, Open  ]],
 
@@ -380,6 +518,7 @@ typical Subsection names and the types of examples they normally contain:\n  \
                 "\"Scope: \"", FontFamily -> "Source Sans Pro", FontWeight -> 
                  "SemiBold", FontSize -> 14, StripOnInput -> False]}, 
                "RowDefault"], ShowStringCharacters -> False]]], 
+           
            "input and display conventions, standard computational attributes \
 (e.g. threading over lists)\n  ", 
            Cell[
@@ -451,627 +590,3321 @@ usage"}], "MoreInfoText"], Background -> GrayLevel[0.95], FrameMargins -> 20,
     CurrentValue[
      EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
    ImageSize->Automatic]],ExpressionUUID->
-  "725e7278-b621-46d3-bca4-9a6069be5ce6"]
+  "2f36710d-b2fd-4847-b829-b24cb712259a"]
 }], "Section",
  Editable->False,
  Deletable->False,
  TaggingRules->{"TemplateGroupName" -> "Examples"},
  CellTags->{"Examples", "TemplateCellGroup"},
- CellID->671320372,ExpressionUUID->"f2e2a348-b5c9-4d42-bde2-c9108fdc7b1e"],
+ CellID->671320372,ExpressionUUID->"644721cf-99da-4b49-abcf-c3eaa960d186"],
 
 Cell[CellGroupData[{
 
 Cell["Basic Examples", "Subsection",
+ TaggingRules->{},
  CellTags->"DefaultContent",
- CellID->619504543,ExpressionUUID->"ab7c9ff0-19d7-422a-8720-8930efdf610f"],
+ CellLabel->"In[117]:=",
+ CellID->619504543,ExpressionUUID->"7768edf0-0a5b-4387-b933-57e11c4a79cf"],
 
-Cell["Text about the example:", "Text",
+Cell["Take the smallest elements:", "Text",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8950906289786*^9, 3.8950906332637563`*^9}, 
+   3.8950923264442906`*^9},
  CellTags->"DefaultContent",
- CellID->586099280,ExpressionUUID->"d89a3812-aea1-46ed-856f-255d83a49e10"],
+ CellID->586099280,ExpressionUUID->"6bdb9bd9-950a-4520-9683-410103ae99ac"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"NotebookFileName", "[", "]"}]], "Input",
- CellChangeTimes->{{3.8965458526372004`*^9, 3.8965458587525153`*^9}},
- CellLabel->"In[323]:=",
- CellID->12703043,ExpressionUUID->"6a8f3000-a37b-46fc-8a4f-33df56629557"],
-
-Cell[BoxData["\<\"C:\\\\Users\\\\Peter\\\\OneDrive - Marshall \
-University\\\\GitHub\\\\resource-functions\\\\NestUntil\\\\TakeUntil.nb\"\>"],\
- "Output",
- CellChangeTimes->{3.8965458603558297`*^9},
- CellLabel->"Out[323]=",
- CellID->252782937,ExpressionUUID->"2d2400ff-b79b-47d2-9023-cc0efff2bfba"]
-}, Open  ]],
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"OddBeforeEven", "[", 
-   RowBox[{"list", ":", 
-    RowBox[{"{", "__Integer", "}"}]}], "]"}], ":=", 
-  RowBox[{"Join", "[", 
-   RowBox[{
-    RowBox[{
-     RowBox[{"Cases", "[", 
-      RowBox[{"x_", "?", "OddQ"}], "]"}], "[", "list", "]"}], ",", 
-    RowBox[{
-     RowBox[{"Cases", "[", 
-      RowBox[{"x_", "?", "EvenQ"}], "]"}], "[", "list", "]"}]}], 
-   "]"}]}]], "Input",
- CellLabel->"In[40]:=",
- CellID->178263892,ExpressionUUID->"60e872c9-5434-4146-b680-7e6063c4b5e3"],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"OddBeforeEven", "[", 
+ RowBox[{"TakeSmallestElements", "[", 
   RowBox[{"{", 
-   RowBox[{
-    RowBox[{"-", "1"}], ",", "2", ",", "8", ",", 
-    RowBox[{"-", "9"}], ",", 
-    RowBox[{"-", "2"}], ",", 
-    RowBox[{"-", "3"}], ",", 
-    RowBox[{"-", "6"}], ",", 
-    RowBox[{"-", "10"}], ",", 
-    RowBox[{"-", "8"}], ",", "5", ",", "7", ",", "9", ",", "7"}], "}"}], 
+   RowBox[{"1", ",", "2", ",", "3", ",", "1", ",", "3"}], "}"}], 
   "]"}]], "Input",
- CellChangeTimes->{{3.8964541920149174`*^9, 3.8964542229851727`*^9}},
- CellLabel->"In[41]:=",
- CellID->7053512,ExpressionUUID->"67a0f3db-a611-4da8-b1ef-c7c93712ea7b"],
+ TaggingRules->{},
+ CellChangeTimes->{{3.8950901009936404`*^9, 3.8950901096209116`*^9}, 
+   3.895092197739442*^9},
+ CellTags->"DefaultContent",
+ CellLabel->"In[1]:=",
+ CellID->298664010,ExpressionUUID->"ed4f8aea-4c02-4a68-82e9-df8ec56e2f11"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", "1"}], "}"}]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8950901056214166`*^9, 3.895090110015481*^9}, {
+   3.8950901583888664`*^9, 3.8950901686265535`*^9}, 3.895092343204648*^9},
+ CellTags->"DefaultContent",
+ CellLabel->"Out[1]=",
+ CellID->117452818,ExpressionUUID->"3f1df274-5664-4799-a560-4f5cccf8f5d2"]
+}, Open  ]],
+
+Cell["Take the top 2 smallest elements:", "Text",
+ TaggingRules->{},
+ CellChangeTimes->{{3.895090635397247*^9, 3.895090640204738*^9}, 
+   3.8950923280150614`*^9},
+ CellID->83224791,ExpressionUUID->"abdd067b-5e94-4789-a647-9d241a9b99b2"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TakeSmallestElements", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+    "1", ",", "2", ",", "2", ",", "2", ",", "4", ",", "3", ",", "3", ",", "4",
+      ",", "1", ",", "1", ",", "4", ",", "3", ",", "4", ",", "4", ",", "3"}], 
+    "}"}], ",", "2"}], "]"}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8950901009936404`*^9, 3.8950901096209116`*^9}, {
+   3.8950902682373857`*^9, 3.895090269708683*^9}, {3.89509035246799*^9, 
+   3.8950903559608097`*^9}, {3.895090389235283*^9, 3.895090400054633*^9}, 
+   3.8950921988065886`*^9},
+ CellTags->"DefaultContent",
+ CellLabel->"In[2]:=",
+ CellID->333344657,ExpressionUUID->"900da083-0b53-4dde-92df-ac2f25b6ef64"],
 
 Cell[BoxData[
  RowBox[{"{", 
   RowBox[{
-   RowBox[{"-", "1"}], ",", 
-   RowBox[{"-", "9"}], ",", 
-   RowBox[{"-", "3"}], ",", "5", ",", "7", ",", "9", ",", "7", ",", "2", ",", 
-   "8", ",", 
-   RowBox[{"-", "2"}], ",", 
-   RowBox[{"-", "6"}], ",", 
-   RowBox[{"-", "10"}], ",", 
-   RowBox[{"-", "8"}]}], "}"}]], "Output",
- CellChangeTimes->{3.896454223825541*^9},
- CellLabel->"Out[41]=",
- CellID->217952384,ExpressionUUID->"17d5eecb-cf96-4fbf-9134-8a25d0dd60d6"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"TakeUntil", "[", 
-  RowBox[{
    RowBox[{"{", 
-    RowBox[{
-     RowBox[{"-", "1"}], ",", 
-     RowBox[{"-", "9"}], ",", 
-     RowBox[{"-", "3"}], ",", "5", ",", "7", ",", "9", ",", "7", ",", "2", 
-     ",", "8", ",", 
-     RowBox[{"-", "2"}], ",", 
-     RowBox[{"-", "6"}], ",", 
-     RowBox[{"-", "10"}], ",", 
-     RowBox[{"-", "8"}]}], "}"}], ",", "EvenQ"}], "]"}]], "Input",
- CellChangeTimes->{{3.8964541699338813`*^9, 3.8964541895252028`*^9}, {
-  3.896454227538704*^9, 3.89645422956083*^9}},
- CellTags->"DefaultContent",
- CellLabel->"In[42]:=",
- CellID->298664010,ExpressionUUID->"20b4f128-cc15-4fb2-9e1d-498cc42bca02"],
-
-Cell[BoxData[
- RowBox[{"{", 
-  RowBox[{
-   RowBox[{"-", "1"}], ",", 
-   RowBox[{"-", "9"}], ",", 
-   RowBox[{"-", "3"}], ",", "5", ",", "7", ",", "9", ",", "7", ",", "2"}], 
-  "}"}]], "Output",
- CellChangeTimes->{3.896454229969083*^9},
- CellTags->"DefaultContent",
- CellLabel->"Out[42]=",
- CellID->160672670,ExpressionUUID->"315051c2-e278-47c1-b979-fd771a6d03c7"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"LengthUntil", "[", 
-  RowBox[{
+    RowBox[{"4", ",", "4", ",", "4", ",", "4", ",", "4"}], "}"}], ",", 
    RowBox[{"{", 
-    RowBox[{
-     RowBox[{"-", "1"}], ",", 
-     RowBox[{"-", "9"}], ",", 
-     RowBox[{"-", "3"}], ",", "5", ",", "7", ",", "9", ",", "7", ",", "2", 
-     ",", "8", ",", 
-     RowBox[{"-", "2"}], ",", 
-     RowBox[{"-", "6"}], ",", 
-     RowBox[{"-", "10"}], ",", 
-     RowBox[{"-", "8"}]}], "}"}], ",", "EvenQ"}], "]"}]], "Input",
- CellChangeTimes->{{3.8964541699338813`*^9, 3.8964541895252028`*^9}, {
-  3.896454227538704*^9, 3.89645422956083*^9}, {3.8964542641084075`*^9, 
-  3.896454268176058*^9}},
+    RowBox[{"3", ",", "3", ",", "3", ",", "3"}], "}"}]}], "}"}]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{
+  3.895090270525813*^9, {3.89509034950957*^9, 3.8950903563893366`*^9}, {
+   3.895090389918223*^9, 3.8950904006562405`*^9}, 3.8950923433540945`*^9},
  CellTags->"DefaultContent",
- CellLabel->"In[45]:=",
- CellID->162135132,ExpressionUUID->"92556d51-fbfe-462c-a2e7-55067c45e03c"],
-
-Cell[BoxData["8"], "Output",
- CellChangeTimes->{3.8964542684970617`*^9},
- CellTags->"DefaultContent",
- CellLabel->"Out[45]=",
- CellID->373719937,ExpressionUUID->"df1c6457-ec39-4814-8a6b-1b470bf0f8d9"]
+ CellLabel->"Out[2]=",
+ CellID->627935341,ExpressionUUID->"edb7ff8d-42cc-4ab7-afe2-809fa698db3c"]
 }, Open  ]],
+
+Cell["Take smallest months:", "Text",
+ TaggingRules->{},
+ CellChangeTimes->{{3.895090429304946*^9, 3.895090432635743*^9}, {
+   3.8950906648683796`*^9, 3.8950906664694786`*^9}, 3.895092329807181*^9},
+ CellID->437370393,ExpressionUUID->"7961e06b-73ac-4741-8bcd-f546a83460af"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"DropUntil", "[", 
-  RowBox[{
-   RowBox[{"{", 
-    RowBox[{
-     RowBox[{"-", "1"}], ",", 
-     RowBox[{"-", "9"}], ",", 
-     RowBox[{"-", "3"}], ",", "5", ",", "7", ",", "9", ",", "7", ",", "2", 
-     ",", "8", ",", 
-     RowBox[{"-", "2"}], ",", 
-     RowBox[{"-", "6"}], ",", 
-     RowBox[{"-", "10"}], ",", 
-     RowBox[{"-", "8"}]}], "}"}], ",", "EvenQ"}], "]"}]], "Input",
- CellChangeTimes->{{3.8964541699338813`*^9, 3.8964541895252028`*^9}, {
-  3.896454227538704*^9, 3.89645422956083*^9}, {3.8964542641084075`*^9, 
-  3.896454284957469*^9}},
- CellTags->"DefaultContent",
- CellLabel->"In[46]:=",
- CellID->11795204,ExpressionUUID->"8b446fd9-2bb0-4a06-b99c-cd089cb08ec0"],
-
-Cell[BoxData[
- RowBox[{"{", 
-  RowBox[{"2", ",", "8", ",", 
-   RowBox[{"-", "2"}], ",", 
-   RowBox[{"-", "6"}], ",", 
-   RowBox[{"-", "10"}], ",", 
-   RowBox[{"-", "8"}]}], "}"}]], "Output",
- CellChangeTimes->{3.8964542852974625`*^9},
- CellTags->"DefaultContent",
- CellLabel->"Out[46]=",
- CellID->447518317,ExpressionUUID->"8e968b05-6000-48c8-95f3-e72471f37985"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"FoldUntil", "[", 
-  RowBox[{"Divide", ",", 
-   RowBox[{"5", "!"}], ",", 
-   RowBox[{"Range", "[", "10", "]"}], ",", 
-   RowBox[{"!", "IntegerQ"}]}], "]"}]], "Input",
- CellChangeTimes->{{3.896454308694643*^9, 3.89645431368673*^9}},
- CellLabel->"In[55]:=",
- CellID->196228806,ExpressionUUID->"b46aa5f0-5fcc-4488-9327-dc328ff76939"],
-
-Cell[BoxData["120"], "Output",
- CellChangeTimes->{3.896454314184433*^9, 3.8964545370467787`*^9},
- CellLabel->"Out[55]=",
- CellID->695770527,ExpressionUUID->"1edf3009-f362-4fb9-9b33-03c6f7e50cb7"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"FoldUntilList", "[", 
-  RowBox[{"Divide", ",", 
-   RowBox[{"5", "!"}], ",", 
-   RowBox[{"Range", "[", "10", "]"}], ",", 
+ RowBox[{"randomMonths", "=", 
+  RowBox[{"RandomDate", "[", 
    RowBox[{
-    RowBox[{"!", 
-     RowBox[{"IntegerQ", "[", "#", "]"}]}], "&"}]}], "]"}]], "Input",
- CellChangeTimes->{{3.896454308694643*^9, 3.8964543536151524`*^9}, 
-   3.896454570130248*^9, {3.8964547019738054`*^9, 3.896454743879711*^9}},
- CellLabel->"In[76]:=",
- CellID->570775661,ExpressionUUID->"d9b0c95d-f710-4e53-b9ab-3aa1bf4c992e"],
+    TemplateBox[{
+      RowBox[{
+        StyleBox["\"Year: \"", "DateObjectLabel"], "\"2023\""}], 
+      RowBox[{"DateObject", "[", 
+        RowBox[{
+          RowBox[{"{", "2023", "}"}], ",", "\"Year\"", ",", "\"Gregorian\"", 
+          ",", 
+          RowBox[{"-", "4.`"}]}], "]"}]},
+     "DateObject",
+     Editable->False], ",", "30", ",", 
+    RowBox[{"DateGranularity", "->", "\"\<Month\>\""}]}], "]"}]}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.895090437715542*^9, 3.8950904954048033`*^9}, {
+  3.8950906428706636`*^9, 3.8950906449723067`*^9}},
+ CellLabel->"In[3]:=",
+ CellID->144636024,ExpressionUUID->"414c4f28-dba4-4a17-98e6-bb1011b29904"],
 
 Cell[BoxData[
  RowBox[{"{", 
-  RowBox[{"120", ",", "120", ",", "60", ",", "20", ",", "5", ",", "1", ",", 
-   FractionBox["1", "6"]}], "}"}]], "Output",
- CellChangeTimes->{{3.896454329149932*^9, 3.8964543540023174`*^9}, 
-   3.896454538518257*^9, 3.89645457087374*^9, 3.89645466983072*^9, {
-   3.8964547034833794`*^9, 3.896454744843204*^9}},
- CellLabel->"Out[76]=",
- CellID->617283871,ExpressionUUID->"8ac2a804-773e-45bf-b0ef-81aec4abaf85"]
+  RowBox[{
+   TemplateBox[{
+     RowBox[{"\"May 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "5"}], "}"}], ",", "\"Month\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Jul 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "7"}], "}"}], ",", "\"Month\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Feb 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "2"}], "}"}], ",", "\"Month\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Dec 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "12"}], "}"}], ",", "\"Month\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"May 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "5"}], "}"}], ",", "\"Month\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Apr 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "4"}], "}"}], ",", "\"Month\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Oct 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "10"}], "}"}], ",", "\"Month\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"May 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "5"}], "}"}], ",", "\"Month\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Sep 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "9"}], "}"}], ",", "\"Month\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Nov 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "11"}], "}"}], ",", "\"Month\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Apr 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "4"}], "}"}], ",", "\"Month\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"May 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "5"}], "}"}], ",", "\"Month\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Oct 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "10"}], "}"}], ",", "\"Month\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Jul 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "7"}], "}"}], ",", "\"Month\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Sep 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "9"}], "}"}], ",", "\"Month\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Feb 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "2"}], "}"}], ",", "\"Month\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Feb 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "2"}], "}"}], ",", "\"Month\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Oct 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "10"}], "}"}], ",", "\"Month\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Jul 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "7"}], "}"}], ",", "\"Month\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Jul 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "7"}], "}"}], ",", "\"Month\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Feb 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "2"}], "}"}], ",", "\"Month\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Dec 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "12"}], "}"}], ",", "\"Month\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Dec 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "12"}], "}"}], ",", "\"Month\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"May 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "5"}], "}"}], ",", "\"Month\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Feb 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "2"}], "}"}], ",", "\"Month\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Feb 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "2"}], "}"}], ",", "\"Month\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Oct 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "10"}], "}"}], ",", "\"Month\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Dec 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "12"}], "}"}], ",", "\"Month\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Nov 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "11"}], "}"}], ",", "\"Month\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Nov 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "11"}], "}"}], ",", "\"Month\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False]}], "}"}]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{{3.895090465350946*^9, 3.89509049576064*^9}, 
+   3.89509064530301*^9, 3.8950923435944543`*^9},
+ CellLabel->"Out[3]=",
+ CellID->56487677,ExpressionUUID->"63d9b452-49d1-4fd0-adf1-a1b073b1bbb0"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"TakeWhile", "[", 
+ RowBox[{"TakeSmallestElements", "[", "randomMonths", "]"}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.895090484168397*^9, 3.8950905016267014`*^9}, {
+   3.8950906493252645`*^9, 3.895090653616665*^9}, 3.8950922000492406`*^9},
+ CellLabel->"In[4]:=",
+ CellID->288820065,ExpressionUUID->"9bdd7fb2-51b6-40fe-9875-789d90886e66"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TemplateBox[{
+     RowBox[{"\"Feb 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "2"}], "}"}], ",", "\"Month\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Feb 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "2"}], "}"}], ",", "\"Month\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Feb 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "2"}], "}"}], ",", "\"Month\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Feb 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "2"}], "}"}], ",", "\"Month\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Feb 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "2"}], "}"}], ",", "\"Month\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Feb 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "2"}], "}"}], ",", "\"Month\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False]}], "}"}]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8950904869388976`*^9, 3.8950905019874983`*^9}, 
+   3.8950906539024277`*^9, 3.895092343755723*^9},
+ CellLabel->"Out[4]=",
+ CellID->124063593,ExpressionUUID->"24e2772a-e33c-4bc4-bfac-633a18741c6b"]
+}, Open  ]],
+
+Cell["\<\
+Take the first smallest 2 values as determined by an ordering function that \
+uses month:\
+\>", "Text",
+ TaggingRules->{},
+ CellChangeTimes->{{3.895090659651696*^9, 3.8950906951474333`*^9}, 
+   3.8950923315227084`*^9},
+ CellID->208591896,ExpressionUUID->"367f7948-de14-4f53-8184-6838e9fe46e0"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"randomDays", "=", 
+  RowBox[{"RandomDate", "[", 
+   RowBox[{
+    TemplateBox[{
+      RowBox[{
+        StyleBox["\"Year: \"", "DateObjectLabel"], "\"2023\""}], 
+      RowBox[{"DateObject", "[", 
+        RowBox[{
+          RowBox[{"{", "2023", "}"}], ",", "\"Year\"", ",", "\"Gregorian\"", 
+          ",", 
+          RowBox[{"-", "4.`"}]}], "]"}]},
+     "DateObject",
+     Editable->False], ",", "30", ",", 
+    RowBox[{"DateGranularity", "->", "\"\<Day\>\""}]}], "]"}]}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8950906030293117`*^9, 3.895090609550894*^9}},
+ CellLabel->"In[5]:=",
+ CellID->133147606,ExpressionUUID->"b5d0e444-8b44-424c-8bf3-acf98a597f60"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TemplateBox[{
+     RowBox[{"\"Sat 7 Jan 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "1", ",", "7"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Fri 17 Nov 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "11", ",", "17"}], "}"}], ",", "\"Day\"", ",",
+          "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Wed 20 Sep 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "9", ",", "20"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Fri 12 May 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "5", ",", "12"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Tue 11 Jul 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "7", ",", "11"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Sat 12 Aug 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "8", ",", "12"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Tue 28 Nov 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "11", ",", "28"}], "}"}], ",", "\"Day\"", ",",
+          "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Tue 7 Nov 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "11", ",", "7"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Wed 12 Apr 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "4", ",", "12"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Sat 13 May 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "5", ",", "13"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Thu 16 Nov 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "11", ",", "16"}], "}"}], ",", "\"Day\"", ",",
+          "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Mon 5 Jun 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "6", ",", "5"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Mon 23 Jan 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "1", ",", "23"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Thu 2 Feb 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "2", ",", "2"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Sun 18 Jun 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "6", ",", "18"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Tue 17 Jan 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "1", ",", "17"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Tue 11 Jul 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "7", ",", "11"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Mon 6 Nov 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "11", ",", "6"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Sat 7 Jan 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "1", ",", "7"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Wed 22 Mar 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "3", ",", "22"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Sun 23 Apr 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "4", ",", "23"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Sat 30 Dec 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "12", ",", "30"}], "}"}], ",", "\"Day\"", ",",
+          "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Sat 9 Sep 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "9", ",", "9"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Fri 10 Feb 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "2", ",", "10"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Sun 20 Aug 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "8", ",", "20"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Mon 22 May 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "5", ",", "22"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Thu 13 Jul 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "7", ",", "13"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Tue 25 Apr 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "4", ",", "25"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Thu 26 Jan 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "1", ",", "26"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Sun 27 Aug 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "8", ",", "27"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False]}], "}"}]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{3.8950906100399566`*^9, 3.895092343951932*^9},
+ CellLabel->"Out[5]=",
+ CellID->512690101,ExpressionUUID->"505daccc-f6a6-47b4-87de-b63ea6316c31"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TakeSmallestElements", "[", 
+  RowBox[{"randomDays", ",", "2", ",", 
+   RowBox[{
+    RowBox[{"Order", "[", 
+     RowBox[{
+      RowBox[{"DateObject", "[", 
+       RowBox[{"#1", ",", "\"\<Month\>\""}], "]"}], ",", 
+      RowBox[{"DateObject", "[", 
+       RowBox[{"#2", ",", "\"\<Month\>\""}], "]"}]}], "]"}], "&"}]}], 
+  "]"}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8950901009936404`*^9, 3.8950901096209116`*^9}, {
+   3.8950902682373857`*^9, 3.895090269708683*^9}, {3.89509035246799*^9, 
+   3.8950903559608097`*^9}, {3.895090389235283*^9, 3.895090400054633*^9}, 
+   3.8950904345295515`*^9, {3.895090557613659*^9, 3.8950906165524554`*^9}, 
+   3.8950922013321733`*^9},
+ CellTags->"DefaultContent",
+ CellLabel->"In[6]:=",
+ CellID->277545904,ExpressionUUID->"16a03667-6af0-4571-bf91-c2963868995b"],
+
+Cell[BoxData[
+ RowBox[{"{", 
   RowBox[{
    RowBox[{"{", 
     RowBox[{
-     RowBox[{"-", "1"}], ",", 
-     RowBox[{"-", "9"}], ",", 
-     RowBox[{"-", "3"}], ",", "5", ",", "7", ",", "9", ",", "7", ",", "2", 
-     ",", "8", ",", 
-     RowBox[{"-", "2"}], ",", 
-     RowBox[{"-", "6"}], ",", 
-     RowBox[{"-", "10"}], ",", 
-     RowBox[{"-", "8"}]}], "}"}], ",", "EvenQ"}], "]"}]], "Input",
- CellChangeTimes->{{3.896454233901044*^9, 3.896454238873497*^9}},
- CellLabel->"In[43]:=",
- CellID->1036892706,ExpressionUUID->"1599fc62-3a67-4b79-8b11-a3dab224d483"],
-
-Cell[BoxData[
- RowBox[{"{", "}"}]], "Output",
- CellChangeTimes->{3.8964542392666254`*^9},
- CellLabel->"Out[43]=",
- CellID->225453076,ExpressionUUID->"1ec84ce3-1e4e-4047-9b1d-0c648b9ce4f7"]
+     TemplateBox[{
+       RowBox[{"\"Sat 7 Jan 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "1", ",", "7"}], "}"}], ",", "\"Day\"", ",",
+            "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Mon 23 Jan 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "1", ",", "23"}], "}"}], ",", "\"Day\"", 
+           ",", "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Tue 17 Jan 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "1", ",", "17"}], "}"}], ",", "\"Day\"", 
+           ",", "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Sat 7 Jan 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "1", ",", "7"}], "}"}], ",", "\"Day\"", ",",
+            "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Thu 26 Jan 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "1", ",", "26"}], "}"}], ",", "\"Day\"", 
+           ",", "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{
+       RowBox[{"\"Thu 2 Feb 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "2", ",", "2"}], "}"}], ",", "\"Day\"", ",",
+            "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Fri 10 Feb 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "2", ",", "10"}], "}"}], ",", "\"Day\"", 
+           ",", "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False]}], "}"}]}], "}"}]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{{3.895090582222913*^9, 3.8950906168550386`*^9}, 
+   3.895090706421606*^9, 3.8950923441209373`*^9},
+ CellTags->"DefaultContent",
+ CellLabel->"Out[6]=",
+ CellID->775087048,ExpressionUUID->"c4b1ca93-fd8f-4ffd-beb9-9c346353dd44"]
 }, Open  ]],
+
+Cell["Use the day of week instead:", "Text",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8950907096122775`*^9, 3.8950907137657595`*^9}},
+ CellID->158902883,ExpressionUUID->"db5da7e2-8232-4965-8c54-5a90d05c471c"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"?", "TakeWhile"}]], "Input",
- CellChangeTimes->{{3.8964542403917475`*^9, 3.8964542422747383`*^9}},
- CellLabel->"In[44]:=",
- CellID->342594575,ExpressionUUID->"00b56ac2-99c5-4fe0-8e5d-be9adad6dfcf"],
+ RowBox[{"TakeSmallestElements", "[", 
+  RowBox[{"randomDays", ",", "2", ",", 
+   RowBox[{
+    RowBox[{"Order", "[", 
+     RowBox[{
+      RowBox[{"DateValue", "[", 
+       RowBox[{"#1", ",", "\"\<DayName\>\""}], "]"}], ",", 
+      RowBox[{"DateValue", "[", 
+       RowBox[{"#2", ",", "\"\<DayName\>\""}], "]"}]}], "]"}], "&"}]}], 
+  "]"}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.895090714536298*^9, 3.8950907315496445`*^9}, 
+   3.8950922026218886`*^9},
+ CellLabel->"In[7]:=",
+ CellID->64698845,ExpressionUUID->"48d087ec-3e3c-4f73-a7da-eb55899a93ac"],
 
 Cell[BoxData[
- InterpretationBox[
-  StyleBox[
-   FrameBox[
-    DynamicModuleBox[{System`InformationDump`open$$ = False, 
-     System`InformationDump`mouseOver$$ = False}, 
-     PaneSelectorBox[{True->
-      TagBox[GridBox[{
-         {
-          ItemBox[
-           PaneBox[
-            StyleBox["\<\" Symbol\"\>", "InformationTitleText",
-             StripOnInput->False,
-             BaseStyle -> None],
-            FrameMargins->{{4, 0}, {-1, 1}}],
-           BaseStyle->"InformationTitleBackground",
-           StripOnInput->False], 
-          ItemBox[
-           PaneBox[
-            TooltipBox[
-             ButtonBox[
-              PaneSelectorBox[{False->
-               
-               DynamicBox[FEPrivate`FrontEndResource[
-                "FEBitmaps", "InformationHelpIcon"]], True->
-               
-               DynamicBox[FEPrivate`FrontEndResource[
-                "FEBitmaps", "InformationHelpIconHot"]]}, Dynamic[
-                CurrentValue["MouseOver"]]],
-              Appearance->None,
-              BaseStyle->"Link",
-              ButtonData->"paclet:ref/TakeWhile",
-              ButtonNote->"paclet:ref/TakeWhile"],
-             "\"paclet:ref/TakeWhile\""],
-            FrameMargins->{{0, 4}, {0, 2}}],
-           BaseStyle->"InformationTitleBackground",
-           StripOnInput->False]},
-         {
-          ItemBox[
-           PaneBox[
-            
-            StyleBox["\<\"\\!\\(\\*RowBox[{\\\"TakeWhile\\\", \\\"[\\\", \
-RowBox[{StyleBox[\\\"list\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\"crit\\\", \
-\\\"TI\\\"]}], \\\"]\\\"}]\\) gives elements \
-\\!\\(\\*SubscriptBox[StyleBox[\\\"e\\\", \\\"TI\\\"], StyleBox[\\\"i\\\", \\\
-\"TI\\\"]]\\) from the beginning of \\!\\(\\*StyleBox[\\\"list\\\", \
-\\\"TI\\\"]\\), continuing so long as \\!\\(\\*RowBox[{StyleBox[\\\"crit\\\", \
-\\\"TI\\\"], \\\"[\\\", SubscriptBox[StyleBox[\\\"e\\\", \\\"TI\\\"], \
-StyleBox[\\\"i\\\", \\\"TI\\\"]], \\\"]\\\"}]\\) is True.\"\>", 
-             "InformationUsageText",
-             StripOnInput->False,
-             LineSpacing->{1.5, 1.5, 3.}],
-            FrameMargins->{{10, 10}, {8, 10}}],
-           BaseStyle->"InformationUsageSubtitleBackground",
-           StripOnInput->False], 
-          ItemBox["\<\"\"\>",
-           BaseStyle->"InformationUsageSubtitleBackground",
-           StripOnInput->False]},
-         {
-          PaneBox[GridBox[{
-             {
-              
-              DynamicModuleBox[{System`InformationDump`open$$ = {
-               False, False, False, False, False, False}}, 
-               StyleBox[GridBox[{
-                  {
-                   TagBox[
-                    TooltipBox[
-                    StyleBox["\<\" Documentation\"\>", "InformationRowLabel",
-                    StripOnInput->False],
-                    "\"Documentation\"",
-                    TooltipStyle->"TextStyling"],
-                    Annotation[#, "Documentation", "Tooltip"]& ], 
-                   TemplateBox[{
-                    
-                    TemplateBox[{
-                    "\"Local \[RightGuillemet]\"", "paclet:ref/TakeWhile", 
-                    "paclet:ref/TakeWhile", "Link", {
-                    RGBColor[0.9686274509803922, 0.4666666666666667, 0.]}, 
-                    BaseStyle -> {
-                    RGBColor[0.0784313725490196, 0.1568627450980392, 0.6]}}, 
-                    "HyperlinkTemplate"], "\"  \"", 
-                    StyleBox[
-                    "\"|\"", "InformationRowLabel", StripOnInput -> False], 
-                    "\"  \"", 
-                    TemplateBox[{"\"Web \[RightGuillemet]\"", {
-                    URL[
-                    "http://reference.wolfram.com/language/ref/TakeWhile.\
-html"], None}, "http://reference.wolfram.com/language/ref/TakeWhile.html", 
-                    "Hyperlink", {
-                    RGBColor[0.9686274509803922, 0.4666666666666667, 0.]}, 
-                    BaseStyle -> {
-                    RGBColor[0.0784313725490196, 0.1568627450980392, 0.6]}}, 
-                    "HyperlinkTemplate"]},
-                    "RowDefault"]},
-                  {
-                   TagBox[
-                    TooltipBox[
-                    StyleBox["\<\" Attributes\"\>", "InformationRowLabel",
-                    StripOnInput->False],
-                    "\"Attributes\"",
-                    TooltipStyle->"TextStyling"],
-                    Annotation[#, "Attributes", "Tooltip"]& ], 
-                   RowBox[{"{", "Protected", "}"}]},
-                  {
-                   TagBox[
-                    TooltipBox[
-                    StyleBox["\<\" Full Name\"\>", "InformationRowLabel",
-                    StripOnInput->False],
-                    "\"FullName\"",
-                    TooltipStyle->"TextStyling"],
-                    
-                    Annotation[#, "FullName", 
-                    "Tooltip"]& ], "\<\"System`TakeWhile\"\>"}
-                 },
-                 AutoDelete->False,
-                 GridBoxAlignment->{"Columns" -> {Right, Left}},
-                 GridBoxDividers->None,
-                 GridBoxItemSize->{"Columns" -> {Automatic, Automatic}},
-                 GridBoxSpacings->{"Columns" -> {
-                    Offset[0.27999999999999997`], {
-                    Offset[0.5599999999999999]}, 
-                    Offset[0.27999999999999997`]}, "Rows" -> {
-                    Offset[0.2], {
-                    Offset[0.8]}, 
-                    Offset[0.2]}}], "DialogStyle",
-                StripOnInput->False],
-               DynamicModuleValues:>{}]}
-            },
-            DefaultBaseStyle->"Column",
-            GridBoxAlignment->{"Columns" -> {{Left}}},
-            GridBoxDividers->{"Columns" -> {{False}}, "Rows" -> {{False}}},
-            
-            GridBoxItemSize->{
-             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
-            GridBoxSpacings->{"Columns" -> {
-                Offset[0.27999999999999997`], {
-                 Offset[0.5599999999999999]}, 
-                Offset[0.27999999999999997`]}, "Rows" -> {
-                Offset[0.2], {
-                 Offset[3.6]}, 
-                Offset[0.2]}}],
-           FrameMargins->{{6, 6}, {6, 3}}], ""},
-         {
-          ItemBox[
-           TagBox[
-            ButtonBox[
-             PaneSelectorBox[{False->
-              
-              DynamicBox[FEPrivate`FrontEndResource[
-               "FEBitmaps", "UpPointerOpener"]], True->
-              
-              DynamicBox[FEPrivate`FrontEndResource[
-               "FEBitmaps", "UpPointerOpenerHot"]]}, Dynamic[
-              System`InformationDump`mouseOver$$]],
-             Alignment->Left,
-             Appearance->{"Default" -> None},
-             
-             ButtonFunction:>FEPrivate`Set[
-              System`InformationDump`open$$, False],
-             Evaluator->Automatic,
-             FrameMargins->{{9, 0}, {0, 0}},
-             ImageMargins->0,
-             ImageSize->Full,
-             Method->"Preemptive"],
-            
-            EventHandlerTag[{
-             "MouseEntered" :> 
-              FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
-              "MouseExited" :> 
-              FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
-              Method -> "Preemptive", PassEventsDown -> Automatic, 
-              PassEventsUp -> True}]],
-           BaseStyle->"InformationTitleBackground",
-           StripOnInput->False], "\[SpanFromLeft]"}
-        },
-        AutoDelete->False,
-        FrameStyle->Directive[
-          GrayLevel[0.8], 
-          Thickness[Tiny]],
-        GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
-        GridBoxDividers->{
-         "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
-        GridBoxItemSize->{
-         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
-       "Grid"], False->
-      TagBox[GridBox[{
-         {
-          ItemBox[
-           PaneBox[
-            StyleBox["\<\" Symbol\"\>", "InformationTitleText",
-             StripOnInput->False],
-            FrameMargins->{{4, 0}, {-1, 1}}],
-           BaseStyle->"InformationTitleBackground",
-           StripOnInput->False], 
-          ItemBox[
-           PaneBox[
-            TooltipBox[
-             ButtonBox[
-              PaneSelectorBox[{False->
-               
-               DynamicBox[FEPrivate`FrontEndResource[
-                "FEBitmaps", "InformationHelpIcon"],
-                ImageSizeCache->{13., {4., 9.}}], True->
-               
-               DynamicBox[FEPrivate`FrontEndResource[
-                "FEBitmaps", "InformationHelpIconHot"],
-                ImageSizeCache->{13., {4., 9.}}]}, Dynamic[
-                CurrentValue["MouseOver"]]],
-              Appearance->None,
-              BaseStyle->"Link",
-              ButtonData->"paclet:ref/TakeWhile",
-              ButtonNote->"paclet:ref/TakeWhile"],
-             "\"paclet:ref/TakeWhile\""],
-            FrameMargins->{{0, 4}, {0, 2}}],
-           BaseStyle->"InformationTitleBackground",
-           StripOnInput->False]},
-         {
-          ItemBox[
-           PaneBox[
-            
-            StyleBox["\<\"\\!\\(\\*RowBox[{\\\"TakeWhile\\\", \\\"[\\\", \
-RowBox[{StyleBox[\\\"list\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\"crit\\\", \
-\\\"TI\\\"]}], \\\"]\\\"}]\\) gives elements \
-\\!\\(\\*SubscriptBox[StyleBox[\\\"e\\\", \\\"TI\\\"], StyleBox[\\\"i\\\", \\\
-\"TI\\\"]]\\) from the beginning of \\!\\(\\*StyleBox[\\\"list\\\", \
-\\\"TI\\\"]\\), continuing so long as \\!\\(\\*RowBox[{StyleBox[\\\"crit\\\", \
-\\\"TI\\\"], \\\"[\\\", SubscriptBox[StyleBox[\\\"e\\\", \\\"TI\\\"], \
-StyleBox[\\\"i\\\", \\\"TI\\\"]], \\\"]\\\"}]\\) is True.\"\>", 
-             "InformationUsageText",
-             StripOnInput->False,
-             LineSpacing->{1.5, 1.5, 3.}],
-            FrameMargins->{{10, 10}, {8, 10}}],
-           BaseStyle->"InformationUsageSubtitleBackground",
-           StripOnInput->False], 
-          ItemBox["\<\"\"\>",
-           BaseStyle->"InformationUsageSubtitleBackground",
-           StripOnInput->False]},
-         {
-          ItemBox[
-           TagBox[
-            ButtonBox[
-             PaneSelectorBox[{False->
-              
-              DynamicBox[FEPrivate`FrontEndResource[
-               "FEBitmaps", "DownPointerOpener"],
-               ImageSizeCache->{10., {3., 7.}}], True->
-              
-              DynamicBox[FEPrivate`FrontEndResource[
-               "FEBitmaps", "DownPointerOpenerHot"],
-               ImageSizeCache->{10., {3., 7.}}]}, Dynamic[
-              System`InformationDump`mouseOver$$]],
-             Alignment->Left,
-             Appearance->{"Default" -> None},
-             
-             ButtonFunction:>FEPrivate`Set[
-              System`InformationDump`open$$, True],
-             Evaluator->Automatic,
-             FrameMargins->{{9, 0}, {0, 0}},
-             ImageMargins->0,
-             ImageSize->Full,
-             Method->"Preemptive"],
-            
-            EventHandlerTag[{
-             "MouseEntered" :> 
-              FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
-              "MouseExited" :> 
-              FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
-              Method -> "Preemptive", PassEventsDown -> Automatic, 
-              PassEventsUp -> True}]],
-           BaseStyle->"InformationTitleBackground",
-           StripOnInput->False], "\[SpanFromLeft]"}
-        },
-        AutoDelete->False,
-        FrameStyle->Directive[
-          GrayLevel[0.8], 
-          Thickness[Tiny]],
-        GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
-        GridBoxDividers->{
-         "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
-        GridBoxItemSize->{
-         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
-       "Grid"]}, Dynamic[System`InformationDump`open$$],
-      BaselinePosition->Baseline,
-      FrameMargins->0,
-      ImageSize->Automatic],
-     DynamicModuleValues:>{}],
-    BaseStyle->"InformationGridFrame",
-    StripOnInput->False], "InformationGridPlain",
-   StripOnInput->False],
-  InformationData[<|
-   "ObjectType" -> "Symbol", "Usage" -> 
-    "\!\(\*RowBox[{\"TakeWhile\", \"[\", RowBox[{StyleBox[\"list\", \"TI\"], \
-\",\", StyleBox[\"crit\", \"TI\"]}], \"]\"}]\) gives elements \
-\!\(\*SubscriptBox[StyleBox[\"e\", \"TI\"], StyleBox[\"i\", \"TI\"]]\) from \
-the beginning of \!\(\*StyleBox[\"list\", \"TI\"]\), continuing so long as \!\
-\(\*RowBox[{StyleBox[\"crit\", \"TI\"], \"[\", SubscriptBox[StyleBox[\"e\", \
-\"TI\"], StyleBox[\"i\", \"TI\"]], \"]\"}]\) is True.", 
-    "Documentation" -> <|
-     "Local" -> "paclet:ref/TakeWhile", "Web" -> 
-      "http://reference.wolfram.com/language/ref/TakeWhile.html"|>, 
-    "OwnValues" -> None, "UpValues" -> None, "DownValues" -> None, 
-    "SubValues" -> None, "DefaultValues" -> None, "NValues" -> None, 
-    "FormatValues" -> None, "Options" -> None, "Attributes" -> {Protected}, 
-    "FullName" -> "System`TakeWhile"|>, False]]], "Output",
- CellChangeTimes->{3.8964542426518564`*^9},
- CellLabel->"Out[44]=",
- CellID->349593646,ExpressionUUID->"7b332892-8b2f-4399-a4ab-0de7e5556d81"]
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{
+       RowBox[{"\"Fri 17 Nov 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "11", ",", "17"}], "}"}], ",", "\"Day\"", 
+           ",", "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Fri 12 May 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "5", ",", "12"}], "}"}], ",", "\"Day\"", 
+           ",", "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Fri 10 Feb 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "2", ",", "10"}], "}"}], ",", "\"Day\"", 
+           ",", "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{
+       RowBox[{"\"Mon 5 Jun 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "6", ",", "5"}], "}"}], ",", "\"Day\"", ",",
+            "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Mon 23 Jan 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "1", ",", "23"}], "}"}], ",", "\"Day\"", 
+           ",", "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Mon 6 Nov 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "11", ",", "6"}], "}"}], ",", "\"Day\"", 
+           ",", "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Mon 22 May 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "5", ",", "22"}], "}"}], ",", "\"Day\"", 
+           ",", "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False]}], "}"}]}], "}"}]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{3.8950907323646955`*^9, 3.8950923445152397`*^9},
+ CellLabel->"Out[7]=",
+ CellID->409882885,ExpressionUUID->"1d08f469-7f2b-4517-b2cc-8cf6ac81a1e4"]
 }, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell["Scope", "Subsection",
+ TaggingRules->{},
  CellTags->"DefaultContent",
- CellID->313242344,ExpressionUUID->"d7f577a3-9404-4e25-97a1-08802b745ac5"],
+ CellLabel->"In[8]:=",
+ CellID->313242344,ExpressionUUID->"a542dfa7-b8bd-4e50-a5ff-a42a62f3c8c5"],
 
-Cell["\<\
-Text about additional examples expanding scope (and see other sections for \
-options, applications, etc):\
-\>", "Text",
+Cell["Find the smallest months:", "Text",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8950907535088797`*^9, 3.895090755688616*^9}, {
+   3.895090832709474*^9, 3.895090835905322*^9}, 3.895092333955914*^9},
  CellTags->"DefaultContent",
- CellID->291939446,ExpressionUUID->"17c29890-eba8-465b-a2b9-7e0a261ec988"],
+ CellID->291939446,ExpressionUUID->"17e60e54-7e88-4f2f-a1d3-9ebb58a67c51"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"MyFunction", "[", 
-  RowBox[{"x", ",", "y", ",", "z"}], "]"}]], "Input",
- CellTags->"DefaultContent",
- CellLabel->"In[2]:= ",
- CellID->448965068,ExpressionUUID->"aae0a5da-5118-46c8-b23b-13d106b91a80"],
+ RowBox[{"randomDays", "=", 
+  RowBox[{"RandomDate", "[", 
+   RowBox[{
+    TemplateBox[{
+      RowBox[{
+        StyleBox["\"Year: \"", "DateObjectLabel"], "\"2023\""}], 
+      RowBox[{"DateObject", "[", 
+        RowBox[{
+          RowBox[{"{", "2023", "}"}], ",", "\"Year\"", ",", "\"Gregorian\"", 
+          ",", 
+          RowBox[{"-", "4.`"}]}], "]"}]},
+     "DateObject",
+     Editable->False], ",", "40", ",", 
+    RowBox[{"DateGranularity", "->", "\"\<Day\>\""}]}], "]"}]}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.895090772937936*^9, 3.895090773191769*^9}},
+ CellLabel->"In[1]:=",
+ CellID->700506876,ExpressionUUID->"99872083-5fdc-47bd-bf49-d9e0b87cecd8"],
 
 Cell[BoxData[
- RowBox[{"x", " ", "y", " ", "z"}]], "Output",
+ RowBox[{"{", 
+  RowBox[{
+   TemplateBox[{
+     RowBox[{"\"Sat 22 Apr 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "4", ",", "22"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Sun 8 Jan 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "1", ",", "8"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Mon 30 Jan 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "1", ",", "30"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Fri 16 Jun 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "6", ",", "16"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Mon 8 May 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "5", ",", "8"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Sat 4 Feb 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "2", ",", "4"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Sat 1 Apr 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "4", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Sat 22 Apr 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "4", ",", "22"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Wed 15 Mar 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "3", ",", "15"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Tue 4 Apr 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "4", ",", "4"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Wed 5 Jul 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "7", ",", "5"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Sun 16 Apr 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "4", ",", "16"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Sun 2 Apr 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "4", ",", "2"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Tue 19 Dec 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "12", ",", "19"}], "}"}], ",", "\"Day\"", ",",
+          "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Sat 16 Dec 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "12", ",", "16"}], "}"}], ",", "\"Day\"", ",",
+          "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Sun 10 Sep 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "9", ",", "10"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Sun 10 Dec 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "12", ",", "10"}], "}"}], ",", "\"Day\"", ",",
+          "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Fri 10 Feb 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "2", ",", "10"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Sat 7 Jan 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "1", ",", "7"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Tue 22 Aug 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "8", ",", "22"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Fri 17 Mar 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "3", ",", "17"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Tue 18 Jul 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "7", ",", "18"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Sun 10 Dec 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "12", ",", "10"}], "}"}], ",", "\"Day\"", ",",
+          "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Wed 18 Jan 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "1", ",", "18"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Sat 15 Apr 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "4", ",", "15"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Sun 29 Oct 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "10", ",", "29"}], "}"}], ",", "\"Day\"", ",",
+          "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Wed 17 May 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "5", ",", "17"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Sun 1 Jan 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "1", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Thu 16 Feb 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "2", ",", "16"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Thu 4 May 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "5", ",", "4"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Thu 6 Jul 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "7", ",", "6"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Fri 23 Jun 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "6", ",", "23"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Thu 28 Dec 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "12", ",", "28"}], "}"}], ",", "\"Day\"", ",",
+          "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Tue 28 Nov 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "11", ",", "28"}], "}"}], ",", "\"Day\"", ",",
+          "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Tue 28 Feb 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "2", ",", "28"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Mon 15 May 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "5", ",", "15"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Thu 5 Oct 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "10", ",", "5"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Tue 31 Oct 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "10", ",", "31"}], "}"}], ",", "\"Day\"", ",",
+          "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Tue 31 Oct 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "10", ",", "31"}], "}"}], ",", "\"Day\"", ",",
+          "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{
+     RowBox[{"\"Sun 19 Feb 2023\""}], 
+     RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2023", ",", "2", ",", "19"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "4.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False]}], "}"}]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{3.895090773516758*^9, 3.895092349400635*^9},
+ CellLabel->"Out[1]=",
+ CellID->279593350,ExpressionUUID->"f3d58fb4-bd8b-48c2-ad07-51f25fb664ad"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TakeSmallestElements", "[", 
+  RowBox[{"randomDays", ",", "4", ",", 
+   RowBox[{
+    RowBox[{"Order", "[", 
+     RowBox[{
+      RowBox[{"DateObject", "[", 
+       RowBox[{"#1", ",", "\"\<Month\>\""}], "]"}], ",", 
+      RowBox[{"DateObject", "[", 
+       RowBox[{"#2", ",", "\"\<Month\>\""}], "]"}]}], "]"}], "&"}]}], 
+  "]"}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.895090763772384*^9, 3.8950908197462444`*^9}, 
+   3.895092203786105*^9},
  CellTags->"DefaultContent",
- CellLabel->"Out[2]= ",
- CellID->494498970,ExpressionUUID->"33fcac88-3a59-4bcf-adbf-31e0bea1aaab"]
+ CellLabel->"In[2]:=",
+ CellID->448965068,ExpressionUUID->"cc510574-1645-4e2d-8ac8-0268b23b32e6"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{
+       RowBox[{"\"Sun 8 Jan 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "1", ",", "8"}], "}"}], ",", "\"Day\"", ",",
+            "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Mon 30 Jan 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "1", ",", "30"}], "}"}], ",", "\"Day\"", 
+           ",", "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Sat 7 Jan 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "1", ",", "7"}], "}"}], ",", "\"Day\"", ",",
+            "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Wed 18 Jan 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "1", ",", "18"}], "}"}], ",", "\"Day\"", 
+           ",", "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Sun 1 Jan 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "1", ",", "1"}], "}"}], ",", "\"Day\"", ",",
+            "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{
+       RowBox[{"\"Sat 4 Feb 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "2", ",", "4"}], "}"}], ",", "\"Day\"", ",",
+            "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Fri 10 Feb 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "2", ",", "10"}], "}"}], ",", "\"Day\"", 
+           ",", "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Thu 16 Feb 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "2", ",", "16"}], "}"}], ",", "\"Day\"", 
+           ",", "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Tue 28 Feb 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "2", ",", "28"}], "}"}], ",", "\"Day\"", 
+           ",", "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Sun 19 Feb 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "2", ",", "19"}], "}"}], ",", "\"Day\"", 
+           ",", "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{
+       RowBox[{"\"Wed 15 Mar 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "3", ",", "15"}], "}"}], ",", "\"Day\"", 
+           ",", "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Fri 17 Mar 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "3", ",", "17"}], "}"}], ",", "\"Day\"", 
+           ",", "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{
+       RowBox[{"\"Sat 22 Apr 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "4", ",", "22"}], "}"}], ",", "\"Day\"", 
+           ",", "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Sat 1 Apr 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "4", ",", "1"}], "}"}], ",", "\"Day\"", ",",
+            "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Sat 22 Apr 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "4", ",", "22"}], "}"}], ",", "\"Day\"", 
+           ",", "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Tue 4 Apr 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "4", ",", "4"}], "}"}], ",", "\"Day\"", ",",
+            "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Sun 16 Apr 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "4", ",", "16"}], "}"}], ",", "\"Day\"", 
+           ",", "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Sun 2 Apr 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "4", ",", "2"}], "}"}], ",", "\"Day\"", ",",
+            "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Sat 15 Apr 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "4", ",", "15"}], "}"}], ",", "\"Day\"", 
+           ",", "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False]}], "}"}]}], "}"}]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8950907843867083`*^9, 3.895090820457772*^9}, 
+   3.8950923496132193`*^9},
+ CellTags->"DefaultContent",
+ CellLabel->"Out[2]=",
+ CellID->232217556,ExpressionUUID->"bf346b9e-16b6-4fd0-99a6-42f7496b06ad"]
+}, Open  ]],
+
+Cell[TextData[{
+ "Sometimes if there aren\[CloseCurlyQuote]t enough a list will returned with \
+less elements than asked for (here its effectively using ",
+ Cell[BoxData[
+  RowBox[{
+   TagBox[
+    ButtonBox[
+     StyleBox["UpTo", "SymbolsRefLink",
+      ShowStringCharacters->True,
+      FontFamily->"Source Sans Pro"],
+     BaseStyle->Dynamic[
+       FEPrivate`If[
+        CurrentValue["MouseOver"], {
+        "Link", FontColor -> RGBColor[0.8549, 0.39608, 0.1451]}, {"Link"}]],
+     ButtonData->"paclet:ref/UpTo",
+     ContentPadding->False],
+    MouseAppearanceTag["LinkHand"]], "[", "13", "]"}]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "5050f80a-0fe0-47e1-b16d-ddc62372435a"],
+ "):"
+}], "Text",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8950909969339323`*^9, 3.8950910429953213`*^9}, 
+   3.895091966879304*^9, 3.8950920610771155`*^9},
+ CellID->326830682,ExpressionUUID->"50dfcfd3-bafb-4507-bc18-af73f009710d"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TakeSmallestElements", "[", 
+  RowBox[{"randomDays", ",", "13", ",", 
+   RowBox[{
+    RowBox[{"Order", "[", 
+     RowBox[{
+      RowBox[{"DateObject", "[", 
+       RowBox[{"#1", ",", "\"\<Month\>\""}], "]"}], ",", 
+      RowBox[{"DateObject", "[", 
+       RowBox[{"#2", ",", "\"\<Month\>\""}], "]"}]}], "]"}], "&"}]}], 
+  "]"}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.895090763772384*^9, 3.8950908197462444`*^9}, {
+   3.8950910114911156`*^9, 3.8950910164143867`*^9}, 3.8950922050839825`*^9},
+ CellTags->"DefaultContent",
+ CellLabel->"In[3]:=",
+ CellID->64179853,ExpressionUUID->"4147b70e-c29c-443d-a468-54512abc500b"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{
+       RowBox[{"\"Sun 8 Jan 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "1", ",", "8"}], "}"}], ",", "\"Day\"", ",",
+            "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Mon 30 Jan 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "1", ",", "30"}], "}"}], ",", "\"Day\"", 
+           ",", "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Sat 7 Jan 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "1", ",", "7"}], "}"}], ",", "\"Day\"", ",",
+            "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Wed 18 Jan 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "1", ",", "18"}], "}"}], ",", "\"Day\"", 
+           ",", "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Sun 1 Jan 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "1", ",", "1"}], "}"}], ",", "\"Day\"", ",",
+            "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{
+       RowBox[{"\"Sat 4 Feb 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "2", ",", "4"}], "}"}], ",", "\"Day\"", ",",
+            "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Fri 10 Feb 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "2", ",", "10"}], "}"}], ",", "\"Day\"", 
+           ",", "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Thu 16 Feb 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "2", ",", "16"}], "}"}], ",", "\"Day\"", 
+           ",", "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Tue 28 Feb 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "2", ",", "28"}], "}"}], ",", "\"Day\"", 
+           ",", "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Sun 19 Feb 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "2", ",", "19"}], "}"}], ",", "\"Day\"", 
+           ",", "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{
+       RowBox[{"\"Wed 15 Mar 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "3", ",", "15"}], "}"}], ",", "\"Day\"", 
+           ",", "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Fri 17 Mar 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "3", ",", "17"}], "}"}], ",", "\"Day\"", 
+           ",", "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{
+       RowBox[{"\"Sat 22 Apr 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "4", ",", "22"}], "}"}], ",", "\"Day\"", 
+           ",", "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Sat 1 Apr 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "4", ",", "1"}], "}"}], ",", "\"Day\"", ",",
+            "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Sat 22 Apr 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "4", ",", "22"}], "}"}], ",", "\"Day\"", 
+           ",", "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Tue 4 Apr 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "4", ",", "4"}], "}"}], ",", "\"Day\"", ",",
+            "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Sun 16 Apr 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "4", ",", "16"}], "}"}], ",", "\"Day\"", 
+           ",", "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Sun 2 Apr 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "4", ",", "2"}], "}"}], ",", "\"Day\"", ",",
+            "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Sat 15 Apr 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "4", ",", "15"}], "}"}], ",", "\"Day\"", 
+           ",", "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{
+       RowBox[{"\"Mon 8 May 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "5", ",", "8"}], "}"}], ",", "\"Day\"", ",",
+            "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Wed 17 May 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "5", ",", "17"}], "}"}], ",", "\"Day\"", 
+           ",", "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Thu 4 May 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "5", ",", "4"}], "}"}], ",", "\"Day\"", ",",
+            "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Mon 15 May 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "5", ",", "15"}], "}"}], ",", "\"Day\"", 
+           ",", "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{
+       RowBox[{"\"Fri 16 Jun 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "6", ",", "16"}], "}"}], ",", "\"Day\"", 
+           ",", "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Fri 23 Jun 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "6", ",", "23"}], "}"}], ",", "\"Day\"", 
+           ",", "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{
+       RowBox[{"\"Wed 5 Jul 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "7", ",", "5"}], "}"}], ",", "\"Day\"", ",",
+            "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Tue 18 Jul 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "7", ",", "18"}], "}"}], ",", "\"Day\"", 
+           ",", "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Thu 6 Jul 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "7", ",", "6"}], "}"}], ",", "\"Day\"", ",",
+            "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False]}], "}"}], ",", 
+   RowBox[{"{", 
+    TemplateBox[{
+      RowBox[{"\"Tue 22 Aug 2023\""}], 
+      RowBox[{"DateObject", "[", 
+        RowBox[{
+          RowBox[{"{", 
+            RowBox[{"2023", ",", "8", ",", "22"}], "}"}], ",", "\"Day\"", ",",
+           "\"Gregorian\"", ",", 
+          RowBox[{"-", "4.`"}]}], "]"}]},
+     "DateObject",
+     Editable->False], "}"}], ",", 
+   RowBox[{"{", 
+    TemplateBox[{
+      RowBox[{"\"Sun 10 Sep 2023\""}], 
+      RowBox[{"DateObject", "[", 
+        RowBox[{
+          RowBox[{"{", 
+            RowBox[{"2023", ",", "9", ",", "10"}], "}"}], ",", "\"Day\"", ",",
+           "\"Gregorian\"", ",", 
+          RowBox[{"-", "4.`"}]}], "]"}]},
+     "DateObject",
+     Editable->False], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{
+       RowBox[{"\"Sun 29 Oct 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "10", ",", "29"}], "}"}], ",", "\"Day\"", 
+           ",", "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Thu 5 Oct 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "10", ",", "5"}], "}"}], ",", "\"Day\"", 
+           ",", "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Tue 31 Oct 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "10", ",", "31"}], "}"}], ",", "\"Day\"", 
+           ",", "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Tue 31 Oct 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "10", ",", "31"}], "}"}], ",", "\"Day\"", 
+           ",", "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False]}], "}"}], ",", 
+   RowBox[{"{", 
+    TemplateBox[{
+      RowBox[{"\"Tue 28 Nov 2023\""}], 
+      RowBox[{"DateObject", "[", 
+        RowBox[{
+          RowBox[{"{", 
+            RowBox[{"2023", ",", "11", ",", "28"}], "}"}], ",", "\"Day\"", 
+          ",", "\"Gregorian\"", ",", 
+          RowBox[{"-", "4.`"}]}], "]"}]},
+     "DateObject",
+     Editable->False], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{
+       RowBox[{"\"Tue 19 Dec 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "12", ",", "19"}], "}"}], ",", "\"Day\"", 
+           ",", "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Sat 16 Dec 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "12", ",", "16"}], "}"}], ",", "\"Day\"", 
+           ",", "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Sun 10 Dec 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "12", ",", "10"}], "}"}], ",", "\"Day\"", 
+           ",", "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Sun 10 Dec 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "12", ",", "10"}], "}"}], ",", "\"Day\"", 
+           ",", "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Thu 28 Dec 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "12", ",", "28"}], "}"}], ",", "\"Day\"", 
+           ",", "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False]}], "}"}]}], "}"}]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{3.8950910170985374`*^9, 3.895092349871291*^9},
+ CellTags->"DefaultContent",
+ CellLabel->"Out[3]=",
+ CellID->11651044,ExpressionUUID->"0e6ed1cb-ccb3-4fc3-af7d-2b52f08625ca"]
+}, Open  ]],
+
+Cell["Quantities:", "Text",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8950910954474983`*^9, 3.895091096834386*^9}},
+ CellID->303120051,ExpressionUUID->"19582f5e-1481-4868-a8c0-8c2fdebacf04"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"randomQuantities", "=", 
+  RowBox[{"QuantityArray", "[", 
+   RowBox[{
+    RowBox[{"RandomInteger", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"1", ",", "54"}], "}"}], ",", "100"}], "]"}], ",", 
+    "\"\<Meters\>\""}], "]"}]}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.895091100223833*^9, 3.8950911212704144`*^9}, {
+  3.8950911609206514`*^9, 3.8950911685370812`*^9}},
+ CellLabel->"In[4]:=",
+ CellID->143037694,ExpressionUUID->"011e3573-0bb0-490f-b618-c9f4017e5b7b"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   TagBox["QuantityArray",
+    "SummaryHead"], "[", 
+   DynamicModuleBox[{Typeset`open$$ = False, Typeset`embedState$$ = "Ready"}, 
+    
+    TemplateBox[{
+      PaneSelectorBox[{False -> GridBox[{{
+            PaneBox[
+             ButtonBox[
+              DynamicBox[
+               FEPrivate`FrontEndResource["FEBitmaps", "SummaryBoxOpener"]], 
+              ButtonFunction :> (Typeset`open$$ = True), Appearance -> None, 
+              BaseStyle -> {}, Evaluator -> Automatic, Method -> 
+              "Preemptive"], Alignment -> {Center, Center}, ImageSize -> 
+             Dynamic[{
+               Automatic, 
+                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                 Magnification])}]], 
+            GraphicsBox[{
+              
+              RasterBox[{{{0.66, 0.66, 0.66}, {0.49, 0.49, 0.49}, {0.74, 0.74,
+                0.74}}, {{0.4, 0.4, 0.4}, {0.8, 0.8, 0.8}, {0.52, 0.52, 
+               0.52}}, {{0.72, 0.72, 0.72}, {0.59, 0.59, 0.59}, {0.79, 0.79, 
+               0.79}}, {{0.58, 0.58, 0.58}, {0.66, 0.66, 0.66}, {0.32, 0.32, 
+               0.32}}}, {{-0.25, -0.33}, {1.25, 2.33}}, {0, 1}], {{
+               Antialiasing -> False, 
+                GrayLevel[0.3], 
+                
+                LineBox[{{{-0.25, 2.33}, {1.25, 2.33}}, {{-0.25, 1.67}, {1.25,
+                  1.67}}, {{-0.25, 1.}, {1.25, 1.}}, {{-0.25, 0.33}, {1.25, 
+                 0.33}}, {{-0.25, -0.33}, {1.25, -0.33}}}]}, {
+               Antialiasing -> False, 
+                GrayLevel[0.3], 
+                
+                LineBox[{{{-0.25, -0.33}, {-0.25, 2.33}}, {{0.25, -0.33}, {
+                 0.25, 2.33}}, {{0.75, -0.33}, {0.75, 2.33}}, {{
+                 1.25, -0.33}, {1.25, 2.33}}}]}}}, PlotRangeClipping -> True, 
+             Background -> GrayLevel[0.93], 
+             Frame -> {{True, True}, {True, True}}, 
+             FrameLabel -> {None, None}, FrameStyle -> {{
+                Directive[
+                 GrayLevel[0.2], 
+                 AbsoluteThickness[1]], 
+                Directive[
+                 Thickness[Tiny], 
+                 GrayLevel[0.7]]}, {
+                Directive[
+                 Thickness[Tiny], 
+                 GrayLevel[0.7]], 
+                Directive[
+                 Thickness[Tiny], 
+                 GrayLevel[0.7]]}}, FrameTicks -> {{{{-0.25, 
+                  FormBox["\"\"", TraditionalForm], {0.25, 0}}, {0.583, 
+                  FormBox["\"\"", TraditionalForm], {0.25, 0}}, {1.417, 
+                  FormBox["\"\"", TraditionalForm], {0.25, 0}}, {2.25, 
+                  FormBox["\"\"", TraditionalForm], {0.25, 0}}, {0.028, 
+                  FormBox["\"\"", TraditionalForm], {0.12, 0}}, {0.306, 
+                  FormBox["\"\"", TraditionalForm], {0.12, 0}}, {0.861, 
+                  FormBox["\"\"", TraditionalForm], {0.12, 0}}, {1.139, 
+                  FormBox["\"\"", TraditionalForm], {0.12, 0}}, {1.694, 
+                  FormBox["\"\"", TraditionalForm], {0.12, 0}}, {1.972, 
+                  FormBox["\"\"", TraditionalForm], {0.12, 0}}}, None}, {
+               None, None}}, GridLinesStyle -> Directive[
+               GrayLevel[0.5, 0.4]], ImagePadding -> 2, ImageSize -> 
+             Dynamic[{
+               Automatic, 
+                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                 Magnification])}], 
+             Method -> {
+              "DefaultBoundaryStyle" -> Automatic, "DefaultPlotStyle" -> 
+               Automatic}, PlotRangePadding -> {{1, 0}, {0, 0}}], 
+            GridBox[{{
+               RowBox[{
+                 TagBox["\"Dimensions: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox[
+                  RowBox[{"{", "100", "}"}], "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"Unit: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox[
+                  TagBox["\"Meters\"", Short[#, 2]& ], "SummaryItem"]}]}}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
+             False, GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
+              BaseStyle -> {
+              ShowStringCharacters -> False, NumberMarks -> False, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+          AutoDelete -> False, 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+          BaselinePosition -> {1, 1}], True -> GridBox[{{
+            PaneBox[
+             ButtonBox[
+              DynamicBox[
+               FEPrivate`FrontEndResource["FEBitmaps", "SummaryBoxCloser"]], 
+              ButtonFunction :> (Typeset`open$$ = False), Appearance -> None, 
+              BaseStyle -> {}, Evaluator -> Automatic, Method -> 
+              "Preemptive"], Alignment -> {Center, Center}, ImageSize -> 
+             Dynamic[{
+               Automatic, 
+                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                 Magnification])}]], 
+            GraphicsBox[{
+              
+              RasterBox[{{{0.66, 0.66, 0.66}, {0.49, 0.49, 0.49}, {0.74, 0.74,
+                0.74}}, {{0.4, 0.4, 0.4}, {0.8, 0.8, 0.8}, {0.52, 0.52, 
+               0.52}}, {{0.72, 0.72, 0.72}, {0.59, 0.59, 0.59}, {0.79, 0.79, 
+               0.79}}, {{0.58, 0.58, 0.58}, {0.66, 0.66, 0.66}, {0.32, 0.32, 
+               0.32}}}, {{-0.25, -0.33}, {1.25, 2.33}}, {0, 1}], {{
+               Antialiasing -> False, 
+                GrayLevel[0.3], 
+                
+                LineBox[{{{-0.25, 2.33}, {1.25, 2.33}}, {{-0.25, 1.67}, {1.25,
+                  1.67}}, {{-0.25, 1.}, {1.25, 1.}}, {{-0.25, 0.33}, {1.25, 
+                 0.33}}, {{-0.25, -0.33}, {1.25, -0.33}}}]}, {
+               Antialiasing -> False, 
+                GrayLevel[0.3], 
+                
+                LineBox[{{{-0.25, -0.33}, {-0.25, 2.33}}, {{0.25, -0.33}, {
+                 0.25, 2.33}}, {{0.75, -0.33}, {0.75, 2.33}}, {{
+                 1.25, -0.33}, {1.25, 2.33}}}]}}}, PlotRangeClipping -> True, 
+             Background -> GrayLevel[0.93], 
+             Frame -> {{True, True}, {True, True}}, 
+             FrameLabel -> {None, None}, FrameStyle -> {{
+                Directive[
+                 GrayLevel[0.2], 
+                 AbsoluteThickness[1]], 
+                Directive[
+                 Thickness[Tiny], 
+                 GrayLevel[0.7]]}, {
+                Directive[
+                 Thickness[Tiny], 
+                 GrayLevel[0.7]], 
+                Directive[
+                 Thickness[Tiny], 
+                 GrayLevel[0.7]]}}, FrameTicks -> {{{{-0.25, 
+                  FormBox["\"\"", TraditionalForm], {0.25, 0}}, {0.583, 
+                  FormBox["\"\"", TraditionalForm], {0.25, 0}}, {1.417, 
+                  FormBox["\"\"", TraditionalForm], {0.25, 0}}, {2.25, 
+                  FormBox["\"\"", TraditionalForm], {0.25, 0}}, {0.028, 
+                  FormBox["\"\"", TraditionalForm], {0.12, 0}}, {0.306, 
+                  FormBox["\"\"", TraditionalForm], {0.12, 0}}, {0.861, 
+                  FormBox["\"\"", TraditionalForm], {0.12, 0}}, {1.139, 
+                  FormBox["\"\"", TraditionalForm], {0.12, 0}}, {1.694, 
+                  FormBox["\"\"", TraditionalForm], {0.12, 0}}, {1.972, 
+                  FormBox["\"\"", TraditionalForm], {0.12, 0}}}, None}, {
+               None, None}}, GridLinesStyle -> Directive[
+               GrayLevel[0.5, 0.4]], ImagePadding -> 2, ImageSize -> 
+             Dynamic[{
+               Automatic, 
+                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                 Magnification])}], 
+             Method -> {
+              "DefaultBoundaryStyle" -> Automatic, "DefaultPlotStyle" -> 
+               Automatic}, PlotRangePadding -> {{1, 0}, {0, 0}}], 
+            GridBox[{{
+               RowBox[{
+                 TagBox["\"Dimensions: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox[
+                  RowBox[{"{", "100", "}"}], "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"Unit: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox[
+                  TagBox["\"Meters\"", Short[#, 2]& ], "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"MinMax: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox[
+                  RowBox[{"{", 
+                    RowBox[{
+                    
+                    TemplateBox[{"1", "\"m\"", "meter", "\"Meters\""}, 
+                    "Quantity", SyntaxForm -> Mod], ",", 
+                    
+                    TemplateBox[{"54", "\"m\"", "meters", "\"Meters\""}, 
+                    "Quantity", SyntaxForm -> Mod]}], "}"}], 
+                  "SummaryItem"]}]}}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
+             False, GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
+              BaseStyle -> {
+              ShowStringCharacters -> False, NumberMarks -> False, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+          AutoDelete -> False, 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+          BaselinePosition -> {1, 1}]}, 
+       Dynamic[Typeset`open$$], ImageSize -> Automatic]},
+     "SummaryPanel"],
+    DynamicModuleValues:>{}], "]"}],
+  QuantityArray[
+   StructuredArray`StructuredData[{
+    100}, {{51, 8, 14, 18, 4, 44, 6, 22, 2, 35, 45, 19, 45, 53, 48, 47, 53, 
+     14, 35, 33, 15, 49, 39, 44, 33, 11, 52, 5, 40, 36, 13, 9, 30, 8, 35, 2, 
+     53, 12, 39, 51, 37, 38, 6, 20, 35, 10, 23, 45, 2, 32, 30, 19, 28, 49, 45,
+      24, 33, 9, 29, 42, 7, 38, 9, 9, 11, 31, 33, 51, 42, 54, 25, 35, 32, 8, 
+     39, 42, 6, 53, 3, 35, 1, 19, 29, 3, 38, 12, 35, 40, 3, 45, 30, 18, 6, 40,
+      46, 15, 1, 18, 30, 26}, "Meters", {{1}}}]],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{
+  3.8950911227813325`*^9, {3.89509116141313*^9, 3.8950911688103714`*^9}, 
+   3.8950923500550795`*^9},
+ CellLabel->"Out[4]=",
+ CellID->65527400,ExpressionUUID->"0546e7ff-251c-4ccd-a4a6-f152622da5e9"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TakeSmallestElements", "[", 
+  RowBox[{
+   RowBox[{"Normal", "[", "randomQuantities", "]"}], ",", "13"}], 
+  "]"}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.895090763772384*^9, 3.8950908197462444`*^9}, {
+   3.8950910114911156`*^9, 3.8950910164143867`*^9}, {3.8950910976670446`*^9, 
+   3.89509113863616*^9}, 3.8950922077975855`*^9},
+ CellTags->"DefaultContent",
+ CellLabel->"In[5]:=",
+ CellID->106953638,ExpressionUUID->"212fc676-1e6c-4f1f-8658-d9f7dd31decd"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    TemplateBox[{"54", "\"m\"", "meters", "\"Meters\""},
+     "Quantity"], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{"53", "\"m\"", "meters", "\"Meters\""},
+      "Quantity"], ",", 
+     TemplateBox[{"53", "\"m\"", "meters", "\"Meters\""},
+      "Quantity"], ",", 
+     TemplateBox[{"53", "\"m\"", "meters", "\"Meters\""},
+      "Quantity"], ",", 
+     TemplateBox[{"53", "\"m\"", "meters", "\"Meters\""},
+      "Quantity"]}], "}"}], ",", 
+   RowBox[{"{", 
+    TemplateBox[{"52", "\"m\"", "meters", "\"Meters\""},
+     "Quantity"], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{"51", "\"m\"", "meters", "\"Meters\""},
+      "Quantity"], ",", 
+     TemplateBox[{"51", "\"m\"", "meters", "\"Meters\""},
+      "Quantity"], ",", 
+     TemplateBox[{"51", "\"m\"", "meters", "\"Meters\""},
+      "Quantity"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{"49", "\"m\"", "meters", "\"Meters\""},
+      "Quantity"], ",", 
+     TemplateBox[{"49", "\"m\"", "meters", "\"Meters\""},
+      "Quantity"]}], "}"}], ",", 
+   RowBox[{"{", 
+    TemplateBox[{"48", "\"m\"", "meters", "\"Meters\""},
+     "Quantity"], "}"}], ",", 
+   RowBox[{"{", 
+    TemplateBox[{"47", "\"m\"", "meters", "\"Meters\""},
+     "Quantity"], "}"}], ",", 
+   RowBox[{"{", 
+    TemplateBox[{"46", "\"m\"", "meters", "\"Meters\""},
+     "Quantity"], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{"45", "\"m\"", "meters", "\"Meters\""},
+      "Quantity"], ",", 
+     TemplateBox[{"45", "\"m\"", "meters", "\"Meters\""},
+      "Quantity"], ",", 
+     TemplateBox[{"45", "\"m\"", "meters", "\"Meters\""},
+      "Quantity"], ",", 
+     TemplateBox[{"45", "\"m\"", "meters", "\"Meters\""},
+      "Quantity"], ",", 
+     TemplateBox[{"45", "\"m\"", "meters", "\"Meters\""},
+      "Quantity"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{"44", "\"m\"", "meters", "\"Meters\""},
+      "Quantity"], ",", 
+     TemplateBox[{"44", "\"m\"", "meters", "\"Meters\""},
+      "Quantity"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{"42", "\"m\"", "meters", "\"Meters\""},
+      "Quantity"], ",", 
+     TemplateBox[{"42", "\"m\"", "meters", "\"Meters\""},
+      "Quantity"], ",", 
+     TemplateBox[{"42", "\"m\"", "meters", "\"Meters\""},
+      "Quantity"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{"40", "\"m\"", "meters", "\"Meters\""},
+      "Quantity"], ",", 
+     TemplateBox[{"40", "\"m\"", "meters", "\"Meters\""},
+      "Quantity"], ",", 
+     TemplateBox[{"40", "\"m\"", "meters", "\"Meters\""},
+      "Quantity"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{"39", "\"m\"", "meters", "\"Meters\""},
+      "Quantity"], ",", 
+     TemplateBox[{"39", "\"m\"", "meters", "\"Meters\""},
+      "Quantity"], ",", 
+     TemplateBox[{"39", "\"m\"", "meters", "\"Meters\""},
+      "Quantity"]}], "}"}]}], "}"}]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{{3.895091133161743*^9, 3.8950911699922314`*^9}, 
+   3.895092350227847*^9},
+ CellTags->"DefaultContent",
+ CellLabel->"Out[5]=",
+ CellID->56783689,ExpressionUUID->"21463a90-6b8f-4558-b33e-257571e804b3"]
+}, Open  ]],
+
+Cell["Files:", "Text",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8950911796678357`*^9, 3.895091180400942*^9}},
+ CellID->277589128,ExpressionUUID->"3da1ff8b-b570-415f-828a-55fbc6cc25ca"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"pictureFiles", "=", 
+   RowBox[{"FileNames", "[", 
+    RowBox[{"All", ",", 
+     RowBox[{"FileNameJoin", "[", 
+      RowBox[{"{", 
+       RowBox[{"$HomeDirectory", ",", "\"\<Pictures\>\""}], "}"}], "]"}]}], 
+    "]"}]}], ";"}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8950912590552864`*^9, 3.895091297423967*^9}, {
+  3.8950914788790236`*^9, 3.895091499821808*^9}},
+ CellLabel->"In[6]:=",
+ CellID->12375977,ExpressionUUID->"cd6c310e-80b9-46d4-bd21-c9d7f5df54a0"],
+
+Cell["Take the 6 smallest files by filedate:", "Text",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8950913165934343`*^9, 3.8950913225603576`*^9}, 
+   3.8950916245975647`*^9, 3.8950923360243664`*^9},
+ CellID->74530615,ExpressionUUID->"e495a866-6d1b-47ed-a033-8b34356a800d"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TakeSmallestElements", "[", 
+  RowBox[{"pictureFiles", ",", "6", ",", 
+   RowBox[{
+    RowBox[{"Order", "[", 
+     RowBox[{
+      RowBox[{"DateValue", "[", 
+       RowBox[{
+        RowBox[{"FileDate", "[", "#1", "]"}], ",", "\"\<Month\>\""}], "]"}], 
+      ",", 
+      RowBox[{"DateValue", "[", 
+       RowBox[{
+        RowBox[{"FileDate", "[", "#2", "]"}], ",", "\"\<Month\>\""}], "]"}]}],
+      "]"}], "&"}]}], "]"}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.895091324525921*^9, 3.8950913536080556`*^9}, 
+   3.895091432074791*^9, {3.8950915019383645`*^9, 3.895091509230469*^9}, {
+   3.895091601305614*^9, 3.895091615369753*^9}, 3.895092214696602*^9},
+ CellLabel->"In[7]:=",
+ CellID->337711040,ExpressionUUID->"67baa1c9-9e24-41a6-9c90-b08e2c83d83a"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\<\"C:\\\\Users\\\\Peter\\\\Pictures\\\\Camera Roll\"\>", 
+     ",", "\<\"C:\\\\Users\\\\Peter\\\\Pictures\\\\PXL_20230125_204544318.jpg\
+\"\>", ",", "\<\"C:\\\\Users\\\\Peter\\\\Pictures\\\\Saved Pictures\"\>"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"C:\\\\Users\\\\Peter\\\\Pictures\\\\6.3(1).png\"\>", 
+     ",", "\<\"C:\\\\Users\\\\Peter\\\\Pictures\\\\desktop.ini\"\>", 
+     ",", "\<\"C:\\\\Users\\\\Peter\\\\Pictures\\\\file1.pdf\"\>", 
+     ",", "\<\"C:\\\\Users\\\\Peter\\\\Pictures\\\\ParabolicWaterTrajectory.\
+jpg\"\>", 
+     ",", "\<\"C:\\\\Users\\\\Peter\\\\Pictures\\\\PXL_20230218_212559003.jpg\
+\"\>", ",", \
+"\<\"C:\\\\Users\\\\Peter\\\\Pictures\\\\PXL_20230218_212605407.jpg\"\>", 
+     ",", "\<\"C:\\\\Users\\\\Peter\\\\Pictures\\\\PXL_20230218_212613726.jpg\
+\"\>", ",", \
+"\<\"C:\\\\Users\\\\Peter\\\\Pictures\\\\PXL_20230218_212622085.jpg\"\>", 
+     ",", "\<\"C:\\\\Users\\\\Peter\\\\Pictures\\\\PXL_20230218_212659234.jpg\
+\"\>", ",", \
+"\<\"C:\\\\Users\\\\Peter\\\\Pictures\\\\The_Sun_by_the_Atmospheric_Imaging_\
+Assembly_of_NASA's_Solar_Dynamics_Observatory_-_20100819 (1).jpg\"\>", 
+     ",", "\<\"C:\\\\Users\\\\Peter\\\\Pictures\\\\The_Sun_by_the_Atmospheric_\
+Imaging_Assembly_of_NASA's_Solar_Dynamics_Observatory_-_20100819.jpg\"\>"}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"\<\"C:\\\\Users\\\\Peter\\\\Pictures\\\\Screenshot 2023-04-28 \
+191905.png\"\>", 
+     ",", "\<\"C:\\\\Users\\\\Peter\\\\Pictures\\\\thumbnail_image001.png\"\>\
+", ",", "\<\"C:\\\\Users\\\\Peter\\\\Pictures\\\\Video Projects\"\>"}], "}"}],
+    ",", 
+   RowBox[{
+   "{", "\<\"C:\\\\Users\\\\Peter\\\\Pictures\\\\DH-IPC-HDBW4231F-AS_PTBR.pdf\
+\"\>", "}"}]}], "}"}]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8950913418441577`*^9, 3.895091354032524*^9}, 
+   3.89509143282203*^9, {3.8950916059444113`*^9, 3.8950916162146397`*^9}, 
+   3.8950923506532335`*^9},
+ CellLabel->"Out[7]=",
+ CellID->309487527,ExpressionUUID->"918f03e6-33b7-482b-9b5b-c1224715d30a"]
+}, Open  ]],
+
+Cell["The dates:", "Text",
+ TaggingRules->{},
+ CellChangeTimes->{{3.895091767112647*^9, 3.895091768924562*^9}},
+ CellID->109169624,ExpressionUUID->"50654a93-04ff-4f12-93fb-6efbca10121f"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Map", "[", 
+  RowBox[{
+   RowBox[{"AssociationMap", "[", "FileDate", "]"}], ",", 
+   RowBox[{"TakeSmallestElements", "[", 
+    RowBox[{"pictureFiles", ",", "6", ",", 
+     RowBox[{
+      RowBox[{"Order", "[", 
+       RowBox[{
+        RowBox[{"DateValue", "[", 
+         RowBox[{
+          RowBox[{"FileDate", "[", "#1", "]"}], ",", "\"\<Month\>\""}], "]"}],
+         ",", 
+        RowBox[{"DateValue", "[", 
+         RowBox[{
+          RowBox[{"FileDate", "[", "#2", "]"}], ",", "\"\<Month\>\""}], 
+         "]"}]}], "]"}], "&"}]}], "]"}], ",", 
+   RowBox[{"{", "1", "}"}]}], "]"}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.895091637485521*^9, 3.8950917431987867`*^9}, 
+   3.8950922164672766`*^9},
+ CellLabel->"In[8]:=",
+ CellID->267310690,ExpressionUUID->"a4fdb7b9-fea0-4b20-9937-e16aa01788c0"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"C:\\\\Users\\\\Peter\\\\Pictures\\\\Camera Roll\"\>", 
+      "\[Rule]", 
+      TemplateBox[{
+        RowBox[{"\"Tue 24 Jan 2023 13:19:04\"", 
+          StyleBox[
+           RowBox[{"\"GMT\"", "\[InvisibleSpace]", 
+             StyleBox[
+              RowBox[{"-", "4"}], NumberMarks -> False, StripOnInput -> 
+              False]}], FontColor -> GrayLevel[0.5]]}], 
+        RowBox[{"DateObject", "[", 
+          RowBox[{
+            RowBox[{"{", 
+              
+              RowBox[{"2023", ",", "1", ",", "24", ",", "13", ",", "19", ",", 
+                "4.`"}], "}"}], ",", "\"Instant\"", ",", "\"Gregorian\"", ",", 
+            RowBox[{"-", "4.`"}]}], "]"}]},
+       "DateObject",
+       Editable->False]}], ",", 
+     RowBox[{"\<\"C:\\\\Users\\\\Peter\\\\Pictures\\\\PXL_20230125_204544318.\
+jpg\"\>", "\[Rule]", 
+      TemplateBox[{
+        RowBox[{"\"Wed 25 Jan 2023 16:48:06\"", 
+          StyleBox[
+           RowBox[{"\"GMT\"", "\[InvisibleSpace]", 
+             StyleBox[
+              RowBox[{"-", "4"}], NumberMarks -> False, StripOnInput -> 
+              False]}], FontColor -> GrayLevel[0.5]]}], 
+        RowBox[{"DateObject", "[", 
+          RowBox[{
+            RowBox[{"{", 
+              
+              RowBox[{"2023", ",", "1", ",", "25", ",", "16", ",", "48", ",", 
+                "6.`"}], "}"}], ",", "\"Instant\"", ",", "\"Gregorian\"", ",", 
+            RowBox[{"-", "4.`"}]}], "]"}]},
+       "DateObject",
+       Editable->False]}], ",", 
+     RowBox[{"\<\"C:\\\\Users\\\\Peter\\\\Pictures\\\\Saved Pictures\"\>", 
+      "\[Rule]", 
+      TemplateBox[{
+        RowBox[{"\"Tue 24 Jan 2023 13:19:04\"", 
+          StyleBox[
+           RowBox[{"\"GMT\"", "\[InvisibleSpace]", 
+             StyleBox[
+              RowBox[{"-", "4"}], NumberMarks -> False, StripOnInput -> 
+              False]}], FontColor -> GrayLevel[0.5]]}], 
+        RowBox[{"DateObject", "[", 
+          RowBox[{
+            RowBox[{"{", 
+              
+              RowBox[{"2023", ",", "1", ",", "24", ",", "13", ",", "19", ",", 
+                "4.`"}], "}"}], ",", "\"Instant\"", ",", "\"Gregorian\"", ",", 
+            RowBox[{"-", "4.`"}]}], "]"}]},
+       "DateObject",
+       Editable->False]}]}], "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"C:\\\\Users\\\\Peter\\\\Pictures\\\\6.3(1).png\"\>", 
+      "\[Rule]", 
+      TemplateBox[{
+        RowBox[{"\"Fri 3 Feb 2023 13:37:02\"", 
+          StyleBox[
+           RowBox[{"\"GMT\"", "\[InvisibleSpace]", 
+             StyleBox[
+              RowBox[{"-", "4"}], NumberMarks -> False, StripOnInput -> 
+              False]}], FontColor -> GrayLevel[0.5]]}], 
+        RowBox[{"DateObject", "[", 
+          RowBox[{
+            RowBox[{"{", 
+              
+              RowBox[{"2023", ",", "2", ",", "3", ",", "13", ",", "37", ",", 
+                "2.`"}], "}"}], ",", "\"Instant\"", ",", "\"Gregorian\"", ",", 
+            RowBox[{"-", "4.`"}]}], "]"}]},
+       "DateObject",
+       Editable->False]}], ",", 
+     RowBox[{"\<\"C:\\\\Users\\\\Peter\\\\Pictures\\\\desktop.ini\"\>", 
+      "\[Rule]", 
+      TemplateBox[{
+        RowBox[{"\"Fri 17 Feb 2023 15:44:12\"", 
+          StyleBox[
+           RowBox[{"\"GMT\"", "\[InvisibleSpace]", 
+             StyleBox[
+              RowBox[{"-", "4"}], NumberMarks -> False, StripOnInput -> 
+              False]}], FontColor -> GrayLevel[0.5]]}], 
+        RowBox[{"DateObject", "[", 
+          RowBox[{
+            RowBox[{"{", 
+              
+              RowBox[{"2023", ",", "2", ",", "17", ",", "15", ",", "44", ",", 
+                "12.`"}], "}"}], ",", "\"Instant\"", ",", "\"Gregorian\"", 
+            ",", 
+            RowBox[{"-", "4.`"}]}], "]"}]},
+       "DateObject",
+       Editable->False]}], ",", 
+     RowBox[{"\<\"C:\\\\Users\\\\Peter\\\\Pictures\\\\file1.pdf\"\>", 
+      "\[Rule]", 
+      TemplateBox[{
+        RowBox[{"\"Fri 3 Feb 2023 13:57:03\"", 
+          StyleBox[
+           RowBox[{"\"GMT\"", "\[InvisibleSpace]", 
+             StyleBox[
+              RowBox[{"-", "4"}], NumberMarks -> False, StripOnInput -> 
+              False]}], FontColor -> GrayLevel[0.5]]}], 
+        RowBox[{"DateObject", "[", 
+          RowBox[{
+            RowBox[{"{", 
+              
+              RowBox[{"2023", ",", "2", ",", "3", ",", "13", ",", "57", ",", 
+                "3.`"}], "}"}], ",", "\"Instant\"", ",", "\"Gregorian\"", ",", 
+            RowBox[{"-", "4.`"}]}], "]"}]},
+       "DateObject",
+       Editable->False]}], ",", 
+     RowBox[{"\<\"C:\\\\Users\\\\Peter\\\\Pictures\\\\\
+ParabolicWaterTrajectory.jpg\"\>", "\[Rule]", 
+      TemplateBox[{
+        RowBox[{"\"Sat 4 Feb 2023 12:32:57\"", 
+          StyleBox[
+           RowBox[{"\"GMT\"", "\[InvisibleSpace]", 
+             StyleBox[
+              RowBox[{"-", "4"}], NumberMarks -> False, StripOnInput -> 
+              False]}], FontColor -> GrayLevel[0.5]]}], 
+        RowBox[{"DateObject", "[", 
+          RowBox[{
+            RowBox[{"{", 
+              
+              RowBox[{"2023", ",", "2", ",", "4", ",", "12", ",", "32", ",", 
+                "57.`"}], "}"}], ",", "\"Instant\"", ",", "\"Gregorian\"", 
+            ",", 
+            RowBox[{"-", "4.`"}]}], "]"}]},
+       "DateObject",
+       Editable->False]}], ",", 
+     RowBox[{"\<\"C:\\\\Users\\\\Peter\\\\Pictures\\\\PXL_20230218_212559003.\
+jpg\"\>", "\[Rule]", 
+      TemplateBox[{
+        RowBox[{"\"Sat 18 Feb 2023 15:02:12\"", 
+          StyleBox[
+           RowBox[{"\"GMT\"", "\[InvisibleSpace]", 
+             StyleBox[
+              RowBox[{"-", "4"}], NumberMarks -> False, StripOnInput -> 
+              False]}], FontColor -> GrayLevel[0.5]]}], 
+        RowBox[{"DateObject", "[", 
+          RowBox[{
+            RowBox[{"{", 
+              
+              RowBox[{"2023", ",", "2", ",", "18", ",", "15", ",", "2", ",", 
+                "12.`"}], "}"}], ",", "\"Instant\"", ",", "\"Gregorian\"", 
+            ",", 
+            RowBox[{"-", "4.`"}]}], "]"}]},
+       "DateObject",
+       Editable->False]}], ",", 
+     RowBox[{"\<\"C:\\\\Users\\\\Peter\\\\Pictures\\\\PXL_20230218_212605407.\
+jpg\"\>", "\[Rule]", 
+      TemplateBox[{
+        RowBox[{"\"Sat 18 Feb 2023 15:02:12\"", 
+          StyleBox[
+           RowBox[{"\"GMT\"", "\[InvisibleSpace]", 
+             StyleBox[
+              RowBox[{"-", "4"}], NumberMarks -> False, StripOnInput -> 
+              False]}], FontColor -> GrayLevel[0.5]]}], 
+        RowBox[{"DateObject", "[", 
+          RowBox[{
+            RowBox[{"{", 
+              
+              RowBox[{"2023", ",", "2", ",", "18", ",", "15", ",", "2", ",", 
+                "12.`"}], "}"}], ",", "\"Instant\"", ",", "\"Gregorian\"", 
+            ",", 
+            RowBox[{"-", "4.`"}]}], "]"}]},
+       "DateObject",
+       Editable->False]}], ",", 
+     RowBox[{"\<\"C:\\\\Users\\\\Peter\\\\Pictures\\\\PXL_20230218_212613726.\
+jpg\"\>", "\[Rule]", 
+      TemplateBox[{
+        RowBox[{"\"Sat 18 Feb 2023 15:02:12\"", 
+          StyleBox[
+           RowBox[{"\"GMT\"", "\[InvisibleSpace]", 
+             StyleBox[
+              RowBox[{"-", "4"}], NumberMarks -> False, StripOnInput -> 
+              False]}], FontColor -> GrayLevel[0.5]]}], 
+        RowBox[{"DateObject", "[", 
+          RowBox[{
+            RowBox[{"{", 
+              
+              RowBox[{"2023", ",", "2", ",", "18", ",", "15", ",", "2", ",", 
+                "12.`"}], "}"}], ",", "\"Instant\"", ",", "\"Gregorian\"", 
+            ",", 
+            RowBox[{"-", "4.`"}]}], "]"}]},
+       "DateObject",
+       Editable->False]}], ",", 
+     RowBox[{"\<\"C:\\\\Users\\\\Peter\\\\Pictures\\\\PXL_20230218_212622085.\
+jpg\"\>", "\[Rule]", 
+      TemplateBox[{
+        RowBox[{"\"Sat 18 Feb 2023 15:02:12\"", 
+          StyleBox[
+           RowBox[{"\"GMT\"", "\[InvisibleSpace]", 
+             StyleBox[
+              RowBox[{"-", "4"}], NumberMarks -> False, StripOnInput -> 
+              False]}], FontColor -> GrayLevel[0.5]]}], 
+        RowBox[{"DateObject", "[", 
+          RowBox[{
+            RowBox[{"{", 
+              
+              RowBox[{"2023", ",", "2", ",", "18", ",", "15", ",", "2", ",", 
+                "12.`"}], "}"}], ",", "\"Instant\"", ",", "\"Gregorian\"", 
+            ",", 
+            RowBox[{"-", "4.`"}]}], "]"}]},
+       "DateObject",
+       Editable->False]}], ",", 
+     RowBox[{"\<\"C:\\\\Users\\\\Peter\\\\Pictures\\\\PXL_20230218_212659234.\
+jpg\"\>", "\[Rule]", 
+      TemplateBox[{
+        RowBox[{"\"Sat 18 Feb 2023 15:02:12\"", 
+          StyleBox[
+           RowBox[{"\"GMT\"", "\[InvisibleSpace]", 
+             StyleBox[
+              RowBox[{"-", "4"}], NumberMarks -> False, StripOnInput -> 
+              False]}], FontColor -> GrayLevel[0.5]]}], 
+        RowBox[{"DateObject", "[", 
+          RowBox[{
+            RowBox[{"{", 
+              
+              RowBox[{"2023", ",", "2", ",", "18", ",", "15", ",", "2", ",", 
+                "12.`"}], "}"}], ",", "\"Instant\"", ",", "\"Gregorian\"", 
+            ",", 
+            RowBox[{"-", "4.`"}]}], "]"}]},
+       "DateObject",
+       Editable->False]}], ",", 
+     RowBox[{"\<\"C:\\\\Users\\\\Peter\\\\Pictures\\\\The_Sun_by_the_\
+Atmospheric_Imaging_Assembly_of_NASA's_Solar_Dynamics_Observatory_-_20100819 \
+(1).jpg\"\>", "\[Rule]", 
+      TemplateBox[{
+        RowBox[{"\"Sun 5 Feb 2023 19:44:20\"", 
+          StyleBox[
+           RowBox[{"\"GMT\"", "\[InvisibleSpace]", 
+             StyleBox[
+              RowBox[{"-", "4"}], NumberMarks -> False, StripOnInput -> 
+              False]}], FontColor -> GrayLevel[0.5]]}], 
+        RowBox[{"DateObject", "[", 
+          RowBox[{
+            RowBox[{"{", 
+              
+              RowBox[{"2023", ",", "2", ",", "5", ",", "19", ",", "44", ",", 
+                "20.`"}], "}"}], ",", "\"Instant\"", ",", "\"Gregorian\"", 
+            ",", 
+            RowBox[{"-", "4.`"}]}], "]"}]},
+       "DateObject",
+       Editable->False]}], ",", 
+     RowBox[{"\<\"C:\\\\Users\\\\Peter\\\\Pictures\\\\The_Sun_by_the_\
+Atmospheric_Imaging_Assembly_of_NASA's_Solar_Dynamics_Observatory_-_20100819.\
+jpg\"\>", "\[Rule]", 
+      TemplateBox[{
+        RowBox[{"\"Sun 5 Feb 2023 19:44:02\"", 
+          StyleBox[
+           RowBox[{"\"GMT\"", "\[InvisibleSpace]", 
+             StyleBox[
+              RowBox[{"-", "4"}], NumberMarks -> False, StripOnInput -> 
+              False]}], FontColor -> GrayLevel[0.5]]}], 
+        RowBox[{"DateObject", "[", 
+          RowBox[{
+            RowBox[{"{", 
+              
+              RowBox[{"2023", ",", "2", ",", "5", ",", "19", ",", "44", ",", 
+                "2.`"}], "}"}], ",", "\"Instant\"", ",", "\"Gregorian\"", ",", 
+            RowBox[{"-", "4.`"}]}], "]"}]},
+       "DateObject",
+       Editable->False]}]}], "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"C:\\\\Users\\\\Peter\\\\Pictures\\\\Screenshot 2023-04-28 \
+191905.png\"\>", "\[Rule]", 
+      TemplateBox[{
+        RowBox[{"\"Fri 28 Apr 2023 19:19:09\"", 
+          StyleBox[
+           RowBox[{"\"GMT\"", "\[InvisibleSpace]", 
+             StyleBox[
+              RowBox[{"-", "4"}], NumberMarks -> False, StripOnInput -> 
+              False]}], FontColor -> GrayLevel[0.5]]}], 
+        RowBox[{"DateObject", "[", 
+          RowBox[{
+            RowBox[{"{", 
+              
+              RowBox[{"2023", ",", "4", ",", "28", ",", "19", ",", "19", ",", 
+                "9.`"}], "}"}], ",", "\"Instant\"", ",", "\"Gregorian\"", ",", 
+            RowBox[{"-", "4.`"}]}], "]"}]},
+       "DateObject",
+       Editable->False]}], ",", 
+     RowBox[{"\<\"C:\\\\Users\\\\Peter\\\\Pictures\\\\thumbnail_image001.png\"\
+\>", "\[Rule]", 
+      TemplateBox[{
+        RowBox[{"\"Thu 13 Apr 2023 10:57:06\"", 
+          StyleBox[
+           RowBox[{"\"GMT\"", "\[InvisibleSpace]", 
+             StyleBox[
+              RowBox[{"-", "4"}], NumberMarks -> False, StripOnInput -> 
+              False]}], FontColor -> GrayLevel[0.5]]}], 
+        RowBox[{"DateObject", "[", 
+          RowBox[{
+            RowBox[{"{", 
+              
+              RowBox[{"2023", ",", "4", ",", "13", ",", "10", ",", "57", ",", 
+                "6.`"}], "}"}], ",", "\"Instant\"", ",", "\"Gregorian\"", ",", 
+            RowBox[{"-", "4.`"}]}], "]"}]},
+       "DateObject",
+       Editable->False]}], ",", 
+     RowBox[{"\<\"C:\\\\Users\\\\Peter\\\\Pictures\\\\Video Projects\"\>", 
+      "\[Rule]", 
+      TemplateBox[{
+        RowBox[{"\"Tue 18 Apr 2023 14:57:10\"", 
+          StyleBox[
+           RowBox[{"\"GMT\"", "\[InvisibleSpace]", 
+             StyleBox[
+              RowBox[{"-", "4"}], NumberMarks -> False, StripOnInput -> 
+              False]}], FontColor -> GrayLevel[0.5]]}], 
+        RowBox[{"DateObject", "[", 
+          RowBox[{
+            RowBox[{"{", 
+              
+              RowBox[{"2023", ",", "4", ",", "18", ",", "14", ",", "57", ",", 
+                "10.`"}], "}"}], ",", "\"Instant\"", ",", "\"Gregorian\"", 
+            ",", 
+            RowBox[{"-", "4.`"}]}], "]"}]},
+       "DateObject",
+       Editable->False]}]}], "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{"\<\"C:\\\\Users\\\\Peter\\\\Pictures\\\\DH-IPC-HDBW4231F-AS_PTBR.\
+pdf\"\>", "\[Rule]", 
+     TemplateBox[{
+       RowBox[{"\"Tue 9 May 2023 12:54:49\"", 
+         StyleBox[
+          RowBox[{"\"GMT\"", "\[InvisibleSpace]", 
+            StyleBox[
+             RowBox[{"-", "4"}], NumberMarks -> False, StripOnInput -> 
+             False]}], FontColor -> GrayLevel[0.5]]}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             
+             RowBox[{"2023", ",", "5", ",", "9", ",", "12", ",", "54", ",", 
+               "49.`"}], "}"}], ",", "\"Instant\"", ",", "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False]}], "\[RightAssociation]"}]}], "}"}]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{{3.89509138463501*^9, 3.89509139182148*^9}, {
+   3.8950914377733803`*^9, 3.895091442215098*^9}, {3.8950916582678933`*^9, 
+   3.8950917441464424`*^9}, 3.8950923510177913`*^9},
+ CellLabel->"Out[8]=",
+ CellID->111172926,ExpressionUUID->"acf0a89c-e57b-437e-b7b8-edaad74bd0d8"]
+}, Open  ]],
+
+Cell[TextData[{
+ "Change the ",
+ Cell[BoxData[
+  TagBox[
+   ButtonBox[
+    StyleBox["DateGranularity", "SymbolsRefLink",
+     ShowStringCharacters->True,
+     FontFamily->"Source Sans Pro"],
+    BaseStyle->Dynamic[
+      FEPrivate`If[
+       CurrentValue["MouseOver"], {
+       "Link", FontColor -> RGBColor[0.8549, 0.39608, 0.1451]}, {"Link"}]],
+    ButtonData->"paclet:ref/DateGranularity",
+    ContentPadding->False],
+   MouseAppearanceTag["LinkHand"]]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "f0f739b2-81c0-4bd3-8ed2-c3fadf6d5839"],
+ " to Month:"
+}], "Text",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8950917749218736`*^9, 3.8950917804727364`*^9}, 
+   3.8950919247638216`*^9},
+ CellID->350205798,ExpressionUUID->"c7e4e830-6d11-45ca-9de1-3bb1af1310cc"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Map", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"DateObject", "[", 
+     RowBox[{
+      RowBox[{"FileDate", "[", "#", "]"}], ",", 
+      RowBox[{"DateGranularity", "->", "\"\<Month\>\""}]}], "]"}], "&"}], ",", 
+   RowBox[{"TakeSmallestElements", "[", 
+    RowBox[{"pictureFiles", ",", "6", ",", 
+     RowBox[{
+      RowBox[{"Order", "[", 
+       RowBox[{
+        RowBox[{"DateValue", "[", 
+         RowBox[{
+          RowBox[{"FileDate", "[", "#1", "]"}], ",", "\"\<Month\>\""}], "]"}],
+         ",", 
+        RowBox[{"DateValue", "[", 
+         RowBox[{
+          RowBox[{"FileDate", "[", "#2", "]"}], ",", "\"\<Month\>\""}], 
+         "]"}]}], "]"}], "&"}]}], "]"}], ",", 
+   RowBox[{"{", "2", "}"}]}], "]"}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.895091637485521*^9, 3.8950917431987867`*^9}, {
+   3.895091781148817*^9, 3.895091814155801*^9}, 3.8950922185397234`*^9},
+ CellLabel->"In[9]:=",
+ CellID->76975904,ExpressionUUID->"3f5b4cd1-f680-4e23-b524-146dee6cd041"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{
+       RowBox[{"\"Jan 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "1"}], "}"}], ",", "\"Month\"", ",", 
+           "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Jan 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "1"}], "}"}], ",", "\"Month\"", ",", 
+           "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Jan 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "1"}], "}"}], ",", "\"Month\"", ",", 
+           "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{
+       RowBox[{"\"Feb 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "2"}], "}"}], ",", "\"Month\"", ",", 
+           "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Feb 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "2"}], "}"}], ",", "\"Month\"", ",", 
+           "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Feb 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "2"}], "}"}], ",", "\"Month\"", ",", 
+           "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Feb 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "2"}], "}"}], ",", "\"Month\"", ",", 
+           "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Feb 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "2"}], "}"}], ",", "\"Month\"", ",", 
+           "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Feb 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "2"}], "}"}], ",", "\"Month\"", ",", 
+           "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Feb 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "2"}], "}"}], ",", "\"Month\"", ",", 
+           "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Feb 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "2"}], "}"}], ",", "\"Month\"", ",", 
+           "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Feb 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "2"}], "}"}], ",", "\"Month\"", ",", 
+           "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Feb 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "2"}], "}"}], ",", "\"Month\"", ",", 
+           "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Feb 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "2"}], "}"}], ",", "\"Month\"", ",", 
+           "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     TemplateBox[{
+       RowBox[{"\"Apr 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "4"}], "}"}], ",", "\"Month\"", ",", 
+           "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Apr 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "4"}], "}"}], ",", "\"Month\"", ",", 
+           "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False], ",", 
+     TemplateBox[{
+       RowBox[{"\"Apr 2023\""}], 
+       RowBox[{"DateObject", "[", 
+         RowBox[{
+           RowBox[{"{", 
+             RowBox[{"2023", ",", "4"}], "}"}], ",", "\"Month\"", ",", 
+           "\"Gregorian\"", ",", 
+           RowBox[{"-", "4.`"}]}], "]"}]},
+      "DateObject",
+      Editable->False]}], "}"}], ",", 
+   RowBox[{"{", 
+    TemplateBox[{
+      RowBox[{"\"May 2023\""}], 
+      RowBox[{"DateObject", "[", 
+        RowBox[{
+          RowBox[{"{", 
+            RowBox[{"2023", ",", "5"}], "}"}], ",", "\"Month\"", ",", 
+          "\"Gregorian\"", ",", 
+          RowBox[{"-", "4.`"}]}], "]"}]},
+     "DateObject",
+     Editable->False], "}"}]}], "}"}]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{{3.895091798238659*^9, 3.8950918147103314`*^9}, 
+   3.8950923513872166`*^9},
+ CellLabel->"Out[9]=",
+ CellID->279259670,ExpressionUUID->"84c612d9-4f24-4ac6-9bce-cacd8fa9f8d4"]
 }, Open  ]]
 }, Open  ]],
 
-Cell["Options", "Subsection",
- CellTags->"DefaultContent",
- CellID->879773335,ExpressionUUID->"068ad37a-c748-4dca-b627-595c3d7e0eab"],
-
-Cell["Applications", "Subsection",
- CellTags->"DefaultContent",
- CellID->542143288,ExpressionUUID->"f1cb54fe-bd05-4539-956f-b15eaccf7aa1"],
+Cell[CellGroupData[{
 
 Cell["Properties and Relations", "Subsection",
- CellTags->"DefaultContent",
- CellID->727494039,ExpressionUUID->"88092200-fcb2-4c86-b889-eb9bfa26d989"],
+ CellChangeTimes->{{3.8964736510527277`*^9, 3.896473656008298*^9}},
+ CellID->250602375,ExpressionUUID->"197ab273-a719-4389-be18-d4cd8a656a1f"],
 
-Cell["Possible Issues", "Subsection",
- CellTags->"DefaultContent",
- CellID->471245215,ExpressionUUID->"7e0f0691-b571-4e86-a1ce-60e5003a56c7"],
+Cell["Flatten[TakeSmallestElements] is identical to MinimalBy.", "Text",
+ CellChangeTimes->{{3.8964736579077325`*^9, 3.896473675347602*^9}},
+ CellID->95035653,ExpressionUUID->"f74c09be-3302-46a3-905d-1a5999c837f1"],
 
-Cell["Neat Examples", "Subsection",
- CellTags->"DefaultContent",
- CellID->303071976,ExpressionUUID->"b3571cd0-43e3-40a3-a34e-e208182262c7"]
+Cell[BoxData[
+ RowBox[{"positiveNumbers", "=", 
+  RowBox[{"RandomSample", "[", 
+   RowBox[{"Catenate", "[", "Abs", "]"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.8964736804548845`*^9, 3.8964736954109*^9}},
+ CellID->682022262,ExpressionUUID->"f505fa7e-061f-4753-a40c-355da4911e28"],
+
+Cell[BoxData["TakeSmallestElements"], "Input",
+ CellChangeTimes->{{3.8964736775523868`*^9, 3.8964736790150084`*^9}},
+ CellID->764498331,ExpressionUUID->"48715737-3fec-4d77-927a-783a51b94d2c"]
+}, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1081,7 +3914,7 @@ Cell["Source & Additional Information", "Section",
  Deletable->False,
  TaggingRules->{"TemplateGroupName" -> "Source & Additional Information"},
  CellTags->{"Source & Additional Information", "TemplateSection"},
- CellID->871630328,ExpressionUUID->"3bb67d9b-d1a7-406d-b923-2e55dd79941c"],
+ CellID->871630328,ExpressionUUID->"09728041-6092-4eb0-a5c2-e7db56f71469"],
 
 Cell[CellGroupData[{
 
@@ -1105,24 +3938,26 @@ publicly credited with contributing this function.", "MoreInfoText"],
     CurrentValue[
      EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
    ImageSize->Automatic]],ExpressionUUID->
-  "251d61ec-cce2-48bb-a9c7-d6a3ec5af90d"]
+  "6ef4c68e-6a26-4e10-9d7d-6ad72b9281a8"]
 }], "Subsection",
  Editable->False,
  Deletable->False,
  TaggingRules->{"TemplateGroupName" -> "Contributed By"},
  DefaultNewCellStyle->"Text",
  CellTags->{"Contributed By", "ContributorInformation", "TemplateCellGroup"},
- CellID->771147648,ExpressionUUID->"d35c72f3-7a88-4de6-a26a-3b2b941f44d7"],
+ CellID->771147648,ExpressionUUID->"0a154732-61d7-4ed7-92a3-27d37a52e6d8"],
 
-Cell["Author Name", "Text",
+Cell["Peter Cullen Burbery", "Text",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
        WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.8950918330755577`*^9, 3.895091836320071*^9}},
  CellTags->{"DefaultContent", "TabNext"},
- CellID->855757352,ExpressionUUID->"0ca60ef5-68d4-419e-9dbf-862db245e3ba"]
+ CellID->855757352,ExpressionUUID->"324b2629-7f44-435d-9059-da939535929e"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1147,24 +3982,48 @@ concepts) that should be used to include the function in search results.",
     CurrentValue[
      EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
    ImageSize->Automatic]],ExpressionUUID->
-  "893bcfe1-7b1f-403c-807c-4ec99c920984"]
+  "e4f860b5-18c1-468e-aece-ccb47cc804af"]
 }], "Subsection",
  Editable->False,
  Deletable->False,
  TaggingRules->{"TemplateGroupName" -> "Keywords"},
  DefaultNewCellStyle->"Item",
  CellTags->{"Keywords", "TemplateCellGroup"},
- CellID->854882061,ExpressionUUID->"b405223b-3959-4880-90ab-d49b5b6578a8"],
+ CellID->854882061,ExpressionUUID->"6be58e09-b3d2-44f1-a07b-5bc7eb227079"],
 
-Cell["keyword 1", "Item",
+Cell["Lists", "Item",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
        WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.895091840980236*^9, 3.895091846868247*^9}},
  CellTags->{"DefaultContent", "TabNext"},
- CellID->560424104,ExpressionUUID->"b3a9f0f5-c12c-4123-96fa-5be24c180153"]
+ CellID->560424104,ExpressionUUID->"c22a12ef-9e67-41ea-9986-32aa61391a39"],
+
+Cell["Data", "Item",
+ TaggingRules->{},
+ CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
+       SelectedNotebook[], After, Cell]; NotebookFind[
+       SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
+       WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
+       SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
+   PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.895091840980236*^9, 3.8950918486785173`*^9}},
+ CellID->731330876,ExpressionUUID->"711007aa-d9d9-4f8e-9fad-3fc09bf58157"],
+
+Cell["Position", "Item",
+ TaggingRules->{},
+ CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
+       SelectedNotebook[], After, Cell]; NotebookFind[
+       SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
+       WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
+       SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
+   PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.895091840980236*^9, 3.895091849818528*^9}},
+ CellID->100540182,ExpressionUUID->"1c9c76e8-b02f-429e-b642-c2241d00eb6f"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1175,7 +4034,7 @@ Cell["Categories", "Subsection",
  TaggingRules->{"TemplateGroupName" -> "Categories"},
  DefaultNewCellStyle->"Item",
  CellTags->{"Categories", "TemplateCellGroup"},
- CellID->193940140,ExpressionUUID->"04cff7b7-0a8b-47fc-b017-364f979e06c6"],
+ CellID->193940140,ExpressionUUID->"ee3f3b83-2ae0-4209-812d-99b860721026"],
 
 Cell[BoxData[
  TagBox[GridBox[{
@@ -1192,8 +4051,10 @@ Cell[BoxData[
         {
          StyleBox[
           TemplateBox[{
-            CheckboxBox[False, {False, "Data Manipulation & Analysis"}], 
-            "\" \"", "\"Data Manipulation & Analysis\""},
+            CheckboxBox[
+            "Data Manipulation & Analysis", {
+             False, "Data Manipulation & Analysis"}], "\" \"", 
+            "\"Data Manipulation & Analysis\""},
            "RowDefault"],
           StripOnInput->False,
           FontSize->12]},
@@ -1302,8 +4163,10 @@ Cell[BoxData[
         {
          StyleBox[
           TemplateBox[{
-            CheckboxBox[False, {False, "Core Language & Structure"}], "\" \"",
-             "\"Core Language & Structure\""},
+            CheckboxBox[
+            "Core Language & Structure", {
+             False, "Core Language & Structure"}], "\" \"", 
+            "\"Core Language & Structure\""},
            "RowDefault"],
           StripOnInput->False,
           FontSize->12]},
@@ -1327,6 +4190,7 @@ Cell[BoxData[
          StyleBox[
           TemplateBox[{
             CheckboxBox[False, {False, "Geometry"}], "\" \"", "\"Geometry\""},
+           
            "RowDefault"],
           StripOnInput->False,
           FontSize->12]},
@@ -1420,12 +4284,12 @@ Cell[BoxData[
  Deletable->False,
  TaggingRules->{
   "CheckboxData" -> 
-   "OEM6eJxVTlsKwjAQFLHainiTHqJUCwWh0vUCabpqME1CdvOR25sgiH7NMA9mmrKGAjhqhO0Q2A\
-WuYdc+Ub5wvq9oc1GUlKJnXIiqJrBdBCtZQ3n11qHnCPtWMD6sV0ipOzhW1tB9/elmHINGKs+\
-zYjElVnRCE36N6oQaf518wOqwmP/BY28YvfMpmxegakyEMBGmf4cRyQYv8RYdQtkFI3PmDU1ZTKI=\
-"},
- CellTags->{"Categories", "Categories-Checkboxes", "CheckboxCell"},
- CellID->106874216,ExpressionUUID->"f10e93ac-0553-4e19-af79-fd73909ffb14"]
+   "OEM6eJxVj81KBDEQhEFcnRHxLniYk7d5iGHWhYWVlW1foDfbjsFMEvrnkLc3OSh66oaqrq966k\
+bYgJZAcHM0zaYj3M6f5L7o8nEl1wcvCk9bVBxeMfpsAdWnODwPU8RQxAs8zolpOGBcDBeqCiibU2Oq\
+0XulVaSfTNNaL90I3RunTKwF7mZUWhJ7kgo95hYsP9A2TxZIupeLVzzXbbPDIPQr9FsK9FdpzVOwNf\
+4HPuyjEmeu3kaAfooF7CxUX70/kSRjR+8lE3Q7i655vgGZFWC4"},
+ CellTags->{"Categories-Checkboxes", "CheckboxCell"},
+ CellID->2024940489,ExpressionUUID->"6c49137b-e705-4232-8220-01505432f332"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1450,24 +4314,31 @@ related to the function.", "MoreInfoText"], Background -> GrayLevel[0.95],
     CurrentValue[
      EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
    ImageSize->Automatic]],ExpressionUUID->
-  "b25168a3-c881-46b6-8b24-356654ea6378"]
+  "53869814-33cd-4c71-a26b-bed9868d058e"]
 }], "Subsection",
  Editable->False,
  Deletable->False,
  TaggingRules->{"TemplateGroupName" -> "Related Symbols"},
  DefaultNewCellStyle->"Item",
  CellTags->{"Related Symbols", "TemplateCellGroup"},
- CellID->525877127,ExpressionUUID->"4520c8f7-6dfc-48e1-91c8-b44c6a3e6c1a"],
+ CellID->525877127,ExpressionUUID->"f4a074d0-7af4-4c91-9f15-37d4c7e8c844"],
 
-Cell["SymbolName (documented Wolfram Language symbol)", "Item",
+Cell["PositionLargest", "Item",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
        WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.8950918587417*^9, 3.8950918619985633`*^9}},
  CellTags->{"DefaultContent", "TabNext"},
- CellID->195255409,ExpressionUUID->"7a0ade4c-07f6-4cb3-ae2b-9706b54a927f"]
+ CellID->195255409,ExpressionUUID->"f1aca70d-23e3-49ab-ab31-9d534eb982b3"],
+
+Cell["PositionSmallest", "Item",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8950918627484093`*^9, 3.895091864386839*^9}},
+ CellID->397275265,ExpressionUUID->"059868e3-6245-4e01-8b54-e8fb9aa051c5"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1492,24 +4363,26 @@ repository that are related to this function.", "MoreInfoText"], Background ->
     CurrentValue[
      EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
    ImageSize->Automatic]],ExpressionUUID->
-  "93535520-64de-4634-a73b-a9e5edcdfc83"]
+  "aeb9b6d1-0d94-4085-a2b2-ce6db0c17c94"]
 }], "Subsection",
  Editable->False,
  Deletable->False,
  TaggingRules->{"TemplateGroupName" -> "Related Resource Objects"},
  DefaultNewCellStyle->"Item",
  CellTags->{"Related Resource Objects", "TemplateCellGroup"},
- CellID->869341850,ExpressionUUID->"0cbd9027-e0af-4ae6-b8f3-6d221afa018b"],
+ CellID->869341850,ExpressionUUID->"e9cd5c10-efdb-451e-a9b5-72b5008d5925"],
 
-Cell["Resource Name (resources from any Wolfram repository)", "Item",
+Cell["PositionLargest", "Item",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
        WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.895091868069376*^9, 3.8950918712914352`*^9}},
  CellTags->{"DefaultContent", "TabNext"},
- CellID->694609509,ExpressionUUID->"60646cc8-3ae8-4444-9cbe-ae6a03c76a26"]
+ CellID->694609509,ExpressionUUID->"95fd478a-00c5-4158-9807-2169f073a55a"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1534,16 +4407,17 @@ repository).", "MoreInfoText"], Background -> GrayLevel[0.95], FrameMargins ->
     CurrentValue[
      EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
    ImageSize->Automatic]],ExpressionUUID->
-  "5fbd925b-f81e-48e5-9cd0-577c86b932ed"]
+  "83c9991a-66a6-4bfd-8b56-536c86504317"]
 }], "Subsection",
  Editable->False,
  Deletable->False,
  TaggingRules->{"TemplateGroupName" -> "Source/Reference Citation"},
  DefaultNewCellStyle->"Text",
  CellTags->{"Source/Reference Citation", "TemplateCellGroup"},
- CellID->788767010,ExpressionUUID->"901aa72b-8c9e-4d05-a8f6-850a21e6e04c"],
+ CellID->788767010,ExpressionUUID->"034e4e4b-1411-4de0-9789-d38daac2052f"],
 
 Cell["Source, reference or citation information", "Text",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -1551,7 +4425,7 @@ Cell["Source, reference or citation information", "Text",
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
  CellTags->{"DefaultContent", "TabNext"},
- CellID->512303561,ExpressionUUID->"bf4b3fb9-1c83-41f5-8b31-cd1c803f9237"]
+ CellID->512303561,ExpressionUUID->"d377efe4-fa81-4c0f-81ee-c702a4be1c6a"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1576,16 +4450,17 @@ to the function.", "MoreInfoText"], Background -> GrayLevel[0.95],
     CurrentValue[
      EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
    ImageSize->Automatic]],ExpressionUUID->
-  "2d36445b-8ffc-4071-9293-394ea2eb5250"]
+  "f125a894-6f64-4342-9e11-3e019e70d236"]
 }], "Subsection",
  Editable->False,
  Deletable->False,
  TaggingRules->{"TemplateGroupName" -> "Links"},
  DefaultNewCellStyle->"Item",
  CellTags->{"Links", "TemplateCellGroup"},
- CellID->341958311,ExpressionUUID->"9c41e200-bb61-44fa-99a8-140d63ded639"],
+ CellID->341958311,ExpressionUUID->"38ca0ca0-e4b4-42e1-8848-34cc12a67fca"],
 
 Cell["Link to other related material", "Item",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -1593,7 +4468,7 @@ Cell["Link to other related material", "Item",
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
  CellTags->{"DefaultContent", "TabNext"},
- CellID->938599834,ExpressionUUID->"08defefd-838f-4351-b794-ba52bf1e3d8d"]
+ CellID->938599834,ExpressionUUID->"09048acc-2d00-427c-9fa5-55e535ffcac3"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1618,7 +4493,8 @@ Input/Output cell pairs or as symbolic ",
                ButtonBox[
                 StyleBox[
                 "VerificationTest", "SymbolsRefLink", ShowStringCharacters -> 
-                 True, FontFamily -> "Source Sans Pro"], BaseStyle -> Dynamic[
+                 True, FontFamily -> "Source Sans Pro"], BaseStyle -> 
+                Dynamic[
                   FEPrivate`If[
                    CurrentValue["MouseOver"], {
                    "Link", FontColor -> RGBColor[0.8549, 0.39608, 0.1451]}, {
@@ -1636,29 +4512,31 @@ Input/Output cell pairs or as symbolic ",
     CurrentValue[
      EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
    ImageSize->Automatic]],ExpressionUUID->
-  "f261eab7-bb75-4f4b-9ad2-98d0b5c59711"]
+  "69360ff5-b08d-46ff-8227-ba463359a8c0"]
 }], "Subsection",
  Editable->False,
  Deletable->False,
  TaggingRules->{"TemplateGroupName" -> "VerificationTests"},
  DefaultNewCellStyle->"Input",
  CellTags->{"TemplateCellGroup", "Tests", "VerificationTests"},
- CellID->187055128,ExpressionUUID->"e8f67ce9-f38c-4873-af1c-2ec7c7aa9a2a"],
+ CellID->187055128,ExpressionUUID->"65d435ce-11eb-4553-95c7-33a175fbbffa"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"MyFunction", "[", 
   RowBox[{"x", ",", "y"}], "]"}]], "Input",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellLabel->"In[3]:=",
- CellID->770806,ExpressionUUID->"d17ec7a9-df5e-4e90-9559-cc803fd24a86"],
+ CellID->770806,ExpressionUUID->"944d00b0-0222-4a8c-94c3-9e535ce3c238"],
 
 Cell[BoxData[
  RowBox[{"x", " ", "y"}]], "Output",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellLabel->"Out[3]=",
- CellID->759771806,ExpressionUUID->"c3bb624f-3975-4cc9-bc07-ccde395ba3c1"]
+ CellID->759771806,ExpressionUUID->"3e2618ea-315e-48d3-93ba-a0fe2ca94e85"]
 }, Open  ]]
 }, Open  ]],
 
@@ -1684,13 +4562,13 @@ discoverable on the correct platforms.", "MoreInfoText"], Background ->
     CurrentValue[
      EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
    ImageSize->Automatic]],ExpressionUUID->
-  "44fd38fa-d660-45e2-a608-c183f9734d33"]
+  "734c87a8-7094-4727-8d84-72ec9876b201"]
 }], "Subsection",
  Editable->False,
  Deletable->False,
  TaggingRules->{"TemplateGroupName" -> "Compatibility"},
  CellTags->{"Compatibility", "TemplateCellGroup"},
- CellID->465977791,ExpressionUUID->"8c1821c7-2b06-491b-a234-6935769d65e8"],
+ CellID->465977791,ExpressionUUID->"d43739d2-b26a-4ee8-82fc-c17bee8f4d80"],
 
 Cell[CellGroupData[{
 
@@ -1714,7 +4592,7 @@ Cell[TextData[{
     CurrentValue[
      EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
    ImageSize->Automatic]],ExpressionUUID->
-  "ad78c2fa-c9bf-430f-917e-5fdc22c08005"]
+  "d3167e50-8d54-4572-aef2-c53acfce9cee"]
 }], "Subsubsection",
  Editable->False,
  Deletable->False,
@@ -1726,11 +4604,13 @@ Cell[TextData[{
  CellTags->{
   "CompatibilityWolframLanguageVersionRequired", "TemplateCellGroup", 
    "Wolfram Language Version"},
- CellID->267876551,ExpressionUUID->"11dc60a4-f3c1-4007-9288-07be2292dae9"],
+ CellID->267876551,ExpressionUUID->"264e3bb1-5218-4b7a-9aa1-45e768314dae"],
 
-Cell["13.0+", "Text",
+Cell["13.3+", "Text",
+ TaggingRules->{},
+ CellChangeTimes->{3.895091875516468*^9},
  CellTags->{"DefaultContent", "ScrapeDefault"},
- CellID->788185540,ExpressionUUID->"2479c905-6648-49c2-95f1-3edcf0afb015"]
+ CellID->788185540,ExpressionUUID->"4d347430-1aab-4561-b3e6-8f3088c4664c"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1755,7 +4635,7 @@ function properly.", "MoreInfoText"], Background -> GrayLevel[0.95],
     CurrentValue[
      EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
    ImageSize->Automatic]],ExpressionUUID->
-  "2410c505-7896-40f1-bb73-591277fc011c"]
+  "67228c4a-220e-49cc-891a-297caab9c294"]
 }], "Subsubsection",
  Editable->False,
  Deletable->False,
@@ -1765,7 +4645,7 @@ function properly.", "MoreInfoText"], Background -> GrayLevel[0.95],
  FontSize->16,
  CellTags->{
   "CompatibilityOperatingSystem", "Operating System", "TemplateCellGroup"},
- CellID->752514832,ExpressionUUID->"fced4fcd-70c5-43e7-947f-835070b93675"],
+ CellID->752514832,ExpressionUUID->"47968225-2be5-481c-ad37-c49d692c46f3"],
 
 Cell[BoxData[
  TagBox[GridBox[{
@@ -1829,7 +4709,7 @@ V8VKrw2CoSkr4PBhG77xYRjCsNiZCaAnlIx8nJBt8hz/RIRT7YLrR8wRtF2wJ"},
  CellTags->{
   "CheckboxCell", "CompatibilityOperatingSystem", 
    "CompatibilityOperatingSystem-Checkboxes"},
- CellID->470277234,ExpressionUUID->"7eba05ca-3fdf-4822-82cd-dee9d2cf5e64"]
+ CellID->2001444614,ExpressionUUID->"471c9332-54c7-4cb3-b552-0bf3b406c782"]
 }, Closed]],
 
 Cell[CellGroupData[{
@@ -1859,7 +4739,7 @@ Cell[TextData[{
     CurrentValue[
      EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
    ImageSize->Automatic]],ExpressionUUID->
-  "d803baf9-2b8b-4032-9dfe-b3603696c32e"]
+  "de350f58-9e68-41e3-9e47-a8cbf359aded"]
 }], "Subsubsection",
  Editable->False,
  Deletable->False,
@@ -1868,7 +4748,7 @@ Cell[TextData[{
  DefaultNewCellStyle->"Item",
  FontSize->16,
  CellTags->{"CompatibilityFeatures", "Required Features", "TemplateCellGroup"},
- CellID->789112653,ExpressionUUID->"26a79551-cbe3-4b4f-a910-d836e011ceed"],
+ CellID->789112653,ExpressionUUID->"0f0c6393-2a3d-43e3-b322-67d8305931c4"],
 
 Cell[BoxData[
  TagBox[GridBox[{
@@ -1933,7 +4813,7 @@ xP33pDLt8GI6rPqOgUMS5G9YqEa2c+21GcLLebGg4nKxh8yJG5GKrGJog9Y37G/\
 obsYtD4mTxC2UWr58w3NfBx2Q=="},
  CellTags->{
   "CheckboxCell", "CompatibilityFeatures", "CompatibilityFeatures-Checkboxes"},
- CellID->32088781,ExpressionUUID->"36adfc2c-3009-4263-b8ba-fddd694938c7"]
+ CellID->95780890,ExpressionUUID->"2aa0d74d-e7b9-4d3c-b707-187bb6888602"]
 }, Closed]],
 
 Cell[CellGroupData[{
@@ -1975,7 +4855,7 @@ to be compatible. See ",
     CurrentValue[
      EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
    ImageSize->Automatic]],ExpressionUUID->
-  "ccfe9114-dd96-4237-9a42-e7b36a5d591a"]
+  "6910d58b-d0e3-4aa0-9611-3af4b5a49775"]
 }], "Subsubsection",
  Editable->False,
  Deletable->False,
@@ -1985,7 +4865,7 @@ to be compatible. See ",
  FontSize->16,
  CellTags->{
   "CompatibilityEvaluationEnvironment", "Environments", "TemplateCellGroup"},
- CellID->939592672,ExpressionUUID->"0691abd7-cb54-4205-9be9-c6e5728b71bc"],
+ CellID->939592672,ExpressionUUID->"1c276c30-0416-4a7d-8987-375bd062b448"],
 
 Cell[BoxData[
  TagBox[GridBox[{
@@ -2095,16 +4975,16 @@ Cell[BoxData[
  Deletable->False,
  TaggingRules->{
   "CheckboxData" -> 
-   "OEM6eJxdUdFqwzAMhK1tEtj2EXvPR3RpChmDlmqw58RRialjG0su5O/\
-nlMTJ9mRJd9yd5H2awxZ4UAi7k2frOYek6FDcsL0mtPmSxJAAEkmjYQfCScuQgW9u6DQqeP3BprzXy\
-tf8YIR2f64CQ3TYeoUtpB81i+7TNMGpYuxp1r0+0eYSKIv+XERkNpzeOF8FWMqI/\
-sv0t120p6jTu9KO0ZcyonGb9V7p2RmLjgd4L0xvg08jleRhcS31XTqje9TjgU92nNEouj4EpWUruW5\
-CtT3WijAC2QEVrpHxl4zyvabiOYe3SjM66wLlsXG210M4C2Ewe7kgGe8Efg82xD96LUbOL+VQrkA=\
-"},
+   "OEM6eJxdUdtqwzAMha3NBbZ9xN7zEV2WQsagpRrsOReVmDq2seRC/\
+n721jjpnnykI845kndZAVvgSSIkB8fGcQFpOWB3wf6c0uZTEEMKSCS0gudvbKtrI13DoczeGu6GD91\
+CAp0VhiHxA7tjDTm49oJWofSwG7B3EnvvVDOONOueH2hz8sSiP4PIRN2/N/bv9GcY2X8x78tF+\
+5b19q6058ArGNll54gKyI5WG7Q8wWupR+N9WiEFT4trpa7CajWiCgc+mNCjILo+\
+BGVVL7hpPdruG0kYifwdJa6Z8EtaulFR+VjAS60YrbF+5HfjfKcmfxZCb/Z0QtLOdvg1GR9/\
+71QXZn4A3oyuQA=="},
  CellTags->{
   "CheckboxCell", "CompatibilityEvaluationEnvironment", 
    "CompatibilityEvaluationEnvironment-Checkboxes"},
- CellID->360666327,ExpressionUUID->"b8ee3300-63ec-4fdc-9146-cfd02076df71"]
+ CellID->1324166627,ExpressionUUID->"050c62fd-e90f-4c0a-b4c1-56af6e6d7634"]
 }, Closed]],
 
 Cell[CellGroupData[{
@@ -2128,7 +5008,7 @@ cloud.", "MoreInfoText"], Background -> GrayLevel[0.95], FrameMargins -> 20,
     CurrentValue[
      EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
    ImageSize->Automatic]],ExpressionUUID->
-  "ca96eb94-81ad-4ac5-a08f-33968a61becf"]
+  "c2054c7f-8fcc-4075-9beb-6c1f2c590d01"]
 }], "Subsubsection",
  Editable->False,
  Deletable->False,
@@ -2137,7 +5017,7 @@ cloud.", "MoreInfoText"], Background -> GrayLevel[0.95], FrameMargins -> 20,
  DefaultNewCellStyle->"Text",
  FontSize->16,
  CellTags->{"Cloud Support", "CompatibilityCloudSupport", "TemplateCellGroup"},
- CellID->624931977,ExpressionUUID->"71774eaa-7b39-42a1-853e-11523267c151"],
+ CellID->624931977,ExpressionUUID->"eb906bbb-2d5f-4aa0-b388-3fbbbaaa332c"],
 
 Cell[BoxData[
  TagBox[GridBox[{
@@ -2175,7 +5055,7 @@ JAZLFxBaxuyKShxfvoEfKzujYRb6FXWpA="},
  CellTags->{
   "CheckboxCell", "CompatibilityCloudSupport", 
    "CompatibilityCloudSupport-Checkboxes"},
- CellID->818043737,ExpressionUUID->"de7fa612-5b8b-4d30-a9bd-c42fd61c0320"]
+ CellID->895466128,ExpressionUUID->"7fefa0fc-bc84-4fee-929d-04935efa6c76"]
 }, Closed]]
 }, Open  ]]
 }, Closed]],
@@ -2204,16 +5084,17 @@ that are otherwise beyond the scope of the function documentation.",
     CurrentValue[
      EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
    ImageSize->Automatic]],ExpressionUUID->
-  "55fb0c89-f9fc-4c19-9f91-7a9f35672773"]
+  "f90208b4-a8a7-4559-98dd-f84134b3b727"]
 }], "Section",
  Editable->False,
  Deletable->False,
  TaggingRules->{"TemplateGroupName" -> "Author Notes"},
  DefaultNewCellStyle->"Text",
  CellTags->{"Author Notes", "TemplateCellGroup"},
- CellID->897529167,ExpressionUUID->"391f5bdc-f0bb-4963-a87a-93ed0dc9e06e"],
+ CellID->897529167,ExpressionUUID->"ca056ef0-4506-43c9-8c0e-2fafe7718298"],
 
 Cell["Additional information about limitations, issues, etc.", "Text",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -2221,7 +5102,7 @@ Cell["Additional information about limitations, issues, etc.", "Text",
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
  CellTags->{"DefaultContent", "TabNext"},
- CellID->908162033,ExpressionUUID->"f850ea9d-8292-4053-9baa-574b3d6542e4"]
+ CellID->908162033,ExpressionUUID->"e1b3359d-0892-408f-999c-644fd0f9b047"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -2246,35 +5127,84 @@ resource.", "MoreInfoText"], Background -> GrayLevel[0.95], FrameMargins ->
     CurrentValue[
      EvaluationNotebook[], {TaggingRules, "ResourceCreateNotebook"}]],
    ImageSize->Automatic]],ExpressionUUID->
-  "a706df76-4754-4b99-bee1-a4b557ca41eb"]
+  "4b542131-8c04-41d4-ac74-9ee3634272a8"]
 }], "Section",
  Editable->False,
  Deletable->False,
  TaggingRules->{"TemplateGroupName" -> "Submission Notes"},
  DefaultNewCellStyle->"Text",
  CellTags->{"Submission Notes", "TemplateCellGroup"},
- CellID->321610809,ExpressionUUID->"a4ded0cd-5bfe-4b82-9abe-186b295014b3"],
+ CellID->321610809,ExpressionUUID->"1e65d451-2b0e-4663-b950-ca2f64e01a7f"],
 
-Cell["Additional information for the reviewer.", "Text",
+Cell["\<\
+I'm not sure if someone has already implemented this. I used functionality \
+that was introduced in 13.3. If you want I can make a paclet for this instead \
+of submitting it to the Function Repository. I recieved this email.\
+\>", "Text",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
        WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.895089684290206*^9, 3.8950896912058563`*^9}, {
+  3.8950918779047494`*^9, 3.895091891786044*^9}, {3.895091970358549*^9, 
+  3.8950919707256255`*^9}, {3.8950920174434476`*^9, 3.8950920456308336`*^9}},
  CellTags->{"DefaultContent", "TabNext"},
- CellID->711457694,ExpressionUUID->"2b3efb9d-2a04-4688-8a81-239d5fd65f93"]
+ CellID->711457694,ExpressionUUID->"de3fa709-2e66-4fee-aa6f-56cedb355a30"],
+
+Cell["\<\
+Dear Peter Burbury,
+
+We have received your most recent submissions to the Wolfram Function \
+Repository. Thank you for your continued interest in the repository.
+
+We have noticed that a large fraction of your submissions are minor changes \
+to existing functions, and many of them can often be implemented in different \
+and better ways. We discourage the submission of such functions, since \
+accepting them diminishes the value of the Wolfram Function Repository as a \
+resource for nontrivial new functionality. We ask that you take this into \
+account for future submissions. 
+
+As an alternative, a good way of sharing ideas and functions with other \
+Wolfram Language users is by creating posts on Wolfram Community, as we see \
+that you already have a profile there. Perhaps combining some of your \
+functions, whenever possible, and giving them a detailed explanation through \
+text would be a good way of publicizing your submissions to other users.
+
+We also note that you already have previous submissions to the Paclet \
+Repository; if you have a group of thematically related functions, you can \
+instead bundle them all into a paclet and submit them there.
+
+Thanks,
+The Wolfram Repository Team.
+\
+\>", "Text",
+ TaggingRules->{},
+ CellID->346009947,ExpressionUUID->"8b2df991-8e9b-445e-9fa9-45bae305267b"]
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{574.8, 579.6},
-WindowMargins->{{-4.8, Automatic}, {Automatic, 0}},
-TaggingRules->{
- "ResourceType" -> "Function", "ResourceCreateNotebook" -> True, 
-  "TemplateVersion" -> "1.6.4", "CreationTimestamp" -> 
-  3.8964530211273492`17.343244433551874*^9, "UpdatedTimestamp" -> 
-  3.8964530211273492`17.343244433551874*^9, "CompatibilityTest" -> 
-  HoldComplete[
+WindowSize->{1152, 585.6},
+WindowMargins->{{
+  Automatic, -5.399999999999864}, {-5.399999999999977, Automatic}},
+DockedCells->{
+  Cell[
+   BoxData[
+    TemplateBox[{}, "MainGridTemplate"]], "DockedCell", 
+   CellMargins -> {{-10, -10}, {-8, -8}}, CellFrame -> 0, Background -> 
+   RGBColor[0.92157, 0.34118, 0.10588], CellTags -> {"MainDockedCell"}, 
+   CacheGraphics -> False], 
+  Cell[
+   BoxData[
+    TemplateBox[{}, "ToolsGridTemplate"]], "DockedCell", 
+   TaggingRules -> {"Tools" -> True}, CellTags -> {"ToolbarDockedCell"}, 
+   CellFrameMargins -> {{0, 0}, {2, 2}}, CellFrame -> {{0, 0}, {1, 0}}, 
+   CacheGraphics -> False, CellOpen -> Dynamic[
+     CurrentValue[
+      EvaluationNotebook[], {TaggingRules, "ToolsOpen"}, True]]]},
+TaggingRules->{"CompatibilityTest" -> HoldComplete[
     BinaryDeserialize[
      BaseDecode[
      "OEM6eJzVWVtT20YUrjEQBhxaMulMkyc98EAyadJpO9NL2iauDcQdIMCa9JW1dGQ0rHeV3RWg\
@@ -2309,40 +5239,51 @@ F2wHvptIUTi8i5DtSFgdYydmikxQAPizZgseMKjrgaw8/RYwrhboqrgxC39hhk0t/cTg/\
 xY6tG9AO9zDs2EcDuvRetMalxpasHaEJNB0BOvNVRIPeoKRp8nbn0PKEUyeJ9+Snkce5811pZ/+\
 KouXDOV2vNqeXMp9D7QyIujZnSeKiMG4/\
 WyabbVsUI30dbWyR5mC4Y6npzAQV7A7CHW8e0ORJGTUV01ufdzMGR2GbTwVmCj3d8A9cd0NNHoiRcl\
-98fkvn3IKDA=="]]], "DefinitionNotebookFramework" -> 
-  "DefinitionNotebookClient", 
+98fkvn3IKDA=="]]], "CreationTimestamp" -> 
+  3.8950896351318336`17.343092445416346*^9, "DefinitionNotebookFramework" -> 
+  "DefinitionNotebookClient", "ResourceCreateNotebook" -> True, 
+  "ResourceType" -> "Function", 
   "RuntimeConfiguration" -> {
    "LoadingMethod" -> "Paclet", "PacletName" -> "FunctionResource", 
     "Contexts" -> {
      "FunctionResource`", "FunctionResource`DefinitionNotebook`"}, 
-    "DefaultContentMethod" -> "Legacy"}, "ToolsOpen" -> True, "StatusMessage" -> 
-  "", "SubmissionReviewData" -> {"Review" -> False}},
+    "DefaultContentMethod" -> "Legacy"}, 
+  "SubmissionReviewData" -> {
+   "Review" -> True, "SubmissionID" -> "5458", "OriginalName" -> 
+    "TakeSmallestElements", "Internal" -> 
+    "$YmgGGsd1FSunXfhX4TY0s28EktDgKhn18AHuh+UrJwk=$+rtXZpBI/qhYGWq1cBKgWA=="},
+   "ToolsOpen" -> True, "UpdatedTimestamp" -> 
+  3.895939860170127`16.343187233414312*^9, "TemplateVersion" -> "1.6.4", 
+  "StatusMessage" -> ""},
 CreateCellID->True,
 FrontEndVersion->"13.3 for Microsoft Windows (64-bit) (May 18, 2023)",
 StyleDefinitions->Notebook[{
    Cell[
-    StyleData[StyleDefinitions -> "Default.nb"]], 
-   Cell[
-    StyleData[All, "Working"], WindowToolbars -> {}, DockedCells -> {
+    CellGroupData[{
       Cell[
-       BoxData[
-        TemplateBox[{}, "MainGridTemplate"]], "DockedCell", 
-       CellMargins -> {{-10, -10}, {-8, -8}}, CellFrame -> 0, Background -> 
-       RGBColor[0.92157, 0.34118, 0.10588], CellTags -> {"MainDockedCell"}, 
-       CacheGraphics -> False], 
+       StyleData[StyleDefinitions -> "Default.nb"]], 
       Cell[
-       BoxData[
-        TemplateBox[{}, "ToolsGridTemplate"]], "DockedCell", 
-       TaggingRules -> {"Tools" -> True}, CellTags -> {"ToolbarDockedCell"}, 
-       CellFrameMargins -> {{0, 0}, {2, 2}}, CellFrame -> {{0, 0}, {1, 0}}, 
-       CacheGraphics -> False, CellOpen -> Dynamic[
-         CurrentValue[
-          EvaluationNotebook[], {TaggingRules, "ToolsOpen"}, True]]]}, 
-    PrivateNotebookOptions -> {
-     "FileOutlineCache" -> False, "SafeFileOpen" -> "IgnoreCache"}, 
-    CellLabelAutoDelete -> False, 
-    CodeAssistOptions -> {"AutoDetectHyperlinks" -> False}, 
-    AutoQuoteCharacters -> {}], 
+       StyleData[All, "Working"], WindowToolbars -> {}, DockedCells -> {
+         Cell[
+          BoxData[
+           TemplateBox[{}, "MainGridTemplate"]], "DockedCell", 
+          CellMargins -> {{-10, -10}, {-8, -8}}, CellFrame -> 0, Background -> 
+          RGBColor[0.92157, 0.34118, 0.10588], CellTags -> {"MainDockedCell"},
+           CacheGraphics -> False], 
+         Cell[
+          BoxData[
+           TemplateBox[{}, "ToolsGridTemplate"]], "DockedCell", 
+          TaggingRules -> {"Tools" -> True}, 
+          CellTags -> {"ToolbarDockedCell"}, 
+          CellFrameMargins -> {{0, 0}, {2, 2}}, CellFrame -> {{0, 0}, {1, 0}},
+           CacheGraphics -> False, CellOpen -> Dynamic[
+            CurrentValue[
+             EvaluationNotebook[], {TaggingRules, "ToolsOpen"}, True]]]}, 
+       PrivateNotebookOptions -> {
+        "FileOutlineCache" -> False, "SafeFileOpen" -> "IgnoreCache"}, 
+       CellLabelAutoDelete -> False, 
+       CodeAssistOptions -> {"AutoDetectHyperlinks" -> False}, 
+       AutoQuoteCharacters -> {}]}, Open]], 
    Cell["Hint Styles", "Section"], 
    Cell[
     StyleData["MoreInfoText", StyleDefinitions -> StyleData["Text"]], 
@@ -2739,7 +5680,8 @@ VX/aMEEQzrerjFhhelYAzofFB3r8AgApYdcE
           Background -> RGBColor[0.96078, 0.96078, 0.96078], FrameStyle -> 
           RGBColor[0.89804, 0.89804, 0.89804], FrameMargins -> 8, 
           StripOnInput -> False], TooltipDelay -> 0.1, 
-         TooltipStyle -> {Background -> None, CellFrame -> 0}], Annotation[#, 
+         TooltipStyle -> {Background -> None, CellFrame -> 0}], 
+        Annotation[#, 
          Framed[
           Style[
           RSNB`$$tooltip, "Text", FontColor -> 
@@ -3116,6 +6058,7 @@ AsyncronousResourceInformationUpdates = False,
                   FontColor -> RGBColor[0.95686, 0.80196, 0.75], 
                    TaggingRules -> {"ButtonHovering" -> False}}], Evaluator -> 
                  "System"], Appearance -> {"Default" -> Image[CompressedData["
+
 1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
 UFAcikHs/4QAMWqA4BllAJchjw5tvzu19maOx1UPSQgCsoEiQHGiDHl4/3Zz
 6mVTBlwIKAtUg8eQR8f3XQtUAaq8as/zYkrFxwPrf718DEFANlAEKA6UBaoB
@@ -3334,6 +6277,7 @@ AsyncronousResourceInformationUpdates = False,
                   FontColor -> RGBColor[0.95686, 0.80196, 0.75], 
                    TaggingRules -> {"ButtonHovering" -> False}}], Evaluator -> 
                  "System"], Appearance -> {"Default" -> Image[CompressedData["
+
 1:eJxTTMoPSmNiYGAo5gASQYnljkVFiZXBAkBOaF5xZnpeaopnXklqemqRRRIz
 UFAcikHs/4QAMWqA4BllAJchjw5tvzu19maOx1UPSQgCsoEiQHGiDHl4/3Zz
 6mVTBlwIKAtUg8eQR8f3XQtUAaq8as/zYkrFxwPrf718DEFANlAEKA6UBaoB
@@ -3813,6 +6757,7 @@ AsyncronousResourceInformationUpdates = False,
                     CurrentValue[RSNB`nb$, {TaggingRules, "StatusMessage"}] = 
                     ""; DefinitionNotebookClient`$ButtonsDisabled = False; 
                     Null]; Null]]]}, Appearance -> None, Method -> "Queued"], 
+            
             ItemBox[
              StyleBox[
               DynamicBox[
@@ -4415,9 +7360,11 @@ DcvuuIyle//vxt/PCE6d
    Cell[
     StyleData["Subsection"], Evaluatable -> True, 
     CellEvaluationFunction -> (($Line = 0; Null)& ), ShowCellLabel -> False], 
+   
    Cell[
     StyleData["Subsubsection"], Evaluatable -> True, 
     CellEvaluationFunction -> (($Line = 0; Null)& ), ShowCellLabel -> False], 
+   
    Cell[
     StyleData["ExampleImage"], PageWidth :> 650, 
     CellMargins -> {{66, 66}, {16, 5}}, Evaluatable -> False, ShowCellLabel -> 
@@ -4529,7 +7476,8 @@ resource except for the definition notebook\""}, "PrettyTooltipTemplate"]],
                  DefinitionNotebookClient`CheckForUpdates[RSNB`nb$, 
                    ReleaseHold[DefinitionNotebookClient`$ButtonCode = HoldForm[
                     If[$VersionNumber >= 13., 
-                    DefinitionNotebookClient`LocalFileInputDialog["Function", 
+                    DefinitionNotebookClient`LocalFileInputDialog[
+                    "Function", 
                     ParentCell[
                     EvaluationCell[]], "Type" -> "FileOpen"], 
                     MessageDialog[
@@ -4567,7 +7515,8 @@ later."]]]]],
                  DefinitionNotebookClient`CheckForUpdates[RSNB`nb$, 
                    ReleaseHold[DefinitionNotebookClient`$ButtonCode = HoldForm[
                     If[$VersionNumber >= 13., 
-                    DefinitionNotebookClient`LocalFileInputDialog["Function", 
+                    DefinitionNotebookClient`LocalFileInputDialog[
+                    "Function", 
                     ParentCell[
                     EvaluationCell[]], "Type" -> "Directory"], 
                     MessageDialog[
@@ -4602,6 +7551,5 @@ later."]]]]],
     GrayLevel[0.9]]}, Visible -> False, FrontEndVersion -> 
   "13.3 for Microsoft Windows (64-bit) (May 18, 2023)", StyleDefinitions -> 
   "PrivateStylesheetFormatting.nb"],
-ExpressionUUID->"1e865041-c1e1-40da-ba0a-f6bd890f3224"
+ExpressionUUID->"cd5fca81-5fcb-46ac-ba3c-da015836c830"
 ]
-

@@ -605,13 +605,13 @@ Cell["Make a function to find an aliquot sequence:", "Text",
 Cell[BoxData[{
  RowBox[{
   RowBox[{"AliquotSequence", "//", "ClearAll"}], 
-  "\[IndentingNewLine]"}], "\n", 
+  "\n"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{
     RowBox[{"AliquotSequence", "::", "usage"}], "=", 
     "\"\<AliquotSequence[num] returns the aliquot sequence of num.\>\""}], 
-   ";"}], "\n"}], "\[IndentingNewLine]", 
+   ";"}], "\[IndentingNewLine]"}], "\n", 
  RowBox[{
   RowBox[{"AliquotSequence", "[", 
    RowBox[{"num_", "?", 
@@ -707,14 +707,14 @@ Cell["Make a function to find words that are almost palindromes:", "Text",
 Cell[BoxData[{
  RowBox[{
   RowBox[{"AlmostPalindrome", "//", "ClearAll"}], 
-  "\[IndentingNewLine]"}], "\n", 
+  "\n"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{
     RowBox[{"AlmostPalindrome", "::", "usage"}], "=", 
     "\"\<AlmostPalindrome[n] returns a list of words of length n that are not \
 palindromes, but become palindromes when any one letter is removed.\>\""}], 
-   ";"}], "\[IndentingNewLine]"}], "\n", 
+   ";"}], "\n"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"AlmostPalindrome", "[", 
    RowBox[{"n_", "?", 
@@ -970,14 +970,14 @@ Cell["Make a function to get balanced parentheses:", "Text",
 Cell[BoxData[{
  RowBox[{
   RowBox[{"BalancedParentheses", "//", "ClearAll"}], 
-  "\[IndentingNewLine]"}], "\n", 
+  "\n"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{
     RowBox[{"BalancedParentheses", "::", "usage"}], "=", 
     "\"\<BalancedParentheses[n] returns a list of all balanced parentheses \
 strings of length 2n. The strings are ordered lexicographically.\>\""}], 
-   ";"}], "\n"}], "\[IndentingNewLine]", 
+   ";"}], "\[IndentingNewLine]"}], "\n", 
  RowBox[{
   RowBox[{"BalancedParentheses", "[", 
    RowBox[{"n_", "?", 
@@ -1090,7 +1090,7 @@ target:\
 
 Cell[BoxData[{
  RowBox[{
-  RowBox[{"ClearAll", "[", "Coins", "]"}], "\[IndentingNewLine]"}], "\n", 
+  RowBox[{"ClearAll", "[", "Coins", "]"}], "\n"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{
@@ -1098,7 +1098,7 @@ Cell[BoxData[{
     "\"\<Coins[values][target] returns the number of coins of each value in \
 values that sum to target. Coins[target] is a function that returns a \
 function that takes a list of values as an argument.\>\""}], ";"}], 
-  "\n"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]"}], "\n", 
  RowBox[{
   RowBox[{
    RowBox[{"Coins", "[", 
@@ -1135,7 +1135,7 @@ function that takes a list of values as an argument.\>\""}], ";"}],
          RowBox[{"Length", "/@", 
           RowBox[{"IntegerPartitions", "[", 
            RowBox[{"target", ",", "Infinity", ",", "values"}], "]"}]}], 
-         "]"}]}]}], "]"}]}], "]"}]}], "\n"}], "\[IndentingNewLine]", 
+         "]"}]}]}], "]"}]}], "]"}]}], "\[IndentingNewLine]"}], "\n", 
  RowBox[{
   RowBox[{
    RowBox[{"Coins", "[", 
@@ -1542,18 +1542,18 @@ Cell[BoxData[{
 
 Cell[BoxData[{
  RowBox[{
-  RowBox[{"CollatzLength", "//", "ClearAll"}], "\[IndentingNewLine]"}], "\n", 
+  RowBox[{"CollatzLength", "//", "ClearAll"}], "\n"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{
     RowBox[{"CollatzLength", "::", "usage"}], "=", 
     "\"\<CollatzLength[n] gives the number of steps required to reach 1 from \
-n using the Collatz function.\>\""}], ";"}], "\[IndentingNewLine]"}], "\n", 
+n using the Collatz function.\>\""}], ";"}], "\n"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{"SetAttributes", "[", 
     RowBox[{"CollatzLength", ",", "Listable"}], "]"}], ";"}], 
-  "\[IndentingNewLine]"}], "\n", 
+  "\n"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"CollatzLength", "[", 
    RowBox[{"n_", "?", 
@@ -1616,18 +1616,18 @@ Cell["Write a function for the nth composite integer:", "Text",
 
 Cell[BoxData[{
  RowBox[{
-  RowBox[{"Composite", "//", "ClearAll"}], "\[IndentingNewLine]"}], "\n", 
+  RowBox[{"Composite", "//", "ClearAll"}], "\n"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{"SetAttributes", "[", 
     RowBox[{"Composite", ",", "Listable"}], "]"}], ";"}], 
-  "\[IndentingNewLine]"}], "\n", 
+  "\n"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{
     RowBox[{"Composite", "::", "usage"}], "=", 
     "\"\<Composite[n] gives the nth composite number.\>\""}], ";"}], 
-  "\[IndentingNewLine]"}], "\n", 
+  "\n"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"Composite", "[", 
    RowBox[{"n_", "?", 
@@ -1784,7 +1784,7 @@ Cell[BoxData[{
    RowBox[{
     RowBox[{"MaximumOverhang", "::", "usage"}], "=", 
     "\"\<MaximumOverhang[n] gives the maximum overhang of a stack of n \
-blocks.\>\""}], ";"}], "\[IndentingNewLine]"}], "\n", 
+blocks.\>\""}], ";"}], "\n"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"MaximumOverhang", "[", 
    RowBox[{"n_", "?", 
@@ -3764,9 +3764,8 @@ Cell["Additional information for the reviewer.", "Text",
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{1152, Automatic},
-WindowMargins->{{
-  Automatic, -5.399999999999864}, {-5.399999999999977, Automatic}},
+WindowSize->{1141.2, Automatic},
+WindowMargins->{{0, Automatic}, {0, Automatic}},
 DockedCells->{
   Cell[
    BoxData[
