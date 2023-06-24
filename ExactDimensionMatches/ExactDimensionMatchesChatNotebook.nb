@@ -1,0 +1,823 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     43500,        815]
+NotebookOptionsPosition[     42178,        787]
+NotebookOutlinePosition[     42683,        805]
+CellTagsIndexPosition[     42640,        802]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+ContainsExactly[e1,e2] yields True if e1 contains exactly the same elements \
+as e2. For example {p,q,r} contains exactly the same elements as \
+\>", "ChatInput",
+ CellChangeTimes->{{3.8966185289147716`*^9, 
+  3.8966185933020763`*^9}},ExpressionUUID->"3a520adf-d691-4539-a215-\
+ca10c1526cfc"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ResourceSearch", "[", "\"\<MultisetContainsExactly\>\"", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.896618608626292*^9, 3.8966186146044264`*^9}},
+ CellLabel->
+  "In[124]:=",ExpressionUUID->"c6180465-071c-4be5-b8f9-88460cd56c9a"],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[
+   DynamicModuleBox[{TypeSystem`NestedGrid`PackagePrivate`$state$$ = <|
+    "InitialData" -> {}, "AllowEmbedding" -> True, "InitialShape" -> 
+     TypeSystem`PackageScope`Limited[
+       TypeSystem`PackageScope`ColumnShape[
+        TypeSystem`PackageScope`UnknownShape[False]], 0, 
+       DirectedInfinity[1], {}], "InitialType" -> 
+     TypeSystem`Vector[TypeSystem`UnknownType, 0], "Meta" -> <||>, 
+     "RowTarget" -> 20, "ColumnTarget" -> 10, "Shape" -> 
+     TypeSystem`PackageScope`Limited[
+       TypeSystem`PackageScope`ColumnShape[
+        TypeSystem`PackageScope`UnknownShape[False]], 0, 
+       DirectedInfinity[1], {}], "Type" -> 
+     TypeSystem`Vector[TypeSystem`UnknownType, 0], "Path" -> {}, 
+     "DisplayedRowCount" -> 0, "DisplayedColumnCount" -> 1, "DataRowCount" -> 
+     0, "DataColumnCount" -> 1, "SortPaths" -> {}, "SortDirections" -> {}, 
+     "HiddenItemsMap" -> Null, "UpdateType" -> 1|>, 
+    TypeSystem`NestedGrid`PackagePrivate`$outputID$$, 
+    TypeSystem`NestedGrid`PackagePrivate`$path$$ = {}, 
+    TypeSystem`NestedGrid`PackagePrivate`$vPos$$ = 1, 
+    TypeSystem`NestedGrid`PackagePrivate`$hPos$$ = 1, 
+    TypeSystem`NestedGrid`PackagePrivate`$grid$$ = 
+    DynamicModule[{TypeSystem`NestedGrid`PackagePrivate`renderedGrid = Deploy[
+        Style[
+         Grid[{{
+            Item[
+             Pane[
+              Annotation[
+               EventHandler[
+                MouseAppearance[
+                 Mouseover[
+                  Style[
+                   Spacer[10], 
+                   GrayLevel[0.5]], 
+                  Style[
+                   Style[
+                    Spacer[10], 
+                    GrayLevel[0.5]], FontColor -> 
+                   RGBColor[
+                    0.27450980392156865`, 0.5372549019607843, 
+                    0.792156862745098]]], "LinkHand"], {"MouseClicked", 1} :> 
+                If[
+                  TypeSystem`NestedGrid`PackagePrivate`checkInteractivity[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                  TypeSystem`NestedGrid`PackagePrivate`updateState[
+                  TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                   TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][{}, 
+                   4]]], 
+               TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][{}, "Item",
+                 False], "Mouse"], ImageMargins -> {{5, 3}, {4, 5}}], 
+             BaseStyle -> {
+               GrayLevel[0.5], 8}]}}, 
+          BaseStyle -> {
+           ContextMenu -> 
+            Dynamic[TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger; 
+              Which[TypeSystem`NestedGrid`PackagePrivate`$lastOutputID =!= 
+                TypeSystem`NestedGrid`PackagePrivate`localHold[
+                 TypeSystem`NestedGrid`PackagePrivate`$outputID$$], {}, 
+                TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger === 
+                TypeSystem`NestedGrid`PackagePrivate`$lastContextMenuTrigger, 
+                TypeSystem`NestedGrid`PackagePrivate`$lastContextMenu, True, 
+                TypeSystem`NestedGrid`PackagePrivate`$lastContextMenuTrigger = 
+                 TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger; 
+                TypeSystem`NestedGrid`PackagePrivate`$lastContextMenu = 
+                 Block[{TypeSystem`NestedGrid`PackagePrivate`$globalScrollPos = \
+{TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$}}, 
+                   
+                   With[{TypeSystem`NestedGrid`PackagePrivate`lastPath$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPathType, 
+                    TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`$\
+lastPathIsLeafHeader, TypeSystem`NestedGrid`PackagePrivate`headerHidden$ = And[
+                    MatchQ[TypeSystem`NestedGrid`PackagePrivate`$lastPathType, 
+                    Alternatives["RowHeader", "ColumnHeader"]], 
+                    TypeSystem`NestedGrid`PackagePrivate`headerHiddenQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$]], 
+                    TypeSystem`NestedGrid`PackagePrivate`allHidden$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`allHiddenQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`anyHidden$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`anyHiddenQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`sortDirection$ = 
+                    TypeSystem`NestedGrid`PackagePrivate`columnSortDirection[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$[
+                    "SortPaths"], 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$[
+                    "SortDirections"]], 
+                    TypeSystem`NestedGrid`PackagePrivate`haveData$ = Not[
+                    FailureQ[
+                    TypeSystem`NestedGrid`PackagePrivate`datasetInitialData[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$]]], 
+                    TypeSystem`NestedGrid`PackagePrivate`isKeyDummy$ = Not[
+                    FreeQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, Keys]]}, 
+                    Join[{
+                    If[
+                    Or[
+                    Not[TypeSystem`NestedGrid`PackagePrivate`haveData$], 
+                    Not[TypeSystem`NestedGrid`PackagePrivate`anyHidden$], 
+                    TypeSystem`NestedGrid`PackagePrivate`isKeyDummy$], 
+                    Nothing, 
+                    MenuItem[
+                    "Show " <> 
+                    Which[TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "Item", "", 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "RowHeader", "Row", 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "ColumnHeader", "Column", True, ""], 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateHiddenItems[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, 
+                    "remove"]], MenuEvaluator -> Automatic]], 
+                    If[
+                    Or[
+                    Not[TypeSystem`NestedGrid`PackagePrivate`haveData$], 
+                    TypeSystem`NestedGrid`PackagePrivate`pathEmptyQ[
+                    TypeSystem`NestedGrid`PackagePrivate`$lastPath, 
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$], 
+                    TypeSystem`NestedGrid`PackagePrivate`isKeyDummy$, 
+                    And[
+                    TypeSystem`NestedGrid`PackagePrivate`allHidden$, 
+                    TypeSystem`NestedGrid`PackagePrivate`headerHidden$]], 
+                    Nothing, 
+                    MenuItem[
+                    "Hide " <> 
+                    Which[TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "Item", "", 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "RowHeader", "Row", 
+                    TypeSystem`NestedGrid`PackagePrivate`lastPathType$ == 
+                    "ColumnHeader", "Column", True, ""], 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateHiddenItems[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, "add"]], 
+                    MenuEvaluator -> Automatic]], Delimiter}, 
+                    If[
+                    And[TypeSystem`NestedGrid`PackagePrivate`haveData$, 
+                    MatchQ[TypeSystem`NestedGrid`PackagePrivate`lastPathType$, 
+                    Alternatives["ColumnHeader", "KeyDummy"]], 
+                    TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$, 
+                    Not[TypeSystem`NestedGrid`PackagePrivate`allHidden$]], {
+                    If[
+                    TypeSystem`NestedGrid`PackagePrivate`sortDirection$ =!= 
+                    "Ascending", 
+                    MenuItem["Sort", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateSort[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, 
+                    "Ascending"]], MenuEvaluator -> Automatic], Nothing], 
+                    If[
+                    TypeSystem`NestedGrid`PackagePrivate`sortDirection$ =!= 
+                    "Descending", 
+                    MenuItem["Reverse Sort", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateSort[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, 
+                    "Descending"]], MenuEvaluator -> Automatic], Nothing], 
+                    If[
+                    TypeSystem`NestedGrid`PackagePrivate`sortDirection$ =!= 
+                    None, 
+                    MenuItem["Unsort", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`updateSort[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`localHold[
+                    TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+                    TypeSystem`NestedGrid`PackagePrivate`lastPath$, None]], 
+                    MenuEvaluator -> Automatic], Nothing], Delimiter}, {}], {
+                    MenuItem["Copy Position to Clipboard", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`toCurrentPosition[
+                    TypeSystem`NestedGrid`PackagePrivate`copyClip]], 
+                    MenuEvaluator -> Automatic], 
+                    If[TypeSystem`NestedGrid`PackagePrivate`haveData$, 
+                    MenuItem["Copy Data to Clipboard", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`toCurrentData[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`copyClip]], 
+                    MenuEvaluator -> Automatic], Nothing], Delimiter, 
+                    MenuItem["Paste Position in New Cell", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`toCurrentPosition[
+                    TypeSystem`NestedGrid`PackagePrivate`cellPaste]], 
+                    MenuEvaluator -> Automatic], 
+                    If[TypeSystem`NestedGrid`PackagePrivate`haveData$, 
+                    MenuItem["Paste Data in New Cell", 
+                    KernelExecute[
+                    TypeSystem`NestedGrid`PackagePrivate`toCurrentData[
+                    TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+                    TypeSystem`NestedGrid`PackagePrivate`cellPaste]], 
+                    MenuEvaluator -> Automatic], Nothing]}]]]]], FontFamily -> 
+            "Source Sans Pro", FontSize -> 14, FontWeight -> Plain}, Dividers -> 
+          All, FrameStyle -> GrayLevel[0.7490196078431373], 
+          Spacings -> {0, 0}, Alignment -> Left, 
+          BaseStyle -> {
+           FontFamily -> "Source Sans Pro", FontSize -> 14, FontWeight -> 
+            Plain}], LineBreakWithin -> False, ContextMenu -> {}, NumberMarks -> 
+         False, ShowAutoStyles -> False]], 
+      TypeSystem`NestedGrid`PackagePrivate`initialQ = True}, 
+     Dynamic[
+      TypeSystem`NestedGrid`PackagePrivate`setupViewPath[
+      TypeSystem`NestedGrid`PackagePrivate`$path$$, If[
+         Not[TypeSystem`NestedGrid`PackagePrivate`initialQ], 
+         Module[{
+          TypeSystem`NestedGrid`PackagePrivate`tmpGrid$ = $Failed, 
+           TypeSystem`NestedGrid`PackagePrivate`tmpData$ = 
+           TypeSystem`NestedGrid`PackagePrivate`datasetData[
+            TypeSystem`NestedGrid`PackagePrivate`$state$$]}, 
+          TypeSystem`NestedGrid`PackagePrivate`tmpGrid$ = If[
+             FailureQ[TypeSystem`NestedGrid`PackagePrivate`tmpData$], 
+             TypeSystem`NestedGrid`PackagePrivate`renderedGrid, 
+             TypeSystem`NestedGrid`PackagePrivate`renderGrid[
+             TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+              TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+              TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+              TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+              TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+              TypeSystem`NestedGrid`PackagePrivate`localHold[
+              TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+             TypeSystem`NestedGrid`PackagePrivate`tmpData$]]; If[
+            Not[
+             FailureQ[TypeSystem`NestedGrid`PackagePrivate`tmpGrid$]], 
+            TypeSystem`NestedGrid`PackagePrivate`renderedGrid = 
+            TypeSystem`NestedGrid`PackagePrivate`tmpGrid$]; Null]]; 
+       TypeSystem`NestedGrid`PackagePrivate`initialQ = False; 
+       TypeSystem`NestedGrid`PackagePrivate`$vPos$$; 
+       TypeSystem`NestedGrid`PackagePrivate`$hPos$$; If[
+         FailureQ[TypeSystem`NestedGrid`PackagePrivate`renderedGrid], 
+         TypeSystem`SparseGrid[
+          TypeSystem`H["(data no longer present)"]], 
+         TypeSystem`NestedGrid`PackagePrivate`renderedGrid]], 
+      TrackedSymbols :> {
+       TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$hPos$$}], 
+     DynamicModuleValues :> {}], 
+    TypeSystem`NestedGrid`PackagePrivate`$topBar$$ = Dynamic[
+     TypeSystem`NestedGrid`PackagePrivate`makeFramedBar[
+      TypeSystem`PackageScope`SubViewPathbar[
+      TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+       TypeSystem`NestedGrid`PackagePrivate`updateState[
+       TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$path$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$vPos$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$hPos$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$grid$$, 
+        TypeSystem`NestedGrid`PackagePrivate`localHold[
+        TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]]], 
+     TrackedSymbols :> {TypeSystem`NestedGrid`PackagePrivate`$path$$}], 
+    TypeSystem`NestedGrid`PackagePrivate`$bottomBar$$ = Style[
+     Framed[
+      Dynamic[
+       Replace[
+       TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$, {
+        TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+           TypeSystem`NestedGrid`PackagePrivate`localHold[
+           TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][Null, 
+           Blank[]] -> "", TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+           TypeSystem`NestedGrid`PackagePrivate`localHold[
+           TypeSystem`NestedGrid`PackagePrivate`$outputID$$]][
+           Pattern[TypeSystem`NestedGrid`PackagePrivate`path$, 
+            Blank[]], 
+           Pattern[TypeSystem`NestedGrid`PackagePrivate`pathType$, 
+            Blank[]], 
+           Pattern[TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$, 
+            Blank[]]] :> (
+          Increment[TypeSystem`NestedGrid`PackagePrivate`$contextMenuTrigger]; 
+          TypeSystem`NestedGrid`PackagePrivate`$lastPath = 
+           TypeSystem`NestedGrid`PackagePrivate`path$; 
+          TypeSystem`NestedGrid`PackagePrivate`$lastPathType = 
+           TypeSystem`NestedGrid`PackagePrivate`pathType$; 
+          TypeSystem`NestedGrid`PackagePrivate`$lastPathIsLeafHeader = 
+           TypeSystem`NestedGrid`PackagePrivate`isLeafHeader$; 
+          TypeSystem`NestedGrid`PackagePrivate`$lastOutputID = 
+           TypeSystem`NestedGrid`PackagePrivate`localHold[
+            TypeSystem`NestedGrid`PackagePrivate`$outputID$$]; 
+          TypeSystem`NestedGrid`PackagePrivate`makePathTrail[
+           TypeSystem`NestedGrid`PackagePrivate`path$, 
+            TypeSystem`NestedGrid`PackagePrivate`makePathElements]), Null :> 
+         Spacer[10], Blank[] :> Spacer[10]}], 
+       TrackedSymbols :> {
+        TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$}], FrameStyle -> 
+      None, ImageMargins -> 0, FrameMargins -> 0, Alignment -> Top, 
+      ImageSize -> {Automatic, 15}], FontSize -> 1], 
+    TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$ = Null}, 
+    DynamicWrapperBox[
+     DynamicBox[ToBoxes[
+       Dataset`DatasetContent[
+       2, "Path" -> Hold[TypeSystem`NestedGrid`PackagePrivate`$path$$], 
+        "Grid" -> Hold[TypeSystem`NestedGrid`PackagePrivate`$grid$$], "State" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$state$$], "VPos" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$vPos$$], "HPos" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$hPos$$], "TopBar" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$topBar$$], "BottomBar" -> 
+        Hold[TypeSystem`NestedGrid`PackagePrivate`$bottomBar$$], "OutputID" -> 
+        Hold[
+          TypeSystem`NestedGrid`PackagePrivate`localHold[
+          TypeSystem`NestedGrid`PackagePrivate`$outputID$$]]], StandardForm],
+      ImageSizeCache->{20., {12.08103346289024, 17.81296688844338}},
+      TrackedSymbols:>{
+       TypeSystem`NestedGrid`PackagePrivate`$state$$, 
+        TypeSystem`NestedGrid`PackagePrivate`$grid$$}], 
+     TypeSystem`NestedGrid`PackagePrivate`mouseAnnotation$$ = 
+     MouseAnnotation[],
+     ImageSizeCache->{20., {12.08103346289024, 17.81296688844338}}],
+    BaseStyle->{LineBreakWithin -> False},
+    DynamicModuleValues:>{},
+    Initialization:>(TypeSystem`NestedGrid`PackagePrivate`$outputID$$ = 
+     CreateUUID[]),
+    UnsavedVariables:>{TypeSystem`NestedGrid`PackagePrivate`$outputID$$}],
+   Deploy,
+   DefaultBaseStyle->"Deploy"],
+  Dataset`InterpretDataset[1],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ CellChangeTimes->{3.8966186168781114`*^9},
+ CellLabel->
+  "Out[124]=",ExpressionUUID->"972ce947-8764-4505-99ec-79783aec5f0b"],
+
+Cell[TextData[{
+ "The function ",
+ Cell[BoxData[
+  TemplateBox[{"ContainsExactly", "paclet:ref/ContainsExactly"},
+   "TextRefLink"]],ExpressionUUID->"c077ef1d-40ec-4366-aeb6-7a07bfdfc39b"],
+ " does not exist in the Wolfram Language. However, there are several \
+built-in functions that can perform similar tasks. If you tell me more about \
+what you are trying to accomplish, I can help you find the appropriate \
+function. Additionally, it looks like you are trying to search for a resource \
+related to ",
+ Cell[BoxData[
+  TemplateBox[{"MultisetContainsExactly"},
+   "ChatCodeInlineTemplate"]], "ChatCode",
+  Background->None,ExpressionUUID->"decd0eee-8f44-443a-9637-3641464c08d0"],
+ ", but the ",
+ Cell[BoxData[
+  TemplateBox[{"ResourceSearch", "paclet:ref/ResourceSearch"},
+   "TextRefLink"]],ExpressionUUID->"377a090a-66fe-4ecf-b0e2-6e84fe61edfe"],
+ " function did not return any results. Can you provide more information \
+about what you are searching for?"
+}], "AssistantOutputWarning",
+ CellDingbat->Cell[
+   BoxData[
+    PaneBox[
+     TemplateBox[{}, "ChatIconCodeAssistant"], ContentPadding -> False, 
+     FrameMargins -> 0, ImageSize -> {35, 35}, ImageSizeAction -> 
+     "ShrinkToFit", Alignment -> {Center, Center}]], Background -> None],
+ TaggingRules-><|
+  "CellToStringData" -> 
+   "The function `ContainsExactly` does not exist in the Wolfram Language. \
+However, there are several built-in functions that can perform similar tasks. \
+If you tell me more about what you are trying to accomplish, I can help you \
+find the appropriate function. Additionally, it looks like you are trying to \
+search for a resource related to `MultisetContainsExactly`, but the \
+`ResourceSearch` function did not return any results. Can you provide more \
+information about what you are searching for?", "MessageTag" -> "[WARNING]", 
+   "ChatData" -> 
+   "OEM6eJyNV91uG8cVRhqnrdi6fwgK9G6cGmidUjSsNhcWEBSsLNlCRUsQWSiBrITD3bPklLMzm5\
+lZUdsgD9K+Sd+mV70o+hD9zswuf6QEqAAby505/9/5ztnhL/\
+fHvaH3ygdpMvJ7wzrYUgaV8Xs8n1iHn/7RxNWEV3+Sni6cLauwc/XJ0UKGI2sC3YUj0hpXoMwrMz+\
+pTRaUNd95/cL6cHwrdS352rde/3D7uqPqof1f8I1XTt2SeWsDzaxd+g9OpPbw+\
+ed89gYBWteckZmHxdGv8PZVY2Spsq0YtxX+7MTRVzWZrLkgI3Vo3D/+zn///OP++\
+CenJtN1Tq3OHbm9kbyb2CUZv/P68YjcnEZIiZzjvzabH4xsTnr8eF6F/d8PPtkPtZvZ/\
+fFPEaOHaXpo+vF4YVcjZVSp/kb5jokfTaisyEkoIVfEv39D4scTa7U/NnKmIdDl5NHEVhdH7+\
+HhlQxyiIcfds4V7/tHZ4hs+D2cOqtp/H3f+EDl/vgHGdfAhPF/P/\
+zc1kI6ElIsSFdFrcWV1YWTpTiTZl5DkZAtqoJAoikXRwhWdFALAwEVTvzVzoTyIliRWxEWJAqrtV0B\
+OIe93sfivCjIPVTt6zk8jTgRMyAyF9aIytGtsrUXylR18AOIv4FvolB3gpyzLr46vqu0VCa9EWUbtP\
+DJeu1hrjY5OXYy92IF7IgVYhYrZ818W4OtA9uBHK6UshEzEkhQUTPsOSJl6A4VUVzKPKqOHqQUbMyt\
+VFgIi58OQpXKPDInDFFO+UBcLZQm0SDbvqJMSY26Q/GDlPTjnUyaWI+\
+kU5omaRz0er8Wr8kAHVqcGh9cnZqs1+vqqFBYJ/EWrifh5FxYOFvP+\
+WdnseuvJFLIjAZigljWqWRHHGWEZhQFWnUT6ULi1YzIcJ5uyQWkBXlK6eTmTvdNZ6GF20CMgXctnW5\
+imFtlixDsekBq3Wxpjrq2dM+\
+osI7tc4y58jhqkgOdgwMBJsCvBMiVdeyCQyyhtSzKGpWTOWpFneAasGJeK7Qzqu4jdodnV8PPx7A3h\
+wfRbbR1haxTW3JDwhb3dAQ59wk7OQIKFI9DU8WrnfyhuD59e3J+0xfXV8PLt6dvX+\
+MRnl8fX16eX9709j7uHndUyQ71nJE25N+07RJlOmX3HJBhu4ReaLUkZLqUOfd/yf28BABndbqXcZ+\
+vlNYCHYr/XW1iwOiXtg+\
+jsRgBIncCdWvx3wXokb6rBQCLUt5LHWMCJUXpxUzbbMl5YYt9kAKUo3eFCinBwC6h3jJbAhxLSPBZo\
+u7oqO7oZAVTQlaVRsSgycPedDrtDnusnF9sKroxZLjaXcCwmNsa8lsmkUh5a1UuZDlTwEdo0sUsDbP\
+IjP5QTKejpp1veOpm4PXdTTR75RTqAIgvBAjF8Vxl4ks8cyYn9FkMbe0WYis7fzTaRng1N7Dy9O6LA\
+/E70Xxx8BRaT0cX55eT4dvJk51Ug+fYmkSVQ+SLLhgG2JY+0bZVv8sK+\
+UwCpl3yZRT0WvrFAJQpywqJFacBoXuQZkni3dOXLwcvPxFsGUSlysRzQMScAmeu1fhuyqbfPQXBW9C\
+pbp7A+zNllmji1Jt8+cGMyG1Wl2CPuFaIWdPma7fdfIMLd+\
+gnLWekb35byUxTOKydepbIgFrPI2QnjI71JUfF8/jmWTxcGz5HPLeKVuuLkReed+fdcZI65eYT4+\
+jGWiCA0Ry4/nk8TYfP2pZAJ2AkYqSw+\
+w8HY1POMO43xUnVjIiQ3DO7WQF8lwNxbpDCOH7VliRYOCKbR9Y4AgBZntVKh33cSSuBKFqoYi6FZiC\
+GEeuIYhnZuTYaYE2Tq2j5Oa5VkM3jUHoQwDg0aKDXayZlIv0zUZWazCsuRurXyqIPkH1c+\
+At4YeMJ42QOpSVnCEwRSObMEhXvpHkNTEPklY0B8o4CLM+1nUHwViLrUOmTBRXAjnzLEC+\
+z0jUQvIj5FyXccQ/H8LoA3JAlgfRy5rIRj2JDq/\
+XxZhLKPE9D6OoM4WFTSHy3NHaFhQ0aM4ChKEQOLu7zmpItCLXYreN6YehAkjmScZZX2gbfZyvCVmlh\
+8nW2YIkI+eSppjnxtgM3SnB5wgtJr+JOsrUQMW8Um2mgeFdZsp3I48zStQ7bSY9l4xnvbF5n7TRJ1/\
+qsI+papSx+2XHul5S+\
+B3gYY3vdbKKP2OrWHvqv947acQCGYSa4phd9OrgRjSKNeHjNFqoQ9GIzNyjdjIY96FeQJs5kXLvoYK\
+ftxddV/6u+++b/k+7FMXFqrl8c/OHm8FNxSR6lzGhM0mWL649GCFp5Cvd8/uim1zuvQ5T6VPA+\
+jjvXX39zw+o2se+t9+mtBPznfV69OuyL6T3VU+CEEobpjpfOdvLfh+1AvLEr5uE+H/NOhX+eX/\
+AA6Hq+M9OuvLxsgo9R+ZIbkxc0rC9+\
+6QeMEabygC9BZvqS9y454wUg7tNNu3QG17SrsswyfNNp5Rd9cbpZY+\
+M8UGmk8YDGAECHhk3EoJw8V6nveUfD9NH87Rd3lG+x42MpNmiN9cGDlu0uOv2OIk03+\
+810t67TTfpzkB/n2hE+wkzcvxPUkZIjGZdAboRbkFvKiTJF/PSMPfwwP8nbtr34W+\
+7sbHTctcb4MX9QDTeg6LVfcBM5H++td7n/AQl2syc="|>,
+ GeneratedCell->True,
+ CellAutoOverwrite->
+  True,ExpressionUUID->"e1a268fd-195c-4a7d-80f4-f30962f991f2"]
+}, Open  ]],
+
+Cell["\<\
+ContainsExactly[{b, a, b, c}, {a, b, c}] returns True. I am thinking of \
+making a function MultisetContainsExactly[{b, a, b, c}, {a, b, c}] that \
+returns False and MultisetContainsExactly[{b, a, b, c}, {a, b, c,b}] returns \
+True. This could be related to SubsetQ. Help me write a definition for \
+MultisetContainsExactly.\
+\>", "Text",
+ CellChangeTimes->{{3.89661862758395*^9, 
+  3.8966187021259108`*^9}},ExpressionUUID->"28251729-d614-429f-8b02-\
+738b4df67071"],
+
+Cell[TextData[{
+ "I see what you're trying to do now. Here's a possible implementation for ",
+ Cell[BoxData[
+  TemplateBox[{"MultisetContainsExactly"},
+   "ChatCodeInlineTemplate"]], "ChatCode",
+  Background->None,ExpressionUUID->"8399071a-7f29-4413-b2a1-c3421788d89b"],
+ ": \n",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     BoxData[
+      DynamicModuleBox[{$CellContext`attached$$}, 
+       TagBox[
+        Cell[
+         BoxData[
+          RowBox[{
+            RowBox[{"MultisetContainsExactly", "[", 
+              RowBox[{"list1_List", ",", "list2_List"}], "]"}], ":=", "\n", 
+            "  ", 
+            RowBox[{
+              RowBox[{
+                RowBox[{"Sort", "[", "list1", "]"}], "===", 
+                RowBox[{"Sort", "[", "list2", "]"}]}], "&&", 
+              RowBox[{
+                RowBox[{"Tally", "[", "list1", "]"}], "===", 
+                RowBox[{"Tally", "[", "list2", "]"}]}]}]}]], "ChatCode", 
+         "Input", Background -> GrayLevel[1]], 
+        EventHandlerTag[{"MouseEntered" :> (Quiet[
+             Needs["Wolfram`Chatbook`" -> None]]; 
+           Symbol["Wolfram`Chatbook`ChatbookAction"]["AttachCodeButtons", 
+             Dynamic[$CellContext`attached$$], 
+             EvaluationCell[], 
+             "MultisetContainsExactly[list1_List, list2_List] := \n  \
+Sort[list1] === Sort[list2] && Tally[list1] === Tally[list2]", "Wolfram"]), 
+          Method -> "Preemptive", PassEventsDown -> Automatic, PassEventsUp -> 
+          True}]], DynamicModuleValues :> {}, 
+       TaggingRules -> <|
+        "CellToStringType" -> "InlineInteractiveCodeCell", "CodeLanguage" -> 
+         "Wolfram"|>, UnsavedVariables :> {$CellContext`attached$$}]]]},
+   "ChatCodeBlockTemplate"]], "ChatCodeBlock",
+  Background->None,ExpressionUUID->"e54bd911-5f52-406b-88e4-08363a893283"],
+ "\nThis implementation first checks if the sorted versions of the two lists \
+are identical. If they are not, then the function returns ",
+ Cell[BoxData[
+  TemplateBox[{"False", "paclet:ref/False"},
+   "TextRefLink"]],ExpressionUUID->"42a821a2-e6ea-4aee-88b9-6f47eaa6889f"],
+ " because the lists do not contain exactly the same elements. If they are \
+identical, then the function uses ",
+ Cell[BoxData[
+  TemplateBox[{"Tally", "paclet:ref/Tally"},
+   "TextRefLink"]],ExpressionUUID->"936fde20-c0d7-4540-8753-e0c67bbb3fc2"],
+ " to compare the number of occurrences of each element in both lists. If the \
+counts match for each element, then the function returns ",
+ Cell[BoxData[
+  TemplateBox[{"True", "paclet:ref/True"},
+   "TextRefLink"]],ExpressionUUID->"7e41dd57-1e60-4fdd-b337-b943563f69d2"],
+ ", otherwise it returns ",
+ Cell[BoxData[
+  TemplateBox[{"False", "paclet:ref/False"},
+   "TextRefLink"]],ExpressionUUID->"d16133fa-0eec-445a-8492-e51306ca179f"],
+ ".\n\nHere's an example of how you can use this function: \n",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     BoxData[
+      DynamicModuleBox[{$CellContext`attached$$}, 
+       TagBox[
+        Cell[
+         BoxData[
+          RowBox[{
+            RowBox[{"MultisetContainsExactly", "[", 
+              RowBox[{
+                RowBox[{"{", 
+                  RowBox[{"b", ",", "a", ",", "b", ",", "c"}], "}"}], ",", 
+                RowBox[{"{", 
+                  RowBox[{"a", ",", "b", ",", "c"}], "}"}]}], "]"}], "\n", 
+            RowBox[{"(*", " ", "True", " ", "*)"}], "\n", "\n", 
+            RowBox[{"MultisetContainsExactly", "[", 
+              RowBox[{
+                RowBox[{"{", 
+                  RowBox[{"b", ",", "a", ",", "b", ",", "c"}], "}"}], ",", 
+                RowBox[{"{", 
+                  RowBox[{"a", ",", "b", ",", "c", ",", "b"}], "}"}]}], "]"}],
+             "\n", 
+            RowBox[{"(*", " ", "True", " ", "*)"}], "\n", "\n", 
+            RowBox[{"MultisetContainsExactly", "[", 
+              RowBox[{
+                RowBox[{"{", 
+                  RowBox[{"b", ",", "a", ",", "b", ",", "c"}], "}"}], ",", 
+                RowBox[{"{", 
+                  RowBox[{"a", ",", "b", ",", "c", ",", "d"}], "}"}]}], "]"}],
+             "\n", 
+            RowBox[{"(*", " ", "False", " ", "*)"}]}]], "ChatCode", "Input", 
+         Background -> GrayLevel[1]], 
+        EventHandlerTag[{"MouseEntered" :> (Quiet[
+             Needs["Wolfram`Chatbook`" -> None]]; 
+           Symbol["Wolfram`Chatbook`ChatbookAction"]["AttachCodeButtons", 
+             Dynamic[$CellContext`attached$$], 
+             EvaluationCell[], 
+             "MultisetContainsExactly[{b, a, b, c}, {a, b, c}]\n(* True *)\n\n\
+MultisetContainsExactly[{b, a, b, c}, {a, b, c, b}]\n(* True *)\n\n\
+MultisetContainsExactly[{b, a, b, c}, {a, b, c, d}]\n(* False *)", 
+             "Wolfram"]), Method -> "Preemptive", PassEventsDown -> Automatic,
+           PassEventsUp -> True}]], DynamicModuleValues :> {}, 
+       TaggingRules -> <|
+        "CellToStringType" -> "InlineInteractiveCodeCell", "CodeLanguage" -> 
+         "Wolfram"|>, UnsavedVariables :> {$CellContext`attached$$}]]]},
+   "ChatCodeBlockTemplate"]], "ChatCodeBlock",
+  Background->None,ExpressionUUID->"575bc708-769a-44ff-903b-e5c619b48098"]
+}], "AssistantOutput",
+ CellDingbat->Cell[
+   BoxData[
+    PaneBox[
+     TemplateBox[{}, "ChatIconCodeAssistant"], ContentPadding -> False, 
+     FrameMargins -> 0, ImageSize -> {35, 35}, ImageSizeAction -> 
+     "ShrinkToFit", Alignment -> {Center, Center}]], Background -> None],
+ TaggingRules-><|
+  "CellToStringData" -> 
+   "I see what you're trying to do now. Here's a possible implementation for \
+`MultisetContainsExactly`:\n\n```mathematica\n\
+MultisetContainsExactly[list1_List, list2_List] := \n  Sort[list1] === \
+Sort[list2] && Tally[list1] === Tally[list2]\n```\n\nThis implementation \
+first checks if the sorted versions of the two lists are identical. If they \
+are not, then the function returns `False` because the lists do not contain \
+exactly the same elements. If they are identical, then the function uses \
+[Tally](paclet:ref/Tally) to compare the number of occurrences of each \
+element in both lists. If the counts match for each element, then the \
+function returns `True`, otherwise it returns `False`.\n\nHere's an example \
+of how you can use this function:\n\n```mathematica\n\
+MultisetContainsExactly[{b, a, b, c}, {a, b, c}]\n(* True *)\n\n\
+MultisetContainsExactly[{b, a, b, c}, {a, b, c, b}]\n(* True *)\n\n\
+MultisetContainsExactly[{b, a, b, c}, {a, b, c, d}]\n(* False *)\n```", 
+   "MessageTag" -> Inherited, "ChatData" -> 
+   "OEM6eJylWNtuHMcRhQ0pjjZWLkYQIG8lR7BNZbmCmPhBBASDoSSLCGkp3g0Yg6LF3pna3c72TI\
++7e7icCPqQ5DVvAfIBAfIxecp35FT3zF5IMbERAhKGfanrqVPV3PvZ9rC35732QZUZ+xsjV7Ms1cE+\
+ta5QYbn0G+X5hbNFFfwt2caezraHd/ZnKuzbMvBF2GdjcARyvC6nT+syC9qW1x5/\
+YX14cq5MreTYW4//dP244+qq/g/kxGOnz7n8wgYeWzv3N58q42HzT2TvGXyzrjnkchpm+z/\
+H6uOmVIXO1nxcF/jjp46/qbnMmhdcKhMa95c/y88/Ptse/vCgzEydcytz496tI3UxsnMu/\
+cby7SN2Uz5CSNQU/7XRvHlkczbD29MqbP9q8Ol2qN3Ybg9/\
+BB89VPNV1beHM7s40qUu9J8431DxgxEXFTsFIewm8effuPH+yFrjn5RqbHChi8mNka1e7L+\
+Dj8cqqD18fL8zbnLT3ziEZ3vvYtdZw8Pv+cYHLraH72WSgzIM//\
+7BV7Ym5ZgUzdhUk9rQsTUTpwo6VOW0hiBSLaACIdCc0z6cpQ5lYUAQ4eiPdkzaU7CUWwozpok1xi4A\
+nN1e7x49n0zYXRXt6yksjTihMRCZky2pcnyube1Jl1Ud/\
+ADXn8E2mugLYuesi0tPLiqjdJlWqGidJp+01x7q6jJnJ0bmnhbADi3gMy2cLafrEmwdRA/\
+u4UihGhozIUCTWmAvHumSL5ARLanMo+hoQQrBSt1ChxlZ/OpwqdKZR+\
+SoZM45H9DxTBumBtH2FWdaGeQdgq+EpB/PZKqM+\
+UgyVdkkiYNe7xf0OZdAh6GD0gdXpyLr9bo8aiTWKazC9HQ5GRdmztZT+bXT2NVXujJRGQ9oBF+\
+WoRRDHGeMYqQJSnXl6UxhacxcSpzO2QWEBXFK4ZTiTufLTkMLtwENgXejnGmim2tpixDsakAZ06xJj\
+rLWZI95Yp3oFx9z7bHVJAM6AwcEJsBvCZAL68QEB19Cq5mKGplTOXLF3cUlYGlaa5Qzsu4jdo9niDh\
+sSSajpCtEPEIkwCbYTmNjsznZCdZyZNDXwCTARzqkHCD4DINVNod3c9yQvcQ9UbXp6mEBVaSqyiAIq\
+PPd3tnZWbfZE+GyINA7PN77arimqBRzo/qkMbc17q+phJPq3OqcVDHWcDA06WCW2DiWtt+\
+ls7OjpiVofHUkfnJxGtUeOx0AEIV7qAgnjUEqNxXKoRrxH6JrS7PgW9HZY5B38npaQsvdi6936JfUf\
+L1zF1IPjl48/3K098XozkaoUaiiTZHRIQK+\
+c4aQ2zV51OKi30WFfaYqXgZfxYveKD8boOZVUSGwdBDgukfVF0wv7z58OHj4KYlmVJouUqECZVMOEr\
+lW4sszUf3yLhjKgg9McwfWH+pyDhQmcMnhKySX26wuAP/YF2nctPHaxJxvcOBil06MGrM5/\
+aRSmeGwWzu9ldDMreW9W/foZCToWB5yPLkfV7bi5lLxc/hzrnmxPBiBfb/\
+b77bTrQMhWxpGM5YXAkrSgazux920udWWBCoBnA5OFPOvMntTjNGvVslJ2YyIUFIzm1EBfOcDel4ih\
+LF/6LWboJGIbOHcYQQAojyutQnbOJN6Gk1aqIJYQzOgvYh1eDGP9FKXBmBN1DtpCSbOBbibR1a94sA\
+wNCigz5dUIEzwW+\
+YqFZnXkoxUr5VFHSD6OPB78MLKEsHJFEILiRCYIrDKhSUqGaryGpjGlcc2OihNFlieGjvGxXOFqEOk\
+Txp0+NjHUyXLNKZcg4svYvypgDnuah9ZJkAKsuAws7nHpSPpJSUvltsrKld5nlj0+\
+BDuodUlvpuXdoGJAxIzgGEyoVwF4ThL2YyRi808LjteB5LMsYrNqDI2+L5oIVulju/\
+rbCY3IuSTpYanLO0aZhRq3uKFldexqa51dOGNyaojaWm2c9GDqgW6wE21CetBj2mTJuVsXmecun061\
+hcZUdYiRfFVx7mvOA200k0wfq1GqRuidW2Q+tc7+\
+207AMMIE5zwgz7vnFKj2cAfmRNJT4gfrPoGp5NRsQf9EhuWSMa5gXc2yp5eV/1v+\
+u7Nt7vdi23ioDx5sPPr091H9CV7pDLjISuXzU4+\
+PILT2nO4ZPOHp73e8zrEW49IBkqcOXn95lTErXy/\
+tRwI1wLw1xsyO3TYp5NLoje46tLeFjDECd98IROVVD6EXYb0gJ7ZhXB0X7ZlYMA/LwvSHDo+\
+6Exo5zmZpMDVQEUhRSvTB8GvuR8IfoTmA5450gUKGSrUGNNgGhabdqIKrmnnQJVleLAY7Wd9OljNaL\
+FX6NTupHmjOaB6wyoaoKM814kTZABBZzLysAHrzfktenxM0wrJMXf4MKodtNCl357Bs7M+\
+IpFm0pPNrG9kYHNra5W3HKwpiXCM50cZJ89UI4jXPhwWY+HgOVgxBUyXk/joisV/NXjJlbYuP7u+\
+fv757uX6eT0GWcCbPmVv+vS6+zxtTUslhSRioJF+\
+UcbiR52DNuRLrXy6JlbXa2ipIamJD63ITd9NTn98xdaRtLXM1iaXJ8ZaPof1GHJ/\
+N0jvHGCxG31yBrAiciIarrFg8D9q82/vHSARvMzMxxtoy6UBLUS344+\
+lM3f9jGKPW3G7WHAt8HYj58hoyGmG710XLtRPePBKXqZ9ku+d+H1K4Kke0dC6kI6c0qNHj1a/g0s/+\
+ohGUkHr+6uFnUhTvV6M8mXTNbpGalheaDiSpo2vC9BHmmJtWg4LG81KbxLgvIwvkkHbbpq4jBKJJJS\
+Iaom0Lt1nETRnyHKmutaSZOa2HWdiTK4n8U11SyvephQKvEyE5hLLxpUtybCwVmQYXCvrYox+\
+CWdtlmFOlzdt9J0VKKdVLww8xks2Gd3ZItCV/oL8tuy0fue/xkPwD2qKj+\
+MFQCEUeClYmMI6BJbLrge7ZnaxfBKnWCK9nYZvj7rrir33yb3UnO9t9b7jZfz/f97P0/\
+1EMRAAX7aH7x8eHj3pxo7hbflry96qqHvtn3dGaupvHZSIJ5gi/w8+7CVr"|>,
+ GeneratedCell->True,
+ CellAutoOverwrite->
+  True,ExpressionUUID->"340f8a05-2895-4cc8-8686-d629446d52b8"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Write a one-line description explaining the function MultisetContainsExactly\
+\[CloseCurlyQuote]s basic purpose\
+\>", "ChatInput",
+ CellDingbat->Cell[
+   BoxData[
+    TemplateBox[{}, "ChatInputCellDingbat"]], Background -> None],
+ CellChangeTimes->{{3.8966187767204723`*^9, 3.8966187895001593`*^9}},
+ CellLabel->
+  "In[125]:=",ExpressionUUID->"843f2201-2764-4c77-af5e-0239de7d892a"],
+
+Cell[TextData[{
+ "The ",
+ Cell[BoxData[
+  TemplateBox[{"MultisetContainsExactly"},
+   "ChatCodeInlineTemplate"]], "ChatCode",
+  Background->None,ExpressionUUID->"65a0f978-5218-41a5-9800-4a1db71783bf"],
+ " function checks if two lists contain exactly the same elements, with the \
+same number of occurrences, regardless of their order."
+}], "ChatOutput",
+ CellDingbat->Cell[
+   BoxData[
+    PaneBox[
+     TemplateBox[{}, "ChatIconCodeAssistant"], ContentPadding -> False, 
+     FrameMargins -> 0, ImageSize -> {35, 35}, ImageSizeAction -> 
+     "ShrinkToFit", Alignment -> {Center, Center}]], Background -> None],
+ TaggingRules-><|
+  "CellToStringData" -> 
+   "The ``MultisetContainsExactly`` function checks if two lists contain \
+exactly the same elements, with the same number of occurrences, regardless of \
+their order.", "MessageTag" -> Inherited, "ChatData" -> 
+   "OEM6eJylWMtuHMcVhQw5CidWHkYQILuSI1imMhxBTLwQAcJgKMkiQlqMZwLGoCixpvvOTGWqq9\
+pV1Rx2BAH5DWeTRdb5gAD5kCyDLPIdObeqex6kKNoIAQnNetznuefe4s7PNvqdHe+\
+VD9Jk5G8OXEW8VAX71LpChvnSb6SnQ2eLMvg13saeyjb6d3YnMuxaE+\
+g87JLWOAI5Xpnx08pkQVlz5fFD68OTM6krycfeevyny8cdlZf1f8gnHjt1RuYLG2ho7dS//1RqD5t/\
+wnvP4Jt19T6ZcZjs/hyrj2sjC5Ut+bgs8MdPHX1dkcnqQzJSh9r95Rv++cdnG/\
+0f7plMVzk1MlfurR3I84GdkvEry7cPyI3pACGRY/zXRPP9A5uT7t8el2HjV71PN0Llhnaj/\
+yP46KGaLqu+3Z/Y2YEyqlB/onxFxQ8GVJTkJISQG8Wf/+\
+LGBwNrtX9i5FDjQhuTmwNbHu7ewMdjGeQOPr7fGje65W/uw7Od97DrrKb+93ztAxUb/VsZ58CE/t8/\
+/MpWQjoSUkxIl6NKiyOrR04WYl+\
+acQVBQjaACgKBplzswlnRoiz0BEQ48Uc7FMqLYEVuRZiQGFmt7QzA2ep07ovnoxG5y6J9NYalESdiC\
+ETmwhpROjpTtvJCmbIKvofrz2CbGKlzQc5ZF5eenJdaKpNWRNE4LXzSXnmoq0xOjo3MvZgBO2IGn8X\
+MWTNelmCrwHpwD0cKWYshCQRoVDHs2SNl6BwZUZzKPIqOFqQQLNTNVJgIi18dLpUq84icMEQ55T1xN\
+FGaRI1o+5IyJTXyDsGXQtKNZzJpYj6STGnqJLHX6fxCfE4G6NBiz/jgqlRknU6bR4XEOolVmJ4uJ+\
+PCxNlqzL+2Gtv6SldGMqOeGMCXeSjZEEcZoRjFCKW68HQisTQkMhynM3IBYUGcUji5uNN502po4NYT\
+feBdS6fr6OZS2iIE2xqQWtdLkqOsJdlDGlnH+\
+tnHXHls1cmA1sCeABPgtwTImXVsgoMvodEsigqZkzlyRe3FOWDFuFIoZ2TdR+\
+weTRBx2JJMRkmXiHiESIBNsF0Mtc2mwo6wliODvgImAT6hQsoBgk8wWGZTeDfFDd5L3BNV67YeZlAl\
+ZFlqBAF1vtU5PT1tNzssnBcYevtHO1/1lxQZNjeqTxpzW+H+kko4Kc+syoUshgoOhjodzBIbx9L2W+\
+L09KBuCBpfLYkfn59EtUdOBQBE4h4qwnFj4MpNhbIvB/\
+SH6NrcLPhWtPZo5F14NTbQcvf85ab4pahfbt6F1L2Dw+dfDna+GNxZCTUKlbVJoVWIgG+\
+dEcjtkjzR4KLbRoV8JkuaB1/Gi15LP+mh5mVRIrBiL8B1j6ovSLy4++\
+hR79GngjWj0lSRChUoG1PgyDUSX5yy6hd3wVAWfKDrO7B+X5kpUJjAxYcvkVxus6oA/\
+GNfFMO6idcq5nyNA+db4ljLIemTT0qZaQpblVPrCc3UWN5Zuy+OB4yO+SFHowdxZT1uzhU/\
+hz9nimbzgxHYD9r9djvd2mOyFf1oxvxCQEk6kNWDuJs215uSQCWA08GJbP5lZq+\
+LIfrVIjkpmxERkmtmNSqA77QnnhuEMPYPtXQTNBKRzZzbjwBAlIeV0mEDZ1JPE6MGqiDWUPfETsQ6v\
+JhGeqmMBlgT9Y4agolzAe7mkVUvOdAPNQro8zkVMBP8lqhMReYVJyPVa2lRB4g+\
+DvwevLCwhHEyhtCCIwSmCCRzZomSh6q8AqZx5bGNDnKTBZbH2g5x8Uwi6hDpkwYV7vl4yhBPY9LVuH\
+gY4y8KmOMu95F5ArggCwoTm3tcOuBeYmg2315QuczzxKJH+\
+3APrS7x3dTYGSYOSMwAhtFI5DIwx1mRTQi5WM3jvOO1IMkcydiMSm2D77IWYcvU8X2VTfhGhHyyVNO\
+YuF3DjEJOG7yQ9Co21aWOzrwxWnQkxc12ynpQtUAXuKnSYTnoMW3cpJzNq4xSt0/\
+HuiwjypqlKL5qOfcVpYGWuwnGr8UodZO1Lg1S/\
+76x27QDMAwzwTE97NLmiagVafjDc6JQI0EPF32D0smo2IN+\
+BWniSMa5gTZXyl68Lrtfd92bb3e7E9vEnjl+uPnrk61t8SV5pDKjPkmXTY4/\
+OoDTylO4YPNHJ53O8yrEW9uCB0qcOX795oTFLXxfmw+ESwH4202eHVrsi+\
+MLole46sLeOjBECd90zhMVVz6EXYR0TzyzM+boLm/zwIB/nhe4ObR80JrQzHM8SYGrgYqCi5anDwG/\
+pr7H+GGaD3jmcBcoeKiQQ0yDaVism4kquLqZA2WW4cGilZ90xd5iRou9QqV2x80bzQHVGxbRAB3luU\
+qcwAMIOpPmhw1Yb0pv0eNjmhZIjrnDh5bNoIUu/\
+fYMnp52EYk0kx6vZn0lA6tb64u85WBNToQjPD9MnDxTjSBeu3CYjYWDZ2DFFDBlRvHRFYv/\
+cvCSK01dfnZ1/\
+fzzvYv183oIsoA3XZG96YrX7edJY1oqKSQRAw33CxOLH3UO2uAvufDpilhdraGhhqQmPrQiN303Od3\
+hJVsH3NYyW+mcnxhL+exXQ8j9XS+9c4DFdvTJCcCKyIlouMKC3jW1+\
+a9be0gEzTNzbwVtOTegGet2dI87c9vPROxxC25nC96BvC3BNNEUbeeqYKF6wsNX/\
+C7tCv7ejN8nAizVEaJvXUhHTsT29vbidzDpxx+LAdfP8v5iYTOSVCeG+\
+KLdCi0jdSvPHBwZ08anBbgjjbA2LYeZjValBwlAbuJzpNf0mjouoz4iAyWWmsOszfVxRMxKucWVdSQ\
+9k22nSVpy20w3MUhXc/\
+qqAXO73mYGFHgeEPUF0o0r65xwJrFIOLhmqmKI9gn3bZZhbOcnbowGSTBQo54JeYiHbTK6tYWRzO0G\
+xd+Q1fKdd0aIy2HVOCysd9PjeQbYMEVeG0/\
+MbS1mzbxPwvSJnc0f0SncwERrxLdD6VXU0Pnkfmrl99c73/Ey/v8/7+\
+fpfiIkCFhpyhcJ9eVRQyHW0EZ8HOZ4xTgVRy9+vfF7ev4MuYYq//Pnb+LfZ1QmysqBH+\
+gaxvnrDZ4G3kEWC5VLdTkvvmvrodu+q5v1t8K4CwiNpcvj6J8KXOGMwwjZ2+h/sL9/8KSd7vq3+\
+Y9aOwtPOs1f0QZy7Nf2DGCJaOb/A+ZtqjY="|>,
+ GeneratedCell->True,
+ CellAutoOverwrite->
+  True,ExpressionUUID->"82a0adc5-1e3b-4881-8a53-f9c78262a5be"]
+}, Open  ]],
+
+Cell[TextData[{
+ "The ",
+ Cell[BoxData[
+ "MultisetContainsExactly"], "InlineCode",ExpressionUUID->
+  "d2cfe472-01c4-4c34-8d13-a18e78b88589"],
+ " function checks if two lists contain exactly the same elements, with the \
+same number of occurrences, regardless of their order."
+}], "Text",ExpressionUUID->"6a1e8eae-29b4-4a33-ade0-18c0bd247747"]
+},
+WindowSize->{576, 585.6},
+WindowMargins->{{
+  Automatic, -5.399999999999864}, {-5.399999999999977, Automatic}},
+TaggingRules-><|"ChatNotebookSettings" -> <|"Assistance" -> True|>|>,
+FrontEndVersion->"13.3 for Microsoft Windows (64-bit) (May 18, 2023)",
+StyleDefinitions->"Chatbook.nb",
+ExpressionUUID->"b957f8af-aae1-4bc2-859f-51adea532c70"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 302, 6, 95, "ChatInput",ExpressionUUID->"3a520adf-d691-4539-a215-ca10c1526cfc"],
+Cell[CellGroupData[{
+Cell[885, 30, 251, 5, 28, "Input",ExpressionUUID->"c6180465-071c-4be5-b8f9-88460cd56c9a"],
+Cell[1139, 37, 21171, 371, 48, "Output",ExpressionUUID->"972ce947-8764-4505-99ec-79783aec5f0b"],
+Cell[22313, 410, 4689, 81, 216, "AssistantOutputWarning",ExpressionUUID->"e1a268fd-195c-4a7d-80f4-f30962f991f2"]
+}, Open  ]],
+Cell[27017, 494, 475, 9, 104, "Text",ExpressionUUID->"28251729-d614-429f-8b02-738b4df67071"],
+Cell[27495, 505, 9668, 182, 557, "AssistantOutput",ExpressionUUID->"340f8a05-2895-4cc8-8686-d629446d52b8"],
+Cell[CellGroupData[{
+Cell[37188, 691, 392, 9, 72, "ChatInput",ExpressionUUID->"843f2201-2764-4c77-af5e-0239de7d892a"],
+Cell[37583, 702, 4234, 73, 106, "ChatOutput",ExpressionUUID->"82a0adc5-1e3b-4881-8a53-f9c78262a5be"]
+}, Open  ]],
+Cell[41832, 778, 342, 7, 81, "Text",ExpressionUUID->"6a1e8eae-29b4-4a33-ade0-18c0bd247747"]
+}
+]
+*)
+
