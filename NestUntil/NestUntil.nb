@@ -13,8 +13,10 @@ Cell["NestUntil", "Title",
  CellTags->{"Name", "TemplateCell", "Title", "TabNext"},
  CellID->863144461,ExpressionUUID->"bc5d826d-d9e8-4ea1-8f68-dccfcb2f6f6f"],
 
-Cell["One-line description explaining the function\[CloseCurlyQuote]s basic \
-purpose", "Text",
+Cell["\<\
+Applies a function to an expression until a condition is met, returning the \
+final result.\
+\>", "Text",
  Deletable->False,
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
@@ -22,6 +24,7 @@ purpose", "Text",
        WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{3.8966421466005464`*^9},
  CellTags->{"DefaultContent", "Description", "TabNext", "TemplateCell"},
  CellID->660820806,ExpressionUUID->"ae8fc085-1b9e-4e59-b027-142156959a72"],
 
@@ -60,42 +63,50 @@ evaluated before creating the Examples section below.", "MoreInfoText"],
  CellID->292731158,ExpressionUUID->"be89b47a-d448-4a66-bb89-75da70305c0c"],
 
 Cell[BoxData[
+ RowBox[{"ClearAll", "[", "NestUntil", "]"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.896642069648034*^9, 3.896642074988559*^9}},
+ CellLabel->"In[1]:=",
+ CellID->91437699,ExpressionUUID->"d635104f-bd2a-4890-bcda-484ee92e1e89"],
+
+Cell[BoxData[
  RowBox[{
   RowBox[{
-   RowBox[{"NestUntil", "[", 
-    RowBox[{"f_", ",", "expr_", ",", "test_"}], "]"}], ":=", 
-   RowBox[{"Module", "[", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{"result", "=", "expr"}], "}"}], ",", 
-     RowBox[{
-      RowBox[{"Until", "[", 
-       RowBox[{
-        RowBox[{"test", "[", "result", "]"}], ",", 
-        RowBox[{"result", "=", 
-         RowBox[{"f", "[", "result", "]"}]}]}], "]"}], ";", 
-      "\[IndentingNewLine]", "result"}]}], "]"}]}], "\n", 
-  RowBox[{"(*", 
+   RowBox[{"NestUntil", "::", "usage"}], "=", 
+   "\"\<NestUntil[\!\(\*StyleBox[\"f\", \"TI\"]\), \!\(\*StyleBox[\"expr\", \
+\"TI\"]\), \!\(\*StyleBox[\"test\", \"TI\"]\)] applies the function \
+\!\(\*StyleBox[\"f\", \"TI\"]\) to the expression \!\(\*StyleBox[\"expr\", \
+\"TI\"]\) until the condition \!\(\*StyleBox[\"test\", \"TI\"]\) is met, \
+returning the final result.\>\""}], ";"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.8966421539600534`*^9, 3.8966421600864716`*^9}, {
+  3.896642219020879*^9, 3.8966422266529975`*^9}},
+ CellLabel->"In[1]:=",
+ CellID->89079150,ExpressionUUID->"16e6c6f7-e2b5-4eec-b715-e4d3d7f2b817"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"NestUntil", "[", 
+   RowBox[{"f_", ",", "expr_", ",", "test_"}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
    RowBox[{
-    RowBox[{"NestUntil", "[", 
-     RowBox[{"f_", ",", "expr_", ",", "test_"}], "]"}], ":=", 
-    RowBox[{"Module", "[", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{"result", "=", "expr"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"result", "=", "expr"}], "}"}], ",", 
+    RowBox[{
+     RowBox[{"result", "=", 
+      RowBox[{"f", "[", "result", "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"Until", "[", 
       RowBox[{
+       RowBox[{"test", "[", "result", "]"}], ",", 
        RowBox[{"result", "=", 
-        RowBox[{"f", "[", "result", "]"}]}], ";", "\[IndentingNewLine]", 
-       RowBox[{"Until", "[", 
-        RowBox[{
-         RowBox[{"test", "[", "result", "]"}], ",", 
-         RowBox[{"result", "=", 
-          RowBox[{"f", "[", "result", "]"}]}]}], "]"}], ";", 
-       "\[IndentingNewLine]", "result"}]}], "]"}]}], "*)"}], "\n"}]], "Input",
+        RowBox[{"f", "[", "result", "]"}]}]}], "]"}], ";", 
+     "\[IndentingNewLine]", "result"}]}], "]"}]}]], "Input",
+ InitializationCell->True,
  CellChangeTimes->{{3.8964522351798286`*^9, 3.896452236541327*^9}, 
-   3.896637884788308*^9, 3.8966382127393084`*^9, 3.8966382775924325`*^9},
+   3.896637884788308*^9, 3.8966382127393084`*^9, 3.8966382775924325`*^9, {
+   3.8966420551639304`*^9, 3.8966420768161573`*^9}},
  CellTags->"DefaultContent",
- CellLabel->"In[194]:=",
+ CellLabel->"In[2]:=",
  CellID->876320555,ExpressionUUID->"64db7298-3999-4820-ac1a-6ab2d1fb6dbe"]
 }, Open  ]],
 
@@ -166,16 +177,35 @@ documentation pages for examples."}], "MoreInfoText"], Background ->
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"MyFunction", "[", "arg", "]"}]], "UsageInputs",
+ RowBox[{"NestUntil", "[", 
+  RowBox[{
+   StyleBox["f", "TI"], ",", " ", 
+   StyleBox["expr", "TI"], ",", " ", 
+   StyleBox["test", "TI"]}], "]"}]], "UsageInputs",
+ CellChangeTimes->{{3.896642167307923*^9, 3.8966421819547606`*^9}},
  FontFamily->"Source Sans Pro",
  CellTags->{"DefaultContent", "TabNext"},
  CellID->67839508,ExpressionUUID->"1e5ccf40-655a-4b21-8ce4-a0421bb8776d"],
 
 Cell[TextData[{
- "explanation of what use of the argument ",
- StyleBox["arg", "TI"],
- " does."
+ "applies the function ",
+ Cell[BoxData[
+  StyleBox["f", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "68b8c0f8-5606-4385-a30b-8dd1eee96a1b"],
+ " to the expression ",
+ Cell[BoxData[
+  StyleBox["expr", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "4fd14a80-755c-462e-8e4c-3c24bd8c5c05"],
+ " until the condition ",
+ Cell[BoxData[
+  StyleBox["test", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "46f0cab0-25d5-44e0-9430-d825bb926690"],
+ " is met, returning the final result ."
 }], "UsageDescription",
+ CellChangeTimes->{{3.8966421728771343`*^9, 3.896642192186133*^9}},
  CellTags->{"DefaultContent", "TabNext"},
  CellID->746063541,ExpressionUUID->"214bf6e2-af04-4f71-9108-fcdbad0202e3"]
 }, Open  ]]
@@ -743,13 +773,14 @@ publicly credited with contributing this function.", "MoreInfoText"],
  CellTags->{"Contributed By", "ContributorInformation", "TemplateCellGroup"},
  CellID->771147648,ExpressionUUID->"e3a429f8-1417-4ffc-a705-87f4e73b7215"],
 
-Cell["Author Name", "Text",
+Cell["Peter Cullen Burbery", "Text",
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
        WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.8966422423990755`*^9, 3.8966422457038383`*^9}},
  CellTags->{"DefaultContent", "TabNext"},
  CellID->855757352,ExpressionUUID->"fbeea4d0-916c-4582-9d01-e92eb85e9522"]
 }, Open  ]],
@@ -1277,17 +1308,879 @@ Input/Output cell pairs or as symbolic ",
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"MyFunction", "[", 
-  RowBox[{"x", ",", "y"}], "]"}]], "Input",
+ RowBox[{"?", "NestUntil"}]], "Input",
+ CellChangeTimes->{{3.896642259990334*^9, 3.896642262380393*^9}},
  CellTags->"DefaultContent",
  CellLabel->"In[3]:=",
  CellID->770806,ExpressionUUID->"2a1586e4-12e3-4ec8-94ea-fceeb4180493"],
 
 Cell[BoxData[
- RowBox[{"x", " ", "y"}]], "Output",
+ InterpretationBox[
+  StyleBox[
+   FrameBox[
+    DynamicModuleBox[{System`InformationDump`open$$ = False, 
+     System`InformationDump`mouseOver$$ = False}, 
+     PaneSelectorBox[{True->
+      TagBox[GridBox[{
+         {
+          ItemBox[
+           PaneBox[
+            StyleBox["\<\" Symbol\"\>", "InformationTitleText",
+             StripOnInput->False,
+             BaseStyle -> None],
+            FrameMargins->{{4, 0}, {-1, 1}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           PaneBox[
+            
+            StyleBox["\<\"NestUntil[\\!\\(\\*StyleBox[\\\"f\\\", \
+\\\"TI\\\"]\\), \\!\\(\\*StyleBox[\\\"expr\\\", \\\"TI\\\"]\\), \
+\\!\\(\\*StyleBox[\\\"test\\\", \\\"TI\\\"]\\)] applies the function \
+\\!\\(\\*StyleBox[\\\"f\\\", \\\"TI\\\"]\\) to the expression \
+\\!\\(\\*StyleBox[\\\"expr\\\", \\\"TI\\\"]\\) until the condition \
+\\!\\(\\*StyleBox[\\\"test\\\", \\\"TI\\\"]\\) is met, returning the final \
+result.\"\>", "InformationUsageText",
+             StripOnInput->False,
+             LineSpacing->{1.5, 1.5, 3.}],
+            FrameMargins->{{10, 10}, {8, 10}}],
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False]},
+         {
+          PaneBox[
+           TagBox[GridBox[{
+              {
+               StyleBox[
+                TagBox[
+                 TooltipBox[
+                  StyleBox["\<\" Definitions\"\>", "InformationRowLabel",
+                   StripOnInput->False],
+                  "\"Definitions\"",
+                  TooltipStyle->"TextStyling"],
+                 Annotation[#, "Definitions", "Tooltip"]& ], "DialogStyle",
+                StripOnInput->False]},
+              {
+               TemplateBox[{"\"\[ThinSpace]\"", 
+                 GridBox[{{
+                    RowBox[{
+                    RowBox[{"NestUntil", "[", 
+                    RowBox[{"f_", ",", "expr_", ",", "test_"}], "]"}], ":=", 
+                    RowBox[{"Module", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"result", "=", "expr"}], "}"}], ",", 
+                    RowBox[{
+                    RowBox[{"result", "=", 
+                    RowBox[{"f", "[", "result", "]"}]}], ";", 
+                    RowBox[{"Until", "[", 
+                    RowBox[{
+                    RowBox[{"test", "[", "result", "]"}], ",", 
+                    RowBox[{"result", "=", 
+                    RowBox[{"f", "[", "result", "]"}]}]}], "]"}], ";", 
+                    "result"}]}], "]"}]}]}, {" "}}, 
+                  GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                  DefaultBaseStyle -> "Column", 
+                  GridBoxItemSize -> {
+                   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]},
+                "RowDefault"]}
+             },
+             DefaultBaseStyle->"Column",
+             GridBoxAlignment->{"Columns" -> {{Left}}},
+             
+             GridBoxItemSize->{
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+            "Column"],
+           FrameMargins->{{6, 0}, {3, 6}}], "\<\"\"\>"},
+         {
+          PaneBox[GridBox[{
+             {
+              
+              DynamicModuleBox[{System`InformationDump`open$$ = {
+               False, False, False, False, False, False}}, 
+               StyleBox[GridBox[{
+                  {
+                   TagBox[
+                    TooltipBox[
+                    StyleBox["\<\" Full Name\"\>", "InformationRowLabel",
+                    StripOnInput->False],
+                    "\"FullName\"",
+                    TooltipStyle->"TextStyling"],
+                    
+                    Annotation[#, "FullName", 
+                    "Tooltip"]& ], "\<\"Global`NestUntil\"\>"}
+                 },
+                 AutoDelete->False,
+                 GridBoxAlignment->{"Columns" -> {Right, Left}},
+                 GridBoxDividers->None,
+                 GridBoxItemSize->{"Columns" -> {Automatic, Automatic}},
+                 GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.5599999999999999]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.8]}, 
+                    Offset[0.2]}}], "DialogStyle",
+                StripOnInput->False],
+               DynamicModuleValues:>{}]}
+            },
+            DefaultBaseStyle->"Column",
+            GridBoxAlignment->{"Columns" -> {{Left}}},
+            GridBoxDividers->{"Columns" -> {{False}}, "Rows" -> {{False}}},
+            
+            GridBoxItemSize->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+            GridBoxSpacings->{"Columns" -> {
+                Offset[0.27999999999999997`], {
+                 Offset[0.5599999999999999]}, 
+                Offset[0.27999999999999997`]}, "Rows" -> {
+                Offset[0.2], {
+                 Offset[3.6]}, 
+                Offset[0.2]}}],
+           FrameMargins->{{6, 6}, {6, 3}}], ""},
+         {
+          ItemBox[
+           TagBox[
+            ButtonBox[
+             PaneSelectorBox[{False->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "UpPointerOpener"]], True->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "UpPointerOpenerHot"]]}, Dynamic[
+              System`InformationDump`mouseOver$$]],
+             Alignment->Left,
+             Appearance->{"Default" -> None},
+             
+             ButtonFunction:>FEPrivate`Set[
+              System`InformationDump`open$$, False],
+             Evaluator->Automatic,
+             FrameMargins->{{9, 0}, {0, 0}},
+             ImageMargins->0,
+             ImageSize->Full,
+             Method->"Preemptive"],
+            
+            EventHandlerTag[{
+             "MouseEntered" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
+              "MouseExited" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
+              Method -> "Preemptive", PassEventsDown -> Automatic, 
+              PassEventsUp -> True}]],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], "\[SpanFromLeft]"}
+        },
+        AutoDelete->False,
+        FrameStyle->Directive[
+          GrayLevel[0.8], 
+          Thickness[Tiny]],
+        GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
+        GridBoxDividers->{
+         "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"], False->
+      TagBox[GridBox[{
+         {
+          ItemBox[
+           PaneBox[
+            StyleBox["\<\" Symbol\"\>", "InformationTitleText",
+             StripOnInput->False],
+            FrameMargins->{{4, 0}, {-1, 1}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           PaneBox[
+            
+            StyleBox["\<\"NestUntil[\\!\\(\\*StyleBox[\\\"f\\\", \
+\\\"TI\\\"]\\), \\!\\(\\*StyleBox[\\\"expr\\\", \\\"TI\\\"]\\), \
+\\!\\(\\*StyleBox[\\\"test\\\", \\\"TI\\\"]\\)] applies the function \
+\\!\\(\\*StyleBox[\\\"f\\\", \\\"TI\\\"]\\) to the expression \
+\\!\\(\\*StyleBox[\\\"expr\\\", \\\"TI\\\"]\\) until the condition \
+\\!\\(\\*StyleBox[\\\"test\\\", \\\"TI\\\"]\\) is met, returning the final \
+result.\"\>", "InformationUsageText",
+             StripOnInput->False,
+             LineSpacing->{1.5, 1.5, 3.}],
+            FrameMargins->{{10, 10}, {8, 10}}],
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           TagBox[
+            ButtonBox[
+             PaneSelectorBox[{False->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpener"],
+               ImageSizeCache->{10., {3., 7.}}], True->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpenerHot"],
+               ImageSizeCache->{10., {3., 7.}}]}, Dynamic[
+              System`InformationDump`mouseOver$$]],
+             Alignment->Left,
+             Appearance->{"Default" -> None},
+             
+             ButtonFunction:>FEPrivate`Set[
+              System`InformationDump`open$$, True],
+             Evaluator->Automatic,
+             FrameMargins->{{9, 0}, {0, 0}},
+             ImageMargins->0,
+             ImageSize->Full,
+             Method->"Preemptive"],
+            
+            EventHandlerTag[{
+             "MouseEntered" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
+              "MouseExited" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
+              Method -> "Preemptive", PassEventsDown -> Automatic, 
+              PassEventsUp -> True}]],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], "\[SpanFromLeft]"}
+        },
+        AutoDelete->False,
+        FrameStyle->Directive[
+          GrayLevel[0.8], 
+          Thickness[Tiny]],
+        GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
+        GridBoxDividers->{
+         "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"]}, Dynamic[System`InformationDump`open$$],
+      BaselinePosition->Baseline,
+      FrameMargins->0,
+      ImageSize->Automatic],
+     DynamicModuleValues:>{}],
+    BaseStyle->"InformationGridFrame",
+    StripOnInput->False], "InformationGridPlain",
+   StripOnInput->False],
+  InformationData[<|
+   "ObjectType" -> "Symbol", "Usage" -> 
+    "NestUntil[\!\(\*StyleBox[\"f\", \"TI\"]\), \!\(\*StyleBox[\"expr\", \"TI\
+\"]\), \!\(\*StyleBox[\"test\", \"TI\"]\)] applies the function \
+\!\(\*StyleBox[\"f\", \"TI\"]\) to the expression \!\(\*StyleBox[\"expr\", \
+\"TI\"]\) until the condition \!\(\*StyleBox[\"test\", \"TI\"]\) is met, \
+returning the final result.", "Documentation" -> None, "OwnValues" -> None, 
+    "UpValues" -> None, "DownValues" -> 
+    Information`InformationValueForm[
+     DownValues, $CellContext`NestUntil, {$CellContext`NestUntil[
+         Pattern[$CellContext`f, 
+          Blank[]], 
+         Pattern[$CellContext`expr, 
+          Blank[]], 
+         Pattern[$CellContext`test, 
+          Blank[]]] :> 
+       Module[{$CellContext`result = $CellContext`expr}, $CellContext`result = \
+$CellContext`f[$CellContext`result]; Until[
+           $CellContext`test[$CellContext`result], $CellContext`result = \
+$CellContext`f[$CellContext`result]]; $CellContext`result]}], "SubValues" -> 
+    None, "DefaultValues" -> None, "NValues" -> None, "FormatValues" -> None, 
+    "Options" -> None, "Attributes" -> {}, "FullName" -> "Global`NestUntil"|>,
+    False]]], "Output",
+ CellChangeTimes->{3.8966422627634478`*^9},
  CellTags->"DefaultContent",
  CellLabel->"Out[3]=",
- CellID->759771806,ExpressionUUID->"cb930799-5e51-4232-b238-ec8d6ac67f66"]
+ CellID->868910663,ExpressionUUID->"1d74f41e-dea7-48f4-802c-45f403158c3c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"??", "NestUntil"}]], "Input",
+ CellChangeTimes->{{3.8966422632894974`*^9, 3.8966422654482703`*^9}},
+ CellLabel->"In[4]:=",
+ CellID->428886321,ExpressionUUID->"103754a4-7b5f-4cca-ac6b-a7d92a06c7db"],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   FrameBox[
+    DynamicModuleBox[{System`InformationDump`open$$ = True, 
+     System`InformationDump`mouseOver$$ = False}, 
+     PaneSelectorBox[{True->
+      TagBox[GridBox[{
+         {
+          ItemBox[
+           PaneBox[
+            StyleBox["\<\" Symbol\"\>", "InformationTitleText",
+             StripOnInput->False,
+             BaseStyle -> None],
+            FrameMargins->{{4, 0}, {-1, 1}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           PaneBox[
+            
+            StyleBox["\<\"NestUntil[\\!\\(\\*StyleBox[\\\"f\\\", \
+\\\"TI\\\"]\\), \\!\\(\\*StyleBox[\\\"expr\\\", \\\"TI\\\"]\\), \
+\\!\\(\\*StyleBox[\\\"test\\\", \\\"TI\\\"]\\)] applies the function \
+\\!\\(\\*StyleBox[\\\"f\\\", \\\"TI\\\"]\\) to the expression \
+\\!\\(\\*StyleBox[\\\"expr\\\", \\\"TI\\\"]\\) until the condition \
+\\!\\(\\*StyleBox[\\\"test\\\", \\\"TI\\\"]\\) is met, returning the final \
+result.\"\>", "InformationUsageText",
+             StripOnInput->False,
+             LineSpacing->{1.5, 1.5, 3.}],
+            FrameMargins->{{10, 10}, {8, 10}}],
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False]},
+         {
+          PaneBox[
+           TagBox[GridBox[{
+              {
+               StyleBox[
+                TagBox[
+                 TooltipBox[
+                  StyleBox["\<\" Definitions\"\>", "InformationRowLabel",
+                   StripOnInput->False],
+                  "\"Definitions\"",
+                  TooltipStyle->"TextStyling"],
+                 Annotation[#, "Definitions", "Tooltip"]& ], "DialogStyle",
+                StripOnInput->False]},
+              {
+               TemplateBox[{"\"\[ThinSpace]\"", 
+                 GridBox[{{
+                    RowBox[{
+                    RowBox[{"NestUntil", "[", 
+                    RowBox[{"f_", ",", "expr_", ",", "test_"}], "]"}], ":=", 
+                    RowBox[{"Module", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"result", "=", "expr"}], "}"}], ",", 
+                    RowBox[{
+                    RowBox[{"result", "=", 
+                    RowBox[{"f", "[", "result", "]"}]}], ";", 
+                    RowBox[{"Until", "[", 
+                    RowBox[{
+                    RowBox[{"test", "[", "result", "]"}], ",", 
+                    RowBox[{"result", "=", 
+                    RowBox[{"f", "[", "result", "]"}]}]}], "]"}], ";", 
+                    "result"}]}], "]"}]}]}, {" "}}, 
+                  GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                  DefaultBaseStyle -> "Column", 
+                  GridBoxItemSize -> {
+                   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]},
+                "RowDefault"]}
+             },
+             DefaultBaseStyle->"Column",
+             GridBoxAlignment->{"Columns" -> {{Left}}},
+             
+             GridBoxItemSize->{
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+            "Column"],
+           FrameMargins->{{6, 0}, {3, 6}}], "\<\"\"\>"},
+         {
+          PaneBox[GridBox[{
+             {
+              
+              DynamicModuleBox[{System`InformationDump`open$$ = {
+               False, False, False, False, False, False}}, 
+               StyleBox[GridBox[{
+                  {
+                   TagBox[
+                    TooltipBox[
+                    StyleBox["\<\" Full Name\"\>", "InformationRowLabel",
+                    StripOnInput->False],
+                    "\"FullName\"",
+                    TooltipStyle->"TextStyling"],
+                    
+                    Annotation[#, "FullName", 
+                    "Tooltip"]& ], "\<\"Global`NestUntil\"\>"}
+                 },
+                 AutoDelete->False,
+                 GridBoxAlignment->{"Columns" -> {Right, Left}},
+                 GridBoxDividers->None,
+                 GridBoxItemSize->{"Columns" -> {Automatic, Automatic}},
+                 GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.5599999999999999]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.8]}, 
+                    Offset[0.2]}}], "DialogStyle",
+                StripOnInput->False],
+               DynamicModuleValues:>{}]}
+            },
+            DefaultBaseStyle->"Column",
+            GridBoxAlignment->{"Columns" -> {{Left}}},
+            GridBoxDividers->{"Columns" -> {{False}}, "Rows" -> {{False}}},
+            
+            GridBoxItemSize->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+            GridBoxSpacings->{"Columns" -> {
+                Offset[0.27999999999999997`], {
+                 Offset[0.5599999999999999]}, 
+                Offset[0.27999999999999997`]}, "Rows" -> {
+                Offset[0.2], {
+                 Offset[3.6]}, 
+                Offset[0.2]}}],
+           FrameMargins->{{6, 6}, {6, 3}}], ""},
+         {
+          ItemBox[
+           TagBox[
+            ButtonBox[
+             PaneSelectorBox[{False->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "UpPointerOpener"],
+               ImageSizeCache->{10., {3., 7.}}], True->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "UpPointerOpenerHot"],
+               ImageSizeCache->{10., {3., 7.}}]}, Dynamic[
+              System`InformationDump`mouseOver$$]],
+             Alignment->Left,
+             Appearance->{"Default" -> None},
+             
+             ButtonFunction:>FEPrivate`Set[
+              System`InformationDump`open$$, False],
+             Evaluator->Automatic,
+             FrameMargins->{{9, 0}, {0, 0}},
+             ImageMargins->0,
+             ImageSize->Full,
+             Method->"Preemptive"],
+            
+            EventHandlerTag[{
+             "MouseEntered" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
+              "MouseExited" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
+              Method -> "Preemptive", PassEventsDown -> Automatic, 
+              PassEventsUp -> True}]],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], "\[SpanFromLeft]"}
+        },
+        AutoDelete->False,
+        FrameStyle->Directive[
+          GrayLevel[0.8], 
+          Thickness[Tiny]],
+        GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
+        GridBoxDividers->{
+         "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"], False->
+      TagBox[GridBox[{
+         {
+          ItemBox[
+           PaneBox[
+            StyleBox["\<\" Symbol\"\>", "InformationTitleText",
+             StripOnInput->False],
+            FrameMargins->{{4, 0}, {-1, 1}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           PaneBox[
+            
+            StyleBox["\<\"NestUntil[\\!\\(\\*StyleBox[\\\"f\\\", \
+\\\"TI\\\"]\\), \\!\\(\\*StyleBox[\\\"expr\\\", \\\"TI\\\"]\\), \
+\\!\\(\\*StyleBox[\\\"test\\\", \\\"TI\\\"]\\)] applies the function \
+\\!\\(\\*StyleBox[\\\"f\\\", \\\"TI\\\"]\\) to the expression \
+\\!\\(\\*StyleBox[\\\"expr\\\", \\\"TI\\\"]\\) until the condition \
+\\!\\(\\*StyleBox[\\\"test\\\", \\\"TI\\\"]\\) is met, returning the final \
+result.\"\>", "InformationUsageText",
+             StripOnInput->False,
+             LineSpacing->{1.5, 1.5, 3.}],
+            FrameMargins->{{10, 10}, {8, 10}}],
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           TagBox[
+            ButtonBox[
+             PaneSelectorBox[{False->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpener"]], True->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpenerHot"]]}, Dynamic[
+              System`InformationDump`mouseOver$$]],
+             Alignment->Left,
+             Appearance->{"Default" -> None},
+             
+             ButtonFunction:>FEPrivate`Set[
+              System`InformationDump`open$$, True],
+             Evaluator->Automatic,
+             FrameMargins->{{9, 0}, {0, 0}},
+             ImageMargins->0,
+             ImageSize->Full,
+             Method->"Preemptive"],
+            
+            EventHandlerTag[{
+             "MouseEntered" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
+              "MouseExited" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
+              Method -> "Preemptive", PassEventsDown -> Automatic, 
+              PassEventsUp -> True}]],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], "\[SpanFromLeft]"}
+        },
+        AutoDelete->False,
+        FrameStyle->Directive[
+          GrayLevel[0.8], 
+          Thickness[Tiny]],
+        GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
+        GridBoxDividers->{
+         "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"]}, Dynamic[System`InformationDump`open$$],
+      BaselinePosition->Baseline,
+      FrameMargins->0,
+      ImageSize->Automatic],
+     DynamicModuleValues:>{}],
+    BaseStyle->"InformationGridFrame",
+    StripOnInput->False], "InformationGridPlain",
+   StripOnInput->False],
+  InformationData[<|
+   "ObjectType" -> "Symbol", "Usage" -> 
+    "NestUntil[\!\(\*StyleBox[\"f\", \"TI\"]\), \!\(\*StyleBox[\"expr\", \"TI\
+\"]\), \!\(\*StyleBox[\"test\", \"TI\"]\)] applies the function \
+\!\(\*StyleBox[\"f\", \"TI\"]\) to the expression \!\(\*StyleBox[\"expr\", \
+\"TI\"]\) until the condition \!\(\*StyleBox[\"test\", \"TI\"]\) is met, \
+returning the final result.", "Documentation" -> None, "OwnValues" -> None, 
+    "UpValues" -> None, "DownValues" -> 
+    Information`InformationValueForm[
+     DownValues, $CellContext`NestUntil, {$CellContext`NestUntil[
+         Pattern[$CellContext`f, 
+          Blank[]], 
+         Pattern[$CellContext`expr, 
+          Blank[]], 
+         Pattern[$CellContext`test, 
+          Blank[]]] :> 
+       Module[{$CellContext`result = $CellContext`expr}, $CellContext`result = $\
+CellContext`f[$CellContext`result]; Until[
+           $CellContext`test[$CellContext`result], $CellContext`result = \
+$CellContext`f[$CellContext`result]]; $CellContext`result]}], "SubValues" -> 
+    None, "DefaultValues" -> None, "NValues" -> None, "FormatValues" -> None, 
+    "Options" -> None, "Attributes" -> {}, "FullName" -> "Global`NestUntil"|>,
+    True]]], "Output",
+ CellChangeTimes->{3.896642266768425*^9},
+ CellLabel->"Out[4]=",
+ CellID->413404477,ExpressionUUID->"9c0fae8e-977a-4967-94cb-5cd717c13432"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Information", "[", "NestUntil", "]"}]], "Input",
+ CellChangeTimes->{{3.89664226729545*^9, 3.896642272082695*^9}},
+ CellLabel->"In[5]:=",
+ CellID->396968743,ExpressionUUID->"4ac28a7c-4cde-40a2-83a9-96c149a55d0b"],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   FrameBox[
+    DynamicModuleBox[{System`InformationDump`open$$ = True, 
+     System`InformationDump`mouseOver$$ = False}, 
+     PaneSelectorBox[{True->
+      TagBox[GridBox[{
+         {
+          ItemBox[
+           PaneBox[
+            StyleBox["\<\" Symbol\"\>", "InformationTitleText",
+             StripOnInput->False,
+             BaseStyle -> None],
+            FrameMargins->{{4, 0}, {-1, 1}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           PaneBox[
+            
+            StyleBox["\<\"NestUntil[\\!\\(\\*StyleBox[\\\"f\\\", \
+\\\"TI\\\"]\\), \\!\\(\\*StyleBox[\\\"expr\\\", \\\"TI\\\"]\\), \
+\\!\\(\\*StyleBox[\\\"test\\\", \\\"TI\\\"]\\)] applies the function \
+\\!\\(\\*StyleBox[\\\"f\\\", \\\"TI\\\"]\\) to the expression \
+\\!\\(\\*StyleBox[\\\"expr\\\", \\\"TI\\\"]\\) until the condition \
+\\!\\(\\*StyleBox[\\\"test\\\", \\\"TI\\\"]\\) is met, returning the final \
+result.\"\>", "InformationUsageText",
+             StripOnInput->False,
+             LineSpacing->{1.5, 1.5, 3.}],
+            FrameMargins->{{10, 10}, {8, 10}}],
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False]},
+         {
+          PaneBox[
+           TagBox[GridBox[{
+              {
+               StyleBox[
+                TagBox[
+                 TooltipBox[
+                  StyleBox["\<\" Definitions\"\>", "InformationRowLabel",
+                   StripOnInput->False],
+                  "\"Definitions\"",
+                  TooltipStyle->"TextStyling"],
+                 Annotation[#, "Definitions", "Tooltip"]& ], "DialogStyle",
+                StripOnInput->False]},
+              {
+               TemplateBox[{"\"\[ThinSpace]\"", 
+                 GridBox[{{
+                    RowBox[{
+                    RowBox[{"NestUntil", "[", 
+                    RowBox[{"f_", ",", "expr_", ",", "test_"}], "]"}], ":=", 
+                    RowBox[{"Module", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"result", "=", "expr"}], "}"}], ",", 
+                    RowBox[{
+                    RowBox[{"result", "=", 
+                    RowBox[{"f", "[", "result", "]"}]}], ";", 
+                    RowBox[{"Until", "[", 
+                    RowBox[{
+                    RowBox[{"test", "[", "result", "]"}], ",", 
+                    RowBox[{"result", "=", 
+                    RowBox[{"f", "[", "result", "]"}]}]}], "]"}], ";", 
+                    "result"}]}], "]"}]}]}, {" "}}, 
+                  GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                  DefaultBaseStyle -> "Column", 
+                  GridBoxItemSize -> {
+                   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]},
+                "RowDefault"]}
+             },
+             DefaultBaseStyle->"Column",
+             GridBoxAlignment->{"Columns" -> {{Left}}},
+             
+             GridBoxItemSize->{
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+            "Column"],
+           FrameMargins->{{6, 0}, {3, 6}}], "\<\"\"\>"},
+         {
+          PaneBox[GridBox[{
+             {
+              
+              DynamicModuleBox[{System`InformationDump`open$$ = {
+               False, False, False, False, False, False}}, 
+               StyleBox[GridBox[{
+                  {
+                   TagBox[
+                    TooltipBox[
+                    StyleBox["\<\" Full Name\"\>", "InformationRowLabel",
+                    StripOnInput->False],
+                    "\"FullName\"",
+                    TooltipStyle->"TextStyling"],
+                    
+                    Annotation[#, "FullName", 
+                    "Tooltip"]& ], "\<\"Global`NestUntil\"\>"}
+                 },
+                 AutoDelete->False,
+                 GridBoxAlignment->{"Columns" -> {Right, Left}},
+                 GridBoxDividers->None,
+                 GridBoxItemSize->{"Columns" -> {Automatic, Automatic}},
+                 GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.5599999999999999]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.8]}, 
+                    Offset[0.2]}}], "DialogStyle",
+                StripOnInput->False],
+               DynamicModuleValues:>{}]}
+            },
+            DefaultBaseStyle->"Column",
+            GridBoxAlignment->{"Columns" -> {{Left}}},
+            GridBoxDividers->{"Columns" -> {{False}}, "Rows" -> {{False}}},
+            
+            GridBoxItemSize->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+            GridBoxSpacings->{"Columns" -> {
+                Offset[0.27999999999999997`], {
+                 Offset[0.5599999999999999]}, 
+                Offset[0.27999999999999997`]}, "Rows" -> {
+                Offset[0.2], {
+                 Offset[3.6]}, 
+                Offset[0.2]}}],
+           FrameMargins->{{6, 6}, {6, 3}}], ""},
+         {
+          ItemBox[
+           TagBox[
+            ButtonBox[
+             PaneSelectorBox[{False->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "UpPointerOpener"],
+               ImageSizeCache->{10., {3., 7.}}], True->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "UpPointerOpenerHot"],
+               ImageSizeCache->{10., {3., 7.}}]}, Dynamic[
+              System`InformationDump`mouseOver$$]],
+             Alignment->Left,
+             Appearance->{"Default" -> None},
+             
+             ButtonFunction:>FEPrivate`Set[
+              System`InformationDump`open$$, False],
+             Evaluator->Automatic,
+             FrameMargins->{{9, 0}, {0, 0}},
+             ImageMargins->0,
+             ImageSize->Full,
+             Method->"Preemptive"],
+            
+            EventHandlerTag[{
+             "MouseEntered" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
+              "MouseExited" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
+              Method -> "Preemptive", PassEventsDown -> Automatic, 
+              PassEventsUp -> True}]],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], "\[SpanFromLeft]"}
+        },
+        AutoDelete->False,
+        FrameStyle->Directive[
+          GrayLevel[0.8], 
+          Thickness[Tiny]],
+        GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
+        GridBoxDividers->{
+         "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"], False->
+      TagBox[GridBox[{
+         {
+          ItemBox[
+           PaneBox[
+            StyleBox["\<\" Symbol\"\>", "InformationTitleText",
+             StripOnInput->False],
+            FrameMargins->{{4, 0}, {-1, 1}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           PaneBox[
+            
+            StyleBox["\<\"NestUntil[\\!\\(\\*StyleBox[\\\"f\\\", \
+\\\"TI\\\"]\\), \\!\\(\\*StyleBox[\\\"expr\\\", \\\"TI\\\"]\\), \
+\\!\\(\\*StyleBox[\\\"test\\\", \\\"TI\\\"]\\)] applies the function \
+\\!\\(\\*StyleBox[\\\"f\\\", \\\"TI\\\"]\\) to the expression \
+\\!\\(\\*StyleBox[\\\"expr\\\", \\\"TI\\\"]\\) until the condition \
+\\!\\(\\*StyleBox[\\\"test\\\", \\\"TI\\\"]\\) is met, returning the final \
+result.\"\>", "InformationUsageText",
+             StripOnInput->False,
+             LineSpacing->{1.5, 1.5, 3.}],
+            FrameMargins->{{10, 10}, {8, 10}}],
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           TagBox[
+            ButtonBox[
+             PaneSelectorBox[{False->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpener"]], True->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpenerHot"]]}, Dynamic[
+              System`InformationDump`mouseOver$$]],
+             Alignment->Left,
+             Appearance->{"Default" -> None},
+             
+             ButtonFunction:>FEPrivate`Set[
+              System`InformationDump`open$$, True],
+             Evaluator->Automatic,
+             FrameMargins->{{9, 0}, {0, 0}},
+             ImageMargins->0,
+             ImageSize->Full,
+             Method->"Preemptive"],
+            
+            EventHandlerTag[{
+             "MouseEntered" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
+              "MouseExited" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
+              Method -> "Preemptive", PassEventsDown -> Automatic, 
+              PassEventsUp -> True}]],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], "\[SpanFromLeft]"}
+        },
+        AutoDelete->False,
+        FrameStyle->Directive[
+          GrayLevel[0.8], 
+          Thickness[Tiny]],
+        GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
+        GridBoxDividers->{
+         "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"]}, Dynamic[System`InformationDump`open$$],
+      BaselinePosition->Baseline,
+      FrameMargins->0,
+      ImageSize->Automatic],
+     DynamicModuleValues:>{}],
+    BaseStyle->"InformationGridFrame",
+    StripOnInput->False], "InformationGridPlain",
+   StripOnInput->False],
+  InformationData[<|
+   "ObjectType" -> "Symbol", "Usage" -> 
+    "NestUntil[\!\(\*StyleBox[\"f\", \"TI\"]\), \!\(\*StyleBox[\"expr\", \"TI\
+\"]\), \!\(\*StyleBox[\"test\", \"TI\"]\)] applies the function \
+\!\(\*StyleBox[\"f\", \"TI\"]\) to the expression \!\(\*StyleBox[\"expr\", \
+\"TI\"]\) until the condition \!\(\*StyleBox[\"test\", \"TI\"]\) is met, \
+returning the final result.", "Documentation" -> None, "OwnValues" -> None, 
+    "UpValues" -> None, "DownValues" -> 
+    Information`InformationValueForm[
+     DownValues, $CellContext`NestUntil, {$CellContext`NestUntil[
+         Pattern[$CellContext`f, 
+          Blank[]], 
+         Pattern[$CellContext`expr, 
+          Blank[]], 
+         Pattern[$CellContext`test, 
+          Blank[]]] :> 
+       Module[{$CellContext`result = $CellContext`expr}, $CellContext`result = \
+$CellContext`f[$CellContext`result]; Until[
+           $CellContext`test[$CellContext`result], $CellContext`result = \
+$CellContext`f[$CellContext`result]]; $CellContext`result]}], "SubValues" -> 
+    None, "DefaultValues" -> None, "NValues" -> None, "FormatValues" -> None, 
+    "Options" -> None, "Attributes" -> {}, "FullName" -> "Global`NestUntil"|>,
+    True]]], "Output",
+ CellChangeTimes->{3.896642272458662*^9},
+ CellLabel->"Out[5]=",
+ CellID->1818912,ExpressionUUID->"776cba9f-6714-472e-b39b-e7eadf19183a"]
 }, Open  ]]
 }, Open  ]],
 
@@ -1807,7 +2700,7 @@ JAZLFxBaxuyKShxfvoEfKzujYRb6FXWpA="},
  CellID->818043737,ExpressionUUID->"4a1af724-0dae-40d0-b1b9-8d72474b9655"]
 }, Closed]]
 }, Open  ]]
-}, Closed]],
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -1945,7 +2838,7 @@ WyabbVsUI30dbWyR5mC4Y6npzAQV7A7CHW8e0ORJGTUV01ufdzMGR2GbTwVmCj3d8A9cd0NNHoiRcl\
     "Contexts" -> {
      "FunctionResource`", "FunctionResource`DefinitionNotebook`"}, 
     "DefaultContentMethod" -> "Legacy"}, "ToolsOpen" -> True, "StatusMessage" -> 
-  "", "SubmissionReviewData" -> {"Review" -> False}},
+  "", "SubmissionReviewData" -> {"Review" -> False}, "AutoUpdate" -> True},
 CreateCellID->True,
 FrontEndVersion->"13.3 for Microsoft Windows (64-bit) (May 18, 2023)",
 StyleDefinitions->Notebook[{

@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     39166,        835]
-NotebookOptionsPosition[     37527,        801]
-NotebookOutlinePosition[     38000,        818]
-CellTagsIndexPosition[     37957,        815]
+NotebookDataLength[     45889,        966]
+NotebookOptionsPosition[     44044,        930]
+NotebookOutlinePosition[     44517,        947]
+CellTagsIndexPosition[     44474,        944]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -666,20 +666,39 @@ here*>\
  CellChangeTimes->{{3.896635236490665*^9, 3.8966352787558928`*^9}},
  CellLabel->"In[45]:=",ExpressionUUID->"1da541a0-68c1-469e-b45b-7d4bd7160d2c"],
 
-Cell[BoxData[
- DynamicBox[ToBoxes[
-   Refresh[
-    Wolfram`Chatbook`Actions`Private`dynamicTextDisplay[
-    Wolfram`Chatbook`Actions`Private`container$39294, True], 
-    TrackedSymbols :> {}, UpdateInterval -> 0.4], StandardForm],
-  Deinitialization:>Quiet[
-    TaskRemove[Wolfram`Chatbook`Actions`Private`task$39294]],
-  ImageSizeCache->{50., {2.3837889639660723`, 9.616211036033928}},
-  Initialization:>If[$SessionID =!= 34146802089434115642, 
-    NotebookDelete[
-     EvaluationCell[]]]]], "Output", "ChatOutput",
- Editable->False,
- Selectable->False,
+Cell[TextData[Cell[BoxData[
+ TemplateBox[{
+   Cell[
+    BoxData[
+     DynamicModuleBox[{$CellContext`attached$$}, 
+      TagBox[
+       Cell[
+        BoxData[
+         RowBox[{
+           RowBox[{
+             RowBox[{"DropUntil", "::", "usage"}], "=", 
+             "\"DropUntil[list, test] drops elements from list until the \
+condition specified by test is no longer satisfied, using the Until loop \
+construct instead of While. DropUntil[crit][lst] drops from lst until crit is \
+no longer satisfied using Until loop.\""}], ";"}]], "ChatCode", "Input", 
+        Background -> GrayLevel[1]], 
+       EventHandlerTag[{"MouseEntered" :> (Quiet[
+            Needs["Wolfram`Chatbook`" -> None]]; 
+          Symbol["Wolfram`Chatbook`ChatbookAction"]["AttachCodeButtons", 
+            Dynamic[$CellContext`attached$$], 
+            EvaluationCell[], 
+            "DropUntil::usage = \"DropUntil[list, test] drops elements from \
+list until the condition specified by test is \\\nno longer satisfied, using \
+the Until loop construct instead of While. DropUntil[crit][lst] drops from \\\
+\nlst until crit is no longer satisfied using Until loop.\";", "Wolfram"]), 
+         Method -> "Preemptive", PassEventsDown -> Automatic, PassEventsUp -> 
+         True}]], DynamicModuleValues :> {}, 
+      TaggingRules -> <|
+       "CellToStringType" -> "InlineInteractiveCodeCell", "CodeLanguage" -> 
+        "Wolfram"|>, UnsavedVariables :> {$CellContext`attached$$}]]]},
+  "ChatCodeBlockTemplate"]], "ChatCodeBlock",
+ Background->
+  None,ExpressionUUID->"14842336-53c2-4174-9498-d21dfe84ee36"]], "ChatOutput",
  CellDingbat->Cell[
    BoxData[
     TemplateBox[{
@@ -687,117 +706,227 @@ Cell[BoxData[
        TemplateBox[{}, "ChatIconCodeWriter"], ContentPadding -> False, 
        FrameMargins -> 0, ImageSize -> {35, 35}, ImageSizeAction -> 
        "ShrinkToFit", Alignment -> {Center, Center}]}, 
-     "ChatOutputStopButtonProgressWrapper"]], Background -> None],
+     "AssistantIconTabbed"]], Background -> None],
  TaggingRules-><|
-  "ChatNotebookSettings" -> <|
-    "Assistance" -> True, "AutoFormat" -> True, "BasePrompt" -> Automatic, 
-     "ChatContextCellProcessingFunction" -> Automatic, 
-     "ChatContextPostEvaluationFunction" -> Automatic, "ChatContextPreprompt" -> 
-     Automatic, "ChatDrivenNotebook" -> False, "ChatHistoryLength" -> 25, 
-     "DynamicAutoFormat" -> Automatic, "FrequencyPenalty" -> 0.1, 
-     "IncludeHistory" -> Automatic, 
-     "LLMEvaluator" -> <|
-      "Pre" -> "As a helpful Wolfram Language code writer, your job is to \
-respond with appropriate Wolfram Language code in response to user messages. \
-Whenever possible, you should respond with just code and nothing else. Do not \
-add any additional unnecessary text or commentary to your responses if you \
-can reply with code.", "Post" -> 
-       Missing["NotAvailable", 
-         "C:\\Users\\Peter\\AppData\\Roaming\\Mathematica\\Paclets\\\
-Repository\\Wolfram__Chatbook-0.0.30\\LLMConfiguration\\Personas\\CodeWriter\\\
-Post.md"], "Icon" -> RawBoxes[
-         TemplateBox[{}, "ChatIconCodeWriter"]], 
-       "BasePrompt" -> {"WolframLanguageStyle"}, "DisplayName" -> 
-       "Code Writer", "LLMEvaluatorName" -> "CodeWriter"|>, "MaxTokens" -> 
-     Automatic, "MergeMessages" -> True, "Model" -> "gpt-3.5-turbo", 
-     "OpenAIKey" -> "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", 
-     "PresencePenalty" -> 0.1, "ShowMinimized" -> Automatic, "Temperature" -> 
-     0.7, "ToolsEnabled" -> False, "TopP" -> 1, 
-     "Data" -> <|
-      "Messages" -> {<|
-         "role" -> "system", "content" -> 
-          "As a helpful Wolfram Language code writer, your job is to respond \
-with appropriate Wolfram Language code in response to user messages. Whenever \
-possible, you should respond with just code and nothing else. Do not add any \
-additional unnecessary text or commentary to your responses if you can reply \
-with code.\n\n# General Instructions\n\nYou are interacting with a user \
-through a Wolfram Notebook interface. The messages you receive from the user \
-have been converted to plain text from notebook content. Similarly, your \
-messages are automatically converted from plain text before being displayed \
-to the user. For this to work correctly, you must adhere to the following \
-guidelines:\n\n* Whenever your response contains a block of code, surround it \
-with three backticks and include the language when applicable:\n```language\n\
-code\n```\n* ALWAYS surround inline code with double backticks to avoid \
-ambiguity with context names: ``MyContext`MyFunction[x]``\n* Write math \
-expressions using LaTeX and surround them with dollar signs: $x^2 + y^2$\n* \
-IMPORTANT! Whenever you write a literal backtick or dollar sign in text, \
-ALWAYS escape it with a backslash. Example: It costs me \\$99.95 every time \
-you forget to escape \\` or \\$ properly!\n* Link directly to Wolfram \
-Language documentation by using the following syntax: [label](paclet:uri). \
-For example:\n\t* [Table](paclet:ref/Table)\n\t* [Language \
-Overview](paclet:guide/LanguageOverview)\n\t* [Input \
-Syntax](paclet:tutorial/InputSyntax)\n* When referencing Wolfram Language \
-symbols in text, write them as a documentation link. Only do this in text, \
-not code.\n* Stick to built-in system functionality. Avoid packages unless \
-specifically requested.\n\n# Wolfram Language Style Guidelines\n\n* Keep code \
-simple when possible\n* Use functional programming instead of procedural\n* \
-Do not assign global variables when it's not necessary\n* Prefer modern \
-Wolfram Language symbols and methods\n* Many new symbols have been added to \
-WL since your knowledge cutoff date, so check documentation as needed\n* When \
-creating plots, add options such as labels and legends to make them easier to \
-understand\n* If the user is asking for a result instead of code to produce \
-that result, use the wolfram_language_evaluator tool"|>, <|
-         "role" -> "user", "content" -> 
-          "```\nIn[36]:= Information[Until]\n\nOut[36]= \
-InformationData[Association[\"ObjectType\" -> \"Symbol\", \"Usage\" -> \
-\"\\!\\(\\*RowBox[{\\\"Until\\\", \\\"[\\\", \\\n\
-RowBox[{StyleBox[\\\"test\\\", \\\"TI\\\"], \\\",\\\", StyleBox[\\\"body\\\", \
-\\\"TI\\\"]}], \\\"]\\\"}]\\) evaluates \\\n\\!\\(\\*StyleBox[\\\"body\\\", \
-\\\"TI\\\"]\\) and then \\!\\(\\*Style ... , \n  \"UpValues\" -> None, \
-\"DownValues\" -> None, \"SubValues\" -> None, \"DefaultValues\" -> None, \n  \
-\"NValues\" -> None, \"FormatValues\" -> None, \"Options\" -> None, \n  \
-\"Attributes\" -> {HoldAll, Protected, ReadProtected}, \"FullName\" -> \
-\"System`Until\"], True]\n```\n\nWrite a one-line description explaining the \
-function DropUntil's basic purpose. This is like the ResourceFunction \
-DropWhile, but it uses the loop construct Until instead of While. Similar \
-system functions include TakeWhile and LengthWhile. There's also the \
-ResourceFunction DropTrailingWhile. Until was introduced in version 13.1 of \
-Mathematica."|>, <|
-         "role" -> "assistant", "content" -> 
-          "``DropUntil`` is a custom function that drops elements from a list \
-until the condition specified by the test function is no longer satisfied. It \
-uses the loop construct [Until](paclet:ref/Until) instead of \
-[While](paclet:ref/While). This is similar to the built-in function \
-``DropWhile``, but with a different type of loop."|>, <|
-         "role" -> "user", "content" -> 
-          "The description has to be less than 128 characters."|>, <|
-         "role" -> "assistant", "content" -> 
-          "``DropUntil``: Drops list elements until test function is false. \
-Uses Until instead of While."|>, <|
-         "role" -> "user", "content" -> 
-          "The description should be \[OpenCurlyDoubleQuote]Drops list \
-elements until test function is true. Uses Until instead of While.\
-\[CloseCurlyDoubleQuote]\n\n```\nIn[38]:= ClearAll[TakeUntil, LengthUntil, \
-DropUntil]\n\n\t\nTakeUntil[list_, test_] := Take[list, LengthUntil[list, \
-test]]\n\t\n\n\nLengthUntil[list_, test_] := Module[{i = 1}, While[i <= \
-Length[list] && !test[list[[i]]], i++] ; i]\n\n\t\n\
-ResourceFunction[\"FormatAsResourceFunction\"][DropUntil]\n\t\n\n\n\
-DropUntil[list_, test_] := Drop[list, LengthUntil[list, test]-1]\n\n\t\n\
-DropUntil[crit_][lst : (h_)[___]] := Drop[lst, LengthUntil[lst, crit]-1]\n\
-```"|>, <|"role" -> "assistant", "content" -> 
-          "Thank you for the correction. The correct description for \
-``DropUntil`` is: Drops list elements until test function is true. Uses Until \
-instead of While."|>, <|
-         "role" -> "user", "content" -> 
-          "\n\nWrite a usage message for DropUntil with DropUntil::usage=<* \
-string goes here*>"|>}|>, "Container" :> 
-     Wolfram`Chatbook`Actions`Private`container$39294, "CellObject" :> 
-     Wolfram`Chatbook`Actions`Private`cellObject$39294, "Task" :> 
-     Wolfram`Chatbook`Actions`Private`task$39294|>|>,
- CellChangeTimes->{
-  3.8966352792718935`*^9},ExpressionUUID->"37af7b24-bd36-4a80-87e3-\
-602278ba3955"]
-}, Open  ]]
+  "CellToStringData" -> 
+   "```\nDropUntil::usage = \"DropUntil[list, test] drops elements from list \
+until the condition specified by test is \\\nno longer satisfied, using the \
+Until loop construct instead of While. DropUntil[crit][lst] drops from \\\n\
+lst until crit is no longer satisfied using Until loop.\";\n```", 
+   "MessageTag" -> Inherited, "ChatData" -> 
+   "OEM6eJyVWN1uG8cVRgynqbZx2wRBgd6NWSO1ZJKGbaSIlTgFI9mJUMlSTLpqQDLicHdIjjmc2e\
+7MimINA0FfokjRXvQZetXrvkku+hz9zszukhStuvGFzZ05/+c7P+\
+PWLxrtqGWttI7rWNjrnSwXdJQ788RkM+6qo8+5FSeZmaXObtE17mTcaN/\
+cm3C3Z7QTF25PKAUSyLFSj5/kOnbS6CvJT4x1j8+5yjmRvZb8g1XyTKSb+\
+t8niv1Mngv91DgxNGZq337ClYXN79Hdl/DNZItDocdusvdLnO4vNJ/JeMXHVYE/f5KJP+\
+ZCx4sToblyi+yv39Gff/220f7pgY5VnohC5hrf1hG/6Jip0Hbt+MaRyMbiCCHhY/\
+xVRPPtI5MI1b4xTl3jQfOjhsuzoWm0fwYfLVSLTdU32hMzP5JazuSfRLKm4icdMUtFxiFEZCP/5z/\
+geLdjjLKPNR8qMJQxud4x6cneW/ixzx1v4cePS+NGW/b6ITxrXcNtZpRo/\
+8gurBOzRvudmHKgXfuf77Us42wiVDrKFTs1apTxGTvkepxDBovhF5tn0omszhYmz9gLM2TSMmcYfEu\
+NTthcugnjKZKZZpI7cYUUqQsOK4g7tyJjs8LUJjudCC3OcZQaoA0uenXMTkyuknVVL3LrgkiOI23cB\
+OhkAuFosn1DB4wnCS4X9K8kEHLFcq0FIZlnC0bwYyaDkNkMUfBHJrhXmmiZHHkLYk52p2oRlJPeZhT\
+9in0BezPIPdDWZXmAehR9DQ6ekbOIGMcpLAvxCQ67SWbyMX2WQSpRHlhGPIYXnYmoQuONyGA6SoKNU\
+DCQIYKwCcfRUAgNqzRi50RCfqSKI9beR0+\
+vSw1F0pusDdQpnqlFkdNKF5nOSyRyBaeXkr2sFdlDMTIZ6ScfE2lxtQgGlAY2GeoRXwEuc5ORCRl8c\
+YVmNqNU8mQiMlEyjoxSZk4yx7lEUUkt7G4U7SwRspYn7xRsIhQPlYmnzIx8kurM5hmCDYhIF3KA4As\
+YzOMpvJtaDx8ZOoBXrUq8zqGKEK0QBEBxNxoMBuVlRMLpACa1Dk9bX7dXFGkytyga0piYHPwrKuEkP\
+zcS6JwNJRx0Fax8T2ToZHCXDQZHi6JN4lfZSrsXfa/\
+2lOqRIUcTJi7SjNozQoGQU9QOeUf8wbtWmQXfZqU9CnlnVo41tNy6+OY+u8MW39y/\
+BakHRyfHzzqtp52ba6EO1Y/\
+oKmoCAHzpDBXQijxW4KJeRkXYmKeiCj73jFZxO2myxxd8liKw7IAq2ToLCLLerYcPmw8/\
+YqQZBSlxRPqBsrFwFLlCYm9Aqnu3GHUcARTfhPWHUk+BwgAuIt5oQomJc1/\
+tFEo2XBTxWsecXYDgYpd1FR8K1b+d8lgJt5tncjugWRSWR1s7rNshdFREmRjd9Sfb/rJSfAx/\
+zqWYV4Qe2HfL+/\
+I6cB3oNHes7c2oGBxKEq1V3fW34XK7KAlUwgjlo2Myf8Npu5gNMTWWyQnZ9IjgVDPrUQF8p012rBHC\
+xITKrTipr4but8PaHgCI8jCXyjVAEyYLGxVQ5UDLoslaHuvwYurbS64VwMpsKmI5KhqMn87gTXxX3X\
+Cg7RYooC+qVkCd4HdCpKHIrKRkhHotBwcInqMvLC0hnIwhdEYRQqdwgifUJVJabZIcmAZLOTisx/\
+JYmSEYzzmiDpE2aJDu19ZTVZMEjCc+/\
+mwGczJ9dQKoIGfCTUxiwXREw0mLeXW9bOUYWaGLnh7CPewOod9NtZlj7tMwBRhGI5Zg0qLHGRZPBHK\
+xnkekVgsBQSVI4kxwP4xSZZyt+wFpUj+00CfiCXF4yAdLlRgLnfh2NePTAi+CW0kjDLNbw1laMUn+\
+wWg5kYAXbqekB1ULdKE35cqtBt2njYZUZpI8JsncFWR1kuFlzUMUz8qeeybCWknTBEvQcqG5TlpX1p\
+k/v0ON+UB3H/ymv/sIs3nkF0Lqnc+1k6ofRce5o9u1S1qdulibTSwDce14+\
+AKdpLNIRY01PmO1ts9Trc5qz2lShsPezd7t3s4zM//cXHRf9mpeRQ9EvVrX/\
+xOVdx7F9KtXcwB7oOkc9Gp9+lGn7xWSoUkWKySvPFG/V3vV722zIhTAZC8KBlzNCXIe+\
+r9mK7Ss2WyyOosYvEl/D3HCeoeeGg1I1fbNXG+etvPha0jFiCNzGxck+ukmeVjPN8+\
+PAxIvCWg5l8lh7gral18albSUqqPksNHEaBl19gywqj5fkYpcqacYomXaqCsNfGIo1rSt9/\
+3wjk6LsQZ1DT+\
+1E4yXTHpLaKzSolPNh6KXsH1MHC8MjWCIcohZmmdoPH5no2aJKpKhXmCaReHG4skq8+\
+lE0moLr2gw5rRn+\
+s3DGOpoxSrJvIrVqvFs1d52udnaaovpoFg9rc97eCMVvB1asmA2ng3mavs6GZeIxrhgCobMOWlwoWJ\
+py2EYWbRzsHsPmvfIviNOHcIvjc1ldW7x4iXqVkr039cGgyqMg4FvGehpeIAtHQpdIQGVxV4vqK/\
+ZsH/SGoKVMfd2kRcQG1b8cqrAQMx2uqJKW4qU1LoRaD1Gn7Iw1RJtkzaQq9JQ9IzV+e5PtldT0/\
+WhWiPyJ9tLSNgibcWGW83MyrYQEc82GAR0FDtTIkd+umP/QS8ifWRj8+oO+\
+IDeDqtQnnDfxofwjmYvIou03f8YY4PTAwWJfFPG+msJ2/U4sSEPVXKKhFyO+\
+Ij7V9lzCvAVoL7alX9cv+xL8RqEL99/+7cfYAbS+QYrvv/\
+271FUzo6PaXbsKcEztJsu1ZTnqhcFVXxUMcFQ2Yoqqi5ZdFb3Rpz1GSTRlT9dE1CcEFm/\
+DwFRdPlyTcgRik+\
+J7kvJHrF7aHTe7K5knz4qhHqWPvvwQ3aTuPxntyv7fbQ9eedOn33CpLf0ct13i7bcspdvav3uipNkY\
+vW5aSBd/W8vG/e8/\
+qUM5BXMXYVs7bLbk7Pt7tnZWX9F2oYwOiAuLwvpegNyv3urA7hPy2dE0TD8CxTuhXd28b2GM6K93KV\
++EO7fDLirYf/VcjbltGuUr3NvVWVTaBDV5+6up3306Q5D8/KvZwPl1PN3PntDlP5yjYB/\
+WRRwVltPd5HG1/bl/7MrU5wkbS6vacX1lQdZcPFSO96ch+\
+tQ8kgqzfNW9SJVmUUUVwyBQvFSabP2CaGr0X738PDocbl7tqM9LK8+\
+N8hXVPw3W4eP7daBRqRxnvwX2gWfRg==", 
+   "PageData" -> <|
+    "Pages" -> <|
+      1 -> "OEM6eJy1VttuGzcQ7cor61LXcVo0RR+K8sGPgT+\
+gb7ZkJALsIA3l5CEQYGp3ViLMJRckV7K+LL+XGe5FsuUgSS+\
+AIK3I4ZkzM2eGm0WuP4V7PxZeZLGLr6Tz/MV0Cax0YgEsBxd+\
+M2NZduDiESiVRa53Ye7DkY77cQp5oYQHXMKdCmEwtqa40V4q/mK0FH5kUphoJTU01rzfrCNG/\
+K5U4IYXIrlbWFPq1MVvjAb+B0uEZnNgayu9B82EQyZKmbX7iw2/nQ/\
+9PrbsupPxRotcJtcmRfc75u63U7IeGe0xNbfCe5EsIT09RfjDqViQabyPGLnDd2ZNm73WbbPS31uJ9\
+1MVfdzZP6j3Y0Xf0Usee6CHGe+meMLxPijIQXvH48yanB/4JfDBHBZSa6kXvGOy9vAO7mmN2y2Dz+\
+pUYnQqvTSaD1wBicwkpLwz31Tbled+\
+Vuok2HSke4qotyXw6Ix3Jp73LPjSalfjW8iFDKy2rJHfDkr3YbhnPBriZz9fX8sgjxPUCqWJniuwGT\
+HmHaF53xRghTcWc2ZsjpxRhFuykeBxUVrYiTVeS7+\
+souhm0lIehF2UFAIt3FOexJPpaAKJPyxB854oChWy6k3ws1+ZWiNI1v/LGh9/\
+V42rjP0fRe08zkXb9Lw70UXpn+p9PD94ZcXmClagRhH+\
+fXa5QvDXQqcKLPZfqwXsdjo9BiU2GMzRtSkdXGLXWkhx8+eRyQuCvLwvLA4yjB3Run+\
+XEkhH3TcAqWso8OcfjMqsyG+J49yYu9tqCmVdiohv8rlR/M89o+bhvNLL8/\
+MwLSjGi9J7oymrvXrSfHmw/OCOL1dClYJAyIZ/Omhl/\
+ZHS95JRF85YEAZrEs5IFgzLwVpRMJOx6kCofthsa8/\
+a0rP5JmwRKmvkzqRjVPEzNvGsrnawamu99Vy7OWPD4ZYpSWkW+\
+M4IC6d303F0hRBTsQUWjJpt65xaLXgLjcaaPmOhzWj2V/6on1jdTswbhKnClf4/TQ6F8k/\
+ywXu1RlpxH16DX5qUD99awMvJy9X20jt+K5wL+nZjs9ZucF56k6MMktbkaGtyU7h4inweKd/\
+98uAqe49CAoeaarqkxsHWwTQswh9COHfOJDJIru2CExLf1HBv0XK6KYD/Xl3cE2orkRB5Ene4/\
+JpDR7RyJfSixHeF3fgfkDy50U6sIH0vrBRz4vC1+5b/2syLC2WSu/bd4acHy19+gfgMKnQP7g==", 
+       2 -> "OEM6eJy9VE1PGzEQ7YaEj5RS0qqHnmohjogfEMQhX6JIgCgOcAAknPXsxorXXnnsk\
+PyK/txeay/ZDRS4VGpv65k347fznieJcH0IM9tnliUR1k8E2mQF6z2Q0p/\
+XunpWpGr4fghZLpkFH6qQ0UtkA7f7c8UyEZ9q7uRTOLaOpB4xec+sZfEY+O6ub7w6ZGkA1V/\
+2inD1Qj+EZK26sIysvBWhG32j80tlhaS1dps2HLIUaHRIf0U7VepGeugesYD2jnAfRQISMlAWSWJ0R\
+kKeuAAldgwk1ooLK7QimEMsEgGcjOZFPRFIlCZSqxQMQWYFhvQecShUWlQXV3qEzkMjtMbFvsx/\
+AONEJ+R6LCTskyW72Ah7dyOX5B45VZRC/o17F9cur9zfodEBXe+\
+Nme1pDrRxrHJnw0gvvD7Y7LJ4khrtFPfD3DgybH4CU5C9yB8/DqZ+JN+\
+Z4hKMFyqoVIzdGyJU90GyOXC6eaodwkBZMMB98lNPZ3loOZjlBhD94Hy3xg8nIEjWOAPgWFKgrWstE\
+8Oy+8BxpPXkHutnWkHSCPLSeTbSkn57ASo/\
+OnEQhrY6ha3CP3adtX7OwUsLM77mvXe4NZgy6VgoD96jP2uVBO124RtySP6ZaW6b/8c2t82/\
+Nc4BXVtMvbLL6inYsea0eW7AbwQrplDlts4ZYuEY7OsHhRsdZ3Xm+8cVZHMJucyxPjQO/\
+vASfn62P668QIBeq9J3iz7ejKmnWxxChw6ijkUhZeWr7SDqUFNrPHI4z4F+PVZSKDgORmVxIB/\
+sUuydsmgzRE6YSl1YG0/+/xnJ7UuFbAr8ihnBRoHD20uOfinfXlfqeFIuUvrhWfi1B/\
+n4DH4DGzgASg=="|>, "PageCount" -> 2, "CurrentPage" -> 2|>|>,
+ GeneratedCell->True,
+ CellAutoOverwrite->
+  True,ExpressionUUID->"309079e9-15e2-4745-8bcf-dac9ad8faeb1"]
+}, Open  ]],
+
+Cell["\<\
+The description should be DropUntil[list, test] drops elements from list \
+until the condition specified by test is satisfied, using the Until loop \
+construct instead of While.\
+\>", "Text",
+ CellChangeTimes->{{3.8966353148595896`*^9, 
+  3.896635333789476*^9}},ExpressionUUID->"1e724272-f5bf-4c2b-a709-\
+aaaa09b37df3"],
+
+Cell[TextData[{
+ "Thank you for the correction. The correct usage message for ",
+ Cell[BoxData[
+  TemplateBox[{"DropUntil"},
+   "ChatCodeInlineTemplate"]], "ChatCode",
+  Background->None,ExpressionUUID->"a9cdc498-175d-40f3-857d-28f6210bd050"],
+ " is: \n",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     BoxData[
+      DynamicModuleBox[{$CellContext`attached$$}, 
+       TagBox[
+        Cell[
+         BoxData[
+          RowBox[{
+            RowBox[{"DropUntil", "::", "usage"}], "=", 
+            "\"DropUntil[list, test] drops elements from list until the \
+condition specified by test is satisfied, using the Until loop construct \
+instead of While. DropUntil[crit][lst] drops from lst until crit is no longer \
+satisfied using Until loop.\""}]], "ChatCode", "Input", Background -> 
+         GrayLevel[1]], 
+        EventHandlerTag[{"MouseEntered" :> (Quiet[
+             Needs["Wolfram`Chatbook`" -> None]]; 
+           Symbol["Wolfram`Chatbook`ChatbookAction"]["AttachCodeButtons", 
+             Dynamic[$CellContext`attached$$], 
+             EvaluationCell[], 
+             "DropUntil::usage = \"DropUntil[list, test] drops elements from \
+list until the condition specified by test is satisfied, using the Until loop \
+construct instead of While. DropUntil[crit][lst] drops from lst until crit is \
+no longer satisfied using Until loop.\"", "Wolfram"]), Method -> "Preemptive",
+           PassEventsDown -> Automatic, PassEventsUp -> True}]], 
+       DynamicModuleValues :> {}, 
+       TaggingRules -> <|
+        "CellToStringType" -> "InlineInteractiveCodeCell", "CodeLanguage" -> 
+         "Wolfram"|>, UnsavedVariables :> {$CellContext`attached$$}]]]},
+   "ChatCodeBlockTemplate"]], "ChatCodeBlock",
+  Background->None,ExpressionUUID->"6b45164f-8f15-43e4-94ae-1863c7ef6058"]
+}], "AssistantOutput",
+ CellDingbat->Cell[
+   BoxData[
+    PaneBox[
+     TemplateBox[{}, "ChatIconCodeAssistant"], ContentPadding -> False, 
+     FrameMargins -> 0, ImageSize -> {35, 35}, ImageSizeAction -> 
+     "ShrinkToFit", Alignment -> {Center, Center}]], Background -> None],
+ TaggingRules-><|
+  "CellToStringData" -> 
+   "Thank you for the correction. The correct usage message for ``DropUntil`` \
+is:\n\n```Wolfram\nDropUntil::usage = \"DropUntil[list, test] drops elements \
+from list until the condition specified by test is satisfied, using the Until \
+loop construct instead of While. DropUntil[crit][lst] drops from lst until \
+crit is no longer satisfied using Until loop.\"\n```", "MessageTag" -> 
+   Inherited, "ChatData" -> 
+   "OEM6eJzNWN1uG8cVhg2nqZi4P0FRoHdj1kgsm6JhGyliNk6hSHYsVLIUk64akIw43B2SEw53tj\
+OzoljDQNC3SNEW6APkAXrd9+hFLvoc/c7M7nIpWlWCIkB9YXNnzpzf73xnxts/\
+32rXtq2V1vEkEvZax2SCljKnn2gz465c+\
+phbcWT0LHV2g7axJ6Ot9o2dCXc7OnHizO0IpSACPVYm4ydZEjmpkwvFj7R1j0+\
+5yjiJvVb8Z1VxI9J1+++QxK6RpyJ5pp0Yaj21bzzhysLnn9LeU8SmzWJfJGM32fkFVncXCZ/\
+JqBJjVeFPnhjxh0wk0eJIJFy5hfnzV/TnH7/Zav9oL4lUFotc58q5jQN+\
+1tFTkdiV5esHwozFAVLCx/grz+YbBzoWqn19nLqtB833t1xmhnqr/WPEaGFarJu+3p7o+YFM5Ez+\
+UcQrJt7qiFkqDIcSYUb+z79x4u2O1so+TvhQ4UCRk2sdnR7tXMGPXe74Nn78sHBu9Ja9to/\
+Itq9i12gl2j+wC+vEbKv9ZkQ1SFz763c+0xnjRjDOJkKlo0yxY61Ghs/YPk/\
+GGRQxngPKMSRaxGwHwbICZa7JoMKwL/\
+SQScucZrFmbiLYSCul5wBOq1a7zQ5HI2HWVdtsDE89TtgQiIyZTlhqxKnUmWUySTNnmzj+\
+FL6xkTxjwhht/\
+NLjs1RxmYQVNsuDZjZYzyzMZUksDDkZWzYHdtgcMbO50cm4qkFnjuzgHERmfMGGgiFBo4xgTxHJRJy\
+hIpJKGXvV3oOQgqW5uXQTpvFpcCiVkUXmWCJELOImO55IJdgC2bapiCRXqDsUr6Wk4WUinvh6BJ08W\
+QSNzVrtl+wTkQAdiu0l1pksNFmtVtRRorCGYxWuh8PBOTcxOhvTZ2Gx6K9wZMQj0WQdxFKmkhwxIhJ\
+oRjZCqy4jnXAsDYVIKE+\
+nwjikBXkK6aTmDvJJYSGHW5O1gXfFjVr4MCtl8xAseoArtaho9roquodipA3ZpxhjabG1CA4UDjYZm\
+ABfAZBzbcgFg1hcbpnNMlSOx6iVKA6WgGXjTKKdUXXrsXs8QcbhS3AZLZ0i4x4iDj7BdzZUOpoyPcJ\
+ajAraDJgE+Jh0oQZIvoDDPJoiuilO0F7gHm9aFf0whynG01QhCejzVm0wGBSbNVJOCwS9/\
+ePtz9oVQwm5680Hi7HOcL5iEkHyUy1jxmdDiQDdIghGgY19a9sWGwwOFjlB41dB4t2zvjd7bKQDQDj\
+OoSMMDQbq3NAo+7wjfu9DK91CbLPCH4W6MyvHCazcPPv8PrvDFp/\
+fvwmtewdHh8872886N1ZSjUYla5wp6Tzgi2AYalvRx3JcNIqsCBvxVJTJ5/\
+6gVdxOmuh5PkuRWLbnELpF188E6918+LD58H1GltFpchYaFSgbC0eZyzX2BmS6dxMMpcEHanED3u/\
+LZAoUBnCR8BrJxTrKZoC/n4tsuMjztYo5u4DAWYt1FR8K1b+\
+V8kgJ18qM3AxoFrnntY3brNshdJRCRozu+\
+pVNv1kaPkQ8p1LMS0EP7LvFfrEdTu0R2bK2d6M84NCSBmR11++Gzc28JdAJ4HRwIrm/\
+zuyL2RDzalmcUE2PCE49s5oVwHfaZIcJUujnh6ycBI14ZBPntj0AkOVhJpXbgkyYaWyUQxXE6hZNtu\
+2xjiimnl6yRAGsgXpHOcH4ewHOxp5V1wJouwUa6JOSCogJfitEGprMSipG6NdUow+\
+QfQi8AC8sPSGcjKF0RhkCUzjBY2KJlC5VcQZM48iu9gHSkAWWx0oPcfCUI+\
+tQaYMF6d6zXioRdBvjZoGDRz7/bAZ3zPocKQtADTkTbqJji0MHNEsSMS+3l1TO4ziw6PE+\
+wsOoC3w3TfQcNw5ojACG0YjF3BHHaRZNBGqxWsdy4hUgiYzgfhilSjvbICtMp2Hi2yya0AkP+\
+eCpEmNB4xpuzPg0x4vgVvqhWpnoxBuj5USSNGynZAddC3SBmzLlqkn3ZaMhZXScRSJM+\
+yDWIB1e1zxk8aTg3BMRLrQ0TXD9Wl6lrpHVykXqT28SMe8l3Qe/6rceYTaP/\
+FWUuPNF4qTq12qHmaPdlU26tHVxj9C4EXjh+uHwCzBJZ5GKOtv6iNXbvk71Bqu/oEkZFns3erd6t5/\
+r+cf6rPuyV/cmehDq1bv+n1qx51FMv3p1B7AHmc5er96nHw36rogMdbyoiLzyQv1e/VW/\
+t8nyVACTvVpw4OKTEOeB/xNWkWXNZpM1WI0hmvR3UCesD+iZTgCp+q6eJ+\
+ur7Wz4GlEx4qjc2gapfrYuHh4G6+uHAYnnFGw7Z+Qwc7nsy6daxdtKNdByuNFEoIwGew5YlZ+\
+vyESm1DMM0aJsxEoDXxjKNb0T+n54147zsQZzW35qxxgvRnpPaKzSRaecDzmXsF1MHK/\
+sPX9RlhFLMwPi8Xc2Ikt0kQz9AtcsGjcST6qH/f2zAdp0NBiBXhtuHloTo+\
+VXSeZNVLvGHyvvbefJ1pa3mA6aNVxxqe7hdZaf7dAlC27jwaIv9q9juEQ2xvmh4MickwUXOpZuOQwj\
+i+4c7N6D5j3y74ATQ/hLY3PZnRvlk6XSov+8OhiUaRwMPGWA0/D0WwYUWCGGlGVCCeI1G+\
+6fdA3BlTHzflEUUBtLfyafKnAQs522qNOWKiVRNxKdjMFTFq5akm3SDeSiMuScUZ3vfmWzWpquT9WK\
+kF/ZXELC5mXLb7jlzCx9CxnxxwaDgI78zhTLkZ/uuP+Ai8ge+\
+di8mAEf0NuhCuUJ9zSOx5Sfvcgsynb/A4wNTg8UekRdUrH+\
+SsFaHic21KEsTl6Q8xkf0fO4SfPYXgTqi0P5+7XzsdiJzlRMsXzz5V++\
+gxso5yVefPPlX2u1YnZ8QLNjRwluQDdd6il/qpE3VP5R5gRDZaNWSnXJo5OGd+\
+Kkz6CJtvzqioJ8hcT6fSio1c5vrig5QPMp0X0p2SN2D0Tn3e5K9uGjXKk/0mfvvstu0Cn/2e3Kfh+\
+0J+/c6bNfM+k9Pd/33ZyWt+35nXq/WwmSXCw/1x2krf8e5dY9b3+\
+pA3XF4a5CtVrs1uRks3tyctKvaFtTRgt0yutCuS5B7ldXOoD7tHhG5IThX6AIL7yz8+\
+8VnJHseZb6Tri/HHAXw/7T5WzK6K5RvM69V6VPgSDKz1bLyz768DYDefnXs4Zx4vzbH12Spb+\
+BkQf5xXVZHdZq5fYfYc6v1D2v52sJ+lvSMyXs9YzcqLzLgiPnWHl9LK4iygOqcC74VLpE+\
+xfYzc0uTTbraJlVkJ0v1ddXLmao7ytl/0OiLsHBv65++25ZR+Zav3g+XYNVDtTvE1T/\
+j1CiXGy1397fP3hcPGXa1+l/cLeXhajl/2Xc4WO7sZegd8EC8X8AVdqhPw=="|>,
+ GeneratedCell->True,
+ CellAutoOverwrite->
+  True,ExpressionUUID->"7ba2ed0b-8230-4c79-8917-e91b6c46eb7d"]
 },
 WindowSize->{574.8, 579.6},
 WindowMargins->{{50.4, Automatic}, {Automatic, 0}},
@@ -835,8 +964,10 @@ Cell[24759, 574, 4223, 73, 106, "AssistantOutput",ExpressionUUID->"a0d16ed8-22ac
 Cell[28997, 650, 141, 3, 35, "Text",ExpressionUUID->"d7e33842-3e0c-4f5f-8d8b-0930edc825f1"],
 Cell[CellGroupData[{
 Cell[29163, 657, 437, 9, 72, "ChatInput",ExpressionUUID->"1da541a0-68c1-469e-b45b-7d4bd7160d2c"],
-Cell[29603, 668, 7908, 130, 67, "Output",ExpressionUUID->"37af7b24-bd36-4a80-87e3-602278ba3955"]
-}, Open  ]]
+Cell[29603, 668, 7986, 140, 222, "ChatOutput",ExpressionUUID->"309079e9-15e2-4745-8bcf-dac9ad8faeb1"]
+}, Open  ]],
+Cell[37604, 811, 329, 7, 81, "Text",ExpressionUUID->"1e724272-f5bf-4c2b-a709-aaaa09b37df3"],
+Cell[37936, 820, 6104, 108, 250, "AssistantOutput",ExpressionUUID->"7ba2ed0b-8230-4c79-8917-e91b6c46eb7d"]
 }
 ]
 *)
