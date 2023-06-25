@@ -3,6 +3,7 @@ Notebook[{
 Cell[CellGroupData[{
 Cell["DropUntil", "Title",
  Deletable->False,
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -13,15 +14,18 @@ Cell["DropUntil", "Title",
  CellTags->{"Name", "TemplateCell", "Title", "TabNext"},
  CellID->863144461,ExpressionUUID->"e9414552-ffa7-4436-8982-9fe9fb83792b"],
 
-Cell["One-line description explaining the function\[CloseCurlyQuote]s basic \
-purpose", "Text",
+Cell["Drops list elements until test function is true", "Text",
  Deletable->False,
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
        WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.8966351500937595`*^9, 3.896635170116068*^9}, {
+   3.896635212564807*^9, 3.896635224735781*^9}, 3.896635400361264*^9, 
+   3.8966358657780323`*^9},
  CellTags->{"DefaultContent", "Description", "TabNext", "TemplateCell"},
  CellID->660820806,ExpressionUUID->"8b616414-73eb-4135-b413-95b83f08e852"],
 
@@ -73,25 +77,28 @@ Cell[BoxData[{
       RowBox[{"list", ",", "test"}], "]"}]}], "]"}]}], 
   "\[IndentingNewLine]"}], "\n", 
  RowBox[{
-  RowBox[{
-   RowBox[{"LengthUntil", "[", 
-    RowBox[{"list_", ",", "test_"}], "]"}], ":=", 
-   RowBox[{"Module", "[", 
+  RowBox[{"LengthUntil", "[", 
+   RowBox[{"list_", ",", "test_"}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"i", "=", "1"}], "}"}], ",", 
     RowBox[{
-     RowBox[{"{", 
-      RowBox[{"i", "=", "1"}], "}"}], ",", 
-     RowBox[{
-      RowBox[{"While", "[", 
+     RowBox[{"While", "[", 
+      RowBox[{
        RowBox[{
-        RowBox[{
-         RowBox[{"i", "<=", 
-          RowBox[{"Length", "[", "list", "]"}]}], "&&", 
-         RowBox[{"!", 
-          RowBox[{"test", "[", 
-           RowBox[{"list", "[", 
-            RowBox[{"[", "i", "]"}], "]"}], "]"}]}]}], ",", 
-        RowBox[{"i", "++"}]}], "]"}], ";", "i"}]}], "]"}]}], 
-  "\[IndentingNewLine]"}], "\n", 
+        RowBox[{"i", "<=", 
+         RowBox[{"Length", "[", "list", "]"}]}], "&&", 
+        RowBox[{"!", 
+         RowBox[{"test", "[", 
+          RowBox[{"list", "[", 
+           RowBox[{"[", "i", "]"}], "]"}], "]"}]}]}], ",", 
+       RowBox[{"i", "++"}]}], "]"}], ";", "i"}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"ResourceFunction", "[", "\"\<FormatAsResourceFunction\>\"", "]"}],
+    "[", "DropUntil", "]"}], "\[IndentingNewLine]"}], "\n", 
  RowBox[{
   RowBox[{"DropUntil", "[", 
    RowBox[{"list_", ",", "test_"}], "]"}], ":=", 
@@ -100,12 +107,502 @@ Cell[BoxData[{
     RowBox[{
      RowBox[{"LengthUntil", "[", 
       RowBox[{"list", ",", "test"}], "]"}], "-", "1"}]}], 
-   "]"}]}], "\[IndentingNewLine]"}], "Input",
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"DropUntil", "[", "crit_", "]"}], "[", 
+   RowBox[{"lst", ":", 
+    RowBox[{
+     RowBox[{"(", "h_", ")"}], "[", "___", "]"}]}], "]"}], " ", ":=", " ", 
+  RowBox[{"Drop", "[", 
+   RowBox[{"lst", ",", " ", 
+    RowBox[{
+     RowBox[{"LengthUntil", "[", 
+      RowBox[{"lst", ",", " ", "crit"}], "]"}], "-", "1"}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"DropUntil", "::", "usage"}], "=", 
+   "\"\<DropUntil[\!\(\*StyleBox[\"list\", \"TI\"]\), \
+\!\(\*StyleBox[\"test\", \"TI\"]\)] drops elements from \!\(\*StyleBox[\"list\
+\", \"TI\"]\) until the condition specified by \!\(\*StyleBox[\"test\", \
+\"TI\"]\) is satisfied.\\nDropUntil[\!\(\*StyleBox[\"test\", \"TI\"]\)] \
+represents an operator form of DropUntil that drops elements from lists until \
+\!\(\*StyleBox[\"test\", \"TI\"]\) is satisfied.\>\""}], ";"}]}], "Input",
+ TaggingRules->{},
  InitializationCell->True,
- CellChangeTimes->{{3.896467784327242*^9, 3.8964678141247663`*^9}},
+ CellChangeTimes->{{3.896467784327242*^9, 3.8964678141247663`*^9}, {
+   3.896630193729195*^9, 3.89663020397558*^9}, {3.8966302856797304`*^9, 
+   3.8966303255471463`*^9}, {3.896635291332785*^9, 3.896635291763813*^9}, {
+   3.896635353555365*^9, 3.896635372733568*^9}, 3.89663541207211*^9, {
+   3.8966354539392877`*^9, 3.8966355258435936`*^9}, {3.896635564380847*^9, 
+   3.896635564933846*^9}},
  CellTags->"DefaultContent",
- CellLabel->"In[3]:=",
- CellID->876320555,ExpressionUUID->"ec271c48-16a5-42fb-81f4-110dea069f79"]
+ CellLabel->"In[84]:=",
+ CellID->876320555,ExpressionUUID->"ec271c48-16a5-42fb-81f4-110dea069f79"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "DropUntil"}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.89663554997672*^9, 3.896635558844979*^9}},
+ CellLabel->"In[91]:=",
+ CellID->236664161,ExpressionUUID->"4da89768-35c9-432e-afb7-1508134d47a4"],
+
+Cell[BoxData[
+ InterpretationBox[
+  StyleBox[
+   FrameBox[
+    DynamicModuleBox[{System`InformationDump`open$$ = False, 
+     System`InformationDump`mouseOver$$ = False}, 
+     PaneSelectorBox[{True->
+      TagBox[GridBox[{
+         {
+          ItemBox[
+           PaneBox[
+            StyleBox["\<\" Symbol\"\>", "InformationTitleText",
+             StripOnInput->False,
+             BaseStyle -> None],
+            FrameMargins->{{4, 0}, {-1, 1}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           PaneBox[
+            
+            StyleBox["\<\"DropUntil[\\!\\(\\*StyleBox[\\\"list\\\", \
+\\\"TI\\\"]\\), \\!\\(\\*StyleBox[\\\"test\\\", \\\"TI\\\"]\\)] drops \
+elements from \\!\\(\\*StyleBox[\\\"list\\\", \\\"TI\\\"]\\) until the \
+condition specified by \\!\\(\\*StyleBox[\\\"test\\\", \\\"TI\\\"]\\) is \
+satisfied.\\nDropUntil[\\!\\(\\*StyleBox[\\\"test\\\", \\\"TI\\\"]\\)] \
+represents an operator form of DropUntil that drops elements from lists until \
+\\!\\(\\*StyleBox[\\\"test\\\", \\\"TI\\\"]\\) is satisfied.\"\>", 
+             "InformationUsageText",
+             StripOnInput->False,
+             LineSpacing->{1.5, 1.5, 3.}],
+            FrameMargins->{{10, 10}, {8, 10}}],
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False]},
+         {
+          PaneBox[
+           TagBox[GridBox[{
+              {
+               StyleBox[
+                TagBox[
+                 TooltipBox[
+                  
+                  StyleBox["\<\" SubValue Definitions\"\>", 
+                   "InformationRowLabel",
+                   StripOnInput->False],
+                  "\"SubValues\"",
+                  TooltipStyle->"TextStyling"],
+                 Annotation[#, "SubValues", "Tooltip"]& ], "DialogStyle",
+                StripOnInput->False]},
+              {
+               TemplateBox[{"\"\[ThinSpace]\"", 
+                 GridBox[{{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    InterpretationBox[
+                    TagBox[
+                    FrameBox[
+                    PaneBox[
+                    GridBox[{{
+                    StyleBox[
+                    StyleBox[
+                    AdjustmentBox[
+                    "\"[\[FilledSmallSquare]]\"", BoxBaselineShift -> -0.25, 
+                    BoxMargins -> {{0, 0}, {-1, -1}}], "ResourceFunctionIcon",
+                     FontColor -> GrayLevel[0.15]], ShowStringCharacters -> 
+                    False, FontFamily -> "Source Sans Pro Black", FontSize -> 
+                    0.65 Inherited, FontWeight -> "Heavy", 
+                    PrivateFontOptions -> {"OperatorSubstitution" -> False}], 
+                    StyleBox[
+                    RowBox[{
+                    StyleBox["\"DropUntil\"", "ResourceFunctionLabel"], " "}],
+                     ShowAutoStyles -> False, ShowStringCharacters -> False, 
+                    FontSize -> 0.9 Inherited, FontColor -> GrayLevel[0.1]]}},
+                     GridBoxSpacings -> {"Columns" -> {{0.25}}}], Alignment -> 
+                    Left, BaseStyle -> {
+                    LineSpacing -> {0, 0}, LineBreakWithin -> False}, 
+                    BaselinePosition -> Baseline, 
+                    FrameMargins -> {{3, 0}, {0, 0}}], Background -> 
+                    RGBColor[0.968627, 0.976471, 0.984314], BaselinePosition -> 
+                    Baseline, DefaultBaseStyle -> {}, 
+                    FrameMargins -> {{0, 0}, {1, 1}}, FrameStyle -> 
+                    RGBColor[0.831373, 0.847059, 0.85098], RoundingRadius -> 
+                    4], {"FunctionResourceBox", 
+                    GrayLevel[0.15], "\"DropUntil\""}, TagBoxNote -> 
+                    "FunctionResourceBox"], 
+                    ResourceFunction["DropUntil"], Selectable -> False], "[", 
+                    "crit_", "]"}], "[", 
+                    RowBox[{"lst", ":", 
+                    RowBox[{"h_", "[", "___", "]"}]}], "]"}], ":=", 
+                    RowBox[{"Drop", "[", 
+                    RowBox[{"lst", ",", 
+                    RowBox[{
+                    RowBox[{"LengthUntil", "[", 
+                    RowBox[{"lst", ",", "crit"}], "]"}], "-", "1"}]}], 
+                    "]"}]}]}, {" "}}, 
+                  GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                  DefaultBaseStyle -> "Column", 
+                  GridBoxItemSize -> {
+                   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]},
+                "RowDefault"]},
+              {
+               StyleBox[
+                TagBox[
+                 TooltipBox[
+                  
+                  StyleBox["\<\" DownValue Definitions\"\>", 
+                   "InformationRowLabel",
+                   StripOnInput->False],
+                  "\"DownValues\"",
+                  TooltipStyle->"TextStyling"],
+                 Annotation[#, "DownValues", "Tooltip"]& ], "DialogStyle",
+                StripOnInput->False]},
+              {
+               TemplateBox[{"\"\[ThinSpace]\"", 
+                 GridBox[{{
+                    RowBox[{
+                    RowBox[{
+                    InterpretationBox[
+                    TagBox[
+                    FrameBox[
+                    PaneBox[
+                    GridBox[{{
+                    StyleBox[
+                    StyleBox[
+                    AdjustmentBox[
+                    "\"[\[FilledSmallSquare]]\"", BoxBaselineShift -> -0.25, 
+                    BoxMargins -> {{0, 0}, {-1, -1}}], "ResourceFunctionIcon",
+                     FontColor -> GrayLevel[0.15]], ShowStringCharacters -> 
+                    False, FontFamily -> "Source Sans Pro Black", FontSize -> 
+                    0.65 Inherited, FontWeight -> "Heavy", 
+                    PrivateFontOptions -> {"OperatorSubstitution" -> False}], 
+                    StyleBox[
+                    RowBox[{
+                    StyleBox["\"DropUntil\"", "ResourceFunctionLabel"], " "}],
+                     ShowAutoStyles -> False, ShowStringCharacters -> False, 
+                    FontSize -> 0.9 Inherited, FontColor -> GrayLevel[0.1]]}},
+                     GridBoxSpacings -> {"Columns" -> {{0.25}}}], Alignment -> 
+                    Left, BaseStyle -> {
+                    LineSpacing -> {0, 0}, LineBreakWithin -> False}, 
+                    BaselinePosition -> Baseline, 
+                    FrameMargins -> {{3, 0}, {0, 0}}], Background -> 
+                    RGBColor[0.968627, 0.976471, 0.984314], BaselinePosition -> 
+                    Baseline, DefaultBaseStyle -> {}, 
+                    FrameMargins -> {{0, 0}, {1, 1}}, FrameStyle -> 
+                    RGBColor[0.831373, 0.847059, 0.85098], RoundingRadius -> 
+                    4], {"FunctionResourceBox", 
+                    GrayLevel[0.15], "\"DropUntil\""}, TagBoxNote -> 
+                    "FunctionResourceBox"], 
+                    ResourceFunction["DropUntil"], Selectable -> False], "[", 
+                    RowBox[{"list_", ",", "test_"}], "]"}], ":=", 
+                    RowBox[{"Drop", "[", 
+                    RowBox[{"list", ",", 
+                    RowBox[{
+                    RowBox[{"LengthUntil", "[", 
+                    RowBox[{"list", ",", "test"}], "]"}], "-", "1"}]}], 
+                    "]"}]}]}, {" "}}, 
+                  GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                  DefaultBaseStyle -> "Column", 
+                  GridBoxItemSize -> {
+                   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]},
+                "RowDefault"]},
+              {
+               StyleBox[
+                TagBox[
+                 TooltipBox[
+                  
+                  StyleBox["\<\" Format Definitions\"\>", 
+                   "InformationRowLabel",
+                   StripOnInput->False],
+                  "\"FormatValues\"",
+                  TooltipStyle->"TextStyling"],
+                 Annotation[#, "FormatValues", "Tooltip"]& ], "DialogStyle",
+                StripOnInput->False]},
+              {
+               TemplateBox[{"\"\[ThinSpace]\"", 
+                 GridBox[{{
+                    StyleBox[
+                    "DropUntil /: MakeBoxes[DropUntil, StandardForm] := \
+InterpretationBox[TagBox[FrameBox[PaneBox[GridBox[{{StyleBox[StyleBox[\
+AdjustmentBox[\"\\\"[\[FilledSmallSquare]]\\\"\", BoxBaselineShift -> -0.25, \
+BoxMargins -> {{0, 0}, {-1, -1}}], \"ResourceFunctionIcon\", FontColor -> \
+GrayLevel[0.15]], ShowStringCharacters -> False, FontFamily -> \"Source Sans \
+Pro Black\", FontSize -> 0.65*Inherited, FontWeight -> \"Heavy\", \
+PrivateFontOptions -> {\"OperatorSubstitution\" -> False}], \
+StyleBox[RowBox[{StyleBox[\"\\\"DropUntil\\\"\", \"ResourceFunctionLabel\"], \
+\" \"}], ShowAutoStyles -> False, ShowStringCharacters -> False, FontSize -> \
+0.9*Inherited, FontColor -> GrayLevel[0.1]]}}, GridBoxSpacings -> \
+{\"Columns\" -> {{0.25}}}], Alignment -> Left, BaseStyle -> {LineSpacing -> \
+{0, 0}, LineBreakWithin -> False}, BaselinePosition -> Baseline, FrameMargins \
+-> {{3, 0}, {0, 0}}], Background -> RGBColor[0.968627, 0.976471, 0.984314], \
+BaselinePosition -> Baseline, DefaultBaseStyle -> {}, FrameMargins -> {{0, \
+0}, {1, 1}}, FrameStyle -> RGBColor[0.831373, 0.847059, 0.85098], \
+RoundingRadius -> 4], {\"FunctionResourceBox\", GrayLevel[0.15], \
+\"\\\"DropUntil\\\"\"}, TagBoxNote -> \"FunctionResourceBox\"], \
+ResourceFunction[\"DropUntil\"], Selectable -> False]", ShowStringCharacters -> 
+                    True, NumberMarks -> True]}, {" "}}, ColumnAlignments -> 
+                  Left, GridBaseline -> {Baseline, {1, 1}}]},
+                "RowDefault"]}
+             },
+             DefaultBaseStyle->"Column",
+             GridBoxAlignment->{"Columns" -> {{Left}}},
+             
+             GridBoxItemSize->{
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+            "Column"],
+           FrameMargins->{{6, 0}, {3, 6}}], "\<\"\"\>"},
+         {
+          PaneBox[GridBox[{
+             {
+              
+              DynamicModuleBox[{System`InformationDump`open$$ = {
+               False, False, False, False, False, False}}, 
+               StyleBox[GridBox[{
+                  {
+                   TagBox[
+                    TooltipBox[
+                    StyleBox["\<\" Full Name\"\>", "InformationRowLabel",
+                    StripOnInput->False],
+                    "\"FullName\"",
+                    TooltipStyle->"TextStyling"],
+                    
+                    Annotation[#, "FullName", 
+                    "Tooltip"]& ], "\<\"Global`DropUntil\"\>"}
+                 },
+                 AutoDelete->False,
+                 GridBoxAlignment->{"Columns" -> {Right, Left}},
+                 GridBoxDividers->None,
+                 GridBoxItemSize->{"Columns" -> {Automatic, Automatic}},
+                 GridBoxSpacings->{"Columns" -> {
+                    Offset[0.27999999999999997`], {
+                    Offset[0.5599999999999999]}, 
+                    Offset[0.27999999999999997`]}, "Rows" -> {
+                    Offset[0.2], {
+                    Offset[0.8]}, 
+                    Offset[0.2]}}], "DialogStyle",
+                StripOnInput->False],
+               DynamicModuleValues:>{}]}
+            },
+            DefaultBaseStyle->"Column",
+            GridBoxAlignment->{"Columns" -> {{Left}}},
+            GridBoxDividers->{"Columns" -> {{False}}, "Rows" -> {{False}}},
+            
+            GridBoxItemSize->{
+             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+            GridBoxSpacings->{"Columns" -> {
+                Offset[0.27999999999999997`], {
+                 Offset[0.5599999999999999]}, 
+                Offset[0.27999999999999997`]}, "Rows" -> {
+                Offset[0.2], {
+                 Offset[3.6]}, 
+                Offset[0.2]}}],
+           FrameMargins->{{6, 6}, {6, 3}}], ""},
+         {
+          ItemBox[
+           TagBox[
+            ButtonBox[
+             PaneSelectorBox[{False->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "UpPointerOpener"]], True->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "UpPointerOpenerHot"]]}, Dynamic[
+              System`InformationDump`mouseOver$$]],
+             Alignment->Left,
+             Appearance->{"Default" -> None},
+             
+             ButtonFunction:>FEPrivate`Set[
+              System`InformationDump`open$$, False],
+             Evaluator->Automatic,
+             FrameMargins->{{9, 0}, {0, 0}},
+             ImageMargins->0,
+             ImageSize->Full,
+             Method->"Preemptive"],
+            
+            EventHandlerTag[{
+             "MouseEntered" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
+              "MouseExited" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
+              Method -> "Preemptive", PassEventsDown -> Automatic, 
+              PassEventsUp -> True}]],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], "\[SpanFromLeft]"}
+        },
+        AutoDelete->False,
+        FrameStyle->Directive[
+          GrayLevel[0.8], 
+          Thickness[Tiny]],
+        GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
+        GridBoxDividers->{
+         "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"], False->
+      TagBox[GridBox[{
+         {
+          ItemBox[
+           PaneBox[
+            StyleBox["\<\" Symbol\"\>", "InformationTitleText",
+             StripOnInput->False],
+            FrameMargins->{{4, 0}, {-1, 1}}],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           PaneBox[
+            
+            StyleBox["\<\"DropUntil[\\!\\(\\*StyleBox[\\\"list\\\", \
+\\\"TI\\\"]\\), \\!\\(\\*StyleBox[\\\"test\\\", \\\"TI\\\"]\\)] drops \
+elements from \\!\\(\\*StyleBox[\\\"list\\\", \\\"TI\\\"]\\) until the \
+condition specified by \\!\\(\\*StyleBox[\\\"test\\\", \\\"TI\\\"]\\) is \
+satisfied.\\nDropUntil[\\!\\(\\*StyleBox[\\\"test\\\", \\\"TI\\\"]\\)] \
+represents an operator form of DropUntil that drops elements from lists until \
+\\!\\(\\*StyleBox[\\\"test\\\", \\\"TI\\\"]\\) is satisfied.\"\>", 
+             "InformationUsageText",
+             StripOnInput->False,
+             LineSpacing->{1.5, 1.5, 3.}],
+            FrameMargins->{{10, 10}, {8, 10}}],
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False], 
+          ItemBox["\<\"\"\>",
+           BaseStyle->"InformationUsageSubtitleBackground",
+           StripOnInput->False]},
+         {
+          ItemBox[
+           TagBox[
+            ButtonBox[
+             PaneSelectorBox[{False->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpener"],
+               ImageSizeCache->{10., {3., 7.}}], True->
+              
+              DynamicBox[FEPrivate`FrontEndResource[
+               "FEBitmaps", "DownPointerOpenerHot"],
+               ImageSizeCache->{10., {3., 7.}}]}, Dynamic[
+              System`InformationDump`mouseOver$$]],
+             Alignment->Left,
+             Appearance->{"Default" -> None},
+             
+             ButtonFunction:>FEPrivate`Set[
+              System`InformationDump`open$$, True],
+             Evaluator->Automatic,
+             FrameMargins->{{9, 0}, {0, 0}},
+             ImageMargins->0,
+             ImageSize->Full,
+             Method->"Preemptive"],
+            
+            EventHandlerTag[{
+             "MouseEntered" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
+              "MouseExited" :> 
+              FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
+              Method -> "Preemptive", PassEventsDown -> Automatic, 
+              PassEventsUp -> True}]],
+           BaseStyle->"InformationTitleBackground",
+           StripOnInput->False], "\[SpanFromLeft]"}
+        },
+        AutoDelete->False,
+        FrameStyle->Directive[
+          GrayLevel[0.8], 
+          Thickness[Tiny]],
+        GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
+        GridBoxDividers->{
+         "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+       "Grid"]}, Dynamic[System`InformationDump`open$$],
+      BaselinePosition->Baseline,
+      FrameMargins->0,
+      ImageSize->Automatic],
+     DynamicModuleValues:>{}],
+    BaseStyle->"InformationGridFrame",
+    StripOnInput->False], "InformationGridPlain",
+   StripOnInput->False],
+  InformationData[<|
+   "ObjectType" -> "Symbol", "Usage" -> 
+    "DropUntil[\!\(\*StyleBox[\"list\", \"TI\"]\), \!\(\*StyleBox[\"test\", \
+\"TI\"]\)] drops elements from \!\(\*StyleBox[\"list\", \"TI\"]\) until the \
+condition specified by \!\(\*StyleBox[\"test\", \"TI\"]\) is satisfied.\n\
+DropUntil[\!\(\*StyleBox[\"test\", \"TI\"]\)] represents an operator form of \
+DropUntil that drops elements from lists until \!\(\*StyleBox[\"test\", \
+\"TI\"]\) is satisfied.", "Documentation" -> None, "OwnValues" -> None, 
+    "UpValues" -> None, "DownValues" -> 
+    Information`InformationValueForm[
+     DownValues, $CellContext`DropUntil, {$CellContext`DropUntil[
+         Pattern[$CellContext`list, 
+          Blank[]], 
+         Pattern[$CellContext`test, 
+          Blank[]]] :> 
+       Drop[$CellContext`list, $CellContext`LengthUntil[$CellContext`list, \
+$CellContext`test] - 1]}], "SubValues" -> 
+    Information`InformationValueForm[
+     SubValues, $CellContext`DropUntil, {$CellContext`DropUntil[
+         Pattern[$CellContext`crit, 
+          Blank[]]][
+         Pattern[$CellContext`lst, 
+          Pattern[$CellContext`h, 
+           Blank[]][
+           BlankNullSequence[]]]] :> 
+       Drop[$CellContext`lst, $CellContext`LengthUntil[$CellContext`lst, \
+$CellContext`crit] - 1]}], "DefaultValues" -> None, "NValues" -> None, 
+    "FormatValues" -> 
+    Information`InformationValueForm[
+     FormatValues, $CellContext`DropUntil, {
+      MakeBoxes[$CellContext`DropUntil, StandardForm] :> InterpretationBox[
+         TagBox[
+          FrameBox[
+           PaneBox[
+            GridBox[{{
+               StyleBox[
+                StyleBox[
+                 AdjustmentBox[
+                 "\"[\[FilledSmallSquare]]\"", BoxBaselineShift -> -0.25, 
+                  BoxMargins -> {{0, 0}, {-1, -1}}], "ResourceFunctionIcon", 
+                 FontColor -> GrayLevel[0.15]], ShowStringCharacters -> False,
+                 FontFamily -> "Source Sans Pro Black", FontSize -> 
+                0.65 Inherited, FontWeight -> "Heavy", 
+                PrivateFontOptions -> {"OperatorSubstitution" -> False}], 
+               StyleBox[
+                RowBox[{
+                  StyleBox["\"DropUntil\"", "ResourceFunctionLabel"], " "}], 
+                ShowAutoStyles -> False, ShowStringCharacters -> False, 
+                FontSize -> 0.9 Inherited, FontColor -> GrayLevel[0.1]]}}, 
+             GridBoxSpacings -> {"Columns" -> {{0.25}}}], Alignment -> Left, 
+            BaseStyle -> {LineSpacing -> {0, 0}, LineBreakWithin -> False}, 
+            BaselinePosition -> Baseline, FrameMargins -> {{3, 0}, {0, 0}}], 
+           Background -> RGBColor[0.968627, 0.976471, 0.984314], 
+           BaselinePosition -> Baseline, DefaultBaseStyle -> {}, 
+           FrameMargins -> {{0, 0}, {1, 1}}, FrameStyle -> 
+           RGBColor[0.831373, 0.847059, 0.85098], RoundingRadius -> 4], {
+          "FunctionResourceBox", 
+           GrayLevel[0.15], "\"DropUntil\""}, TagBoxNote -> 
+          "FunctionResourceBox"], 
+         ResourceFunction["DropUntil"], Selectable -> False]}], "Options" -> 
+    None, "Attributes" -> {}, "FullName" -> "Global`DropUntil"|>, 
+   False]]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{{3.896635553909442*^9, 3.896635566926877*^9}},
+ CellLabel->"Out[91]=",
+ CellID->210917776,ExpressionUUID->"846432c7-92e0-4af9-a68c-1548f5a19aa2"]
+}, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -175,18 +672,60 @@ documentation pages for examples."}], "MoreInfoText"], Background ->
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"MyFunction", "[", "arg", "]"}]], "UsageInputs",
+ RowBox[{"DropUntil", "[", 
+  RowBox[{
+   StyleBox["list", "TI"], ",", " ", 
+   StyleBox["test", "TI"]}], "]"}]], "UsageInputs",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8966354282832093`*^9, 3.8966354346015167`*^9}},
  FontFamily->"Source Sans Pro",
  CellTags->{"DefaultContent", "TabNext"},
  CellID->67839508,ExpressionUUID->"505c7410-2f91-4bfe-8a58-a75e25558ee0"],
 
 Cell[TextData[{
- "explanation of what use of the argument ",
- StyleBox["arg", "TI"],
- " does."
+ "drops elements from ",
+ Cell[BoxData[
+  StyleBox["list", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "6dc4d0a2-260c-421b-af30-edd2b27ed941"],
+ " until the condition specified by ",
+ Cell[BoxData[
+  StyleBox["test", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "c9407548-a2f3-4c26-a9f8-a63ba9aa6705"],
+ " is satisfied."
 }], "UsageDescription",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8966354396305146`*^9, 3.8966354602386436`*^9}},
  CellTags->{"DefaultContent", "TabNext"},
  CellID->746063541,ExpressionUUID->"f3576698-1fea-4cb4-b24c-675d86e4e603"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DropUntil", "[", 
+  StyleBox["test", "TI"], "]"}]], "UsageInputs",
+ TaggingRules->{},
+ CellChangeTimes->{3.896635537381819*^9},
+ FontFamily->"Source Sans Pro",
+ CellTags->{"DefaultContent", "TabNext"},
+ CellID->561291309,ExpressionUUID->"6eb5b889-41a4-4fc4-90fd-3630f7d8d9e9"],
+
+Cell[TextData[{
+ "represents an operator form of DropUntil that drops elements from lists \
+until ",
+ Cell[BoxData[
+  StyleBox["test", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "26a79aea-2a13-43c2-bda5-a2fca9f42726"],
+ " is satisfied ."
+}], "UsageDescription",
+ TaggingRules->{},
+ CellChangeTimes->{
+  3.896635487466984*^9, {3.8966355422148123`*^9, 3.8966355445494547`*^9}},
+ CellTags->{"DefaultContent", "TabNext"},
+ CellID->88295303,ExpressionUUID->"8c65ebfb-872f-4590-9c32-2925879e21d0"]
 }, Open  ]]
 }, Open  ]],
 
@@ -227,13 +766,37 @@ function, its development, and its usage.", "MoreInfoText"], Background ->
  CellTags->{"Details & Options", "Notes", "TemplateCellGroup"},
  CellID->447261062,ExpressionUUID->"c1ed2dfb-ab85-4d9c-baa2-b123f3d98c5e"],
 
-Cell["Additional information about usage and options.", "Notes",
+Cell[TextData[{
+ Cell[BoxData["DropUntil"], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "ed3682a6-fe03-411d-bfff-747d9360fb1f"],
+ " can be used on an object with any head, not necessarily ",
+ Cell[BoxData[
+  TagBox[
+   ButtonBox[
+    StyleBox["List", "SymbolsRefLink",
+     ShowStringCharacters->True,
+     FontFamily->"Source Sans Pro"],
+    BaseStyle->Dynamic[
+      FEPrivate`If[
+       CurrentValue["MouseOver"], {
+       "Link", FontColor -> RGBColor[0.854902, 0.396078, 0.145098]}, {
+       "Link"}]],
+    ButtonData->"paclet:ref/List",
+    ContentPadding->False],
+   MouseAppearanceTag["LinkHand"]]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "2ebde1f0-3415-4b0e-bcd9-e180176866a4"],
+ "."
+}], "Notes",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
        WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.8966356458919487`*^9, 3.8966356494198885`*^9}},
  CellTags->{"DefaultContent", "TabNext"},
  CellID->422531486,ExpressionUUID->"4c943a0c-6b92-4317-add1-d832460f8371"]
 }, Open  ]]
@@ -317,6 +880,7 @@ typical Subsection names and the types of examples they normally contain:\n  \
                 "\"Scope: \"", FontFamily -> "Source Sans Pro", FontWeight -> 
                  "SemiBold", FontSize -> 14, StripOnInput -> False]}, 
                "RowDefault"], ShowStringCharacters -> False]]], 
+           
            "input and display conventions, standard computational attributes \
 (e.g. threading over lists)\n  ", 
            Cell[
@@ -399,77 +963,1367 @@ usage"}], "MoreInfoText"], Background -> GrayLevel[0.95], FrameMargins -> 20,
 Cell[CellGroupData[{
 
 Cell["Basic Examples", "Subsection",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellID->619504543,ExpressionUUID->"397ddb22-d04b-4135-a695-ec571b9cf8bc"],
 
-Cell["Text about the example:", "Text",
- CellTags->"DefaultContent",
- CellID->586099280,ExpressionUUID->"6fce3bc0-6dc3-4e72-b036-0f741f457bda"],
+Cell["Drop elements until they are odd:", "Text",
+ TaggingRules->{},
+ CellChangeTimes->{{3.7641700439044*^9, 3.764170051149634*^9}, {
+  3.8966299238503275`*^9, 3.8966299420973673`*^9}},
+ CellID->482404199,ExpressionUUID->"3983ef58-ffe9-45be-ace5-10afac417282"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"MyFunction", "[", 
-  RowBox[{"x", ",", "y"}], "]"}]], "Input",
- CellTags->"DefaultContent",
- CellLabel->"In[1]:= ",
- CellID->298664010,ExpressionUUID->"ea9c9803-1299-49fc-b5b2-6df27085a696"],
+ RowBox[{"DropUntil", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"2", ",", "4", ",", "6", ",", "1", ",", "2", ",", "3"}], "}"}], 
+   ",", "OddQ"}], "]"}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.7641695097423067`*^9, 3.7641695513274393`*^9}, {
+  3.764169588966125*^9, 3.7641696045855217`*^9}, {3.7641700556746693`*^9, 
+  3.7641700634246063`*^9}, {3.8966299463575606`*^9, 3.8966299537609963`*^9}, {
+  3.89662999343738*^9, 3.896629996737257*^9}},
+ CellLabel->"In[92]:=",
+ CellID->428472244,ExpressionUUID->"96767947-55b0-40e1-be6c-2ff4636978a0"],
 
 Cell[BoxData[
- RowBox[{"x", " ", "y"}]], "Output",
- CellTags->"DefaultContent",
- CellLabel->"Out[1]= ",
- CellID->832981051,ExpressionUUID->"6dce534c-ce11-43d8-8f04-8ad24327e9ed"]
+ RowBox[{"{", 
+  RowBox[{"1", ",", "2", ",", "3"}], "}"}]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{{3.7641695197641973`*^9, 3.764169551547121*^9}, {
+   3.764169585532916*^9, 3.764169605269602*^9}, 3.764169763273942*^9, {
+   3.764170057776186*^9, 3.7641700638416147`*^9}, 3.7641712786486807`*^9, 
+   3.76417541469728*^9, {3.8966299433593373`*^9, 3.8966299971183586`*^9}, 
+   3.896630073908737*^9, 3.896630212573867*^9, 3.8966355809680986`*^9},
+ CellLabel->"Out[92]=",
+ CellID->330684604,ExpressionUUID->"f31264ad-1de6-4cff-b381-20b60538264d"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "\t", "ExampleDelimiter",ExpressionUUID->
+   "17438c9e-6d9d-4848-8ec1-b7a45c04a6a8"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ TaggingRules->{},
+ CellID->36702637,ExpressionUUID->"50e5e561-4725-44eb-af39-9e8eea846b32"],
+
+Cell["\<\
+Use a pure function to drop elements until they are above 1000:\
+\>", "Text",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8966300858475304`*^9, 3.8966301298507257`*^9}},
+ CellID->377165374,ExpressionUUID->"b6e8d02d-734f-4e62-af16-9860255b16ad"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"fibonacci", "=", 
+  RowBox[{"Array", "[", 
+   RowBox[{"Fibonacci", ",", "20"}], "]"}]}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8966301139885116`*^9, 3.896630126958831*^9}},
+ CellLabel->"In[93]:=",
+ CellID->714810361,ExpressionUUID->"a1b0bc6b-4fb8-4aa2-a20c-4ce8d6f53ea3"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "1", ",", "1", ",", "2", ",", "3", ",", "5", ",", "8", ",", "13", ",", "21",
+    ",", "34", ",", "55", ",", "89", ",", "144", ",", "233", ",", "377", ",", 
+   "610", ",", "987", ",", "1597", ",", "2584", ",", "4181", ",", "6765"}], 
+  "}"}]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{3.896630127371873*^9, 3.8966302126988335`*^9, 
+  3.8966355838554883`*^9},
+ CellLabel->"Out[93]=",
+ CellID->44948476,ExpressionUUID->"f1917100-d84c-4a8b-a7c4-a5e001088245"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DropUntil", "[", 
+  RowBox[{"fibonacci", ",", 
+   RowBox[{
+    RowBox[{"#", ">", "1000"}], "&"}]}], "]"}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8966301063417807`*^9, 3.8966301372063437`*^9}},
+ CellLabel->"In[94]:=",
+ CellID->201993980,ExpressionUUID->"0050d3ca-fb94-4c2b-9af5-d7d533b6afc1"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1597", ",", "2584", ",", "4181", ",", "6765"}], "}"}]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{3.8966301376493626`*^9, 3.8966302128258343`*^9, 
+  3.8966355852950344`*^9},
+ CellLabel->"Out[94]=",
+ CellID->283166430,ExpressionUUID->"52a88f94-f8cc-4004-8a51-8d3bc697028d"]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell["Scope", "Subsection",
+ TaggingRules->{},
  CellTags->"DefaultContent",
+ CellLabel->"In[3]:=",
  CellID->313242344,ExpressionUUID->"a6a7c2b5-54a7-47e2-b71c-a2fe083dab7d"],
 
-Cell["\<\
-Text about additional examples expanding scope (and see other sections for \
-options, applications, etc):\
-\>", "Text",
+Cell["Elements of the list can be any expression:", "Text",
+ TaggingRules->{},
+ CellChangeTimes->{3.896630147284558*^9},
  CellTags->"DefaultContent",
  CellID->291939446,ExpressionUUID->"daec9e05-f68b-4c59-be20-748e9d40ebc2"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"MyFunction", "[", 
-  RowBox[{"x", ",", "y", ",", "z"}], "]"}]], "Input",
+ RowBox[{"DropUntil", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"p", ",", "Pi", ",", "3", ",", "2", ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "2", ",", "3"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"p", ",", "q"}], "}"}], ",", "10"}], "}"}], ",", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Head", "[", "#", "]"}], "===", "List"}], "&"}]}], 
+  "]"}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.89663015067598*^9, 3.896630166413106*^9}},
  CellTags->"DefaultContent",
- CellLabel->"In[2]:= ",
+ CellLabel->"In[95]:=",
  CellID->448965068,ExpressionUUID->"a7fa6bec-b721-4079-a96f-3d87c284796d"],
 
 Cell[BoxData[
- RowBox[{"x", " ", "y", " ", "z"}]], "Output",
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"p", ",", "q"}], "}"}], ",", "10"}], "}"}]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{3.8966301668860025`*^9, 3.896630212939833*^9, 
+  3.8966355874560804`*^9},
  CellTags->"DefaultContent",
- CellLabel->"Out[2]= ",
- CellID->494498970,ExpressionUUID->"fb9399b7-edca-4dd4-a06d-71eb38b6cf78"]
+ CellLabel->"Out[95]=",
+ CellID->665467053,ExpressionUUID->"6ae2f7fd-0f36-4110-b4f7-764cf5d6dca1"]
+}, Open  ]],
+
+Cell["\<\
+Create an operator of DropWhile that drops until an odd number is reached:\
+\>", "Text",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8966301748482122`*^9, 3.896630176501717*^9}, {
+  3.896630228939986*^9, 3.8966302544723015`*^9}},
+ CellID->84824786,ExpressionUUID->"0067791d-962c-47b3-9b01-54916c020040"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"operator", "=", 
+  RowBox[{"DropUntil", "[", 
+   RowBox[{
+    RowBox[{"OddQ", "[", "#", "]"}], "&"}], "]"}]}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.896630177902783*^9, 3.8966301849916153`*^9}, {
+  3.896630224324113*^9, 3.896630225198653*^9}, {3.8966302633230476`*^9, 
+  3.8966302643635526`*^9}},
+ CellLabel->"In[96]:=",
+ CellID->32078323,ExpressionUUID->"ccf95ded-fde1-4d49-8d7f-ef733a6ac332"],
+
+Cell[BoxData[
+ RowBox[{
+  InterpretationBox[
+   TagBox[
+    FrameBox[
+     PaneBox[GridBox[{
+        {
+         StyleBox[
+          StyleBox[
+           AdjustmentBox["\<\"[\[FilledSmallSquare]]\"\>",
+            BoxBaselineShift->-0.25,
+            BoxMargins->{{0, 0}, {-1, -1}}], "ResourceFunctionIcon",
+           FontColor->GrayLevel[0.15]],
+          ShowStringCharacters->False,
+          FontFamily->"Source Sans Pro Black",
+          FontSize->0.65 Inherited,
+          FontWeight->"Heavy",
+          PrivateFontOptions->{"OperatorSubstitution"->False}], 
+         StyleBox[
+          RowBox[{
+           StyleBox["\<\"DropUntil\"\>", "ResourceFunctionLabel"], " "}],
+          ShowAutoStyles->False,
+          ShowStringCharacters->False,
+          FontSize->0.9 Inherited,
+          FontColor->GrayLevel[0.1]]}
+       },
+       GridBoxSpacings->{"Columns" -> {{0.25}}}],
+      Alignment->Left,
+      BaseStyle->{LineSpacing -> {0, 0}, LineBreakWithin -> False},
+      BaselinePosition->Baseline,
+      FrameMargins->{{3, 0}, {0, 0}}],
+     Background->RGBColor[0.968627, 0.976471, 0.984314],
+     BaselinePosition->Baseline,
+     DefaultBaseStyle->{},
+     FrameMargins->{{0, 0}, {1, 1}},
+     FrameStyle->RGBColor[0.831373, 0.847059, 0.85098],
+     RoundingRadius->4],
+    {"FunctionResourceBox", 
+     GrayLevel[0.15], "\"DropUntil\""},
+    TagBoxNote->"FunctionResourceBox"],
+   ResourceFunction["DropUntil"],
+   Selectable->False], "[", 
+  RowBox[{
+   RowBox[{"OddQ", "[", "#1", "]"}], "&"}], "]"}]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{{3.896630185291616*^9, 3.8966302341994734`*^9}, 
+   3.8966302647651014`*^9, 3.89663033611036*^9, 3.8966355891567383`*^9},
+ CellLabel->"Out[96]=",
+ CellID->1035146506,ExpressionUUID->"16d2eb5b-1e14-4e05-a8e8-6f434e58b8d8"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"operator", "[", 
+  RowBox[{"{", 
+   RowBox[{"2", ",", "4", ",", "6", ",", "1", ",", "2", ",", "3"}], "}"}], 
+  "]"}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.896630218144548*^9, 3.896630219846013*^9}, {
+  3.896630257458132*^9, 3.8966302593937387`*^9}},
+ CellLabel->"In[97]:=",
+ CellID->48086180,ExpressionUUID->"95600fd4-a488-4fed-8ca3-c8205e82818f"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", "2", ",", "3"}], "}"}]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8966302597647038`*^9, 3.8966302656751037`*^9}, 
+   3.8966303382119803`*^9, 3.8966355904617662`*^9},
+ CellLabel->"Out[97]=",
+ CellID->86627213,ExpressionUUID->"41cbac6c-2503-42c8-ad33-cccc675b1788"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Generalizations & Extensions", "Subsection",
+ TaggingRules->{},
+ CellChangeTimes->{{3.896630347733176*^9, 3.896630352733162*^9}},
+ CellID->186400462,ExpressionUUID->"c2358f68-d68f-47bb-bfc2-8f0bbd944643"],
+
+Cell[TextData[{
+ "Use on an expression with head ",
+ Cell[BoxData[
+  StyleBox["f", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "e6fa99b2-e1f2-47ad-b440-b8bcfc296921"],
+ ":"
+}], "Text",
+ TaggingRules->{},
+ CellChangeTimes->{{3.89663035455291*^9, 3.896630363942012*^9}},
+ CellID->668866387,ExpressionUUID->"9a0c2c6f-e94b-4c68-b285-1db566cf3c28"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DropUntil", "[", 
+  RowBox[{
+   RowBox[{"f", "[", 
+    RowBox[{
+    "0", ",", "4", ",", "2", ",", "8", ",", "1", ",", "3", ",", "8", ",", 
+     "13", ",", "21"}], "]"}], ",", "OddQ"}], "]"}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8966303659287777`*^9, 3.8966303802580466`*^9}},
+ CellLabel->"In[98]:=",
+ CellID->70436797,ExpressionUUID->"a4b05cda-df6d-4928-956d-73e3ab573e22"],
+
+Cell[BoxData[
+ RowBox[{"f", "[", 
+  RowBox[{"1", ",", "3", ",", "8", ",", "13", ",", "21"}], "]"}]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{3.8966303804360495`*^9, 3.896635592622738*^9},
+ CellLabel->"Out[98]=",
+ CellID->591093551,ExpressionUUID->"2fb7f79c-8b97-43b5-89d1-f53687e52723"]
+}, Open  ]],
+
+Cell[TextData[{
+ Cell[BoxData["DropUntil"], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "d902f065-99c9-4ada-9080-2682187c88f6"],
+ " also works on ",
+ Cell[BoxData[
+  TagBox[
+   ButtonBox[
+    StyleBox["SparseArray", "SymbolsRefLink",
+     ShowStringCharacters->True,
+     FontFamily->"Source Sans Pro"],
+    BaseStyle->Dynamic[
+      FEPrivate`If[
+       CurrentValue["MouseOver"], {
+       "Link", FontColor -> RGBColor[0.8549, 0.39608, 0.1451]}, {"Link"}]],
+    ButtonData->"paclet:ref/SparseArray",
+    ContentPadding->False],
+   MouseAppearanceTag["LinkHand"]]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "24c5ebae-36b9-4ed6-a917-7aa4882a2132"],
+ ":"
+}], "Text",
+ TaggingRules->{},
+ CellChangeTimes->{{3.896630385137492*^9, 3.8966303936456237`*^9}, 
+   3.896635597519353*^9, 3.8966358890815177`*^9},
+ CellID->566199523,ExpressionUUID->"bb867cb0-e165-49fe-a376-65064528fa09"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SparseArray", "[", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"{", "1", "}"}], "->", "10"}], ",", 
+    RowBox[{
+     RowBox[{"{", "2", "}"}], "->", "20"}], ",", 
+    RowBox[{
+     RowBox[{"{", "3", " ", "}"}], "->", "30"}], ",", 
+    RowBox[{
+     RowBox[{"{", "4", "}"}], "->", "40"}]}], "}"}], "]"}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8966304679080453`*^9, 3.8966304706857004`*^9}},
+ CellLabel->"In[31]:=",
+ CellID->853222733,ExpressionUUID->"43ce3256-1e21-4a07-8760-de8693308977"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   TagBox["SparseArray",
+    "SummaryHead"], "[", 
+   DynamicModuleBox[{Typeset`open$$ = False, Typeset`embedState$$ = "Ready"}, 
+    TemplateBox[{
+      PaneSelectorBox[{False -> GridBox[{{
+            PaneBox[
+             ButtonBox[
+              DynamicBox[
+               FEPrivate`FrontEndResource["FEBitmaps", "SummaryBoxOpener"]], 
+              ButtonFunction :> (Typeset`open$$ = True), Appearance -> None, 
+              BaseStyle -> {}, Evaluator -> Automatic, Method -> 
+              "Preemptive"], Alignment -> {Center, Center}, ImageSize -> 
+             Dynamic[{
+               Automatic, 
+                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                 Magnification])}]], 
+            GraphicsBox[
+             
+             RasterBox[{{{0.258878, 0.494759, 0.9031865}, {0.282325, 0.661868,
+               0.973082}, {0.527193, 0.7932440000000001, 
+              0.9858925000000001}, {0.772061, 0.92462, 0.998703}}}, {{0, 0}, {
+              4, 1}}, {0, 1}], AspectRatio -> 1, Axes -> False, Frame -> 
+             False, FrameLabel -> {None, None}, FrameStyle -> Directive[
+               Opacity[0.5], 
+               Thickness[Tiny], 
+               RGBColor[0.368417, 0.506779, 0.709798]], 
+             FrameTicks -> {{None, None}, {None, None}}, GridLinesStyle -> 
+             Directive[
+               GrayLevel[0.5, 0.4]], ImageSize -> 
+             Dynamic[{
+               Automatic, 
+                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                 Magnification])}], 
+             Method -> {
+              "GridLinesInFront" -> True, "AxisPadding" -> Scaled[0.02], 
+               "DefaultBoundaryStyle" -> Automatic, 
+               "DefaultGraphicsInteraction" -> {
+                "Version" -> 1.2, "TrackMousePosition" -> {True, False}, 
+                 "Effects" -> {
+                  "Highlight" -> {"ratio" -> 2}, 
+                   "HighlightPoint" -> {"ratio" -> 2}, 
+                   "Droplines" -> {
+                    "freeformCursorMode" -> True, 
+                    "placement" -> {"x" -> "All", "y" -> "None"}}}}, 
+               "DefaultPlotStyle" -> Automatic, "DomainPadding" -> 
+               Scaled[0.02], "RangePadding" -> Scaled[0.05]}], 
+            GridBox[{{
+               RowBox[{
+                 TagBox["\"Specified elements: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["4", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"Dimensions: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox[
+                  RowBox[{"{", "4", "}"}], "SummaryItem"]}]}}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
+             False, GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
+              BaseStyle -> {
+              ShowStringCharacters -> False, NumberMarks -> False, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+          AutoDelete -> False, 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+          BaselinePosition -> {1, 1}], True -> GridBox[{{
+            PaneBox[
+             ButtonBox[
+              DynamicBox[
+               FEPrivate`FrontEndResource["FEBitmaps", "SummaryBoxCloser"]], 
+              ButtonFunction :> (Typeset`open$$ = False), Appearance -> None, 
+              BaseStyle -> {}, Evaluator -> Automatic, Method -> 
+              "Preemptive"], Alignment -> {Center, Center}, ImageSize -> 
+             Dynamic[{
+               Automatic, 
+                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                 Magnification])}]], 
+            GraphicsBox[
+             
+             RasterBox[{{{0.258878, 0.494759, 0.9031865}, {0.282325, 0.661868,
+               0.973082}, {0.527193, 0.7932440000000001, 
+              0.9858925000000001}, {0.772061, 0.92462, 0.998703}}}, {{0, 0}, {
+              4, 1}}, {0, 1}], AspectRatio -> 1, Axes -> False, Frame -> 
+             False, FrameLabel -> {None, None}, FrameStyle -> Directive[
+               Opacity[0.5], 
+               Thickness[Tiny], 
+               RGBColor[0.368417, 0.506779, 0.709798]], 
+             FrameTicks -> {{None, None}, {None, None}}, GridLinesStyle -> 
+             Directive[
+               GrayLevel[0.5, 0.4]], ImageSize -> 
+             Dynamic[{
+               Automatic, 
+                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                 Magnification])}], 
+             Method -> {
+              "GridLinesInFront" -> True, "AxisPadding" -> Scaled[0.02], 
+               "DefaultBoundaryStyle" -> Automatic, 
+               "DefaultGraphicsInteraction" -> {
+                "Version" -> 1.2, "TrackMousePosition" -> {True, False}, 
+                 "Effects" -> {
+                  "Highlight" -> {"ratio" -> 2}, 
+                   "HighlightPoint" -> {"ratio" -> 2}, 
+                   "Droplines" -> {
+                    "freeformCursorMode" -> True, 
+                    "placement" -> {"x" -> "All", "y" -> "None"}}}}, 
+               "DefaultPlotStyle" -> Automatic, "DomainPadding" -> 
+               Scaled[0.02], "RangePadding" -> Scaled[0.05]}], 
+            GridBox[{{
+               RowBox[{
+                 TagBox["\"Specified elements: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["4", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"Dimensions: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox[
+                  RowBox[{"{", "4", "}"}], "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"Default: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["0", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"Density: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["1.`", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"Elements:\"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["\"\"", "SummaryItem"]}]}, {
+               TagBox[
+                TagBox[
+                 GridBox[{{
+                    RowBox[{
+                    RowBox[{"{", "1", "}"}], "\[Rule]", 
+                    StyleBox[
+                    PaneBox[
+                    "10", ContentPadding -> False, FrameMargins -> 0, 
+                    StripOnInput -> True, BaselinePosition -> Baseline, 
+                    ImageSize -> {{1, 300}, Automatic}], LineBreakWithin -> 
+                    False]}]}, {
+                    RowBox[{
+                    RowBox[{"{", "2", "}"}], "\[Rule]", 
+                    StyleBox[
+                    PaneBox[
+                    "20", ContentPadding -> False, FrameMargins -> 0, 
+                    StripOnInput -> True, BaselinePosition -> Baseline, 
+                    ImageSize -> {{1, 300}, Automatic}], LineBreakWithin -> 
+                    False]}]}, {
+                    RowBox[{
+                    RowBox[{"{", "3", "}"}], "\[Rule]", 
+                    StyleBox[
+                    PaneBox[
+                    "30", ContentPadding -> False, FrameMargins -> 0, 
+                    StripOnInput -> True, BaselinePosition -> Baseline, 
+                    ImageSize -> {{1, 300}, Automatic}], LineBreakWithin -> 
+                    False]}]}, {
+                    RowBox[{
+                    RowBox[{"{", "4", "}"}], "\[Rule]", 
+                    StyleBox[
+                    PaneBox[
+                    "40", ContentPadding -> False, FrameMargins -> 0, 
+                    StripOnInput -> True, BaselinePosition -> Baseline, 
+                    ImageSize -> {{1, 300}, Automatic}], LineBreakWithin -> 
+                    False]}]}}, GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                  DefaultBaseStyle -> "Column", 
+                  GridBoxItemSize -> {
+                   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+                 "Column"], "SummaryItem"]}}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
+             False, GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
+              BaseStyle -> {
+              ShowStringCharacters -> False, NumberMarks -> False, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+          AutoDelete -> False, 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+          BaselinePosition -> {1, 1}]}, 
+       Dynamic[Typeset`open$$], ImageSize -> Automatic]},
+     "SummaryPanel"],
+    DynamicModuleValues:>{}], "]"}],
+  SparseArray[
+  Automatic, {4}, 0, {1, {{0, 4}, {{1}, {2}, {3}, {4}}}, {10, 20, 30, 40}}],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8966304620196133`*^9, 3.896630471132743*^9}},
+ CellLabel->"Out[31]=",
+ CellID->140240977,ExpressionUUID->"e1b6167e-9098-40f0-a9f6-d1bcddb03286"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Normal", "[", 
+  RowBox[{"SparseArray", "[", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"{", "1", "}"}], "->", "10"}], ",", 
+     RowBox[{
+      RowBox[{"{", "2", "}"}], "->", "20"}], ",", 
+     RowBox[{
+      RowBox[{"{", "3", " ", "}"}], "->", "30"}], ",", 
+     RowBox[{
+      RowBox[{"{", "4", "}"}], "->", "40"}]}], "}"}], "]"}], "]"}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8966356225842915`*^9, 3.8966356237902956`*^9}},
+ CellLabel->"In[101]:=",
+ CellID->432590281,ExpressionUUID->"debe0967-1328-4abe-92f0-d3f9c92c455c"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"10", ",", "20", ",", "30", ",", "40"}], "}"}]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{3.8966356241508446`*^9},
+ CellLabel->"Out[101]=",
+ CellID->714295226,ExpressionUUID->"6c2e2ba8-bb4b-4e61-be3f-00fb9643b5c8"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DropUntil", "[", 
+  RowBox[{
+   RowBox[{"SparseArray", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"{", "1", "}"}], "->", "10"}], ",", 
+      RowBox[{
+       RowBox[{"{", "2", "}"}], "->", "20"}], ",", 
+      RowBox[{
+       RowBox[{"{", "3", " ", "}"}], "->", "30"}], ",", 
+      RowBox[{
+       RowBox[{"{", "4", "}"}], "->", "40"}]}], "}"}], "]"}], ",", 
+   RowBox[{"GreaterThan", "[", "25", "]"}]}], "]"}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.896630399139139*^9, 3.896630475661855*^9}, {
+  3.896635673283145*^9, 3.8966356760472593`*^9}},
+ CellLabel->"In[102]:=",
+ CellID->209028652,ExpressionUUID->"cc0a4890-9a47-4154-8c21-15f02eb6cd22"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   TagBox["SparseArray",
+    "SummaryHead"], "[", 
+   DynamicModuleBox[{Typeset`open$$ = False, Typeset`embedState$$ = "Ready"}, 
+    TemplateBox[{
+      PaneSelectorBox[{False -> GridBox[{{
+            PaneBox[
+             ButtonBox[
+              DynamicBox[
+               FEPrivate`FrontEndResource["FEBitmaps", "SummaryBoxOpener"]], 
+              ButtonFunction :> (Typeset`open$$ = True), Appearance -> None, 
+              BaseStyle -> {}, Evaluator -> Automatic, Method -> 
+              "Preemptive"], Alignment -> {Center, Center}, ImageSize -> 
+             Dynamic[{
+               Automatic, 
+                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                 Magnification])}]], 
+            GraphicsBox[
+             
+             RasterBox[{{{0.404759, 0.727556, 0.97948725}, {0.772061, 0.92462,
+               0.998703}}}, {{0, 0}, {2, 1}}, {0, 1}], AspectRatio -> 1, Axes -> 
+             False, Frame -> False, FrameLabel -> {None, None}, FrameStyle -> 
+             Directive[
+               Opacity[0.5], 
+               Thickness[Tiny], 
+               RGBColor[0.368417, 0.506779, 0.709798]], 
+             FrameTicks -> {{None, None}, {None, None}}, GridLinesStyle -> 
+             Directive[
+               GrayLevel[0.5, 0.4]], ImageSize -> 
+             Dynamic[{
+               Automatic, 
+                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                 Magnification])}], 
+             Method -> {
+              "GridLinesInFront" -> True, "AxisPadding" -> Scaled[0.02], 
+               "DefaultBoundaryStyle" -> Automatic, 
+               "DefaultGraphicsInteraction" -> {
+                "Version" -> 1.2, "TrackMousePosition" -> {True, False}, 
+                 "Effects" -> {
+                  "Highlight" -> {"ratio" -> 2}, 
+                   "HighlightPoint" -> {"ratio" -> 2}, 
+                   "Droplines" -> {
+                    "freeformCursorMode" -> True, 
+                    "placement" -> {"x" -> "All", "y" -> "None"}}}}, 
+               "DefaultPlotStyle" -> Automatic, "DomainPadding" -> 
+               Scaled[0.02], "RangePadding" -> Scaled[0.05]}], 
+            GridBox[{{
+               RowBox[{
+                 TagBox["\"Specified elements: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["2", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"Dimensions: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox[
+                  RowBox[{"{", "2", "}"}], "SummaryItem"]}]}}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
+             False, GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
+              BaseStyle -> {
+              ShowStringCharacters -> False, NumberMarks -> False, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+          AutoDelete -> False, 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+          BaselinePosition -> {1, 1}], True -> GridBox[{{
+            PaneBox[
+             ButtonBox[
+              DynamicBox[
+               FEPrivate`FrontEndResource["FEBitmaps", "SummaryBoxCloser"]], 
+              ButtonFunction :> (Typeset`open$$ = False), Appearance -> None, 
+              BaseStyle -> {}, Evaluator -> Automatic, Method -> 
+              "Preemptive"], Alignment -> {Center, Center}, ImageSize -> 
+             Dynamic[{
+               Automatic, 
+                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                 Magnification])}]], 
+            GraphicsBox[
+             
+             RasterBox[{{{0.404759, 0.727556, 0.97948725}, {0.772061, 0.92462,
+               0.998703}}}, {{0, 0}, {2, 1}}, {0, 1}], AspectRatio -> 1, Axes -> 
+             False, Frame -> False, FrameLabel -> {None, None}, FrameStyle -> 
+             Directive[
+               Opacity[0.5], 
+               Thickness[Tiny], 
+               RGBColor[0.368417, 0.506779, 0.709798]], 
+             FrameTicks -> {{None, None}, {None, None}}, GridLinesStyle -> 
+             Directive[
+               GrayLevel[0.5, 0.4]], ImageSize -> 
+             Dynamic[{
+               Automatic, 
+                3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
+                 Magnification])}], 
+             Method -> {
+              "GridLinesInFront" -> True, "AxisPadding" -> Scaled[0.02], 
+               "DefaultBoundaryStyle" -> Automatic, 
+               "DefaultGraphicsInteraction" -> {
+                "Version" -> 1.2, "TrackMousePosition" -> {True, False}, 
+                 "Effects" -> {
+                  "Highlight" -> {"ratio" -> 2}, 
+                   "HighlightPoint" -> {"ratio" -> 2}, 
+                   "Droplines" -> {
+                    "freeformCursorMode" -> True, 
+                    "placement" -> {"x" -> "All", "y" -> "None"}}}}, 
+               "DefaultPlotStyle" -> Automatic, "DomainPadding" -> 
+               Scaled[0.02], "RangePadding" -> Scaled[0.05]}], 
+            GridBox[{{
+               RowBox[{
+                 TagBox["\"Specified elements: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["2", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"Dimensions: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox[
+                  RowBox[{"{", "2", "}"}], "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"Default: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["0", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"Density: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["1.`", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"Elements:\"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["\"\"", "SummaryItem"]}]}, {
+               TagBox[
+                TagBox[
+                 GridBox[{{
+                    RowBox[{
+                    RowBox[{"{", "1", "}"}], "\[Rule]", 
+                    StyleBox[
+                    PaneBox[
+                    "30", ContentPadding -> False, FrameMargins -> 0, 
+                    StripOnInput -> True, BaselinePosition -> Baseline, 
+                    ImageSize -> {{1, 300}, Automatic}], LineBreakWithin -> 
+                    False]}]}, {
+                    RowBox[{
+                    RowBox[{"{", "2", "}"}], "\[Rule]", 
+                    StyleBox[
+                    PaneBox[
+                    "40", ContentPadding -> False, FrameMargins -> 0, 
+                    StripOnInput -> True, BaselinePosition -> Baseline, 
+                    ImageSize -> {{1, 300}, Automatic}], LineBreakWithin -> 
+                    False]}]}}, GridBoxAlignment -> {"Columns" -> {{Left}}}, 
+                  DefaultBaseStyle -> "Column", 
+                  GridBoxItemSize -> {
+                   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+                 "Column"], "SummaryItem"]}}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
+             False, GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
+              BaseStyle -> {
+              ShowStringCharacters -> False, NumberMarks -> False, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+          GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+          AutoDelete -> False, 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+          BaselinePosition -> {1, 1}]}, 
+       Dynamic[Typeset`open$$], ImageSize -> Automatic]},
+     "SummaryPanel"],
+    DynamicModuleValues:>{}], "]"}],
+  SparseArray[Automatic, {2}, 0, {1, {{0, 2}, {{1}, {2}}}, {30, 40}}],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{{3.896630441414322*^9, 3.8966304765105114`*^9}, 
+   3.896635606758459*^9, 3.8966356765007973`*^9},
+ CellLabel->"Out[102]=",
+ CellID->181829007,ExpressionUUID->"7631bf39-4cbd-4c11-b754-2f63cbcf7e34"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Normal", "[", 
+  RowBox[{"DropUntil", "[", 
+   RowBox[{
+    RowBox[{"SparseArray", "[", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"{", "1", "}"}], "->", "10"}], ",", 
+       RowBox[{
+        RowBox[{"{", "2", "}"}], "->", "20"}], ",", 
+       RowBox[{
+        RowBox[{"{", "3", " ", "}"}], "->", "30"}], ",", 
+       RowBox[{
+        RowBox[{"{", "4", "}"}], "->", "40"}]}], "}"}], "]"}], ",", 
+    RowBox[{"GreaterThan", "[", "25", "]"}]}], "]"}], "]"}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8966356177944613`*^9, 3.896635619138599*^9}, 
+   3.8966356825110593`*^9},
+ CellLabel->"In[103]:=",
+ CellID->158710293,ExpressionUUID->"15b25a7a-e018-4d8c-be14-0c0387043360"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"30", ",", "40"}], "}"}]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{3.8966356195125823`*^9, 3.8966356831370773`*^9},
+ CellLabel->"Out[103]=",
+ CellID->295929345,ExpressionUUID->"4f3244ab-eb04-4f14-91ac-f203665f3ced"]
 }, Open  ]]
 }, Open  ]],
 
 Cell["Options", "Subsection",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellID->879773335,ExpressionUUID->"571d58ab-f1e5-4675-939b-aed553cfbdad"],
 
+Cell[CellGroupData[{
+
 Cell["Applications", "Subsection",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellID->542143288,ExpressionUUID->"e9970ab7-f45e-478d-b184-563c9c2f5d56"],
 
+Cell["Drop leading zeros:", "Text",
+ TaggingRules->{},
+ CellChangeTimes->{{3.896630491054345*^9, 3.8966304956139584`*^9}},
+ CellID->423595988,ExpressionUUID->"7f7b5479-d835-43f1-bed5-e99744057377"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DropUntil", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+    "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "13.4", ",", 
+     "15.7", ",", "11.3", ",", "9.3", ",", "2.7"}], "}"}], ",", 
+   RowBox[{
+    RowBox[{"!", 
+     RowBox[{
+      RowBox[{"EqualTo", "[", "0.", "]"}], "[", "#", "]"}]}], "&"}]}], 
+  "]"}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8966304998222575`*^9, 3.896630521417637*^9}},
+ CellLabel->"In[35]:=",
+ CellID->82818926,ExpressionUUID->"5b7623d8-c254-4547-b0db-23e2e363f5df"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"13.4`", ",", "15.7`", ",", "11.3`", ",", "9.3`", ",", "2.7`"}], 
+  "}"}]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8966305074614935`*^9, 3.89663052187064*^9}},
+ CellLabel->"Out[35]=",
+ CellID->435232255,ExpressionUUID->"dcf609c1-12cd-4b34-9655-9fdac11693d1"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
 Cell["Properties and Relations", "Subsection",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellID->727494039,ExpressionUUID->"208fb7df-04ce-4729-a7c1-d83ddefddd13"],
 
+Cell[TextData[{
+ Cell[BoxData["DropUntil"], "InlineFormula",
+  FontFamily->"Source Sans Pro",
+  FontSize->0.9428571428571428 Inherited,ExpressionUUID->
+  "bef888b0-c307-4785-8d39-089bcc0bea00"],
+ " is equivalent to a combination of ",
+ Cell[BoxData[
+  TagBox[
+   ButtonBox[
+    StyleBox["Drop", "SymbolsRefLink",
+     ShowStringCharacters->True,
+     FontFamily->"Source Sans Pro"],
+    BaseStyle->Dynamic[
+      FEPrivate`If[
+       CurrentValue["MouseOver"], {
+       "Link", FontColor -> RGBColor[0.854902, 0.396078, 0.145098]}, {
+       "Link"}]],
+    ButtonData->"paclet:ref/Drop",
+    ContentPadding->False],
+   MouseAppearanceTag["LinkHand"]]], "InlineFormula",
+  FontFamily->"Source Sans Pro",
+  FontSize->0.9428571428571428 Inherited,ExpressionUUID->
+  "ec43f346-638d-4242-a92b-3d85f32eb50f"],
+ " and ",
+ ButtonBox["LengthUntil",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://www.wolframcloud.com/obj/burbery1/DeployedResources/Function/\
+LengthUntil/"], None},
+  ButtonNote->
+   "https://www.wolframcloud.com/obj/burbery1/DeployedResources/Function/\
+LengthUntil/"],
+ "-1:"
+}], "Text",
+ TaggingRules->{},
+ CellChangeTimes->{{3.764171118910385*^9, 3.764171135769318*^9}, {
+  3.764238302155249*^9, 3.764238306221634*^9}, {3.896635760364789*^9, 
+  3.8966357721041803`*^9}, {3.8966358058364477`*^9, 3.8966358073654923`*^9}, {
+  3.8966358517689652`*^9, 3.896635851963964*^9}},
+ CellID->857425895,ExpressionUUID->"815f0d0b-688e-4123-ba0d-6003b14a54b3"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"data", "=", 
+  RowBox[{"{", 
+   RowBox[{
+   "1", ",", "1", ",", "2", ",", "3", ",", "5", ",", "8", ",", "13", ",", 
+    "21"}], "}"}]}]], "Input",
+ TaggingRules->{},
+ CellLabel->"In[104]:=",
+ CellID->27071682,ExpressionUUID->"a9f58be5-cdec-43a8-b8dd-ab503f334cb1"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "1", ",", "1", ",", "2", ",", "3", ",", "5", ",", "8", ",", "13", ",", 
+   "21"}], "}"}]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{3.764171137965014*^9, 3.76417133234485*^9, 
+  3.764172039362496*^9, 3.764175427508624*^9, 3.76423811426554*^9, 
+  3.8966358028248425`*^9},
+ CellLabel->"Out[104]=",
+ CellID->681186306,ExpressionUUID->"03be0acd-1fe1-45ba-9d5b-479233df9747"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DropUntil", "[", 
+  RowBox[{"data", ",", 
+   RowBox[{
+    RowBox[{"#", ">", "7"}], "&"}]}], "]"}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.764171143305421*^9, 3.76417114930787*^9}, {
+  3.8966358093785334`*^9, 3.896635814188716*^9}},
+ CellLabel->"In[106]:=",
+ CellID->927129426,ExpressionUUID->"d0d2835e-b295-4947-bb47-e1772917de9d"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"8", ",", "13", ",", "21"}], "}"}]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{{3.7641711444806137`*^9, 3.764171149683455*^9}, 
+   3.764171334419862*^9, 3.764172039918095*^9, 3.764175428926302*^9, 
+   3.7642381150453033`*^9, {3.8966358108075895`*^9, 3.896635814545372*^9}},
+ CellLabel->"Out[106]=",
+ CellID->444085822,ExpressionUUID->"6412f43b-c5a9-458d-a50b-b8d1f43a226a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Drop", "[", 
+  RowBox[{"data", ",", 
+   RowBox[{
+    RowBox[{
+     InterpretationBox[
+      TagBox[
+       FrameBox[
+        PaneBox[GridBox[{
+           {
+            StyleBox[
+             StyleBox[
+              AdjustmentBox["\<\"[\[FilledSmallSquare]]\"\>",
+               BoxBaselineShift->-0.25,
+               BoxMargins->{{0, 0}, {-1, -1}}], "ResourceFunctionIcon",
+              FontColor->GrayLevel[0.45]],
+             ShowStringCharacters->False,
+             FontFamily->"Source Sans Pro Black",
+             FontSize->0.65 Inherited,
+             FontWeight->"Heavy",
+             PrivateFontOptions->{"OperatorSubstitution"->False}], 
+            StyleBox[
+             RowBox[{
+              StyleBox["\<\"LengthUntil\"\>", "ResourceFunctionLabel"], " "}],
+             ShowAutoStyles->False,
+             ShowStringCharacters->False,
+             FontSize->0.9 Inherited,
+             FontColor->GrayLevel[0.1]]}
+          },
+          GridBoxSpacings->{"Columns" -> {{0.25}}}],
+         Alignment->Left,
+         BaseStyle->{LineSpacing -> {0, 0}, LineBreakWithin -> False},
+         BaselinePosition->Baseline,
+         FrameMargins->{{3, 0}, {0, 0}}],
+        Background->RGBColor[0.968627, 0.976471, 0.984314],
+        BaselinePosition->Baseline,
+        DefaultBaseStyle->{},
+        FrameMargins->{{0, 0}, {1, 1}},
+        FrameStyle->RGBColor[0.831373, 0.847059, 0.85098],
+        RoundingRadius->4],
+       {"FunctionResourceBox", 
+        GrayLevel[0.45], "\"LengthUntil\""},
+       TagBoxNote->"FunctionResourceBox"],
+      ResourceFunction[
+       ResourceObject[<|
+        "DocumentationLink" -> 
+         URL["https://www.wolframcloud.com/obj/burbery1/DeployedResources/\
+Function/LengthUntil"], "ResourceLocations" -> {
+           CloudObject[
+           "https://www.wolframcloud.com/obj/burbery1/Resources/645/64516588-\
+d81d-4fae-b1c1-a0cdcf224fd6"]}, "Name" -> "LengthUntil", "UUID" -> 
+         "64516588-d81d-4fae-b1c1-a0cdcf224fd6", "ResourceType" -> "Function",
+          "Description" -> "The length until a condition is satisfied", 
+         "Version" -> None, 
+         "Keywords" -> {
+          "Loops", "Procedural Programming", "Functional Iteration", 
+           "Conditionals", "Elements of Lists", "Functional Programming"}, 
+         "Categories" -> {
+          "Core Language & Structure", "Higher Mathematical Computation", 
+           "Programming Utilities", "Symbolic & Numeric Computation"}, 
+         "Compatibility" -> <|
+          "WolframLanguageVersionRequired" -> "13.0+", 
+           "OperatingSystem" -> {"Windows", "MacOSX", "Unix"}, 
+           "Features" -> {}, 
+           "EvaluationEnvironment" -> {
+            "Session", "WebEvaluation", "BatchJob", "Script", "WebAPI", 
+             "Subkernel", "Scheduled"}, "CloudSupport" -> True|>, 
+         "ContributorInformation" -> <|
+          "ContributedBy" -> "Peter Cullen Burbery"|>, "DefinitionNotebook" -> 
+         CloudObject[
+          "https://www.wolframcloud.com/obj/burbery1/DeployedResources/\
+Function/LengthUntil/LengthUntil-DefinitionNotebook.nb"], "ExampleNotebook" -> 
+         CloudObject[
+          "https://www.wolframcloud.com/obj/burbery1/DeployedResources/\
+Function/LengthUntil/LengthUntil-ExampleNotebook.nb"], "ExampleNotebookData" -> 
+         Automatic, "ExternalLinks" -> {
+           Hyperlink[
+           "TakeUntil", 
+            "https://www.wolframcloud.com/obj/burbery1/DeployedResources/\
+Function/TakeUntil/"]}, "FunctionLocation" -> 
+         CloudObject[
+          "https://www.wolframcloud.com/obj/burbery1/Resources/645/64516588-\
+d81d-4fae-b1c1-a0cdcf224fd6/download/DefinitionData"], 
+         "RelatedSymbols" -> {"Until", "While", "TakeWhile", "LengthWhile"}, 
+         "SeeAlso" -> {"Until", "NestWhileGraph", "DropWhile"}, "ShortName" -> 
+         "LengthUntil", "SymbolName" -> 
+         "FunctionRepository`$64516588d81d4faeb1c1a0cdcf224fd6`LengthUntil", 
+         "PageHeaderClickToCopy" -> 
+         "ResourceObject[CloudObject[\"https://www.wolframcloud.com/obj/\
+burbery1/DeployedResources/Function/LengthUntil\"]]"|>]],
+      Selectable->False], "[", 
+     RowBox[{"data", ",", 
+      RowBox[{
+       RowBox[{"#", ">", "7"}], "&"}]}], "]"}], "-", "1"}]}], "]"}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.764171154042912*^9, 3.764171156662307*^9}, {
+  3.896635818698494*^9, 3.8966358415904856`*^9}},
+ CellLabel->"In[110]:=",
+ CellID->885330103,ExpressionUUID->"3dd316ee-b9ad-40f5-93f3-1c044fc8b473"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"8", ",", "13", ",", "21"}], "}"}]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{
+  3.764171157024097*^9, 3.764171335219111*^9, 3.7641720406749887`*^9, 
+   3.764175429941649*^9, 3.764238116590582*^9, {3.896635831294856*^9, 
+   3.8966358420335627`*^9}},
+ CellLabel->"Out[110]=",
+ CellID->350136251,ExpressionUUID->"f272e2c9-05ca-4bc0-88dc-1ae8aebc89f5"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "\t", "ExampleDelimiter",ExpressionUUID->
+   "dc09e9bf-baa0-49d6-aa9f-b24e13d2a3a4"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ TaggingRules->{},
+ CellID->201651930,ExpressionUUID->"02f24de6-8358-449b-bfb4-ce84ced2f6d1"],
+
+Cell[TextData[{
+ Cell[BoxData["DropUntil"], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "2dd9ba9c-1fb6-4070-af34-81a724ff34d6"],
+ " gives an empty list if ",
+ Cell[BoxData[
+  RowBox[{
+   StyleBox["crit", "TI"], "[", 
+   SubscriptBox[
+    StyleBox["e", "TI"], 
+    StyleBox["i", "TI"]], "]"}]], "InlineFormula",
+  FontFamily->"Source Sans Pro",
+  FontSize->0.9428571428571428 Inherited,ExpressionUUID->
+  "b9973704-f2c0-4c27-b81e-fde786edd194"],
+ " is False for all elements:"
+}], "Text",
+ TaggingRules->{},
+ CellChangeTimes->{{3.896635903750362*^9, 3.896635909652994*^9}, {
+  3.89663597987033*^9, 3.8966360093928037`*^9}},
+ CellID->54307262,ExpressionUUID->"ada8afa8-03c1-47b3-9be9-9e839b1393db"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"list", "=", 
+  RowBox[{"RandomColor", "[", 
+   RowBox[{
+    RowBox[{"Hue", "[", 
+     RowBox[{"_", ",", "1", ",", "1"}], "]"}], ",", "30", ",", 
+    RowBox[{"ColorSpace", "->", "\"\<HSB\>\""}]}], "]"}]}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.896635965155467*^9, 3.8966359666496944`*^9}},
+ CellLabel->"In[111]:=",
+ CellID->673337384,ExpressionUUID->"9511dfa4-78d7-485d-a47e-9ee3a2ebbf0b"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TemplateBox[<|"color" -> Hue[0.10712430822686403`, 1., 1.]|>,
+    "HueColorSwatchTemplate"], ",", 
+   TemplateBox[<|"color" -> Hue[0.14597271756309116`, 1., 1.]|>,
+    "HueColorSwatchTemplate"], ",", 
+   TemplateBox[<|"color" -> Hue[0.13367732715728464`, 1., 1.]|>,
+    "HueColorSwatchTemplate"], ",", 
+   TemplateBox[<|"color" -> Hue[0.0400716549060085, 1., 1.]|>,
+    "HueColorSwatchTemplate"], ",", 
+   TemplateBox[<|"color" -> Hue[0.5538254681066981, 1., 1.]|>,
+    "HueColorSwatchTemplate"], ",", 
+   TemplateBox[<|"color" -> Hue[0.9988967428654811, 1., 1.]|>,
+    "HueColorSwatchTemplate"], ",", 
+   TemplateBox[<|"color" -> Hue[0.27146211186552427`, 1., 1.]|>,
+    "HueColorSwatchTemplate"], ",", 
+   TemplateBox[<|"color" -> Hue[0.48381241527662033`, 1., 1.]|>,
+    "HueColorSwatchTemplate"], ",", 
+   TemplateBox[<|"color" -> Hue[0.517354136289341, 1., 1.]|>,
+    "HueColorSwatchTemplate"], ",", 
+   TemplateBox[<|"color" -> Hue[0.30383169425651246`, 1., 1.]|>,
+    "HueColorSwatchTemplate"], ",", 
+   TemplateBox[<|"color" -> Hue[0.1580203758811336, 1., 1.]|>,
+    "HueColorSwatchTemplate"], ",", 
+   TemplateBox[<|"color" -> Hue[0.7063640443150245, 1., 1.]|>,
+    "HueColorSwatchTemplate"], ",", 
+   TemplateBox[<|"color" -> Hue[0.5714962187054866, 1., 1.]|>,
+    "HueColorSwatchTemplate"], ",", 
+   TemplateBox[<|"color" -> Hue[0.3934028528474278, 1., 1.]|>,
+    "HueColorSwatchTemplate"], ",", 
+   TemplateBox[<|"color" -> Hue[0.984942195536628, 1., 1.]|>,
+    "HueColorSwatchTemplate"], ",", 
+   TemplateBox[<|"color" -> Hue[0.9718559915414449, 1., 1.]|>,
+    "HueColorSwatchTemplate"], ",", 
+   TemplateBox[<|"color" -> Hue[0.7735588727207547, 1., 1.]|>,
+    "HueColorSwatchTemplate"], ",", 
+   TemplateBox[<|"color" -> Hue[0.30633821505563064`, 1., 1.]|>,
+    "HueColorSwatchTemplate"], ",", 
+   TemplateBox[<|"color" -> Hue[0.46937777587491114`, 1., 1.]|>,
+    "HueColorSwatchTemplate"], ",", 
+   TemplateBox[<|"color" -> Hue[0.10346416439471362`, 1., 1.]|>,
+    "HueColorSwatchTemplate"], ",", 
+   TemplateBox[<|"color" -> Hue[0.6039199380512938, 1., 1.]|>,
+    "HueColorSwatchTemplate"], ",", 
+   TemplateBox[<|"color" -> Hue[0.6762964493808845, 1., 1.]|>,
+    "HueColorSwatchTemplate"], ",", 
+   TemplateBox[<|"color" -> Hue[0.9847285814103486, 1., 1.]|>,
+    "HueColorSwatchTemplate"], ",", 
+   TemplateBox[<|"color" -> Hue[0.04970386626951884, 1., 1.]|>,
+    "HueColorSwatchTemplate"], ",", 
+   TemplateBox[<|"color" -> Hue[0.481561520258148, 1., 1.]|>,
+    "HueColorSwatchTemplate"], ",", 
+   TemplateBox[<|"color" -> Hue[0.7436874876127533, 1., 1.]|>,
+    "HueColorSwatchTemplate"], ",", 
+   TemplateBox[<|"color" -> Hue[0.37901972037830234`, 1., 1.]|>,
+    "HueColorSwatchTemplate"], ",", 
+   TemplateBox[<|"color" -> Hue[0.652198518541667, 1., 1.]|>,
+    "HueColorSwatchTemplate"], ",", 
+   TemplateBox[<|"color" -> Hue[0.32178417569213136`, 1., 1.]|>,
+    "HueColorSwatchTemplate"], ",", 
+   TemplateBox[<|"color" -> Hue[0.09129185780813454, 1., 1.]|>,
+    "HueColorSwatchTemplate"]}], "}"}]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{3.896635967518702*^9},
+ CellLabel->"Out[111]=",
+ CellID->341503908,ExpressionUUID->"0fa9fadb-b1d3-43bf-8352-c4423c3e5701"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DropUntil", "[", 
+  RowBox[{"list", ",", "NumberQ"}], "]"}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8966359107209926`*^9, 3.896635973686*^9}},
+ CellLabel->"In[112]:=",
+ CellID->423569071,ExpressionUUID->"f61f6400-e771-4e4a-acbd-c456c9c5a77b"],
+
+Cell[BoxData[
+ RowBox[{"{", "}"}]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{3.896635973920989*^9},
+ CellLabel->"Out[112]=",
+ CellID->252085924,ExpressionUUID->"50bda53f-b4cd-4e96-b462-1de63a822fb9"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"AllTrue", "[", 
+   RowBox[{
+    RowBox[{"!", 
+     RowBox[{"NumberQ", "[", "#", "]"}]}], "&"}], "]"}], "[", "list", 
+  "]"}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.8966359842073703`*^9, 3.8966359926120443`*^9}},
+ CellLabel->"In[113]:=",
+ CellID->47356327,ExpressionUUID->"43c93a34-496f-4994-ae8b-1555c73bbfe7"],
+
+Cell[BoxData["True"], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{3.8966359928410935`*^9},
+ CellLabel->"Out[113]=",
+ CellID->34411306,ExpressionUUID->"5767c820-5a64-4568-b597-e8f5cf68cf27"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "\t", "ExampleDelimiter",ExpressionUUID->
+   "3dc69f77-37ff-41a4-9574-02bab3636507"],
+  $Line = 0; Null]], "ExampleDelimiter",
+ CellID->143149823,ExpressionUUID->"4f1edcb5-1cc2-42cd-a329-4efbf6d7e59d"],
+
+Cell["\<\
+Combining the results of TakeWhile and DropWhile gives the original list:\
+\>", "Text",
+ CellChangeTimes->{{3.8966360281541467`*^9, 3.896636029543331*^9}},
+ CellID->435233556,ExpressionUUID->"3fb79ff9-e9d9-4497-ba4d-eae9931a59af"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"data", "=", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", 
+     RowBox[{"-", "1"}], ",", "2", ",", "p", ",", "3", ",", "q", ",", "5", 
+     ",", "8", ",", "13", ",", "21"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"TakeUntil", "[", 
+   RowBox[{"data", ",", 
+    RowBox[{
+     RowBox[{"#", "<", "7"}], "&"}]}], "]"}], "~", "Join", "~", 
+  RowBox[{"DropUntil", "[", 
+   RowBox[{"data", ",", 
+    RowBox[{
+     RowBox[{"#", "<", "7"}], "&"}]}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.89663603743993*^9, 3.8966360511327157`*^9}},
+ CellLabel->"In[116]:=",
+ CellID->854570136,ExpressionUUID->"fdef8234-2928-400e-8811-2760a562ecb8"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", "1", ",", 
+   RowBox[{"-", "1"}], ",", "2", ",", "p", ",", "3", ",", "q", ",", "5", ",", 
+   "8", ",", "13", ",", "21"}], "}"}]], "Output",
+ CellChangeTimes->{{3.896636046131741*^9, 3.896636051500717*^9}},
+ CellLabel->"Out[117]=",
+ CellID->142340086,ExpressionUUID->"215aba07-aa7d-430b-9f69-0c62abada841"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"data", "=", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", 
+     RowBox[{"-", "1"}], ",", "2", ",", "p", ",", "3", ",", "q", ",", "5", 
+     ",", "8", ",", "13", ",", "21"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Echo", "@", 
+   RowBox[{"TakeUntil", "[", 
+    RowBox[{"data", ",", 
+     RowBox[{
+      RowBox[{"TrueQ", "[", 
+       RowBox[{"#", ">", "7"}], "]"}], "&"}]}], "]"}]}], "~", "Join", "~", 
+  RowBox[{"Echo", "@", 
+   RowBox[{"DropUntil", "[", 
+    RowBox[{"data", ",", 
+     RowBox[{
+      RowBox[{"TrueQ", "[", 
+       RowBox[{"#", ">", "7"}], "]"}], "&"}]}], "]"}]}]}]}], "Input",
+ CellChangeTimes->{{3.89663603743993*^9, 3.8966361072592278`*^9}},
+ CellLabel->"In[130]:=",
+ CellID->32008902,ExpressionUUID->"3519b239-f031-4409-ad38-8e9dd131c71e"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", 
+   RowBox[{"-", "1"}], ",", "2", ",", "p", ",", "3", ",", "q", ",", "5", ",", 
+   "8"}], "}"}]], "Echo",
+ CellChangeTimes->{3.8966361074707365`*^9},
+ CellID->85903306,ExpressionUUID->"50277d79-01f4-4218-a827-370904654cac"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"8", ",", "13", ",", "21"}], "}"}]], "Echo",
+ CellChangeTimes->{3.8966361075937357`*^9},
+ CellID->328442779,ExpressionUUID->"58a792c0-d122-4121-9353-4d42cfd17718"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", 
+   RowBox[{"-", "1"}], ",", "2", ",", "p", ",", "3", ",", "q", ",", "5", ",", 
+   "8", ",", "8", ",", "13", ",", "21"}], "}"}]], "Output",
+ CellChangeTimes->{{3.896636066639511*^9, 3.896636107724737*^9}},
+ CellLabel->"Out[131]=",
+ CellID->24356392,ExpressionUUID->"7287d9b3-9017-4513-a8ee-e6d2ecfaca7f"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"p", ">", "7"}]], "Input",
+ CellChangeTimes->{{3.896636086001229*^9, 3.8966360868822603`*^9}},
+ CellLabel->"In[124]:=",
+ CellID->40492482,ExpressionUUID->"324c3936-fb8c-4ea9-8de0-b08194056d6d"],
+
+Cell[BoxData[
+ RowBox[{"p", ">", "7"}]], "Output",
+ CellChangeTimes->{3.8966360872702465`*^9},
+ CellLabel->"Out[124]=",
+ CellID->74991476,ExpressionUUID->"d4a07ad6-b721-4353-b33b-22eebd14b4ab"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TrueQ", "[", 
+  RowBox[{"p", ">", "7"}], "]"}]], "Input",
+ CellChangeTimes->{{3.896636090483754*^9, 3.89663609199683*^9}},
+ CellLabel->"In[125]:=",
+ CellID->122153940,ExpressionUUID->"3c55230a-8087-452a-904e-f660a5d51eef"],
+
+Cell[BoxData["False"], "Output",
+ CellChangeTimes->{3.8966360924698296`*^9},
+ CellLabel->"Out[125]=",
+ CellID->40708950,ExpressionUUID->"e4164cae-35a8-4a75-8181-899528941c1a"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
 Cell["Possible Issues", "Subsection",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellID->471245215,ExpressionUUID->"7e5a9f65-3741-4cc7-b980-9b47b22427ff"],
 
 Cell["Neat Examples", "Subsection",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellID->303071976,ExpressionUUID->"9e974719-a842-48b8-a547-1583853c3bec"]
 }, Open  ]],
@@ -514,13 +2368,15 @@ publicly credited with contributing this function.", "MoreInfoText"],
  CellTags->{"Contributed By", "ContributorInformation", "TemplateCellGroup"},
  CellID->771147648,ExpressionUUID->"81371600-b5b8-46c0-a40a-ed047d52f059"],
 
-Cell["Author Name", "Text",
+Cell["Peter Cullen Burbery", "Text",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
        WrapAround -> True], Blank[NotebookSelection] :> SelectionMove[
        SelectedNotebook[], All, CellContents, AutoScroll -> True]], 
    PassEventsDown -> False, PassEventsUp -> False},
+ CellChangeTimes->{{3.8966298886740236`*^9, 3.896629893830288*^9}},
  CellTags->{"DefaultContent", "TabNext"},
  CellID->855757352,ExpressionUUID->"bf258a5f-cbb2-4a7a-9426-7e8f7067073a"]
 }, Open  ]],
@@ -557,6 +2413,7 @@ concepts) that should be used to include the function in search results.",
  CellID->854882061,ExpressionUUID->"04e9e22e-ab49-4a78-8021-f3c649d60882"],
 
 Cell["keyword 1", "Item",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -860,6 +2717,7 @@ related to the function.", "MoreInfoText"], Background -> GrayLevel[0.95],
  CellID->525877127,ExpressionUUID->"f5703bd5-ccfb-4d3c-a308-d1fa4058b604"],
 
 Cell["SymbolName (documented Wolfram Language symbol)", "Item",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -902,6 +2760,7 @@ repository that are related to this function.", "MoreInfoText"], Background ->
  CellID->869341850,ExpressionUUID->"6f584010-eab5-4c2b-bfbb-59f891d73ade"],
 
 Cell["Resource Name (resources from any Wolfram repository)", "Item",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -944,6 +2803,7 @@ repository).", "MoreInfoText"], Background -> GrayLevel[0.95], FrameMargins ->
  CellID->788767010,ExpressionUUID->"206576f6-1007-4ba2-b426-1d15673a6360"],
 
 Cell["Source, reference or citation information", "Text",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -986,6 +2846,7 @@ to the function.", "MoreInfoText"], Background -> GrayLevel[0.95],
  CellID->341958311,ExpressionUUID->"262a6b6d-20ae-498c-9718-31702efbebe4"],
 
 Cell["Link to other related material", "Item",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -1050,12 +2911,14 @@ Cell[CellGroupData[{
 Cell[BoxData[
  RowBox[{"MyFunction", "[", 
   RowBox[{"x", ",", "y"}], "]"}]], "Input",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellLabel->"In[3]:=",
  CellID->770806,ExpressionUUID->"34d037b4-6a0d-40ea-9d55-84d038814780"],
 
 Cell[BoxData[
  RowBox[{"x", " ", "y"}]], "Output",
+ TaggingRules->{},
  CellTags->"DefaultContent",
  CellLabel->"Out[3]=",
  CellID->759771806,ExpressionUUID->"2ae02116-58b4-4c15-9d68-18cfc481d97e"]
@@ -1129,6 +2992,7 @@ Cell[TextData[{
  CellID->267876551,ExpressionUUID->"076dbda9-882c-488a-9411-009ac712068e"],
 
 Cell["13.0+", "Text",
+ TaggingRules->{},
  CellTags->{"DefaultContent", "ScrapeDefault"},
  CellID->788185540,ExpressionUUID->"1a4922ad-b243-482a-970d-3b956f5036e4"]
 }, Open  ]],
@@ -1578,7 +3442,7 @@ JAZLFxBaxuyKShxfvoEfKzujYRb6FXWpA="},
  CellID->818043737,ExpressionUUID->"94d711de-890f-4126-a479-e226c9c01e49"]
 }, Closed]]
 }, Open  ]]
-}, Closed]],
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -1614,6 +3478,7 @@ that are otherwise beyond the scope of the function documentation.",
  CellID->897529167,ExpressionUUID->"b276e0ec-dab8-424e-aded-8d395a410a71"],
 
 Cell["Additional information about limitations, issues, etc.", "Text",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -1656,6 +3521,7 @@ resource.", "MoreInfoText"], Background -> GrayLevel[0.95], FrameMargins ->
  CellID->321610809,ExpressionUUID->"752238a3-0750-4e78-a12b-2cc8fa23b25a"],
 
 Cell["Additional information for the reviewer.", "Text",
+ TaggingRules->{},
  CellEventActions->{Inherited, {"KeyDown", "\t"} :> Replace[SelectionMove[
        SelectedNotebook[], After, Cell]; NotebookFind[
        SelectedNotebook[], "TabNext", Next, CellTags, AutoScroll -> True, 
@@ -1667,9 +3533,24 @@ Cell["Additional information for the reviewer.", "Text",
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{291, 480},
-WindowMargins->{{Automatic, 192.60000000000002`}, {
-  Automatic, 40.199999999999996`}},
+WindowSize->{576, 585.6},
+WindowMargins->{{
+  Automatic, -5.399999999999864}, {-5.399999999999977, Automatic}},
+DockedCells->{
+  Cell[
+   BoxData[
+    TemplateBox[{}, "MainGridTemplate"]], "DockedCell", 
+   CellMargins -> {{-10, -10}, {-8, -8}}, CellFrame -> 0, Background -> 
+   RGBColor[0.92157, 0.34118, 0.10588], CellTags -> {"MainDockedCell"}, 
+   CacheGraphics -> False], 
+  Cell[
+   BoxData[
+    TemplateBox[{}, "ToolsGridTemplate"]], "DockedCell", 
+   TaggingRules -> {"Tools" -> True}, CellTags -> {"ToolbarDockedCell"}, 
+   CellFrameMargins -> {{0, 0}, {2, 2}}, CellFrame -> {{0, 0}, {1, 0}}, 
+   CacheGraphics -> False, CellOpen -> Dynamic[
+     CurrentValue[
+      EvaluationNotebook[], {TaggingRules, "ToolsOpen"}, True]]]},
 TaggingRules->{
  "ResourceType" -> "Function", "ResourceCreateNotebook" -> True, 
   "TemplateVersion" -> "1.6.4", "CreationTimestamp" -> 
@@ -1717,7 +3598,7 @@ WyabbVsUI30dbWyR5mC4Y6npzAQV7A7CHW8e0ORJGTUV01ufdzMGR2GbTwVmCj3d8A9cd0NNHoiRcl\
     "Contexts" -> {
      "FunctionResource`", "FunctionResource`DefinitionNotebook`"}, 
     "DefaultContentMethod" -> "Legacy"}, "ToolsOpen" -> True, "StatusMessage" -> 
-  "", "SubmissionReviewData" -> {"Review" -> False}},
+  "", "SubmissionReviewData" -> {"Review" -> False}, "AutoUpdate" -> True},
 CreateCellID->True,
 FrontEndVersion->"13.3 for Microsoft Windows (64-bit) (May 18, 2023)",
 StyleDefinitions->Notebook[{
@@ -2160,7 +4041,6 @@ VX/aMEEQzrerjFhhelYAzofFB3r8AgApYdcE
                 StyleBox[
                 "\"Template Input\"", "Text", FontFamily -> "Source Sans Pro",
                   FontSize -> 11, StripOnInput -> False], 
-                
                 "\"Format selection automatically using appropriate \
 documentation styles\""}, "PrettyTooltipTemplate"], ButtonFunction :> 
               With[{RSNB`nb$ = ButtonNotebook[], RSNB`$cp$ = $ContextPath}, 

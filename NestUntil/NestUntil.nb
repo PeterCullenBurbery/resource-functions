@@ -61,24 +61,41 @@ evaluated before creating the Examples section below.", "MoreInfoText"],
 
 Cell[BoxData[
  RowBox[{
-  RowBox[{"NestUntil", "[", 
-   RowBox[{"f_", ",", "x_", ",", "test_"}], "]"}], ":=", 
-  RowBox[{"Module", "[", 
-   RowBox[{
-    RowBox[{"{", 
-     RowBox[{"val", "=", 
-      RowBox[{"f", "[", "x", "]"}]}], "}"}], ",", 
+  RowBox[{
+   RowBox[{"NestUntil", "[", 
+    RowBox[{"f_", ",", "expr_", ",", "test_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
     RowBox[{
-     RowBox[{"While", "[", 
+     RowBox[{"{", 
+      RowBox[{"result", "=", "expr"}], "}"}], ",", 
+     RowBox[{
+      RowBox[{"Until", "[", 
+       RowBox[{
+        RowBox[{"test", "[", "result", "]"}], ",", 
+        RowBox[{"result", "=", 
+         RowBox[{"f", "[", "result", "]"}]}]}], "]"}], ";", 
+      "\[IndentingNewLine]", "result"}]}], "]"}]}], "\n", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"NestUntil", "[", 
+     RowBox[{"f_", ",", "expr_", ",", "test_"}], "]"}], ":=", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"result", "=", "expr"}], "}"}], ",", 
       RowBox[{
-       RowBox[{"!", 
-        RowBox[{"test", "[", "val", "]"}]}], ",", 
-       RowBox[{"val", "=", 
-        RowBox[{"f", "[", "val", "]"}]}]}], "]"}], ";", "val"}]}], 
-   "]"}]}]], "Input",
- CellChangeTimes->{{3.8964522351798286`*^9, 3.896452236541327*^9}},
+       RowBox[{"result", "=", 
+        RowBox[{"f", "[", "result", "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"Until", "[", 
+        RowBox[{
+         RowBox[{"test", "[", "result", "]"}], ",", 
+         RowBox[{"result", "=", 
+          RowBox[{"f", "[", "result", "]"}]}]}], "]"}], ";", 
+       "\[IndentingNewLine]", "result"}]}], "]"}]}], "*)"}], "\n"}]], "Input",
+ CellChangeTimes->{{3.8964522351798286`*^9, 3.896452236541327*^9}, 
+   3.896637884788308*^9, 3.8966382127393084`*^9, 3.8966382775924325`*^9},
  CellTags->"DefaultContent",
- CellLabel->"In[77]:=",
+ CellLabel->"In[194]:=",
  CellID->876320555,ExpressionUUID->"64db7298-3999-4820-ac1a-6ab2d1fb6dbe"]
 }, Open  ]],
 
@@ -409,6 +426,53 @@ Cell[BoxData[
  RowBox[{"NestUntil", "[", 
   RowBox[{
    RowBox[{
+    RowBox[{"#", "+", "1"}], "&"}], ",", "7", ",", 
+   RowBox[{
+    RowBox[{"PrimeQ", "[", "#", "]"}], "&"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.896452245905559*^9, 3.896452282523879*^9}, {
+   3.896452348645495*^9, 3.8964523573535337`*^9}, 3.89663789089844*^9},
+ CellTags->"DefaultContent",
+ CellLabel->"In[184]:=",
+ CellID->148131676,ExpressionUUID->"0e174928-828d-4735-9288-8ac64e98a894"],
+
+Cell[BoxData["11"], "Output",
+ CellChangeTimes->{3.896637891338439*^9},
+ CellTags->"DefaultContent",
+ CellLabel->"Out[184]=",
+ CellID->187433327,ExpressionUUID->"e4dde87e-9955-47fe-8b01-dc4ac1416786"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"x", "=", "7"}], ";"}]], "Input",
+ CellChangeTimes->{{3.896637897957187*^9, 3.8966378990641546`*^9}},
+ CellLabel->"In[185]:=",
+ CellID->15098126,ExpressionUUID->"42caecc1-3658-4aab-a83e-74280cba123d"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NestUntil", "[", 
+  RowBox[{
+   RowBox[{"x", "++"}], ",", "x", ",", 
+   RowBox[{
+    RowBox[{"PrimeQ", "[", "#", "]"}], "&"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8966379003171544`*^9, 3.8966379100676327`*^9}},
+ CellLabel->"In[186]:=",
+ CellID->163231573,ExpressionUUID->"530332f6-094b-43fc-b599-484deb465f28"],
+
+Cell[BoxData["$Aborted"], "Output",
+ CellChangeTimes->{3.8966379191015778`*^9},
+ CellLabel->"Out[186]=",
+ CellID->315599208,ExpressionUUID->"4833d0db-7ba3-4b42-91dd-5d2524b28379"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NestUntil", "[", 
+  RowBox[{
+   RowBox[{
     RowBox[{"#", "+", "1"}], "&"}], ",", "1", ",", 
    RowBox[{
     RowBox[{
@@ -486,6 +550,105 @@ Cell[BoxData["10"], "Output",
  CellChangeTimes->{3.8964522755296593`*^9},
  CellLabel->"Out[20]=",
  CellID->511719578,ExpressionUUID->"d8262253-ac70-4897-b695-f9dee6f5500f"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NestWhile", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Floor", "[", 
+     RowBox[{"#", "/", "2"}], "]"}], "&"}], ",", "10", ",", 
+   RowBox[{
+    RowBox[{"#", ">", "0"}], "&"}]}], "]"}]], "Input",
+ CellLabel->"In[187]:=",
+ CellID->369383976,ExpressionUUID->"4ac28011-6c8f-4c08-bb65-c923358c37cf"],
+
+Cell[BoxData["0"], "Output",
+ CellChangeTimes->{3.8966382316820917`*^9},
+ CellLabel->"Out[187]=",
+ CellID->216608887,ExpressionUUID->"9c33269b-d319-4606-9746-00ea3d1c3368"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NestUntil", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Floor", "[", 
+     RowBox[{"#", "/", "2"}], "]"}], "&"}], ",", "10", ",", 
+   RowBox[{
+    RowBox[{"#", ">", "0"}], "&"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8966382326440926`*^9, 3.89663823669514*^9}},
+ CellLabel->"In[188]:=",
+ CellID->834319569,ExpressionUUID->"9cbdb1aa-6c7d-4de6-a44a-b391a7246114"],
+
+Cell[BoxData["5"], "Output",
+ CellChangeTimes->{3.8966382369721403`*^9},
+ CellLabel->"Out[188]=",
+ CellID->2018089,ExpressionUUID->"dd823219-a193-4186-a82e-d2d99f84a6ba"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NestUntil", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Floor", "[", 
+     RowBox[{"#", "/", "2"}], "]"}], "&"}], ",", "10", ",", 
+   RowBox[{
+    RowBox[{"#", ">", "0"}], "&"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8966382326440926`*^9, 3.8966382520360374`*^9}},
+ CellLabel->"In[191]:=",
+ CellID->606869472,ExpressionUUID->"909575d8-d2ba-401f-85c0-214141f7ed7f"],
+
+Cell[BoxData["2"], "Output",
+ CellChangeTimes->{3.89663825234404*^9},
+ CellLabel->"Out[191]=",
+ CellID->69462492,ExpressionUUID->"76976a94-8af1-4ad1-b961-a27fddbf75ae"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NestUntil", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Floor", "[", 
+     RowBox[{"#", "/", "2"}], "]"}], "&"}], ",", "10", ",", 
+   RowBox[{
+    RowBox[{"#", "<=", "0"}], "&"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8966382699189596`*^9, 3.8966382727024145`*^9}},
+ CellLabel->"In[192]:=",
+ CellID->167886093,ExpressionUUID->"44153802-18d0-4d36-8037-9143bf206c71"],
+
+Cell[BoxData["0"], "Output",
+ CellChangeTimes->{3.896638273324458*^9},
+ CellLabel->"Out[192]=",
+ CellID->477652433,ExpressionUUID->"feec76a6-7f17-4c79-9451-703e6033c243"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"NestUntil", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Floor", "[", 
+     RowBox[{"#", "/", "2"}], "]"}], "&"}], ",", "10", ",", 
+   RowBox[{
+    RowBox[{"#", "<=", "0"}], "&"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8966382699189596`*^9, 3.8966382829445553`*^9}},
+ CellLabel->"In[195]:=",
+ CellID->17512109,ExpressionUUID->"79b43e9f-96ac-4962-9973-9a0c9bbe4ee0"],
+
+Cell[BoxData["0"], "Output",
+ CellChangeTimes->{3.89663828337057*^9},
+ CellLabel->"Out[195]=",
+ CellID->626426728,ExpressionUUID->"21dec5ac-336d-4f2b-a02f-0f16a09f61fe"]
 }, Open  ]]
 }, Open  ]],
 
@@ -1733,8 +1896,9 @@ Cell["Additional information for the reviewer.", "Text",
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{574.8, Automatic},
-WindowMargins->{{Automatic, -4.7999999999999545`}, {Automatic, 0}},
+WindowSize->{1152, Automatic},
+WindowMargins->{{
+  Automatic, -5.399999999999864}, {-5.399999999999977, Automatic}},
 TaggingRules->{
  "ResourceType" -> "Function", "ResourceCreateNotebook" -> True, 
   "TemplateVersion" -> "1.6.4", "CreationTimestamp" -> 
@@ -2224,6 +2388,7 @@ VX/aMEEQzrerjFhhelYAzofFB3r8AgApYdcE
                 StyleBox[
                 "\"Template Input\"", "Text", FontFamily -> "Source Sans Pro",
                   FontSize -> 11, StripOnInput -> False], 
+                
                 "\"Format selection automatically using appropriate \
 documentation styles\""}, "PrettyTooltipTemplate"], ButtonFunction :> 
               With[{RSNB`nb$ = ButtonNotebook[], RSNB`$cp$ = $ContextPath}, 
