@@ -5208,8 +5208,24 @@ Cell["GeoLength", "Item",
  CellID->93970691,ExpressionUUID->"a9630107-8c8a-4a4c-85bb-9b1e707b6ee6"],
 
 Cell["SphericalDistance", "Item",
- CellChangeTimes->{{3.8967253415942926`*^9, 3.89672534447771*^9}},
- CellID->253475246,ExpressionUUID->"d50c98f7-52dd-42ab-9539-4808afc5028a"]
+ CellChangeTimes->{{3.8967253415942926`*^9, 3.89672534447771*^9}, {
+  3.8967325760169306`*^9, 3.8967325760229645`*^9}},
+ CellID->253475246,ExpressionUUID->"d50c98f7-52dd-42ab-9539-4808afc5028a"],
+
+Cell["RegionDistance", "Item",
+ CellChangeTimes->{{3.8967253415942926`*^9, 3.89672534447771*^9}, {
+   3.896732576228446*^9, 3.8967325803818693`*^9}, 3.896732901863268*^9},
+ CellID->2899768,ExpressionUUID->"d0f64a75-e4ab-4e5c-9075-02c7f7a78a26"],
+
+Cell["SignedRegionDistance", "Item",
+ CellChangeTimes->{{3.8967253415942926`*^9, 3.89672534447771*^9}, {
+  3.896732576228446*^9, 3.8967325927924023`*^9}},
+ CellID->394121893,ExpressionUUID->"77579d46-79e6-427d-b478-3433bad08630"],
+
+Cell["RegionFarthestDistance", "Item",
+ CellChangeTimes->{{3.8967253415942926`*^9, 3.89672534447771*^9}, {
+  3.896732576228446*^9, 3.896732604090618*^9}},
+ CellID->26547206,ExpressionUUID->"ea3ab907-bc4d-418e-bc5c-32f87b5f193b"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -6561,8 +6577,8 @@ Cell[BoxData[
        RowBox[{"Entity", "[", 
          RowBox[{"\"City\"", ",", 
            RowBox[{"{", 
-             RowBox[{
-              "\"Pittsburgh\"", ",", "\"Pennsylvania\"", ",", 
+             
+             RowBox[{"\"Pittsburgh\"", ",", "\"Pennsylvania\"", ",", 
                "\"UnitedStates\""}], "}"}]}], "]"}], 
        "\"Entity[\\\"City\\\", {\\\"Pittsburgh\\\", \\\"Pennsylvania\\\", \
 \\\"UnitedStates\\\"}]\"", "\"city\""},
@@ -7165,7 +7181,6 @@ Cell[BoxData[
                 3.5 (CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
                  Magnification])}]], 
             GraphicsBox[{
-              
               RasterBox[{{{0.66, 0.66, 0.66}, {0.49, 0.49, 0.49}, {0.74, 0.74,
                 0.74}}, {{0.4, 0.4, 0.4}, {0.8, 0.8, 0.8}, {0.52, 0.52, 
                0.52}}, {{0.72, 0.72, 0.72}, {0.59, 0.59, 0.59}, {0.79, 0.79, 
@@ -7899,7 +7914,6 @@ Cell[BoxData[
                  2 Dynamic[(5. CurrentValue["FontCapHeight"])/
                     AbsoluteCurrentValue[Magnification], 
                     ImageSizeCache -> {94., {1., 9.}}]}, 
-                 
                  Dynamic[(5. CurrentValue["FontCapHeight"])/
                   AbsoluteCurrentValue[Magnification], 
                   ImageSizeCache -> {94., {1., 9.}}]}], 
@@ -8225,9 +8239,9 @@ Cell[BoxData[
       RowBox[{"Entity", "[", 
         RowBox[{"\"City\"", ",", 
           RowBox[{"{", 
-            RowBox[{
-             "\"Cleveland\"", ",", "\"Ohio\"", ",", "\"UnitedStates\""}], 
-            "}"}]}], "]"}], 
+            
+            RowBox[{"\"Cleveland\"", ",", "\"Ohio\"", ",", 
+              "\"UnitedStates\""}], "}"}]}], "]"}], 
       "\"Entity[\\\"City\\\", {\\\"Cleveland\\\", \\\"Ohio\\\", \
 \\\"UnitedStates\\\"}]\"", "\"city\""},
      "Entity"], ",", 
@@ -10603,8 +10617,8 @@ Cell["Additional information for the reviewer.", "Text",
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{576, 579.6},
-WindowMargins->{{Automatic, 0.6000000000001364}, {Automatic, 0}},
+WindowSize->{574.8, 579.6},
+WindowMargins->{{-4.8, Automatic}, {Automatic, 0}},
 WindowTitle->"RhumbLineDistance | Definition Notebook",
 TaggingRules->{"CompatibilityTest" -> HoldComplete[
     BinaryDeserialize[
