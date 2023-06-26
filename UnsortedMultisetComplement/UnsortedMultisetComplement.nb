@@ -68,7 +68,7 @@ Cell[BoxData[
  TaggingRules->{},
  InitializationCell->True,
  CellChangeTimes->{{3.89679110602244*^9, 3.896791108713569*^9}},
- CellLabel->"In[113]:=",
+ CellLabel->"In[122]:=",
  CellID->355138308,ExpressionUUID->"67e82e41-6ab4-4d6b-aa3d-edde8c672db0"],
 
 Cell[BoxData[
@@ -98,7 +98,7 @@ Cell[BoxData[
    3.8967913610302367`*^9, 3.896791430662367*^9}, {3.8967914897010727`*^9, 
    3.896791519958717*^9}, 3.896791779972448*^9},
  CellTags->"DefaultContent",
- CellLabel->"In[114]:=",
+ CellLabel->"In[123]:=",
  CellID->876320555,ExpressionUUID->"0774c12a-d37b-4842-8f90-ea827c2dd2c3"],
 
 Cell[BoxData[
@@ -136,7 +136,7 @@ Cell[BoxData[
  CellChangeTimes->{{3.8967915252107368`*^9, 3.8967915390664577`*^9}, {
   3.896791589221033*^9, 3.896791662991969*^9}, {3.896791696380545*^9, 
   3.8967917514575424`*^9}},
- CellLabel->"In[115]:=",
+ CellLabel->"In[124]:=",
  CellID->18003848,ExpressionUUID->"bf4ed57e-45ed-4d8e-a7d9-43b99ec24d73"],
 
 Cell[BoxData[
@@ -154,7 +154,7 @@ that are in excess of those in all the \!\(\*SubscriptBox[StyleBox[\"list\", \
  InitializationCell->True,
  CellChangeTimes->{{3.896791112066007*^9, 3.896791115431657*^9}, {
   3.89679210926348*^9, 3.896792140893914*^9}},
- CellLabel->"In[117]:=",
+ CellLabel->"In[125]:=",
  CellID->112470287,ExpressionUUID->"2c91e71c-0e5f-438b-bc78-ca3902018f70"]
 }, Open  ]],
 
@@ -961,12 +961,10 @@ Cell[BoxData[
  CellID->24168669,ExpressionUUID->"b8a1d5f2-02c1-4532-b40e-8bba1c5f51df"]
 }, Open  ]],
 
-Cell["\<\
-Compare to UnsortedComplement for two lists (UnsortedComplement does not \
-accept more than two lists):\
-\>", "Text",
+Cell["Compare to UnsortedComplement:", "Text",
  TaggingRules->{},
- CellChangeTimes->{{3.896791907043394*^9, 3.896791936994914*^9}},
+ CellChangeTimes->{{3.896791907043394*^9, 3.896791936994914*^9}, {
+  3.8967924802363114`*^9, 3.896792484673153*^9}},
  CellID->327255071,ExpressionUUID->"0d5227d9-c506-4c49-bc06-2d1d1ad1d6aa"],
 
 Cell[CellGroupData[{
@@ -989,7 +987,15 @@ Cell[BoxData[
        RowBox[{"p", ",", "q", ",", "r"}], "}"}], ",", "30"}], "]"}], "*)"}], 
    ",", 
    RowBox[{"{", 
-    RowBox[{"q", ",", "p", ",", "p", ",", "q", ",", "r", ",", "r"}], "}"}]}], 
+    RowBox[{"q", ",", "p", ",", "p", ",", "q", ",", "r", ",", "r"}], "}"}], 
+   RowBox[{"(*", 
+    RowBox[{"RandomChoice", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"p", ",", "q", ",", "r"}], "}"}], ",", "6"}], "]"}], "*)"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"p", ",", "r", ",", "p", ",", "q", ",", "p", ",", "q"}], "}"}]}], 
   RowBox[{"(*", 
    RowBox[{"RandomChoice", "[", 
     RowBox[{
@@ -997,16 +1003,17 @@ Cell[BoxData[
       RowBox[{"p", ",", "q", ",", "r"}], "}"}], ",", "6"}], "]"}], "*)"}], 
   "]"}]], "Input",
  TaggingRules->{},
- CellChangeTimes->{{3.8967919124393415`*^9, 3.8967919624525695`*^9}},
- CellLabel->"In[112]:=",
+ CellChangeTimes->{{3.8967919124393415`*^9, 3.8967919624525695`*^9}, 
+   3.8967924917948184`*^9},
+ CellLabel->"In[126]:=",
  CellID->48703543,ExpressionUUID->"94d3d0f5-7088-400a-b623-91350c9d7cd6"],
 
 Cell[BoxData[
  RowBox[{"{", "}"}]], "Output",
  TaggingRules->{},
- CellChangeTimes->{3.8967919487525077`*^9},
- CellLabel->"Out[112]=",
- CellID->451130986,ExpressionUUID->"3eb9778a-0c82-4905-98c5-93bdb421dead"]
+ CellChangeTimes->{3.8967919487525077`*^9, 3.896792494295782*^9},
+ CellLabel->"Out[126]=",
+ CellID->467138033,ExpressionUUID->"0b2fc90a-384a-41fa-95a6-f44bd6f88cc4"]
 }, Open  ]]
 }, Open  ]],
 
@@ -1771,7 +1778,6 @@ StyleBox[\\\"2\\\", \\\"TR\\\"]]\\),\[Ellipsis]] gives the elements in \\!\\(\
              },
              DefaultBaseStyle->"Column",
              GridBoxAlignment->{"Columns" -> {{Left}}},
-             
              GridBoxItemSize->{
               "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
             "Column"],
@@ -2257,7 +2263,6 @@ StyleBox[\\\"2\\\", \\\"TR\\\"]]\\),\[Ellipsis]] gives the elements in \\!\\(\
               
               DynamicBox[FEPrivate`FrontEndResource[
                "FEBitmaps", "DownPointerOpener"]], True->
-              
               DynamicBox[FEPrivate`FrontEndResource[
                "FEBitmaps", "DownPointerOpenerHot"]]}, Dynamic[
               System`InformationDump`mouseOver$$]],
@@ -2544,7 +2549,6 @@ StyleBox[\\\"2\\\", \\\"TR\\\"]]\\),\[Ellipsis]] gives the elements in \\!\\(\
              ImageMargins->0,
              ImageSize->Full,
              Method->"Preemptive"],
-            
             EventHandlerTag[{
              "MouseEntered" :> 
               FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
@@ -3321,9 +3325,8 @@ Cell["Additional information for the reviewer.", "Text",
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{1152, 585.6},
-WindowMargins->{{
-  Automatic, -5.399999999999864}, {-5.399999999999977, Automatic}},
+WindowSize->{1141.2, 579.6},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
 DockedCells->{
   Cell[
    BoxData[
