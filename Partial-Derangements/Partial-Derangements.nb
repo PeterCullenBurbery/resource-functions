@@ -1,0 +1,1342 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     63901,       1334]
+NotebookOptionsPosition[     57857,       1224]
+NotebookOutlinePosition[     58260,       1240]
+CellTagsIndexPosition[     58217,       1237]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\<\
+Help me make a function for partial derangements. For example 1234 has the 3 \
+partial derangement 1432 and the 2 derangement 1243. Here's another example \
+4321 is a 4-derangement of 1234 because all places have changed.\
+\>", "ChatInput",
+ CellDingbat->Cell[
+   BoxData[
+    TemplateBox[{}, "ChatInputCellDingbat"]], Background -> None],
+ CellChangeTimes->{{3.896806347705061*^9, 3.896806398313694*^9}},
+ CellLabel->"In[8]:=",ExpressionUUID->"b8e69e22-3d0a-41b0-898c-8615ac22154d"],
+
+Cell[TextData[{
+ "Sure! Here's a function that takes a list of integers and an integer ",
+ StyleBox["n", "TI"],
+ " and returns the number of partial derangements of length ",
+ StyleBox["n", "TI"],
+ " of the list: \n",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     BoxData[
+      DynamicModuleBox[{$CellContext`attached$$}, 
+       TagBox[
+        Cell[
+         BoxData[
+          RowBox[{
+            RowBox[{
+              RowBox[{"partialDerangements", "[", 
+                RowBox[{"list_", ",", "n_"}], "]"}], ":=", 
+              RowBox[{"Module", "[", 
+                RowBox[{
+                  RowBox[{"{", "result", "}"}], ",", "\n", "   ", 
+                  RowBox[{
+                    RowBox[{"result", "=", "\n", "    ", 
+                    RowBox[{"Sum", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{"-", "1"}], ")"}], "^", "k"}], 
+                    RowBox[{"Binomial", "[", 
+                    RowBox[{"n", ",", "k"}], "]"}], 
+                    RowBox[{"Derangement", "[", 
+                    RowBox[{"list", ",", 
+                    RowBox[{"n", "-", "k"}]}], "]"}]}], ",", 
+                    RowBox[{"{", 
+                    RowBox[{"k", ",", "0", ",", "n"}], "}"}]}], "]"}]}], ";", 
+                    "\n", "   ", "result"}]}], "\n", "]"}]}], ";"}]], 
+         "ChatCode", "Input", Background -> GrayLevel[1]], 
+        EventHandlerTag[{"MouseEntered" :> (Quiet[
+             Needs["Wolfram`Chatbook`" -> None]]; 
+           Symbol["Wolfram`Chatbook`ChatbookAction"]["AttachCodeButtons", 
+             Dynamic[$CellContext`attached$$], 
+             EvaluationCell[], 
+             "partialDerangements[list_, n_] := Module[{result},\n   result = \
+\n    Sum[(-1)^k Binomial[n, k] Derangement[list, n - k], {k, 0, n}];\n   \
+result\n];", "Wolfram"]), Method -> "Preemptive", PassEventsDown -> Automatic,
+           PassEventsUp -> True}]], DynamicModuleValues :> {}, 
+       TaggingRules -> <|
+        "CellToStringType" -> "InlineInteractiveCodeCell", "CodeLanguage" -> 
+         "Wolfram"|>, UnsavedVariables :> {$CellContext`attached$$}]]]},
+   "ChatCodeBlockTemplate"]], "ChatCodeBlock",
+  Background->None,ExpressionUUID->"41469c50-8731-466f-b9a9-3c8ee01317c7"],
+ "\nHere ",
+ Cell[BoxData[
+  TemplateBox[{
+    RowBox[{"Derangement", "[", 
+      RowBox[{"list", ",", "n"}], "]"}]},
+   "ChatCodeInlineTemplate"]], "ChatCode",
+  Background->None,ExpressionUUID->"2f575161-4069-43e5-a908-5d40da88159c"],
+ " computes the number of derangements of length ",
+ StyleBox["n", "TI"],
+ " of the list. The function ",
+ Cell[BoxData[
+  TemplateBox[{"partialDerangements"},
+   "ChatCodeInlineTemplate"]], "ChatCode",
+  Background->None,ExpressionUUID->"aa88a56e-0117-46b7-8208-65dc2b0354fd"],
+ " uses the inclusion-exclusion principle to compute the number of partial \
+derangements. \n\nFor example, to find the number of partial derangements of \
+length 3 of the list {1,2,3,4}, you can call: \n",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     BoxData[
+      DynamicModuleBox[{$CellContext`attached$$}, 
+       TagBox[
+        Cell[
+         BoxData[
+          RowBox[{"partialDerangements", "[", 
+            RowBox[{
+              RowBox[{"{", 
+                RowBox[{"1", ",", "2", ",", "3", ",", "4"}], "}"}], ",", 
+              "3"}], "]"}]], "ChatCode", "Input", Background -> GrayLevel[1]], 
+        EventHandlerTag[{"MouseEntered" :> (Quiet[
+             Needs["Wolfram`Chatbook`" -> None]]; 
+           Symbol["Wolfram`Chatbook`ChatbookAction"]["AttachCodeButtons", 
+             Dynamic[$CellContext`attached$$], 
+             EvaluationCell[], "partialDerangements[{1,2,3,4}, 3]", 
+             "Wolfram"]), Method -> "Preemptive", PassEventsDown -> Automatic,
+           PassEventsUp -> True}]], DynamicModuleValues :> {}, 
+       TaggingRules -> <|
+        "CellToStringType" -> "InlineInteractiveCodeCell", "CodeLanguage" -> 
+         "Wolfram"|>, UnsavedVariables :> {$CellContext`attached$$}]]]},
+   "ChatCodeBlockTemplate"]], "ChatCodeBlock",
+  Background->None,ExpressionUUID->"401f8359-dabb-4d9a-9255-02ecce98d05a"],
+ "\nwhich gives the output ",
+ Cell[BoxData[
+  TemplateBox[{"3"},
+   "ChatCodeInlineTemplate"]], "ChatCode",
+  Background->None,ExpressionUUID->"7d95c382-7e06-49b8-877c-1dae1661d061"],
+ ".\n\nLet me know if you have any questions about how this function works!"
+}], "ChatOutput",
+ CellDingbat->Cell[
+   BoxData[
+    PaneBox[
+     TemplateBox[{}, "ChatIconCodeAssistant"], ContentPadding -> False, 
+     FrameMargins -> 0, ImageSize -> {35, 35}, ImageSizeAction -> 
+     "ShrinkToFit", Alignment -> {Center, Center}]], Background -> None],
+ TaggingRules-><|
+  "CellToStringData" -> 
+   "Sure! Here's a function that takes a list of integers and an integer `n` \
+and returns the number of partial derangements of length `n` of the list:\n\n\
+```mathematica\npartialDerangements[list_, n_] := Module[{result},\n   result \
+= \n    Sum[(-1)^k Binomial[n, k] Derangement[list, n - k], {k, 0, n}];\n   \
+result\n];\n```\n\nHere `Derangement[list, n]` computes the number of \
+derangements of length `n` of the list. The function `partialDerangements` \
+uses the inclusion-exclusion principle to compute the number of partial \
+derangements. \n\nFor example, to find the number of partial derangements of \
+length 3 of the list {1,2,3,4}, you can call:\n\n```mathematica\n\
+partialDerangements[{1,2,3,4}, 3]\n```\n\nwhich gives the output `3`.\n\nLet \
+me know if you have any questions about how this function works!", 
+   "MessageTag" -> Inherited, "ChatData" -> 
+   "OEM6eJyNV91uW8cRRlonrdg6/\
+UFRoHcj1EDilKQrUbmwiqBQJDsRSsVCycANZNlcnjOH3HLP7unuHlGs4cve97Z9kz5KX6DP0W/\
+28LdSAetCInfn95tvZlYnv+wMWich6BCVzTjsndTRlSrqTM7x+bnz+BoeDH3NOPpSBb70rqzijuj+\
+6VTFU2cj38ZTNgYiMBa0nTyvbRa1s/9X/NKF+OxGmVqJ2L3iv9gW91zd9f9zkTjz+obtNy7y2LlZ+\
+PC5MgEx/0zuvkaCzi/6bCdxevornJ4trCp1tpXjtsGfPvf8l5pttrhkq0xc+H/+Q37+\
+9fvO4ONzm5k656XNHb29C3U7dDO2Yef44QX7CV8AEjXBryWaH164nM3g4aSKnV73806s/\
+dh1Bj9BjgGu+a7rh4Opm19oq0v9V853XPxoyGXFXsEI+yL9/\
+AcaPx46Z8Izq8YGCitMHgxddXn6AT6cqahO8OGHq+CK74cHfWR28j3cemd48FFYhMhlZ/CDTGpg4+\
+BvH3/nalKeSdGUTVXUhl46U3hVUl/\
+ZSQ1DpJasigSgOadTJEsrqsUuwYSnP7sx6UDRUe4oTpkKZ4ybgzjHrdZn9KIo2N81HeoJIk08oTEYm\
+ZOzVHm+0a4OpG1Vx9CF+teIjQp9S+y98+no2W1llLbNCZXLpCk03usAd7XN2UuQeaA5uENz5Exz7+\
+xk24Kro/iBHkRKtaAxEwAqaqG9ZKQt36IiWkqZJ9MpggaCjbu5jlNy+\
+OqhVOksADmyzDnnXXo51YZpAbRDxZlWBnWH4TuQtJNMpmyqR2NT2UVjsdtq/Zq+\
+Ygt2GDq3Ifq6aTKB+\
+OUUFzdwvpB6gHkVLlImEVkiGBobl83IFTjL4SjUgA4YkY6Nnzj1zKhDNgMRZ9CQu6ZFUpZmVbY5XJG\
+qKqMzoeNxazQarS5bYlwOJCSvIwNS2AaCXgaJVLoBtq+G/\
+KfkYx0InJRNKDnYozwFPbHhmB7dvj6k39Di9eEjWD2/uHzxx+\
+HJN8P9nZxRWPGmyOCPALRKhMCPLXuCugygNp30X558NyAOmap4jYJKisGoMO2CI6qskCGdR6AWwJKS\
+6dWjp0+7Tz8n8YzK6LIpbOEwGqIQZmnx1Uhcv3oERjvwxyz2EX1f2xnl2nMWjZT1blPkLqtLMDXNUR\
+ovlnjtNBWFBQRuj+nKqDGb608rlRmOx7XXj7uEOQjAm8hbe5/R1VDKtBbyXDxJJ4/T5drxC+Rzo3m+\
+FpzUOucnq/vVdaN1Ls1JgxTGWiFijHmQ+0m6bS4fL7kJSmIGoIck/\
+LuTYFGOMd82xWmqmRihhLy7qBig2KUXFhCmeaO3NK2LieGpW+\
+44GsQFGvEryQxGOLXOH5irpAKCCGgNwSsHvgIlCHyLRiqWGw3MQj0nMFpKJmityCqXtqpkWeY1uAeV\
+M5cCkeEJzk2MG0PxRgEdmAyNBx0/CUnKsmxZ5RdQvEw4UYlw/N35sAZKGqfkOHV5gNKFzAjL8/\
+X1VN2glVn6NMcASkTrIz2MsGZAzKybY5PAYoaiFQXlKspQcJRNGU2zi/\
+d6kq2KmXnGDfKvjIuhLV7IVc0kD3U2FY1EzSZSwxOWMYwwSjVb1pVV0GlYbk1q6e9iM1O1DNGZ+\
+EF3gQWYIbWJ26CnssEEwM/rjJsp3oi1xUayNW9QfLMaUm+4eag48e7MZkU+EK9bC/\
+LfH6TVU3ITtlqzIMVTKR/\
+BdkLwMMwCV9jpPjo47B2hFiFF0btPgQ6OeocJIxE53L06POp1sfw8fyIwNrtlZRpqBwkfOupsKwGT5\
+HXMmZL8lQFhjQLBGlJkUxHNu5uk99Ybfivzv380wANkf+\
+19k3lCOAKOkIZtSC41tCaoYcpE2dV3GtlROvKM94xtcLB1OcaVdMw9AMq5Sc+\
+7pOwaNogfvCSwV2SdcHorqdZS/2xL/Uok32AKvLmm4y8IL7Pa8NXbhhHv2i2iFYm+IPlCg7q8+\
+rRz8Pj1jL7U1pWwd2XbNLumLbPJKoxSBxdtejtr02/x9d317zYGW/gie68lkNHoHu3rEehaYjLy/\
+wLxfgB0aTjdDCIa3ZP+SDjfWE+rWzZuh2+\
+Xn9AlONVCH7TMMpb3qEmXWq0tWrdFu9BLzr53OXvbudDbg/Zhu9c+\
+erd58mTg6vsVeUu5d92gPp9qjJ0J/nVo0m+edTTqjbAI+ljMaGIZeqSL5DA1g4xN/HuwfIKqMZQIL/\
+Nmo6yBnjs/C/t4g/f7F89Wk2PwUB7CJ5vWaS1f3kM1CXvnFr2KDZb/FzIi0rw="|>,
+ GeneratedCell->True,
+ CellAutoOverwrite->
+  True,ExpressionUUID->"2b90c4e5-4612-4930-ac4c-d4ef95303bc4"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"ClearAll", "[", "EnumeratePartialDerangements", "]"}]], "Input",
+ CellChangeTimes->{{3.8968067388586226`*^9, 3.896806751355377*^9}},
+ CellLabel->"In[11]:=",ExpressionUUID->"c18e4012-0b2d-4822-bd25-a52e4198a662"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EnumeratePartialDerangements", "[", 
+   RowBox[{"n_", ",", "k_"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"Binomial", "[", 
+    RowBox[{"n", ",", "k"}], "]"}], 
+   RowBox[{"Subfactorial", "[", 
+    RowBox[{"n", "-", "k"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.896806817875808*^9, 3.8968068261839914`*^9}, {
+  3.896806867728414*^9, 3.896806881338426*^9}},
+ CellLabel->"In[12]:=",ExpressionUUID->"ab9dc46d-e480-43e8-a039-a9bbaf9ffd6c"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"EnumeratePartialDerangements", "::", "usage"}], "=", 
+  "\"\<Enum\>\""}]], "Input",
+ CellChangeTimes->{{3.896809556496467*^9, 
+  3.8968095631560726`*^9}},ExpressionUUID->"9b177da3-aee4-4128-9881-\
+93de68b30df4"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"fInformation", "::", "usage"}], "=", 
+   "\"\<fInformation[x] computes xxxx.\>\""}], ";"}]], "Input",
+ CellChangeTimes->{{3.896809523151221*^9, 3.8968095287004824`*^9}},
+ CellLabel->"In[13]:=",ExpressionUUID->"2485e49d-a809-406f-8087-30c9d52d1007"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+A permutation of n distinct, ordered items in which none of the items is in \
+its original ordered position is known as a derangement. If some, but not \
+necessarily all, of the items are not in their original ordered positions, \
+the configuration can be referred to as a partial derangement (Evans et al. \
+2002, p. 385).
+
+Write a usage message for EnumeratePartialDerangements. Here is how to write \
+a usage message f::usage = \"f[x] computes xxxx.\";\
+\>", "ChatInput",
+ CellDingbat->Cell[
+   BoxData[
+    TemplateBox[{}, "ChatInputCellDingbat"]], Background -> None],
+ CellChangeTimes->{{3.896806898411278*^9, 3.89680691633387*^9}, {
+   3.8968094769801207`*^9, 3.8968094863947473`*^9}, 3.896809518113391*^9},
+ CellLabel->"In[15]:=",ExpressionUUID->"63078b59-5815-4342-8b76-b4db0eb4608b"],
+
+Cell[TextData[{
+ "Here's an example usage message for ",
+ Cell[BoxData[
+  TemplateBox[{"EnumeratePartialDerangements"},
+   "ChatCodeInlineTemplate"]], "ChatCode",
+  Background->None,ExpressionUUID->"f8e2a568-fe55-4e21-85b2-4b489d16fd66"],
+ ": \n",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     BoxData[
+      DynamicModuleBox[{$CellContext`attached$$}, 
+       TagBox[
+        Cell[
+         BoxData[
+          RowBox[{
+            RowBox[{"EnumeratePartialDerangements", "::", "usage"}], "=", 
+            "\"EnumeratePartialDerangements[n, k] computes the number of \
+partial derangements of length k of n distinct, ordered items. A partial \
+derangement is a permutation in which k items are not in their original \
+order. The function uses the formula Binomial[n, k]Subfactorial[n-k].\""}]], 
+         "ChatCode", "Input", Background -> GrayLevel[1]], 
+        EventHandlerTag[{"MouseEntered" :> (Quiet[
+             Needs["Wolfram`Chatbook`" -> None]]; 
+           Symbol["Wolfram`Chatbook`ChatbookAction"]["AttachCodeButtons", 
+             Dynamic[$CellContext`attached$$], 
+             EvaluationCell[], 
+             "EnumeratePartialDerangements::usage = \
+\"EnumeratePartialDerangements[n, k] computes the number of partial \
+derangements of length k of n distinct, ordered items. A partial derangement \
+is a permutation in which k items are not in their original order. The \
+function uses the formula Binomial[n, k]Subfactorial[n-k].\"", "Wolfram"]), 
+          Method -> "Preemptive", PassEventsDown -> Automatic, PassEventsUp -> 
+          True}]], DynamicModuleValues :> {}, 
+       TaggingRules -> <|
+        "CellToStringType" -> "InlineInteractiveCodeCell", "CodeLanguage" -> 
+         "Wolfram"|>, UnsavedVariables :> {$CellContext`attached$$}]]]},
+   "ChatCodeBlockTemplate"]], "ChatCodeBlock",
+  Background->None,ExpressionUUID->"a3dead69-9b29-4e76-bb9d-3e9118519067"],
+ "\nThis message explains what the function does, the meaning of the inputs, \
+and how the function works to compute the output. It also includes the \
+formula used by the function to compute the result. \n\nLet me know if you \
+have any questions!"
+}], "ChatOutput",
+ CellDingbat->Cell[
+   BoxData[
+    TemplateBox[{
+      PaneBox[
+       TemplateBox[{}, "ChatIconCodeAssistant"], ContentPadding -> False, 
+       FrameMargins -> 0, ImageSize -> {35, 35}, ImageSizeAction -> 
+       "ShrinkToFit", Alignment -> {Center, Center}]}, 
+     "AssistantIconTabbed"]], Background -> None],
+ TaggingRules-><|
+  "CellToStringData" -> 
+   "Here's an example usage message for ``EnumeratePartialDerangements``:\n\n\
+```\nEnumeratePartialDerangements::usage = \"EnumeratePartialDerangements[n, \
+k] computes the number of partial derangements of length k of n distinct, \
+ordered items. A partial derangement is a permutation in which k items are \
+not in their original order. The function uses the formula Binomial[n, \
+k]Subfactorial[n-k].\"\n```\n\nThis message explains what the function does, \
+the meaning of the inputs, and how the function works to compute the output. \
+It also includes the formula used by the function to compute the result. \n\n\
+Let me know if you have any questions!", "MessageTag" -> Inherited, 
+   "ChatData" -> 
+   "OEM6eJyNWOtuG8cVRgo7rdm4l6AI0H9HroHYKUlbog3EMoxCkeVEqBQLJQs1kGVzuDskp9yd2c\
+7MimINv0fbd+gDFH2SvkDfoP/7nZldcinJsvVD4M6c+/nOZXfni06/\
+teOccl7oRLpbO6U3ufAq4XP8fmEsHt2NgS0ljr4RTh5Zkxd+\
+jXRjdyr8rtFenvtdmWUggTCn9ORFqROvjH4v+\
+ZFxfu9MZKVgsivJf9Ukt7K4rP9zpnhu1ZnU3xsvR8bM3M0XInOw+Zd89x0cNHZxIPXET3d/\
+jdPnCy1ylTR8bAr8xQsr/1JKnSyOpBaZX9h//J3//vW7Tv9n+\
+zrJylRWMtf4bh2K84GZSe3Wjm8fSjuRhwiJmOBfFc2bhyaVWf/\
+2pPCdXvdxx5d2ZDr9n8NHB9Xysurb/amZHyqtcvVXma6p+OlA5oW0AkKkHYe//\
+4Ljs4ExmdvTYpSBoY7JjYEpjnY/wY/nwosd/PhJbdz4prtxAM92foRbazLZ/9QtnJd5p//jhHOgff+\
+fn/9gShJWkqCpzIpxmdGxycZW5HQg9KSEIBIVqjwh0DKlXThLNdR8lyDC0p/\
+NiJQjbyg15KeSxibLzBzA2W61vqKX47G0l0W7cgJLA05oBESmZDQVVp4pUzpSuii964L9O9hGY3VO0\
+lpjw9HeeZEJpeMJ5ZXT5KL20kFdqVNp2cjU0RzYoTl8prk1etKUYErPesAHklwsaCQJARqXDHv2SGl\
+5jowoTmUaRAcLYghW6ubKT8ng0YKpUIlD5EhLmcq0S8dTlUlaINqukIkSGfIOwZdC0g40idAhH1Gm0\
+Isosdtq/Ya+lRroyGhfO2/LWGStVp1HhcRagVOYHpmjcX5qTTnhx1pjXV+\
+RZSwS2aUBfFmGkg2xMpEoRhqjVFeeTgWORlJqjtOZtB5hQZxiOLm4I72uNVRw61IfeM+\
+EzRbBzUbaAgTrGhBZtmhIDrIaskdybCzrZx9T5XC1iAbUBnYJnQBPEZBzY9kEC198pZnyEpkTKXIla\
+8YlYGlSKpQzsu4Cdo+\
+niDhsiSajpAtEPEDEwybYTqPMJDMyY5ylyKArgUmAj5SPOUDwJQwWyQzezcDBd7H3BNVZXQ9zqCJRF\
+BmCgDrfbg2Hw/qyxcL5gKF3cLzzQ7+hSLO5QX3UmJoS/\
+A2VcFKcGZWSyEcKDvpFJExiNw6l7bZpODxcVA0av+omfnJ+GtQeW+UBEAE+\
+VITlwcCVGwvlQAzkn4JrS7PgW17bkyHv5NREQ8vd89db9FtavN66C6n7h0cv/zDY+\
+X6wsRZqFCprE5QpHwBfO0PIbUMeVbho11GRLhGFXAZfBEaXCTftouZFXiCwtO/\
+hukPV55Je3X3ypPvkMbFmVJrKY6ECZRPpOXKVxFdDVv3qLjqUQT/IFhuw/\
+kDpGVAYwcXEl5pcapIyB/zDXKTRoorXOubcAgTn23SSiZHMTu8VIsmk3y6tuh/RLCvLW7e+\
+opMBo2NJZOX4QTi5Hy6Xil/\
+CnzMl50vCAOwH9X19Hbn2udlSP5ixZPAoSYtm9SDcxsv7VUmgEtDT0RPZ/\
+MudfZGPMK9WyYnZDIgQXDPrUQF8Z116qRHCMD9UgxNtJCCbe24/AABRHpUq8x3QxJlG4wqqaKx+\
+0aWdgHV4MQvtpdQZwBpb77hqMGEvAG8auuolB/p+gQL6dtkKuBP8XsoiFplTnIxYr4VBHSD6IPgj+\
+sLKEsbJBEJzjhA6hZci5S5R8FKVlsA0WJ6b4CAPWWB5kpkRGM8Eog6RLmpQ/\
+ksXqLTkbUzYBRiPQvwphzn28hxZJoALMpd+alIHpkOeJVrOl9erVi7SNHbR4wO4h1EX+\
+91Mmzk2DkhMAIbxmFLhuccZSqYSuVjP43Li1SBJrBRhGBWZ8a7NWsgUceK7MpkyR4B8tDSTE8njGmb\
+kYlbhRQqnwlBtTHTuG+\
+PVRFI8bGesB1ULdKE3lZlvBj2kjYeUNWmZyDjtI1mbZQRZ8xjFN3XPfSPjQsvTBOvXapW6wVobi9R/\
+PgkrSi6j2WKJgmBPIaxHFRGMh2DJ4XJrVU2bW71HyIULVvSuYqDNR72tECMm2Vq/\
+2nrU62JJsvJLDmPcQWrRYNsM8aFHnSYTYhK0jmQi2H8UBU9ZACyCIpkyadpdOX1ruQk2PP/\
+bp30sqhtL7SvPQ4Q9wuFCE3dBJS8bE+QweCJ0/\
+YzBo4fDcGglNl8dI6HLfIRLrpkrQsjnWXgRqNhNRATr2iYelVVVtCru5w3mE6Z6g+7y5pS2nxE2+\
+DKTJ28jIt61qUVUo+hZeKB+mZ/c62zep9c0+0Zpk0PiiW7T7LQhN4iF1M7stE1vZ216iId3p/\
+S0IbAVHnmSc9Bg+xX8GLiAbI6uKy+\
+G4mNDENe5ZTqGwyuiAA7kPmoIGwlP9I48r36hWnCqGEYoncqej8hMl1qtBrzbzD1WFXY/\
+Oqm9pjf0drO91e61H71brcjcyD+caDDSVpt6bWLe3mmI/Hyq0Hwm2G2j8/ElAEHqDYcYCAcY/\
+Chmbn6kxkFhKApun2FshAYmRmAjvMnFibUMNW+\
+cbuP93eLfN9mEfX2yuXkK7O1mUtidLDvZQ2j4zU8eXXbjtBUYtpjhOroTDVDPIqjXUdovR9jy40A/\
+YYC2WtcJou1tYINHyTO6w4R3ogU9tmC8r8fhZZvdbRI2L7A2rjB8jr/uHXoaot/\
+aISxQeVlNDaRZ8yaPQZEA/\
+MYCEJLXZ5mHPSAmSxusuBUiqqtwqxg0Vk0Uj9yaF0NZBdmg4SzqautYOdjlAeJMDnSOkMXmeFVYDwC\
+t9ro2fkdhKl5MplLZ9yvFnGM2fonErm2jkwxYvFmGqW3jpA0mXdXr7+2dCeALIBRZl7YePgR+\
+iy71vn58H+A8rhbjGPTqHSoMmuvyGQcExyMA1iz36wtitrdXybwig08/MA/+d2M5h5Yj6LKhw+\
+F1pg6HePFinFxH1LDz+npg7L+vl36gA82uhSbWzCuzF4ZtE99LCM8+\
+DkoXOveyQ3NllZn4UF1378QiG3BTqqMu49eO6kuIb8pPjawQm0uheYmqcR8+\
+wLTDWI5dTl5ochfHQmyjXX69Epkz9Vvuuvklf+jBe9CauAuC4qTkOfJRrXij0//s4OBwr17X+\
+rf5K9XOCp+t6rPYQEzcrX2NBQmZSP8P5riPEg==", 
+   "PageData" -> <|
+    "Pages" -> <|
+      1 -> "OEM6eJztW8tvG0l6t0byi/bYnok3wOaSskbaHU+\
+LNEX6qYGxoSV7LIxkC2rtOgtRYxW7q8leNruYrm5RzGCuuQS5J0EOuQQ5Jfcgt/wDOecfyHX/hfy+\
+qn7x4bFnkACzCAXBYlfV96jv+\
+9X3qKa9JXXlSJzHOzzm3kdqZc9Xsf2nrZAloTgfCicWLhNRJCMmHSeJIuHWKhVvSa1siyDA38vP5Lm\
+mvag+2Q1jEQ0jEfPYlyEmMH/pUI7o04phDRGXjngXI/blF9wPkkjY1+xkMODR+\
+KXgrr107C2rWzvjkA98Z1+6SSCI/KOcfNkWsbpxNB4KJeJTORTh2pq6+\
+IIHSmSzt7NZMegI14Y6Ym3NvngI/mOsuXYkBsMAg0ZDw3hZ3TzgobBFgD3LaFLmyiHUyIRcVJe/\
+iny3TJytvKiuvIj4QDNeVlfseKy1ty+u/v4f/mkVy67u+BH4+2fCvrwvlOJdsf1ZLuC6HUf+\
+8HW4Gw6TuNiTmbyxLWHeMD7gruuH3enpihasJaqVVzIsZq7rmX0edf1QlTdFf7cvbF+Y/\
+vxuXS4VW8/4LE37FZ6esc/yjPOvrabb32Kr9s9SAOzGYtAKQ2nwYy///m/+sUTyn7dWvxeWrH2n/\
+Xn7C7P6uOTjY5J93F5tt9urh2Ioo5jFPV8xX6lEsHb7+\
+NDv9uKvEj8IxEDEJ7SuvbrB2qu9OB6qrXv3un7cSzo1Rw7uvZGBB3seAl88cnr3tns87kjZv6e5qXu\
+hGP0q9uNAPN0NlYhi64gerJciEr8IeEcE6mkn6f6iI93x0x2hnMjvCCvuCUvTW35ouTg/\
+fmD1QFGzWnHMnZ7Fw7EVAZpnPIwtEAkRqp6MlSUjy/Phrpp1BB6KsCVDC2LkyBpxZfEklgOY0+\
+FBMLa6IhQRjOLWrEMxkGdCM/\
+ZDT0YDbXNowmNrLBPLlRYcYY181bNiiTVOkLhaP1I20masrddb9NvcNjqr9eZz86yMQ/\
+G8I7BdiyIEhtcbL4qZlPjRtnUQ4RhH8diih9/wAHbAp3SyWq1apb/p6CtAWg+\
+vP6zTb6OROgYiMpdg0MyW6H4jIkX7nCCt1+q1Zn3e8udn0EZb5nl45kcyHOAEThLbwDHm51G/\
+AEH8PHTnCoXz+7Ecrjdb1maz1rTgA2vfdyKppBdbb/\
+zQlSNlrTceP7xf7fjxeuMJPezzsbX5eL2xbTXqjSYG58n9WkShCOZKJVG1+v+\
+mMHuscGx3d6a8YVhWzx8/rD68P4/ulYwFeUmVCI+iRMwsTHNB4YoSgQ5Lc1QKnR5sLxP1A6iOuOp/\
+6HL8kkGaFtJNTNE4HTTbx2+9tRviBPs4a1Pjk+Q43X1zOiZXxdB/lCZIeoz8wa8P9+\
+awMnzSlTmnqXU4eVpvC15tFHvEgwX84Sxa2el5WM9Pz8N6S0cThU8HkX+\
+GuIFPI9rToTARA7ujMmD9wbNURKPRwmlQMQ8dQdyrxLuVxSBCEi3B8wtNny/\
+Rjjezz7gSCAiDYfxOBqSizobnMYnHaocOYdh9kYROtrH3UR5IFRem+\
+EGUiH7vV3AHJhNhhvJ8qQFTsewlrCWj8Z4Iu3EvX9V4kC5JwT/\
+HZNMyX0TiLxIROuMDEfIgHucL67XNdMmuCeKpyHdy2tvbTw0jo3xR7mDsvhhsNH6LXMGBPI6EFQy9J\
+MigZO3xsJsgw1s8hURsYS/CtWq1WobFVtRNKKSqguWjZ+\
+uPdsyRTJPE7OHRmaTIOe3VE8rWL1H1RYEf9nFS9FDm1GO7h2x1bAcyPt7E+\
+IOTk5P23dW88KS6Iy98bqbFCw3a/l+KcpFHC+zL2zJIBiil0qomuqB//\
+uTP1HIrCNTV3Jw5y1spy1bgd3UGeTfPpcmyCv8KL57RzR5yh6LOB/\
+PZvjC52R9ZtV1exYcPr9hur2bBZGtL9wYA5v9nq79bs49+lGb2Cpqr2TVzbFGhoR0UkLGYbhxmLP/\
+BuszK+XCFZmz6oVK3P/rhwq5STtGtUakNNVO3ERpG1OqEXWA14mgsIjVtomuvEjSSEVqo/\
+szcDaTGkFKC41O1tb1ceFmzHocxPzdt2TTp/zEMlo/k8KcLgFvkEwRrgTzsU/\
+DIu9Cl7aV81QoVBouOe9FxLzruRce96LgXHfei41503IuOe9Fx/8H1fouOe9FxLzruRcf9U+\
+24l9TlNPNNv1wvnLo7QHIhhUvs7evpeaO35wG9Xae12DcfC1f90cSLfN1oKO9C+\
+i2DpRMsz78F8Ols5CJuqG6k4/NU3zJz+5O0oT3g1G4TjEqGvJrnJvv2bAv6H/9u//PNRa+\
+56DUXveai11z0motec9Fr/mR7zfdUAZXCzehUHqT6nWZAP01hfpqC/HQexL0/\
+nhZhaqtKgfd5pVelcFz6piKfKXA+j/DOezH+Pqr5+J5HdXsetuct/HQW11OFq/\
+3JDKa3f15MzqB5npRb00iO/v7v6OfffpUvuTGJ5HlcrpdR7F2a771lbNf+\
+12VgmAHDjLMUwyzFCMswzHIMM41hti1dwTLfxzUGFhH7neygemSxZK5ELSmYJwMUYnDaVqXyBXvteS\
+KaZa2Sblco7RzWAShcJkM2jMSZj/zFfP2upwbyl9CNef65eceih56fDwPuh+lbl4EpdhVTRnqC+\
+pMloYs6AEq6io3gGzbCcWMjZMdumYNMYpLDqP5jAz5mHcEcWCohyNGOfP2OJ/\
+LhF2hIrLUGxgSFuBEqZSbxGIFoiFYBlmOhEC69DHrTQ6nKUF0yNURvxgM0CmA8Y5INvcbhofaH4YlC\
+1XCsFX0NQZwahH1fnwz7OlDZOkNQ4B1M/9XS9lb716Ro+4Bq/3ZrOKT82D6UAGHYbe9z6GmK4/\
+YBd9CHqTY1Auh9AKp2qtXbt1mgqJo6sQ1k4bR4fjeJNJzAPlIy5KpNqMhB0Sb1agO30HeXLLqkrhxy\
++sKzoGZk4pvGWdvzM5JIiyf4zQsdWTdn3061zUxoOuuM4tqOryBlTFWzfWMSu8W5K58YvfLj+\
+fKv7vPzI9lHCzLv4H28L6KuSBsvNRX1LqLNE4H9cXcYV5u1B9U4iTqyYPwa7WRr92sxtitf5D/\
+59E2cVkX4e2dc+Jja+30/9AdAljtPO21v6oFQLUWe/vnvgv76kZSBeh4Sftzp0LaC3v2gePNsr+\
+gvtS/NjyxXMgOUbjfmLlyJJP69pHQVXbT3jnmxbP/\
+Lp4vg9IcUnCqVz9hXussO2G6o4igxabdSyfzo09UFd6hrSImNclTxJ116zCRmOdaQeNwRNYYuvzAlK\
+RIJRyAhMw/\
+xoNhpj2OoI0RIdjpDbw2zwE7GnJTnzfowk5DCrcZsHJ2AR8FYb7PkNg3B8mVCibPmVeLdodqJ5NMeX\
+RN6jAKZgjWG/G+uWzA6khGpENHXMFLJbJDAc9ylW5CMMAcs6ya+qy+\
+qlMbumx4sDl2MyggSQ1hcQwQVIoDLWSeQTp9JD2MuPKgSYBLgY35sfADjCyiMZgy764OC5kyNoUUH2\
+XkYQRTjw2EAIyBIbFVOT0+zyQoxpwGC3t6b1m/tkqCQ1NXijURXJqAvicQm+\
+Zn0XcYHHaQWPx6bhY4pzPTRVlvs9HR/nNZq+JS/TTk/\
+0WLfUOmKIwI6nIjIXE0oZg7KHj8Sf663lqtFCTDTJ4DfmfK7IaSsnX/TYBYbf9NYA9fd/\
+YPXh0etV0d3JkzNdKEM6wZ+rAGfbYbBtyV+LMXFRmYVoRw+\
+FLnxuSZUAVe9Gs48R0IUW2w3xtYVTv1AsPbakye1Jw8YScZJ8wfmoAJlXRGT5VKO7VMS3V5DhKIbpW\
+B8B9rv+WEfKDTgosUzQc6Vju5CdGRmnXFqr0nMKX1rvMWO9S3eyedDXTFsJZF/\
+16BZpJpXrn7Bjo8IHfmiSHj39MhdPZkLfo39nPlilC/UwL6XzWfThkp/64eZy+\
+ucIMaRjBCs7ulZM3k3PRI4CYjpiImk/mxkHw86SHaFc4w3NSI4nZlJq9A9aY29DmFCnT/\
+8EiXCiEY2xVxbAwBW7iR+EFexxqQ25qVQRWCNxzXW0ljHLvo6vCQhXcab0OulAUa3ASrW/5/\
+ss9kN6BKHfZWHAooEXwsxNIdM+\
+eQMc15R0ikf1scC1IMlTQgnXTClchDbgSzuUpQYUrflorwLQLIj9QYpyQLL3UB2QHjGYXWwVEaCH/\
+9S6VWhoDaNR2MQHmj7swHUiWbzSO4AOpADEfekq0C0T7kkFKN8ugjl3HVNFH2zh+0h1Zl41w/\
+lCOUKODoAg+cxF+XkBuVZpyfgi0k/\
+5hkvA4kTCa6T0TCQsdogKUwOTcZXidMjCnNxrTUNRFdQuoYaA95P8SK48nVSLWV0ihtekZF8SrZ9ko\
+NTC3QhNiVBXDa6dhslqUi6iSNMtjfLNoiH5jVKi/\
+Is5r4VWcUKUjnnfUC5ylohTWZrrP9a0tXLQJgd8RwgWtUhj2IcMIZ9QabQtxUTB55tNpr34SalFWzO\
+I2Cb95sNbT5a0picatxv1hi9H/\
+glWdiUJxlrkG1q07H71TIRzKWldoTDyTQ4L5SAgT2DF6dHS93a99vjKp+p7XOj/\
+O0lGyXynVyxwijaLzEspXToV1obKlG68LzeJA+zZ6Sr8PRUD0YCNXdojBTqd3f6pM2xLo0H+\
+u4gJZcGRyRri1GCTc9SJaXeKREf06q3iElvT9jWU2ZeKx1/a3D03QarMJZh76l+\
+YHYyOP68unmXfcP6z/xQDsDxONxg/ZMSX80WXKv9kw32bX+D1fHw3Qn7ssSwoh8p/\
+5PRoPsceqRpAH2AWC2mTfGhJjBFYO6O09M5VgAFYGEk6DqG6oCqOE8/4Yxh1CeE4cCl+\
+nyAZ2qsUikhf4OoPT+F9Qc7tVneDft2c6Ox0dy4/11RWFP4f7+jQcgaG6y5wYi2eaItP+\
+r5CFldVMRm86Z1gJGap6dII3soF3DOKWQy39MC9XmhoKuTjQ57vAMyhlbS5Lnc1FSnqjs/\
+Ksb89UXSbjc83tw8ASy3A8GjVhAcP4fV9Cu5g9kdnlQ0QYMIvm/\
+dcQi89w3eJwFsJx20DaZCOCbsGo5N4ujtFq/92NYW8EJJ6SlbLU+\
+grizgeo6f2ir7Uhu60mKosAZJmlbg0ZBKfWQSBziXEXwvqL4WA10oGL+EEjVw6vx0Ss/6hI/I7/\
+qUkzPaYfoSmtaQw8K0LCl2XqMMo+QAQOzAYeX866N+\
+AIo2JqVRE0OrqHLpCT96t1AkQiJzyvc8GptoPXVaj0wq1irNi/ifPz/\
+jgBLwxoMaa9TrgOqwxpqPH9wFDt+\
+klbMxetpk6XTzfY42aYLsobEp8wJ8is3WVuHMOR780ltSnxxQ5QOC3dBFuUV3pMXXEoZDoJOutO2rB\
+yJyJN1PYbpCF9GvO79DIW2vPWk06o+dJ53qJm82qvefeI+rTzYdr8pd75Fb9+\
+qPms1H9poQjQebj4So3m+69E+9WeVO3a16m97mg8fu5iPHqRfXP/nbgOwmbPom/\
+2Z6q5JdmtF8OkQXVurnM3f72Qf7SukrA2afV567fqxruKkvX3xq/ov/G/Qm6ff7p66xVMWsKBH/\
+D8Spdmo=", 2 -> 
+       "OEM6eJztlV1uE0kQx3FiJ2CykCwCCQmJWhSJl5ADWOLBX4JICQq0gYcVUtozNZ6We7q9Xd\
+3+uMaeZi/FHageZ5zYCWEPwJNnqqv//e+q35SzGt0f4Nz3pJdZg+\
+qnirw4fI8OXxNIAziXxUQjBJIjhAKp/\
+M2sg2yb6l3UOqvRbsfOS4EtejhAzpceOcQrS70XfRMKdBw9l84rqXv8YkZYoPEknnVz6bs2xROjlcF\
+KQNyv4ixb/xQ0UrMjk/HI2WBSqn+wBsV2C5r/30j83cxs0H5vYWShkjOb8iHX0ungnbZDqS+\
+k9zLJMT08ZOGdgRzFpPpNrRrtfLKzuLi9OnAj8otabLVaolHWWtTein+3Xt2V/\
+bc5gvE3SGwxCR4JfI7A6UN0YDOYLDdAem1HjGs0I5/DOD4bSNmTMok/\
+Aus4E1NQHgs6hvZtAqAYCpigK4KXXlkDysAsV0nUKzeCdGzC+rjAfhRbcWqkDOuUBxzDgF1mgY+\
+M2wNd+maiiqAldJSxBZ+6vJsIw0wmniVi5M342/GrKyxE48TwxW+jg+v+4J2Ti1Ocou7W+PVxf8r+\
+30uTanTcwdi+skNMStzdQy0XmIq9M8ue+sbHWvDin12ubpTszyeO6WfTrNb4GBTG7jY+\
+IKZUWRAHX63OnCwuosehteOLJadZI5IgFsXQavHyRlL10C6LIg7aJW/xjp3gvTUUIbuk9DYo79Gj/\
+lTqULYkQin+27oLnFZr+Tm/hd983eBr97I9K652ztDnNhXNc4c8U7yaXk2kR+\
+eSqESLenZm6EE7eFuw9WSVsneV8nlC9YELuAEdPVmbQF+4k0jc1ArQSx2mli86Kl+\
+iQpvIJqos0wrA/dj9gRXeceZgMUHxfDlVTyLRfFU2H7kqJ1e1aS9GTrkHIc6da/dfM7n/\
+2ZCcYvpFcrWG0cPPx6R4Wn2kHW2T8Wqk/\
+7EWvmOuf681BznDUP3h4JwFlCGGQfplQ6sWpxbpqAwVKA1fO4IXX1WcDrzE3zzkdra+\
+a2bdmMmwFd3lqg2en4/\
+hxIPUZFkh0SHdIIiRSmG4WJfbEOJJETQLNZun6NkXjA0bUBksbICcq8imFvAPtznupr9+AJkmrUs=\
+"|>, "PageCount" -> 2, "CurrentPage" -> 2|>|>,
+ GeneratedCell->True,
+ CellAutoOverwrite->
+  True,ExpressionUUID->"3ce76d49-a4e8-4e5b-be6c-28ed2d022ff4"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"EnumeratePartialDerangements", "::", "usage"}], " ", "=", " ", 
+   "\"\<EnumeratePartialDerangements[n, k] computes the number of partial \
+derangements of length k of n distinct, ordered items. A partial derangement \
+is a permutation in which k items are not in their original order. The \
+function uses the formula Binomial[n, k]Subfactorial[n-k].\>\""}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.8968095851779213`*^9, 3.896809589215702*^9}},
+ CellLabel->"In[17]:=",ExpressionUUID->"f64cc20e-8b0d-40f2-a137-b4ba424a532e"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"square", "[", "x_", "]"}], ":=", 
+  SuperscriptBox["x", "2"]}]], "Input",
+ CellChangeTimes->{{3.896809661542376*^9, 3.8968096674767942`*^9}},
+ CellLabel->"In[18]:=",ExpressionUUID->"70104fa0-a058-4b2c-98e3-267524480a04"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"InitializationValue", "[", 
+   RowBox[{"squarefunction", ",", "\"\<Local\>\""}], "]"}], "=", 
+  "square"}]], "Input",
+ CellChangeTimes->{{3.896809649342082*^9, 3.8968096832296305`*^9}},
+ CellLabel->"In[19]:=",ExpressionUUID->"a18369a1-c3c0-42a4-831f-9bb9a80acde5"],
+
+Cell[BoxData["square"], "Output",
+ CellChangeTimes->{3.896809684260764*^9},
+ CellLabel->"Out[19]=",ExpressionUUID->"62c3bc23-5951-416f-95ba-f3f017dfa86f"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Initialize", "[", "squarefunction", "]"}]], "Input",
+ CellChangeTimes->{{3.896809685860325*^9, 3.896809693924554*^9}},
+ CellLabel->"In[20]:=",ExpressionUUID->"373676b2-cb55-4b68-9439-62912d7aec3e"],
+
+Cell[BoxData[
+ RowBox[{"{", "\<\"Global`squarefunction\"\>", "}"}]], "Output",
+ CellChangeTimes->{3.896809694331587*^9},
+ CellLabel->"Out[20]=",ExpressionUUID->"622d6b0e-41df-4beb-aaf5-fa9c28b00bbd"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"squarefunction", "[", "3", "]"}]], "Input",
+ CellChangeTimes->{{3.896809696897818*^9, 3.8968096991093655`*^9}},
+ CellLabel->"In[21]:=",ExpressionUUID->"474b44b4-df92-45ae-bead-6007a28ad896"],
+
+Cell[BoxData["9"], "Output",
+ CellChangeTimes->{3.896809699527608*^9},
+ CellLabel->"Out[21]=",ExpressionUUID->"f18b47d4-5b72-4a86-b93b-2fc87c354641"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"InitializationValue", "[", 
+   RowBox[{"cubefunction", ",", "\"\<Local\>\""}], "]"}], "=", 
+  RowBox[{"Function", "[", 
+   RowBox[{"x", ",", 
+    SuperscriptBox["x", "3"]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.896809770891369*^9, 3.8968097934148064`*^9}},
+ CellLabel->"In[22]:=",ExpressionUUID->"05e23611-127f-4c81-b566-e197e033815b"],
+
+Cell[BoxData[
+ RowBox[{"Function", "[", 
+  RowBox[{"x", ",", 
+   SuperscriptBox["x", "3"]}], "]"}]], "Output",
+ CellChangeTimes->{3.8968097971132936`*^9},
+ CellLabel->"Out[22]=",ExpressionUUID->"86e46490-82a1-4121-977d-5f06ebfe6e6d"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Initialize", "[", "cubefunction", "]"}]], "Input",
+ CellChangeTimes->{{3.8968097978543386`*^9, 3.8968098086773205`*^9}},
+ CellLabel->"In[23]:=",ExpressionUUID->"4f7b9b9f-3f8b-4ac3-8868-404593fb255e"],
+
+Cell[BoxData[
+ RowBox[{"{", "\<\"Global`cubefunction\"\>", "}"}]], "Output",
+ CellChangeTimes->{3.896809809311947*^9},
+ CellLabel->"Out[23]=",ExpressionUUID->"b3b01f7c-4644-4a82-a0cf-964f00b8a6ba"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"InitializationValue", "[", 
+   RowBox[{"AlternatingTreeGraph", ",", "\"\<Local\>\""}], "]"}], "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"ResourceFunction", "[", "\"\<AlternatingTreeGraph\>\"", "]"}], 
+    "[", "##", "]"}], "&"}]}]], "Input",
+ CellChangeTimes->{{3.896816798837803*^9, 3.896816849456807*^9}, 
+   3.8968173195546265`*^9},ExpressionUUID->"2d5d407e-204e-4bf9-b9f8-\
+d4507c25143c"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"ResourceFunction", "[", "\<\"AlternatingTreeGraph\"\>", "]"}], 
+   "[", "##1", "]"}], "&"}]], "Output",
+ CellChangeTimes->{3.896816849954774*^9},
+ CellLabel->"Out[43]=",ExpressionUUID->"68f78208-ba5f-4745-9266-692546ca3b04"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Initialize", "[", "AlternatingTreeGraph", "]"}]], "Input",
+ CellChangeTimes->{{3.8968168532694654`*^9, 3.8968168569493437`*^9}},
+ CellLabel->"In[44]:=",ExpressionUUID->"defb76ab-c637-48be-9480-1996b8851f39"],
+
+Cell[BoxData[
+ RowBox[{"{", "\<\"Global`AlternatingTreeGraph\"\>", "}"}]], "Output",
+ CellChangeTimes->{3.8968168579211245`*^9},
+ CellLabel->"Out[44]=",ExpressionUUID->"e6f04a2f-08cb-4187-bfc1-755f34d883b6"],
+
+Cell[TextData[{
+ "It looks like you are defining two functions ",
+ StyleBox["squarefunction", "TI"],
+ " and ",
+ StyleBox["cubefunction", "TI"],
+ " and initializing them, as well as defining and initializing a function ",
+ Cell[BoxData[
+  TemplateBox[{"AlternatingTreeGraph"},
+   "ChatCodeInlineTemplate"]], "ChatCode",
+  Background->None,ExpressionUUID->"33dc345f-7153-4d34-9703-4fd6ba3c28e7"],
+ " using the ",
+ Cell[BoxData[
+  TemplateBox[{"ResourceFunction", "paclet:ref/ResourceFunction"},
+   "TextRefLink"]],ExpressionUUID->"bd868505-75a9-4525-9d0d-e5345eae1567"],
+ " ",
+ Cell[BoxData[
+  TemplateBox[{"AlternatingTreeGraph"},
+   "ChatCodeInlineTemplate"]], "ChatCode",
+  Background->None,ExpressionUUID->"9c55fd43-a1db-465f-be35-822f70fb6cbc"],
+ ".\n\nThe ",
+ Cell[BoxData[
+  TemplateBox[{"InitializationValue", "paclet:ref/InitializationValue"},
+   "TextRefLink"]],ExpressionUUID->"95f58c12-9ccd-4d98-8501-3b5b15e428cf"],
+ " function is used to set the values of symbols before the main code is \
+evaluated. The syntax is: \n",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     BoxData[
+      DynamicModuleBox[{$CellContext`attached$$}, 
+       TagBox[
+        Cell[
+         BoxData[
+          RowBox[{
+            RowBox[{
+              RowBox[{"InitializationValue", "[", 
+                RowBox[{"symbol", ",", "scope"}], "]"}], "=", "value"}], 
+            ";"}]], "ChatCode", "Input", Background -> GrayLevel[1]], 
+        EventHandlerTag[{"MouseEntered" :> (Quiet[
+             Needs["Wolfram`Chatbook`" -> None]]; 
+           Symbol["Wolfram`Chatbook`ChatbookAction"]["AttachCodeButtons", 
+             Dynamic[$CellContext`attached$$], 
+             EvaluationCell[], "InitializationValue[symbol, scope] = value;", 
+             "Wolfram"]), Method -> "Preemptive", PassEventsDown -> Automatic,
+           PassEventsUp -> True}]], DynamicModuleValues :> {}, 
+       TaggingRules -> <|
+        "CellToStringType" -> "InlineInteractiveCodeCell", "CodeLanguage" -> 
+         "Wolfram"|>, UnsavedVariables :> {$CellContext`attached$$}]]]},
+   "ChatCodeBlockTemplate"]], "ChatCodeBlock",
+  Background->None,ExpressionUUID->"aee9e595-686a-4e56-be3c-b0fa43ccb8f4"],
+ "\nwhere ",
+ StyleBox["symbol", "TI"],
+ " is the symbol whose value is being set, ",
+ StyleBox["scope", "TI"],
+ " is either ",
+ Cell[BoxData[
+  TemplateBox[{"\"Local\""},
+   "ChatCodeInlineTemplate"]], "ChatCode",
+  Background->None,ExpressionUUID->"6628e20e-5fa8-454f-a4e7-8bce31d1b234"],
+ " or ",
+ Cell[BoxData[
+  TemplateBox[{"\"Global\""},
+   "ChatCodeInlineTemplate"]], "ChatCode",
+  Background->None,ExpressionUUID->"7312524d-15e0-4bd2-8abc-a2a225090b18"],
+ " to specify the scope of the symbol, and ",
+ StyleBox["value", "TI"],
+ " is the value being assigned to the symbol.\n\nThe ",
+ Cell[BoxData[
+  TemplateBox[{"Initialize", "paclet:ref/Initialize"},
+   "TextRefLink"]],ExpressionUUID->"e29d0f79-3272-40e2-a45f-04be640dc131"],
+ " function is then used to initialize the symbols whose values were set with \
+",
+ Cell[BoxData[
+  TemplateBox[{"InitializationValue", "paclet:ref/InitializationValue"},
+   "TextRefLink"]],ExpressionUUID->"a6ee753a-370b-4fa8-8bb8-579dacd28434"],
+ ". The syntax is: \n",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     BoxData[
+      DynamicModuleBox[{$CellContext`attached$$}, 
+       TagBox[
+        Cell[
+         BoxData[
+          RowBox[{"Initialize", "[", 
+            RowBox[{"symbol1", ",", "symbol2", ",", "..."}], "]"}]], 
+         "ChatCode", "Input", Background -> GrayLevel[1]], 
+        EventHandlerTag[{"MouseEntered" :> (Quiet[
+             Needs["Wolfram`Chatbook`" -> None]]; 
+           Symbol["Wolfram`Chatbook`ChatbookAction"]["AttachCodeButtons", 
+             Dynamic[$CellContext`attached$$], 
+             EvaluationCell[], "Initialize[symbol1, symbol2, ...]", 
+             "Wolfram"]), Method -> "Preemptive", PassEventsDown -> Automatic,
+           PassEventsUp -> True}]], DynamicModuleValues :> {}, 
+       TaggingRules -> <|
+        "CellToStringType" -> "InlineInteractiveCodeCell", "CodeLanguage" -> 
+         "Wolfram"|>, UnsavedVariables :> {$CellContext`attached$$}]]]},
+   "ChatCodeBlockTemplate"]], "ChatCodeBlock",
+  Background->None,ExpressionUUID->"30aa4352-d07a-4580-9dc9-b04aa86de636"],
+ "\nwhere ",
+ Cell[BoxData[
+  TemplateBox[{"symbol1"},
+   "ChatCodeInlineTemplate"]], "ChatCode",
+  Background->None,ExpressionUUID->"f825c047-b54b-494a-a258-6212ecc5b336"],
+ ", ",
+ Cell[BoxData[
+  TemplateBox[{"symbol2"},
+   "ChatCodeInlineTemplate"]], "ChatCode",
+  Background->None,ExpressionUUID->"a8dfb2ab-9b6c-4dcb-9693-798fb1265193"],
+ ", etc. are the symbols being initialized.\n\nIn this case, ",
+ StyleBox["squarefunction", "TI"],
+ " and ",
+ StyleBox["cubefunction", "TI"],
+ " are both defined as functions that take a single argument and return its \
+square and cube, respectively. ",
+ Cell[BoxData[
+  TemplateBox[{"AlternatingTreeGraph"},
+   "ChatCodeInlineTemplate"]], "ChatCode",
+  Background->None,ExpressionUUID->"d3eef11f-8396-4f14-ac5c-04473267a4ba"],
+ " is defined using a ",
+ Cell[BoxData[
+  TemplateBox[{"ResourceFunction", "paclet:ref/ResourceFunction"},
+   "TextRefLink"]],ExpressionUUID->"4c7dbbb4-5790-4182-af3c-5e2d9d7756b0"],
+ " that generates an alternating tree graph. \n\nLet me know if you have any \
+questions!"
+}], "AssistantOutput",
+ CellFrame->0,
+ CellDingbat->Cell[
+   BoxData[
+    PaneBox[
+     TemplateBox[{}, "ChatIconCodeAssistant"], ContentPadding -> False, 
+     FrameMargins -> 0, ImageSize -> {35, 35}, ImageSizeAction -> 
+     "ShrinkToFit", Alignment -> {Center, Center}]], Background -> None],
+ ShowCellBracket->False,
+ CellMargins->-2,
+ CellOpen->False,
+ TaggingRules-><|
+  "CellToStringData" -> 
+   "It looks like you are defining two functions `squarefunction` and \
+`cubefunction` and initializing them, as well as defining and initializing a \
+function `AlternatingTreeGraph` using the `ResourceFunction` \
+`AlternatingTreeGraph`.\n\nThe `InitializationValue` function is used to set \
+the values of symbols before the main code is evaluated. The syntax is:\n```\n\
+InitializationValue[symbol, scope] = value;\n```\nwhere `symbol` is the \
+symbol whose value is being set, `scope` is either `\"Local\"` or \
+`\"Global\"` to specify the scope of the symbol, and `value` is the value \
+being assigned to the symbol.\n\nThe `Initialize` function is then used to \
+initialize the symbols whose values were set with `InitializationValue`. The \
+syntax is:\n```\nInitialize[symbol1, symbol2, ...]\n```\nwhere `symbol1`, \
+`symbol2`, etc. are the symbols being initialized.\n\nIn this case, \
+`squarefunction` and `cubefunction` are both defined as functions that take a \
+single argument and return its square and cube, respectively. \
+`AlternatingTreeGraph` is defined using a `ResourceFunction` that generates \
+an alternating tree graph. \n\nLet me know if you have any questions!", 
+   "MessageTag" -> Inherited, "ChatData" -> 
+   "OEM6eJztWdtuG8cZRgrnYDbuCUGB3o0Vo4lTirZIBY1lGAUjy45QyRJMtWrAMOZwd0huuTvDzO\
+yKYg2/R9s3KfoOve8L9KLoKxTo9/+zu1weJCv31YW9uzP/+fsPM2z/\
+fLtTazsXuVTqQLnb7Sw1iUyjgL7j+\
+ZmxeHW3zmym8OlL6dSpNck0Xdp6d38s032jU3WZ7qs4xhYwc5EePct0kEZGX7n91Lj04ELGmaRtG7d\
+/VN1u1XRd/s9ox1MbXSj9wqRqYMzEvftMxg46/5TWvoKBxs6PlB6l4/\
+1f4OvTuZZJFFRsrDL8yTOrvsuUDuanSss4ndu//oX+/vab7c6PDnUQZ6HKeS7R3T6Wl2dmorRb+\
+nznWNmROoZL5Aj/5N5899iEKu7cGU3T7Vbj8+00swOz3fkxbHQQrdZF3+mMzew40lES/UmFSyJ+\
+eKaSqbISTJQd8t+/QPHhmTGxO9ByEIOg8MmtMzM93X8HD09lKtt4+KBQbvi+u3UEy9o/wKo1seq85+\
+YuVcl25/2AYqDTzn8++\
+tpkQlolpBireDrMYnFu4qGViTiSepSBkZA5qlIBR6tQ7MNYUUAtbQiwsOKPZiAiJ1IjQiPSsRJDE8d\
+mBuDs1WqfiZPhUNl11i4bQVPGiRgAkaEwWkytuohM5kSkp1nqGiD/CrqJYXQplLXG8qeDy2ksI+2/\
+iCQ3WjgvPXMQl+lQWVIydGIG7IgZbBYza/\
+SoysFkKckBHbYkci4GSsBBw4xgTxZFWl0iIhGFMmTWrIF3wULcLErHwuDVgmgaBQ6eE1qpUIUNcT6O\
+YiXm8LabqiCSMeIOxmsuqfOeQGqOh+\
+cp9dxzbNRqH4vnSgMdsTjULrWZT7JarYhjhMBaia9Q3RN75dKxNdmIXguJRX55kqEMVEOcwZbSlaSI\
+VYFCMoohUnVh6Vji00ApTX66UDaFW+\
+An705Kbr9fFxJyuDVEB3iPpY3nbGYlbAzBIgdkHM8rnJlXhfdADY0l+WRjGDkszb0ChYINgUqANw/\
+ImbGkgoUtaS5ZJBkiJ0PEShWEJWDFKIuQzoi6Y+\
+y2j87bX3cgbwQNWG2k9RReV3nItRJmuMIjlSPnsRPCoFTxcjqf8taCfk90D188O+nVRfe8/\
+fLF4YvneITm3YOXL09e9mq3Pysel1jJAvXkkdzkT/J0YZqC2YoCMq2G0Ik4mih4OpEh5X9C+\
+TwBAAeZ3xdQns+iOBbIUPxrM80GI1/yPGRhbAEstwJxy/\
+FfGOjgvvMxAItQrriOMIGQIvRiEJtgQn4hiXUUBTBH7ooo9Q4GdhXiLYMJwDEBBa350s2KxkU5mUGU\
+kNNpDItRJvdq/X6/WKwRc/qwiOhCkKZoFwZDYmgy0FdEwpHywkShkMkgAj7Sud8Y+GbGldHtiX7/\
+eJ73NzwVPbB72WOx5zZCHADxsUBBsdRXqfD5OnMkz9Qf2LRSLdiWFPrESBvhopGGlHuX3zbFr8T82+\
+Y9cD08Pj15edZ+cXZ3ydWocyRNIsop14vCGAJYhZ/\
+I06peeEW5QAKmhfMlE7pYunEDJVMmUzhWHKYw3aFoJkp8c+/Ro8ajzwVJRqGKEl/ngIiRSslzOcdv+\
+iT6m3so8AblNJ7fhfZHkZ4giX1u0ua1HhGaIEtQPXisEIN57q/\
+ldHNzbLhEPsVyoOLep1MZxCrdy2x03xcDlWvOkD0jdJSbrBo+4C/\
+3ebEUfAJ7LiI1KzdyXXhQrBfLnuqQkk90WI2SIEVFs6j1D3jVL97PUwKZgJaIlkLqrzfGeTJAu18Ex\
+0eTESEpZ5a9AvhOGuJEw4XcfqMKJaowI5taVocBAC8PsihOt7HHjwRimEMVfSmdN0SbsQ4rJlydMx0\
+DrL5zDfP6zGMVaENuSmsGdNI5Euh5WUmpkP5WqalPMhdRMHy+Tg3yAN7Hht+\
+hLiw0IZyMwDQhD6FSpEqGVCWmNJOGGTANkqeGDaQZBVgexWYAwgsJr4Ol8xKiFNWRdmlFw6y0cxCes\
+v9FAnXsehsuA0AJmSgUvZBq2TG1Yq1m5fKiE8ow9E3o/\
+AjmYVLw9W6izQwDGzgGAMNwKELU4jqNKcFYIRbLcSwHhgIkgVWSe/\
+k0NqmrkxRhpn5gclkwJgqGvNc0ViNF0w7USFDLPV6UdBHPJJWBiOrGcNENIppVJiSH6zhV6SxOq07n\
+sFGPtybMgryb+G114sG8Zt6Lr4qa+0r58wA1Y0yvi0n0FkmtzKH/\
+fIcnvER5tWWJAtZnKm2KLBJQHowVucstZbXYabZ2uaWRFq1NBGJnt9VkH9GW5vJSc7fVwIxp1SfkRt\
+/CCtYg22H/iN3tKhF8wlIHKpBkPzU/TCIAmAdFMKatYWNh9O1ykK5Y/\
+uf3Opjz75bSF5b7fg13OC7ijkXSrDZCDNkSqYt3NB7d7/NHq3Bw0N4TOksGWKSc2eBC+\
+h7zOSonz4cYkrUnqFXmWVHLqZ9WiLu06xWqy6ue2HsicADKYtV97RHxpi5qQhQoesIvopMl3U+3d+\
+6Lb8Xky0ibBBy7ui4mvQpfZguu2xNMQq8ndfEQL2964nGFYY1fqZOT06D7Bno0XEA2QdVVq664qQv8\
+NFyGo9/f4AVQIPZeAk8k1NG31WX+\
+hGzB14hghNTJ9blBZBqiVqvAu07UwyjH7o2D2qpaI17v1Jv1Vn33zeKEQYX87YEGoWjWRasuiLbVY8\
+/PxhGKzwhHA2+8P0PBSa1+Hw3hCI0fyUzFT0RDFshJQeWT2wYXMDmgURIHYd+xSlfTwO7uXl0t/\
+v4uqXCouzs7PWBvP1bStuO4ewDX0MFZna6b0asxQZMIrtvX1QD1xIN6GaWdbIBDkm/\
+oXQJorXYdI7G3B2xQK3kitmjjltegRRoMD/WQ7yrI3OrG6gLGxgWGL/\
+HX2BKP2fu1tsAAlWR510CYNR2E0CiClA4QAISi8VklPAf4YOnKOSVf4tWIQGMjHG4ApYIWTTli3thD\
+UdT51LEwsEENxJkkPzBU22uE8QDQqi9LoyMe7fKHlsheLRR9zp8/\
+9BCztvVGEmBxMOeubX2nZZU21fpPDy4k8AUQyrghmg8fAr/Thmh98fl9gPM8H4y90/MjKDea6+\
+LpGwT5gwFryvl6hc3e3iKYGyL4+C394L+3yj5UtqB1Rfv961Tt95ez+nvB9OrEoCS4qqi+\
+pRRNrsUo5s2NYeSuWwV6ieXJzTC1UsLLUk0plsXybQne2OJsO6PiVHhf+Uuj/\
+EIprbIPjcqRmyipaZgq8M/\
+3WHVuz77aqZVit9oefDlt0DFLxs4Up91l7TO6L8N5aIndCiPfMamf3KgkX1N0//F+UXR//bYa+\
+n9MXYcp1HB24xfkRvddBnndS99wcK73a49o7VBHKV8UsqK/xyStun5/\
+Ib0uto4MuvhWTxSsarWTLCUGiw9g2Hy4xHCVT89TYdcT8XrrOR+i+\
+stbtt54RjsLrYulbqug3wH9I7+veZUFQTbYrP/\
+itqQOR5Q8m71NSySitWJTlXNB3apaVN2Q27PbukrPdpziYMiHrzOr1HMrp+\
+MlfV8qhwNeoErltjaRbPW6H3/c+6VXZ5fU+R50O0RIWu6umLqJIjcZeysmb2T9hsraW/\
+rQvz9A7Ynp5xe+JuR6QZkRKgyifP8yM2UWOLGCFn8UWXJ4P7+2y23Ir3CSOnXxmcLhCf+\
+XzNe2Vs5FG23qV26F+qse7l9Bg1mAcrm/Ifz9hbzI+UqLyuqUL/l0qlVci4p7gPxOmos/XVTzcRmU+\
+QGYfgEgUf6aCgt8NVnbmOHMsS5cYKaKcMbCHudTNx94/JY+/\
+94yLq4qUMWMy1WjFX89Do3rICBevF9FfLjt5zjmG7l+Dha8kY18yeO7CtMVXaxQjCN74Z2Ua+\
+CFeon+JmZxH+/J1ly94uGULjsKN5eRVxUOrmogQQaeoHjwJeXGEF7v8sLTON34B8yIjUajt+\
+7onX69eGziUaVBg1Ohqpu3faE43Yodan+uCaRT9ZtlCP2sYei+\
+lxIBzpCukmPlhQCygcCOyVDaEd8eVU7+PM97WfyVJNT52l2Bz4WK542rUihypWCfTXJTLrEaI/\
+4Rino25lS54CZSuqofEb+bDx3bnQ+Pjo4Piruizh36hbG9KEq1/CfNMzlytw81YoNOHf4PHWsDaQ==\
+"|>,
+ GeneratedCell->True,
+ CellAutoOverwrite->
+  True,ExpressionUUID->"eb783a24-d0d0-4d26-ad9d-4755f8954c57"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"cubefunction", "[", "7", "]"}]], "Input",
+ CellChangeTimes->{{3.8968098108110275`*^9, 3.89680981316896*^9}},
+ CellLabel->"In[24]:=",ExpressionUUID->"49e024bc-fc05-4468-a09c-b7bc602ae7b4"],
+
+Cell[BoxData["343"], "Output",
+ CellChangeTimes->{3.8968098135808916`*^9},
+ CellLabel->"Out[24]=",ExpressionUUID->"8d987e64-8e65-4afb-9c69-d54e26107b56"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"g", "[", "x_", "]"}], ":=", 
+   RowBox[{"IntegerDigits", "[", "x", "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.8968102203837843`*^9, 3.8968102298915195`*^9}},
+ CellLabel->"In[25]:=",ExpressionUUID->"c4530b4d-6814-4303-b099-d7c8e80a30f1"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"g", "[", "x_Real", "]"}], ":=", 
+   RowBox[{"RealDigits", "[", "x", "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.8968102339541683`*^9, 3.8968102439951935`*^9}},
+ CellLabel->"In[26]:=",ExpressionUUID->"9466789a-e73a-4b29-a4b8-6857d5ab4633"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"g", "[", "___", "]"}], ":=", 
+  RowBox[{"{", "}"}]}]], "Input",
+ CellChangeTimes->{{3.8968102453243403`*^9, 3.896810248274158*^9}},
+ CellLabel->"In[27]:=",ExpressionUUID->"2301b376-f8c0-49ef-aa9f-9c7dbbd14ff4"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"gPure", "=", 
+  RowBox[{"Function", "[", 
+   RowBox[{"input", ",", 
+    RowBox[{"g", "[", "input", "]"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.8968102527127504`*^9, 3.89681026793227*^9}},
+ CellLabel->"In[28]:=",ExpressionUUID->"df03c31f-6373-4aa9-b96d-e5fb1a59e104"],
+
+Cell[BoxData[
+ RowBox[{"Function", "[", 
+  RowBox[{"input", ",", 
+   RowBox[{"g", "[", "input", "]"}]}], "]"}]], "Output",
+ CellChangeTimes->{3.896810268217273*^9},
+ CellLabel->"Out[28]=",ExpressionUUID->"f6457ce9-c6f3-4d0e-80b4-62b771dbea38"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"g", "[", "1337", "]"}]], "Input",
+ CellChangeTimes->{{3.8968102699488845`*^9, 3.8968102877022147`*^9}},
+ CellLabel->"In[31]:=",ExpressionUUID->"156ff711-215e-493f-8e98-cba9712d1ac5"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", "3", ",", "3", ",", "7"}], "}"}]], "Output",
+ CellChangeTimes->{{3.8968102765964446`*^9, 3.896810288101217*^9}},
+ CellLabel->"Out[31]=",ExpressionUUID->"5f4e720c-a4b1-4919-9b88-6cfc0d772857"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"gPure", "[", "1337", "]"}]], "Input",
+ CellChangeTimes->{{3.8968102699488845`*^9, 3.8968102784895754`*^9}},
+ CellLabel->"In[30]:=",ExpressionUUID->"87fae2b6-70a6-4fec-ad26-ef4719fef05c"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", "3", ",", "3", ",", "7"}], "}"}]], "Output",
+ CellChangeTimes->{3.8968102838416843`*^9},
+ CellLabel->"Out[30]=",ExpressionUUID->"0f00f3e3-af73-4e8b-8149-15e2d440139c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"g", "[", 
+  RowBox[{"N", "@", "Pi"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8968102920463057`*^9, 3.8968102939509974`*^9}},
+ CellLabel->"In[32]:=",ExpressionUUID->"1ec57062-10b3-4a06-8fa4-8c31a2913070"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+    "3", ",", "1", ",", "4", ",", "1", ",", "5", ",", "9", ",", "2", ",", "6",
+      ",", "5", ",", "3", ",", "5", ",", "8", ",", "9", ",", "7", ",", "9", 
+     ",", "3"}], "}"}], ",", "1"}], "}"}]], "Output",
+ CellChangeTimes->{3.896810294414998*^9},
+ CellLabel->"Out[32]=",ExpressionUUID->"134448d4-b969-49d9-b1df-37afa8f11dba"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"gPure", "[", 
+  RowBox[{"N", "@", "Pi"}], "]"}]], "Input",
+ CellChangeTimes->{{3.896810295617378*^9, 3.8968102984904275`*^9}},
+ CellLabel->"In[33]:=",ExpressionUUID->"e2a630a9-cbff-4723-a5ca-b7231538bd43"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+    "3", ",", "1", ",", "4", ",", "1", ",", "5", ",", "9", ",", "2", ",", "6",
+      ",", "5", ",", "3", ",", "5", ",", "8", ",", "9", ",", "7", ",", "9", 
+     ",", "3"}], "}"}], ",", "1"}], "}"}]], "Output",
+ CellChangeTimes->{3.8968102988903947`*^9},
+ CellLabel->"Out[33]=",ExpressionUUID->"ca7733e3-d59e-42c3-b07f-0644abc13f53"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"g", "[", 
+  RowBox[{"\"\<Hello\>\"", ",", "\"\<World\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.896810302281829*^9, 3.896810307271259*^9}},
+ CellLabel->"In[34]:=",ExpressionUUID->"7098dd8f-6588-4961-a9ed-4ac3644d524d"],
+
+Cell[BoxData[
+ RowBox[{"{", "}"}]], "Output",
+ CellChangeTimes->{3.8968103080953503`*^9},
+ CellLabel->"Out[34]=",ExpressionUUID->"f1b90834-55ea-442a-ad53-69ecd07307e1"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"gPure", "[", 
+  RowBox[{"\"\<Hello\>\"", ",", "\"\<World\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.8968103104202175`*^9, 3.8968103216419334`*^9}},
+ CellLabel->"In[36]:=",ExpressionUUID->"e22906f6-6e55-45e1-aaf1-5b3a24c1eddc"],
+
+Cell[BoxData[
+ RowBox[{"IntegerDigits", "[", "\<\"Hello\"\>", "]"}]], "Output",
+ CellChangeTimes->{{3.896810314947578*^9, 3.896810322021075*^9}},
+ CellLabel->"Out[36]=",ExpressionUUID->"77e03522-6d14-4d2d-b205-1c5b8d43827d"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DownValues", "[", "gPure", "]"}]], "Input",
+ CellChangeTimes->{{3.8968103346787825`*^9, 3.896810338185192*^9}},
+ CellLabel->"In[37]:=",ExpressionUUID->"c669aa1c-b623-428f-89d2-c62abe7e5661"],
+
+Cell[BoxData[
+ RowBox[{"{", "}"}]], "Output",
+ CellChangeTimes->{3.896810338727193*^9},
+ CellLabel->"Out[37]=",ExpressionUUID->"94cbebb5-d21e-48d8-a896-0414cc929e2b"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DownValues", "[", "g", "]"}]], "Input",
+ CellChangeTimes->{{3.8968103346787825`*^9, 3.8968103436270013`*^9}},
+ CellLabel->"In[38]:=",ExpressionUUID->"48734863-6456-447d-9fac-dcc09b1854bd"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     RowBox[{"g", "[", "x_Real", "]"}], "]"}], "\[RuleDelayed]", 
+    RowBox[{"RealDigits", "[", "x", "]"}]}], ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     RowBox[{"g", "[", "x_", "]"}], "]"}], "\[RuleDelayed]", 
+    RowBox[{"IntegerDigits", "[", "x", "]"}]}], ",", 
+   RowBox[{
+    RowBox[{"HoldPattern", "[", 
+     RowBox[{"g", "[", "___", "]"}], "]"}], "\[RuleDelayed]", 
+    RowBox[{"{", "}"}]}]}], "}"}]], "Output",
+ CellChangeTimes->{3.8968103440429997`*^9},
+ CellLabel->"Out[38]=",ExpressionUUID->"372d309c-396d-4951-8720-79de7dfc9b57"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"g", "[", 
+   RowBox[{"{", "1", "}"}], "]"}], "/.", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"HoldPattern", "[", 
+      RowBox[{"g", "[", "x_Real", "]"}], "]"}], "\[RuleDelayed]", 
+     RowBox[{"RealDigits", "[", "x", "]"}]}], ",", 
+    RowBox[{
+     RowBox[{"HoldPattern", "[", 
+      RowBox[{"g", "[", "x_", "]"}], "]"}], "\[RuleDelayed]", 
+     RowBox[{"IntegerDigits", "[", "x", "]"}]}], ",", 
+    RowBox[{
+     RowBox[{"HoldPattern", "[", 
+      RowBox[{"g", "[", "___", "]"}], "]"}], "\[RuleDelayed]", 
+     RowBox[{"{", "}"}]}]}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.8968103622317314`*^9, 3.8968103919246173`*^9}},
+ CellLabel->"In[41]:=",ExpressionUUID->"5362bb19-b1d9-40cd-9424-e708d7d4c6bb"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", "1", "}"}], "}"}]], "Output",
+ Editable->False,
+ Selectable->False,
+ CellFrame->0,
+ CellDingbat->Cell[
+   BoxData[
+    TemplateBox[{
+      PaneBox[
+       TemplateBox[{}, "ChatIconCodeAssistant"], ContentPadding -> False, 
+       FrameMargins -> 0, ImageSize -> {35, 35}, ImageSizeAction -> 
+       "ShrinkToFit", Alignment -> {Center, Center}]}, 
+     "ChatOutputStopButtonProgressWrapper"]], Background -> None],
+ ShowCellBracket->False,
+ CellMargins->-2,
+ CellOpen->False,
+ TaggingRules-><|
+  "ChatNotebookSettings" -> <|
+    "Assistance" -> Automatic, "AutoFormat" -> True, "BasePrompt" -> 
+     Automatic, "ChatContextCellProcessingFunction" -> Automatic, 
+     "ChatContextPostEvaluationFunction" -> Automatic, "ChatContextPreprompt" -> 
+     Automatic, "ChatDrivenNotebook" -> False, "ChatHistoryLength" -> 25, 
+     "DynamicAutoFormat" -> Automatic, "FrequencyPenalty" -> 0.1, 
+     "IncludeHistory" -> Automatic, 
+     "LLMEvaluator" -> <|
+      "Pre" -> "You are a helpful Wolfram Language assistant named Code \
+Assistant. Your job is to do the following:\n\n* Offer Wolfram Language \
+suggestions based on previous inputs.\n* Help fix errors.\n* Explain error \
+messages so the user understands what went wrong.\n* Explain outputs that may \
+be confusing to inexperienced users.\n* Assist the user with other topics as \
+needed. While you specialize in Wolfram Language, you can help with any \
+topic.", "Post" -> 
+       Missing["NotAvailable", 
+         "C:\\Users\\Peter\\AppData\\Roaming\\Mathematica\\Paclets\\\
+Repository\\Wolfram__Chatbook-0.0.30\\LLMConfiguration\\Personas\\\
+CodeAssistant\\Post.md"], "Icon" -> RawBoxes[
+         TemplateBox[{}, "ChatIconCodeAssistant"]], 
+       "BasePrompt" -> {"WolframLanguageStyle"}, "DisplayName" -> 
+       "Code Assistant", "LLMEvaluatorName" -> "CodeAssistant"|>, "MaxTokens" -> 
+     Automatic, "MergeMessages" -> True, "Model" -> "gpt-3.5-turbo", 
+     "OpenAIKey" -> "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", 
+     "PresencePenalty" -> 0.1, "ShowMinimized" -> Automatic, "Temperature" -> 
+     0.7, "ToolsEnabled" -> False, "TopP" -> 1, 
+     "Data" -> <|
+      "Messages" -> {<|
+         "role" -> "system", "content" -> 
+          "You are a helpful Wolfram Language assistant named Code Assistant. \
+Your job is to do the following:\n\n* Offer Wolfram Language suggestions \
+based on previous inputs.\n* Help fix errors.\n* Explain error messages so \
+the user understands what went wrong.\n* Explain outputs that may be \
+confusing to inexperienced users.\n* Assist the user with other topics as \
+needed. While you specialize in Wolfram Language, you can help with any \
+topic.\n\n# General Instructions\n\nYou are interacting with a user through a \
+Wolfram Notebook interface. The messages you receive from the user have been \
+converted to plain text from notebook content. Similarly, your messages are \
+automatically converted from plain text before being displayed to the user. \
+For this to work correctly, you must adhere to the following guidelines:\n\n* \
+ALWAYS begin your response with one of the following tags to indicate the \
+type of response: [INFO], [WARNING], or [ERROR]\n\t* [ERROR] to indicate an \
+error in the user's input\n\t* [WARNING] to indicate that the user has likely \
+made a mistake, but the code will still run without errors\n\t* [INFO] for \
+all other responses\n* Whenever your response contains a block of code, \
+surround it with three backticks and include the language when applicable:\n\
+```language\ncode\n```\n* ALWAYS surround inline code with double backticks \
+to avoid ambiguity with context names: ``MyContext`MyFunction[x]``\n* Write \
+math expressions using LaTeX and surround them with dollar signs: $x^2 + y^2$\
+\n* IMPORTANT! Whenever you write a literal backtick or dollar sign in text, \
+ALWAYS escape it with a backslash. Example: It costs me \\$99.95 every time \
+you forget to escape \\` or \\$ properly!\n* Link directly to Wolfram \
+Language documentation by using the following syntax: [label](paclet:uri). \
+For example:\n\t* [Table](paclet:ref/Table)\n\t* [Language \
+Overview](paclet:guide/LanguageOverview)\n\t* [Input \
+Syntax](paclet:tutorial/InputSyntax)\n* When referencing Wolfram Language \
+symbols in text, write them as a documentation link. Only do this in text, \
+not code.\n* Stick to built-in system functionality. Avoid packages unless \
+specifically requested.\n\n# Wolfram Language Style Guidelines\n\n* Keep code \
+simple when possible\n* Use functional programming instead of procedural\n* \
+Do not assign global variables when it's not necessary\n* Prefer modern \
+Wolfram Language symbols and methods\n* Many new symbols have been added to \
+WL since your knowledge cutoff date, so check documentation as needed\n* When \
+creating plots, add options such as labels and legends to make them easier to \
+understand\n* If the user is asking for a result instead of code to produce \
+that result, use the wolfram_language_evaluator tool"|>, <|
+         "role" -> "user", "content" -> 
+          "```\nOut[23]= {\"Global`cubefunction\"}\n\nIn[24]:= \
+cubefunction[7]\n\nOut[24]= 343\n\nIn[25]:= g[x_] := IntegerDigits[x] ;\n\n\
+In[26]:= g[x_Real] := RealDigits[x] ;\n\nIn[27]:= g[___] := {}\n\nIn[28]:= \
+gPure = Function[input, g[input]]\n\nOut[28]= Function[input, g[input]]\n\n\
+In[31]:= g[1337]\n\nOut[31]= {1, 3, 3, 7}\n\nIn[30]:= gPure[1337]\n\nOut[30]= \
+{1, 3, 3, 7}\n\nIn[32]:= g[N@Pi]\n\nOut[32]= {{3, 1, 4, 1, 5, 9, 2, 6, 5, 3, \
+5, 8, 9, 7, 9, 3}, 1}\n\nIn[33]:= gPure[N@Pi]\n\nOut[33]= {{3, 1, 4, 1, 5, 9, \
+2, 6, 5, 3, 5, 8, 9, 7, 9, 3}, 1}\n\nIn[34]:= g[\"Hello\", \"World\"]\n\n\
+Out[34]= {}\n\nIn[36]:= gPure[\"Hello\", \"World\"]\n\nOut[36]= \
+IntegerDigits[\"Hello\"]\n\nIn[37]:= DownValues[gPure]\n\nOut[37]= {}\n\n\
+In[38]:= DownValues[g]\n\nOut[38]= {HoldPattern[g[x_Real]] \[RuleDelayed] \
+RealDigits[x], HoldPattern[g[x_]] \[RuleDelayed] IntegerDigits[x], \
+HoldPattern[g[___]] \[RuleDelayed] {}}\n\n{1} /. {HoldPattern[g[x_Real]] \
+\[RuleDelayed] RealDigits[x], HoldPattern[g[x_]] \[RuleDelayed] \
+IntegerDigits[x], HoldPattern[g[___]] \[RuleDelayed] {}}\n```"|>}|>, 
+     "Container" :> Wolfram`Chatbook`Actions`Private`container$76296, 
+     "CellObject" :> 
+     CellObject[
+      "1f1b43a6-0c33-40ed-aabc-07f54564c613", 
+       "e6a0a1bf-062b-4c9a-91ec-b8daeb085338"], "Task" :> 
+     TaskObject[<|
+       "TaskUUID" -> "40404ad7-eb9f-4bfd-8ede-9442d55ea3bb", 
+        "TaskEnvironment" -> "External", "TaskType" -> "Asynchronous", 
+        "AsynchronounsTaskID" -> 32, "EvaluationExpression" :> None, 
+        HandlerFunctions -> <||>, 
+        HandlerFunctionsKeys -> {
+         "BodyChunk", "StatusCode", "Task", "TaskStatus", "EventName"}, 
+        AutoRemove -> True|>]|>|>,
+ CellChangeTimes->{{3.896810374659881*^9, 3.896810393086652*^9}},
+ CellLabel->"Out[41]=",ExpressionUUID->"bb5e2851-e044-4acf-bdf6-63ce46b8b322"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ResourceFunction", "[", "\"\<AlternatingTreeGraph\>\"", "]"}], "[", 
+  RowBox[{"8", ",", 
+   RowBox[{"Background", "->", "LightBlue"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8968167623108063`*^9, 3.8968167765419445`*^9}},
+ CellLabel->"In[42]:=",ExpressionUUID->"f2e5c57b-6746-45eb-9a74-5492dca9ed0d"],
+
+Cell[BoxData[
+ GraphicsBox[
+  NamespaceBox["NetworkGraphics",
+   DynamicModuleBox[{Typeset`graph = HoldComplete[
+     Graph[{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
+       20}, {Null, {{1, 2}, {2, 3}, {3, 4}, {4, 5}, {5, 6}, {6, 7}, {7, 8}, {
+       2, 9}, {3, 10}, {4, 11}, {5, 12}, {6, 13}, {7, 14}, {2, 15}, {3, 16}, {
+       4, 17}, {5, 18}, {6, 19}, {7, 20}}}, {
+      Background -> RGBColor[0.87, 0.94, 1], GraphLayout -> 
+       "SpringElectricalEmbedding"}]]}, 
+    TagBox[GraphicsGroupBox[GraphicsComplexBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQN78qdrT13w3H6KSUWOWtVr+8cL/hzl93th3+FZ
+uPr7M0YHdulpGezpL+1fMq7fFOrL59CjXtTsvfCVPadH2Mb/HaIODvduXZ3+
+7rX9BRtf94c7pB3erzkwQbD9rf3K5yxiV2YrOLDpvVwVZ/3UPv52epNOp6ID
+zN4Pqv71WvWX7L9MsLoTrHzc/lfIpYO8bf/sTePvr57Y/c3+iVAK6/qFvA4z
+2Of/5Yg7as8356m+oaSYw5Hi9hNLY07b3/j5qtuPUc5h4rZ8CabOt/YZeV0/
+zvgoORznaXizVOGBvYOrRyvHrgv2IR8m1P//8cU+a0ORoirrf/sJt7snHWI9
+av/lU9ry6lBeh3zpaVe6Hn633/Iuw03yhqjDi/crkv9P+2EvqHKEbelWGYdH
+5ocnrxf9Zb/oXLSb6W9Fh7KMe2xlLz/aAwBOJpX/
+       "], {
+        {Hue[0.6, 0.7, 0.5], Opacity[0.7], Arrowheads[0.], 
+         ArrowBox[{{1, 2}, {2, 3}, {2, 9}, {2, 15}, {3, 4}, {3, 10}, {3, 
+          16}, {4, 5}, {4, 11}, {4, 17}, {5, 6}, {5, 12}, {5, 18}, {6, 7}, {6,
+           13}, {6, 19}, {7, 8}, {7, 14}, {7, 20}}, 0.06247265269577837]}, 
+        {Hue[0.6, 0.2, 0.8], EdgeForm[{GrayLevel[0], Opacity[0.7]}], 
+         DiskBox[1, 0.06247265269577837], DiskBox[2, 0.06247265269577837], 
+         DiskBox[3, 0.06247265269577837], DiskBox[4, 0.06247265269577837], 
+         DiskBox[5, 0.06247265269577837], DiskBox[6, 0.06247265269577837], 
+         DiskBox[7, 0.06247265269577837], DiskBox[8, 0.06247265269577837], 
+         DiskBox[9, 0.06247265269577837], DiskBox[10, 0.06247265269577837], 
+         DiskBox[11, 0.06247265269577837], DiskBox[12, 0.06247265269577837], 
+         DiskBox[13, 0.06247265269577837], DiskBox[14, 0.06247265269577837], 
+         DiskBox[15, 0.06247265269577837], DiskBox[16, 0.06247265269577837], 
+         DiskBox[17, 0.06247265269577837], DiskBox[18, 0.06247265269577837], 
+         DiskBox[19, 0.06247265269577837], 
+         DiskBox[20, 0.06247265269577837]}}]],
+     MouseAppearanceTag["NetworkGraphics"]],
+    AllowKernelInitialization->False]],
+  Background->RGBColor[0.87, 0.94, 1],
+  DefaultBaseStyle->"NetworkGraphics",
+  FormatType->TraditionalForm,
+  FrameTicks->None]], "Output",
+ CellChangeTimes->{3.8968167780505652`*^9},
+ CellLabel->"Out[42]=",ExpressionUUID->"e50db281-aeca-4f9b-a0b0-0b226c8bf1cc"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.8968167855679903`*^9, 
+  3.8968167862929897`*^9}},ExpressionUUID->"f3280503-2102-4e57-a7cc-\
+8ae1c021d1d1"]
+},
+WindowSize->{574.8, 579.6},
+WindowMargins->{{-4.8, Automatic}, {Automatic, 0}},
+FrontEndVersion->"13.3 for Microsoft Windows (64-bit) (May 18, 2023)",
+StyleDefinitions->"Chatbook.nb",
+ExpressionUUID->"cbd2ea08-4a2e-4443-86dc-483556de6cc9"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 493, 9, 118, "ChatInput",ExpressionUUID->"b8e69e22-3d0a-41b0-898c-8615ac22154d"],
+Cell[1076, 33, 8091, 160, 555, "ChatOutput",ExpressionUUID->"2b90c4e5-4612-4930-ac4c-d4ef95303bc4"]
+}, Open  ]],
+Cell[9182, 196, 235, 3, 28, "Input",ExpressionUUID->"c18e4012-0b2d-4822-bd25-a52e4198a662"],
+Cell[9420, 201, 471, 11, 48, "Input",ExpressionUUID->"ab9dc46d-e480-43e8-a039-a9bbaf9ffd6c"],
+Cell[9894, 214, 246, 6, 28, "Input",ExpressionUUID->"9b177da3-aee4-4128-9881-93de68b30df4"],
+Cell[10143, 222, 295, 6, 28, "Input",ExpressionUUID->"2485e49d-a809-406f-8087-30c9d52d1007"],
+Cell[CellGroupData[{
+Cell[10463, 232, 803, 15, 210, "ChatInput",ExpressionUUID->"63078b59-5815-4342-8b76-b4db0eb4608b"],
+Cell[11269, 249, 13560, 229, 401, "ChatOutput",ExpressionUUID->"3ce76d49-a4e8-4e5b-be6c-28ed2d022ff4"]
+}, Open  ]],
+Cell[24844, 481, 572, 10, 143, "Input",ExpressionUUID->"f64cc20e-8b0d-40f2-a137-b4ba424a532e"],
+Cell[25419, 493, 255, 5, 28, "Input",ExpressionUUID->"70104fa0-a058-4b2c-98e3-267524480a04"],
+Cell[CellGroupData[{
+Cell[25699, 502, 299, 6, 28, "Input",ExpressionUUID->"a18369a1-c3c0-42a4-831f-9bb9a80acde5"],
+Cell[26001, 510, 154, 2, 32, "Output",ExpressionUUID->"62c3bc23-5951-416f-95ba-f3f017dfa86f"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26192, 517, 221, 3, 28, "Input",ExpressionUUID->"373676b2-cb55-4b68-9439-62912d7aec3e"],
+Cell[26416, 522, 199, 3, 32, "Output",ExpressionUUID->"622d6b0e-41df-4beb-aaf5-fa9c28b00bbd"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26652, 530, 214, 3, 28, "Input",ExpressionUUID->"474b44b4-df92-45ae-bead-6007a28ad896"],
+Cell[26869, 535, 149, 2, 32, "Output",ExpressionUUID->"f18b47d4-5b72-4a86-b93b-2fc87c354641"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[27055, 542, 374, 8, 31, "Input",ExpressionUUID->"05e23611-127f-4c81-b566-e197e033815b"],
+Cell[27432, 552, 233, 5, 34, "Output",ExpressionUUID->"86e46490-82a1-4121-977d-5f06ebfe6e6d"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[27702, 562, 223, 3, 28, "Input",ExpressionUUID->"4f7b9b9f-3f8b-4ac3-8868-404593fb255e"],
+Cell[27928, 567, 197, 3, 32, "Output",ExpressionUUID->"b3b01f7c-4644-4a82-a0cf-964f00b8a6ba"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28162, 575, 426, 10, 48, "Input",ExpressionUUID->"2d5d407e-204e-4bf9-b9f8-d4507c25143c"],
+Cell[28591, 587, 271, 6, 32, "Output",ExpressionUUID->"68f78208-ba5f-4745-9266-692546ca3b04"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28899, 598, 231, 3, 28, "Input",ExpressionUUID->"defb76ab-c637-48be-9480-1996b8851f39"],
+Cell[29133, 603, 207, 3, 32, "Output",ExpressionUUID->"e6f04a2f-08cb-4187-bfc1-755f34d883b6"],
+Cell[29343, 608, 11284, 224, 0, "AssistantOutput",ExpressionUUID->"eb783a24-d0d0-4d26-ad9d-4755f8954c57",
+ CellOpen->False]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[40664, 837, 211, 3, 28, "Input",ExpressionUUID->"49e024bc-fc05-4468-a09c-b7bc602ae7b4"],
+Cell[40878, 842, 153, 2, 32, "Output",ExpressionUUID->"8d987e64-8e65-4afb-9c69-d54e26107b56"]
+}, Open  ]],
+Cell[41046, 847, 288, 6, 28, "Input",ExpressionUUID->"c4530b4d-6814-4303-b099-d7c8e80a30f1"],
+Cell[41337, 855, 289, 6, 28, "Input",ExpressionUUID->"9466789a-e73a-4b29-a4b8-6857d5ab4633"],
+Cell[41629, 863, 245, 5, 28, "Input",ExpressionUUID->"2301b376-f8c0-49ef-aa9f-9c7dbbd14ff4"],
+Cell[CellGroupData[{
+Cell[41899, 872, 296, 6, 28, "Input",ExpressionUUID->"df03c31f-6373-4aa9-b96d-e5fb1a59e104"],
+Cell[42198, 880, 243, 5, 32, "Output",ExpressionUUID->"f6457ce9-c6f3-4d0e-80b4-62b771dbea38"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[42478, 890, 206, 3, 28, "Input",ExpressionUUID->"156ff711-215e-493f-8e98-cba9712d1ac5"],
+Cell[42687, 895, 240, 4, 32, "Output",ExpressionUUID->"5f4e720c-a4b1-4919-9b88-6cfc0d772857"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[42964, 904, 210, 3, 28, "Input",ExpressionUUID->"87fae2b6-70a6-4fec-ad26-ef4719fef05c"],
+Cell[43177, 909, 216, 4, 32, "Output",ExpressionUUID->"0f00f3e3-af73-4e8b-8149-15e2d440139c"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[43430, 918, 227, 4, 28, "Input",ExpressionUUID->"1ec57062-10b3-4a06-8fa4-8c31a2913070"],
+Cell[43660, 924, 400, 9, 32, "Output",ExpressionUUID->"134448d4-b969-49d9-b1df-37afa8f11dba"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[44097, 938, 229, 4, 28, "Input",ExpressionUUID->"e2a630a9-cbff-4723-a5ca-b7231538bd43"],
+Cell[44329, 944, 402, 9, 32, "Output",ExpressionUUID->"ca7733e3-d59e-42c3-b07f-0644abc13f53"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[44768, 958, 246, 4, 28, "Input",ExpressionUUID->"7098dd8f-6588-4961-a9ed-4ac3644d524d"],
+Cell[45017, 964, 168, 3, 32, "Output",ExpressionUUID->"f1b90834-55ea-442a-ad53-69ecd07307e1"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[45222, 972, 254, 4, 28, "Input",ExpressionUUID->"e22906f6-6e55-45e1-aaf1-5b3a24c1eddc"],
+Cell[45479, 978, 224, 3, 32, "Output",ExpressionUUID->"77e03522-6d14-4d2d-b205-1c5b8d43827d"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[45740, 986, 214, 3, 28, "Input",ExpressionUUID->"c669aa1c-b623-428f-89d2-c62abe7e5661"],
+Cell[45957, 991, 166, 3, 32, "Output",ExpressionUUID->"94cbebb5-d21e-48d8-a896-0414cc929e2b"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[46160, 999, 212, 3, 28, "Input",ExpressionUUID->"48734863-6456-447d-9fac-dcc09b1854bd"],
+Cell[46375, 1004, 639, 16, 71, "Output",ExpressionUUID->"372d309c-396d-4951-8720-79de7dfc9b57"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[47051, 1025, 753, 19, 67, "Input",ExpressionUUID->"5362bb19-b1d9-40cd-9424-e708d7d4c6bb"],
+Cell[47807, 1046, 6962, 114, 19, "Output",ExpressionUUID->"bb5e2851-e044-4acf-bdf6-63ce46b8b322",
+ CellOpen->False]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[54806, 1165, 338, 6, 48, "Input",ExpressionUUID->"f2e5c57b-6746-45eb-9a74-5492dca9ed0d"],
+Cell[55147, 1173, 2535, 43, 96, "Output",ExpressionUUID->"e50db281-aeca-4f9b-a0b0-0b226c8bf1cc"]
+}, Open  ]],
+Cell[57697, 1219, 156, 3, 28, "Input",ExpressionUUID->"f3280503-2102-4e57-a7cc-8ae1c021d1d1"]
+}
+]
+*)
+
